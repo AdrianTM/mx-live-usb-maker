@@ -1,0 +1,14 @@
+Source: CUSTOMPROGRAMNAME
+Section: admin
+Priority: optional
+Maintainer: Adrian <adrian@mxlinux.org>
+Build-Depends: qt5-qmake,
+	debhelper (>=7.0.50~)
+Standards-Version: 3.9.5
+
+Package: CUSTOMPROGRAMNAME
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libcmd
+Description: CUSTOMPROGRAMNAME
+ CUSTOMPROGRAMNAME
+
