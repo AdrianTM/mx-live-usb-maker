@@ -82,7 +82,7 @@ private:
     Ui::MainWindow *ui;
     Cmd *cmd;
     QTimer *timer;
-    int height_group;
+    int height;
 };
 
 

@@ -36,7 +36,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    height_group = ui->groupBox->height();
     setup();
     ui->combo_Usb->addItems(buildUsbList());
     this->adjustSize();
@@ -52,7 +51,7 @@ void MainWindow::makeUsb(const QString &options)
     QString iso_name = ui->buttonSelectIso->text();
     QString device = ui->combo_Usb->currentText().split(" ").at(0);
 
-    QString cmdstr = QString("live-usb-maker " + options + " -C off --percent-prog --from=%1 -t /dev/%2").arg(iso_name).arg(device);
+    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --percent-prog --from=%1 -t /dev/%2").arg(iso_name).arg(device);
     setConnections();
     qDebug() << cmd->getOutput(cmdstr);
 }
@@ -63,52 +62,69 @@ void MainWindow::setup()
     cmd = new Cmd(this);
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("Custom_Program_Name");
-    ui->groupBox->setFixedHeight(0);
+    ui->groupAdvOptions->hide();
     ui->buttonBack->setHidden(true);;
     ui->stackedWidget->setCurrentIndex(0);
     ui->buttonCancel->setEnabled(true);
     ui->buttonNext->setEnabled(true);
     ui->outputBox->setCursorWidth(0);
+    height = this->heightMM();
+
+    QRegExp rx("\\w*");
+    QValidator *validator = new QRegExpValidator(rx, this);
+    ui->edit_label->setValidator(validator);
 }
 
 // Build the option list to be passed to live-usb-maker
 QString MainWindow::buildOptionList()
 {
-    QString options("-N");
+    QString options("-N ");
     if (ui->cb_encrypt->isChecked()) {
-        options += "E";
+        options += "-E ";
     }
     if (ui->cb_gpt->isChecked()) {
-        options += "g";
+        options += "-g ";
     }
     if (ui->cb_keep->isChecked()) {
-        options += "k";
+        options += "-k ";
     }
     if (ui->cb_pretend->isChecked()) {
-        options += "p";
+        options += "-p ";
     }
     if (ui->cb_save_boot->isChecked()) {
-        options += "S";
+        options += "-S ";
     }
     if (ui->cb_update->isChecked()) {
-        options += "u";
+        options += "-u ";
     }
     if (ui->cb_set_pmbr_boot->isChecked()) {
-        options += " --gpt-pmbr";
+        options += "--gpt-pmbr ";
     }
     if (ui->spinBoxEsp->value() != 50) {
-        options += " --esp-size=" + ui->spinBoxEsp->cleanText();
+        options += "--esp-size=" + ui->spinBoxEsp->cleanText() + " ";
     }
     if (ui->spinBoxSize->value() < 100) {
-        options += " --size=" + ui->spinBoxSize->cleanText();
+        options += "--size=" + ui->spinBoxSize->cleanText() + " ";
     }
     if (!ui->edit_label->text().isEmpty()) {
-        options += " --label=" + ui->edit_label->text();
+        options += " --label=" + ui->edit_label->text() + " ";
+    }
+    if (ui->cb_force_usb->isChecked()) {
+        options += "--force=usb ";
+    }
+    if (ui->cb_force_automount->isChecked()) {
+        options += "--force=automout ";
+    }
+    if (ui->cb_force_ultra_fit->isChecked()) {
+        options += "--force=ultra-fit ";
+    }
+    if (ui->cb_force_makefs->isChecked()) {
+        options += "--force=makefs ";
     }
     switch(ui->sliderVerbosity->value()) {
-    case 1 : options += " -V";
+    case 1 : options += "-V ";
         break;
-    case 2 : options += " -VV";
+    case 2 : options += "-VV ";
         break;
     }
     qDebug() << "Options: " << options;
@@ -182,7 +198,7 @@ void MainWindow::setConnections()
 void MainWindow::updateOutput(QString out)
 {
     // remove escape sequences that are not handled by code
-    out.remove("[0m").remove("]0;").remove("").remove("").remove("[1000D").remove("[74C|").remove("[?25l").remove("[?25h");
+    out.remove("[0m").remove("]0;").remove("").remove("").remove("[1000D").remove("[74C|").remove("[?25l").remove("[?25h").remove("[0;36m").remove("[1;37m");
     if (out.contains("[10D[K")) { // escape sequence used to display the progress percentage
         out.remove("[10D[K");
         ui->outputBox->moveCursor(QTextCursor::StartOfLine);
@@ -292,16 +308,16 @@ void MainWindow::on_buttonRefresh_clicked()
 
 void MainWindow::on_buttonOptions_clicked()
 {
-    if (ui->buttonOptions->text() == tr("Show options")) {
-        ui->groupBox->setFixedHeight(height_group);
-        ui->buttonOptions->setText(tr("Hide options"));
+    if (ui->buttonOptions->text() == tr("Show advanced options")) {
+        ui->groupAdvOptions->show();
+        ui->buttonOptions->setText(tr("Hide advanced options"));
         ui->buttonOptions->setIcon(QIcon::fromTheme("up"));
     } else {
-       ui->groupBox->setFixedHeight(0);
-       ui->buttonOptions->setText(tr("Show options"));
+       ui->groupAdvOptions->hide();
+       ui->buttonOptions->setText(tr("Show advanced options"));
        ui->buttonOptions->setIcon(QIcon::fromTheme("down"));
+       this->setMaximumHeight(height);
     }
-    this->repaint();
 }
 
 void MainWindow::on_buttonEnter_clicked()
