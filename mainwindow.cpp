@@ -49,9 +49,17 @@ MainWindow::~MainWindow()
 void MainWindow::makeUsb(const QString &options)
 {
     QString iso_name = ui->buttonSelectIso->text();
-    QString device = ui->combo_Usb->currentText().split(" ").at(0);
+    device = ui->combo_Usb->currentText().split(" ").at(0);
 
-    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --percent-prog --from=%1 -t /dev/%2").arg(iso_name).arg(device);
+    QString iso_size = cmd->getOutput("du -m " + iso_name + " 2>/dev/null | cut -f1", QStringList() << "quiet");
+    iso_sectors = iso_size.toInt() * 1024 / 512 * 1024;
+
+    // check amount of io on device before copy, this is in sectors
+    start_io = cmd->getOutput("cat /sys/block/" + device + " /stat |awk '{print $7}'", QStringList() << "quiet").toInt();
+    ui->progressBar->setMinimum(start_io);
+    ui->progressBar->setMaximum(iso_sectors);
+
+    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(iso_name).arg(device);
     setConnections();
     qDebug() << cmd->getOutput(cmdstr);
 }
@@ -192,7 +200,16 @@ void MainWindow::setConnections()
 {
     connect(cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
     connect(cmd, &Cmd::started, this, &MainWindow::cmdStart);
+    connect(cmd, &Cmd::runTime, this, &MainWindow::updateBar);
     connect(cmd, &Cmd::finished, this, &MainWindow::cmdDone);
+
+}
+
+void MainWindow::updateBar()
+{
+    Cmd cmd;
+    int current_io = cmd.getOutput("cat /sys/block/" + device + "/stat | awk '{print $7}'", QStringList() << "quiet").toInt();
+    ui->progressBar->setValue(current_io);
 }
 
 void MainWindow::updateOutput(QString out)
@@ -224,7 +241,7 @@ void MainWindow::on_buttonNext_clicked()
             return;
         }
         if (!QFile(ui->buttonSelectIso->text()).exists()) {
-            QMessageBox::critical(this, tr("Error"), tr("Please select an ISO file"));
+            ui->buttonSelectIso->clicked();
             return;
         }
         if (cmd->isRunning()) {

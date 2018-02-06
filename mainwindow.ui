@@ -222,7 +222,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="selectionPage">
       <layout class="QGridLayout" name="gridLayout">
@@ -627,7 +627,9 @@
           <string>Enter</string>
          </property>
          <property name="icon">
-          <iconset theme="key-enter"/>
+          <iconset theme="key-enter">
+           <normaloff/>
+          </iconset>
          </property>
         </widget>
        </item>
@@ -637,7 +639,7 @@
           <number>0</number>
          </property>
          <property name="textVisible">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
