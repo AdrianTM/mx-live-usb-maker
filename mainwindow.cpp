@@ -61,13 +61,14 @@ void MainWindow::makeUsb(const QString &options)
 
     QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(iso_name).arg(device);
     setConnections();
-    qDebug() << cmd->getOutput(cmdstr);
+    qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
 }
 
 // setup versious items first time program runs
 void MainWindow::setup()
 {
     cmd = new Cmd(this);
+    cmdprog = new Cmd(this);
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("Custom_Program_Name");
     ui->groupAdvOptions->hide();
@@ -207,8 +208,7 @@ void MainWindow::setConnections()
 
 void MainWindow::updateBar()
 {
-    Cmd cmd;
-    int current_io = cmd.getOutput("cat /sys/block/" + device + "/stat | awk '{print $7}'", QStringList() << "quiet").toInt();
+    int current_io = cmdprog->getOutput("cat /sys/block/" + device + "/stat | awk '{print $7}'", QStringList() << "quiet" << "slowtick").toInt();
     ui->progressBar->setValue(current_io);
 }
 
