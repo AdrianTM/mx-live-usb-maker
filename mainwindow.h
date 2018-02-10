@@ -81,6 +81,10 @@ private slots:
 
     void on_cb_update_clicked();
 
+    void on_cb_clone_mode_clicked();
+
+    void on_cb_clone_live_clicked();
+
 private:
     Ui::MainWindow *ui;
     Cmd *cmd;
