@@ -198,7 +198,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 void MainWindow::cmdStart()
 {
     //setCursor(QCursor(Qt::BusyCursor));
-    ui->lineEdit->setFocus();
+    //ui->lineEdit->setFocus();
 }
 
 
@@ -363,10 +363,10 @@ void MainWindow::on_buttonOptions_clicked()
     }
 }
 
-void MainWindow::on_buttonEnter_clicked()
-{
-    on_lineEdit_returnPressed();
-}
+//void MainWindow::on_buttonEnter_clicked()
+//{
+//    on_lineEdit_returnPressed();
+//}
 
 void MainWindow::on_edit_label_textChanged(QString arg1)
 {
@@ -374,15 +374,15 @@ void MainWindow::on_edit_label_textChanged(QString arg1)
     ui->edit_label->setCursorPosition(arg1.length());
 }
 
-void MainWindow::on_lineEdit_returnPressed()
-{
-    cmd->writeToProc(ui->lineEdit->text());
-    if (!(ui->lineEdit->text().size() == 1 && (ui->lineEdit->text() == "q" || ui->lineEdit->text() == "h"))) {
-        cmd->writeToProc("\n"); // don't send new line for q and h interactive options
-    }
-    ui->lineEdit->clear();
-    ui->lineEdit->setFocus();
-}
+//void MainWindow::on_lineEdit_returnPressed()
+//{
+//    cmd->writeToProc(ui->lineEdit->text());
+//    if (!(ui->lineEdit->text().size() == 1 && (ui->lineEdit->text() == "q" || ui->lineEdit->text() == "h"))) {
+//        cmd->writeToProc("\n"); // don't send new line for q and h interactive options
+//    }
+//    ui->lineEdit->clear();
+//    ui->lineEdit->setFocus();
+//}
 
 void MainWindow::on_cb_update_clicked()
 {

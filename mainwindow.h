@@ -75,8 +75,8 @@ private slots:
     void on_buttonRefresh_clicked();
     void on_buttonOptions_clicked();
     void on_edit_label_textChanged(QString arg1);
-    void on_buttonEnter_clicked();
-    void on_lineEdit_returnPressed();
+//    void on_buttonEnter_clicked();
+//    void on_lineEdit_returnPressed();
     void on_cb_update_clicked();
     void on_cb_clone_mode_clicked();
     void on_cb_clone_live_clicked();
