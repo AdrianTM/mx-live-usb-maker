@@ -48,18 +48,25 @@ MainWindow::~MainWindow()
 
 void MainWindow::makeUsb(const QString &options)
 {
-    QString iso_name = ui->buttonSelectSource->text();
     device = ui->combo_Usb->currentText().split(" ").at(0);
 
-    QString iso_size = cmd->getOutput("du -m " + iso_name + " 2>/dev/null | cut -f1", QStringList() << "quiet");
-    iso_sectors = iso_size.toInt() * 1024 / 512 * 1024;
+    QString source;
+    if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
+        source = ui->buttonSelectSource->text();
+        QString source_size = cmd->getOutput("du -m " + source + " 2>/dev/null | cut -f1", QStringList() << "quiet");
+        iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
+    } else if (ui->cb_clone_mode->isChecked()) {
+        source = "clone=" + ui->buttonSelectSource->text();
+    } else if (ui->cb_clone_live->isChecked()) {
+        source = "clone";
+    }
 
     // check amount of io on device before copy, this is in sectors
     start_io = cmd->getOutput("cat /sys/block/" + device + " /stat |awk '{print $7}'", QStringList() << "quiet").toInt();
     ui->progressBar->setMinimum(start_io);
     ui->progressBar->setMaximum(iso_sectors);
 
-    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(iso_name).arg(device);
+    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
     setConnections();
     qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
 }
