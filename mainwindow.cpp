@@ -82,6 +82,16 @@ void MainWindow::setup()
     QRegExp rx("\\w*");
     QValidator *validator = new QRegExpValidator(rx, this);
     ui->edit_label->setValidator(validator);
+
+    //set save boot directory option to disable unless update mode is checked
+    ui->cb_save_boot->setEnabled(false);
+
+    //check if running live
+    ui->cb_clone_live->setEnabled(false);
+    QString test = cmd->getOutput("df -T / |tail -n1 |awk '{print $2}'");
+    if ( test == "aufs" || test == "overlay" ) {
+        ui->cb_clone_live->setEnabled(true);
+    }
 }
 
 // Build the option list to be passed to live-usb-maker
@@ -356,4 +366,14 @@ void MainWindow::on_lineEdit_returnPressed()
     }
     ui->lineEdit->clear();
     ui->lineEdit->setFocus();
+}
+
+void MainWindow::on_cb_update_clicked()
+{
+    if (ui->cb_update->isChecked()) {
+        ui->cb_save_boot->setEnabled(true);
+    } else {
+        ui->cb_save_boot->setChecked(false);
+        ui->cb_save_boot->setEnabled(false);
+    }
 }

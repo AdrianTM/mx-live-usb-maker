@@ -79,6 +79,8 @@ private slots:
     void on_lineEdit_returnPressed();
 
 
+    void on_cb_update_clicked();
+
 private:
     Ui::MainWindow *ui;
     Cmd *cmd;
