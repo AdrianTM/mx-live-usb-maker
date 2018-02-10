@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
+    <width>825</width>
     <height>789</height>
    </rect>
   </property>
@@ -50,8 +50,7 @@
        </property>
        <property name="icon">
         <iconset theme="window-close">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -93,8 +92,7 @@
        </property>
        <property name="icon">
         <iconset theme="help-contents">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+H</string>
@@ -114,8 +112,7 @@
        </property>
        <property name="icon">
         <iconset theme="go-previous">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -170,8 +167,7 @@
        </property>
        <property name="icon">
         <iconset theme="go-next">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string/>
@@ -200,8 +196,7 @@
        </property>
        <property name="icon">
         <iconset theme="help-about">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+B</string>
@@ -304,8 +299,7 @@
          </property>
          <property name="icon">
           <iconset theme="user-home">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -316,8 +310,7 @@
          </property>
          <property name="icon">
           <iconset theme="reload">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -328,126 +321,8 @@
          </property>
          <property name="icon">
           <iconset theme="down">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="4">
-        <widget class="QGroupBox" name="groupOptions">
-         <property name="title">
-          <string>Options</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0" colspan="5">
-           <widget class="QFrame" name="frame_2">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_7">
-             <item row="1" column="0">
-              <widget class="QCheckBox" name="cb_encrypt">
-               <property name="text">
-                <string>Encrypt</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QCheckBox" name="cb_pretend">
-               <property name="text">
-                <string>Pretend (don't write on USB)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QCheckBox" name="cb_gpt">
-               <property name="text">
-                <string>GPT partitioning</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QSpinBox" name="spinBoxSize">
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="singleStep">
-             <number>5</number>
-            </property>
-            <property name="value">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Percent of USB-device to use:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::MinimumExpanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>400</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>Label ext partition:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="1" colspan="2">
-           <widget class="QLineEdit" name="edit_label">
-            <property name="inputMask">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string notr="true"/>
-            </property>
-            <property name="maxLength">
-             <number>16</number>
-            </property>
-            <property name="cursorMoveStyle">
-             <enum>Qt::LogicalMoveStyle</enum>
-            </property>
-            <property name="clearButtonEnabled">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
        <item row="4" column="0" colspan="4">
@@ -545,63 +420,180 @@
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
-             <item row="8" column="0">
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="cb_gpt">
+               <property name="text">
+                <string>GPT partitioning</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
               <widget class="QCheckBox" name="cb_update">
                <property name="text">
                 <string>Update (only update an existing live-usb)</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
+             <item row="5" column="0">
               <widget class="QCheckBox" name="cb_keep">
                <property name="text">
                 <string>Keep syslinux files (don't replace syslinux files)</string>
                </property>
               </widget>
              </item>
-             <item row="6" column="0">
-              <widget class="QCheckBox" name="cb_save_boot">
-               <property name="text">
-                <string>Save the original boot director when updating a live-usb</string>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="0">
+             <item row="8" column="0">
               <widget class="QCheckBox" name="cb_set_pmbr_boot">
                <property name="text">
                 <string>Set pmbr_boot disk flag (prevents booting via UEFI)</string>
                </property>
               </widget>
              </item>
-             <item row="9" column="0">
+             <item row="11" column="0">
               <widget class="QCheckBox" name="cb_force_usb">
                <property name="text">
                 <string>Force: ignore USB/removable check</string>
                </property>
               </widget>
              </item>
-             <item row="10" column="0">
+             <item row="12" column="0">
               <widget class="QCheckBox" name="cb_force_ultra_fit">
                <property name="text">
                 <string>Force: ultra-fit. Don't warn about SanDisk utra-fit devices</string>
                </property>
               </widget>
              </item>
-             <item row="11" column="0">
+             <item row="13" column="0">
               <widget class="QCheckBox" name="cb_force_makefs">
                <property name="text">
                 <string>Force: makefs. Make the ext4 filesystem even if one exists</string>
                </property>
               </widget>
              </item>
-             <item row="12" column="0">
+             <item row="14" column="0">
               <widget class="QCheckBox" name="cb_force_automount">
                <property name="text">
                 <string>Force: automount. Temporarily disable automounting</string>
                </property>
               </widget>
              </item>
+             <item row="10" column="0">
+              <widget class="QCheckBox" name="cb_save_boot">
+               <property name="text">
+                <string>Save the original boot directory when updating a live-usb</string>
+               </property>
+              </widget>
+             </item>
             </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="4">
+        <widget class="QGroupBox" name="groupOptions">
+         <property name="title">
+          <string>Options</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0" colspan="5">
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="cb_encrypt">
+               <property name="text">
+                <string>Encrypt</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="cb_pretend">
+               <property name="text">
+                <string>Pretend (don't write on USB)</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBoxSize">
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="singleStep">
+             <number>5</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Percent of USB-device to use:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::MinimumExpanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>400</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Label ext partition:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="QLineEdit" name="edit_label">
+            <property name="inputMask">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string notr="true"/>
+            </property>
+            <property name="maxLength">
+             <number>16</number>
+            </property>
+            <property name="cursorMoveStyle">
+             <enum>Qt::LogicalMoveStyle</enum>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
          </layout>
@@ -628,8 +620,7 @@
          </property>
          <property name="icon">
           <iconset theme="key-enter">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
