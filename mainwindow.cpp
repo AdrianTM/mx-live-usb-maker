@@ -48,7 +48,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::makeUsb(const QString &options)
 {
-    QString iso_name = ui->buttonSelectIso->text();
+    QString iso_name = ui->buttonSelectSource->text();
     device = ui->combo_Usb->currentText().split(" ").at(0);
 
     QString iso_size = cmd->getOutput("du -m " + iso_name + " 2>/dev/null | cut -f1", QStringList() << "quiet");
@@ -250,8 +250,8 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        if (!QFile(ui->buttonSelectIso->text()).exists()) {
-            ui->buttonSelectIso->clicked();
+        if (!QFile(ui->buttonSelectSource->text()).exists() || ui->buttonSelectSource->text() != tr("clone")) {
+            ui->buttonSelectSource->clicked();
             return;
         }
         if (cmd->isRunning()) {
@@ -316,13 +316,20 @@ void MainWindow::on_buttonHelp_clicked()
 }
 
 
-void MainWindow::on_buttonSelectIso_clicked()
+void MainWindow::on_buttonSelectSource_clicked()
 {
     QFileDialog dialog;
-    QString selected = dialog.getOpenFileName(this, tr("Select a ISO file to write to the USB drive"), QString(QDir::homePath()), QString("*.iso"));
-    if (selected != "") {
-        ui->buttonSelectIso->setText(selected);
-        ui->buttonSelectIso->setIcon(QIcon::fromTheme("media-cdrom"));
+    QString selected;
+
+    if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
+        selected = dialog.getOpenFileName(this, tr("Select a ISO file to write to the USB drive"), QString(QDir::homePath()), QString("*.iso"));
+        if (selected != "") {
+            ui->buttonSelectSource->setText(selected);
+            ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
+        }
+    } else if (ui->cb_clone_mode->isChecked()) {
+        selected = dialog.getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
+        ui->buttonSelectSource->setText(selected);
     }
 }
 
@@ -383,10 +390,12 @@ void MainWindow::on_cb_clone_mode_clicked()
     ui->cb_clone_live->setChecked(false);
     if (ui->cb_clone_mode->isChecked()) {
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
-        ui->buttonSelectIso->setText(tr("Select Source Directory"));
+        ui->buttonSelectSource->setText(tr("Select Source Directory"));
+        ui->buttonSelectSource->setIcon(QIcon::fromTheme("folder"));
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
-        ui->buttonSelectIso->setText(tr("Select ISO"));
+        ui->buttonSelectSource->setText(tr("Select ISO"));
+        ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
     }
 }
 
@@ -395,11 +404,15 @@ void MainWindow::on_cb_clone_live_clicked()
     ui->cb_clone_mode->setChecked(false);
     if (ui->cb_clone_live->isChecked()){
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
-        ui->buttonSelectIso->setEnabled(false);
-        ui->buttonSelectIso->setText(tr("clone"));
+        ui->buttonSelectSource->setEnabled(false);
+        ui->buttonSelectSource->setText(tr("clone"));
+        ui->buttonSelectSource->setIcon(QIcon::fromTheme("tools-media-optical-copy"));
+        ui->buttonSelectSource->blockSignals(true);
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
-        ui->buttonSelectIso->setEnabled(true);
-        ui->buttonSelectIso->setText(tr("Select ISO"));
+        ui->buttonSelectSource->setEnabled(true);
+        ui->buttonSelectSource->setText(tr("Select ISO"));
+        ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
+        ui->buttonSelectSource->blockSignals(false);
     }
 }
