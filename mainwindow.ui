@@ -504,6 +504,20 @@
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="cb_pretend">
+               <property name="text">
+                <string>Pretend (don't write on USB)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="cb_clone_mode">
+               <property name="text">
+                <string>Clone an existing live system</string>
+               </property>
+              </widget>
+             </item>
              <item row="1" column="0">
               <widget class="QCheckBox" name="cb_encrypt">
                <property name="text">
@@ -511,10 +525,10 @@
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QCheckBox" name="cb_pretend">
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="cb_clone_live">
                <property name="text">
-                <string>Pretend (don't write on USB)</string>
+                <string>Clone running live system</string>
                </property>
               </widget>
              </item>
