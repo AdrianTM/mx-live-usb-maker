@@ -407,10 +407,12 @@ void MainWindow::on_cb_clone_live_clicked()
         ui->buttonSelectSource->setEnabled(false);
         ui->buttonSelectSource->setText(tr("clone"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("tools-media-optical-copy"));
+        ui->buttonSelectSource->blockSignals(true);
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->buttonSelectSource->setEnabled(true);
         ui->buttonSelectSource->setText(tr("Select ISO"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
+        ui->buttonSelectSource->blockSignals(false);
     }
 }
