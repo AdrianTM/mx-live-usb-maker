@@ -71,18 +71,14 @@ private slots:
     void on_buttonAbout_clicked();
     void on_buttonHelp_clicked();
     void on_buttonBack_clicked();
-    void on_buttonSelectIso_clicked();
+    void on_buttonSelectSource_clicked();
     void on_buttonRefresh_clicked();
     void on_buttonOptions_clicked();
     void on_edit_label_textChanged(QString arg1);
     void on_buttonEnter_clicked();
     void on_lineEdit_returnPressed();
-
-
     void on_cb_update_clicked();
-
     void on_cb_clone_mode_clicked();
-
     void on_cb_clone_live_clicked();
 
 private:

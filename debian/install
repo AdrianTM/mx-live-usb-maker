@@ -4,4 +4,4 @@ CUSTOMPROGRAMNAME.conf	etc
 CUSTOMPROGRAMNAME.png		usr/share/pixmaps
 translations/*.qm 	usr/share/CUSTOMPROGRAMNAME/locale
 license.html            usr/share/doc/CUSTOMPROGRAMNAME
-
+authors.txt		usr/share/doc/CUSTOMPROGRAMNAME
