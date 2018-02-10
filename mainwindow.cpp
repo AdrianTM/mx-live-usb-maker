@@ -377,3 +377,29 @@ void MainWindow::on_cb_update_clicked()
         ui->cb_save_boot->setEnabled(false);
     }
 }
+
+void MainWindow::on_cb_clone_mode_clicked()
+{
+    ui->cb_clone_live->setChecked(false);
+    if (ui->cb_clone_mode->isChecked()) {
+        ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
+        ui->buttonSelectIso->setText(tr("Select Source Directory"));
+    } else {
+        ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
+        ui->buttonSelectIso->setText(tr("Select ISO"));
+    }
+}
+
+void MainWindow::on_cb_clone_live_clicked()
+{
+    ui->cb_clone_mode->setChecked(false);
+    if (ui->cb_clone_live->isChecked()){
+        ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
+        ui->buttonSelectIso->setEnabled(false);
+        ui->buttonSelectIso->setText(tr("clone"));
+    } else {
+        ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
+        ui->buttonSelectIso->setEnabled(true);
+        ui->buttonSelectIso->setText(tr("Select ISO"));
+    }
+}
