@@ -61,6 +61,8 @@ void MainWindow::makeUsb(const QString &options)
         source = "clone=" + ui->buttonSelectSource->text();
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
+        QString source_size = cmd->getOutput("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", QStringList() << "quiet");
+        iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     }
 
     // check amount of io on device before copy, this is in sectors
