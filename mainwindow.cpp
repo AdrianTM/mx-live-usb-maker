@@ -259,7 +259,7 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        if (!QFile(ui->buttonSelectSource->text()).exists() && ui->buttonSelectSource->text() != tr("clone")) {
+        if (!(QFile(ui->buttonSelectSource->text()).exists() || ui->buttonSelectSource->text() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
             ui->buttonSelectSource->clicked();
             return;
         }
