@@ -338,7 +338,9 @@ void MainWindow::on_buttonSelectSource_clicked()
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = dialog.getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
-        ui->buttonSelectSource->setText(selected);
+        if (selected != "") {
+            ui->buttonSelectSource->setText(selected);
+        }
     }
 }
 
