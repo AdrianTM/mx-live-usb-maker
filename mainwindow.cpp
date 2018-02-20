@@ -46,6 +46,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+bool MainWindow::isRunningLive()
+{
+    QString test = cmd->getOutput("df -T / |tail -n1 |awk '{print $2}'");
+    return ( test == "aufs" || test == "overlay" );
+}
+
 void MainWindow::makeUsb(const QString &options)
 {
     device = ui->combo_Usb->currentText().split(" ").at(0);
@@ -100,11 +106,7 @@ void MainWindow::setup()
     ui->cb_save_boot->setEnabled(false);
 
     //check if running live
-    ui->cb_clone_live->setEnabled(false);
-    QString test = cmd->getOutput("df -T / |tail -n1 |awk '{print $2}'");
-    if ( test == "aufs" || test == "overlay" ) {
-        ui->cb_clone_live->setEnabled(true);
-    }
+    ui->cb_clone_live->setEnabled(isRunningLive());
 }
 
 // Build the option list to be passed to live-usb-maker
@@ -152,6 +154,9 @@ QString MainWindow::buildOptionList()
     }
     if (ui->cb_force_makefs->isChecked()) {
         options += "--force=makefs ";
+    }
+    if (ui->cb_dd->isChecked()) {
+
     }
     switch(ui->sliderVerbosity->value()) {
     case 1 : options += "-V ";
@@ -390,9 +395,9 @@ void MainWindow::on_edit_label_textChanged(QString arg1)
 //    ui->lineEdit->setFocus();
 //}
 
-void MainWindow::on_cb_update_clicked()
+void MainWindow::on_cb_update_clicked(bool checked)
 {
-    if (ui->cb_update->isChecked()) {
+    if (checked) {
         ui->cb_save_boot->setEnabled(true);
     } else {
         ui->cb_save_boot->setChecked(false);
@@ -400,10 +405,10 @@ void MainWindow::on_cb_update_clicked()
     }
 }
 
-void MainWindow::on_cb_clone_mode_clicked()
+void MainWindow::on_cb_clone_mode_clicked(bool checked)
 {
-    ui->cb_clone_live->setChecked(false);
-    if (ui->cb_clone_mode->isChecked()) {
+     if (checked) {
+        ui->cb_clone_live->setChecked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->buttonSelectSource->setText(tr("Select Source Directory"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("folder"));
@@ -411,13 +416,14 @@ void MainWindow::on_cb_clone_mode_clicked()
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->buttonSelectSource->setText(tr("Select ISO"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
+        ui->cb_clone_live->setEnabled(isRunningLive());
     }
 }
 
-void MainWindow::on_cb_clone_live_clicked()
+void MainWindow::on_cb_clone_live_clicked(bool checked)
 {
-    ui->cb_clone_mode->setChecked(false);
-    if (ui->cb_clone_live->isChecked()){
+    if (checked){
+        ui->cb_clone_mode->setChecked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->buttonSelectSource->setEnabled(false);
         ui->buttonSelectSource->setText(tr("clone"));
@@ -429,5 +435,21 @@ void MainWindow::on_cb_clone_live_clicked()
         ui->buttonSelectSource->setText(tr("Select ISO"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
         ui->buttonSelectSource->blockSignals(false);
+    }
+}
+
+void MainWindow::on_cb_dd_clicked(bool checked)
+{
+    if (checked) {
+        ui->cb_clone_live->setChecked(false);
+        ui->cb_clone_mode->setChecked(false);
+        ui->cb_encrypt->setChecked(false);
+        ui->cb_clone_live->setEnabled(false);
+        ui->cb_clone_mode->setEnabled(false);
+        ui->cb_encrypt->setEnabled(false);
+    } else {
+        ui->cb_clone_live->setEnabled(isRunningLive());
+        ui->cb_clone_mode->setEnabled(true);
+        ui->cb_encrypt->setEnabled(true);
     }
 }

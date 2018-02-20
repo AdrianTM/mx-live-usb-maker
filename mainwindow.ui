@@ -222,7 +222,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="selectionPage">
       <layout class="QGridLayout" name="gridLayout">
@@ -452,35 +452,21 @@
              <item row="8" column="0">
               <widget class="QCheckBox" name="cb_set_pmbr_boot">
                <property name="text">
-                <string>Set pmbr_boot disk flag (prevents booting via UEFI)</string>
+                <string>Set pmbr_boot disk flag (won't boot via UEFI)</string>
                </property>
               </widget>
              </item>
-             <item row="11" column="0">
-              <widget class="QCheckBox" name="cb_force_usb">
-               <property name="text">
-                <string>Force: ignore USB/removable check</string>
-               </property>
-              </widget>
-             </item>
-             <item row="12" column="0">
-              <widget class="QCheckBox" name="cb_force_ultra_fit">
-               <property name="text">
-                <string>Force: ultra-fit. Don't warn about SanDisk utra-fit devices</string>
-               </property>
-              </widget>
-             </item>
-             <item row="13" column="0">
+             <item row="14" column="0">
               <widget class="QCheckBox" name="cb_force_makefs">
                <property name="text">
                 <string>Force: makefs. Make the ext4 filesystem even if one exists</string>
                </property>
               </widget>
              </item>
-             <item row="14" column="0">
-              <widget class="QCheckBox" name="cb_force_automount">
+             <item row="12" column="0">
+              <widget class="QCheckBox" name="cb_force_ultra_fit">
                <property name="text">
-                <string>Force: automount. Temporarily disable automounting</string>
+                <string>Don't warn about SanDisk utra-fit devices</string>
                </property>
               </widget>
              </item>
@@ -488,6 +474,20 @@
               <widget class="QCheckBox" name="cb_save_boot">
                <property name="text">
                 <string>Save the original boot directory when updating a live-usb</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="0">
+              <widget class="QCheckBox" name="cb_force_usb">
+               <property name="text">
+                <string>Force: ignore USB/removable check</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
+              <widget class="QCheckBox" name="cb_force_automount">
+               <property name="text">
+                <string>Temporarily disable automounting</string>
                </property>
               </widget>
              </item>
@@ -537,6 +537,16 @@
               <widget class="QCheckBox" name="cb_clone_live">
                <property name="text">
                 <string>Clone running live system</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QCheckBox" name="cb_dd">
+               <property name="toolTip">
+                <string>read-only, cannot be used with persistency</string>
+               </property>
+               <property name="text">
+                <string>dd clone mode</string>
                </property>
               </widget>
              </item>

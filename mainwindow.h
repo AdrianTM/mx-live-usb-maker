@@ -49,6 +49,7 @@ public:
 
     bool checkISO();
     bool checkSize();
+    bool isRunningLive();
     void makeUsb(const QString &options);
     void progress();
     void setup();
@@ -77,9 +78,10 @@ private slots:
     void on_edit_label_textChanged(QString arg1);
 //    void on_buttonEnter_clicked();
 //    void on_lineEdit_returnPressed();
-    void on_cb_update_clicked();
-    void on_cb_clone_mode_clicked();
-    void on_cb_clone_live_clicked();
+    void on_cb_update_clicked(bool checked);
+    void on_cb_clone_mode_clicked(bool checked);
+    void on_cb_clone_live_clicked(bool checked);
+    void on_cb_dd_clicked(bool checked);
 
 private:
     Ui::MainWindow *ui;
