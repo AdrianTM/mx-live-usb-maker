@@ -65,6 +65,16 @@ void MainWindow::makeUsb(const QString &options)
         QString source_size = cmd->getOutput("du -m --summarize " + ui->buttonSelectSource->text() + " 2>/dev/null | cut -f1", QStringList() << "quiet");
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
         source = "clone=" + ui->buttonSelectSource->text();
+
+        // check if source and destination are on the same drive
+        QString root_partition = cmd->getOutput("df --output=source " + ui->buttonSelectSource->text() + "| awk 'END{print $1}'");
+        if ("/dev/" + device == cmd->getOutput(cli_utils + "get_drive " + root_partition)) {
+            QMessageBox::critical(this, tr("Failure"), tr("Source and destination are on the same device, please select again."));
+            ui->stackedWidget->setCurrentWidget(ui->selectionPage);
+            ui->buttonNext->setEnabled(true);
+            setCursor(QCursor(Qt::ArrowCursor));
+            return;
+        }
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
         QString source_size = cmd->getOutput("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", QStringList() << "quiet");
@@ -203,7 +213,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     foreach (const QString line, devices) {
         name = line.split(" ").at(0);
         if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
-            if (cmd->getOutput(cli_utils + "$(get_drive $(get_live_dev)) ") != name) {
+            if (cmd->getOutput(cli_utils + "get_drive $(get_live_dev) ") != name) {
                 list << line;
             }
         }
