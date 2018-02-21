@@ -79,6 +79,11 @@ void MainWindow::makeUsb(const QString &options)
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
     QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
+    if (ui->cb_dd->isChecked()) {
+        cmdstr = QString("dd bs=1M if=" + source + " of=/dev/" + device);
+        ui->outputBox->appendPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
+                                          "Please wait until the the process is completed").arg(source).arg(device));
+    }
     setConnections();
     qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
 }
@@ -371,6 +376,7 @@ void MainWindow::on_buttonOptions_clicked()
        ui->buttonOptions->setText(tr("Show advanced options"));
        ui->buttonOptions->setIcon(QIcon::fromTheme("down"));
        this->setMaximumHeight(height);
+
     }
 }
 
@@ -447,9 +453,24 @@ void MainWindow::on_cb_dd_clicked(bool checked)
         ui->cb_clone_live->setEnabled(false);
         ui->cb_clone_mode->setEnabled(false);
         ui->cb_encrypt->setEnabled(false);
+        ui->cb_pretend->setEnabled(false);
+        if (ui->groupAdvOptions->isVisible()) {
+            on_buttonOptions_clicked();
+        }
+        ui->buttonOptions->setEnabled(false);
+        ui->label_percent->setEnabled(false);
+        ui->label_part_label->setEnabled(false);
+        ui->spinBoxSize->setEnabled(false);
+        ui->edit_label->setEnabled(false);
     } else {
         ui->cb_clone_live->setEnabled(isRunningLive());
         ui->cb_clone_mode->setEnabled(true);
         ui->cb_encrypt->setEnabled(true);
+        ui->cb_pretend->setEnabled(true);
+        ui->buttonOptions->setEnabled(true);
+        ui->label_percent->setEnabled(true);
+        ui->label_part_label->setEnabled(true);
+        ui->spinBoxSize->setEnabled(true);
+        ui->edit_label->setEnabled(true);
     }
 }

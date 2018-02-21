@@ -344,6 +344,9 @@
          <property name="title">
           <string>Advanced Options</string>
          </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
          <layout class="QGridLayout" name="gridLayout_5">
           <item row="13" column="0">
            <widget class="QLabel" name="labelVerbosity">
@@ -567,7 +570,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="label_percent">
             <property name="text">
              <string>Percent of USB-device to use:</string>
             </property>
@@ -590,7 +593,7 @@
            </spacer>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="label_part_label">
             <property name="text">
              <string>Label ext partition:</string>
             </property>
