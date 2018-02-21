@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Tue, 06 Feb 2018 00:31:50 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 0.18.02
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (0.18.02) UNRELEASED; urgency=medium
+ .
+   * Add progress bar
+Checksums-Sha1:
+ 58043fd016ce3f2ce0e69b98be862408f20e63f6 1104 mx-live-usb-maker_0.18.02.dsc
+ 81ab66c3eb75adff00d56d40ab9602d9f2bab0c3 17040 mx-live-usb-maker_0.18.02.tar.xz
+ 5a6a2592b270b8c649d0f5d2fb7fd0ee1ef4f5bb 41458 mx-live-usb-maker_0.18.02_amd64.deb
+Checksums-Sha256:
+ 802c9777169248b4840188ecb7ac94c217f716d71ba001fa9ffaf1ce362c10ad 1104 mx-live-usb-maker_0.18.02.dsc
+ 0bd604b48e4f4a0e31b7eb95305dbd41b47da7a7599a695af5a99a19bcb5b70a 17040 mx-live-usb-maker_0.18.02.tar.xz
+ de012c6f2959e69dc6f5e7c617e7e4ced2e90e917926bcda8af9cf4ea994d6c6 41458 mx-live-usb-maker_0.18.02_amd64.deb
+Files:
+ 28dde8a0e1868a66825ef6afeb7b32f6 1104 admin optional mx-live-usb-maker_0.18.02.dsc
+ 11e928ec0f62648f61cb30e1317aaa16 17040 admin optional mx-live-usb-maker_0.18.02.tar.xz
+ 80b2274409f43e14fc39c61ff645ffd5 41458 admin optional mx-live-usb-maker_0.18.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJajdVRAAoJEHCTjHgGee6Yrd4IAJsIs6QXcQnIqBN42LuwbxDh
+ddg3JclV6Re7vdpXzuKqF4vi+5T01jTV/sKZ/n+3VHu2G48n1dllbsQNDXZwb3TF
+F10SWpJ4HVlXuppPK+/brsSyaZpyKp38hfX5lyst6DGkuR1MT3p/aG4ec9jxpVNy
+7c6c6DdwCj2+75mVI5EiRn8YbzQ/KSS/47ZmTf1mmroB9l1w6r/Om0apTF8WaWDr
+Pb3gv9EtA51NWCwCxXqhihoBZA5Rvamj+s0RmdKWzKnS4/lmIALsgSxjCjolzAqv
+1lLsvnjKawlh8X7IgL4JoiAwhXcndpNLPJfz6GVgyo7xFP6sidRqE5zgiqv2TjE=
+=9FxD
+-----END PGP SIGNATURE-----
