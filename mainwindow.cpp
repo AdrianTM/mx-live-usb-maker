@@ -354,8 +354,10 @@ void MainWindow::on_buttonSelectSource_clicked()
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = dialog.getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
-        if (selected != "") {
+        if (QFile(selected + "/antiX/linuxfs").exists()) {
             ui->buttonSelectSource->setText(selected);
+        } else {
+            QMessageBox::critical(this, tr("Failure"), tr("Cound not find antiX/linuxfs file on selected %1 folder").arg(selected));
         }
     }
 }
