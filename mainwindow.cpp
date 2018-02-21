@@ -203,7 +203,9 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     foreach (const QString line, devices) {
         name = line.split(" ").at(0);
         if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
-            list << line;
+            if (cmd->getOutput(cli_utils + "$(get_drive $(get_live_dev)) ") != name) {
+                list << line;
+            }
         }
     }
     return list;
