@@ -164,9 +164,6 @@ QString MainWindow::buildOptionList()
     if (ui->cb_force_automount->isChecked()) {
         options += "--force=automout ";
     }
-    if (ui->cb_force_ultra_fit->isChecked()) {
-        options += "--force=ultra-fit ";
-    }
     if (ui->cb_force_makefs->isChecked()) {
         options += "--force=makefs ";
     }

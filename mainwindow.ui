@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Program_Name</string>
   </property>
+  <property name="toolTip">
+   <string>Use gpt partitioning instead of msdos</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="2" column="0">
     <layout class="QGridLayout" name="buttonBar" columnstretch="0,0,0,0,0,0,0,0,0,0,0">
@@ -437,66 +440,68 @@
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
-             <item row="4" column="0">
-              <widget class="QCheckBox" name="cb_gpt">
-               <property name="text">
-                <string>GPT partitioning</string>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="0">
-              <widget class="QCheckBox" name="cb_update">
-               <property name="text">
-                <string>Update (only update an existing live-usb)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QCheckBox" name="cb_keep">
-               <property name="text">
-                <string>Keep syslinux files (don't replace syslinux files)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="13" column="1">
-              <widget class="QCheckBox" name="cb_force_usb">
-               <property name="text">
-                <string>Ignore USB/removable check</string>
-               </property>
-              </widget>
-             </item>
-             <item row="10" column="0">
-              <widget class="QCheckBox" name="cb_save_boot">
-               <property name="text">
-                <string>Save the original boot directory when updating a live-usb</string>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="1">
-              <widget class="QCheckBox" name="cb_force_ultra_fit">
-               <property name="text">
-                <string>Don't warn about SanDisk utra-fit devices</string>
-               </property>
-              </widget>
-             </item>
-             <item row="10" column="1">
+             <item row="1" column="1">
               <widget class="QCheckBox" name="cb_force_makefs">
                <property name="text">
                 <string>Make the ext4 filesystem even if one exists</string>
                </property>
               </widget>
              </item>
-             <item row="13" column="0">
-              <widget class="QCheckBox" name="cb_set_pmbr_boot">
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="cb_save_boot">
                <property name="text">
-                <string>Set pmbr_boot disk flag (won't boot via UEFI)</string>
+                <string>Save the original boot directory when updating a live-usb</string>
                </property>
               </widget>
              </item>
-             <item row="16" column="0">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="cb_gpt">
+               <property name="toolTip">
+                <string>Use gpt partitioning instead of msdos</string>
+               </property>
+               <property name="text">
+                <string>GPT partitioning</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="cb_update">
+               <property name="text">
+                <string>Update (only update an existing live-usb)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="cb_keep">
+               <property name="toolTip">
+                <string>Don't replace syslinux files</string>
+               </property>
+               <property name="text">
+                <string>Keep syslinux files</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="cb_force_usb">
+               <property name="text">
+                <string>Ignore USB/removable check</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
               <widget class="QCheckBox" name="cb_force_automount">
                <property name="text">
                 <string>Temporarily disable automounting</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="cb_set_pmbr_boot">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Set pmbr_boot disk flag (won't boot via UEFI)</string>
                </property>
               </widget>
              </item>
@@ -523,6 +528,9 @@
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="0">
               <widget class="QCheckBox" name="cb_pretend">
+               <property name="toolTip">
+                <string>Don't run commands that affect the usb device</string>
+               </property>
                <property name="text">
                 <string>Pretend (don't write on USB)</string>
                </property>
@@ -530,6 +538,9 @@
              </item>
              <item row="0" column="1">
               <widget class="QCheckBox" name="cb_clone_mode">
+               <property name="toolTip">
+                <string>clone from a mounted live-usb or iso-file.</string>
+               </property>
                <property name="text">
                 <string>Clone an existing live system</string>
                </property>
@@ -537,6 +548,9 @@
              </item>
              <item row="1" column="0">
               <widget class="QCheckBox" name="cb_encrypt">
+               <property name="toolTip">
+                <string>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</string>
+               </property>
                <property name="text">
                 <string>Encrypt</string>
                </property>
@@ -552,7 +566,7 @@
              <item row="0" column="2">
               <widget class="QCheckBox" name="cb_dd">
                <property name="toolTip">
-                <string>read-only, cannot be used with persistency</string>
+                <string>Read-only, cannot be used with persistency</string>
                </property>
                <property name="text">
                 <string>Copy image to USB (dd)</string>
