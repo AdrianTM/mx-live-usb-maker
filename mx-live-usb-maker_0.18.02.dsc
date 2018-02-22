@@ -7,25 +7,25 @@ Binary: mx-live-usb-maker
 Architecture: any
 Version: 0.18.02
 Maintainer: Adrian <adrian@mxlinux.org>
-Standards-Version: 3.9.5
-Build-Depends: qt5-qmake, debhelper (>= 7.0.50~)
+Standards-Version: 3.9.8
+Build-Depends: qt5-qmake, debhelper (>= 9)
 Package-List:
  mx-live-usb-maker deb admin optional arch=any
 Checksums-Sha1:
- 54b740e3e05f8f745d69ed6cdc26a4cbd265b1b3 17224 mx-live-usb-maker_0.18.02.tar.xz
+ 2583161967c4f36b3edda0f3a89284e5ac7bc144 17228 mx-live-usb-maker_0.18.02.tar.xz
 Checksums-Sha256:
- 4207db288ecc42606c7a35c381a4fd3287826b6fc998e696bc3dc3967a3c59bd 17224 mx-live-usb-maker_0.18.02.tar.xz
+ 8c4f139c9bd69921a65c6f64c3793a00024f44a357ab317e129795e224822b1d 17228 mx-live-usb-maker_0.18.02.tar.xz
 Files:
- 04c97e3ae82900a754d04567354e57d5 17224 mx-live-usb-maker_0.18.02.tar.xz
+ 7fbae0b941cf419293352b93425aa5ae 17228 mx-live-usb-maker_0.18.02.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJajvzvAAoJEHCTjHgGee6YXYQH/01LQLm6Ez8BiZsw5DaCmbg0
-MqjSc1J5B2p3IsNKdYFcQIhmImKZ84TJtuzn+TRAQX0wzWvVIoqSRXc1q6jeO1Fl
-uIJfYVPiEtc6ldrH3+70fS0Pb8ihGhQr66faWbbsQ442c5cVEG210Bor8m+F9wiZ
-mBQYm/Ova+qDHeUUw+AKkqc58A9pmo8Zjz9FBbQWygEzef95JW7+FBR6XivbOnge
-aVtQhH7T99QAR9Kh98vwzpTX/xyk6wWtqRAloeLaGtl/ZdM9f8Z4N54A8IgIlhvJ
-t5pE2IHx8RqLckbfeMDFodH63pF80hbptgLPoHscZkBQNXYzExibSK32bLFQI40=
-=dfKN
+iQEcBAEBAgAGBQJajw5LAAoJEHCTjHgGee6YPEoH/381wvOK2wdNrziqx6LtmoPa
+229zAQ7TDIzXj0FeBghirc8tZeUhT8wMe4OPpIc0hZ+Z0JNsvGtURvIuc1MN0IXe
++BundttyIVlU/F/cMrSqdPo4Ufssu4vrr+ABu48vmAoZgZnNQbffCGa8HouC54ds
++21weyDn1oobNl4Q9aXDr4yPJtHbPp4vqsvMD1rJ4jhszMF5S8Bpl1e4E3WCViQI
+oWsGXU01UpWsaddO2WGcBay4LHipeNFDYapc82C54KbVYtSXTGsoSQh7ODaMuodA
+j06dlkFy8wvpc7pxzhCgufLsKRDvnwndbw3+cJ+tlAyn6QoGVbYv3eYMvV2jkTg=
+=ilKe
 -----END PGP SIGNATURE-----

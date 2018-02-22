@@ -3,12 +3,12 @@ Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
 Build-Depends: qt5-qmake,
-	debhelper (>=7.0.50~)
-Standards-Version: 3.9.5
+	debhelper (>=9)
+Standards-Version: 3.9.8
 
 Package: CUSTOMPROGRAMNAME
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, libcmd
+Depends: ${misc:Depends}, ${shlibs:Depends}, live-usb-maker, libcmd
 Description: CUSTOMPROGRAMNAME
  CUSTOMPROGRAMNAME
 

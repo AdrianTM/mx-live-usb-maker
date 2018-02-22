@@ -162,7 +162,7 @@ QString MainWindow::buildOptionList()
         options += "--force=usb ";
     }
     if (ui->cb_force_automount->isChecked()) {
-        options += "--force=automout ";
+        options += "--force=automount ";
     }
     if (ui->cb_force_makefs->isChecked()) {
         options += "--force=makefs ";
