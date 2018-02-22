@@ -451,31 +451,17 @@
                </property>
               </widget>
              </item>
-             <item row="5" column="0">
+             <item row="4" column="1">
               <widget class="QCheckBox" name="cb_keep">
                <property name="text">
                 <string>Keep syslinux files (don't replace syslinux files)</string>
                </property>
               </widget>
              </item>
-             <item row="8" column="0">
-              <widget class="QCheckBox" name="cb_set_pmbr_boot">
+             <item row="13" column="1">
+              <widget class="QCheckBox" name="cb_force_usb">
                <property name="text">
-                <string>Set pmbr_boot disk flag (won't boot via UEFI)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="14" column="0">
-              <widget class="QCheckBox" name="cb_force_makefs">
-               <property name="text">
-                <string>Force: makefs. Make the ext4 filesystem even if one exists</string>
-               </property>
-              </widget>
-             </item>
-             <item row="12" column="0">
-              <widget class="QCheckBox" name="cb_force_ultra_fit">
-               <property name="text">
-                <string>Don't warn about SanDisk utra-fit devices</string>
+                <string>Ignore USB/removable check</string>
                </property>
               </widget>
              </item>
@@ -486,14 +472,28 @@
                </property>
               </widget>
              </item>
-             <item row="15" column="0">
-              <widget class="QCheckBox" name="cb_force_usb">
+             <item row="9" column="1">
+              <widget class="QCheckBox" name="cb_force_ultra_fit">
                <property name="text">
-                <string>Force: ignore USB/removable check</string>
+                <string>Don't warn about SanDisk utra-fit devices</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QCheckBox" name="cb_force_makefs">
+               <property name="text">
+                <string>Make the ext4 filesystem even if one exists</string>
                </property>
               </widget>
              </item>
              <item row="13" column="0">
+              <widget class="QCheckBox" name="cb_set_pmbr_boot">
+               <property name="text">
+                <string>Set pmbr_boot disk flag (won't boot via UEFI)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="0">
               <widget class="QCheckBox" name="cb_force_automount">
                <property name="text">
                 <string>Temporarily disable automounting</string>
@@ -555,7 +555,7 @@
                 <string>read-only, cannot be used with persistency</string>
                </property>
                <property name="text">
-                <string>dd clone mode</string>
+                <string>Copy image to USB (dd)</string>
                </property>
               </widget>
              </item>
