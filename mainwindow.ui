@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>Program_Name</string>
   </property>
-  <property name="toolTip">
-   <string>Use gpt partitioning instead of msdos</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="2" column="0">
     <layout class="QGridLayout" name="buttonBar" columnstretch="0,0,0,0,0,0,0,0,0,0,0">
