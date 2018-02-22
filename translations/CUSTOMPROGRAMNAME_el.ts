@@ -9,216 +9,221 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="457"/>
+        <location filename="../mainwindow.ui" line="252"/>
         <source>Use gpt partitioning instead of msdos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="89"/>
+        <location filename="../mainwindow.ui" line="458"/>
+        <source>For other distros than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="558"/>
         <source>Display help </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="92"/>
+        <location filename="../mainwindow.ui" line="561"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="100"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Alt+H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="202"/>
+        <location filename="../mainwindow.ui" line="671"/>
         <source>About this application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="205"/>
+        <location filename="../mainwindow.ui" line="674"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="213"/>
+        <location filename="../mainwindow.ui" line="682"/>
         <source>Alt+B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="309"/>
+        <location filename="../mainwindow.ui" line="104"/>
         <location filename="../mainwindow.cpp" line="434"/>
         <location filename="../mainwindow.cpp" line="452"/>
         <source>Select ISO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="474"/>
+        <location filename="../mainwindow.ui" line="269"/>
         <source>Don&apos;t replace syslinux files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="477"/>
+        <location filename="../mainwindow.ui" line="272"/>
         <source>Keep syslinux files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="529"/>
+        <location filename="../mainwindow.ui" line="324"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="539"/>
+        <location filename="../mainwindow.ui" line="334"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="549"/>
+        <location filename="../mainwindow.ui" line="344"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="566"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="569"/>
+        <location filename="../mainwindow.ui" line="364"/>
         <source>Copy image to USB (dd)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="248"/>
+        <location filename="../mainwindow.ui" line="43"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="238"/>
+        <location filename="../mainwindow.ui" line="33"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="258"/>
+        <location filename="../mainwindow.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Live-USB Maker GUI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="128"/>
         <location filename="../mainwindow.cpp" line="381"/>
         <location filename="../mainwindow.cpp" line="387"/>
         <source>Show advanced options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="484"/>
+        <location filename="../mainwindow.ui" line="279"/>
         <source>Ignore USB/removable check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="443"/>
+        <location filename="../mainwindow.ui" line="238"/>
         <source>Make the ext4 filesystem even if one exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="501"/>
+        <location filename="../mainwindow.ui" line="296"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="450"/>
+        <location filename="../mainwindow.ui" line="245"/>
         <source>Save the original boot directory when updating a live-usb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="491"/>
+        <location filename="../mainwindow.ui" line="286"/>
         <source>Temporarily disable automounting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="514"/>
+        <location filename="../mainwindow.ui" line="309"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="351"/>
+        <location filename="../mainwindow.ui" line="146"/>
         <source>Advanced Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="411"/>
+        <location filename="../mainwindow.ui" line="206"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="542"/>
+        <location filename="../mainwindow.ui" line="337"/>
         <source>Clone an existing live system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="559"/>
+        <location filename="../mainwindow.ui" line="354"/>
         <source>Clone running live system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="592"/>
+        <location filename="../mainwindow.ui" line="387"/>
         <source>Percent of USB-device to use:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="615"/>
+        <location filename="../mainwindow.ui" line="410"/>
         <source>Label ext partition:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="552"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="532"/>
+        <location filename="../mainwindow.ui" line="327"/>
         <source>Pretend (don&apos;t write on USB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="460"/>
+        <location filename="../mainwindow.ui" line="255"/>
         <source>GPT partitioning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="467"/>
+        <location filename="../mainwindow.ui" line="262"/>
         <source>Update (only update an existing live-usb)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="360"/>
+        <location filename="../mainwindow.ui" line="155"/>
         <source>Verbosity (less to more):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="321"/>
+        <location filename="../mainwindow.ui" line="116"/>
         <source>Refresh drive list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="46"/>
+        <location filename="../mainwindow.ui" line="515"/>
         <source>Quit application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="49"/>
+        <location filename="../mainwindow.ui" line="518"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="57"/>
+        <location filename="../mainwindow.ui" line="526"/>
         <source>Alt+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="175"/>
+        <location filename="../mainwindow.ui" line="644"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="116"/>
+        <location filename="../mainwindow.ui" line="585"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
