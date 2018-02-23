@@ -18,20 +18,20 @@ Changes:
  .
    * Add progress bar
 Checksums-Sha1:
- c26462c7f8d4c5cf73b84ef9fc74e52a48118fe0 42788 mx-live-usb-maker_0.18.02_i386.deb
+ 55277a8ebbcd90ea93bf4b47d3a29973a1a7ecd5 42676 mx-live-usb-maker_0.18.02_i386.deb
 Checksums-Sha256:
- 1e81dff70bddf24efcd23dae1955a3d2ef8bac8a8e81771bd8d9d9a85b79e43e 42788 mx-live-usb-maker_0.18.02_i386.deb
+ a78b0fa38c334004b36c6f6d2a7994c7d9a45c00b2007fd6eac17a700710c1e1 42676 mx-live-usb-maker_0.18.02_i386.deb
 Files:
- 559b88ba12a72cadb796a83b63c1e1b8 42788 admin optional mx-live-usb-maker_0.18.02_i386.deb
+ 9eeece88450a5e66811e4d68cd811f88 42676 admin optional mx-live-usb-maker_0.18.02_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJakBYzAAoJEHCTjHgGee6YMFUH/1IikSxK+MxKV/h1HtSYMc7F
-ABWFXXgtVZnwuKXTFYYzvntQ4Vl3ljAoWtvXkSIf3pp2tC3m+OAnaFez42k1NJjZ
-+mjKHcagiMfg4FKxzRPwRLaDwO5XpN5woPCK6BYVxhxLsDo/n2PGJEiYH0nKjMr+
-G/1Z0c2LKptdSkNBoiCV9nlHcAngn3P9XfRbWPeCNU6l0/moHRfXCaQp86GGFIVh
-zDgfagwIE/nBvt/70DLx5nj/MmVvv9DeR0ygRwaaCITzVoUOuqDqgMviL8JQ79Jl
-WAnp0iUrzG9r+UWwvK2m4QrNjbx8uyKrJIfncvaz8CZwrzZIfhGyhY8mjFZCJJI=
-=l5C/
+iQEcBAEBAgAGBQJakDBMAAoJEHCTjHgGee6YR2cH/Rw/q1g777B9RBArLUcfGm9O
+u64CBnEiUjckwmzu0kLs4+A2hzfHO7YZIWf+4VfPh5e2p2ADffuzURlvUWU3Yyp4
+km0ZcNgsAM4a7ne2pcYeainJCotKLkeYOT2D2Lx7j3b7jCPriCBIIb6qt+muApDI
+iA4yOMwOGxIMwski+PdLHVQG2FZgYwpCHJj3UDIJBabj3dFhkrsym96QglsEJiM5
+tkAGey0tZd0I5OG+3Frsb5s5QUjAmVpxMgETzycm/d/05yieJysSX6ypttNkXF/v
+1IoizSRtNx1Z6+kUgeYwKY8AVQ5bTQ8T58NCgyI/vpNOVePrW6HdCwSgzq15wBg=
+=faaR
 -----END PGP SIGNATURE-----

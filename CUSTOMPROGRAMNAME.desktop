@@ -1,15 +1,15 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Program_Name
-Name[ca]=Program_Name
-Name[de]=Program_Name
-Name[el]=Program_Name
-Name[es]=Program_Name
-Name[fr]=Program_Name
-Name[it]=Program_Name
-Name[ja]=Program_Name
-Name[nl]=Program_Name
-Name[sv]=Program_Name
+Name=Custom_Program_Name
+Name[ca]=Custom_Program_Name
+Name[de]=Custom_Program_Name
+Name[el]=Custom_Program_Name
+Name[es]=Custom_Program_Name
+Name[fr]=Custom_Program_Name
+Name[it]=Custom_Program_Name
+Name[ja]=Custom_Program_Name
+Name[nl]=Custom_Program_Name
+Name[sv]=Custom_Program_Name
 Comment=
 Comment[ca]=
 Comment[de]=
