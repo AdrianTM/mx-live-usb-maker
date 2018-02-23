@@ -14,6 +14,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="327"/>
+        <source>Dry run (no change to system)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="558"/>
         <source>Display help </source>
         <translation type="unfinished"></translation>
@@ -170,11 +175,6 @@
     <message>
         <location filename="../mainwindow.ui" line="347"/>
         <source>Encrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="327"/>
-        <source>Pretend (don&apos;t write on USB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

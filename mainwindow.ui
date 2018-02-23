@@ -324,7 +324,7 @@
                 <string>Don't run commands that affect the usb device</string>
                </property>
                <property name="text">
-                <string>Pretend (don't write on USB)</string>
+                <string>Dry run (no change to system)</string>
                </property>
               </widget>
              </item>

@@ -18,26 +18,26 @@ Changes:
  .
    * Add progress bar
 Checksums-Sha1:
- cc1bd80ad5a2277d6a44524bf272414d3b44da3c 1098 mx-live-usb-maker_0.18.02.dsc
- 4b6c83491b3ca975fccb2faf0d3249ff9a863d5f 17240 mx-live-usb-maker_0.18.02.tar.xz
- 76d852a3bfb68ec20fbbbd2e1f6ca97a4dfcae65 42266 mx-live-usb-maker_0.18.02_amd64.deb
+ c6eb5c3849fdf71a0565acb715ec6c4fa393e9d2 1098 mx-live-usb-maker_0.18.02.dsc
+ 75a601f870ef29751329b26c9623059a484b67c2 17228 mx-live-usb-maker_0.18.02.tar.xz
+ d38a718aae4e9c575d7675b5d7d20a9c00934424 42454 mx-live-usb-maker_0.18.02_amd64.deb
 Checksums-Sha256:
- c976c684bae50c683a1ed8b3e6fc9874c21e6b392ba14efc195a3c1e15d67b5f 1098 mx-live-usb-maker_0.18.02.dsc
- ec1a872b0bf2eb09deee962a5bc7b4ff5a78dbe8b129800544e151794d200f67 17240 mx-live-usb-maker_0.18.02.tar.xz
- 16dcb427f387932b4b4188dde4d590baf6bf1ea9357e70abdb53e34de18b0982 42266 mx-live-usb-maker_0.18.02_amd64.deb
+ d4e35e9d4ac740724abeb85d5ad72764edcb069899816c3d8a15841d449f0479 1098 mx-live-usb-maker_0.18.02.dsc
+ 8dfe3742c759bb68f14b198ef4b52086cda7a9baa4db324e61e1b40794689cf5 17228 mx-live-usb-maker_0.18.02.tar.xz
+ 0c730f5b0e379e50e19e4051544c3333d5d6769bde47b75a9bbc26a555395520 42454 mx-live-usb-maker_0.18.02_amd64.deb
 Files:
- a3915d332bc2a92e69aa92c6dd60b338 1098 admin optional mx-live-usb-maker_0.18.02.dsc
- 251d1e74ee2f3e581dfa808b1b19e87d 17240 admin optional mx-live-usb-maker_0.18.02.tar.xz
- 9cf855ff3164b8a5ba4ebdcd42b7ff7d 42266 admin optional mx-live-usb-maker_0.18.02_amd64.deb
+ 7ad33a7d7d0cd4c5dea763d64f3af23e 1098 admin optional mx-live-usb-maker_0.18.02.dsc
+ f1995c29f12cda27346a06d8be6a60ff 17228 admin optional mx-live-usb-maker_0.18.02.tar.xz
+ 86e78a90c3aadf47aa7f81bdc88053f3 42454 admin optional mx-live-usb-maker_0.18.02_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJakDXwAAoJEHCTjHgGee6YmsEH/A6zBRNMVa7WyYjh9T/soRdm
-wM4dKvwadjHlAZIbxFlE3FXKA2+DPZbnutsNq+pKwAVSaXgH0B2leai9YT4dCczT
-v4354BjeBwj1sz5VIiulVGV3JiAX6G4VerRFb7G6TmOZgsgHTbqji4tjIk7qry/U
-qCEZPr42ZlFgTOwD2HFnp1Tmw6Qp0OI5F1K6+4fw8e7ShgMW/TECJxSfsN/FLGdt
-ttga8hz7R1BmqCPDj2XEThM3gi2Zi0eXINCewccpz7SNuM/hhyWc3cC9TcT1LDzE
-TnxElgb3Zg7Eit+ilj1Bb2H1HD/nYSH4xsfCV7pXebXVexPdUhw2joJ62hsj3X0=
-=e7gb
+iQEcBAEBAgAGBQJakDkqAAoJEHCTjHgGee6Y42UIAJmyX8l4n1lQGKPxeaLw17wg
+pu7GuXNkBRTJB00e1lBcXdJRLpwuwGERzOHMgNrO57zEwh9+0vdS63H02IwWemMU
+naGcWwwmqrmGeuCj5UhqPEiDD5TDi5ge0Vv08UUadkA3KDNjr7LmAdWgXIc3Pncc
+MHqQqFybfko7VywbHlAO1YbxkDvt+3vNEXGnWxx2RSx2AkgXEegVUahIJSKFWpSU
+ZjOp1HP1TbFUyzpQXYfI8uvqBjXINMZz3iwcV+dE+Jpy9dJequ65TFeWzKRKUxas
+iAsVAqYjCROrnTTFAdFLsVukTR74QWfe4/UcoU+HFkWCQdjVrsqxvu957OBBu7c=
+=0ZRT
 -----END PGP SIGNATURE-----
