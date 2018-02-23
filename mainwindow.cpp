@@ -365,7 +365,8 @@ void MainWindow::on_buttonSelectSource_clicked()
         if (QFile(selected + "/antiX/linuxfs").exists()) {
             ui->buttonSelectSource->setText(selected);
         } else {
-            QMessageBox::critical(this, tr("Failure"), tr("Cound not find antiX/linuxfs file on selected %1 folder").arg(selected));
+            selected = (selected == "/") ? "" : selected;
+            QMessageBox::critical(this, tr("Failure"), tr("Could not find %1/antiX/linuxfs file").arg(selected));
         }
     }
 }
