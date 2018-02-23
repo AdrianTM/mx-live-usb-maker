@@ -14,11 +14,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="458"/>
-        <source>For other distros than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="558"/>
         <source>Display help </source>
         <translation type="unfinished"></translation>
@@ -200,6 +195,11 @@
     <message>
         <location filename="../mainwindow.ui" line="116"/>
         <source>Refresh drive list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="458"/>
+        <source>For distros other than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

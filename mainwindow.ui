@@ -455,7 +455,7 @@
           </font>
          </property>
          <property name="text">
-          <string>For other distros than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</string>
+          <string>For distros other than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
