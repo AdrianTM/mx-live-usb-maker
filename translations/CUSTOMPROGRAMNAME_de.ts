@@ -50,8 +50,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="104"/>
-        <location filename="../mainwindow.cpp" line="433"/>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="455"/>
         <source>Select ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -107,8 +107,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="128"/>
-        <location filename="../mainwindow.cpp" line="380"/>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="384"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Show advanced options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -247,7 +247,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="72"/>
         <location filename="../mainwindow.cpp" line="236"/>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="370"/>
         <source>Failure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -273,7 +273,7 @@ Please wait until the the process is completed</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="285"/>
-        <location filename="../mainwindow.cpp" line="445"/>
+        <location filename="../mainwindow.cpp" line="449"/>
         <source>clone</source>
         <translation type="unfinished"></translation>
     </message>
@@ -299,7 +299,7 @@ Please wait until the the process is completed</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="329"/>
-        <location filename="../mainwindow.cpp" line="332"/>
+        <location filename="../mainwindow.cpp" line="333"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
@@ -309,35 +309,35 @@ Please wait until the the process is completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="356"/>
+        <location filename="../mainwindow.cpp" line="360"/>
         <source>Select a ISO file to write to the USB drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
-        <location filename="../mainwindow.cpp" line="429"/>
+        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="433"/>
         <source>Select Source Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="370"/>
         <source>Cound not find antiX/linuxfs file on selected %1 folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="386"/>
         <source>Hide advanced options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="428"/>
-        <location filename="../mainwindow.cpp" line="443"/>
+        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.cpp" line="447"/>
         <source>Select Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="432"/>
-        <location filename="../mainwindow.cpp" line="449"/>
+        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>Select ISO file</source>
         <translation type="unfinished"></translation>
     </message>

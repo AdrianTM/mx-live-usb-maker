@@ -329,7 +329,11 @@ void MainWindow::on_buttonAbout_clicked()
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
     msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
-        system("mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "'");
+        if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
+            system("mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "'");
+        } else {
+            system("xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html");
+        }
     }
     this->show();
 }
