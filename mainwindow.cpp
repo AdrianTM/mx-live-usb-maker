@@ -329,9 +329,9 @@ void MainWindow::on_buttonAbout_clicked()
     msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
         if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
-            system("mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "'");
+            system("mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "' &");
         } else {
-            system("xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html");
+            system("xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html &");
         }
     }
 }
