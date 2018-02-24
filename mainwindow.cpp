@@ -139,6 +139,9 @@ QString MainWindow::buildOptionList()
     }
     if (ui->cb_pretend->isChecked()) {
         options += "-p ";
+        if (ui->sliderVerbosity->value() == 0) { // add Verbosity of not selected, workaround for LUM bug
+            ui->sliderVerbosity->setSliderPosition(1);
+        }
     }
     if (ui->cb_save_boot->isChecked()) {
         options += "-S ";
