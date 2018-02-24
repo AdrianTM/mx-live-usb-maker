@@ -328,10 +328,12 @@ void MainWindow::on_buttonAbout_clicked()
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
     msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
+        Cmd c;
+        QString user = c.getOutput("logname");
         if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
-            system("mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "' &");
+            system("su " + user.toUtf8() + " -c \"mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "'\"&");
         } else {
-            system("xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html &");
+            system("su " + user.toUtf8() + " -c \"xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html\"&");
         }
     }
 }
@@ -344,7 +346,10 @@ void MainWindow::on_buttonHelp_clicked()
     if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
         exec = "mx-viewer";
     }
-    QString cmd = QString(exec + " " + url + "&");
+
+    Cmd c;
+    QString user = c.getOutput("logname");
+    QString cmd = QString("su " + user + " -c \"" + exec + " " + url + "\"&");
     system(cmd.toUtf8());
 }
 
