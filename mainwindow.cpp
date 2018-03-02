@@ -322,6 +322,7 @@ void MainWindow::on_buttonBack_clicked()
 // About button clicked
 void MainWindow::on_buttonAbout_clicked()
 {
+    this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " Custom_Program_Name", "<p align=\"center\"><b><h2>Custom_Program_Name</h2></b></p><p align=\"center\">" +
                        tr("Version: ") + getVersion("CUSTOMPROGRAMNAME") + "</p><p align=\"center\"><h3>" +
@@ -339,6 +340,7 @@ void MainWindow::on_buttonAbout_clicked()
             system("su " + user.toUtf8() + " -c \"xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html\"&");
         }
     }
+    this->show();
 }
 
 // Help button clicked
