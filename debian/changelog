@@ -1,8 +1,8 @@
-CUSTOMPROGRAMNAME (0.18.02) UNRELEASED; urgency=medium
+CUSTOMPROGRAMNAME (18.3) mx; urgency=medium
 
-  * Add progress bar
+  * Release with new translations 
 
- -- Adrian <adrian@mxlinux.org>  Tue, 06 Feb 2018 00:31:50 -0500
+ -- Adrian <adrian@mxlinux.org>  Fri, 02 Mar 2018 14:47:22 -0500
 
 CUSTOMPROGRAMNAME (0.18.01) mx; urgency=medium
 
