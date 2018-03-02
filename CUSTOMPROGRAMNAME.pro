@@ -35,16 +35,29 @@ HEADERS  += \
 FORMS    += \
     mainwindow.ui
 
-TRANSLATIONS += translations/CUSTOMPROGRAMNAME_ca.ts \
+TRANSLATIONS += translations/CUSTOMPROGRAMNAME_am.ts \
+                translations/CUSTOMPROGRAMNAME_ca.ts \
+                translations/CUSTOMPROGRAMNAME_cs.ts \
                 translations/CUSTOMPROGRAMNAME_de.ts \
                 translations/CUSTOMPROGRAMNAME_el.ts \
                 translations/CUSTOMPROGRAMNAME_es.ts \
                 translations/CUSTOMPROGRAMNAME_fr.ts \
+                translations/CUSTOMPROGRAMNAME_hu.ts \
                 translations/CUSTOMPROGRAMNAME_it.ts \
                 translations/CUSTOMPROGRAMNAME_ja.ts \
+                translations/CUSTOMPROGRAMNAME_kk.ts \
+                translations/CUSTOMPROGRAMNAME_lt.ts \
                 translations/CUSTOMPROGRAMNAME_nl.ts \
+                translations/CUSTOMPROGRAMNAME_pl.ts \
+                translations/CUSTOMPROGRAMNAME_pt.ts \
+                translations/CUSTOMPROGRAMNAME_pt_BR.ts \
                 translations/CUSTOMPROGRAMNAME_ro.ts \
-                translations/CUSTOMPROGRAMNAME_sv.ts
+                translations/CUSTOMPROGRAMNAME_ru.ts \
+                translations/CUSTOMPROGRAMNAME_sk.ts \
+                translations/CUSTOMPROGRAMNAME_sv.ts \
+                translations/CUSTOMPROGRAMNAME_tr.ts \
+                translations/CUSTOMPROGRAMNAME_uk.ts \
+                translations/CUSTOMPROGRAMNAME_zh_TW.ts
 
 RESOURCES += \
     images.qrc

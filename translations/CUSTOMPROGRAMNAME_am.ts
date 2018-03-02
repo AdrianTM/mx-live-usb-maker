@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="am" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -21,12 +21,12 @@
         <location filename="mainwindow.cpp" line="446"/>
         <location filename="mainwindow.cpp" line="464"/>
         <source>Select ISO</source>
-        <translation>Seleccione ISO</translation>
+        <translation>ISO ይምረጡ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="100"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"/>
+        <translation>የ አካል ዝርዝር ማነቃቂያ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="112"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="mainwindow.ui" line="293"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation>ምርጫዎች</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="308"/>
@@ -168,12 +168,12 @@
     <message>
         <location filename="mainwindow.ui" line="499"/>
         <source>Quit application</source>
-        <translation>Terminar aplicación</translation>
+        <translation>መተግበሪያ ማጥፊያ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="502"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>መዝጊያ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="510"/>
@@ -183,12 +183,12 @@
     <message>
         <location filename="mainwindow.ui" line="542"/>
         <source>Display help </source>
-        <translation>Mostrar la ayuda</translation>
+        <translation>እርዳታ ማሳያ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="545"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>እርዳታ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="553"/>
@@ -198,22 +198,22 @@
     <message>
         <location filename="mainwindow.ui" line="569"/>
         <source>Back</source>
-        <translation>Anterior</translation>
+        <translation>ወደ ኋላ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="628"/>
         <source>Next</source>
-        <translation>Proximo</translation>
+        <translation>ይቀጥሉ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="655"/>
         <source>About this application</source>
-        <translation>Acerca de esta aplicación</translation>
+        <translation>ስለዚህ መተግበሪያ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="658"/>
         <source>About...</source>
-        <translation>Acerca de...</translation>
+        <translation>ስለ...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="666"/>
@@ -225,7 +225,7 @@
         <location filename="mainwindow.cpp" line="239"/>
         <location filename="mainwindow.cpp" line="379"/>
         <source>Failure</source>
-        <translation type="unfinished"/>
+        <translation>ወድቋል</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="72"/>
@@ -242,12 +242,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="237"/>
         <source>Success</source>
-        <translation>Exito</translation>
+        <translation>ተሳክቷል</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="237"/>
         <source>LiveUSB creation successful!</source>
-        <translation>¡Creación del LiveUSB exitosa!</translation>
+        <translation>በ ቀጥታ USB መፍጠር ተሳክቷል!</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="239"/>
@@ -257,7 +257,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="285"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>ስህተት</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="285"/>
@@ -273,12 +273,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="327"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>ስለ</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="328"/>
         <source>Version: </source>
-        <translation>Versión:</translation>
+        <translation>እትም</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="329"/>
@@ -288,18 +288,18 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="331"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>የ ቅጂ መብት (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="332"/>
         <location filename="mainwindow.cpp" line="338"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation>ፍቃድ</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="333"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>መሰረዣ</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="368"/>
@@ -340,7 +340,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Debe ejecutar este programa como root.</translation>
+        <translation>ይህን ፕሮግራም እንደ root ማስኬድ አለብዎት</translation>
     </message>
 </context>
 </TS>

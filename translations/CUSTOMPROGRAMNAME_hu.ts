@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -21,7 +21,7 @@
         <location filename="mainwindow.cpp" line="446"/>
         <location filename="mainwindow.cpp" line="464"/>
         <source>Select ISO</source>
-        <translation>Seleccione ISO</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="100"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="mainwindow.ui" line="293"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="308"/>
@@ -168,12 +168,12 @@
     <message>
         <location filename="mainwindow.ui" line="499"/>
         <source>Quit application</source>
-        <translation>Terminar aplicación</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="502"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>Bezár</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="510"/>
@@ -183,12 +183,12 @@
     <message>
         <location filename="mainwindow.ui" line="542"/>
         <source>Display help </source>
-        <translation>Mostrar la ayuda</translation>
+        <translation>Súgó megjelenítése</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="545"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="553"/>
@@ -198,22 +198,22 @@
     <message>
         <location filename="mainwindow.ui" line="569"/>
         <source>Back</source>
-        <translation>Anterior</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="628"/>
         <source>Next</source>
-        <translation>Proximo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="655"/>
         <source>About this application</source>
-        <translation>Acerca de esta aplicación</translation>
+        <translation>Az alkalmazásról</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="658"/>
         <source>About...</source>
-        <translation>Acerca de...</translation>
+        <translation>Névjegy</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="666"/>
@@ -242,12 +242,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="237"/>
         <source>Success</source>
-        <translation>Exito</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="237"/>
         <source>LiveUSB creation successful!</source>
-        <translation>¡Creación del LiveUSB exitosa!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="239"/>
@@ -257,7 +257,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="285"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="285"/>
@@ -273,12 +273,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="327"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="328"/>
         <source>Version: </source>
-        <translation>Versión:</translation>
+        <translation>Verzió:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="329"/>
@@ -294,12 +294,12 @@ Please wait until the the process is completed</source>
         <location filename="mainwindow.cpp" line="332"/>
         <location filename="mainwindow.cpp" line="338"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation>Liszensz</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="333"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="368"/>
@@ -340,7 +340,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Debe ejecutar este programa como root.</translation>
+        <translation>Root felhasználóként kell futtatnia ezt a programot!</translation>
     </message>
 </context>
 </TS>
