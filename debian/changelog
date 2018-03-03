@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (18.3+1) mx; urgency=medium
+
+  * fix typo
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 02 Mar 2018 22:09:47 -0500
+
 CUSTOMPROGRAMNAME (18.3) mx; urgency=medium
 
   * Release with new translations 
