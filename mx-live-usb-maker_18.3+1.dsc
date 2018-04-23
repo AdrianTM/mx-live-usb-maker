@@ -12,20 +12,20 @@ Build-Depends: qt5-qmake, debhelper (>= 9)
 Package-List:
  mx-live-usb-maker deb admin optional arch=any
 Checksums-Sha1:
- 9df24610e0b3c9edab9644dbd798e5f9006e4498 32640 mx-live-usb-maker_18.3+1.tar.xz
+ 98d7df826ab45254493d166bc0616bca4bdebd68 32644 mx-live-usb-maker_18.3+1.tar.xz
 Checksums-Sha256:
- 655b99a0c2373cfa7dcbcaf109c487d622ed91c15c9f6eb1765b5735d10c9b77 32640 mx-live-usb-maker_18.3+1.tar.xz
+ eab619334b2f695cd0f7284d7b8e855c7e93f0d384cc588d0421443a346857e9 32644 mx-live-usb-maker_18.3+1.tar.xz
 Files:
- 817a0eadcfe4de72bddeaf5a15df06e0 32640 mx-live-usb-maker_18.3+1.tar.xz
+ 45a6dadebb1b705b5ebae73432135f31 32644 mx-live-usb-maker_18.3+1.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJamhIdAAoJEHCTjHgGee6YnaYH/RQ5JYuQGnYY1KrpxNF3EMqY
-3NzTa3e3Gij0UtYSymx6WbmezbHz/YQOLGnAQMI/97S2g6mBj0+D92xpNx6NEmMo
-au8+ka6TIsXOD2iw8w3lKUpB3Q0GCFFnC8HZePpJg2eqfaBWQHKdbdoAyXkO/kes
-bk8SbKBcCUo8kgh62a+7MYkSMV36oDfR8Sw+Qz3rDC7yzTXbNFZ9aur48X/1yP/J
-NYMmdCaanB00394YA0e0Cv6fg4sg5e7Nq2KuCWzbZ4QUJsFjRypMJDYj3Jrh92DK
-jdbpLb7OJxrI7c8v20SC1fTvTdh9lxWEsDvfNkm36JT4Kl4L8f8Ofh83jpEBKV0=
-=4yZE
+iQEcBAEBAgAGBQJa3kIXAAoJEHCTjHgGee6Yo8cH/RZZUq3XH8ZmdHdLOpYLTbbg
+R6eFlNvNIgK9HFx5a++RF9EoPy2SEJbUF7GYG6BIHHsTUm4Q7V4Bnx0wO2flqr7B
+jJazhzP0/rV8VxUXBw+lkrRQYaHT2RIvx5RDK9lLJ5qOExxNMBL72UYOMQQ9H7hd
+AyjxZrf+GUPjbzmW2Pni5u0x6PKsi9LAh8D3Jl2PHbJzAnQjrpx7zpI8jbeOAUSs
+9S/7zbOChv13DIPgocjrciGJ0zaFcTPymSJjw71yux7+ghQZ9sv2Md56yEYX1wu0
+SVx/Vrzj7B7/Xy4c+VxOhIcQyOmffnwSiJIhOUoGiarABJl756ynLViUrRtn5ko=
+=Btde
 -----END PGP SIGNATURE-----
