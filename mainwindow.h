@@ -81,7 +81,8 @@ private slots:
     void on_cb_update_clicked(bool checked);
     void on_cb_clone_mode_clicked(bool checked);
     void on_cb_clone_live_clicked(bool checked);
-    void on_cb_dd_clicked(bool checked);
+    void on_rb_dd_clicked();
+    void on_rb_normal_clicked();
 
 private:
     Ui::MainWindow *ui;

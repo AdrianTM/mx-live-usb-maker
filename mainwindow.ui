@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
+    <width>830</width>
     <height>789</height>
    </rect>
   </property>
@@ -89,8 +89,7 @@
          </property>
          <property name="icon">
           <iconset theme="user-home">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -101,8 +100,7 @@
          </property>
          <property name="icon">
           <iconset theme="reload">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -113,8 +111,7 @@
          </property>
          <property name="icon">
           <iconset theme="down">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -302,6 +299,26 @@
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
+             <item row="1" column="2">
+              <widget class="QRadioButton" name="rb_dd">
+               <property name="toolTip">
+                <string>Read-only, cannot be used with persistency</string>
+               </property>
+               <property name="text">
+                <string>Copy image to USB (dd)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QRadioButton" name="rb_normal">
+               <property name="text">
+                <string>Normal mode - full-featured ISO</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
              <item row="0" column="0">
               <widget class="QCheckBox" name="cb_pretend">
                <property name="toolTip">
@@ -336,16 +353,6 @@
               <widget class="QCheckBox" name="cb_clone_live">
                <property name="text">
                 <string>Clone running live system</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QCheckBox" name="cb_dd">
-               <property name="toolTip">
-                <string>Read-only, cannot be used with persistency</string>
-               </property>
-               <property name="text">
-                <string>Copy image to USB (dd)</string>
                </property>
               </widget>
              </item>
@@ -503,8 +510,7 @@
        </property>
        <property name="icon">
         <iconset theme="window-close">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -546,8 +552,7 @@
        </property>
        <property name="icon">
         <iconset theme="help-contents">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+H</string>
@@ -570,8 +575,7 @@
        </property>
        <property name="icon">
         <iconset theme="go-previous">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -629,8 +633,7 @@
        </property>
        <property name="icon">
         <iconset theme="go-next">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string/>
@@ -659,8 +662,7 @@
        </property>
        <property name="icon">
         <iconset theme="help-about">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+B</string>
@@ -674,6 +676,36 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>combo_Usb</tabstop>
+  <tabstop>buttonSelectSource</tabstop>
+  <tabstop>buttonRefresh</tabstop>
+  <tabstop>buttonOptions</tabstop>
+  <tabstop>rb_normal</tabstop>
+  <tabstop>rb_dd</tabstop>
+  <tabstop>cb_pretend</tabstop>
+  <tabstop>cb_encrypt</tabstop>
+  <tabstop>cb_clone_mode</tabstop>
+  <tabstop>cb_clone_live</tabstop>
+  <tabstop>spinBoxSize</tabstop>
+  <tabstop>edit_label</tabstop>
+  <tabstop>cb_gpt</tabstop>
+  <tabstop>cb_update</tabstop>
+  <tabstop>cb_save_boot</tabstop>
+  <tabstop>cb_keep</tabstop>
+  <tabstop>cb_set_pmbr_boot</tabstop>
+  <tabstop>cb_force_makefs</tabstop>
+  <tabstop>cb_force_usb</tabstop>
+  <tabstop>cb_force_automount</tabstop>
+  <tabstop>spinBoxEsp</tabstop>
+  <tabstop>sliderVerbosity</tabstop>
+  <tabstop>buttonAbout</tabstop>
+  <tabstop>buttonHelp</tabstop>
+  <tabstop>buttonBack</tabstop>
+  <tabstop>buttonNext</tabstop>
+  <tabstop>buttonCancel</tabstop>
+  <tabstop>outputBox</tabstop>
+ </tabstops>
  <resources>
   <include location="images.qrc"/>
  </resources>
