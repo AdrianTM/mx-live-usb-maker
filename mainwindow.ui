@@ -498,7 +498,7 @@
              <item>
               <widget class="QRadioButton" name="rb_normal">
                <property name="text">
-                <string>Normal mode - full featured ISO</string>
+                <string>Full-featured mode - writable LiveUSB</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -511,7 +511,7 @@
                 <string>Read-only, cannot be used with persistency</string>
                </property>
                <property name="text">
-                <string>Copy image to USB (dd)</string>
+                <string>Image mode - read-only LiveUSB (dd)</string>
                </property>
               </widget>
              </item>
@@ -525,7 +525,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>For distros other than antiX/MX use &quot;Copy image to USB (dd)&quot; only.</string>
+                <string>For distros other than antiX/MX use image mode (dd).</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
