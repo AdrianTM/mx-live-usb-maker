@@ -2,8 +2,11 @@ Source: CUSTOMPROGRAMNAME
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: qt5-qmake,
-	debhelper (>=9)
+Build-Depends: qt5-default,
+        qttools5-dev-tools,
+        qt5-qmake,
+	debhelper (>=9),
+	libcmd
 Standards-Version: 3.9.8
 
 Package: CUSTOMPROGRAMNAME
