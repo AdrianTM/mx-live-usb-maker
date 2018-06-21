@@ -194,7 +194,7 @@ void MainWindow::cleanup()
 QString MainWindow::getVersion(QString name)
 {
     Cmd cmd;
-    return cmd.getOutput("dpkg -l "+ name + "| awk 'NR==6 {print $3}'");
+    return cmd.getCmdOut("dpkg-query -f '${Version}' -W " + name);
 }
 
 
