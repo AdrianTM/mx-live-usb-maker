@@ -1,3 +1,11 @@
+CUSTOMPROGRAMNAME (18.6.1) mx; urgency=medium
+
+  * added changelog button 
+  * fixed getVersion
+
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 24 Jun 2018 21:55:35 -0400
+
 CUSTOMPROGRAMNAME (18.6) mx; urgency=medium
 
   * update interface
