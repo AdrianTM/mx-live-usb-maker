@@ -52,6 +52,12 @@ bool MainWindow::isRunningLive()
     return ( test == "aufs" || test == "overlay" );
 }
 
+// determine if it's running in "toram" mode
+bool MainWindow::isToRam()
+{
+    return QFile("/live/config/did-toram").exists();
+}
+
 void MainWindow::makeUsb(const QString &options)
 {
     device = ui->combo_Usb->currentText().split(" ").at(0);
@@ -120,8 +126,8 @@ void MainWindow::setup()
     //set save boot directory option to disable unless update mode is checked
     ui->cb_save_boot->setEnabled(false);
 
-    //check if running live
-    ui->cb_clone_live->setEnabled(isRunningLive());
+    //check if running live or with "toram"
+    ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
 }
 
 // Build the option list to be passed to live-usb-maker

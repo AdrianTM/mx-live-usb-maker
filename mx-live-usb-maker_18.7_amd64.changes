@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 24 Jul 2018 14:56:28 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 18.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (18.7) mx; urgency=medium
+ .
+   * disable clone running live system when using 'toram'
+Checksums-Sha1:
+ 06814f7cc2685fe69774e5b334045c8d9e088909 1168 mx-live-usb-maker_18.7.dsc
+ ced31ed2f47cbca8c56bc9be92a5940ca1ee76cb 38176 mx-live-usb-maker_18.7.tar.xz
+ 7535904353f213cc3192c905d5f5963fc5999074 11246 mx-live-usb-maker_18.7_amd64.buildinfo
+ 2fbee4ca4fb7e6db716f0f60916d388ea950911d 66450 mx-live-usb-maker_18.7_amd64.deb
+Checksums-Sha256:
+ ebbb8526da354a3362f9fe60676869e2f97aba75ef138eaa7b1329d2990f1274 1168 mx-live-usb-maker_18.7.dsc
+ 829173acd4ee4bd44396ea672c83915a272f71c7e40a8a5b2b64eb7a58804472 38176 mx-live-usb-maker_18.7.tar.xz
+ f9064b7fbc100fe715027ea2e51da50afdd35d93e15336e22d89256e5cd13df7 11246 mx-live-usb-maker_18.7_amd64.buildinfo
+ 2a405008036b09407ae97a859e46266f62e65db4dc782cae5064f472b163c6c7 66450 mx-live-usb-maker_18.7_amd64.deb
+Files:
+ cdcf4a23b3e7dfa5a58ce89a6555e308 1168 admin optional mx-live-usb-maker_18.7.dsc
+ 40bb12b91217e0788d0bfe942ab20286 38176 admin optional mx-live-usb-maker_18.7.tar.xz
+ 8a8c1a8a101c523fa86c8efe6b374d38 11246 admin optional mx-live-usb-maker_18.7_amd64.buildinfo
+ 279d55bf2657bf81e570b03ae11dbb48 66450 admin optional mx-live-usb-maker_18.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltXflATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMZGB/9NsBIJvaAIlMtt8LuhY0F9oVKz0W4T
+VMcb0pQggslv/XWi8wyZPdyMPtoayWoRKBfqAwLcoiz8lyTwJ+Ntt73y/xjZCkDK
+v2DVYSkXemiDINRjsDADy7e4X8U/JQewPyxoDL5lOvEN57cauriqqrvhAy4x054v
+XYiuZFq+RoE8m59HEh6YbYdLjtEZEq97oGROaAVltBzplC0z55smgNLsvEElC30w
+ROqxm5LetzDTmoD4IH2BpObyyiL273vOGgtyKF/w3d2UGRk8h9iOHqiqO7uPRMM2
+W+WRrRSgAqanbHIPwsQZNk5o0fdp8R3INyuodWncJiFUIWwKCo33yBiL
+=36+Q
+-----END PGP SIGNATURE-----

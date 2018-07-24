@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (18.7) mx; urgency=medium
+
+  * disable clone running live system when using 'toram'
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 24 Jul 2018 14:56:28 -0400
+
 CUSTOMPROGRAMNAME (18.6.1) mx; urgency=medium
 
   * added changelog button 

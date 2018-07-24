@@ -50,6 +50,7 @@ public:
     bool checkISO();
     bool checkSize();
     bool isRunningLive();
+    bool isToRam();
     void makeUsb(const QString &options);
     void progress();
     void setup();
