@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (18.8) mx; urgency=medium
+
+  * fix icon for other themes
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 01 Aug 2018 01:49:38 -0400
+
 CUSTOMPROGRAMNAME (18.7) mx; urgency=medium
 
   * disable clone running live system when using 'toram'
