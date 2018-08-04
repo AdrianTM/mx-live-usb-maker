@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="475"/>
-        <location filename="../mainwindow.cpp" line="493"/>
+        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Select ISO</source>
         <translation>Trieu la ISO</translation>
     </message>
@@ -280,7 +280,7 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="488"/>
         <source>clone</source>
         <translation>clona</translation>
     </message>
@@ -332,7 +332,7 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
-        <location filename="../mainwindow.cpp" line="471"/>
+        <location filename="../mainwindow.cpp" line="472"/>
         <source>Select Source Directory</source>
         <translation>Trieu el directori font</translation>
     </message>
@@ -347,14 +347,14 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
         <translation>Amaga les opcions avançades</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="470"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="471"/>
+        <location filename="../mainwindow.cpp" line="486"/>
         <source>Select Source</source>
         <translation>Trieu l&apos;origen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <location filename="../mainwindow.cpp" line="491"/>
+        <location filename="../mainwindow.cpp" line="475"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Select ISO file</source>
         <translation>Trieu el fitxer ISO</translation>
     </message>

@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="475"/>
-        <location filename="../mainwindow.cpp" line="493"/>
+        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Select ISO</source>
         <translation>Choisir une image ISO</translation>
     </message>
@@ -280,7 +280,7 @@ Veuillez attendre la fin du processus</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="488"/>
         <source>clone</source>
         <translation>clone</translation>
     </message>
@@ -332,7 +332,7 @@ Veuillez attendre la fin du processus</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
-        <location filename="../mainwindow.cpp" line="471"/>
+        <location filename="../mainwindow.cpp" line="472"/>
         <source>Select Source Directory</source>
         <translation>Choix du répertoire source</translation>
     </message>
@@ -347,14 +347,14 @@ Veuillez attendre la fin du processus</translation>
         <translation>Cacher les options avancées</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="470"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="471"/>
+        <location filename="../mainwindow.cpp" line="486"/>
         <source>Select Source</source>
         <translation>Choisir la source</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <location filename="../mainwindow.cpp" line="491"/>
+        <location filename="../mainwindow.cpp" line="475"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Select ISO file</source>
         <translation>Choisir le fichier ISO</translation>
     </message>

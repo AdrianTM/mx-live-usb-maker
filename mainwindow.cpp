@@ -467,6 +467,7 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
 {
      if (checked) {
         ui->cb_clone_live->setChecked(false);
+        on_cb_clone_live_clicked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->buttonSelectSource->setText(tr("Select Source Directory"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("folder"));
