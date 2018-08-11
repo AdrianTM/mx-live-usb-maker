@@ -5,3 +5,4 @@ translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale
 license.html			usr/share/doc/CUSTOMPROGRAMNAME
 authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
 images/drive-removable-media-usb.svg usr/share/pixmaps
+images/drive-removable-media-usb.svg usr/share/icons/hicolor/scalable/apps
