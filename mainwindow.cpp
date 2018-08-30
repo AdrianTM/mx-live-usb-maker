@@ -112,6 +112,7 @@ void MainWindow::setup()
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("Custom_Program_Name");
     ui->groupAdvOptions->hide();
+    advancedOptions = false;
     ui->buttonBack->setHidden(true);;
     ui->stackedWidget->setCurrentIndex(0);
     ui->buttonCancel->setEnabled(true);
@@ -419,16 +420,17 @@ void MainWindow::on_buttonRefresh_clicked()
 
 void MainWindow::on_buttonOptions_clicked()
 {
-    if (ui->buttonOptions->text() == tr("Show advanced options")) {
-        ui->groupAdvOptions->show();
-        ui->buttonOptions->setText(tr("Hide advanced options"));
-        ui->buttonOptions->setIcon(QIcon::fromTheme("up"));
+    if (advancedOptions) {
+        ui->buttonOptions->setText(tr("Show advanced options"));
+        ui->groupAdvOptions->hide();
+        advancedOptions = false;
+        ui->buttonOptions->setIcon(QIcon::fromTheme("down"));
+        this->setMaximumHeight(height);
     } else {
-       ui->groupAdvOptions->hide();
-       ui->buttonOptions->setText(tr("Show advanced options"));
-       ui->buttonOptions->setIcon(QIcon::fromTheme("down"));
-       this->setMaximumHeight(height);
-
+        ui->buttonOptions->setText(tr("Hide advanced options"));
+        ui->groupAdvOptions->show();
+        advancedOptions = true;
+        ui->buttonOptions->setIcon(QIcon::fromTheme("up"));
     }
 }
 

@@ -91,6 +91,7 @@ private:
     Cmd *cmdprog;
     QString device;
     QTimer *timer;
+    bool advancedOptions;
     int height;
     int iso_sectors;
     int start_io;
