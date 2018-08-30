@@ -18,26 +18,26 @@ Changes:
  .
    * fix advanced button in KDE
 Checksums-Sha1:
- 615c8af3a132fd74a77fbb503b4b61afb4c07292 1176 mx-live-usb-maker_18.8.3.dsc
- b49be846105e04a36dcce26e8212ba6618f7f729 37212 mx-live-usb-maker_18.8.3.tar.xz
- 676e9fdc84ea0ab02dca10278ae5f369ec54b515 65664 mx-live-usb-maker_18.8.3_amd64.deb
+ f1371701e7d9401c5a64a67082396416d480a4ef 1176 mx-live-usb-maker_18.8.3.dsc
+ 3fe38702965e1b57623f80b430c1973f8416ce8f 37220 mx-live-usb-maker_18.8.3.tar.xz
+ 27967639edc6f000b21857624d0fd05d4356c0da 65648 mx-live-usb-maker_18.8.3_amd64.deb
 Checksums-Sha256:
- d1d0c83294fa2120944326cbf968ba86902790a59c8179f2d2ca3e0148d517dd 1176 mx-live-usb-maker_18.8.3.dsc
- 70dffa1437004fe74538ed1682dbb97ccdeca5f0c575e918388f05abda0fcf2b 37212 mx-live-usb-maker_18.8.3.tar.xz
- ecbd91f48a76583144275dcd53a78bdd68ea97bfb2f66f5666421a8c5300721c 65664 mx-live-usb-maker_18.8.3_amd64.deb
+ d153124bf63f5133fbb942eb965ca2830c613d5022d87b245203a535e9acb4f1 1176 mx-live-usb-maker_18.8.3.dsc
+ c24b47902fe6ba428e16d95f0534d40a8c56e2feb5d97599d45482842d2e3b15 37220 mx-live-usb-maker_18.8.3.tar.xz
+ ae8e9c6a369b3753a003407176aa1012abdd60d072ce1ead34fbc08547a191e6 65648 mx-live-usb-maker_18.8.3_amd64.deb
 Files:
- aa04051cfbaa0490df7cf863c0e8e15c 1176 admin optional mx-live-usb-maker_18.8.3.dsc
- 9f6eb8e3abc22127015c1a4c302fa59a 37212 admin optional mx-live-usb-maker_18.8.3.tar.xz
- c6582e0065d53ffb1004ab2bb0a76d77 65664 admin optional mx-live-usb-maker_18.8.3_amd64.deb
+ 5c2b63b9a8955951d942d4b0c29f39cd 1176 admin optional mx-live-usb-maker_18.8.3.dsc
+ 2f191553aaa74a3a2572e1cbfd8ab6e2 37220 admin optional mx-live-usb-maker_18.8.3.tar.xz
+ fe18e63b787ac03a4770c92904dc65c6 65648 admin optional mx-live-usb-maker_18.8.3_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAluHOvUTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAWFB/oD5O/SO3/q4/HVJSEQMRhVtG2g4AyL
-4VWgZGIg1wlCv/RIMuiLe0885RqXPMCsfebA1pJt5iVt3uCl2S3YMaynqvSemqXV
-5FUkrQXRKkxDiiB21GumOD7OIgBiy0okg20ewYbq1KXkmXwGNQvf5mCJAqPe5g+k
-4azehJR/pnhkb2r+pAgbvXBA6UjRUTdAY4NZWPHL5JoVRZMYLLmiWlBc483rcKsj
-LOEBP3NG0+GWI7yNkzx8Gm1R5RihFsAokK+4+Cp2iYEQtegu/L0BHE4lHHyi7v+N
-Mg+61GLalGS4zQled9vNgqBuLjyh+bC5bqK+gqc/teWX4qn7PDgba1Am
-=tFRN
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAluHRIYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGI2B/0UkT8+8Wip1Yh6zci4P7FBER/X6Tf1
+QIg5fxHEwzqtwpLd0Z3q0piyAjsB5/g+hNQvt2sgA6ekoL4Kdb+hkGU+AYLDT5FM
+g6o+7oiBpZUwZIbumf2tOKocRFCBshlZ5bhZN5pHA2QRYAJ0XOwFJHbMz+LHGHLe
+M6pQvvm7BjA2hF+XTB1gifqG57RBMnjKb2coB63i1pJyytNB2MB0h3+fxS6cWBmb
+v8MSMlOxGgPw0CamFO8geJQm8OoKotHbzthPEP3BVfpR28PNXgzVsEaztRn5uc1m
+ZzLzVB/PA9E2y+trNnUlThOAiAfLJAfMTFaB9T2vT5vXZIiEMQL3Ph7V
+=loMB
 -----END PGP SIGNATURE-----

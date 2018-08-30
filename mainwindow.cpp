@@ -424,13 +424,13 @@ void MainWindow::on_buttonOptions_clicked()
         ui->buttonOptions->setText(tr("Show advanced options"));
         ui->groupAdvOptions->hide();
         advancedOptions = false;
-        ui->buttonOptions->setIcon(QIcon::fromTheme("down"));
+        ui->buttonOptions->setIcon(QIcon::fromTheme("go-down"));
         this->setMaximumHeight(height);
     } else {
         ui->buttonOptions->setText(tr("Hide advanced options"));
         ui->groupAdvOptions->show();
         advancedOptions = true;
-        ui->buttonOptions->setIcon(QIcon::fromTheme("up"));
+        ui->buttonOptions->setIcon(QIcon::fromTheme("go-up"));
     }
 }
 

@@ -151,83 +151,83 @@
         <translation>Refresh schijf list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="466"/>
+        <location filename="../mainwindow.ui" line="465"/>
         <location filename="../mainwindow.cpp" line="424"/>
         <source>Show advanced options</source>
         <translation>Laat geavanceerde opties zien</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="486"/>
+        <location filename="../mainwindow.ui" line="484"/>
         <source>Mode</source>
         <translation>Modus</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="501"/>
+        <location filename="../mainwindow.ui" line="499"/>
         <source>Full-featured mode - writable LiveUSB</source>
         <translation>Volledige-mogelijkheden modus - beschrijfbare LiveUSB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="511"/>
+        <location filename="../mainwindow.ui" line="509"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation>Enkel-lezen, kan niet gebruikt worden met persistentie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="514"/>
+        <location filename="../mainwindow.ui" line="512"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
         <translation>Beeld modus - enkel-lezen LiveUSB (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="528"/>
+        <location filename="../mainwindow.ui" line="526"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
         <translation>Voor distrubuties anders dan antiX/MX gebruik beeld modus (dd)&quot;.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="576"/>
+        <location filename="../mainwindow.ui" line="574"/>
         <source>Options</source>
         <translation>Opties</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="611"/>
+        <location filename="../mainwindow.ui" line="609"/>
         <source>Percent of USB-device to use:</source>
         <translation>Percentage van USB-apparaat om te gebruiken:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="618"/>
+        <location filename="../mainwindow.ui" line="616"/>
         <source>Label ext partition:</source>
         <translation>Label ext partitie:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="666"/>
+        <location filename="../mainwindow.ui" line="664"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation>Geen commando&apos;s uitvoeren die het usb apparaat beïnvloeden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="669"/>
+        <location filename="../mainwindow.ui" line="667"/>
         <source>Dry run (no change to system)</source>
         <translation>Test uitvoering (geen veranderingen aan het systeem)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="../mainwindow.ui" line="674"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation>kloon van een aangekoppelde live-usb of iso-bestand.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="679"/>
+        <location filename="../mainwindow.ui" line="677"/>
         <source>Clone an existing live system</source>
         <translation>Kloon een bestaand bestandssysteem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="686"/>
+        <location filename="../mainwindow.ui" line="684"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation>Stel in om op te starten van een versleutelde partitie, zal bij de eerste opstart naar de wachtwoordzin vragen </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="689"/>
+        <location filename="../mainwindow.ui" line="687"/>
         <source>Encrypt</source>
         <translation>Versleutelen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="696"/>
+        <location filename="../mainwindow.ui" line="694"/>
         <source>Clone running live system</source>
         <translation>Kloon lopend live systeem</translation>
     </message>

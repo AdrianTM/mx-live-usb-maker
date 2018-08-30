@@ -452,8 +452,7 @@
           <string>Refresh drive list</string>
          </property>
          <property name="icon">
-          <iconset theme="reload">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="view-refresh"/>
          </property>
          <property name="autoDefault">
           <bool>false</bool>
@@ -466,8 +465,7 @@
           <string>Show advanced options</string>
          </property>
          <property name="icon">
-          <iconset theme="down">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="go-down"/>
          </property>
          <property name="autoDefault">
           <bool>false</bool>

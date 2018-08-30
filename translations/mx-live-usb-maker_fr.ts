@@ -151,83 +151,83 @@
         <translation>Rafraîchir la liste des lecteurs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="466"/>
+        <location filename="../mainwindow.ui" line="465"/>
         <location filename="../mainwindow.cpp" line="424"/>
         <source>Show advanced options</source>
         <translation>Afficher les options avancées</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="486"/>
+        <location filename="../mainwindow.ui" line="484"/>
         <source>Mode</source>
         <translation>Mode</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="501"/>
+        <location filename="../mainwindow.ui" line="499"/>
         <source>Full-featured mode - writable LiveUSB</source>
         <translation>Mode complet - LiveUSB inscriptible</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="511"/>
+        <location filename="../mainwindow.ui" line="509"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation>Lecture seule, incompatible avec la persistance</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="514"/>
+        <location filename="../mainwindow.ui" line="512"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
         <translation>Mode image - LiveUSB en lecture seule (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="528"/>
+        <location filename="../mainwindow.ui" line="526"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
         <translation>Pour une distribution autre que antiX/MX, utilisez le mode image (dd).</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="576"/>
+        <location filename="../mainwindow.ui" line="574"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="611"/>
+        <location filename="../mainwindow.ui" line="609"/>
         <source>Percent of USB-device to use:</source>
         <translation>Part du périphérique USB utiisé (%):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="618"/>
+        <location filename="../mainwindow.ui" line="616"/>
         <source>Label ext partition:</source>
         <translation>Etiquette de la partition</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="666"/>
+        <location filename="../mainwindow.ui" line="664"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation>Ne pas lancer de commande affectant le périphérique usb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="669"/>
+        <location filename="../mainwindow.ui" line="667"/>
         <source>Dry run (no change to system)</source>
         <translation>Test (aucune modification du système)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="../mainwindow.ui" line="674"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation>Cloner à partir d&apos;un usb-live monté ou d&apos;un fichier iso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="679"/>
+        <location filename="../mainwindow.ui" line="677"/>
         <source>Clone an existing live system</source>
         <translation>Cloner un système live existant</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="686"/>
+        <location filename="../mainwindow.ui" line="684"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation>Organise le démarrage depuis une partition chiffrée. Exigera une phrase de passe au premier démarrage.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="689"/>
+        <location filename="../mainwindow.ui" line="687"/>
         <source>Encrypt</source>
         <translation>Chiffrer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="696"/>
+        <location filename="../mainwindow.ui" line="694"/>
         <source>Clone running live system</source>
         <translation>Cloner un système live en fonctionnement</translation>
     </message>
