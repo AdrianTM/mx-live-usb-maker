@@ -38,6 +38,7 @@ FORMS    += \
 TRANSLATIONS += translations/mx-live-usb-maker_am.ts \
                 translations/mx-live-usb-maker_ca.ts \
                 translations/mx-live-usb-maker_cs.ts \
+                translations/mx-live-usb-maker_da.ts \
                 translations/mx-live-usb-maker_de.ts \
                 translations/mx-live-usb-maker_el.ts \
                 translations/mx-live-usb-maker_es.ts \
