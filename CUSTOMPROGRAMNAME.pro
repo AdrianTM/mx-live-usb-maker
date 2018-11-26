@@ -47,6 +47,7 @@ TRANSLATIONS += translations/mx-live-usb-maker_am.ts \
                 translations/mx-live-usb-maker_hi.ts \
                 translations/mx-live-usb-maker_hr.ts \
                 translations/mx-live-usb-maker_hu.ts \
+                translations/mx-live-usb-maker_is.ts \
                 translations/mx-live-usb-maker_it.ts \
                 translations/mx-live-usb-maker_ja.ts \
                 translations/mx-live-usb-maker_kk.ts \
@@ -58,6 +59,7 @@ TRANSLATIONS += translations/mx-live-usb-maker_am.ts \
                 translations/mx-live-usb-maker_ro.ts \
                 translations/mx-live-usb-maker_ru.ts \
                 translations/mx-live-usb-maker_sk.ts \
+                translations/mx-live-usb-maker_sq.ts \
                 translations/mx-live-usb-maker_sv.ts \
                 translations/mx-live-usb-maker_tr.ts \
                 translations/mx-live-usb-maker_uk.ts \

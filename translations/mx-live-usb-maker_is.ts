@@ -1,20 +1,20 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="is" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation>Programos_pavadinimas</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Išeiti iš programos</translation>
+        <translation>Hætta í forriti</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Užverti</translation>
+        <translation>Hætta</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="56"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Rodyti žinyną</translation>
+        <translation>Birta hjálp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Žinynas</translation>
+        <translation>Hjálp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="98"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Atgal</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Kitas</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Apie šią programą</translation>
+        <translation>Um þetta forrit</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Apie...</translation>
+        <translation>Um hugbúnaðinn...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="208"/>
@@ -66,7 +66,7 @@
         <location filename="mainwindow.cpp" line="478"/>
         <location filename="mainwindow.cpp" line="496"/>
         <source>Select ISO</source>
-        <translation>Pasirinkite ISO</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="250"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation>Išplėstiniai parametrai</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="298"/>
@@ -121,12 +121,12 @@
     <message>
         <location filename="mainwindow.ui" line="412"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation>Nepakeisti syslinux failų</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="415"/>
         <source>Keep syslinux files</source>
-        <translation>Išsaugoti syslinux failus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="422"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="mainwindow.ui" line="429"/>
         <source>Temporarily disable automounting</source>
-        <translation>Laikinai išjungti automatinį prijungimą</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="439"/>
@@ -146,18 +146,18 @@
     <message>
         <location filename="mainwindow.ui" line="452"/>
         <source>Refresh drive list</source>
-        <translation>Iš naujo įkelti diskų sąrašą</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="465"/>
         <location filename="mainwindow.cpp" line="424"/>
         <source>Show advanced options</source>
-        <translation>Rodyti išplėstinius parametrus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="484"/>
         <source>Mode</source>
-        <translation>Veiksena</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="499"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="mainwindow.ui" line="574"/>
         <source>Options</source>
-        <translation>Parametrai</translation>
+        <translation>Valkostir</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="609"/>
@@ -197,12 +197,12 @@
     <message>
         <location filename="mainwindow.ui" line="664"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation>Nevykdyti komandų, kurios paveikia usb įrenginį</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="667"/>
         <source>Dry run (no change to system)</source>
-        <translation>Sausas paleidimas (jokių pakeitimų sistemai)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="674"/>
@@ -222,7 +222,7 @@
     <message>
         <location filename="mainwindow.ui" line="687"/>
         <source>Encrypt</source>
-        <translation>Šifruoti</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="694"/>
@@ -234,7 +234,7 @@
         <location filename="mainwindow.cpp" line="246"/>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Failure</source>
-        <translation>Lemtingoji klaida</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="78"/>
@@ -251,7 +251,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="244"/>
         <source>Success</source>
-        <translation>Pavyko</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="244"/>
@@ -266,12 +266,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="292"/>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="292"/>
         <source>Please select a USB device to write to</source>
-        <translation>Pasirinkite USB įrenginį į kurį rašyti</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="295"/>
@@ -282,12 +282,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="334"/>
         <source>About</source>
-        <translation>Apie</translation>
+        <translation>Um hugbúnaðinn</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="335"/>
         <source>Version: </source>
-        <translation>Versija: </translation>
+        <translation>Útgáfa:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="336"/>
@@ -297,28 +297,28 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="338"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Autorių teisės (c) MX Linux</translation>
+        <translation>Höfundarréttur (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="339"/>
         <location filename="mainwindow.cpp" line="351"/>
         <source>License</source>
-        <translation>Licencija</translation>
+        <translation>Notkunarleyfi</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="340"/>
         <source>Changelog</source>
-        <translation>Keitinių žurnalas</translation>
+        <translation>Breytingaskrá</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="341"/>
         <source>Cancel</source>
-        <translation>Atsisakyti</translation>
+        <translation>Hætta við</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
         <source>&amp;Close</source>
-        <translation>&amp;Užverti</translation>
+        <translation>&amp;Loka</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="398"/>
@@ -334,12 +334,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation>Nepavyko rasti %1/antiX/linuxfs failo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="430"/>
         <source>Hide advanced options</source>
-        <translation>Slėpti išplėstinius parametrus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="473"/>
@@ -359,7 +359,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Privalote paleisti šią programą kaip pagrindinis (root) naudotojas.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
