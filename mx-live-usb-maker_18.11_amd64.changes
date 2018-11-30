@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Fri, 30 Nov 2018 13:36:22 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 18.11
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (18.11) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ b35e3dbf833a9d3311755c075d9ff11e2c86e9e6 1172 mx-live-usb-maker_18.11.dsc
+ a031bbf99af9b56350677c2ed94d649b5d537b68 39264 mx-live-usb-maker_18.11.tar.xz
+ 127106f74b11fafae06589d09c3f534ac30ff08e 11254 mx-live-usb-maker_18.11_amd64.buildinfo
+ ac3b89994a53efdb23ab8542d0a404f031b0a11b 68132 mx-live-usb-maker_18.11_amd64.deb
+Checksums-Sha256:
+ b78a04b3b992b072a649a04617510dd46b3c5dd6878ef64321e4c9378780141f 1172 mx-live-usb-maker_18.11.dsc
+ 4671ad4d25cc5088d582eab988a67144e09adac62b9c46d9c4ba04b5defae7df 39264 mx-live-usb-maker_18.11.tar.xz
+ c389123eb5160c7c4d7fdfca0c1cb620a5533811763b5b35d639c14d1c081783 11254 mx-live-usb-maker_18.11_amd64.buildinfo
+ 81ae4af2df51be6a3eab9491fc0af4ca7c4d7d4d01013c37e0e82457c09cd188 68132 mx-live-usb-maker_18.11_amd64.deb
+Files:
+ 5cc77fcb88aa15e3c5ab76a1b0208006 1172 admin optional mx-live-usb-maker_18.11.dsc
+ e1ab10684938fa0491868f533185f587 39264 admin optional mx-live-usb-maker_18.11.tar.xz
+ 5b50e32eabe2616e228728aaf5a1126e 11254 admin optional mx-live-usb-maker_18.11_amd64.buildinfo
+ e3f26167d90bbb54e38cc057bfe3353b 68132 admin optional mx-live-usb-maker_18.11_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwBhDwTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumP8YB/9eBevCKdxIzMPUrHgRau6OrH9kGPt3
+8I8zLKDhgCL7GZjb3Xwmm5jVb6zBdbOH2jelVmF9yvb43NjWclRrwFP4ZxwKzfWB
+SfjPqK3bX90uzqmc9OPygVNmZiqFqWWE8215fOAH5RBhXviRNviHbqwdILIqc3Sz
+36a15hluZDj2OOJf+qpYU6xlsm9vzDI9TCKs9yOoy44HeYEATQXmLFOR3wiSX2s6
+mbRV1IEn/E78ELiwq4YK80+jI2g99h7D2XKVPzECdllo3zRP0eoN9+SxOoOavTUQ
+IAJQJO682QOPHyVAxrxDZM+5zVxie6zUjt1h92rsXcPI4CCWuPC2XJMW
+=wtdC
+-----END PGP SIGNATURE-----
