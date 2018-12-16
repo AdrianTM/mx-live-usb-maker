@@ -361,7 +361,7 @@ Please wait until the the process is completed</source>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="66"/>
         <source>You must run this program as root.</source>
         <translation>Вы должны запустить программу от имени суперпользователя.</translation>
     </message>

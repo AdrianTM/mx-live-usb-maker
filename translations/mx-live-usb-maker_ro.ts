@@ -361,7 +361,7 @@ Așteptați până la terminarea procesului</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="66"/>
         <source>You must run this program as root.</source>
         <translation>Trebuie să rulați programul ca administrator.</translation>
     </message>

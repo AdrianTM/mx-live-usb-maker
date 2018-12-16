@@ -360,7 +360,7 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="66"/>
         <source>You must run this program as root.</source>
         <translation>Tento program musíte spustiť ako root užívateľ.</translation>
     </message>

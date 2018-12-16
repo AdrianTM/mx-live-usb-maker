@@ -361,7 +361,7 @@ biite auf Abschluß des Vorgangs warten</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="66"/>
         <source>You must run this program as root.</source>
         <translation>Dieses Programm muss vom Benutzer &quot;root&quot; ausgeführt werden.</translation>
     </message>
