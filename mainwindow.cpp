@@ -65,15 +65,15 @@ void MainWindow::makeUsb(const QString &options)
     QString source;
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
         source = "\"" + ui->buttonSelectSource->text() + "\"";
-        QString source_size = cmd->getOutput("du -m " + ui->buttonSelectSource->text() + " 2>/dev/null | cut -f1", QStringList() << "quiet");
+        QString source_size = cmd->getOutput("du -m \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", QStringList() << "quiet");
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     } else if (ui->cb_clone_mode->isChecked()) {
-        QString source_size = cmd->getOutput("du -m --summarize " + ui->buttonSelectSource->text() + " 2>/dev/null | cut -f1", QStringList() << "quiet");
+        QString source_size = cmd->getOutput("du -m --summarize \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", QStringList() << "quiet");
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
-        source = "clone=" + ui->buttonSelectSource->text();
+        source = "clone=\"" + ui->buttonSelectSource->text() + "\"";
 
         // check if source and destination are on the same drive
-        QString root_partition = cmd->getOutput("df --output=source " + ui->buttonSelectSource->text() + "| awk 'END{print $1}'");
+        QString root_partition = cmd->getOutput("df --output=source \"" + ui->buttonSelectSource->text() + "\"| awk 'END{print $1}'");
         if ("/dev/" + device == cmd->getOutput(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"), tr("Source and destination are on the same device, please select again."));
             ui->stackedWidget->setCurrentWidget(ui->selectionPage);

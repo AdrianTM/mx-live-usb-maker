@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (18.12.2) mx; urgency=medium
+
+  * fix to allow space in source folder/file names
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 17 Dec 2018 16:11:29 -0500
+
 CUSTOMPROGRAMNAME (18.12.1) mx; urgency=medium
 
   * quote source dir to allow spaces in name
