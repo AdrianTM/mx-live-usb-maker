@@ -64,7 +64,7 @@ void MainWindow::makeUsb(const QString &options)
 
     QString source;
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        source = ui->buttonSelectSource->text();
+        source = "\"" + ui->buttonSelectSource->text() + "\"";
         QString source_size = cmd->getOutput("du -m " + ui->buttonSelectSource->text() + " 2>/dev/null | cut -f1", QStringList() << "quiet");
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     } else if (ui->cb_clone_mode->isChecked()) {

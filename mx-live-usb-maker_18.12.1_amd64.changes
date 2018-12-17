@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 17 Dec 2018 12:46:34 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 18.12.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (18.12.1) mx; urgency=medium
+ .
+   * quote source dir to allow spaces in name
+Checksums-Sha1:
+ f7e0fa5191c4d49069ac371c6733fafa94e17841 1180 mx-live-usb-maker_18.12.1.dsc
+ 16935ac3037f452d89e8c82d216a3263cb274159 39800 mx-live-usb-maker_18.12.1.tar.xz
+ 096a71a142aaee6a1217b026ddd70658b76f6b52 11270 mx-live-usb-maker_18.12.1_amd64.buildinfo
+ e6fd3bcdc887fe02ef02e6a3649b746314246156 69500 mx-live-usb-maker_18.12.1_amd64.deb
+Checksums-Sha256:
+ 94736fb62ea19d401a270f4637b59c5bc6e0f3f02713e87e0d5fd64a53221307 1180 mx-live-usb-maker_18.12.1.dsc
+ 4d426f29807c8151fe7c33c2d0d5bba27a9d8724617c7123fe8a6c8c81f23479 39800 mx-live-usb-maker_18.12.1.tar.xz
+ 890f1d3ec4168df523647d8be64355c2deb2861e8a1f2e4523fe876fc72bb519 11270 mx-live-usb-maker_18.12.1_amd64.buildinfo
+ 524db866fe8aa3a8a49f9d911e87113a401226f926f28ab3119e21120c62681a 69500 mx-live-usb-maker_18.12.1_amd64.deb
+Files:
+ b6a2e64876bbbcfde124cb089384977c 1180 admin optional mx-live-usb-maker_18.12.1.dsc
+ a50f76b8501448e20384d7e895ac3cc1 39800 admin optional mx-live-usb-maker_18.12.1.tar.xz
+ c8b97d103aa8d64137ddf6907aa35e1e 11270 admin optional mx-live-usb-maker_18.12.1_amd64.buildinfo
+ 2ee6513d418f9013259ae20e44e8e5ca 69500 admin optional mx-live-usb-maker_18.12.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwX4aATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGg2CACxm2YAEDEf1Rt/JdpnYQl+W++VFfzI
+EYHlwWLP2JpEsobW4uzyBg+k2VdbIgaW8OgHF2X8Q5Sq3n/ND07JkXCGP9LsLaUf
+4HQ8wSlnGws433Am3/Tauif5gFdIyU/deUIMxRfOtv3zY/ainSV3jZ5rUvOXpuIP
+6BnVZ0v0u8DPIhcutWrRDqtCx8Dt18DIJpZvJgpt3OJHVsJTwnIeJaurcex9Z31G
+GMK/8LbWebELpGNo27j99W9HTYyq5a+m1PsK0rkb2tm8o90rKPoc6chFQE6BEE5c
+JCc7Bx9Xv+EG3IxedZ9oTi3VK/VC5fJlYhSYTuzU2ZPyOHeFISpqyqW+
+=wyxw
+-----END PGP SIGNATURE-----
