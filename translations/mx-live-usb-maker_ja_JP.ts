@@ -1,20 +1,20 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja_JP" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation>Programmname</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Anwendung beenden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="56"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Hilfe anzeigen</translation>
+        <translation>ヘルプの表示</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="98"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Zurück</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Weiter</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Über dieses Programm</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Über...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="208"/>
@@ -66,294 +66,292 @@
         <location filename="mainwindow.cpp" line="478"/>
         <location filename="mainwindow.cpp" line="496"/>
         <source>Select ISO</source>
-        <translation>ISO-Datei auswählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ziel-USB-Gerät auswählen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ISO-Datei auswählen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation>Zusatzoptionen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="298"/>
         <source>Verbosity (less to more):</source>
-        <translation>Ausführlichkeitslevel der angezeigten Infos (niedrig bis hoch)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="349"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation>Größe der ESP (uefi) Partition:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="381"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation>Erzeugung des ext4 Dateisystems, auch falls es bereits eines gibt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="388"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation>Beim Aktualisieren eines Live-USB-Systems original Boot-Verzeichnis speichern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="395"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>GPT- statt MSDOS-Partitionstabelle verwenden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="398"/>
         <source>GPT partitioning</source>
-        <translation>GPT-Partitionstabelle</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="405"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation>Aktualisierung (nur eines bereits existenten Livs-USB-Systems)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="412"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation>Syslinux-Dateien nicht ersetzen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="415"/>
         <source>Keep syslinux files</source>
-        <translation>Syslinux-Dateien beibehalten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="422"/>
         <source>Ignore USB/removable check</source>
-        <translation>Prüfung auf USB/Wechsellaufwerk ignorieren</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="429"/>
         <source>Temporarily disable automounting</source>
-        <translation>Automount temporär abschalten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="439"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation>Setze pmbr_boot Markierung (verhindert das Booten mit UEFI)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="452"/>
         <source>Refresh drive list</source>
-        <translation>Laufwerksliste erneuern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="465"/>
         <location filename="mainwindow.cpp" line="424"/>
         <source>Show advanced options</source>
-        <translation>Zusatzoptionen anzeigen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="484"/>
         <source>Mode</source>
-        <translation>Modus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="499"/>
         <source>Full-featured mode - writable LiveUSB</source>
-        <translation>Voll funktioneller Modus - beschreibbares LiveUSB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="509"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation>Nur lesbar: kann nicht mit Persistenz verwendet werden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="512"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation>Abbild-Modus - nur lesbares LiveUSB (dd)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="526"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Für andere Distributionen als antiX/MX verwende den Abbild-Modus (dd).</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="574"/>
         <source>Options</source>
-        <translation>Einstellungen</translation>
+        <translation>オプション</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="609"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Nutzbarer Prozentanteil des USB-Geräts:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="616"/>
         <source>Label ext partition:</source>
-        <translation>Bezeichnung der ext-Partition:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="664"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation>Keine Befehle ausführen, die das USB-Gerät betreffen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="667"/>
         <source>Dry run (no change to system)</source>
-        <translation>Probelauf (ohne Änderungen des Systems)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="674"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>Klonen eines eingehängten Live-USB- oder ISO-Datei-Systems</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="677"/>
         <source>Clone an existing live system</source>
-        <translation>Klonen eines existierenden Live-Systems</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="684"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation>Einstellung für das Starten von einer verschlüsselten Partition; beim ersten Start wird ein Passwort verlangt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="687"/>
         <source>Encrypt</source>
-        <translation>Verschlüsseln</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="694"/>
         <source>Clone running live system</source>
-        <translation>Klonen eines laufenden Live-Systems</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="78"/>
         <location filename="mainwindow.cpp" line="246"/>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Failure</source>
-        <translation>Fehlschlag</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="78"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>Quelle und Ziel befinden sich auf demselben Gerät; bitte Auswahl wiederholen.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="100"/>
         <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>%1 wird mittels &apos;dd&apos; Befehl auf /dev/%2 geschrieben,
-
-biite auf Abschluß des Vorgangs warten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="244"/>
         <source>Success</source>
-        <translation>Erfolg</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="244"/>
         <source>LiveUSB creation successful!</source>
-        <translation>LiveUSB-Erstellung erfolgreich!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="246"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation>Bei der LiveUSB-Erzeugung trat ein Fehler auf</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="292"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="292"/>
         <source>Please select a USB device to write to</source>
-        <translation>Ziel-USB-Gerät auswählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="295"/>
         <location filename="mainwindow.cpp" line="490"/>
         <source>clone</source>
-        <translation>Klonen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="334"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="335"/>
         <source>Version: </source>
-        <translation>Version:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="336"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Programm zur LiveUSB-Erzeugung aus einer ISO-Datei, einem anderen LiveUSB-System, einer Live-CD/DVD oder einem laufenden Live-System.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="338"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="339"/>
         <location filename="mainwindow.cpp" line="351"/>
         <source>License</source>
-        <translation>Lizenz</translation>
+        <translation>ライセンス</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="340"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="341"/>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
         <source>&amp;Close</source>
-        <translation>&amp;Close</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="398"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation>Auswahl der auf das USB-Laufwerk zu schreibenden ISO-Datei</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="404"/>
         <location filename="mainwindow.cpp" line="474"/>
         <source>Select Source Directory</source>
-        <translation>Quellverzeichnis auswählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation>%1/antiX/linuxfs Datei konnte nicht gefunden werden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="430"/>
         <source>Hide advanced options</source>
-        <translation>Erweiterte Optionen ausblenden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="473"/>
         <location filename="mainwindow.cpp" line="488"/>
         <source>Select Source</source>
-        <translation>Quelle auswählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="477"/>
         <location filename="mainwindow.cpp" line="494"/>
         <source>Select ISO file</source>
-        <translation>ISO-Datei auswählen</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -361,7 +359,7 @@ biite auf Abschluß des Vorgangs warten</translation>
     <message>
         <location filename="main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Dieses Programm muss vom Benutzer &quot;root&quot; ausgeführt werden.</translation>
+        <translation>このプログラムは root 権限で実行する必要があります。</translation>
     </message>
 </context>
 </TS>
