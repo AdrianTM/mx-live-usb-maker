@@ -96,7 +96,10 @@ void MainWindow::makeUsb(const QString &options)
 
     QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
     if (ui->rb_dd->isChecked()) {
-        cmdstr = QString("dd bs=1M if=" + source + " of=/dev/" + device);
+        cmdstr = "live-usb-maker gui partition-clear -NC off --target " + device;
+        connect(cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
+        qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
+        cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
         ui->outputBox->appendPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the the process is completed").arg(source).arg(device));
     }

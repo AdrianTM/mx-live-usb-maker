@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.2) mx; urgency=medium
+
+  * run partition-clean before using dd copy
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 13 Feb 2019 16:24:21 -0500
+
 CUSTOMPROGRAMNAME (19.1) mx; urgency=medium
 
   * updated translations
