@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 01 Apr 2019 14:22:42 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.4) mx; urgency=medium
+ .
+   * add force nofuse in advanced options
+Checksums-Sha1:
+ 8591d61982220d8fa94e3ab4206aad7628e19112 1168 mx-live-usb-maker_19.4.dsc
+ a2144c96ea11a3a05cc0e822708262466273890b 42280 mx-live-usb-maker_19.4.tar.xz
+ 89335b1506521d940cd70ddb1f74cd541e1b4951 11406 mx-live-usb-maker_19.4_amd64.buildinfo
+ 26fcf3da665341fff52954a505c423f29fec085b 70248 mx-live-usb-maker_19.4_amd64.deb
+Checksums-Sha256:
+ c7bb45d8635290449cde190e7234c64abdf37d056b9d07232388dad784d1bdce 1168 mx-live-usb-maker_19.4.dsc
+ cfb56da1c810f10e020a80916c4ce505472331a8531bbaf65e54517300eadc3a 42280 mx-live-usb-maker_19.4.tar.xz
+ f1f112d11e8138bf85ddee06ad97c0230871e862df525703e916b55697c7d53a 11406 mx-live-usb-maker_19.4_amd64.buildinfo
+ ecd3b5e44d9037e99f706d835df4f697568d8f487de30519bc87fcc728727f98 70248 mx-live-usb-maker_19.4_amd64.deb
+Files:
+ 759cb45837fbe624c178838c0514350a 1168 admin optional mx-live-usb-maker_19.4.dsc
+ 2d607bc0981e8fb42d6cf734cf1bee88 42280 admin optional mx-live-usb-maker_19.4.tar.xz
+ 8888bcb08c456d46ace442bfbfa9866f 11406 admin optional mx-live-usb-maker_19.4_amd64.buildinfo
+ 3e02dcfa092f3fb5529c672105331a52 70248 admin optional mx-live-usb-maker_19.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyiV10THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFb+CADDZ2CUYQB7bqlv0jhT94v2ee49PC4g
+y2v16/thXNqcTy2M1Q6CKXVlJgnv0LXaZZRzxyYWfA+5KldPi5zOiueVyzn8s6ne
+CeUL2jR3aXpvw1knKuk8UrdKrEn4VLeOjtUGKazV8C2oKu+fDG7caIgWPgRKBzKf
+SUAOD40n+B16cUMRzfu+X7eQpmpu/nFSBoCY/ypYqbp00OBl0zAgCOs7ASl4m74j
+shH5YiAxNsDoqomtso+/DkVJpky2Heq3rVkGiZYfNBw5h/BrMKjw3nAXHh43riWZ
+bZHYlQ5y2hn2Mm6LBuEevGdbMhpis+WL706QPQw2DhjWhNEShEeLQvaG
+=DAWe
+-----END PGP SIGNATURE-----

@@ -440,6 +440,13 @@
                </property>
               </widget>
              </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="cb_force_nofuse">
+               <property name="text">
+                <string>Don't use fuseiso to mount iso files</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -452,7 +459,8 @@
           <string>Refresh drive list</string>
          </property>
          <property name="icon">
-          <iconset theme="view-refresh"/>
+          <iconset theme="view-refresh">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="autoDefault">
           <bool>false</bool>
@@ -465,7 +473,8 @@
           <string>Show advanced options</string>
          </property>
          <property name="icon">
-          <iconset theme="go-down"/>
+          <iconset theme="go-down">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="autoDefault">
           <bool>false</bool>

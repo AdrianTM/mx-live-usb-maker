@@ -180,6 +180,9 @@ QString MainWindow::buildOptionList()
     if (ui->cb_force_makefs->isChecked()) {
         options += "--force=makefs ";
     }
+    if (ui->cb_force_nofuse->isChecked()) {
+        options += "--force=nofuse ";
+    }
     if (ui->rb_dd->isChecked()) {
 
     }
