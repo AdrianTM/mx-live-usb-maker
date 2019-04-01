@@ -18,29 +18,29 @@ Changes:
  .
    * add force nofuse in advanced options
 Checksums-Sha1:
- 8591d61982220d8fa94e3ab4206aad7628e19112 1168 mx-live-usb-maker_19.4.dsc
- a2144c96ea11a3a05cc0e822708262466273890b 42280 mx-live-usb-maker_19.4.tar.xz
- 89335b1506521d940cd70ddb1f74cd541e1b4951 11406 mx-live-usb-maker_19.4_amd64.buildinfo
- 26fcf3da665341fff52954a505c423f29fec085b 70248 mx-live-usb-maker_19.4_amd64.deb
+ 97fb6c538d230c98665c05062a1ac9ce5dbb16e9 1168 mx-live-usb-maker_19.4.dsc
+ 59878ac3dc47638c76ea7bc72f185536ea6c3fe1 42288 mx-live-usb-maker_19.4.tar.xz
+ a0c2e44e2ce754a4e18ed8648d42e10833f8221f 11406 mx-live-usb-maker_19.4_amd64.buildinfo
+ 23f3c7474e52f3aa15cec9c3562e4f9ed4579de4 70254 mx-live-usb-maker_19.4_amd64.deb
 Checksums-Sha256:
- c7bb45d8635290449cde190e7234c64abdf37d056b9d07232388dad784d1bdce 1168 mx-live-usb-maker_19.4.dsc
- cfb56da1c810f10e020a80916c4ce505472331a8531bbaf65e54517300eadc3a 42280 mx-live-usb-maker_19.4.tar.xz
- f1f112d11e8138bf85ddee06ad97c0230871e862df525703e916b55697c7d53a 11406 mx-live-usb-maker_19.4_amd64.buildinfo
- ecd3b5e44d9037e99f706d835df4f697568d8f487de30519bc87fcc728727f98 70248 mx-live-usb-maker_19.4_amd64.deb
+ 619f9aab23229b3cc7627771ce35e2028e1878d09494896123b218dec29484db 1168 mx-live-usb-maker_19.4.dsc
+ b77050450559300d0f686bf9094ae3cdd69a0c7180d9d1f678762fa8c448d0f3 42288 mx-live-usb-maker_19.4.tar.xz
+ 4d2ca799f06acbc5bd1a27f0d06212c35326249c0be4f2c3460d8a13435a08d3 11406 mx-live-usb-maker_19.4_amd64.buildinfo
+ 77998cebf3622a0e7a48b43fc513f9bd7f712a6defd8fdb0d3813af6958d6aab 70254 mx-live-usb-maker_19.4_amd64.deb
 Files:
- 759cb45837fbe624c178838c0514350a 1168 admin optional mx-live-usb-maker_19.4.dsc
- 2d607bc0981e8fb42d6cf734cf1bee88 42280 admin optional mx-live-usb-maker_19.4.tar.xz
- 8888bcb08c456d46ace442bfbfa9866f 11406 admin optional mx-live-usb-maker_19.4_amd64.buildinfo
- 3e02dcfa092f3fb5529c672105331a52 70248 admin optional mx-live-usb-maker_19.4_amd64.deb
+ a66204f8c7d56ae5d95691a3f9d368d7 1168 admin optional mx-live-usb-maker_19.4.dsc
+ 43f5255a82e6d2ce1fb735f99de94c86 42288 admin optional mx-live-usb-maker_19.4.tar.xz
+ 3e5d5d7ebbb1d774c2b1df94d73639c4 11406 admin optional mx-live-usb-maker_19.4_amd64.buildinfo
+ 864b56b491a447d928c3561a7434ac7c 70254 admin optional mx-live-usb-maker_19.4_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyiV10THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFb+CADDZ2CUYQB7bqlv0jhT94v2ee49PC4g
-y2v16/thXNqcTy2M1Q6CKXVlJgnv0LXaZZRzxyYWfA+5KldPi5zOiueVyzn8s6ne
-CeUL2jR3aXpvw1knKuk8UrdKrEn4VLeOjtUGKazV8C2oKu+fDG7caIgWPgRKBzKf
-SUAOD40n+B16cUMRzfu+X7eQpmpu/nFSBoCY/ypYqbp00OBl0zAgCOs7ASl4m74j
-shH5YiAxNsDoqomtso+/DkVJpky2Heq3rVkGiZYfNBw5h/BrMKjw3nAXHh43riWZ
-bZHYlQ5y2hn2Mm6LBuEevGdbMhpis+WL706QPQw2DhjWhNEShEeLQvaG
-=DAWe
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyiWUkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumKIVCACwSHMRaJVkC47z3WhmaFNRTaV6hSMb
+nSg9WEG2lZ2XetxpFKwVkKaEWHBvpqEEc2q2quJcSTI7mixuqWAotuIhyt9yfy6A
+gq6fOxnVA8KhZj/FTIHFwtUeU3dg9rHjWGZptBlBqJCoM2hL2pgGoLa4vOURih45
+RDIvgAZAf+FxPp+vD25UWAZsCmSsaAFFDRUN3Aa//DZC+dJN/FxM5cVcvr04YiOf
+N6tbYbe+SrdzEsTjzyB3FcTBorlSL1DlSMhBIzqsMXR7bsOam0KInP7IoCsJdFr5
+We2Rvgq8GmyXo/s1FZCfpAUqY3W/Vmxz5Y5/HhsFZaO8bDYgFxfDBwSW
+=cjHh
 -----END PGP SIGNATURE-----

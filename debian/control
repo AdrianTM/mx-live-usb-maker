@@ -11,7 +11,13 @@ Standards-Version: 3.9.8
 
 Package: CUSTOMPROGRAMNAME
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, live-usb-maker, libcmd, cli-shell-utils, xdg-utils | mx-viewer, menu
+Depends: ${misc:Depends}, 
+	${shlibs:Depends}, 
+	live-usb-maker (>=0.3.7), 
+	libcmd, 
+	cli-shell-utils, 
+	xdg-utils | mx-viewer, 
+	menu
 Description: CUSTOMPROGRAMNAME
  CUSTOMPROGRAMNAME
 
