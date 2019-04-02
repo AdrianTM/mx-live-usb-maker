@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.4.1) mx; urgency=medium
+
+  * remove unneeded version dependency
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 02 Apr 2019 15:21:11 -0400
+
 CUSTOMPROGRAMNAME (19.4) mx; urgency=medium
 
   * add force nofuse in advanced options

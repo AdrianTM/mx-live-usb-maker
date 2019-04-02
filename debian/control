@@ -13,7 +13,7 @@ Package: CUSTOMPROGRAMNAME
 Architecture: any
 Depends: ${misc:Depends}, 
 	${shlibs:Depends}, 
-	live-usb-maker (>=0.3.7), 
+	live-usb-maker, 
 	libcmd, 
 	cli-shell-utils, 
 	xdg-utils | mx-viewer, 
