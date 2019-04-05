@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.4.4) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 05 Apr 2019 11:38:59 -0400
+
 CUSTOMPROGRAMNAME (19.4.1) mx; urgency=medium
 
   * remove unneeded version dependency

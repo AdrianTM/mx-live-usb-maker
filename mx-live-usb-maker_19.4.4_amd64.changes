@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Fri, 05 Apr 2019 11:38:59 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.4.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.4.4) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ d6794b935efa2ed7c7798c4ac841f99314e01e87 1176 mx-live-usb-maker_19.4.4.dsc
+ 783bbaefcfadf73f28cd35ae6baa5ff214452329 43364 mx-live-usb-maker_19.4.4.tar.xz
+ 6415dec9c9d4da7faf32b16e301023698adf6de9 11422 mx-live-usb-maker_19.4.4_amd64.buildinfo
+ 75a1438c9256d373ab3686adc6bb9c324de24d72 71396 mx-live-usb-maker_19.4.4_amd64.deb
+Checksums-Sha256:
+ df4cffee2b5c36704bf69bbef5fb27e2c06f31d94b751f0d81dc9adc6b1ea748 1176 mx-live-usb-maker_19.4.4.dsc
+ e95ddbed38b949278bb4a5f4c8d2adbcad1634abe48846b7d900549bfb0dab6a 43364 mx-live-usb-maker_19.4.4.tar.xz
+ 09846ed94d037e14154ede1b68c4b72704473ed38fb6b42d7e5d60048231f85d 11422 mx-live-usb-maker_19.4.4_amd64.buildinfo
+ 690f06862402f845568e98004686cbc6454f4266a54c6fbe6e3f18bbbb2392af 71396 mx-live-usb-maker_19.4.4_amd64.deb
+Files:
+ 91828cbc046f02663b062b0b1e68ad54 1176 admin optional mx-live-usb-maker_19.4.4.dsc
+ 380ee4a800d1805cb795b8d26b418ac8 43364 admin optional mx-live-usb-maker_19.4.4.tar.xz
+ c76e8af41f3ce8765b3e41a3e83e7862 11422 admin optional mx-live-usb-maker_19.4.4_amd64.buildinfo
+ b92b4ba1b4aaefe1d2ad7fc10552662c 71396 admin optional mx-live-usb-maker_19.4.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyndvYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOD5B/93oWaAxfe+ckMqZBMdpvLNI7XzUtsB
+dOthuJBYtUxf9YJRvNTUmwM/7i65rU8x+JM1/s8F33Hz7lMcJUvUtBVEbT/x6XwO
+8spqxjQyvN/No1vaySKpmFfmkMyEiwi1hGmd8rJbZTcuCY95/rEii1omjqj9Q4Qu
+NB/0f3RBI0gHRIMh61nR/QCYLgVa5QwOV1u1gQdwe3AjRwm0fagdTbyjqGDgFHnI
+7ZOFAJeESwaK9MceWPZJ8Ui8er1wGh2q0BJYw8Gz8pS0hgYzrUSiLKNLXSuOHopd
+FOSi3EpJQqAf3DJCAGGxj3N5//waTNXa4KBkFM1ImZt1SFyc40OBwTQW
+=/H1u
+-----END PGP SIGNATURE-----
