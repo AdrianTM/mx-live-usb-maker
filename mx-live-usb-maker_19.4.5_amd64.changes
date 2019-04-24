@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 24 Apr 2019 15:05:43 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.4.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.4.5) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ 9cb6cad8dd470c99b53f4e9881f5e0adf6e4af79 1176 mx-live-usb-maker_19.4.5.dsc
+ 53506c5c7fb6ff47628079ba679d7c3534fcfad3 43532 mx-live-usb-maker_19.4.5.tar.xz
+ 5865fbd7133be73d2886dcf2b908909ffb28afa6 11422 mx-live-usb-maker_19.4.5_amd64.buildinfo
+ 9c1ce564e021244e4e1478e933ee0cc76431abbc 71872 mx-live-usb-maker_19.4.5_amd64.deb
+Checksums-Sha256:
+ a1bd6c9438835f40a9817666acd8700a514df83d989ae2efe3b5ae0fe229a093 1176 mx-live-usb-maker_19.4.5.dsc
+ 23a2d0a7e5b1862f514fef1f7bed0395d9b729fd8135c878a06bc2df8e014fc7 43532 mx-live-usb-maker_19.4.5.tar.xz
+ 8b7361205a6f7b1a4e19fc8cca4742f6931b06645560787128e4391e537d78d9 11422 mx-live-usb-maker_19.4.5_amd64.buildinfo
+ f4fa0e737a1ae39747f270f0ceca5b1cf6445b82c1f86cb2a9d9a7f1cf8e2cf6 71872 mx-live-usb-maker_19.4.5_amd64.deb
+Files:
+ 0fb6d72f0666956a9067a67be73921f5 1176 admin optional mx-live-usb-maker_19.4.5.dsc
+ 54ebda082008fc8a6724297f1b4a2c75 43532 admin optional mx-live-usb-maker_19.4.5.tar.xz
+ 0f7f243c241647d01d9ad95cf66440e2 11422 admin optional mx-live-usb-maker_19.4.5_amd64.buildinfo
+ 5de941fbf17249684ff94606fec2941f 71872 admin optional mx-live-usb-maker_19.4.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzAs8MTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMtzB/9n/ea0K/GfkWdoLQtmin3/H5bDBfI3
+/603hCTi1x9tyrxUodUCA7hNI3eX10MFLzZdB5dmMQdFNi97wYWrtpsvmuO5Fe9f
+SrIrNS+d6gp0n4LNTmDpk6iR16bkYeyb6AljxIn7BjEopT+yobhwZDYFPNiNM88z
+4Pc4LC+mDQKHpID9HjOzAejce+aM22vfSexaLyvEpifnPiiyrNfuzFUuMFkkKzJ5
+TSvHR3MidRUew8xeGpIMfPh2hTNOCCkoPGIG3fJHv6yt2VvZaMVU97kEYEKbhOLk
+gssNr+FSrO3lN39qbrbVCtB6tTasvf/FcnduInx0ayWK/vhO+Xf3RTFB
+=ATH/
+-----END PGP SIGNATURE-----
