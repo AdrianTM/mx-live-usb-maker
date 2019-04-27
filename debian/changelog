@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.4.6) mx; urgency=medium
+
+  * tweak iso selection button to start in user home directory instead of root 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 27 Apr 2019 19:46:28 -0400
+
 CUSTOMPROGRAMNAME (19.4.5) mx; urgency=medium
 
   * updated translations
