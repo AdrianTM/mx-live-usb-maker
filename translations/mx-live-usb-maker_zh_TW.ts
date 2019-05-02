@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="502"/>
+        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="505"/>
         <source>Select ISO</source>
         <translation>選擇 ISO 檔</translation>
     </message>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="473"/>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="../mainwindow.cpp" line="433"/>
         <source>Show advanced options</source>
         <translation>顯示進階選項</translation>
     </message>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="78"/>
         <location filename="../mainwindow.cpp" line="252"/>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="418"/>
         <source>Failure</source>
         <translation>失敗</translation>
     </message>
@@ -284,7 +284,7 @@ Please wait until the the process is completed</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>clone</source>
         <translation>複製</translation>
     </message>
@@ -330,35 +330,35 @@ Please wait until the the process is completed</source>
         <translation>關閉（&amp;C）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>選擇要用哪個 ISO 檔來寫入 USB 設備</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
-        <location filename="../mainwindow.cpp" line="480"/>
+        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="483"/>
         <source>Select Source Directory</source>
         <translation>選擇資料來源目錄</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="418"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>找不到 %1/antiX/linuxfs 檔案</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Hide advanced options</source>
         <translation>隱藏進階選項</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="479"/>
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="482"/>
+        <location filename="../mainwindow.cpp" line="497"/>
         <source>Select Source</source>
         <translation>選擇來源</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="483"/>
-        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Select ISO file</source>
         <translation>選擇 ISO 檔</translation>
     </message>

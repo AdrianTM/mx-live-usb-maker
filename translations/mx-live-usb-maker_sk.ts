@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="502"/>
+        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="505"/>
         <source>Select ISO</source>
         <translation>Vyberte ISO súbor</translation>
     </message>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="473"/>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="../mainwindow.cpp" line="433"/>
         <source>Show advanced options</source>
         <translation>Zobraziť Pokročilé Nastavenia</translation>
     </message>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="78"/>
         <location filename="../mainwindow.cpp" line="252"/>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="418"/>
         <source>Failure</source>
         <translation>Neúspech</translation>
     </message>
@@ -283,7 +283,7 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>clone</source>
         <translation>klonovať</translation>
     </message>
@@ -329,35 +329,35 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
         <translation>&amp;Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Vyberte ISO súbor pre zápis na USB </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
-        <location filename="../mainwindow.cpp" line="480"/>
+        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="483"/>
         <source>Select Source Directory</source>
         <translation>Vyberte zdrojovú zložku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="418"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Súbor %1/antiX/linuxfs nebol nájdený</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Hide advanced options</source>
         <translation>Skryť Pokročilé Nastavenia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="479"/>
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="482"/>
+        <location filename="../mainwindow.cpp" line="497"/>
         <source>Select Source</source>
         <translation>Vyberte zdroj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="483"/>
-        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Select ISO file</source>
         <translation>Vyberte ISO súbor</translation>
     </message>
