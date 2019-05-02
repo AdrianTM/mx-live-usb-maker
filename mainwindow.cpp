@@ -399,9 +399,12 @@ void MainWindow::on_buttonSelectSource_clicked()
 {
     QFileDialog dialog;
     QString selected;
+    Cmd c;
+    QString user = c.getOutput("logname");
+    QString home = "/home/" + user;
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        selected = dialog.getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), QString(QDir::homePath()), QString("*.iso"));
+        selected = dialog.getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, QString("*.iso"));
         if (selected != "") {
             ui->buttonSelectSource->setText(selected);
             ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
