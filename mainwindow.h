@@ -55,7 +55,6 @@ public:
     void progress();
     void setup();
     QString buildOptionList();
-    QString getVersion(QString name);
     QStringList buildUsbList();
     QStringList removeUnsuitable(const QStringList &devices); // remove unsuitable disks from the list (live and unremovable)
 

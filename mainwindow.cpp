@@ -24,6 +24,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "version.h"
 
 #include <QFileDialog>
 #include <QScrollBar>
@@ -35,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
+    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
     setup();
     ui->combo_Usb->addItems(buildUsbList());
@@ -202,15 +204,6 @@ void MainWindow::cleanup()
 
 }
 
-
-// Get version of the program
-QString MainWindow::getVersion(QString name)
-{
-    Cmd cmd;
-    return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
-}
-
-
 // build the USB list
 QStringList MainWindow::buildUsbList()
 {
@@ -338,7 +331,7 @@ void MainWindow::on_buttonAbout_clicked()
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " Custom_Program_Name", "<p align=\"center\"><b><h2>Custom_Program_Name</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + getVersion("CUSTOMPROGRAMNAME") + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
