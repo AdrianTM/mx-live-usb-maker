@@ -398,9 +398,11 @@ void MainWindow::on_buttonSelectSource_clicked()
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
         selected = dialog.getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, QString("*.iso"));
-        if (selected != "") {
+        if (!selected.isEmpty()) {
             ui->buttonSelectSource->setText(selected);
+            ui->buttonSelectSource->setToolTip(selected);
             ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
+            ui->buttonSelectSource->setStyleSheet("text-align: left;");
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = dialog.getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
@@ -470,6 +472,7 @@ void MainWindow::on_cb_update_clicked(bool checked)
 void MainWindow::on_cb_clone_mode_clicked(bool checked)
 {
      if (checked) {
+        ui->buttonSelectSource->setStyleSheet("text-align: center;");
         ui->cb_clone_live->setChecked(false);
         on_cb_clone_live_clicked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
@@ -486,6 +489,7 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
 void MainWindow::on_cb_clone_live_clicked(bool checked)
 {
     if (checked){
+        ui->buttonSelectSource->setStyleSheet("text-align: center;");
         ui->cb_clone_mode->setChecked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->buttonSelectSource->setEnabled(false);

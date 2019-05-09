@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="480"/>
-        <location filename="../mainwindow.cpp" line="498"/>
+        <location filename="../mainwindow.cpp" line="483"/>
+        <location filename="../mainwindow.cpp" line="502"/>
         <source>Select ISO</source>
         <translation>Vælg ISO</translation>
     </message>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="473"/>
-        <location filename="../mainwindow.cpp" line="426"/>
+        <location filename="../mainwindow.cpp" line="428"/>
         <source>Show advanced options</source>
         <translation>Vis avancerede valgmuligheder</translation>
     </message>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="80"/>
         <location filename="../mainwindow.cpp" line="245"/>
-        <location filename="../mainwindow.cpp" line="411"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Failure</source>
         <translation>Mislykkedes</translation>
     </message>
@@ -284,7 +284,7 @@ Vent venligst indtil processen er fuldført</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
-        <location filename="../mainwindow.cpp" line="492"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>clone</source>
         <translation>klon</translation>
     </message>
@@ -335,30 +335,30 @@ Vent venligst indtil processen er fuldført</translation>
         <translation>Vælg en ISO-fil som skal skrives til USB-drevet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="406"/>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="408"/>
+        <location filename="../mainwindow.cpp" line="479"/>
         <source>Select Source Directory</source>
         <translation>Vælg kildemappe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="411"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Kunne ikke finde %1-/antiX-/linuxfs-fil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Hide advanced options</source>
         <translation>Skjul avancerede valgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="475"/>
-        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="478"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Select Source</source>
         <translation>Vælg kilde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="479"/>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="482"/>
+        <location filename="../mainwindow.cpp" line="500"/>
         <source>Select ISO file</source>
         <translation>Vælg ISO-fil</translation>
     </message>

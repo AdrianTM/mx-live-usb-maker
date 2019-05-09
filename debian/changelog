@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.5.1) mx; urgency=medium
+
+  * don't resize window when selecting long path/name ISOs
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 09 May 2019 01:35:20 -0400
+
 CUSTOMPROGRAMNAME (19.5) mx; urgency=medium
 
   * iso selection box to start in user home folder
