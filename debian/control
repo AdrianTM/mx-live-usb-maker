@@ -2,22 +2,21 @@ Source: CUSTOMPROGRAMNAME
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: qt5-default,
-        qttools5-dev-tools,
-        qt5-qmake,
-	debhelper (>=9),
-	libcmd
+Build-Depends: debhelper (>=9),
+               libcmd,
+               qt5-default,
+               qt5-qmake,
+               qttools5-dev-tools
 Standards-Version: 3.9.8
 
 Package: CUSTOMPROGRAMNAME
 Architecture: any
-Depends: ${misc:Depends}, 
-	${shlibs:Depends}, 
-	live-usb-maker, 
-	libcmd, 
-	cli-shell-utils, 
-	xdg-utils | mx-viewer, 
-	menu
+Depends: cli-shell-utils,
+         libcmd,
+         live-usb-maker,
+         menu,
+         xdg-utils | mx-viewer,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: CUSTOMPROGRAMNAME
  CUSTOMPROGRAMNAME
-
