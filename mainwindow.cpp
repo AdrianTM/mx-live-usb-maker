@@ -390,14 +390,13 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_buttonSelectSource_clicked()
 {
-    QFileDialog dialog;
     QString selected;
     Cmd c;
     QString user = c.getOutput("logname");
     QString home = "/home/" + user;
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        selected = dialog.getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, QString("*.iso"));
+        selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, QString("*.iso"));
         if (!selected.isEmpty()) {
             ui->buttonSelectSource->setText(selected);
             ui->buttonSelectSource->setToolTip(selected);
@@ -405,7 +404,7 @@ void MainWindow::on_buttonSelectSource_clicked()
             ui->buttonSelectSource->setStyleSheet("text-align: left;");
         }
     } else if (ui->cb_clone_mode->isChecked()) {
-        selected = dialog.getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
+        selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
         if (QFile(selected + "/antiX/linuxfs").exists()) {
             ui->buttonSelectSource->setText(selected);
         } else {
