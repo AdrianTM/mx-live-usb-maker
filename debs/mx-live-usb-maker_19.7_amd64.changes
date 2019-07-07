@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 07 Jul 2019 13:45:42 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.7) mx; urgency=medium
+ .
+   * fix window buttons for Buster
+Checksums-Sha1:
+ 967b8998ed9e1184a48d1fd8be4f19aae4f36c49 1168 mx-live-usb-maker_19.7.dsc
+ 16fb52f8aec2e2b65e0e30a818d0db827c38a2b4 44160 mx-live-usb-maker_19.7.tar.xz
+ 1f379a5ced3d7b62c6da9c11160e60d0cd69d0bb 72398 mx-live-usb-maker_19.7_amd64.deb
+Checksums-Sha256:
+ 17e0b0af7745d339d03882f2f2e4c274c201bdcc73d0f13621666dc633eeb4e0 1168 mx-live-usb-maker_19.7.dsc
+ 298741d7f6a3b946949b103c6aa03fb714c67bd0c8b8ddff5e1befed6a20db61 44160 mx-live-usb-maker_19.7.tar.xz
+ ddb41e3fc0c8068f495a42eeaa7623fd40742735275899935382d975b5f6e054 72398 mx-live-usb-maker_19.7_amd64.deb
+Files:
+ 23e462c53cda38ad1188f489d31647c3 1168 admin optional mx-live-usb-maker_19.7.dsc
+ 1f6405fc93b5a2a330981b975e359af2 44160 admin optional mx-live-usb-maker_19.7.tar.xz
+ 7cca226cea0a22cced4c328ed9bcf726 72398 admin optional mx-live-usb-maker_19.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0iMaITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPGdB/9DLNSawt9IW5OdH0a8xG6Q99AahSsl
+hRbjhE+yXlQcdivTwLOrrU4cnDcbVTdMrROLhnbEBypMyStXHUURw0BHt/iWDoT/
+mX3IM8T2FUYm6IQjXhbfChIjxsQUILURDl7GbzAa3qHC4I7LSCBqcSS3Gv+6kaV1
+0PIHgJAmbI17EyRyeUzxb5zgqDS7Zsr7ma/KsjSgzzEta5X53oScA24QP7Df6SKC
+7zjEGTffjW9dEoBOjw4gOYa3tR/rTOZsNqXokVI3ijtcawwWUTbKF5jOC3g2Su1n
+bebHtrWVJllWzDVAu+WrMG5wzydlfnMpBE2izWW12nJHHIzY8F6pNLF2
+=6CJ8
+-----END PGP SIGNATURE-----

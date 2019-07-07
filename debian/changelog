@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.7) mx; urgency=medium
+
+  * fix window buttons for Buster
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 07 Jul 2019 13:45:42 -0400
+
 CUSTOMPROGRAMNAME (19.5.1) mx; urgency=medium
 
   * don't resize window when selecting long path/name ISOs
