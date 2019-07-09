@@ -94,3 +94,4 @@ Type=Application
 Icon=drive-removable-media-usb
 Categories=System;MX-Live;
 NoDisplay=false
+MimeType=application/x-cd-image;
