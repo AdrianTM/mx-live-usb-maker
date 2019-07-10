@@ -20,15 +20,18 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
-#include "mainwindow.h"
-#include <unistd.h>
 #include <QApplication>
 #include <QDateTime>
 #include <QIcon>
 #include <QLocale>
 #include <QScopedPointer>
 #include <QTranslator>
+#include <QDebug>
+
+#include "mainwindow.h"
+#include <version.h>
+#include <unistd.h>
+
 
 QScopedPointer<QFile> logFile;
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
@@ -36,6 +39,12 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
+       qDebug() << "Version:" << VERSION;
+       return EXIT_SUCCESS;
+    }
+
     a.setWindowIcon(QIcon("/usr/share/pixmaps/drive-removable-media-usb.svg"));
 
     QTranslator qtTran;
@@ -56,15 +65,17 @@ int main(int argc, char *argv[])
     appTran.load(QString("CUSTOMPROGRAMNAME_") + QLocale::system().name(), "/usr/share/CUSTOMPROGRAMNAME/locale");
     a.installTranslator(&appTran);
 
+    qDebug() << "Program Version:" << VERSION;
+
     if (getuid() == 0) {
-        MainWindow w;
+        MainWindow w(a.arguments());
         w.show();
         return a.exec();
     } else {
         QApplication::beep();
         QMessageBox::critical(0, QString::null,
                               QApplication::tr("You must run this program as root."));
-        return 1;
+        return EXIT_FAILURE;
     }
 }
 

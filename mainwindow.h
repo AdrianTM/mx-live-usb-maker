@@ -44,7 +44,7 @@ class MainWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    MainWindow(const QStringList &args);
     ~MainWindow();
 
     bool checkISO();

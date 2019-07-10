@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.7.1) mx; urgency=medium
+
+  * add filename parameter
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 09 Jul 2019 23:51:15 -0400
+
 CUSTOMPROGRAMNAME (19.7) mx; urgency=medium
 
   * fix window buttons for Buster

@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="483"/>
-        <location filename="../mainwindow.cpp" line="502"/>
+        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Select ISO</source>
         <translation>Επιλέξτε το αρχείο ISO</translation>
     </message>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="473"/>
-        <location filename="../mainwindow.cpp" line="428"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Show advanced options</source>
         <translation>Προχωρημένες επιλογές</translation>
     </message>
@@ -237,19 +237,19 @@
         <translation>Κλωνοποίηση του Live System</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="81"/>
-        <location filename="../mainwindow.cpp" line="246"/>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="85"/>
+        <location filename="../mainwindow.cpp" line="250"/>
+        <location filename="../mainwindow.cpp" line="417"/>
         <source>Failure</source>
         <translation>Αποτυχία</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="85"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Η πηγή και ο προορισμός βρίσκονται στην ίδια συσκευή, επιλέξτε ξανά.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -258,107 +258,107 @@ Please wait until the the process is completed</source>
 Περιμένετε μέχρι να ολοκληρωθεί η διαδικασία</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="244"/>
+        <location filename="../mainwindow.cpp" line="248"/>
         <source>Success</source>
         <translation>Επιτυχία!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="244"/>
+        <location filename="../mainwindow.cpp" line="248"/>
         <source>LiveUSB creation successful!</source>
         <translation>δημιουργία LiveUSB επιτυχής!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="250"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Παρουσιάστηκε σφάλμα στη διαδικασία δημιουργίας του LiveUSB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="296"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="296"/>
         <source>Please select a USB device to write to</source>
         <translation>Επιλέξτε μια συσκευή USB για εγκατάσταση</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="500"/>
         <source>clone</source>
         <translation>κλωνοποίηση</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="334"/>
+        <location filename="../mainwindow.cpp" line="338"/>
         <source>About</source>
         <translation>Περί</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="335"/>
+        <location filename="../mainwindow.cpp" line="339"/>
         <source>Version: </source>
         <translation>Έκδοση:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="336"/>
+        <location filename="../mainwindow.cpp" line="340"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Πρόγραμμα για τη δημιουργία live-usb από αρχείο iso, άλλο live-usb, cd/dvd ή τρέχον live σύστημα.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="338"/>
+        <location filename="../mainwindow.cpp" line="342"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c)  MX Linux </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
-        <location filename="../mainwindow.cpp" line="351"/>
+        <location filename="../mainwindow.cpp" line="343"/>
+        <location filename="../mainwindow.cpp" line="355"/>
         <source>License</source>
         <translation>Άδεια</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="340"/>
+        <location filename="../mainwindow.cpp" line="344"/>
         <source>Changelog</source>
         <translation>Changelog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="341"/>
+        <location filename="../mainwindow.cpp" line="345"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="367"/>
         <source>&amp;Close</source>
         <translation>&amp;Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="400"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Επιλέξτε ένα αρχείο ISO για εγγραφή στη μονάδα USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="408"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="412"/>
+        <location filename="../mainwindow.cpp" line="483"/>
         <source>Select Source Directory</source>
         <translation>Επιλέξτε τον κατάλογο πηγών</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="417"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Δεν ήταν δυνατή η εύρεση αρχείο %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="434"/>
+        <location filename="../mainwindow.cpp" line="438"/>
         <source>Hide advanced options</source>
         <translation>Απόκρυψη προχωρημένες επιλογές</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="478"/>
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="482"/>
+        <location filename="../mainwindow.cpp" line="498"/>
         <source>Select Source</source>
         <translation>Επιλογή Πηγή</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="482"/>
-        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Select ISO file</source>
         <translation>Επιλέξτε το αρχείο ISO</translation>
     </message>
@@ -366,7 +366,7 @@ Please wait until the the process is completed</source>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="66"/>
+        <location filename="../main.cpp" line="77"/>
         <source>You must run this program as root.</source>
         <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως Root.</translation>
     </message>

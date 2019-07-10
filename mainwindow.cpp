@@ -32,15 +32,19 @@
 
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QDialog(parent),
+MainWindow::MainWindow(const QStringList& args) :
     ui(new Ui::MainWindow)
 {
-    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
     ui->combo_Usb->addItems(buildUsbList());
+    if (args.size() > 1) {
+        ui->buttonSelectSource->setText(args.at(1));
+        ui->buttonSelectSource->setToolTip(args.at(1));
+        ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
+        ui->buttonSelectSource->setStyleSheet("text-align: left;");
+    }
     this->adjustSize();
 }
 
