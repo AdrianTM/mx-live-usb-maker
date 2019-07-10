@@ -2,7 +2,6 @@ CUSTOMPROGRAMNAME		usr/bin
 CUSTOMPROGRAMNAME.conf		etc
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
 authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
-images/drive-removable-media-usb.svg usr/share/icons/hicolor/scalable/apps
-images/drive-removable-media-usb.svg usr/share/pixmaps
+images/CUSTOMPROGRAMNAME.png	usr/share/icons/hicolor/256x256/apps
 license.html			usr/share/doc/CUSTOMPROGRAMNAME
 translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale

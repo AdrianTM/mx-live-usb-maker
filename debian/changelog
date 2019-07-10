@@ -1,6 +1,7 @@
 CUSTOMPROGRAMNAME (19.7.1) mx; urgency=medium
 
   * add filename parameter
+  * new icon
 
  -- Adrian <adrian@mxlinux.org>  Tue, 09 Jul 2019 23:51:15 -0400
 
