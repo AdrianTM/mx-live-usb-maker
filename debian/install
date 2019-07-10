@@ -1,5 +1,4 @@
 CUSTOMPROGRAMNAME		usr/bin
-CUSTOMPROGRAMNAME.conf		etc
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
 authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
 images/CUSTOMPROGRAMNAME.png	usr/share/icons/hicolor/256x256/apps
