@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
        return EXIT_SUCCESS;
     }
 
-    a.setWindowIcon(QIcon("/usr/share/pixmaps/drive-removable-media-usb.svg"));
+    a.setWindowIcon(QIcon::fromTheme("CUSTOMPROGRAMNAME"));
 
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());
