@@ -264,7 +264,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
+       <item row="10" column="0">
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -292,81 +292,7 @@
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="13" column="0">
-           <widget class="QLabel" name="labelVerbosity">
-            <property name="text">
-             <string>Verbosity (less to more):</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="1">
-           <widget class="QSlider" name="sliderVerbosity">
-            <property name="minimum">
-             <number>0</number>
-            </property>
-            <property name="maximum">
-             <number>2</number>
-            </property>
-            <property name="pageStep">
-             <number>1</number>
-            </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-            <property name="invertedControls">
-             <bool>false</bool>
-            </property>
-            <property name="tickPosition">
-             <enum>QSlider::TicksBelow</enum>
-            </property>
-            <property name="tickInterval">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="1">
-           <widget class="QSpinBox" name="spinBoxEsp">
-            <property name="minimum">
-             <number>50</number>
-            </property>
-            <property name="maximum">
-             <number>1000</number>
-            </property>
-            <property name="singleStep">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QLabel" name="labelSizeEsp">
-            <property name="text">
-             <string>Size of ESP (uefi) partition:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="2">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::MinimumExpanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>500</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="0" colspan="4">
+          <item row="2" column="0" colspan="5">
            <widget class="QFrame" name="frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -448,6 +374,131 @@
               </widget>
              </item>
             </layout>
+           </widget>
+          </item>
+          <item row="10" column="3">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::MinimumExpanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>500</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="14" column="0">
+           <widget class="QLabel" name="labelSizeEsp">
+            <property name="text">
+             <string>Size of ESP (uefi) partition:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="1">
+           <widget class="QSpinBox" name="spinBoxEsp">
+            <property name="minimum">
+             <number>50</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="labelVerbosity">
+            <property name="text">
+             <string>Verbosity (less to more):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QSlider" name="sliderVerbosity">
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>2</number>
+            </property>
+            <property name="pageStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
+            <property name="invertedControls">
+             <bool>false</bool>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+            <property name="tickInterval">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="1">
+           <widget class="QComboBox" name="comboBoxDataFormat">
+            <item>
+             <property name="text">
+              <string>vfat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>extfat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ext4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ntfs</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="16" column="0" alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Format</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="1">
+           <widget class="QSpinBox" name="spinBoxDataSize">
+            <property name="minimum">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <number>90</number>
+            </property>
+            <property name="singleStep">
+             <number>5</number>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="0">
+           <widget class="QCheckBox" name="cb_data_first">
+            <property name="text">
+             <string>Make seperate data partition (percent)</string>
+            </property>
            </widget>
           </item>
          </layout>
@@ -750,8 +801,6 @@
   <tabstop>cb_force_makefs</tabstop>
   <tabstop>cb_force_usb</tabstop>
   <tabstop>cb_force_automount</tabstop>
-  <tabstop>spinBoxEsp</tabstop>
-  <tabstop>sliderVerbosity</tabstop>
   <tabstop>buttonAbout</tabstop>
   <tabstop>buttonHelp</tabstop>
   <tabstop>buttonBack</tabstop>
