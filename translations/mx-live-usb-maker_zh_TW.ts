@@ -91,6 +91,11 @@
         <translation>詳細程度（由低至高）：</translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="500"/>
+        <source>Make separate data partition (percent)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation>ESP (uefi) 磁碟區大小：</translation>
@@ -173,11 +178,6 @@
     <message>
         <location filename="../mainwindow.ui" line="480"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="500"/>
-        <source>Make seperate data partition (percent)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

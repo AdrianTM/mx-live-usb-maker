@@ -497,7 +497,7 @@
           <item row="15" column="0">
            <widget class="QCheckBox" name="cb_data_first">
             <property name="text">
-             <string>Make seperate data partition (percent)</string>
+             <string>Make separate data partition (percent)</string>
             </property>
            </widget>
           </item>

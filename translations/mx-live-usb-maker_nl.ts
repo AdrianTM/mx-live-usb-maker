@@ -91,6 +91,11 @@
         <translation>Verbosity (less naar more):</translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="500"/>
+        <source>Make separate data partition (percent)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation>Formaat van ESP (uefi) partitie:</translation>
@@ -173,11 +178,6 @@
     <message>
         <location filename="../mainwindow.ui" line="480"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="500"/>
-        <source>Make seperate data partition (percent)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
