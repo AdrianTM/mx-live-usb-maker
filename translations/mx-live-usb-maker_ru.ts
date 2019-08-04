@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="487"/>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="491"/>
+        <location filename="../mainwindow.cpp" line="510"/>
         <source>Select ISO</source>
         <translation>Выбор ISO</translation>
     </message>
@@ -86,160 +86,190 @@
         <translation>Расширенные опции</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="298"/>
+        <location filename="../mainwindow.ui" line="418"/>
         <source>Verbosity (less to more):</source>
         <translation>Степень детализации (от меньшего к большему):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="349"/>
+        <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation>Размер раздела ESP (uefi):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="381"/>
+        <location filename="../mainwindow.ui" line="307"/>
         <source>Make the ext4 filesystem even if one exists</source>
         <translation>Создать ФС ext4 если уже существует</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="388"/>
+        <location filename="../mainwindow.ui" line="314"/>
         <source>Save the original boot directory when updating a live-usb</source>
         <translation>Сохранить имеющуюся бут директорию при обновлении live-usb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="395"/>
+        <location filename="../mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
         <translation>Использовать gpt разделы вместо msdos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="398"/>
+        <location filename="../mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
         <translation>Партиционирование GPT</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="405"/>
+        <location filename="../mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
         <translation>Обновить (только для существующего live-usb)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="412"/>
+        <location filename="../mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
         <translation>Не заменять файлы syslinux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="415"/>
+        <location filename="../mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
         <translation>Оставить файлы syslinux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="422"/>
+        <location filename="../mainwindow.ui" line="348"/>
         <source>Ignore USB/removable check</source>
         <translation>Игнорировать проверку USB/извлекаемое</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="429"/>
+        <location filename="../mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
         <translation>Временно отключить автомонтирование</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="439"/>
+        <location filename="../mainwindow.ui" line="365"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
         <translation>Установить флаг накопителя pmbr_boot (не будет загружаться через UEFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="446"/>
+        <location filename="../mainwindow.ui" line="372"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="459"/>
+        <location filename="../mainwindow.ui" line="457"/>
+        <source>vfat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="462"/>
+        <source>exfat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="467"/>
+        <source>ext4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="472"/>
+        <source>ntfs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="480"/>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="500"/>
+        <source>Make seperate data partition (percent)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
         <translation>Обновить список накопителей</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="473"/>
-        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.ui" line="524"/>
+        <location filename="../mainwindow.cpp" line="436"/>
         <source>Show advanced options</source>
         <translation>Показать расширенные опции</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="493"/>
+        <location filename="../mainwindow.ui" line="544"/>
         <source>Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="508"/>
+        <location filename="../mainwindow.ui" line="559"/>
         <source>Full-featured mode - writable LiveUSB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="518"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation>Режим только на чтение, невозможно запомнить сеанс</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="521"/>
+        <location filename="../mainwindow.ui" line="572"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="535"/>
+        <location filename="../mainwindow.ui" line="586"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="583"/>
+        <location filename="../mainwindow.ui" line="634"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="618"/>
+        <location filename="../mainwindow.ui" line="669"/>
         <source>Percent of USB-device to use:</source>
         <translation>Процент использования USB-накопителя:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="625"/>
+        <location filename="../mainwindow.ui" line="676"/>
         <source>Label ext partition:</source>
         <translation>Метка раздела ext:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="673"/>
+        <location filename="../mainwindow.ui" line="724"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation>Не выполнять команды, влияющие на usb накопитель</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="../mainwindow.ui" line="727"/>
         <source>Dry run (no change to system)</source>
         <translation>Пробный прогон (без изменений системы)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="683"/>
+        <location filename="../mainwindow.ui" line="734"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation>Клонировать с подмонтированного live-usb или iso-файла</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="686"/>
+        <location filename="../mainwindow.ui" line="737"/>
         <source>Clone an existing live system</source>
         <translation>Клонировать существующую live систему</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="693"/>
+        <location filename="../mainwindow.ui" line="744"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation>Настроить загрузку с зашифрованного раздела, запросит пароль при первой загрузке</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="696"/>
+        <location filename="../mainwindow.ui" line="747"/>
         <source>Encrypt</source>
         <translation>Зашифровать</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="703"/>
+        <location filename="../mainwindow.ui" line="754"/>
         <source>Clone running live system</source>
         <translation>Клонировать работающую live систему</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="85"/>
-        <location filename="../mainwindow.cpp" line="250"/>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="254"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>Failure</source>
         <translation>Сбой</translation>
     </message>
@@ -258,107 +288,107 @@ Please wait until the the process is completed</source>
 Пожалуйста дождитесь завершения операции</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="248"/>
+        <location filename="../mainwindow.cpp" line="252"/>
         <source>Success</source>
         <translation>Успешно</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="248"/>
+        <location filename="../mainwindow.cpp" line="252"/>
         <source>LiveUSB creation successful!</source>
         <translation>Создание LiveUSB завершено успешно!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="250"/>
+        <location filename="../mainwindow.cpp" line="254"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Произошла ошибка при создании LiveUSB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Please select a USB device to write to</source>
         <translation>Выберите USB накопитель для записи</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>clone</source>
         <translation>клонировать</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="338"/>
+        <location filename="../mainwindow.cpp" line="342"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Version: </source>
         <translation>Версия:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="340"/>
+        <location filename="../mainwindow.cpp" line="344"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Приложение для создания live-usb из файла ISO, другого live-usb, live-cd/dvd или запущенной live системы.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="346"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Авторское право (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="343"/>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="../mainwindow.cpp" line="347"/>
+        <location filename="../mainwindow.cpp" line="359"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="348"/>
         <source>Changelog</source>
         <translation>Список изменений</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="345"/>
+        <location filename="../mainwindow.cpp" line="349"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="371"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Выберите файл ISO для записи на USB накопитель</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="412"/>
-        <location filename="../mainwindow.cpp" line="483"/>
+        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="487"/>
         <source>Select Source Directory</source>
         <translation>Выберите директорию источника</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Не найден файл %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="442"/>
         <source>Hide advanced options</source>
         <translation>Скрыть расширенные опции</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="482"/>
-        <location filename="../mainwindow.cpp" line="498"/>
+        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="502"/>
         <source>Select Source</source>
         <translation>Выберите источник</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
-        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="508"/>
         <source>Select ISO file</source>
         <translation>Выберите файл ISO</translation>
     </message>
