@@ -193,6 +193,10 @@ QString MainWindow::buildOptionList()
     if (ui->rb_dd->isChecked()) {
 
     }
+
+    if (ui->cb_data_first->isChecked()) {
+        options += "--data-first=" + ui->spinBoxDataSize->cleanText() + "," + ui->comboBoxDataFormat->currentText() + " ";
+    }
     switch(ui->sliderVerbosity->value()) {
     case 1 : options += "-V ";
         break;
