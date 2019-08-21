@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="491"/>
-        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="519"/>
         <source>Select ISO</source>
         <translation>選擇 ISO 檔</translation>
     </message>
@@ -91,7 +91,7 @@
         <translation>詳細程度（由低至高）：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="500"/>
+        <location filename="../mainwindow.ui" line="493"/>
         <source>Make separate data partition (percent)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -176,7 +176,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="480"/>
+        <location filename="../mainwindow.ui" line="500"/>
         <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="445"/>
         <source>Show advanced options</source>
         <translation>顯示進階選項</translation>
     </message>
@@ -268,8 +268,8 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="85"/>
-        <location filename="../mainwindow.cpp" line="254"/>
-        <location filename="../mainwindow.cpp" line="421"/>
+        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>Failure</source>
         <translation>失敗</translation>
     </message>
@@ -288,107 +288,107 @@ Please wait until the the process is completed</source>
 請等待程序執行完畢</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="252"/>
+        <location filename="../mainwindow.cpp" line="261"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="252"/>
+        <location filename="../mainwindow.cpp" line="261"/>
         <source>LiveUSB creation successful!</source>
         <translation>現場版 USB 製作成功！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="254"/>
+        <location filename="../mainwindow.cpp" line="263"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>製作現場版 USB 的程序發生錯誤</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="309"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="309"/>
         <source>Please select a USB device to write to</source>
         <translation>請選擇要寫入哪一個 USB 設備</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="303"/>
-        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="312"/>
+        <location filename="../mainwindow.cpp" line="513"/>
         <source>clone</source>
         <translation>複製</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="351"/>
         <source>About</source>
         <translation>關於</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="343"/>
+        <location filename="../mainwindow.cpp" line="352"/>
         <source>Version: </source>
         <translation>版本：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="353"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>本程式可以製作現場版 usb，其資料來源可以是 iso 檔、另外一個現場版 usb、現場版 cd/dvd、正在運行的系統。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="355"/>
         <source>Copyright (c) MX Linux</source>
         <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="347"/>
-        <location filename="../mainwindow.cpp" line="359"/>
+        <location filename="../mainwindow.cpp" line="356"/>
+        <location filename="../mainwindow.cpp" line="368"/>
         <source>License</source>
         <translation>授權條款</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="348"/>
+        <location filename="../mainwindow.cpp" line="357"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="349"/>
+        <location filename="../mainwindow.cpp" line="358"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="371"/>
+        <location filename="../mainwindow.cpp" line="380"/>
         <source>&amp;Close</source>
         <translation>關閉（&amp;C）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="408"/>
+        <location filename="../mainwindow.cpp" line="417"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>選擇要用哪個 ISO 檔來寫入 USB 設備</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="425"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>Select Source Directory</source>
         <translation>選擇資料來源目錄</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="421"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>找不到 %1/antiX/linuxfs 檔案</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="451"/>
         <source>Hide advanced options</source>
         <translation>隱藏進階選項</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
-        <location filename="../mainwindow.cpp" line="502"/>
+        <location filename="../mainwindow.cpp" line="495"/>
+        <location filename="../mainwindow.cpp" line="511"/>
         <source>Select Source</source>
         <translation>選擇來源</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="490"/>
-        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="499"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Select ISO file</source>
         <translation>選擇 ISO 檔</translation>
     </message>

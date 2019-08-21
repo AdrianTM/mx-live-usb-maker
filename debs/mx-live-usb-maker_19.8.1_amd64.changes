@@ -18,26 +18,26 @@ Changes:
  .
    * added offline help file
 Checksums-Sha1:
- 1a8f04869f83455e192aa5e025f658df591584f5 1176 mx-live-usb-maker_19.8.1.dsc
- d4a325a5790b9a7a1988c639ddaae6e861a477bb 90408 mx-live-usb-maker_19.8.1.tar.xz
- 862fc71a7bf9ed7e4cf91a89f945aaf87494df83 118874 mx-live-usb-maker_19.8.1_amd64.deb
+ 1d95796761304a4099593a3a6aeba8159ba2b6e0 1176 mx-live-usb-maker_19.8.1.dsc
+ 78f13cfe36b02d66a68aac40b77c1dcaac27ce7f 90464 mx-live-usb-maker_19.8.1.tar.xz
+ 15cbbf843b0e9ed82ba0d7ac4aa90c83d2b31832 118866 mx-live-usb-maker_19.8.1_amd64.deb
 Checksums-Sha256:
- 93bb803f80357301ab72098ed7f6d304a0774ed650c1acdefebc6edebb83958a 1176 mx-live-usb-maker_19.8.1.dsc
- 0cdf263d0bfeadd23e5fb570285a7da4f25bf76913d4a4514a63dcb0f112faed 90408 mx-live-usb-maker_19.8.1.tar.xz
- e365005b7f3e03e7b29e38d7dd9299ff272c476701dc326929bc110b44ff1407 118874 mx-live-usb-maker_19.8.1_amd64.deb
+ 8b283281709c786782a3e6bc54c1aeb0b26b435988f3b86dcabcd6c9cb42e865 1176 mx-live-usb-maker_19.8.1.dsc
+ 14152886d85f3457218ce7997d60acfbb74d503d535a43c7c753a39c1d1aa8f8 90464 mx-live-usb-maker_19.8.1.tar.xz
+ 4ff6e279d16503ef543d5e898919cf97cf184b683755858cc22cb8fade5629bb 118866 mx-live-usb-maker_19.8.1_amd64.deb
 Files:
- b7dd5455f57e8897505c3681ffba1fa4 1176 admin optional mx-live-usb-maker_19.8.1.dsc
- fb4733154a0bebbf201c6f2df236dc9f 90408 admin optional mx-live-usb-maker_19.8.1.tar.xz
- 1e7ba911ddfbd92375a561473e33510f 118874 admin optional mx-live-usb-maker_19.8.1_amd64.deb
+ 271c7e0dbfa5f09e46c3cb917b694869 1176 admin optional mx-live-usb-maker_19.8.1.dsc
+ a44dd9aaa06f91d6d7b4a7ce7288a558 90464 admin optional mx-live-usb-maker_19.8.1.tar.xz
+ ab7f864002e69fe4da1973e9524bbd9e 118866 admin optional mx-live-usb-maker_19.8.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1dh6sTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumP6zB/4+7b84HaLCBdKb86kOHd4ZBL+QHv6K
-HC42ZBObr3OE/BWXbzflqYJMc8L3B8Kjj3uNA9ZL6lTE56yAyO9dw3TYCW+5oAKA
-eHuucdGem68yV4KOgl4ANkSS46Nz9chaOQuroVOH0DeheYeG0EzPEnQnjGzO7qwW
-yNzn8o6vWrlfmxY4MHaIcrXSoIhbmaKYKsrsCssw2Lg5BxZ11YAItf2YEEBnSLku
-3BKVAG0Ad/WS5MX+ryZTwzrgWmXrLz9ItDclqBpFsgmijD6DGxPcEKkrYJfDoD8y
-ld97rPY9+XMLHkHB4BuQx4mBb35t5zB4o0xovoVNqjXDbHFAt1FQ916H
-=JU8o
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1diBsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPWiB/9FQaOA8iyyECwegPQAwRPU5uA/kIH/
++kXz0d6n+Assq3qhrL9hQzQY4g/FD2NhS0A90T5vnruLOWYA0EkwNORVfd2RYQ+g
+5+1GwC481ZLcuExj1jZ6izoTqA4NwQIgIGW4uiovDnbQhhZs17lJY4uJKYfNeE1K
+rmSdWSz7ZQqHdVrCEGsy5Qn4KSLC2vYMKVF5AWP8XWGRdFxOiC3Zf6AdyA16/+Bm
+L7P96wOOY3EYriaf6lq3i+pUCh0WagTJf+ybwSPito+UbY+B+7OW7Xtyg/Y49e2P
+Pskx1znkMh3eHRJCq0IbFPKfGkanH1BOwiso6akEKzkD02oYWF5B6c1V
+=7KY5
 -----END PGP SIGNATURE-----
