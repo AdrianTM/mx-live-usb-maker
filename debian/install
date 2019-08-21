@@ -1,5 +1,6 @@
 CUSTOMPROGRAMNAME		usr/bin
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
+help				usr/share/doc/CUSTOMPROGRAMNAME
 authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
 CUSTOMPROGRAMNAME.png		usr/share/icons/hicolor/256x256/apps
 license.html			usr/share/doc/CUSTOMPROGRAMNAME

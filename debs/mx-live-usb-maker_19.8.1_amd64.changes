@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 21 Aug 2019 13:56:22 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.8.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.8.1) mx; urgency=medium
+ .
+   * added offline help file
+Checksums-Sha1:
+ 1a8f04869f83455e192aa5e025f658df591584f5 1176 mx-live-usb-maker_19.8.1.dsc
+ d4a325a5790b9a7a1988c639ddaae6e861a477bb 90408 mx-live-usb-maker_19.8.1.tar.xz
+ 862fc71a7bf9ed7e4cf91a89f945aaf87494df83 118874 mx-live-usb-maker_19.8.1_amd64.deb
+Checksums-Sha256:
+ 93bb803f80357301ab72098ed7f6d304a0774ed650c1acdefebc6edebb83958a 1176 mx-live-usb-maker_19.8.1.dsc
+ 0cdf263d0bfeadd23e5fb570285a7da4f25bf76913d4a4514a63dcb0f112faed 90408 mx-live-usb-maker_19.8.1.tar.xz
+ e365005b7f3e03e7b29e38d7dd9299ff272c476701dc326929bc110b44ff1407 118874 mx-live-usb-maker_19.8.1_amd64.deb
+Files:
+ b7dd5455f57e8897505c3681ffba1fa4 1176 admin optional mx-live-usb-maker_19.8.1.dsc
+ fb4733154a0bebbf201c6f2df236dc9f 90408 admin optional mx-live-usb-maker_19.8.1.tar.xz
+ 1e7ba911ddfbd92375a561473e33510f 118874 admin optional mx-live-usb-maker_19.8.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1dh6sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumP6zB/4+7b84HaLCBdKb86kOHd4ZBL+QHv6K
+HC42ZBObr3OE/BWXbzflqYJMc8L3B8Kjj3uNA9ZL6lTE56yAyO9dw3TYCW+5oAKA
+eHuucdGem68yV4KOgl4ANkSS46Nz9chaOQuroVOH0DeheYeG0EzPEnQnjGzO7qwW
+yNzn8o6vWrlfmxY4MHaIcrXSoIhbmaKYKsrsCssw2Lg5BxZ11YAItf2YEEBnSLku
+3BKVAG0Ad/WS5MX+ryZTwzrgWmXrLz9ItDclqBpFsgmijD6DGxPcEKkrYJfDoD8y
+ld97rPY9+XMLHkHB4BuQx4mBb35t5zB4o0xovoVNqjXDbHFAt1FQ916H
+=JU8o
+-----END PGP SIGNATURE-----

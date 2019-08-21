@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.8.1) mx; urgency=medium
+
+  * added offline help file
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 21 Aug 2019 13:56:22 -0400
+
 CUSTOMPROGRAMNAME (19.8) mx; urgency=medium
 
   * add data-first 
