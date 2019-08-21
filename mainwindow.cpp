@@ -139,6 +139,15 @@ void MainWindow::setup()
 
     //check if running live or with "toram"
     ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
+
+    //check if datafirst option is available
+    QString test = cmd->getOutput("live-usb-maker --help | grep data-first");
+    if ( test.isEmpty()) {
+        ui->comboBoxDataFormat->hide();
+        ui->cb_data_first->hide();
+        ui->spinBoxDataSize->hide();
+        ui->label->hide();
+    }
 }
 
 // Build the option list to be passed to live-usb-maker
