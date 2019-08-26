@@ -1,402 +1,402 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime_programa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="46"/>
+        <location filename="mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapri aplikacijo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="49"/>
+        <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="56"/>
+        <location filename="mainwindow.ui" line="56"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="88"/>
+        <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži pomoč</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="91"/>
+        <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
         <translation>Pomoč</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="98"/>
+        <location filename="mainwindow.ui" line="98"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="114"/>
+        <location filename="mainwindow.ui" line="114"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="172"/>
+        <location filename="mainwindow.ui" line="172"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="198"/>
+        <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation type="unfinished"></translation>
+        <translation>O tem programu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="201"/>
+        <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="208"/>
+        <location filename="mainwindow.ui" line="208"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="500"/>
-        <location filename="../mainwindow.cpp" line="519"/>
+        <location filename="mainwindow.ui" line="239"/>
+        <location filename="mainwindow.cpp" line="500"/>
+        <location filename="mainwindow.cpp" line="519"/>
         <source>Select ISO</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="250"/>
+        <location filename="mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Izberite ciljno USB napravo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="260"/>
+        <location filename="mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Izberite ISO datoteko&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="289"/>
+        <location filename="mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Napredne možnosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="418"/>
-        <source>Verbosity (less to more):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="493"/>
-        <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="398"/>
-        <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="307"/>
+        <location filename="mainwindow.ui" line="307"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Napravi datotečni sistem ext4, četudi že obstaja</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="314"/>
+        <location filename="mainwindow.ui" line="314"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation type="unfinished"></translation>
+        <translation>Shrani originalni zagonski direktorij, ko posodabljaš živi-usb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="321"/>
+        <location filename="mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabi gpt particije, namesto msdos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="324"/>
+        <location filename="mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT razdeljevanje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="331"/>
+        <location filename="mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Posodobi (posodobi le obstoječ živi-usb)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="338"/>
+        <location filename="mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne nadomesti syslinux datotek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="341"/>
+        <location filename="mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Obdrži syslinux datoteke</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="348"/>
+        <location filename="mainwindow.ui" line="348"/>
         <source>Ignore USB/removable check</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoriraj preverjanje odstranljivosti za USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="355"/>
+        <location filename="mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"></translation>
+        <translation>Začasno onemogoči samodejni priklop</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="365"/>
+        <location filename="mainwindow.ui" line="365"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Določi zastavico pmbr_boot (ne deluje preko UEFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="372"/>
+        <location filename="mainwindow.ui" line="372"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne uporabljajte fuseiso za priklop iso datotek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="457"/>
+        <location filename="mainwindow.ui" line="398"/>
+        <source>Size of ESP (uefi) partition:</source>
+        <translation>Velikost ESP (uefi) particije:</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="418"/>
+        <source>Verbosity (less to more):</source>
+        <translation>Podrobnosti (manj do več):</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="457"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="462"/>
+        <location filename="mainwindow.ui" line="462"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="467"/>
+        <location filename="mainwindow.ui" line="467"/>
         <source>ext4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="472"/>
+        <location filename="mainwindow.ui" line="472"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="500"/>
+        <location filename="mainwindow.ui" line="493"/>
+        <source>Make separate data partition (percent)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="500"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="510"/>
+        <location filename="mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"></translation>
+        <translation>Osveži seznam pogonov</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="445"/>
+        <location filename="mainwindow.ui" line="524"/>
+        <location filename="mainwindow.cpp" line="445"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži napredne možnosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="544"/>
+        <location filename="mainwindow.ui" line="544"/>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Način</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="559"/>
+        <location filename="mainwindow.ui" line="559"/>
         <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>Polna funkcionalnost - zapisljiv živi-USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="569"/>
+        <location filename="mainwindow.ui" line="569"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo branje. Ne deluje s persistenco</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="572"/>
+        <location filename="mainwindow.ui" line="572"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>Slika diska - samo branje za živi-usb (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="586"/>
+        <location filename="mainwindow.ui" line="586"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation type="unfinished"></translation>
+        <translation>Za distribucije, ki niso antiX/MX, uporabite način Slika diska (dd).</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="634"/>
+        <location filename="mainwindow.ui" line="634"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcije</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="669"/>
+        <location filename="mainwindow.ui" line="669"/>
         <source>Percent of USB-device to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstotek rabe USB naprave:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="mainwindow.ui" line="676"/>
         <source>Label ext partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka ext razdelka:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="724"/>
+        <location filename="mainwindow.ui" line="724"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne izvajajte ukazov, ki lahko vplivajo na usb napravo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="727"/>
+        <location filename="mainwindow.ui" line="727"/>
         <source>Dry run (no change to system)</source>
-        <translation type="unfinished"></translation>
+        <translation>Suh zagon (brez sistemskih sprememb)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="734"/>
+        <location filename="mainwindow.ui" line="734"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation type="unfinished"></translation>
+        <translation>kloniraj iz priklopljeni živi-usb ali iso datoteko.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="737"/>
+        <location filename="mainwindow.ui" line="737"/>
         <source>Clone an existing live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Kloniraj obstoječ živi sistem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="744"/>
+        <location filename="mainwindow.ui" line="744"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Namestitev, ki se zaganja iz šifrirane particije, bo ob prvem zagonu zahtevala vnos varnostne fraze.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="747"/>
+        <location filename="mainwindow.ui" line="747"/>
         <source>Encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Šifriranje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="754"/>
+        <location filename="mainwindow.ui" line="754"/>
         <source>Clone running live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Kloniraj zagnan živi sistem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="85"/>
-        <location filename="../mainwindow.cpp" line="263"/>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="mainwindow.cpp" line="85"/>
+        <location filename="mainwindow.cpp" line="263"/>
+        <location filename="mainwindow.cpp" line="430"/>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="85"/>
+        <location filename="mainwindow.cpp" line="85"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vir in cilj se nahajata na isti napravi. Prosimo, ponovite izbor.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <location filename="mainwindow.cpp" line="110"/>
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisujem %1 z uproabo &apos;dd&apos; ukaza na /dev/%2,
+
+Prosimo počakajte, da se proces konča</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Operacija je uspela</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>LiveUSB creation successful!</source>
-        <translation type="unfinished"></translation>
+        <translation>ŽiviUSB je bil uspešno ustvarjen!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="mainwindow.cpp" line="263"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"></translation>
+        <translation>ŽiviUSB ni bil uspešno ustvarjen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="309"/>
+        <location filename="mainwindow.cpp" line="309"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="309"/>
+        <location filename="mainwindow.cpp" line="309"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite USb napravo na katero naj se zapisuje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="312"/>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="mainwindow.cpp" line="312"/>
+        <location filename="mainwindow.cpp" line="513"/>
         <source>clone</source>
-        <translation type="unfinished"></translation>
+        <translation>kloniraj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="351"/>
+        <location filename="mainwindow.cpp" line="351"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="352"/>
+        <location filename="mainwindow.cpp" line="352"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"></translation>
+        <translation>Program, ki ustvari živi-usb iz iso datoteke, drugega živega usb pogona, živega cd/dvd ploščka ali iz sistema, ki je zagnan v živo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="mainwindow.cpp" line="355"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="356"/>
-        <location filename="../mainwindow.cpp" line="368"/>
+        <location filename="mainwindow.cpp" line="356"/>
+        <location filename="mainwindow.cpp" line="368"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="357"/>
+        <location filename="mainwindow.cpp" line="357"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dnevnik sprememb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="358"/>
+        <location filename="mainwindow.cpp" line="358"/>
         <source>Cancel</source>
         <translation>Prekini</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="380"/>
+        <location filename="mainwindow.cpp" line="380"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zapri</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="mainwindow.cpp" line="417"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite ISO datoteko, ki naj se zapiše na USB pogon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="425"/>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="mainwindow.cpp" line="425"/>
+        <location filename="mainwindow.cpp" line="496"/>
         <source>Select Source Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite direktorij z virom</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="mainwindow.cpp" line="430"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nisem našel datoteke %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="mainwindow.cpp" line="451"/>
         <source>Hide advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrij napredne možnosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="495"/>
-        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="mainwindow.cpp" line="495"/>
+        <location filename="mainwindow.cpp" line="511"/>
         <source>Select Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi vir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="499"/>
-        <location filename="../mainwindow.cpp" line="517"/>
+        <location filename="mainwindow.cpp" line="499"/>
+        <location filename="mainwindow.cpp" line="517"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi ISO datoteko</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="main.cpp" line="77"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta program morate zagnati kot root</translation>
     </message>
 </context>
 </TS>
