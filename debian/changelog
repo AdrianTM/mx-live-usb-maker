@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.9) mx; urgency=medium
+
+  * remove libcmd dependency
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 10 Sep 2019 11:08:05 -0400
+
 CUSTOMPROGRAMNAME (19.8.1) mx; urgency=medium
 
   * added offline help file

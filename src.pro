@@ -28,11 +28,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    mainwindow.cpp
+    mainwindow.cpp \
+    cmd.cpp \
+    about.cpp
 
 HEADERS  += \
     mainwindow.h \
-    version.h
+    version.h \
+    cmd.h \
+    about.h
 
 FORMS    += \
     mainwindow.ui
@@ -84,6 +88,3 @@ TRANSLATIONS += translations/mx-live-usb-maker_am.ts \
 RESOURCES += \
     images.qrc
 
-
-
-unix:!macx: LIBS += -lcmd

@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 10 Sep 2019 11:08:05 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 19.9
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (19.9) mx; urgency=medium
+ .
+   * remove libcmd dependency
+Checksums-Sha1:
+ a81d0b0a8b1ca98bb7ed4752ec2e4a5e9c67f821 1149 mx-live-usb-maker_19.9.dsc
+ 9a12757bcb2e7d3fb1c767c65c5b8a31d948d12d 94004 mx-live-usb-maker_19.9.tar.xz
+ 3ea4e0def8effb6a9e4b4116d76089040fcc18f6 721568 mx-live-usb-maker-dbgsym_19.9_amd64.deb
+ 9b6a91bed500a17098c2e7d1e1f50b4422e0cdbf 11291 mx-live-usb-maker_19.9_amd64.buildinfo
+ 4ac95d8dfe5239be6d2490426e5eb64a207d1d91 119746 mx-live-usb-maker_19.9_amd64.deb
+Checksums-Sha256:
+ 5708ad3c6b4bdfe2e536439289010ec0fdc8ca1e6ead358a1d3c924a11f52e2f 1149 mx-live-usb-maker_19.9.dsc
+ b5f06e6c8ce9a10c8b9a6f0ffe973256bcd68933a6ad05ce556fd459ce497b09 94004 mx-live-usb-maker_19.9.tar.xz
+ d5bbfdb6efd0624217aa6044227744dce686975866c6ac8fba2fb5f6c2809054 721568 mx-live-usb-maker-dbgsym_19.9_amd64.deb
+ b8e6a5b5b531570e5f46f37a0ec98cbc89f735a27c26f1ae4614bc3f90a86c2e 11291 mx-live-usb-maker_19.9_amd64.buildinfo
+ 8fb48e7a705e1b7e8b2e1de1c35f15dc6e6a60c3d79d2379965dd93ddc501661 119746 mx-live-usb-maker_19.9_amd64.deb
+Files:
+ 39de3706c17a30c99e34dd59f1633b0e 1149 admin optional mx-live-usb-maker_19.9.dsc
+ 807130c4163f82abe3a61295bae1e76e 94004 admin optional mx-live-usb-maker_19.9.tar.xz
+ b0d2860aaf6cf4232844f5798f0f67da 721568 debug optional mx-live-usb-maker-dbgsym_19.9_amd64.deb
+ 79cd26a760937fa773f4ecaaed5724ca 11291 admin optional mx-live-usb-maker_19.9_amd64.buildinfo
+ 5d6d5856732b8a4a77e75e8a29b64cff 119746 admin optional mx-live-usb-maker_19.9_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl137CwTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumH3cB/48QcZp5qscbcUoUhLmGZhmLpwmhFyT
+ZT+8VvPw7GNvNb2S30swBjcmKIRqZeq3xUjbkglTgH6TQHBZlIBOtSpN1ZBkW98d
+yl8WWvV4XJDTR8AbO9XA/RNbORzEF/jLfacio2mgb8l9IE0WAkzeAmW3HVhk68Lk
+2mbME3cUq3Gplas/rhLI2lvJcP/WZQriRF2bq+cv7bIRfSfcObU7DzP9ANy5pVZP
+zklY5Rm0HWLW1YYJw3C+A0OO5ce2MvPANwxUdmRSDpumVJjXvV4BGV+GkczpM4m5
+zmR4ZfPYp8AOzY0W4MCd4wrfHVQZbC6KErOoabXMrDwlGNbVZOJwzvCX
+=CufK
+-----END PGP SIGNATURE-----
