@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sr" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="mr" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -14,27 +14,27 @@
     <message>
         <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Близу</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="56"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>मदत दाखवा</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Помоћ</translation>
+        <translation>मदत</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="98"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="114"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>या अनुप्रयोगाबद्दल</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>विषयी</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="208"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="239"/>
@@ -301,7 +301,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="316"/>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="316"/>
@@ -322,7 +322,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="356"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>आवृत्ती</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="357"/>
@@ -332,7 +332,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="mainwindow.cpp" line="359"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"/>
+        <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="360"/>
@@ -383,28 +383,28 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="about.cpp" line="32"/>
         <source>License</source>
-        <translation type="unfinished"/>
+        <translation>परवाना</translation>
     </message>
     <message>
         <location filename="about.cpp" line="33"/>
         <location filename="about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>बदल सूची</translation>
     </message>
     <message>
         <location filename="about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation>Одустани</translation>
+        <translation>रद्द करा</translation>
     </message>
     <message>
         <location filename="about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>बंद</translation>
     </message>
     <message>
         <location filename="main.cpp" line="75"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"/>
+        <translation>आपण हा प्रोग्राम रूट म्हणूनच चालवावा.</translation>
     </message>
 </context>
 </TS>
