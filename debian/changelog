@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.9.01) mx; urgency=medium
+
+  * update translations
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 29 Sep 2019 14:27:01 -0400
+
 CUSTOMPROGRAMNAME (19.9) mx; urgency=medium
 
   * remove libcmd dependency
