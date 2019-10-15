@@ -268,7 +268,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="86"/>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Failure</source>
         <translation>Αποτυχία</translation>
@@ -288,17 +288,17 @@ Please wait until the the process is completed</source>
 Περιμένετε μέχρι να ολοκληρωθεί η διαδικασία</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>Success</source>
         <translation>Επιτυχία!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>LiveUSB creation successful!</source>
         <translation>δημιουργία LiveUSB επιτυχής!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Παρουσιάστηκε σφάλμα στη διαδικασία δημιουργίας του LiveUSB</translation>
     </message>

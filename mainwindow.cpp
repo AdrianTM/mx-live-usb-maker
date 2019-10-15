@@ -258,6 +258,7 @@ void MainWindow::cmdStart()
 
 void MainWindow::cmdDone()
 {
+    timer.stop();
     ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
     ui->buttonBack->show();
@@ -267,7 +268,6 @@ void MainWindow::cmdDone()
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
     }
     cmd.disconnect();
-    timer.stop();
 }
 
 // set proc and timer connections
