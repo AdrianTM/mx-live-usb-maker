@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.11) mx; urgency=medium
+
+  * add check for ignoring removable/usb for target combo box
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 22 Oct 2019 22:52:47 -0400
+
 CUSTOMPROGRAMNAME (19.10) mx; urgency=medium
 
   * stop timer first when execution ends
