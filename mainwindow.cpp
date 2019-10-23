@@ -240,9 +240,15 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     QString name;
     for (const QString &line : devices) {
         name = line.split(" ").at(0);
-        if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
+        if (ui->cb_force_usb->isChecked()){
             if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
                 list << line;
+            }
+        } else {
+            if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
+                if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
+                    list << line;
+                }
             }
         }
     }
