@@ -30,6 +30,7 @@ make distclean
 # Rename files
 rename "s/CUSTOMPROGRAMNAME/$NAME/" *
 rename "s/CUSTOMPROGRAMNAME/$NAME/" translations/*
+rename "s/CUSTOMPROGRAMNAME/$NAME/" help/*
 
 
 # Rename strings

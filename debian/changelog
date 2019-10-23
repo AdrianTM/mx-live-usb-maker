@@ -1,3 +1,33 @@
+CUSTOMPROGRAMNAME (19.10) mx; urgency=medium
+
+  * stop timer first when execution ends
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 15 Oct 2019 11:13:37 -0400
+
+CUSTOMPROGRAMNAME (19.9.01) mx; urgency=medium
+
+  * update translations
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 29 Sep 2019 14:27:01 -0400
+
+CUSTOMPROGRAMNAME (19.9) mx; urgency=medium
+
+  * remove libcmd dependency
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 10 Sep 2019 11:08:05 -0400
+
+CUSTOMPROGRAMNAME (19.8.1) mx; urgency=medium
+
+  * added offline help file
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 21 Aug 2019 13:56:22 -0400
+
+CUSTOMPROGRAMNAME (19.8) mx; urgency=medium
+
+  * add data-first 
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 03 Aug 2019 21:30:13 -0400
+
 CUSTOMPROGRAMNAME (19.7.2) mx; urgency=medium
 
   * fix icon

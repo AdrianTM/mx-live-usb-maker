@@ -20,8 +20,7 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
-
+#include "about.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "version.h"
@@ -35,7 +34,9 @@
 MainWindow::MainWindow(const QStringList& args) :
     ui(new Ui::MainWindow)
 {
+    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
+
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
     ui->combo_Usb->addItems(buildUsbList());
@@ -55,7 +56,7 @@ MainWindow::~MainWindow()
 
 bool MainWindow::isRunningLive()
 {
-    QString test = cmd->getOutput("df -T / |tail -n1 |awk '{print $2}'");
+    QString test = cmd.getCmdOut("df -T / |tail -n1 |awk '{print $2}'");
     return ( test == "aufs" || test == "overlay" );
 }
 
@@ -72,16 +73,16 @@ void MainWindow::makeUsb(const QString &options)
     QString source;
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
         source = "\"" + ui->buttonSelectSource->text() + "\"";
-        QString source_size = cmd->getOutput("du -m \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", QStringList() << "quiet");
+        QString source_size = cmd.getCmdOut("du -m \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     } else if (ui->cb_clone_mode->isChecked()) {
-        QString source_size = cmd->getOutput("du -m --summarize \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", QStringList() << "quiet");
+        QString source_size = cmd.getCmdOut("du -m --summarize \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
         source = "clone=\"" + ui->buttonSelectSource->text() + "\"";
 
         // check if source and destination are on the same drive
-        QString root_partition = cmd->getOutput("df --output=source \"" + ui->buttonSelectSource->text() + "\"| awk 'END{print $1}'");
-        if ("/dev/" + device == cmd->getOutput(cli_utils + "get_drive " + root_partition)) {
+        QString root_partition = cmd.getCmdOut("df --output=source \"" + ui->buttonSelectSource->text() + "\"| awk 'END{print $1}'");
+        if ("/dev/" + device == cmd.getCmdOut(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"), tr("Source and destination are on the same device, please select again."));
             ui->stackedWidget->setCurrentWidget(ui->selectionPage);
             ui->buttonNext->setEnabled(true);
@@ -90,12 +91,12 @@ void MainWindow::makeUsb(const QString &options)
         }
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
-        QString source_size = cmd->getOutput("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", QStringList() << "quiet");
+        QString source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     }
 
     // check amount of io on device before copy, this is in sectors
-    start_io = cmd->getOutput("cat /sys/block/" + device + "/stat |awk '{print $7}'", QStringList() << "quiet").toInt();
+    start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
     ui->progressBar->setMinimum(start_io);
     qDebug() << "start io is " << start_io;
     ui->progressBar->setMaximum(iso_sectors+start_io);
@@ -104,26 +105,29 @@ void MainWindow::makeUsb(const QString &options)
     QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
     if (ui->rb_dd->isChecked()) {
         cmdstr = "live-usb-maker gui partition-clear -NC off --target " + device;
-        connect(cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
-        qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
+        connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
+        qDebug() << cmd.getCmdOut(cmdstr);
         cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
         ui->outputBox->appendPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the the process is completed").arg(source).arg(device));
     }
     setConnections();
-    qDebug() << cmd->getOutput(cmdstr, QStringList() << "slowtick");
+    qDebug() << cmd.getCmdOut(cmdstr);
 }
 
 // setup versious items first time program runs
 void MainWindow::setup()
 {
-    cmd = new Cmd(this);
-    cmdprog = new Cmd(this);
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("Custom_Program_Name");
+
+    QFont font("monospace");
+    font.setStyleHint(QFont::Monospace);
+    ui->outputBox->setFont(font);
+
     ui->groupAdvOptions->hide();
     advancedOptions = false;
-    ui->buttonBack->setHidden(true);;
+    ui->buttonBack->hide();
     ui->stackedWidget->setCurrentIndex(0);
     ui->buttonCancel->setEnabled(true);
     ui->buttonNext->setEnabled(true);
@@ -141,7 +145,7 @@ void MainWindow::setup()
     ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
 
     //check if datafirst option is available
-    QString test = cmd->getOutput("live-usb-maker --help | grep data-first");
+    QString test = cmd.getCmdOut("live-usb-maker --help | grep data-first");
     if ( test.isEmpty()) {
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();
@@ -219,13 +223,13 @@ QString MainWindow::buildOptionList()
 // cleanup environment when window is closed
 void MainWindow::cleanup()
 {
-
+    cmd.halt();
 }
 
 // build the USB list
 QStringList MainWindow::buildUsbList()
 {
-    QString drives = cmd->getOutput("lsblk --nodeps -nlo name,size,model,vendor -I 3,8,22,179,259");
+    QString drives = cmd.getCmdOut("lsblk --nodeps -nlo name,size,model,vendor -I 3,8,22,179,259");
     return removeUnsuitable(drives.split("\n"));
 }
 
@@ -237,7 +241,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     for (const QString &line : devices) {
         name = line.split(" ").at(0);
         if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
-            if (cmd->getOutput(cli_utils + "get_drive $(get_live_dev) ") != name) {
+            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
                 list << line;
             }
         }
@@ -254,50 +258,53 @@ void MainWindow::cmdStart()
 
 void MainWindow::cmdDone()
 {
+    timer.stop();
     ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
-    ui->buttonBack->setEnabled(true);
-    if (cmd->getExitCode() == 0) {
+    ui->buttonBack->show();
+    if (cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) {
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
     } else {
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
     }
-    cmd->disconnect();
+    cmd.disconnect();
 }
 
 // set proc and timer connections
 void MainWindow::setConnections()
 {
-    connect(cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
-    connect(cmd, &Cmd::started, this, &MainWindow::cmdStart);
-    connect(cmd, &Cmd::runTime, this, &MainWindow::updateBar);
-    connect(cmd, &Cmd::finished, this, &MainWindow::cmdDone);
-
+    timer.start(1000);
+    connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
+    connect(&cmd, &QProcess::started, this, &MainWindow::cmdStart);
+    connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar);
+    connect(&cmd, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 void MainWindow::updateBar()
 {
-    int current_io = cmdprog->getOutput("cat /sys/block/" + device + "/stat | awk '{print $7}'", QStringList() << "quiet" << "slowtick").toInt();
+    int current_io = cmd2.getCmdOut("cat /sys/block/" + device + "/stat | awk '{print $7}'", true).toInt();
     ui->progressBar->setValue(current_io);
 }
 
-void MainWindow::updateOutput(QString out)
+void MainWindow::updateOutput()
 {
     // remove escape sequences that are not handled by code
+    QString out = cmd.readAll();
     out.remove("[0m").remove("]0;").remove("").remove("").remove("[1000D").remove("[74C|").remove("[?25l").remove("[?25h").remove("[0;36m").remove("[1;37m");
-    if (out.contains("[10D[K")) { // escape sequence used to display the progress percentage
-        out.remove("[10D[K");
-        ui->outputBox->moveCursor(QTextCursor::StartOfLine);
-        QKeyEvent *event = new QKeyEvent(QEvent::KeyPress, Qt::Key_K, Qt::ControlModifier);
-        QCoreApplication::postEvent(ui->outputBox, event);
-        QString out_prog = out;
-        ui->progressBar->setValue(out_prog.remove(" ").remove("%").toInt());
-    }
+//    if (out.contains("[10D[K")) { // escape sequence used to display the progress percentage
+//        out.remove("[10D[K");
+//        ui->outputBox->moveCursor(QTextCursor::StartOfLine);
+//        QKeyEvent *event = new QKeyEvent(QEvent::KeyPress, Qt::Key_K, Qt::ControlModifier);
+//        QCoreApplication::postEvent(ui->outputBox, event);
+//        QString out_prog = out;
+//        ui->progressBar->setValue(out_prog.remove(" ").remove("%").toInt());
+//    }
 
     ui->outputBox->insertPlainText(out);
 
     QScrollBar *sb = ui->outputBox->verticalScrollBar();
     sb->setValue(sb->maximum());
+    qApp->processEvents();
 }
 
 // Next button clicked
@@ -313,12 +320,10 @@ void MainWindow::on_buttonNext_clicked()
             ui->buttonSelectSource->clicked();
             return;
         }
-        if (cmd->isRunning()) {
+        if (cmd.state() != QProcess::NotRunning) {
             ui->stackedWidget->setCurrentWidget(ui->outputPage);
             return;
         }
-        ui->buttonBack->setHidden(false);
-        ui->buttonBack->setEnabled(false);
         ui->buttonNext->setEnabled(false);
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
 
@@ -337,7 +342,7 @@ void MainWindow::on_buttonBack_clicked()
     this->setWindowTitle("Custom_Program_Name");
     ui->stackedWidget->setCurrentIndex(0);
     ui->buttonNext->setEnabled(true);
-    ui->buttonBack->setDisabled(true);
+    ui->buttonBack->hide();
     ui->outputBox->clear();
     ui->progressBar->setValue(0);
 }
@@ -347,70 +352,27 @@ void MainWindow::on_buttonBack_clicked()
 void MainWindow::on_buttonAbout_clicked()
 {
     this->hide();
-    QMessageBox msgBox(QMessageBox::NoIcon,
-                       tr("About") + " Custom_Program_Name", "<p align=\"center\"><b><h2>Custom_Program_Name</h2></b></p><p align=\"center\">" +
+    displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
                        tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
-                       tr("Copyright (c) MX Linux") + "<br /><br /></p>");
-    QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    QPushButton *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    QPushButton *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    btnCancel->setIcon(QIcon::fromTheme("window-close"));
-
-    msgBox.exec();
-
-    Cmd cmd;
-    if (msgBox.clickedButton() == btnLicense) {
-
-        QString user = cmd.getOutput("logname");
-        if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
-            system("su " + user.toUtf8() + " -c \"mx-viewer file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html 'Custom_Program_Name " + tr("License").toUtf8() + "'\"&");
-        } else {
-            system("su " + user.toUtf8() + " -c \"xdg-open file:///usr/share/doc/CUSTOMPROGRAMNAME/license.html\"&");
-        }
-    } else if (msgBox.clickedButton() == btnChangelog) {
-    QDialog *changelog = new QDialog(this);
-    changelog->resize(600, 500);
-
-    QTextEdit *text = new QTextEdit;
-    text->setReadOnly(true);
-    text->setText(cmd.getOutput("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
-
-    QPushButton *btnClose = new QPushButton(tr("&Close"));
-    btnClose->setIcon(QIcon::fromTheme("window-close"));
-    connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
-
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(text);
-    layout->addWidget(btnClose);
-    changelog->setLayout(layout);
-    changelog->exec();
-}
+                       tr("Copyright (c) MX Linux") + "<br /><br /></p>",
+                       "/usr/share/doc/CUSTOMPROGRAMNAME/license.html", tr("%1 License").arg(this->windowTitle()), true);
     this->show();
 }
 
 // Help button clicked
 void MainWindow::on_buttonHelp_clicked()
 {
-    QString url = "https://mxlinux.org/wiki/help-files/help-mx-live-usb-maker";
-    QString exec = "xdg-open";
-    if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
-        exec = "mx-viewer";
-    }
-
-    Cmd c;
-    QString user = c.getOutput("logname");
-    QString cmd = QString("su " + user + " -c \"" + exec + " " + url + "\"&");
-    system(cmd.toUtf8());
+    QString url = "/usr/share/doc/CUSTOMPROGRAMNAME/help/CUSTOMPROGRAMNAME.html";
+    displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
 }
 
 
 void MainWindow::on_buttonSelectSource_clicked()
 {
     QString selected;
-    Cmd c;
-    QString user = c.getOutput("logname");
+    QString user = cmd.getCmdOut("logname", true);
     QString home = "/home/" + user;
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {

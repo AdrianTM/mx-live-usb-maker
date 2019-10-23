@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.1" language="mr">
 <context>
     <name>MainWindow</name>
     <message>
@@ -11,12 +11,12 @@
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Ukončit aplikaci</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Zavřít</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="56"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Zobrazit nápovědu</translation>
+        <translation>मदत दाखवा</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Nápověda</translation>
+        <translation>मदत</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="98"/>
@@ -41,22 +41,22 @@
     <message>
         <location filename="../mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Předchozí</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Další</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>O této aplikaci</translation>
+        <translation>या अनुप्रयोगाबद्दल</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>O programu</translation>
+        <translation>विषयी</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
@@ -68,7 +68,7 @@
         <location filename="../mainwindow.cpp" line="462"/>
         <location filename="../mainwindow.cpp" line="481"/>
         <source>Select ISO</source>
-        <translation>Vybrat ISO soubor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="467"/>
         <source>ext4</source>
-        <translation>ext4</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="472"/>
@@ -219,7 +219,7 @@
     <message>
         <location filename="../mainwindow.ui" line="634"/>
         <source>Options</source>
-        <translation>Možnosti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="669"/>
@@ -288,12 +288,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="266"/>
         <source>Success</source>
-        <translation>Úspěch!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="266"/>
         <source>LiveUSB creation successful!</source>
-        <translation>Vytvoření Live-USB proběhlo úspěšně!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="268"/>
@@ -303,7 +303,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="316"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="316"/>
@@ -324,7 +324,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="356"/>
         <source>Version: </source>
-        <translation>Verze:</translation>
+        <translation>आवृत्ती</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="357"/>
@@ -334,7 +334,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Vlastnická práva (c) MX Linux</translation>
+        <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="360"/>
@@ -385,28 +385,28 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="32"/>
         <source>License</source>
-        <translation>Licence</translation>
+        <translation>परवाना</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="33"/>
         <location filename="../about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>बदल सूची</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>रद्द करा</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation>&amp;Zavřít</translation>
+        <translation>बंद</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <source>You must run this program as root.</source>
-        <translation>Tuto aplikaci musíte spustit jako root.</translation>
+        <translation>आपण हा प्रोग्राम रूट म्हणूनच चालवावा.</translation>
     </message>
 </context>
 </TS>

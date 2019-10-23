@@ -1,6 +1,7 @@
 CUSTOMPROGRAMNAME		usr/bin
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
-authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
 CUSTOMPROGRAMNAME.png		usr/share/icons/hicolor/256x256/apps
+authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
+help				usr/share/doc/CUSTOMPROGRAMNAME
 license.html			usr/share/doc/CUSTOMPROGRAMNAME
 translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale

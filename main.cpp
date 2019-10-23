@@ -65,8 +65,6 @@ int main(int argc, char *argv[])
     appTran.load(QString("CUSTOMPROGRAMNAME_") + QLocale::system().name(), "/usr/share/CUSTOMPROGRAMNAME/locale");
     a.installTranslator(&appTran);
 
-    qDebug() << "Program Version:" << VERSION;
-
     if (getuid() == 0) {
         MainWindow w(a.arguments());
         w.show();
