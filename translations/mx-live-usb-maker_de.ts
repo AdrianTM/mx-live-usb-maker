@@ -406,7 +406,12 @@ biite auf Abschluß des Vorgangs warten</translation>
         <translation>&amp;Close</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Dieses Programm muss vom Benutzer &quot;root&quot; ausgeführt werden.</translation>
     </message>

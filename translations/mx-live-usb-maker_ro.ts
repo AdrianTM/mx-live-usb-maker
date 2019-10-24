@@ -406,7 +406,12 @@ Așteptați până la terminarea procesului</translation>
         <translation>&amp;Închide</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Eroare</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Trebuie să rulați programul ca administrator.</translation>
     </message>

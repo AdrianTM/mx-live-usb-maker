@@ -33,7 +33,7 @@
 #include <unistd.h>
 
 
-QScopedPointer<QFile> logFile;
+static QScopedPointer<QFile> logFile;
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 int main(int argc, char *argv[])
@@ -51,27 +51,26 @@ int main(int argc, char *argv[])
     qtTran.load(QString("qt_") + QLocale::system().name());
     a.installTranslator(&qtTran);
 
-    QString log_name= "/var/log/mx-live-usb-maker.log";
-    // archive old log
-    system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
-    // Set the logging files
-    logFile.reset(new QFile(log_name));
-    // Open the file logging
-    logFile.data()->open(QFile::Append | QFile::Text);
-    // Set handler
-    qInstallMessageHandler(messageHandler);
-
     QTranslator appTran;
     appTran.load(QString("CUSTOMPROGRAMNAME_") + QLocale::system().name(), "/usr/share/CUSTOMPROGRAMNAME/locale");
     a.installTranslator(&appTran);
 
     if (getuid() == 0) {
+        QString log_name= "/var/log/mx-live-usb-maker.log";
+        // archive old log
+        system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
+        // Set the logging files
+        logFile.reset(new QFile(log_name));
+        // Open the file logging
+        logFile.data()->open(QFile::Append | QFile::Text);
+        // Set handler
+        qInstallMessageHandler(messageHandler);
         MainWindow w(a.arguments());
         w.show();
         return a.exec();
     } else {
         QApplication::beep();
-        QMessageBox::critical(0, QString::null,
+        QMessageBox::critical(nullptr, QApplication::tr("Error"),
                               QApplication::tr("You must run this program as root."));
         return EXIT_FAILURE;
     }
@@ -93,12 +92,11 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     // By type determine to what level belongs message
     switch (type)
     {
-    //case QtInfoMsg:     out << "INF "; break; Not in older Qt versions
+    case QtInfoMsg:     out << "INF "; break;
     case QtDebugMsg:    out << "DBG "; break;
     case QtWarningMsg:  out << "WRN "; break;
     case QtCriticalMsg: out << "CRT "; break;
     case QtFatalMsg:    out << "FTL "; break;
-    default:            out << "OTH"; break;
     }
     // Write to the output category of the message and the message itself
     out << context.category << ": "

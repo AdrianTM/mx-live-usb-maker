@@ -406,7 +406,12 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
         <translation>Tan&amp;ca </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Cal ser usuari principal per executar aquest programa</translation>
     </message>

@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.11.01) mx; urgency=medium
+
+  * don't show %f in ISO selection when launching from menu
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 24 Oct 2019 11:23:16 -0400
+
 CUSTOMPROGRAMNAME (19.11) mx; urgency=medium
 
   * add check for ignoring removable/usb for target combo box

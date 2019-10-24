@@ -406,7 +406,12 @@ Veuillez attendre la fin du processus</translation>
         <translation>&amp;Fermer</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Erreur</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Vous devez lancer cette application avec les droits administrateur.</translation>
     </message>

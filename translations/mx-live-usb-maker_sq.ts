@@ -404,7 +404,12 @@ Please wait until the the process is completed</source>
         <translation>&amp;Mbyll</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Gabim</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Ju duhet të lëshoni këtë program si root.</translation>
     </message>

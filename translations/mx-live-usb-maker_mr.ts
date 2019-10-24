@@ -404,7 +404,12 @@ Please wait until the the process is completed</source>
         <translation>बंद</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">त्रुटी</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>आपण हा प्रोग्राम रूट म्हणूनच चालवावा.</translation>
     </message>

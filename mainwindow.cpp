@@ -40,7 +40,7 @@ MainWindow::MainWindow(const QStringList& args) :
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
     ui->combo_Usb->addItems(buildUsbList());
-    if (args.size() > 1) {
+    if (args.size() > 1 && args.at(1) != "%f") {
         ui->buttonSelectSource->setText(args.at(1));
         ui->buttonSelectSource->setToolTip(args.at(1));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));

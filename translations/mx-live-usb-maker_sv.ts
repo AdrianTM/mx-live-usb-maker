@@ -406,7 +406,12 @@ Var vänlig vänta tills processen är färdig</translation>
         <translation>&amp;Close</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Fel</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Du måste köra detta program som root</translation>
     </message>

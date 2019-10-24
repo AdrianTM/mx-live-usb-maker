@@ -405,7 +405,12 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
         <translation>&amp;Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Tento program musíte spustiť ako root užívateľ.</translation>
     </message>

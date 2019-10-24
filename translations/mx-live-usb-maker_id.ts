@@ -404,7 +404,12 @@ Please wait until the the process is completed</source>
         <translation>&amp;Tutup</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Galat</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Anda harus menjalankan program ini sebagai root</translation>
     </message>

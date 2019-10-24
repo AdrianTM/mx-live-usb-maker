@@ -406,7 +406,12 @@ Wacht aub tot het proces beëindigd is</translation>
         <translation>&amp;Close</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>U dient deze toepassing als &apos;root&apos; uit te voeren.</translation>
     </message>

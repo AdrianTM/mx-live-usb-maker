@@ -406,7 +406,12 @@ Vent venligst indtil processen er fuldført</translation>
         <translation>&amp;Luk</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Du skal køre programmet som root.</translation>
     </message>

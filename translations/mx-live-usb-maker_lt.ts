@@ -404,7 +404,12 @@ Please wait until the the process is completed</source>
         <translation>&amp;Užverti</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Klaida</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Privalote paleisti šią programą kaip pagrindinis (root) naudotojas.</translation>
     </message>

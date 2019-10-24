@@ -406,7 +406,12 @@ Poczekaj, aż proces się zakończy.</translation>
         <translation>&amp;Zamknij</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation type="unfinished">Błąd</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Musisz uruchomić ten program jako administrator. </translation>
     </message>
