@@ -229,7 +229,7 @@ void MainWindow::cleanup()
 // build the USB list
 QStringList MainWindow::buildUsbList()
 {
-    QString drives = cmd.getCmdOut("lsblk --nodeps -nlo name,size,model,vendor -I 3,8,22,179,259");
+    QString drives = cmd.getCmdOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259");
     return removeUnsuitable(drives.split("\n"));
 }
 
