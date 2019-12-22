@@ -392,11 +392,11 @@ void MainWindow::on_buttonSelectSource_clicked()
             //set proper default mode based on iso contents
 
             if (!isantiX_mx_family(selected)){
-                ui->rb_dd->setChecked(true);
+                ui->rb_dd->click();
                 ui->rb_normal->setChecked(false);
             } else {
                 ui->rb_dd->setChecked(false);
-                ui->rb_normal->setChecked(true);
+                ui->rb_normal->click();
             }
         }
     } else if (ui->cb_clone_mode->isChecked()) {
