@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.11.02) mx; urgency=medium
+
+  *  fix lsblk command
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 26 Oct 2019 19:28:42 -0400
+
 CUSTOMPROGRAMNAME (19.11.01) mx; urgency=medium
 
   * don't show %f in ISO selection when launching from menu
