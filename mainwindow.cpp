@@ -388,6 +388,16 @@ void MainWindow::on_buttonSelectSource_clicked()
             ui->buttonSelectSource->setToolTip(selected);
             ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
             ui->buttonSelectSource->setStyleSheet("text-align: left;");
+
+            //set proper default mode based on iso contents
+
+            if (!isantiX_mx_family(selected)){
+                ui->rb_dd->setChecked(true);
+                ui->rb_normal->setChecked(false);
+            } else {
+                ui->rb_dd->setChecked(false);
+                ui->rb_normal->setChecked(true);
+            }
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
@@ -522,3 +532,43 @@ void MainWindow::on_rb_normal_clicked()
     ui->spinBoxSize->setEnabled(true);
     ui->edit_label->setEnabled(true);
 }
+
+bool MainWindow::isantiX_mx_family(QString selected)
+{
+    QString cmdstr;
+
+    //make temp folder
+    cmdstr = "mkdir -p /tmp/testisomount";
+
+    if ( system(cmdstr.toUtf8()) != 0 ){
+        return false;
+    }
+
+    //mount the iso file
+    cmdstr = "mount -o loop " + selected + " /tmp/testisomount";
+    if (system(cmdstr.toUtf8()) != 0) {
+        //cleanup mount point
+        cmdstr = "rmdir /tmp/testisomount";
+        system(cmdstr.toUtf8());
+        return false;
+    }
+
+    //check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX folder
+    cmdstr = "ls /tmp/testisomount |grep antiX";
+    if (system(cmdstr.toUtf8()) == 0){
+        //mean found
+        //cleanup mount
+        cmdstr = "umount /tmp/testisomount; rmdir /tmp/testisomount";
+        system(cmdstr.toUtf8());
+        return true;
+    } else {
+        cmdstr = "umount /tmp/testisomount; rmdir /tmp/testisomount";
+        system(cmdstr.toUtf8());
+        return false;
+    }
+}
+
+
+
+
+
