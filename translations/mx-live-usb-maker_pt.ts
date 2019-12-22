@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="468"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="478"/>
+        <location filename="../mainwindow.cpp" line="497"/>
         <source>Select ISO</source>
         <translation>Seleccionar ficheiro ISO</translation>
     </message>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>Show advanced options</source>
         <translation>Mostrar opções avançadas</translation>
     </message>
@@ -269,7 +269,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="86"/>
         <location filename="../mainwindow.cpp" line="274"/>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>Failure</source>
         <translation>Falha</translation>
     </message>
@@ -314,7 +314,7 @@ Aguardar até o processo terminar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="325"/>
-        <location filename="../mainwindow.cpp" line="481"/>
+        <location filename="../mainwindow.cpp" line="491"/>
         <source>clone</source>
         <translation>clonar</translation>
     </message>
@@ -354,30 +354,30 @@ Aguardar até o processo terminar</translation>
         <translation>Seleccionar um ficheiro ISO a instalar no dispositivo USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
-        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="../mainwindow.cpp" line="403"/>
+        <location filename="../mainwindow.cpp" line="474"/>
         <source>Select Source Directory</source>
         <translation>Seleccionar Directório Origem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Ficheiro %1/antiX/linuxfs não encontrado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="429"/>
         <source>Hide advanced options</source>
         <translation>Ocultar opções avançadas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="489"/>
         <source>Select Source</source>
         <translation>Seleccionar Origem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="467"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="477"/>
+        <location filename="../mainwindow.cpp" line="495"/>
         <source>Select ISO file</source>
         <translation>Seleccionar ficheiro ISO</translation>
     </message>

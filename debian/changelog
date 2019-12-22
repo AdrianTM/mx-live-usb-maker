@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (19.12) mx; urgency=medium
+
+  * guess default mode based on ISO type
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 22 Dec 2019 09:15:04 -0500
+
 CUSTOMPROGRAMNAME (19.11.02) mx; urgency=medium
 
   *  fix lsblk command

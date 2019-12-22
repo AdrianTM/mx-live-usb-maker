@@ -99,7 +99,7 @@ void MainWindow::makeUsb(const QString &options)
     start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
     ui->progressBar->setMinimum(start_io);
     qDebug() << "start io is " << start_io;
-    ui->progressBar->setMaximum(iso_sectors+start_io);
+    ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
     QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
