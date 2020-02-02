@@ -66,6 +66,7 @@ private slots:
     void cmdStart();
     void cmdDone();
     void setConnections();
+    void setDefaultMode(const QString &iso_name);
     void updateBar();
     void updateOutput();
     void on_buttonNext_clicked();

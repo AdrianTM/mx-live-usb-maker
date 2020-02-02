@@ -45,6 +45,7 @@ MainWindow::MainWindow(const QStringList& args) :
         ui->buttonSelectSource->setToolTip(args.at(1));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
         ui->buttonSelectSource->setStyleSheet("text-align: left;");
+        setDefaultMode(args.at(1));
     }
     this->adjustSize();
 }
@@ -286,6 +287,18 @@ void MainWindow::setConnections()
     connect(&cmd, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
+// set proper default mode based on iso contents
+void MainWindow::setDefaultMode(const QString &iso_name)
+{
+    if (!isantiX_mx_family(iso_name)){
+        ui->rb_dd->click();
+        ui->rb_normal->setChecked(false);
+    } else {
+        ui->rb_dd->setChecked(false);
+        ui->rb_normal->click();
+    }
+}
+
 void MainWindow::updateBar()
 {
     int current_io = cmd2.getCmdOut("cat /sys/block/" + device + "/stat | awk '{print $7}'", true).toInt();
@@ -388,16 +401,7 @@ void MainWindow::on_buttonSelectSource_clicked()
             ui->buttonSelectSource->setToolTip(selected);
             ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
             ui->buttonSelectSource->setStyleSheet("text-align: left;");
-
-            //set proper default mode based on iso contents
-
-            if (!isantiX_mx_family(selected)){
-                ui->rb_dd->click();
-                ui->rb_normal->setChecked(false);
-            } else {
-                ui->rb_dd->setChecked(false);
-                ui->rb_normal->click();
-            }
+            setDefaultMode(selected); // set proper default mode based on iso contents
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);

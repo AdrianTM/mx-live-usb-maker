@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.2) mx; urgency=medium
+
+  * set default write mode when openning ISO by clicking on it
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 02 Feb 2020 12:58:26 -0500
+
 CUSTOMPROGRAMNAME (19.12) mx; urgency=medium
 
   * guess default mode based on ISO type

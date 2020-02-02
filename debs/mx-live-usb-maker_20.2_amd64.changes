@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Sun, 02 Feb 2020 12:58:26 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 20.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (20.2) mx; urgency=medium
+ .
+   * set default write mode when openning ISO by clicking on it
+Checksums-Sha1:
+ a5cd3ee50ec3a7af7ea22928eebbaed93331929f 587 mx-live-usb-maker_20.2.dsc
+ bf97bc36c619988c65ad89e86c963d96270a9a4b 94452 mx-live-usb-maker_20.2.tar.xz
+ 67cf283d85184a20192691e1a6223843ef253a50 722222 mx-live-usb-maker-dbgsym_20.2_amd64.deb
+ c370ab05ee4d010a7f6f4484458c745732120192 10143 mx-live-usb-maker_20.2_amd64.buildinfo
+ 3a5a41ee9070cdbd484560d713b6e97c914324f1 121980 mx-live-usb-maker_20.2_amd64.deb
+Checksums-Sha256:
+ 4c4b07489f49a2e3b510f1383dddaf2e9de0425ffe4685a133cd22bd095457d9 587 mx-live-usb-maker_20.2.dsc
+ e46f7523e5e0566516d65a863285b434817c726fbb91fe32ba243dcd50b828c9 94452 mx-live-usb-maker_20.2.tar.xz
+ a1557970b244be8f34c4194d0cfe06fb3be902cca60deaca8dffee2c90a539a6 722222 mx-live-usb-maker-dbgsym_20.2_amd64.deb
+ 725b4b2551add5228eb3c679e179e6b66717b9d301df9bb0e5aa0e0d31e1e81f 10143 mx-live-usb-maker_20.2_amd64.buildinfo
+ dab4874e51ee04bfd50c98fecce1a5490f20ebcf9a17d37993337549dbcd17d1 121980 mx-live-usb-maker_20.2_amd64.deb
+Files:
+ 3e3fbc07bb56a9f15e8950a69a884087 587 admin optional mx-live-usb-maker_20.2.dsc
+ 7d61cb7388e2c2b8d5fa620913820c45 94452 admin optional mx-live-usb-maker_20.2.tar.xz
+ eeda063e208cf922d6ca7a4bdc19269a 722222 debug extra mx-live-usb-maker-dbgsym_20.2_amd64.deb
+ 1b6c060c2adc4b8db260e6f4ac1ceb9d 10143 admin optional mx-live-usb-maker_20.2_amd64.buildinfo
+ 526438407103df6e4fa9a8c7584e5ca5 121980 admin optional mx-live-usb-maker_20.2_amd64.deb
