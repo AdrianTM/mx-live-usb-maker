@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Fri, 21 Feb 2020 16:09:17 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 20.2.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (20.2.1) mx; urgency=medium
+ .
+   * change check for linuxfs to account for frugal installation
+Checksums-Sha1:
+ 62ac8ad33acf67314dd41c091239454f6288d175 595 mx-live-usb-maker_20.2.1.dsc
+ 86aedd40d1338731a4c2c463afbab95ea4d8e2ae 94512 mx-live-usb-maker_20.2.1.tar.xz
+ 1c1c4738df3aa04d74a233188179cda52c26f566 723922 mx-live-usb-maker-dbgsym_20.2.1_amd64.deb
+ 3a1775638eabe8d67bc087bbf99142158344cc75 10165 mx-live-usb-maker_20.2.1_amd64.buildinfo
+ 9a5c09ab66913bd9e58ea061764576f7c9072eda 121960 mx-live-usb-maker_20.2.1_amd64.deb
+Checksums-Sha256:
+ 89601d920486fab90e17a42fe6314d8705488138925a608c556364004a14073d 595 mx-live-usb-maker_20.2.1.dsc
+ 18f6aee50f01ffa2e1ee6776b5458bfaf4e97b890ff010f0340a7bf90600fb13 94512 mx-live-usb-maker_20.2.1.tar.xz
+ 96d3d90a940e061428c5c4516022f6e89f5926882f1eea9a7f9727bb77adbd8f 723922 mx-live-usb-maker-dbgsym_20.2.1_amd64.deb
+ 8ba92c0a07fe44e7ad796ceb70fa5d9498f4f633f734a217d002201dedf57cda 10165 mx-live-usb-maker_20.2.1_amd64.buildinfo
+ d7604230cc48de6e8988eb82362a02cbbf19bb7de39a805323aa3b99b5df19c1 121960 mx-live-usb-maker_20.2.1_amd64.deb
+Files:
+ d473a369b7bd844037accc32198c6899 595 admin optional mx-live-usb-maker_20.2.1.dsc
+ a63bf7d776cecd3d6526a556ed49da4d 94512 admin optional mx-live-usb-maker_20.2.1.tar.xz
+ 0013c39be9678f5eaa3b49a3625e5b2b 723922 debug extra mx-live-usb-maker-dbgsym_20.2.1_amd64.deb
+ df92e18730df627f14cf661629ac2123 10165 admin optional mx-live-usb-maker_20.2.1_amd64.buildinfo
+ e7a64e4d7ecbddb0db0ccff1116ebf43 121960 admin optional mx-live-usb-maker_20.2.1_amd64.deb

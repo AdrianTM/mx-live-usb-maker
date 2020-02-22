@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.2.1) mx; urgency=medium
+
+  * change check for linuxfs to account for frugal installation
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 21 Feb 2020 16:09:17 -0500
+
 CUSTOMPROGRAMNAME (20.2) mx; urgency=medium
 
   * set default write mode when openning ISO by clicking on it

@@ -64,7 +64,7 @@ bool MainWindow::isRunningLive()
 // determine if it's running in "toram" mode
 bool MainWindow::isToRam()
 {
-    return QFile("/live/config/did-toram").exists();
+    return QFileInfo::exists("/live/config/did-toram");
 }
 
 void MainWindow::makeUsb(const QString &options)
@@ -335,7 +335,7 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        if (!(QFile(ui->buttonSelectSource->text()).exists() || ui->buttonSelectSource->text() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
+        if (!(QFileInfo::exists(ui->buttonSelectSource->text()) || ui->buttonSelectSource->text() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
             ui->buttonSelectSource->clicked();
             return;
         }
@@ -405,11 +405,11 @@ void MainWindow::on_buttonSelectSource_clicked()
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
-        if (QFile(selected + "/antiX/linuxfs").exists()) {
+        if (QFileInfo::exists(selected + "/antiX/linuxfs")|| QFileInfo::exists(selected + "/linuxfs")) {
             ui->buttonSelectSource->setText(selected);
         } else {
             selected = (selected == "/") ? "" : selected;
-            QMessageBox::critical(this, tr("Failure"), tr("Could not find %1/antiX/linuxfs file").arg(selected));
+            QMessageBox::critical(this, tr("Failure"), tr("Could not find %1/antiX/linuxfs file").arg(selected)); // TODO -- the file might be in %/linuxfs too for frugal
         }
     }
 }
