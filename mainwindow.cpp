@@ -42,6 +42,7 @@ MainWindow::MainWindow(const QStringList& args) :
     ui->combo_Usb->addItems(buildUsbList());
     if (args.size() > 1 && args.at(1) != "%f") {
         ui->buttonSelectSource->setText(args.at(1));
+        ui->buttonSelectSource->setProperty("filename", args.at(1));
         ui->buttonSelectSource->setToolTip(args.at(1));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
         ui->buttonSelectSource->setStyleSheet("text-align: left;");
@@ -73,16 +74,16 @@ void MainWindow::makeUsb(const QString &options)
 
     QString source;
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        source = "\"" + ui->buttonSelectSource->text() + "\"";
-        QString source_size = cmd.getCmdOut("du -m \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", true);
+        source = "\"" + ui->buttonSelectSource->property("filename").toString() + "\"";
+        QString source_size = cmd.getCmdOut("du -m \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
     } else if (ui->cb_clone_mode->isChecked()) {
-        QString source_size = cmd.getCmdOut("du -m --summarize \"" + ui->buttonSelectSource->text() + "\" 2>/dev/null | cut -f1", true);
+        QString source_size = cmd.getCmdOut("du -m --summarize \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
-        source = "clone=\"" + ui->buttonSelectSource->text() + "\"";
+        source = "clone=\"" + ui->buttonSelectSource->property("filename").toString() + "\"";
 
         // check if source and destination are on the same drive
-        QString root_partition = cmd.getCmdOut("df --output=source \"" + ui->buttonSelectSource->text() + "\"| awk 'END{print $1}'");
+        QString root_partition = cmd.getCmdOut("df --output=source \"" + ui->buttonSelectSource->property("filename").toString() + "\"| awk 'END{print $1}'");
         if ("/dev/" + device == cmd.getCmdOut(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"), tr("Source and destination are on the same device, please select again."));
             ui->stackedWidget->setCurrentWidget(ui->selectionPage);
@@ -335,7 +336,7 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        if (!(QFileInfo::exists(ui->buttonSelectSource->text()) || ui->buttonSelectSource->text() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
+        if (!(QFileInfo::exists(ui->buttonSelectSource->property("filename").toString()) || ui->buttonSelectSource->property("filename").toString() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
             ui->buttonSelectSource->clicked();
             return;
         }
@@ -395,9 +396,10 @@ void MainWindow::on_buttonSelectSource_clicked()
     QString home = "/home/" + user;
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, QString("*.iso"));
+        selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, tr("ISO Files (*.iso);;All Files (*.*)"));
         if (!selected.isEmpty()) {
             ui->buttonSelectSource->setText(selected);
+            ui->buttonSelectSource->setProperty("filename", selected);
             ui->buttonSelectSource->setToolTip(selected);
             ui->buttonSelectSource->setIcon(QIcon::fromTheme("media-cdrom"));
             ui->buttonSelectSource->setStyleSheet("text-align: left;");
@@ -407,6 +409,7 @@ void MainWindow::on_buttonSelectSource_clicked()
         selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
         if (QFileInfo::exists(selected + "/antiX/linuxfs")|| QFileInfo::exists(selected + "/linuxfs")) {
             ui->buttonSelectSource->setText(selected);
+            ui->buttonSelectSource->setProperty("filename", selected);
         } else {
             selected = (selected == "/") ? "" : selected;
             QMessageBox::critical(this, tr("Failure"), tr("Could not find %1/antiX/linuxfs file").arg(selected)); // TODO -- the file might be in %/linuxfs too for frugal
@@ -483,6 +486,7 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
         ui->cb_clone_live->setEnabled(isRunningLive());
     }
+     ui->buttonSelectSource->setProperty("filename", "");
 }
 
 void MainWindow::on_cb_clone_live_clicked(bool checked)
@@ -493,12 +497,14 @@ void MainWindow::on_cb_clone_live_clicked(bool checked)
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->buttonSelectSource->setEnabled(false);
         ui->buttonSelectSource->setText(tr("clone"));
+        ui->buttonSelectSource->setProperty("filename", "clone");
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("tools-media-optical-copy"));
         ui->buttonSelectSource->blockSignals(true);
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->buttonSelectSource->setEnabled(true);
         ui->buttonSelectSource->setText(tr("Select ISO"));
+        ui->buttonSelectSource->setProperty("filename", "");
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
         ui->buttonSelectSource->blockSignals(false);
     }
@@ -571,8 +577,3 @@ bool MainWindow::isantiX_mx_family(QString selected)
         return false;
     }
 }
-
-
-
-
-

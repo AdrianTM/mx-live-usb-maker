@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.6) mx; urgency=medium
+
+  * fix button text replacement in KDE (use property insted of the text of the button)
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 16 Jun 2020 23:54:50 -0400
+
 CUSTOMPROGRAMNAME (20.2.1) mx; urgency=medium
 
   * change check for linuxfs to account for frugal installation
