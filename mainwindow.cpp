@@ -48,6 +48,16 @@ MainWindow::MainWindow(const QStringList& args) :
         ui->buttonSelectSource->setStyleSheet("text-align: left;");
         setDefaultMode(args.at(1));
     }
+    // setup options
+    LUM.clear();
+    QFileInfo settingsfile("/etc/live-usb-maker-gui.conf");
+    if (settingsfile.exists()){
+        QSettings settings("/etc/live-usb-maker-gui.conf", QSettings::NativeFormat);
+        LUM=settings.value("LUM").toString();
+    }
+    if (LUM.isEmpty()){
+        LUM="live-usb-maker";
+    }
     this->adjustSize();
 }
 
@@ -104,9 +114,9 @@ void MainWindow::makeUsb(const QString &options)
     ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
-    QString cmdstr = QString("live-usb-maker gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
+    QString cmdstr = QString(LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
     if (ui->rb_dd->isChecked()) {
-        cmdstr = "live-usb-maker gui partition-clear -NC off --target " + device;
+        cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
         qDebug() << cmd.getCmdOut(cmdstr);
         cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
@@ -147,7 +157,7 @@ void MainWindow::setup()
     ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
 
     //check if datafirst option is available
-    QString test = cmd.getCmdOut("live-usb-maker --help | grep data-first");
+    QString test = cmd.getCmdOut(LUM + " --help | grep data-first");
     if ( test.isEmpty()) {
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();

@@ -57,6 +57,7 @@ public:
     QString buildOptionList();
     QStringList buildUsbList();
     QStringList removeUnsuitable(const QStringList &devices); // remove unsuitable disks from the list (live and unremovable)
+    QString LUM;
 
 
 public slots:
