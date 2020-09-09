@@ -51,13 +51,8 @@ MainWindow::MainWindow(const QStringList& args) :
     // setup options
     LUM.clear();
     QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
-    if (settingsfile.exists()){
-        QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
-        LUM=settings.value("LUM").toString();
-    }
-    if (LUM.isEmpty()){
-        LUM="live-usb-maker";
-    }
+    QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
+    LUM=settings.value("LUM", "live-usb-maker").toString();
     qDebug() << "LUM is : " << LUM;
     this->adjustSize();
 }
