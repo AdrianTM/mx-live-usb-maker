@@ -267,13 +267,13 @@
         <translation>Klon bežiaceho Live systému</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="73"/>
+        <location filename="../mainwindow.cpp" line="72"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="73"/>
-        <source>Target device is larger than %1 GB. Do you wish to proceed?</source>
+        <location filename="../mainwindow.cpp" line="72"/>
+        <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -54,7 +54,7 @@ MainWindow::MainWindow(const QStringList& args) :
     QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
     LUM = settings.value("LUM", "live-usb-maker").toString();
     size_check = settings.value("SizeCheck", 128).toInt();
-    qDebug() << "LUM is : " << LUM;
+    qDebug() << "LUM is: " << LUM;
     this->adjustSize();
 }
 
@@ -65,12 +65,12 @@ MainWindow::~MainWindow()
 
 bool MainWindow::checkDestSize()
 {
-    bool ok = false;
-    int disk_size = cmd.getCmdOut("echo $(( $(sudo blockdev --getsize64 /dev/sda) / 1024**3 ))").toInt(&ok);
-    if (!ok) return false;
+    int disk_size = cmd.getCmdOut("echo $(( $(sudo blockdev --getsize64 /dev/"+ device + ") / 1024**3 ))").toInt();
 
     if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
-        return (QMessageBox::Yes == QMessageBox::question(this, tr("Confirmation"), tr("Target device is larger than %1 GB. Do you wish to proceed?").arg(size_check)));
+        return (QMessageBox::Yes == QMessageBox::question(
+                    this, tr("Confirmation"), tr("Target device %1 is larger than %2 GB. Do you wish to proceed?").arg(device).arg(size_check),
+                    QMessageBox::No|QMessageBox::Yes, QMessageBox::No));
     } else {
         return true;
     }
