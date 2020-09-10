@@ -47,8 +47,7 @@ public:
     MainWindow(const QStringList &args);
     ~MainWindow();
 
-    bool checkISO();
-    bool checkSize();
+    bool checkDestSize();
     bool isRunningLive();
     bool isToRam();
     void makeUsb(const QString &options);
@@ -98,6 +97,7 @@ private:
     int height;
     int iso_sectors;
     int start_io;
+    int size_check;
 };
 
 

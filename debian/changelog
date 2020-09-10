@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.9) mx; urgency=medium
+
+  * check destination drive size, pop-up warning if > 128GB
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 09 Sep 2020 22:48:37 -0400
+
 CUSTOMPROGRAMNAME (20.8) mx; urgency=medium
 
   * add .conf file option for LUM backend location (testing purposes)

@@ -52,7 +52,8 @@ MainWindow::MainWindow(const QStringList& args) :
     LUM.clear();
     QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
     QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
-    LUM=settings.value("LUM", "live-usb-maker").toString();
+    LUM = settings.value("LUM", "live-usb-maker").toString();
+    size_check = settings.value("SizeCheck", 128).toInt();
     qDebug() << "LUM is : " << LUM;
     this->adjustSize();
 }
@@ -60,6 +61,19 @@ MainWindow::MainWindow(const QStringList& args) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+bool MainWindow::checkDestSize()
+{
+    bool ok = false;
+    int disk_size = cmd.getCmdOut("echo $(( $(sudo blockdev --getsize64 /dev/sda) / 1024**3 ))").toInt(&ok);
+    if (!ok) return false;
+
+    if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
+        return (QMessageBox::Yes == QMessageBox::question(this, tr("Confirmation"), tr("Target device is larger than %1 GB. Do you wish to proceed?").arg(size_check)));
+    } else {
+        return true;
+    }
 }
 
 bool MainWindow::isRunningLive()
@@ -101,6 +115,13 @@ void MainWindow::makeUsb(const QString &options)
         source = "clone";
         QString source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", true);
         iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
+    }
+
+    if(!checkDestSize()) {
+        ui->stackedWidget->setCurrentWidget(ui->selectionPage);
+        ui->buttonNext->setEnabled(true);
+        setCursor(QCursor(Qt::ArrowCursor));
+        return;
     }
 
     // check amount of io on device before copy, this is in sectors
