@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.9.1) mx; urgency=medium
+
+  * fix data partition
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 14 Sep 2020 15:04:24 -0400
+
 CUSTOMPROGRAMNAME (20.9) mx; urgency=medium
 
   * check destination drive size, pop-up warning if > 128GB

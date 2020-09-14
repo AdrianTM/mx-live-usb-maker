@@ -37,6 +37,14 @@ MainWindow::MainWindow(const QStringList& args) :
     qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
 
+    // setup options
+    LUM.clear();
+    QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
+    QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
+    LUM = settings.value("LUM", "live-usb-maker").toString();
+    size_check = settings.value("SizeCheck", 128).toInt();
+    qDebug() << "LUM is:" << LUM;
+
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
     ui->combo_Usb->addItems(buildUsbList());
@@ -48,13 +56,7 @@ MainWindow::MainWindow(const QStringList& args) :
         ui->buttonSelectSource->setStyleSheet("text-align: left;");
         setDefaultMode(args.at(1));
     }
-    // setup options
-    LUM.clear();
-    QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
-    QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
-    LUM = settings.value("LUM", "live-usb-maker").toString();
-    size_check = settings.value("SizeCheck", 128).toInt();
-    qDebug() << "LUM is: " << LUM;
+
     this->adjustSize();
 }
 
@@ -174,8 +176,7 @@ void MainWindow::setup()
     ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
 
     //check if datafirst option is available
-    QString test = cmd.getCmdOut(LUM + " --help | grep data-first");
-    if ( test.isEmpty()) {
+    if (!cmd.run(LUM + " --help | grep -q data-first", true)) {
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();
         ui->spinBoxDataSize->hide();
