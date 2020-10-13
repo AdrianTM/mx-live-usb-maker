@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ro" version="2.0">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="vi" version="2.0">
 <context>
     <name>MainWindow</name>
     <message>
@@ -9,12 +9,12 @@
     <message>
         <location filename="mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Închide programul </translation>
+        <translation>Thoát ứng dụng</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Închidere</translation>
+        <translation>Đóng</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="56"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Afișează ajutor</translation>
+        <translation>Hiển thị bản trợ giúp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Ajutor</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="98"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Înapoi</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Următorul</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Informații despre program</translation>
+        <translation>Về ứng dụng này</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Despre...</translation>
+        <translation>Về ứng dụng này...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="208"/>
@@ -66,72 +66,72 @@
         <location filename="mainwindow.cpp" line="512"/>
         <location filename="mainwindow.cpp" line="533"/>
         <source>Select ISO</source>
-        <translation>Selectare ISO</translation>
+        <translation>Chọn tệp ISO</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selectare Dispozitiv Țintă USB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selectare fișier ISO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation>Opțiuni Avansate</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="307"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation>Creează sistemul de fișiere ext4 chiar dacă există unul</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="314"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation>Salvează directorul inițial de încărcare când actualizați un live-usb</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>Utilizare partiționare gpt în loc de msdos</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation>Partiționare GPT</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation>Actualizare (actualizează numai un live-usb existent)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation>Nu înlocuiește fișierele syslinux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
-        <translation>Păstrare fișierele syslinux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="348"/>
         <source>Ignore USB/removable check</source>
-        <translation>Ignorare verificarea USB/detașabil</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
-        <translation>Dezactivare temporară a montării automate</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="365"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation>Setare pmbr_boot pe disc (nu va porni prin UEFI)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="372"/>
@@ -141,12 +141,12 @@
     <message>
         <location filename="mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation>Mărimea partiției ESP (uefi) </translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="418"/>
         <source>Verbosity (less to more):</source>
-        <translation>Verbositate (de la puțin la mai mult):</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="457"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="mainwindow.ui" line="467"/>
         <source>ext4</source>
-        <translation>ext4</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="472"/>
@@ -176,98 +176,98 @@
     <message>
         <location filename="mainwindow.ui" line="500"/>
         <source>Format</source>
-        <translation type="unfinished"/>
+        <translation>Định dạng</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
-        <translation>Actualizare listă dispozitive</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="524"/>
         <location filename="mainwindow.cpp" line="457"/>
         <source>Show advanced options</source>
-        <translation>Arată opțiuni avansate</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="544"/>
         <source>Mode</source>
-        <translation>Mod</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="559"/>
         <source>Full-featured mode - writable LiveUSB</source>
-        <translation>Mod funcționare completă  - LiveUSB inscriptibil</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="569"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation>Numai pentru citire, nu poate fi folosit cu persistență</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="572"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation>Mod imagine - read-only LiveUSB (dd)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="586"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Pentru alte distribuții decât antiX/MX, utilizați numai opțiunea mod imagine (dd).</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="634"/>
         <source>Options</source>
-        <translation>Opțiuni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="669"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Procentul utilizat din dispozitivului USB:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="676"/>
         <source>Label ext partition:</source>
-        <translation>Etichetă partiție ext</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="724"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation>Nu executază comenzi care afectează dispozitivul USB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="727"/>
         <source>Dry run (no change to system)</source>
-        <translation>Încercare (fără schimbari în sistem)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="734"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>clonare dintr-un fișier live-usb sau iso-mount.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="737"/>
         <source>Clone an existing live system</source>
-        <translation>Clonare a unui sistem live</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="744"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation>Configurare pentru a porni de pe o partiție criptată, va solicita o parola la prima încărcare</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="747"/>
         <source>Encrypt</source>
-        <translation>Criptare</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="754"/>
         <source>Clone running live system</source>
-        <translation>Clonarea sistemului live</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="72"/>
         <source>Confirmation</source>
-        <translation>Confirmație</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="72"/>
@@ -279,52 +279,50 @@
         <location filename="mainwindow.cpp" line="303"/>
         <location filename="mainwindow.cpp" line="442"/>
         <source>Failure</source>
-        <translation>Eșec</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="108"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>Sursa și destinația sunt pe același dispozitiv, selectați din nou.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="140"/>
         <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Se scrie %1 folosind comanda &apos;dd&apos; pe /dev /%2, 
-
-Așteptați până la terminarea procesului</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation>Succes</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation>Crearea LiveUSB a reușit!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="303"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation>Eroare întâlnită în procesul de creare a LiveUSB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
         <source>Please select a USB device to write to</source>
-        <translation>Selectați un dispozitiv USB pe care să scrieți</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="366"/>
         <location filename="mainwindow.cpp" line="526"/>
         <source>clone</source>
-        <translation>clonă</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="402"/>
@@ -334,12 +332,12 @@ Așteptați până la terminarea procesului</translation>
     <message>
         <location filename="mainwindow.cpp" line="403"/>
         <source>Version: </source>
-        <translation>Versiune:</translation>
+        <translation>Phiên bản:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="404"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Program pentru crearea unui live-usb dintr-un fișier iso, un alt live-usb, un live-cd/dvd sau un sistem care rulează live.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="406"/>
@@ -359,7 +357,7 @@ Așteptați până la terminarea procesului</translation>
     <message>
         <location filename="mainwindow.cpp" line="426"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation>Selectați un fișier ISO pentru a scrie pe unitatea USB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="426"/>
@@ -370,29 +368,29 @@ Așteptați până la terminarea procesului</translation>
         <location filename="mainwindow.cpp" line="436"/>
         <location filename="mainwindow.cpp" line="508"/>
         <source>Select Source Directory</source>
-        <translation>Selectare Director Sursă</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="442"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation>Nu s-a putut găsi fișierul %1/antiX/linuxfs</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="463"/>
         <source>Hide advanced options</source>
-        <translation>Ascunde opțiunile avansate</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="507"/>
         <location filename="mainwindow.cpp" line="524"/>
         <source>Select Source</source>
-        <translation>Selectare sursă</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="511"/>
         <location filename="mainwindow.cpp" line="531"/>
         <source>Select ISO file</source>
-        <translation>Selectare fișier ISO</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -400,33 +398,33 @@ Așteptați până la terminarea procesului</translation>
     <message>
         <location filename="about.cpp" line="32"/>
         <source>License</source>
-        <translation>Licență</translation>
+        <translation>Giấy phép</translation>
     </message>
     <message>
         <location filename="about.cpp" line="33"/>
         <location filename="about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation>Nhật kí thay đổi</translation>
     </message>
     <message>
         <location filename="about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation>Anulează</translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation>&amp;Închide</translation>
+        <translation>&amp;Đóng</translation>
     </message>
     <message>
         <location filename="main.cpp" line="73"/>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="main.cpp" line="74"/>
         <source>You must run this program as root.</source>
-        <translation>Trebuie să rulați programul ca administrator.</translation>
+        <translation>Bạn phải chạy chương trình này với quyền root.</translation>
     </message>
 </context>
 </TS>

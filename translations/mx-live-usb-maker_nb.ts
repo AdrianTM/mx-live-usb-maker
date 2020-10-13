@@ -1,430 +1,430 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nb">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" version="2.0">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Program_navn</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="46"/>
+        <location filename="mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation type="unfinished"></translation>
+        <translation>Avslutt programmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="49"/>
+        <location filename="mainwindow.ui" line="49"/>
         <source>Close</source>
         <translation>Lukk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="56"/>
+        <location filename="mainwindow.ui" line="56"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation>Alt + N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="88"/>
+        <location filename="mainwindow.ui" line="88"/>
         <source>Display help </source>
         <translation>Vis hjelp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="91"/>
+        <location filename="mainwindow.ui" line="91"/>
         <source>Help</source>
         <translation>Hjelp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="98"/>
+        <location filename="mainwindow.ui" line="98"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation>Alt + H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="114"/>
+        <location filename="mainwindow.ui" line="114"/>
         <source>Back</source>
         <translation>Tilbake</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="172"/>
+        <location filename="mainwindow.ui" line="172"/>
         <source>Next</source>
         <translation>Neste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="198"/>
+        <location filename="mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Om applikasjonen</translation>
+        <translation>Om programmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="201"/>
+        <location filename="mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Om...</translation>
+        <translation>Om …</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="208"/>
+        <location filename="mainwindow.ui" line="208"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation>Alt + B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="513"/>
-        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="mainwindow.ui" line="239"/>
+        <location filename="mainwindow.cpp" line="512"/>
+        <location filename="mainwindow.cpp" line="533"/>
         <source>Select ISO</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="250"/>
+        <location filename="mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Velg USB-enhet for målet&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="260"/>
+        <location filename="mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Velg ISO-fil&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="289"/>
+        <location filename="mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Avanserte innstillinger</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="307"/>
+        <location filename="mainwindow.ui" line="307"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprett ext4-filsystem selv om det allerede finnes</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="314"/>
+        <location filename="mainwindow.ui" line="314"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre original oppstartsmappe ved oppdatering av live-USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="321"/>
+        <location filename="mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk GPT-partisjonering istedenfor MS DOS</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="324"/>
+        <location filename="mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT-partisjonering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="331"/>
+        <location filename="mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdater (kun eksisterende live-USB)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="338"/>
+        <location filename="mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke erstatt syslinux-filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="341"/>
+        <location filename="mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Behold syslinux-filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="348"/>
+        <location filename="mainwindow.ui" line="348"/>
         <source>Ignore USB/removable check</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorer sjekk av USB/flyttbar enhet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="355"/>
+        <location filename="mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"></translation>
+        <translation>Slå midlertidig av automontering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="365"/>
+        <location filename="mainwindow.ui" line="365"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg pmbr_boot_disk-flagget (vil ikke starte via UEFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="372"/>
+        <location filename="mainwindow.ui" line="372"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke monter ISO-filer med fuseiso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="398"/>
+        <location filename="mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>ESP (UEFI)-partisjonens størrelse:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="418"/>
+        <location filename="mainwindow.ui" line="418"/>
         <source>Verbosity (less to more):</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilbakemeldinger (mer eller mindre detaljerte):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="457"/>
+        <location filename="mainwindow.ui" line="457"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation>VFAT</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="462"/>
+        <location filename="mainwindow.ui" line="462"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation>exfat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="467"/>
+        <location filename="mainwindow.ui" line="467"/>
         <source>ext4</source>
-        <translation type="unfinished"></translation>
+        <translation>ext4</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="472"/>
+        <location filename="mainwindow.ui" line="472"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation>ntfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="493"/>
+        <location filename="mainwindow.ui" line="493"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprett separat datapartisjon (prosent)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="500"/>
+        <location filename="mainwindow.ui" line="500"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formater</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="510"/>
+        <location filename="mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdater liste over lagringsenheter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="458"/>
+        <location filename="mainwindow.ui" line="524"/>
+        <location filename="mainwindow.cpp" line="457"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis avanserte alternativer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="544"/>
+        <location filename="mainwindow.ui" line="544"/>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="559"/>
+        <location filename="mainwindow.ui" line="559"/>
         <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>Full funksjonalitet – skrivbar live-USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="569"/>
+        <location filename="mainwindow.ui" line="569"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke-skrivbar, kan ikke lagre varige data</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="572"/>
+        <location filename="mainwindow.ui" line="572"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbildningsmodus – ikke-skrivbar live-USB (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="586"/>
+        <location filename="mainwindow.ui" line="586"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk avbildningsmodus (dd) for andre distribusjoner enn antiX/MX.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="634"/>
+        <location filename="mainwindow.ui" line="634"/>
         <source>Options</source>
         <translation>Alternativer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="669"/>
+        <location filename="mainwindow.ui" line="669"/>
         <source>Percent of USB-device to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk denne prosentandelen av USB-enheten:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="mainwindow.ui" line="676"/>
         <source>Label ext partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ext-partisjonens volumnavn:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="724"/>
+        <location filename="mainwindow.ui" line="724"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke kjør kommandoer som påvirker USB-enheten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="727"/>
+        <location filename="mainwindow.ui" line="727"/>
         <source>Dry run (no change to system)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prøvekjøring (ingen endringer)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="734"/>
+        <location filename="mainwindow.ui" line="734"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation type="unfinished"></translation>
+        <translation>klon fra en montert live-USB eller ISO-fil.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="737"/>
+        <location filename="mainwindow.ui" line="737"/>
         <source>Clone an existing live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Klon fra et eksisterende system</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="744"/>
+        <location filename="mainwindow.ui" line="744"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppstart fra kryptert partisjon – vil spørre etter adgangsfrase ved første oppstart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="747"/>
+        <location filename="mainwindow.ui" line="747"/>
         <source>Encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="754"/>
+        <location filename="mainwindow.ui" line="754"/>
         <source>Clone running live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Klon kjørende live-system</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="74"/>
+        <location filename="mainwindow.cpp" line="72"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekreft</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="74"/>
+        <location filename="mainwindow.cpp" line="72"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
-        <location filename="../mainwindow.cpp" line="304"/>
-        <location filename="../mainwindow.cpp" line="443"/>
+        <location filename="mainwindow.cpp" line="108"/>
+        <location filename="mainwindow.cpp" line="303"/>
+        <location filename="mainwindow.cpp" line="442"/>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Mislykket</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="mainwindow.cpp" line="108"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilde og mål er på samme enhet – velg om igjen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="142"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <location filename="mainwindow.cpp" line="140"/>
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriver %1 med «dd»-kommandoen til /dev/%2,
+
+Vennligst vent til prosessen fullføres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Vellykket</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation type="unfinished"></translation>
+        <translation>LiveUSB er nå opprettet.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="mainwindow.cpp" line="303"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppstod en feil under oppretting av live-USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg en USB-enhet som skal skrives til</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="367"/>
-        <location filename="../mainwindow.cpp" line="527"/>
+        <location filename="mainwindow.cpp" line="366"/>
+        <location filename="mainwindow.cpp" line="526"/>
         <source>clone</source>
-        <translation type="unfinished"></translation>
+        <translation>klon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="403"/>
+        <location filename="mainwindow.cpp" line="402"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Om %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="mainwindow.cpp" line="403"/>
         <source>Version: </source>
         <translation>Versjon:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="405"/>
+        <location filename="mainwindow.cpp" line="404"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette programmet kan opprette en live-USB fra en ISO-fil, en annen live-USB, en live-CD/-DVD eller et kjørende live-system.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="407"/>
+        <location filename="mainwindow.cpp" line="406"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Opphavsrett (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="408"/>
+        <location filename="mainwindow.cpp" line="407"/>
         <source>%1 License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisens for %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="mainwindow.cpp" line="415"/>
         <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjelpetekst for %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="427"/>
+        <location filename="mainwindow.cpp" line="426"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg en ISO-fil som skal skrives til USB-enheten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="427"/>
+        <location filename="mainwindow.cpp" line="426"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="437"/>
-        <location filename="../mainwindow.cpp" line="509"/>
+        <location filename="mainwindow.cpp" line="436"/>
+        <location filename="mainwindow.cpp" line="508"/>
         <source>Select Source Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg kildemappe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="443"/>
+        <location filename="mainwindow.cpp" line="442"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fant ikke fila %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="mainwindow.cpp" line="463"/>
         <source>Hide advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjul avanserte alternativer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="508"/>
-        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="mainwindow.cpp" line="507"/>
+        <location filename="mainwindow.cpp" line="524"/>
         <source>Select Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg kilde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="512"/>
-        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="mainwindow.cpp" line="511"/>
+        <location filename="mainwindow.cpp" line="531"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg ISO-fil</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../about.cpp" line="32"/>
+        <location filename="about.cpp" line="32"/>
         <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="about.cpp" line="33"/>
+        <location filename="about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation>Endringslogg</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="34"/>
+        <location filename="about.cpp" line="34"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="51"/>
+        <location filename="about.cpp" line="51"/>
         <source>&amp;Close</source>
         <translation>&amp;Lukk</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="main.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="main.cpp" line="74"/>
         <source>You must run this program as root.</source>
         <translation>Du må kjøre dette programmet som root.</translation>
     </message>
