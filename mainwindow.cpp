@@ -165,8 +165,8 @@ void MainWindow::setup()
     ui->outputBox->setCursorWidth(0);
     height = this->heightMM();
 
-    QRegExp rx("\\w*");
-    QValidator *validator = new QRegExpValidator(rx, this);
+    QRegularExpression rx("\\w*");
+    QValidator *validator = new QRegularExpressionValidator(rx, this);
     ui->edit_label->setValidator(validator);
 
     //set save boot directory option to disable unless update mode is checked
