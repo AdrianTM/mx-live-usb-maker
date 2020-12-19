@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(QApplication::tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system."));
     parser.addHelpOption();
     parser.addVersionOption();
+    parser.addPositionalArgument(QCoreApplication::tr("filename"), QCoreApplication::tr("Name of .iso file to open"), QCoreApplication::tr("[filename]"));
     parser.process(app);
 
     app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
