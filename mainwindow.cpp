@@ -23,7 +23,6 @@
 #include "about.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "version.h"
 
 #include <QFileDialog>
 #include <QScrollBar>
@@ -34,7 +33,6 @@
 MainWindow::MainWindow(const QStringList& args) :
     ui(new Ui::MainWindow)
 {
-    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
 
     // setup options
@@ -401,7 +399,7 @@ void MainWindow::on_buttonAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",

@@ -21,8 +21,10 @@
  **********************************************************************/
 
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QDateTime>
 #include <QIcon>
+#include <QLibraryInfo>
 #include <QLocale>
 #include <QScopedPointer>
 #include <QTranslator>
@@ -38,22 +40,28 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+    app.setApplicationVersion(VERSION);
 
-    if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
-       qDebug() << "Version:" << VERSION;
-       return EXIT_SUCCESS;
-    }
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QApplication::tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system."));
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.process(app);
 
-    a.setWindowIcon(QIcon::fromTheme("CUSTOMPROGRAMNAME"));
+    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
 
     QTranslator qtTran;
-    qtTran.load(QString("qt_") + QLocale::system().name());
-    a.installTranslator(&qtTran);
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtTran);
+
+    QTranslator qtBaseTran;
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    appTran.load(QString("CUSTOMPROGRAMNAME_") + QLocale::system().name(), "/usr/share/CUSTOMPROGRAMNAME/locale");
-    a.installTranslator(&appTran);
+    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
+        app.installTranslator(&appTran);
 
     if (getuid() == 0) {
         QString log_name= "/var/log/mx-live-usb-maker.log";
@@ -65,15 +73,13 @@ int main(int argc, char *argv[])
         logFile.data()->open(QFile::Append | QFile::Text);
         // Set handler
         qInstallMessageHandler(messageHandler);
-        MainWindow w(a.arguments());
+
+        qDebug().noquote() << app.applicationName() << QApplication::tr("version:") << app.applicationVersion();
+        MainWindow w(app.arguments());
         w.show();
-        return a.exec();
+        return app.exec();
     } else {
-        system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "&");
-//        QApplication::beep();
-//        QMessageBox::critical(nullptr, QApplication::tr("Error"),
-//                              QApplication::tr("You must run this program as root."));
-//        return EXIT_FAILURE;
+        system("su-to-root -X -c " + app.applicationFilePath().toUtf8() + "&");
     }
 }
 
@@ -100,7 +106,5 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     case QtFatalMsg:    out << "FTL "; break;
     }
     // Write to the output category of the message and the message itself
-    out << context.category << ": "
-        << msg << endl;
-    out.flush();    // Clear the buffered data
+    out << context.category << ": " << msg << endl;
 }
