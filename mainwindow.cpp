@@ -251,6 +251,12 @@ QString MainWindow::buildOptionList()
 // cleanup environment when window is closed
 void MainWindow::cleanup()
 {
+    QFileInfo lum(LUM);
+    QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
+    if ( logfile.exists()){
+        QString removecmd = "rm -f " + logfile.absoluteFilePath();
+        system(removecmd.toUtf8());
+    }
     cmd.halt();
 }
 
@@ -607,13 +613,16 @@ bool MainWindow::isantiX_mx_family(QString selected)
 void MainWindow::on_pushButtonLumLogFile_clicked()
 {
     QFileInfo lum(LUM);
-    QString url = "file:///var/log/" + lum.baseName() + ".log";
+    QString url = "file:///tmp/" + lum.baseName() + ".log";
     qDebug() << "lumlog" << url;
     QFileInfo viewer("/usr/bin/mx-viewer");
     QFileInfo viewer2("/usr/bin/antix-viewer");
     QString rootrunoption;
     QString cmd;
 
+    //generate temporary log file
+    cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" > /tmp/" + lum.baseName() + ".log";
+    system(cmd.toUtf8());
     rootrunoption.clear();
 
     if (getuid() == 0){
