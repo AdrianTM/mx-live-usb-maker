@@ -27,7 +27,7 @@
 #include <QFileDialog>
 #include <QScrollBar>
 #include <QTextStream>
-
+#include "unistd.h"
 #include <QDebug>
 
 MainWindow::MainWindow(const QStringList& args) :
@@ -251,6 +251,12 @@ QString MainWindow::buildOptionList()
 // cleanup environment when window is closed
 void MainWindow::cleanup()
 {
+    QFileInfo lum(LUM);
+    QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
+    if ( logfile.exists()){
+        QString removecmd = "rm -f " + logfile.absoluteFilePath();
+        system(removecmd.toUtf8());
+    }
     cmd.halt();
 }
 
@@ -602,4 +608,39 @@ bool MainWindow::isantiX_mx_family(QString selected)
         system(cmdstr.toUtf8());
         return false;
     }
+}
+
+void MainWindow::on_pushButtonLumLogFile_clicked()
+{
+    QFileInfo lum(LUM);
+    QString url = "file:///tmp/" + lum.baseName() + ".log";
+    qDebug() << "lumlog" << url;
+    QFileInfo viewer("/usr/bin/mx-viewer");
+    QFileInfo viewer2("/usr/bin/antix-viewer");
+    QString rootrunoption;
+    QString cmd;
+
+    //generate temporary log file
+    cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" > /tmp/" + lum.baseName() + ".log";
+    system(cmd.toUtf8());
+    rootrunoption.clear();
+
+    if (getuid() == 0){
+        rootrunoption = "runuser -l $(logname) -c ";
+    }
+
+    if (viewer.exists())
+    {
+        cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(lum.baseName());
+    }
+    else if (viewer2.exists())
+    {
+        cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(lum.baseName());
+    }
+    else
+    {
+        cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
+
+    }
+    system(cmd.toUtf8());
 }

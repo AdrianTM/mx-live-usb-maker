@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="1" column="0">
-    <layout class="QGridLayout" name="buttonBar" columnstretch="0,0,0,0,0,0,0,0,0,0,0">
+    <layout class="QGridLayout" name="buttonBar" columnstretch="0,0,0,0,0,0,0,0,0,0,0,0">
      <property name="sizeConstraint">
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
@@ -34,7 +34,7 @@
      <property name="spacing">
       <number>5</number>
      </property>
-     <item row="1" column="10">
+     <item row="1" column="11">
       <widget class="QPushButton" name="buttonCancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -60,7 +60,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="5">
+     <item row="1" column="6">
       <spacer name="horizontalSpacer2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -102,7 +102,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="7">
+     <item row="1" column="8">
       <widget class="QPushButton" name="buttonBack">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -122,7 +122,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
+     <item row="1" column="3">
       <spacer name="horizontalSpacer1">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -138,7 +138,7 @@
        </property>
       </spacer>
      </item>
-     <item row="1" column="3">
+     <item row="1" column="4">
       <widget class="QLabel" name="labelLogo">
        <property name="maximumSize">
         <size>
@@ -160,7 +160,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="8">
+     <item row="1" column="9">
       <widget class="QPushButton" name="buttonNext">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -209,6 +209,16 @@
        </property>
        <property name="autoDefault">
         <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButtonLumLogFile">
+       <property name="text">
+        <string>View Log</string>
+       </property>
+       <property name="icon">
+        <iconset theme="emblem-documents"/>
        </property>
       </widget>
      </item>
@@ -556,7 +566,7 @@
              <item>
               <widget class="QRadioButton" name="rb_normal">
                <property name="text">
-                <string>Full-featured mode - writable LiveUSB</string>
+                <string>Full-featured mode - writable Li&amp;veUSB</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -569,7 +579,7 @@
                 <string>Read-only, cannot be used with persistency</string>
                </property>
                <property name="text">
-                <string>Image mode - read-only LiveUSB (dd)</string>
+                <string>Image &amp;mode - read-only LiveUSB (dd)</string>
                </property>
               </widget>
              </item>
