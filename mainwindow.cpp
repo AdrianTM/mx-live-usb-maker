@@ -385,7 +385,7 @@ void MainWindow::on_buttonNext_clicked()
     } else if (ui->stackedWidget->currentWidget() == ui->outputPage) {
 
     } else {
-        return qApp->quit();
+        qApp->quit();
     }
 }
 
