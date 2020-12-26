@@ -86,6 +86,8 @@ private slots:
     void on_rb_normal_clicked();
     bool isantiX_mx_family(QString arg1);
 
+    void on_pushButtonLumLogFile_clicked();
+
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
