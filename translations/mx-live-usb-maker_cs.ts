@@ -65,25 +65,25 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="468"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Select ISO</source>
         <translation>Vybrat ISO soubor</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vyberte cílové USB zařízení&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vyberte ISO soubor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšířené možnosti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
@@ -98,12 +98,12 @@
     <message>
         <location filename="../mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"></translation>
+        <translation>použít rozdělení gpt místo msdos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdělení GPT</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="331"/>
@@ -113,12 +113,12 @@
     <message>
         <location filename="../mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepřepisovat soubory syslinux</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponechat soubory syslinux</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="348"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"></translation>
+        <translation>Dočasně vypnout autopřipojení</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="365"/>
@@ -138,12 +138,12 @@
     <message>
         <location filename="../mainwindow.ui" line="372"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepoužívat fuseiso k připojení iso souborů</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost ESP (uefi) oddílu:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
@@ -153,12 +153,12 @@
     <message>
         <location filename="../mainwindow.ui" line="457"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation>vfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="462"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation>exfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="467"/>
@@ -168,7 +168,7 @@
     <message>
         <location filename="../mainwindow.ui" line="472"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation>ntfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="493"/>
@@ -178,18 +178,18 @@
     <message>
         <location filename="../mainwindow.ui" line="500"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formát</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit seznam diskových jednotek</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="458"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit pokročilé možnosti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="544"/>
@@ -259,7 +259,7 @@
     <message>
         <location filename="../mainwindow.ui" line="747"/>
         <source>Encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Zašifrovat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="754"/>
@@ -267,117 +267,132 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
-        <location filename="../mainwindow.cpp" line="274"/>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Confirmation</source>
+        <translation>Potvrzení</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Selhání</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdroj a cíl jsou na stejné jednotce, prosím vyberte znovu.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="142"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>Success</source>
         <translation>Úspěch!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>LiveUSB creation successful!</source>
         <translation>Vytvoření Live-USB proběhlo úspěšně!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="274"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosím vyberte USB jednotku k zápisu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="325"/>
-        <location filename="../mainwindow.cpp" line="481"/>
+        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>clone</source>
-        <translation type="unfinished"></translation>
+        <translation>klonovat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="403"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Version: </source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="405"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="365"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Vlastnická práva (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>%1 License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Nápověda %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="427"/>
         <source>Select an ISO file to write to the USB drive</source>
+        <translation>Vyberte ISO soubor pro zápis na USB jednotku </translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="427"/>
+        <source>ISO Files (*.iso);;All Files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
-        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="509"/>
         <source>Select Source Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte zdrojový aresář</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="464"/>
         <source>Hide advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt pokročilé možnosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="525"/>
         <source>Select Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte zdroj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="467"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="532"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte ISO soubor</translation>
     </message>
 </context>
 <context>
@@ -391,7 +406,7 @@ Please wait until the the process is completed</source>
         <location filename="../about.cpp" line="33"/>
         <location filename="../about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Protokol změn</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="34"/>
@@ -406,7 +421,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="74"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"></translation>
+        <translation>プログラムの名前</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>情報...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
@@ -65,100 +65,100 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="468"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Select ISO</source>
         <translation>ISO を選択</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; USB デバイスのターゲットを選択&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ISO ファイルの選択&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="289"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"></translation>
+        <translation>詳細オプション</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="307"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"></translation>
+        <translation>たとえ既存の ext4 ファイルシステムがあっても、それを作成</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="314"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブUSB更新時に元の boot ディレクトリを保存</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"></translation>
+        <translation>msdos の代わりに gpt パーティショニングを使用</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT のパーティショニング</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"></translation>
+        <translation>更新（既存ライブUSBの更新のみ）</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>syslinux ファイルの置換をしません</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"></translation>
+        <translation>syslinux ファイルを保持</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>Ignore USB/removable check</source>
-        <translation type="unfinished"></translation>
+        <translation>USB/リムーバブルのチェックを無視</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="355"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"></translation>
+        <translation>一時的に自動マウントを無効に</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="365"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"></translation>
+        <translation>pmbr_boot ディスクフラグの設定 (UEFI で起動しない)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="372"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"></translation>
+        <translation>isoファイルのマウントに fuseiso を使用しないでください</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>ESP (uefi) パーティションのサイズ:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
         <source>Verbosity (less to more):</source>
-        <translation type="unfinished"></translation>
+        <translation>冗長性（少ない → 多い）</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="457"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation>vfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="462"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation>exfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="467"/>
@@ -168,53 +168,53 @@
     <message>
         <location filename="../mainwindow.ui" line="472"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation>ntfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="493"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"></translation>
+        <translation>別のデータパーティションを作成（%）</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="500"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーマット</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="510"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"></translation>
+        <translation>ドライブのリストを更新</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="458"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>詳細設定を表示</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="544"/>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>モード</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="559"/>
         <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>フル機能モード - 書き込み可能なライブUSB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="569"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation type="unfinished"></translation>
+        <translation>読み取り専用、パーシステンスで使用不可</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="572"/>
         <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージモード - 読み取り専用 ライブUSB (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="586"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation type="unfinished"></translation>
+        <translation>antiX/MX 以外のディストロではイメージモード(dd)を使用します</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="634"/>
@@ -224,160 +224,175 @@
     <message>
         <location filename="../mainwindow.ui" line="669"/>
         <source>Percent of USB-device to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>USBデバイスの使用率:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="676"/>
         <source>Label ext partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>ext パーティションにラベル付加：</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="724"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation type="unfinished"></translation>
+        <translation>usb デバイスに影響を与えるコマンドを実行しないでください</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="727"/>
         <source>Dry run (no change to system)</source>
-        <translation type="unfinished"></translation>
+        <translation>ドライラン（システムに変更ありません）</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="734"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation type="unfinished"></translation>
+        <translation>マウントされたライブUSBやISOファイルからクローンを作成</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="737"/>
         <source>Clone an existing live system</source>
-        <translation type="unfinished"></translation>
+        <translation>既存ライブシステムをクローン</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="744"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>暗号化されたパーティションから起動するように設定すると、最初の起動時にパスフレーズのプロンプトが表示されます</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="747"/>
         <source>Encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>暗号化</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="754"/>
         <source>Clone running live system</source>
+        <translation>実行中のライブシステムをクローン</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Confirmation</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
-        <location filename="../mainwindow.cpp" line="274"/>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation type="unfinished"></translation>
+        <translation>送信元と送信先が同じデバイスにあるので、再度選択してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="142"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>dd コマンドを使用して %1 を /dev/%2 に書き込んでるので、処理完了までお待ちください</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>Success</source>
         <translation>完了</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>LiveUSB creation successful!</source>
         <translation>LiveUSB の生成が完了しました！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="274"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"></translation>
+        <translation>ライブUSBの作成プロセスでエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"></translation>
+        <translation>書き込むUSBデバイスを選択してください</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="325"/>
-        <location filename="../mainwindow.cpp" line="481"/>
+        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>clone</source>
-        <translation type="unfinished"></translation>
+        <translation>クローン</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="403"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation> %1 について</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>バージョン: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="405"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"></translation>
+        <translation>ISOファイルや別のライブUSB、ライブCD/DVD または実行中のライブシステムからライブUSBを作成するためのプログラム。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="365"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>%1 License</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ライセンス</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 のヘルプ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="427"/>
         <source>Select an ISO file to write to the USB drive</source>
+        <translation>USB ドライブへ書き込む ISO ファイルを選択</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="427"/>
+        <source>ISO Files (*.iso);;All Files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
-        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="509"/>
         <source>Select Source Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>ソースのディレクトリを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>%1/antiX/linuxfs ファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="464"/>
         <source>Hide advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>詳細オプションを非表示</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="525"/>
         <source>Select Source</source>
-        <translation type="unfinished"></translation>
+        <translation>ソースを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="467"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="532"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO ファイルの選択</translation>
     </message>
 </context>
 <context>
@@ -391,7 +406,7 @@ Please wait until the the process is completed</source>
         <location filename="../about.cpp" line="33"/>
         <location filename="../about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>更新履歴</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="34"/>
@@ -406,7 +421,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="74"/>

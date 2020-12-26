@@ -47,8 +47,7 @@ public:
     MainWindow(const QStringList &args);
     ~MainWindow();
 
-    bool checkISO();
-    bool checkSize();
+    bool checkDestSize();
     bool isRunningLive();
     bool isToRam();
     void makeUsb(const QString &options);
@@ -57,6 +56,7 @@ public:
     QString buildOptionList();
     QStringList buildUsbList();
     QStringList removeUnsuitable(const QStringList &devices); // remove unsuitable disks from the list (live and unremovable)
+    QString LUM;
 
 
 public slots:
@@ -66,6 +66,7 @@ private slots:
     void cmdStart();
     void cmdDone();
     void setConnections();
+    void setDefaultMode(const QString &iso_name);
     void updateBar();
     void updateOutput();
     void on_buttonNext_clicked();
@@ -83,6 +84,7 @@ private slots:
     void on_cb_clone_live_clicked(bool checked);
     void on_rb_dd_clicked();
     void on_rb_normal_clicked();
+    bool isantiX_mx_family(QString arg1);
 
 private:
     Ui::MainWindow *ui;
@@ -95,6 +97,7 @@ private:
     int height;
     int iso_sectors;
     int start_io;
+    int size_check;
 };
 
 

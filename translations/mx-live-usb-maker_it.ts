@@ -65,8 +65,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="239"/>
-        <location filename="../mainwindow.cpp" line="468"/>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Select ISO</source>
         <translation>Seleziona un file ISO</translation>
     </message>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="524"/>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="458"/>
         <source>Show advanced options</source>
         <translation>Mostra le opzioni avanzate</translation>
     </message>
@@ -267,19 +267,29 @@
         <translation>Clona il sistema &apos;Live&apos; in esecuzione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
-        <location filename="../mainwindow.cpp" line="274"/>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Confirmation</source>
+        <translation>Conferma</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
+        <translation>Il dispositivo di destinazione 1 è più grande di 2 GB. Vuoi procedere?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Failure</source>
         <translation>Operazione non riuscita</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="86"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Sorgente e destinazione sono sullo stesso dispositivo, seleziona di nuovo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="142"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -288,96 +298,101 @@ Please wait until the the process is completed</source>
 Attendi fino al completamento del processo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>Success</source>
         <translation>Operazione riuscita</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="302"/>
         <source>LiveUSB creation successful!</source>
         <translation>La creazione della USB Live ha avuto successo!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="274"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Riscontrato un errore durante il processo di creazione della USB Live</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Please select a USB device to write to</source>
         <translation>Seleziona un dispositivo USB per la scrittura</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="325"/>
-        <location filename="../mainwindow.cpp" line="481"/>
+        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>clone</source>
         <translation>Clona</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="403"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Circa %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Version: </source>
         <translation>Versione: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="405"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Programma per la creazione di una USB Live da un file ISO, da un&apos;altra Live USB o da un sistema &apos;live&apos; in esecuzione.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="365"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>%1 License</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Licenza</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Aiuto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="427"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Seleziona un file ISO da scrivere nell&apos;unità USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
-        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="../mainwindow.cpp" line="427"/>
+        <source>ISO Files (*.iso);;All Files (*.*)</source>
+        <translation>File ISO (*.iso); Tutti i file (*.*)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="509"/>
         <source>Select Source Directory</source>
         <translation>Seleziona la directory sorgente</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Impossibile trovare il file %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="464"/>
         <source>Hide advanced options</source>
         <translation>Nascondi le opzioni avanzate</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="525"/>
         <source>Select Source</source>
         <translation>Seleziona la sorgente</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="467"/>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="532"/>
         <source>Select ISO file</source>
         <translation>Seleziona un file ISO</translation>
     </message>
@@ -408,7 +423,7 @@ Attendi fino al completamento del processo</translation>
     <message>
         <location filename="../main.cpp" line="73"/>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="74"/>

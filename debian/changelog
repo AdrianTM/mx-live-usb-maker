@@ -1,3 +1,51 @@
+CUSTOMPROGRAMNAME (20.10) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 13 Oct 2020 12:13:16 -0400
+
+CUSTOMPROGRAMNAME (20.9.1) mx; urgency=medium
+
+  * fix data partition
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 14 Sep 2020 15:04:24 -0400
+
+CUSTOMPROGRAMNAME (20.9) mx; urgency=medium
+
+  * check destination drive size, pop-up warning if > 128GB
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 09 Sep 2020 22:48:37 -0400
+
+CUSTOMPROGRAMNAME (20.8) mx; urgency=medium
+
+  * add .conf file option for LUM backend location (testing purposes)
+
+ -- Dolphin <dolphinoracle@gmail.com>  Sat, 15 Aug 2020 18:39:29 -0400
+
+CUSTOMPROGRAMNAME (20.6) mx; urgency=medium
+
+  * fix button text replacement in KDE (use property insted of the text of the button)
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 16 Jun 2020 23:54:50 -0400
+
+CUSTOMPROGRAMNAME (20.2.1) mx; urgency=medium
+
+  * change check for linuxfs to account for frugal installation
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 21 Feb 2020 16:09:17 -0500
+
+CUSTOMPROGRAMNAME (20.2) mx; urgency=medium
+
+  * set default write mode when openning ISO by clicking on it
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 02 Feb 2020 12:58:26 -0500
+
+CUSTOMPROGRAMNAME (19.12) mx; urgency=medium
+
+  * guess default mode based on ISO type
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 22 Dec 2019 09:15:04 -0500
+
 CUSTOMPROGRAMNAME (19.11.02) mx; urgency=medium
 
   *  fix lsblk command

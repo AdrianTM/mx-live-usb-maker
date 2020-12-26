@@ -43,7 +43,7 @@ bool Cmd::run(const QString &cmd, QByteArray &output, bool quiet)
     connect(this, static_cast<void (QProcess::*)(int)>(&QProcess::finished), &loop, &QEventLoop::quit);
     start("/bin/bash", QStringList() << "-c" << cmd);
     loop.exec();
-    disconnect(this, static_cast<void (QProcess::*)(int)>(&QProcess::finished), 0, 0);
+    disconnect(this, static_cast<void (QProcess::*)(int)>(&QProcess::finished), nullptr, nullptr);
     output = readAll().trimmed();
     return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
 }
