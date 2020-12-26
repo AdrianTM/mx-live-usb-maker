@@ -253,7 +253,7 @@ void MainWindow::cleanup()
 {
     QFileInfo lum(LUM);
     QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
-    if ( logfile.exists()){
+    if ( logfile.exists() ) {
         QString removecmd = "rm -f " + logfile.absoluteFilePath();
         system(removecmd.toUtf8());
     }
@@ -615,32 +615,29 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     QFileInfo lum(LUM);
     QString url = "file:///tmp/" + lum.baseName() + ".log";
     qDebug() << "lumlog" << url;
+    if (!QFileInfo::exists(url)) {
+        QMessageBox::information(this, qApp->applicationName(), tr("Could not find a log file at: ") + url);
+        return;
+    }
     QFileInfo viewer("/usr/bin/mx-viewer");
     QFileInfo viewer2("/usr/bin/antix-viewer");
-    QString rootrunoption;
+    QString rootrunoption = QString();
     QString cmd;
 
-    //generate temporary log file
+    // generate temporary log file
     cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" > /tmp/" + lum.baseName() + ".log";
     system(cmd.toUtf8());
-    rootrunoption.clear();
 
-    if (getuid() == 0){
+    if (getuid() == 0) {
         rootrunoption = "runuser -l $(logname) -c ";
     }
 
-    if (viewer.exists())
-    {
+    if (viewer.exists()) {
         cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(lum.baseName());
-    }
-    else if (viewer2.exists())
-    {
+    } else if (viewer2.exists()) {
         cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(lum.baseName());
-    }
-    else
-    {
+    } else {
         cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
-
     }
     system(cmd.toUtf8());
 }

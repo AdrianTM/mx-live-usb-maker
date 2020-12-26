@@ -44,10 +44,10 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(VERSION);
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QApplication::tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system."));
+    parser.setApplicationDescription(QObject::tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system."));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addPositionalArgument(QCoreApplication::tr("filename"), QCoreApplication::tr("Name of .iso file to open"), QCoreApplication::tr("[filename]"));
+    parser.addPositionalArgument(QObject::tr("filename"), QObject::tr("Name of .iso file to open"), QObject::tr("[filename]"));
     parser.process(app);
 
     app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         // Set handler
         qInstallMessageHandler(messageHandler);
 
-        qDebug().noquote() << app.applicationName() << QApplication::tr("version:") << app.applicationVersion();
+        qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
         MainWindow w(app.arguments());
         w.show();
         return app.exec();

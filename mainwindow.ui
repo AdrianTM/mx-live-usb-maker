@@ -218,7 +218,11 @@
         <string>View Log</string>
        </property>
        <property name="icon">
-        <iconset theme="emblem-documents"/>
+        <iconset theme="emblem-documents">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
