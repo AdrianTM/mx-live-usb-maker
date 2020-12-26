@@ -18,32 +18,32 @@ Changes:
  .
    * added log viewer
 Checksums-Sha1:
- 4a09671c5c8b391087b5b1f30345977ca1c44192 1156 mx-live-usb-maker_20.12.dsc
- ddd2514bf3f85aa7a0261c715ca35f417e3f47b4 110944 mx-live-usb-maker_20.12.tar.xz
- a7c7ded7063f63adc279852f2ee5fe40f4456f23 728806 mx-live-usb-maker-dbgsym_20.12_amd64.deb
- 8327be2b9f807d7047373658e55ad0d29ecf24a1 10768 mx-live-usb-maker_20.12_amd64.buildinfo
- 3c45abc219f8e091fb2bc7ba09048bcec0a1da3c 129334 mx-live-usb-maker_20.12_amd64.deb
+ 996b04148778e670f312e182349317d44dc1e61e 1156 mx-live-usb-maker_20.12.dsc
+ 8a9e3b29859dfd7613776cb760c82c271f394950 110988 mx-live-usb-maker_20.12.tar.xz
+ 2890b9316469819ab362933c3c5b587432897c42 728596 mx-live-usb-maker-dbgsym_20.12_amd64.deb
+ 04a22f0b48b22f6735b28f930e5c355b7c56a664 10768 mx-live-usb-maker_20.12_amd64.buildinfo
+ 4744fe2dc2ecf0dfd474e705386977084bbcf77b 129306 mx-live-usb-maker_20.12_amd64.deb
 Checksums-Sha256:
- 091874288176c0be9ee771e7fe44273ca7d6077ac3e654dc855fe74a7c5741d8 1156 mx-live-usb-maker_20.12.dsc
- a3ea1dfa90ac70ea01a107d41418f9945a0265cc88ccb40d73cc75e6f20c1eba 110944 mx-live-usb-maker_20.12.tar.xz
- 546e178f79f5b60a9e61c37139d89d515bd671fc371f716c64271e20f00de4e3 728806 mx-live-usb-maker-dbgsym_20.12_amd64.deb
- 840ed3d9f344ee1bb27191b5e9bb012b72a5fd9d68b421eed2e3a62e1c11f1bb 10768 mx-live-usb-maker_20.12_amd64.buildinfo
- 3c8f6eeb75fdeb940695c5386cadaa327f4e772f4e799307d03a44c7cd0fb475 129334 mx-live-usb-maker_20.12_amd64.deb
+ 72ef84621e461b2e60a1db8625b560d0bc61a783e1e0a7302ce0e5c07754674e 1156 mx-live-usb-maker_20.12.dsc
+ fc9424c14cf63c2c288142863a2fc07dfcb32818ae13b52eeab8da9c8dd09365 110988 mx-live-usb-maker_20.12.tar.xz
+ b1e6b12015f2dfd65f08f97ca13d53bf3d52167ce03c4e9b8c8b6a0c7797fbc8 728596 mx-live-usb-maker-dbgsym_20.12_amd64.deb
+ 2f14ade170d075f11ac4865690e04f6053da1f5d68f5f158f72129bbdc30b828 10768 mx-live-usb-maker_20.12_amd64.buildinfo
+ 33afd140264f88e3fe9ac6f61e4e19fb6888aea04224cd71a417c438caa506f1 129306 mx-live-usb-maker_20.12_amd64.deb
 Files:
- b0881b9dd06519250d51aab5a8ec2587 1156 admin optional mx-live-usb-maker_20.12.dsc
- c0f831ba6e9dbced25276c8a5682003d 110944 admin optional mx-live-usb-maker_20.12.tar.xz
- d5bd3297d5b521a2b0851aa72b21d7db 728806 debug extra mx-live-usb-maker-dbgsym_20.12_amd64.deb
- 057fe628032d9969a8124bbc1b4a9e40 10768 admin optional mx-live-usb-maker_20.12_amd64.buildinfo
- 25106c08a01ea16fedd41507d6175894 129334 admin optional mx-live-usb-maker_20.12_amd64.deb
+ 1396de5237557639b88e9c802a896f23 1156 admin optional mx-live-usb-maker_20.12.dsc
+ 73fc03b7e31f08c58444a54236942486 110988 admin optional mx-live-usb-maker_20.12.tar.xz
+ 1981ddb9f44602d477c01482d79c2f34 728596 debug extra mx-live-usb-maker-dbgsym_20.12_amd64.deb
+ f4ec08351d18ba98ce6163be90d2d2b9 10768 admin optional mx-live-usb-maker_20.12_amd64.buildinfo
+ 81b23aab9195db41caa15b7979f3c37e 129306 admin optional mx-live-usb-maker_20.12_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl/nuFUTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPZfB/4uxsDEk/GmEQiX1oztlxDhbZtbZEgC
-BXLWJBdJHB9jGZaCRN5vENb0TKMoKj0f33C1t4A4De2pcYdVm28E5qQbweW9B30v
-yp5cG+xr0QL5Pv2JWA2aCCfMaaS5YGsBGNQ6xcCMukUoxeQgT+8lNyL+EoV6xu+b
-+2ocRb3+QpE6zu1SEWHhqwcqrFzhIhaV58OwMnmG1JdUWciZxNhmzT+ikotw549q
-PGK/F9AFVc2xJt8o8zuYM597mRQcEqGKltF8gmgJesO77kqXbJimORxwshr8+5xL
-v5RgEZL1DEpwvtmXzTqxHFBHxe2nzgB0l3Gy6/5WaJCaScB3L5ux7/B/
-=JexI
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl/nyFUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMWJB/97cJFXrYe6u21x7Y5F0HHfLEfV+Ll9
+vO2bL5jmXBUAaWmOi5nmAF9LBMI/RFzHzAcd+lv0aPWFrMs87hKlo4F74n6HcuNd
+QxIT1kBBiYdOOxUp9TI6NIMPr3/6BV133Pdz80oUU5IeFfc81ua3UTw1U2gjIHm6
+K8uUoWWVPhGCTfCyGgUpFN4eHPaRpFy05UlISmJ7suCboZUucOT6i5e8ou9b3onL
+c1dX6T4l32f75xSRxe7dBoin5c8ERIZ3rwrrdG1Z4TX6+UaksVGwgMfgoLtkqh5u
+3h72MidnmH8f0FjYxOTYmId7khSlu3NLaes2NfzQnFJksHiq+/nKADeK
+=okab
 -----END PGP SIGNATURE-----

@@ -64,150 +64,150 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="218"/>
+        <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="253"/>
+        <location filename="../mainwindow.ui" line="259"/>
         <location filename="../mainwindow.cpp" line="517"/>
         <location filename="../mainwindow.cpp" line="538"/>
         <source>Select ISO</source>
         <translation>Vælg ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="264"/>
+        <location filename="../mainwindow.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vælg mål-USB-enhed&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="274"/>
+        <location filename="../mainwindow.ui" line="280"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vælg ISO-fil&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="303"/>
+        <location filename="../mainwindow.ui" line="309"/>
         <source>Advanced Options</source>
         <translation>Avancerede valgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="321"/>
+        <location filename="../mainwindow.ui" line="327"/>
         <source>Make the ext4 filesystem even if one exists</source>
         <translation>Skab ext4-filsystemet, selv hvis der findes et</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="328"/>
+        <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
         <translation>Gem den originale opstartsmappe ved opdatering af en live-usb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="335"/>
+        <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
         <translation>Brug gpt-partitionering i stedet for msdos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="338"/>
+        <location filename="../mainwindow.ui" line="344"/>
         <source>GPT partitioning</source>
         <translation>GPT-partitionering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="345"/>
+        <location filename="../mainwindow.ui" line="351"/>
         <source>Update (only update an existing live-usb)</source>
         <translation>Opdater (opdater kun et eksisterende live-usb)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="352"/>
+        <location filename="../mainwindow.ui" line="358"/>
         <source>Don&apos;t replace syslinux files</source>
         <translation>Erstat ikke syslinux-filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="355"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Keep syslinux files</source>
         <translation>Bevar syslinux-filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="362"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Ignore USB/removable check</source>
         <translation>Ignorer tjek af USB/flytbar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="369"/>
+        <location filename="../mainwindow.ui" line="375"/>
         <source>Temporarily disable automounting</source>
         <translation>Deaktivér automatisk montering midlertidigt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="379"/>
+        <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
         <translation>Indstil pmbr_boot-diskflag (opstarter ikke via UEFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="386"/>
+        <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
         <translation>Brug ikke fuseiso til at montere iso-filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="412"/>
+        <location filename="../mainwindow.ui" line="418"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation>Størrelse på ESP-partition (uefi):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="432"/>
+        <location filename="../mainwindow.ui" line="438"/>
         <source>Verbosity (less to more):</source>
         <translation>Uddybelse (mindre til mere):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="471"/>
+        <location filename="../mainwindow.ui" line="477"/>
         <source>vfat</source>
         <translation>vfat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="476"/>
+        <location filename="../mainwindow.ui" line="482"/>
         <source>exfat</source>
         <translation>exfat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="481"/>
+        <location filename="../mainwindow.ui" line="487"/>
         <source>ext4</source>
         <translation>ext4</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="486"/>
+        <location filename="../mainwindow.ui" line="492"/>
         <source>ntfs</source>
         <translation>ntfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="507"/>
+        <location filename="../mainwindow.ui" line="513"/>
         <source>Make separate data partition (percent)</source>
         <translation>Skab separat datapartition (procent)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="514"/>
+        <location filename="../mainwindow.ui" line="520"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="524"/>
+        <location filename="../mainwindow.ui" line="530"/>
         <source>Refresh drive list</source>
         <translation>Genopfrisk drevliste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="538"/>
+        <location filename="../mainwindow.ui" line="544"/>
         <location filename="../mainwindow.cpp" line="462"/>
         <source>Show advanced options</source>
         <translation>Vis avancerede valgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="558"/>
+        <location filename="../mainwindow.ui" line="564"/>
         <source>Mode</source>
         <translation>Tilstand</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="573"/>
+        <location filename="../mainwindow.ui" line="579"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="586"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -216,7 +216,7 @@
         <translation type="vanished">Med det hele-tilstand - skrivbar LiveUSB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="583"/>
+        <location filename="../mainwindow.ui" line="589"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation>Skrivebeskyttet, kan ikke bruges med vedvarenhed</translation>
     </message>
@@ -225,57 +225,57 @@
         <translation type="vanished">Aftryk-tilstand - skrivebeskyttet LiveUSB (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="600"/>
+        <location filename="../mainwindow.ui" line="606"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
         <translation>Brug aftryk-tilstand (dd) til distroer som ikke er antiX/MX.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="648"/>
+        <location filename="../mainwindow.ui" line="654"/>
         <source>Options</source>
         <translation>Valgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="683"/>
+        <location filename="../mainwindow.ui" line="689"/>
         <source>Percent of USB-device to use:</source>
         <translation>Procent af USB-enhed som der skal bruges:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="690"/>
+        <location filename="../mainwindow.ui" line="696"/>
         <source>Label ext partition:</source>
         <translation>Etiket til ext-partition:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="738"/>
+        <location filename="../mainwindow.ui" line="744"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation>Kør ikke kommandoer som påvirker usb-enheden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="741"/>
+        <location filename="../mainwindow.ui" line="747"/>
         <source>Dry run (no change to system)</source>
         <translation>Tør kørsel (ingen ændring af systemet)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="748"/>
+        <location filename="../mainwindow.ui" line="754"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation>klon fra en monteret live-usb eller iso-file.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="751"/>
+        <location filename="../mainwindow.ui" line="757"/>
         <source>Clone an existing live system</source>
         <translation>Klon et eksisterende livesystem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="758"/>
+        <location filename="../mainwindow.ui" line="764"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation>Opsætning til opstart fra en krypterede partition, vil spørge om adgangskode ved første opstart.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="761"/>
+        <location filename="../mainwindow.ui" line="767"/>
         <source>Encrypt</source>
         <translation>Kryptér</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="768"/>
+        <location filename="../mainwindow.ui" line="774"/>
         <source>Clone running live system</source>
         <translation>Klon kørende livesystem</translation>
     </message>

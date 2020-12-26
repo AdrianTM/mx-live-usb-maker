@@ -64,150 +64,150 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="218"/>
+        <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="253"/>
+        <location filename="../mainwindow.ui" line="259"/>
         <location filename="../mainwindow.cpp" line="517"/>
         <location filename="../mainwindow.cpp" line="538"/>
         <source>Select ISO</source>
         <translation>Seleccione ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="264"/>
+        <location filename="../mainwindow.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Seleccione Dispositivo USB Destino&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="274"/>
+        <location filename="../mainwindow.ui" line="280"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Seleccione fichero ISO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="303"/>
+        <location filename="../mainwindow.ui" line="309"/>
         <source>Advanced Options</source>
         <translation>Opciones avanzadas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="321"/>
+        <location filename="../mainwindow.ui" line="327"/>
         <source>Make the ext4 filesystem even if one exists</source>
         <translation>Crear el sistema de ficheros de ext4 aunque exista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="328"/>
+        <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
         <translation>Guarda la carpeta original de inicio cuando actualice un live-usb</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="335"/>
+        <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
         <translation>Usar particionamiento gpt en vez de msdos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="338"/>
+        <location filename="../mainwindow.ui" line="344"/>
         <source>GPT partitioning</source>
         <translation>Particionamiento GPT</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="345"/>
+        <location filename="../mainwindow.ui" line="351"/>
         <source>Update (only update an existing live-usb)</source>
         <translation>Actualizar (solamente actualiza un liveUSB existente)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="352"/>
+        <location filename="../mainwindow.ui" line="358"/>
         <source>Don&apos;t replace syslinux files</source>
         <translation>No reemplazar ficheros syslinux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="355"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Keep syslinux files</source>
         <translation>Mantener ficheros syslinux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="362"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Ignore USB/removable check</source>
         <translation>Ignorar chequeo USB/removible</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="369"/>
+        <location filename="../mainwindow.ui" line="375"/>
         <source>Temporarily disable automounting</source>
         <translation>Temporalmente deshabilitar automontaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="379"/>
+        <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
         <translation>Fijar bandera disco a pmbr_boot (no iniciar via UEFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="386"/>
+        <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
         <translation>No use fuseiso para montar archivos iso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="412"/>
+        <location filename="../mainwindow.ui" line="418"/>
         <source>Size of ESP (uefi) partition:</source>
         <translation>Tamaño del partición ESP (uefi):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="432"/>
+        <location filename="../mainwindow.ui" line="438"/>
         <source>Verbosity (less to more):</source>
         <translation>Verbosidad (de menos a más)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="471"/>
+        <location filename="../mainwindow.ui" line="477"/>
         <source>vfat</source>
         <translation>vfat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="476"/>
+        <location filename="../mainwindow.ui" line="482"/>
         <source>exfat</source>
         <translation>exfat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="481"/>
+        <location filename="../mainwindow.ui" line="487"/>
         <source>ext4</source>
         <translation>ext4</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="486"/>
+        <location filename="../mainwindow.ui" line="492"/>
         <source>ntfs</source>
         <translation>ntfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="507"/>
+        <location filename="../mainwindow.ui" line="513"/>
         <source>Make separate data partition (percent)</source>
         <translation>Crear una partición de datos separada (porcentaje)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="514"/>
+        <location filename="../mainwindow.ui" line="520"/>
         <source>Format</source>
         <translation>Formatear</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="524"/>
+        <location filename="../mainwindow.ui" line="530"/>
         <source>Refresh drive list</source>
         <translation>Refrescar lista de dispositivos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="538"/>
+        <location filename="../mainwindow.ui" line="544"/>
         <location filename="../mainwindow.cpp" line="462"/>
         <source>Show advanced options</source>
         <translation>Mostrar opciones avanzadas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="558"/>
+        <location filename="../mainwindow.ui" line="564"/>
         <source>Mode</source>
         <translation>Modo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="573"/>
+        <location filename="../mainwindow.ui" line="579"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="586"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -216,7 +216,7 @@
         <translation type="vanished">Modo de funciones completas - LiveUSB escribible</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="583"/>
+        <location filename="../mainwindow.ui" line="589"/>
         <source>Read-only, cannot be used with persistency</source>
         <translation>Leer solamente, no soporta persistencía</translation>
     </message>
@@ -225,57 +225,57 @@
         <translation type="vanished">Modo imagen - LiveUSB solo escribible (dd)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="600"/>
+        <location filename="../mainwindow.ui" line="606"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
         <translation>Para distros no antiX/MX utilizar el modo imagen (dd).</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="648"/>
+        <location filename="../mainwindow.ui" line="654"/>
         <source>Options</source>
         <translation>Opciones</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="683"/>
+        <location filename="../mainwindow.ui" line="689"/>
         <source>Percent of USB-device to use:</source>
         <translation>Porcentaje del dispositivo USB a utilizar:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="690"/>
+        <location filename="../mainwindow.ui" line="696"/>
         <source>Label ext partition:</source>
         <translation>Etiqueta para partición ext:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="738"/>
+        <location filename="../mainwindow.ui" line="744"/>
         <source>Don&apos;t run commands that affect the usb device</source>
         <translation>No ejecuta comandos que afecta el dispositivo USB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="741"/>
+        <location filename="../mainwindow.ui" line="747"/>
         <source>Dry run (no change to system)</source>
         <translation>Modo simulación (ningún cambio al sistema)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="748"/>
+        <location filename="../mainwindow.ui" line="754"/>
         <source>clone from a mounted live-usb or iso-file.</source>
         <translation>clonar de un liveUSB montado o un fichero ISO.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="751"/>
+        <location filename="../mainwindow.ui" line="757"/>
         <source>Clone an existing live system</source>
         <translation>Clonar un sistema en vivo existente</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="758"/>
+        <location filename="../mainwindow.ui" line="764"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
         <translation>Configurar para iniciar desde una partición cifrada; preguntará la frase de paso en el primer arranque</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="761"/>
+        <location filename="../mainwindow.ui" line="767"/>
         <source>Encrypt</source>
         <translation>Cifrar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="768"/>
+        <location filename="../mainwindow.ui" line="774"/>
         <source>Clone running live system</source>
         <translation>Clonar el sistema que se ejecuta en vivo</translation>
     </message>
