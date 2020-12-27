@@ -615,7 +615,7 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     QFileInfo lum(LUM);
     QString url = "file:///tmp/" + lum.baseName() + ".log";
     qDebug() << "lumlog" << url;
-    if (!QFileInfo::exists(url)) {
+    if (!QFileInfo::exists("/var/log/" + lum.baseName() + ".log")) {
         QMessageBox::information(this, qApp->applicationName(), tr("Could not find a log file at: ") + url);
         return;
     }
