@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (20.12.01) mx; urgency=medium
+
+  * fix: log viewer
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 27 Dec 2020 15:29:04 -0500
+
 CUSTOMPROGRAMNAME (20.12) mx; urgency=medium
 
   * added log viewer
