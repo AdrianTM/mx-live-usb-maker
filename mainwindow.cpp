@@ -20,15 +20,16 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#include "about.h"
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-
+#include <QDebug>
 #include <QFileDialog>
 #include <QScrollBar>
+#include <QTemporaryDir>
 #include <QTextStream>
+
+#include "about.h"
 #include "unistd.h"
-#include <QDebug>
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(const QStringList& args) :
     ui(new Ui::MainWindow)
@@ -274,7 +275,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     QString name;
     for (const QString &line : devices) {
         name = line.split(" ").at(0);
-        if (ui->cb_force_usb->isChecked()){
+        if (ui->cb_force_usb->isChecked()) {
             if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
                 list << line;
             }
@@ -323,7 +324,7 @@ void MainWindow::setConnections()
 // set proper default mode based on iso contents
 void MainWindow::setDefaultMode(const QString &iso_name)
 {
-    if (!isantiX_mx_family(iso_name)){
+    if (!isantiX_mx_family(iso_name)) {
         ui->rb_dd->click();
         ui->rb_normal->setChecked(false);
     } else {
@@ -523,7 +524,7 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
 
 void MainWindow::on_cb_clone_live_clicked(bool checked)
 {
-    if (checked){
+    if (checked) {
         ui->buttonSelectSource->setStyleSheet("text-align: center;");
         ui->cb_clone_mode->setChecked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
@@ -579,35 +580,24 @@ bool MainWindow::isantiX_mx_family(QString selected)
 {
     QString cmdstr;
 
-    //make temp folder
-    cmdstr = "mkdir -p /tmp/testisomount";
-
-    if ( system(cmdstr.toUtf8()) != 0 ){
+    // make temp folder
+    QTemporaryDir tmpdir;
+    if (!tmpdir.isValid()) {
+        qDebug() << "Could not create temp folder";
         return false;
     }
 
-    //mount the iso file
-    cmdstr = "mount -o loop " + selected + " /tmp/testisomount";
+    // mount the iso file
+    cmdstr = "mount -o loop " + selected + " " + tmpdir.path();
     if (system(cmdstr.toUtf8()) != 0) {
-        //cleanup mount point
-        cmdstr = "rmdir /tmp/testisomount";
-        system(cmdstr.toUtf8());
+        qDebug() << "Could not mount iso file to temp folder";
         return false;
     }
 
-    //check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX folder
-    cmdstr = "ls /tmp/testisomount |grep antiX";
-    if (system(cmdstr.toUtf8()) == 0){
-        //mean found
-        //cleanup mount
-        cmdstr = "umount /tmp/testisomount; rmdir /tmp/testisomount";
-        system(cmdstr.toUtf8());
-        return true;
-    } else {
-        cmdstr = "umount /tmp/testisomount; rmdir /tmp/testisomount";
-        system(cmdstr.toUtf8());
-        return false;
-    }
+    // check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX folder
+    bool test = QFileInfo::exists(tmpdir.path() + "/antiX");
+    system("umount " + tmpdir.path().toUtf8());
+    return test;
 }
 
 void MainWindow::on_pushButtonLumLogFile_clicked()
