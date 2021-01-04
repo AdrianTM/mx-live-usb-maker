@@ -417,7 +417,7 @@ void MainWindow::on_buttonAbout_clicked()
 // Help button clicked
 void MainWindow::on_buttonHelp_clicked()
 {
-    QString url = "/usr/share/doc/CUSTOMPROGRAMNAME/help/CUSTOMPROGRAMNAME.html";
+    QString url = "/usr/share/doc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.html";
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
 }
 
