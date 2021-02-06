@@ -187,59 +187,46 @@ void MainWindow::setup()
 QString MainWindow::buildOptionList()
 {
     QString options("-N ");
-    if (ui->cb_encrypt->isChecked()) {
+    if (ui->cb_encrypt->isChecked())
         options += "-E ";
-    }
-    if (ui->cb_gpt->isChecked()) {
+    if (ui->cb_gpt->isChecked())
         options += "-g ";
-    }
-    if (ui->cb_keep->isChecked()) {
+    if (ui->cb_keep->isChecked())
         options += "-k ";
-    }
     if (ui->cb_pretend->isChecked()) {
         options += "-p ";
-        if (ui->sliderVerbosity->value() == 0) { // add Verbosity of not selected, workaround for LUM bug
+        if (ui->sliderVerbosity->value() == 0) // add Verbosity of not selected, workaround for LUM bug
             ui->sliderVerbosity->setSliderPosition(1);
-        }
     }
-    if (ui->cb_save_boot->isChecked()) {
+    if (ui->cb_save_boot->isChecked())
         options += "-S ";
-    }
-    if (ui->cb_update->isChecked()) {
+    if (ui->cb_update->isChecked())
         options += "-u ";
-    }
-    if (ui->cb_set_pmbr_boot->isChecked()) {
+    if (ui->cb_set_pmbr_boot->isChecked())
         options += "--gpt-pmbr ";
-    }
-    if (ui->spinBoxEsp->value() != 50) {
+    if (ui->spinBoxEsp->value() != 50)
         options += "--esp-size=" + ui->spinBoxEsp->cleanText() + " ";
-    }
-    if (ui->spinBoxSize->value() < 100) {
+    if (ui->spinBoxSize->value() < 100)
         options += "--size=" + ui->spinBoxSize->cleanText() + " ";
-    }
-    if (!ui->edit_label->text().isEmpty()) {
+    if (!ui->edit_label->text().isEmpty())
         options += " --label=" + ui->edit_label->text() + " ";
-    }
-    if (ui->cb_force_usb->isChecked()) {
+    if (ui->cb_force_usb->isChecked())
         options += "--force=usb ";
-    }
-    if (ui->cb_force_automount->isChecked()) {
+    if (ui->cb_force_automount->isChecked())
         options += "--force=automount ";
-    }
-    if (ui->cb_force_makefs->isChecked()) {
+    if (ui->cb_force_makefs->isChecked())
         options += "--force=makefs ";
-    }
-    if (ui->cb_force_nofuse->isChecked()) {
+    if (ui->cb_force_nofuse->isChecked())
         options += "--force=nofuse ";
-    }
     if (ui->rb_dd->isChecked()) {
 
     }
 
-    if (ui->cb_data_first->isChecked()) {
+    if (ui->cb_data_first->isChecked())
         options += "--data-first=" + ui->spinBoxDataSize->cleanText() + "," + ui->comboBoxDataFormat->currentText() + " ";
-    }
-    switch(ui->sliderVerbosity->value()) {
+
+    switch(ui->sliderVerbosity->value())
+    {
     case 1 : options += "-V ";
         break;
     case 2 : options += "-VV ";
@@ -276,16 +263,11 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     for (const QString &line : devices) {
         name = line.split(" ").at(0);
         if (ui->cb_force_usb->isChecked()) {
-            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
+            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name)
                 list << line;
-            }
-        } else {
-            if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0) {
-                if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name) {
-                    list << line;
-                }
-            }
-        }
+        } else if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0)
+            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name)
+                list << line;
     }
     return list;
 }
@@ -303,11 +285,10 @@ void MainWindow::cmdDone()
     ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
     ui->buttonBack->show();
-    if (cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) {
+    if (cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit)
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
-    } else {
+    else
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
-    }
     cmd.disconnect();
 }
 
@@ -379,10 +360,7 @@ void MainWindow::on_buttonNext_clicked()
         }
         ui->buttonNext->setEnabled(false);
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
-
         makeUsb(buildOptionList());
-
-    // on output page
     } else if (ui->stackedWidget->currentWidget() == ui->outputPage) {
 
     } else {
@@ -618,16 +596,14 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" > /tmp/" + lum.baseName() + ".log";
     system(cmd.toUtf8());
 
-    if (getuid() == 0) {
+    if (getuid() == 0)
         rootrunoption = "runuser -l $(logname) -c ";
-    }
 
-    if (viewer.exists()) {
+    if (viewer.exists())
         cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(lum.baseName());
-    } else if (viewer2.exists()) {
+    else if (viewer2.exists())
         cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(lum.baseName());
-    } else {
+    else
         cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
-    }
     system(cmd.toUtf8());
 }
