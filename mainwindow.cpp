@@ -110,7 +110,10 @@ void MainWindow::makeUsb(const QString &options)
         }
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
-        source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1", true);
+        if (isToRam())
+            source_size = cmd.getCmdOut("du -m --summarize /live/to-ram 2>/dev/null |cut -f1", true);
+        else
+            source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1", true);
     }
 
     if (!checkDestSize()) {
