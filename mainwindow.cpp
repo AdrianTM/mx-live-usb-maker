@@ -168,13 +168,13 @@ void MainWindow::setup()
     QValidator *validator = new QRegularExpressionValidator(rx, this);
     ui->edit_label->setValidator(validator);
 
-    //set save boot directory option to disable unless update mode is checked
+    // set save boot directory option to disable unless update mode is checked
     ui->cb_save_boot->setEnabled(false);
 
-    //check if running live or with "toram"
-    ui->cb_clone_live->setEnabled(isRunningLive() && !isToRam());
+    // check if running live and "toram"
+    ui->cb_clone_live->setEnabled(isRunningLive() && isToRam());
 
-    //check if datafirst option is available
+    // check if datafirst option is available
     if (!cmd.run(LUM + " --help | grep -q data-first", true)) {
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();
@@ -484,7 +484,7 @@ void MainWindow::on_cb_update_clicked(bool checked)
 
 void MainWindow::on_cb_clone_mode_clicked(bool checked)
 {
-     if (checked) {
+    if (checked) {
         ui->buttonSelectSource->setStyleSheet("text-align: center;");
         ui->cb_clone_live->setChecked(false);
         on_cb_clone_live_clicked(false);
@@ -495,9 +495,9 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->buttonSelectSource->setText(tr("Select ISO"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
-        ui->cb_clone_live->setEnabled(isRunningLive());
+        ui->cb_clone_live->setEnabled(isRunningLive() && isToRam());
     }
-     ui->buttonSelectSource->setProperty("filename", "");
+    ui->buttonSelectSource->setProperty("filename", "");
 }
 
 void MainWindow::on_cb_clone_live_clicked(bool checked)
@@ -531,9 +531,8 @@ void MainWindow::on_rb_dd_clicked()
     ui->cb_clone_mode->setEnabled(false);
     ui->cb_encrypt->setEnabled(false);
     ui->cb_pretend->setEnabled(false);
-    if (ui->groupAdvOptions->isVisible()) {
+    if (ui->groupAdvOptions->isVisible())
         on_buttonOptions_clicked();
-    }
     ui->buttonOptions->setEnabled(false);
     ui->label_percent->setEnabled(false);
     ui->label_part_label->setEnabled(false);
