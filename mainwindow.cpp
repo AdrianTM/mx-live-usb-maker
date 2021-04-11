@@ -24,7 +24,6 @@
 #include <QFileDialog>
 #include <QScrollBar>
 #include <QTemporaryDir>
-#include <QTextStream>
 
 #include "about.h"
 #include "unistd.h"
@@ -38,7 +37,6 @@ MainWindow::MainWindow(const QStringList& args) :
 
     // setup options
     LUM.clear();
-    QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
     QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
     LUM = settings.value("LUM", "live-usb-maker").toString();
     size_check = settings.value("SizeCheck", 128).toUInt(); // in GB
