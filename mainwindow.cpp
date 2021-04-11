@@ -94,17 +94,15 @@ void MainWindow::makeUsb(const QString &options)
     device = ui->combo_Usb->currentText().split(" ").at(0);
 
     QString source;
+    QString source_size;
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
         source = "\"" + ui->buttonSelectSource->property("filename").toString() + "\"";
-        QString source_size = cmd.getCmdOut("du -m \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null | cut -f1", true);
-        iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
+        source_size = cmd.getCmdOut("du -m \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null |cut -f1", true);
     } else if (ui->cb_clone_mode->isChecked()) {
-        QString source_size = cmd.getCmdOut("du -m --summarize \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null | cut -f1", true);
-        iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
+        source_size = cmd.getCmdOut("du -m --summarize \"" + ui->buttonSelectSource->property("filename").toString() + "\" 2>/dev/null |cut -f1", true);
         source = "clone=\"" + ui->buttonSelectSource->property("filename").toString() + "\"";
-
         // check if source and destination are on the same drive
-        QString root_partition = cmd.getCmdOut("df --output=source \"" + ui->buttonSelectSource->property("filename").toString() + "\"| awk 'END{print $1}'");
+        QString root_partition = cmd.getCmdOut("df --output=source \"" + ui->buttonSelectSource->property("filename").toString() + "\" |awk 'END{print $1}'");
         if ("/dev/" + device == cmd.getCmdOut(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"), tr("Source and destination are on the same device, please select again."));
             ui->stackedWidget->setCurrentWidget(ui->selectionPage);
@@ -114,11 +112,11 @@ void MainWindow::makeUsb(const QString &options)
         }
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
-        QString source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", true);
-        iso_sectors = source_size.toInt() * 1024 / 512 * 1024;
+        source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1", true);
+
     }
 
-    if(!checkDestSize()) {
+    if (!checkDestSize()) {
         ui->stackedWidget->setCurrentWidget(ui->selectionPage);
         ui->buttonNext->setEnabled(true);
         setCursor(QCursor(Qt::ArrowCursor));
@@ -126,9 +124,10 @@ void MainWindow::makeUsb(const QString &options)
     }
 
     // check amount of io on device before copy, this is in sectors
-    start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
+    int start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
     ui->progressBar->setMinimum(start_io);
     qDebug() << "start io is " << start_io;
+    int iso_sectors = source_size.toInt() * 2048; // size * 1024 / 512 * 1024
     ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
@@ -218,10 +217,6 @@ QString MainWindow::buildOptionList()
         options += "--force=makefs ";
     if (ui->cb_force_nofuse->isChecked())
         options += "--force=nofuse ";
-    if (ui->rb_dd->isChecked()) {
-
-    }
-
     if (ui->cb_data_first->isChecked())
         options += "--data-first=" + ui->spinBoxDataSize->cleanText() + "," + ui->comboBoxDataFormat->currentText() + " ";
 
@@ -418,7 +413,7 @@ void MainWindow::on_buttonSelectSource_clicked()
         }
     } else if (ui->cb_clone_mode->isChecked()) {
         selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()), QFileDialog::ShowDirsOnly);
-        if (QFileInfo::exists(selected + "/antiX/linuxfs")|| QFileInfo::exists(selected + "/linuxfs")) {
+        if (QFileInfo::exists(selected + "/antiX/linuxfs") || QFileInfo::exists(selected + "/linuxfs")) {
             ui->buttonSelectSource->setText(selected);
             ui->buttonSelectSource->setProperty("filename", selected);
         } else {

@@ -97,8 +97,6 @@ private:
 
     bool advancedOptions;
     int height;
-    int iso_sectors;
-    int start_io;
     int size_check;
 };
 
