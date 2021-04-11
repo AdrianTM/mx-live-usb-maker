@@ -167,8 +167,8 @@ void MainWindow::setup()
     // set save boot directory option to disable unless update mode is checked
     ui->cb_save_boot->setEnabled(false);
 
-    // check if running live and "toram"
-    ui->cb_clone_live->setEnabled(isRunningLive() && isToRam());
+    // check if running live
+    ui->cb_clone_live->setEnabled(isRunningLive());
 
     // check if datafirst option is available
     if (!cmd.run(LUM + " --help | grep -q data-first", true)) {
@@ -483,7 +483,7 @@ void MainWindow::on_cb_clone_mode_clicked(bool checked)
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->buttonSelectSource->setText(tr("Select ISO"));
         ui->buttonSelectSource->setIcon(QIcon::fromTheme("user-home"));
-        ui->cb_clone_live->setEnabled(isRunningLive() && isToRam());
+        ui->cb_clone_live->setEnabled(isRunningLive());
     }
     ui->buttonSelectSource->setProperty("filename", "");
 }
