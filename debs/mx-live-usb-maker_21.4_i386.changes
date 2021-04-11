@@ -19,23 +19,23 @@ Changes:
    * fix: clone checkbox activation
    * fix: disk_size variable size
 Checksums-Sha1:
- f0ee4a3fb0bfe89c80cc4d31107b281ad0399bd4 10162 mx-live-usb-maker_21.4_i386.buildinfo
- 0548b43f4aba3f748c399d4a21d8d2d4b14a6a7b 132832 mx-live-usb-maker_21.4_i386.deb
+ 9cfc68b6835b87b12ce7fd84ef56338b82e749c7 10162 mx-live-usb-maker_21.4_i386.buildinfo
+ 1a971848145fba20954b18ba02898a6bef783c44 132876 mx-live-usb-maker_21.4_i386.deb
 Checksums-Sha256:
- 43cdecdf4b7ec0e60860c29a292082f6e6bd12a85c4e7e8076af9a84d59314bd 10162 mx-live-usb-maker_21.4_i386.buildinfo
- 68985e986fcd8cba3664eee4ee148e02aa60f5864d9b68f57a538c6964f79ee8 132832 mx-live-usb-maker_21.4_i386.deb
+ 1b873d03c409eed202f591b5b6c1c1bdde469dc17329eb7ce708ff5a2fedd453 10162 mx-live-usb-maker_21.4_i386.buildinfo
+ bde5ffd840cd26fb48040b93da23ee40fc01938f2194968156d9862134507e98 132876 mx-live-usb-maker_21.4_i386.deb
 Files:
- e36bb487911399c0287b497938a8f658 10162 admin optional mx-live-usb-maker_21.4_i386.buildinfo
- 679c2b1cf412582a45f9ed5cdb849204 132832 admin optional mx-live-usb-maker_21.4_i386.deb
+ 313a7487287a4d103aa01fe12626a426 10162 admin optional mx-live-usb-maker_21.4_i386.buildinfo
+ 4259f6d476b7ecd066d7247ad70f322b 132876 admin optional mx-live-usb-maker_21.4_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmBzBacTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPjgB/42hPbWIMung5MSIpIyPURd4ZTePehl
-miBNQz9P0JDC7514bfodYcuXbeJYoFE0YgHgUO6dSDd+lTjiUnBzGeD5tS4zKMsZ
-3++1wGvCOXBogrBBHDcKqX2N8gWUB8nWTys1UWy3O2cRnh0r6/9Dkh0rAK3p8OrC
-b5iKz/PDyFrAScwKI8MnXNx5UWz1d5PznUwJaWWSp/P8mQJCrDelBjGEFDadm8lf
-nhPFuJv/uvf9XEWI4a28u82MaSFZ+ojcrtVYcvjqh+zEvIN3R1GgZ/BDf//7y3Jl
-Qop/j1FHLMYN6oXpoaiR4sq3kp+2tI3csr66hk59saJbjI73qMR8/wLC
-=x+NB
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmBzB6wTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCgXCADUP5W7SZvVm6N3K/b3mQHhylwjy/JY
+tGr1ojvEc2cUxVmepwJB7ycdtSWqL2wbrhAoAMb1u7d9A6hYoifd64zqNQoXJ5+Y
+WTzc43AiI04EXn15Mh++ST1mBz2AfgbY0w/eYrHXNI9b4x5O6HtyOEtFnAkc70FZ
+OCr7YumjHrZ8MjO5n42KcMmP+XP1TqM1mzSpVSVeJo2sJd0SoDn3WyEplFrODFHt
+/onrlwvPOQn5N5VAU4OvaccWW1cJGqXbMJOUdzY2teoyD7Vr+QddB1l/8DDGW10+
+UmSnM/F0eg0yDOhIzmSz3XrQGtx5FmLpK+jCApMiXVnKXGK5Cg6xvQNe
+=kp/Y
 -----END PGP SIGNATURE-----
