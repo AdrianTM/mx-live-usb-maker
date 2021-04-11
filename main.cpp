@@ -24,6 +24,7 @@
 #include <QCommandLineParser>
 #include <QDateTime>
 #include <QDebug>
+#include <QFile>
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>

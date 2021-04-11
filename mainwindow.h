@@ -28,7 +28,6 @@
 #include <QProcess>
 #include <QTimer>
 #include <QSettings>
-#include <QFile>
 
 #include <cmd.h>
 
