@@ -18,30 +18,31 @@ Changes:
  .
    * fix: clone checkbox activation
    * fix: disk_size variable size
+   * fix: progress bar when cloning
 Checksums-Sha1:
- d8c58af7f5a2c8eca76346c578e340004f868e9b 1153 mx-live-usb-maker_21.4.dsc
- 69c30c9f33ae5b13989a6ef20e3e9d3b2d511e1b 111268 mx-live-usb-maker_21.4.tar.xz
- e7808667ac6e035653fa4d4d2e38f8a42b7f8d6e 10474 mx-live-usb-maker_21.4_amd64.buildinfo
- 405e8a044746b2422bfd32f44e3835195294c96f 130130 mx-live-usb-maker_21.4_amd64.deb
+ 2d382bcbdd700e71551001d030631fb9d865869c 1153 mx-live-usb-maker_21.4.dsc
+ afef672f7d5380fbdfa086c5b4d1ef9d7d417860 111272 mx-live-usb-maker_21.4.tar.xz
+ dcd13ffa543a4c10d52009e4c3a1fbb5ed444103 10474 mx-live-usb-maker_21.4_amd64.buildinfo
+ f35bc2110fddcc722bf8e64b768b0ff86f94a442 130138 mx-live-usb-maker_21.4_amd64.deb
 Checksums-Sha256:
- e7b028e0d5257452679dc31c2033b1a4e020010428c4e10465eec78aa25dabe1 1153 mx-live-usb-maker_21.4.dsc
- 9d90c28f4fafcd4fb27f886f3a705e1c6589cd361777599ac61925a44560a818 111268 mx-live-usb-maker_21.4.tar.xz
- 81a3182c297a088eda876bcc6ac427e9183c57ecf239aff58b377fcb0cfc94f5 10474 mx-live-usb-maker_21.4_amd64.buildinfo
- c75479d0a21bacee5a7c48ed29f24a1e1deda9b4a74cfd050d3330710480fdfe 130130 mx-live-usb-maker_21.4_amd64.deb
+ f6d1855b72265fa1424708db8bd4da82d0cd7b42fe19afb321ce2d3df86b34a9 1153 mx-live-usb-maker_21.4.dsc
+ 4913e303f49de67696debe008466d9f09f400a6c45f0c6bad7affce57d651bf1 111272 mx-live-usb-maker_21.4.tar.xz
+ fe2fc0eb968964913002bdaf6f0c9e68b9b4f2e6380deb2978ce07403b1e9243 10474 mx-live-usb-maker_21.4_amd64.buildinfo
+ 0a435112041f978e8c5b64fab1390318f2dea46015953f3b48b30b03c96cc9ac 130138 mx-live-usb-maker_21.4_amd64.deb
 Files:
- 68ba1c2ae53094f89aa91a09ec77360d 1153 admin optional mx-live-usb-maker_21.4.dsc
- 971b88dc1c7691b2f3147d16fefe07a5 111268 admin optional mx-live-usb-maker_21.4.tar.xz
- 6734ddaed8c428cedfec648576312489 10474 admin optional mx-live-usb-maker_21.4_amd64.buildinfo
- b882077fbdac470fe6053d3a6f0996b9 130130 admin optional mx-live-usb-maker_21.4_amd64.deb
+ 0a5143041b8e69484c61e464325695fd 1153 admin optional mx-live-usb-maker_21.4.dsc
+ 17a20c933559b89d8dee0ab0f4c0f2ee 111272 admin optional mx-live-usb-maker_21.4.tar.xz
+ 0396e611e3df64b8bad685cc6665fe7f 10474 admin optional mx-live-usb-maker_21.4_amd64.buildinfo
+ f6618cbee3afe0b5b528a3ee79680bf3 130138 admin optional mx-live-usb-maker_21.4_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmBzB6wTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumG+UB/4seDBUBk+uwrGl/23+6scHEQaeACpi
-0jy0ZrjCFhJzgQSfX0ehhePYZezmoVEahBkELE1tkNgVnxsAhTUFGsOq+x/67j4i
-2D8ZEhsVsX3So1PIooBbRCUaZybCBbjfi3tfyojfeafGbzpduQ715ZGmF+fPyzN9
-TLqeXAZ5JfokmLVZ8X4jvzn/jyuY+Gg75XHwPsU8DSmtyvDjdPLkOqgXg/INONgJ
-5JXZprZQW4JjehzZcU7MZ1E10bhkQ7VnrpfDITbM/Bw1VFFB8sPNip+mf5ygC/Ld
-nhQ3l3BgwwRM3DFcwsDdjbhtmbFkZNPsV4SGLGaCmC8aJMDj0ZSR7/F0
-=qGu6
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmBzCDMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLHcB/4vrlMcUuJqJZ5lT60vqPjmnueJ1zAX
+Q0ZvAq1cw2GnbGjQXCJRM4L1F8M4kor9ms1E38gISY03zP/oGifIjcLsdGwYDhwG
+AkFHc2Y7XsIG8+V18ZmOuWmhQpuD6Nq9DGYPA6oDiePib6/D6pQwuAk4UnlNGbz2
+MbfzekN+bmhV85s0y3Lv1vxdwUPmn4sw/5sJe2j5nnYhdYTnAfBLHA+Z9HlxOFPR
+d25c6nIjOelDScPFoLGVNMD3H05hk/w6CgzWJsSC60kViBynwJ1yVSSCykUgE4O6
+wwBsQ7V+FsHK59f2gaQJYYovJX8TMnPMgBfAD2ahQ9S1Pmjj/5DyzdnZ
+=5vER
 -----END PGP SIGNATURE-----

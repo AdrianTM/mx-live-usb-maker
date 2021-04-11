@@ -2,6 +2,7 @@ CUSTOMPROGRAMNAME (21.4) mx; urgency=medium
 
   * fix: clone checkbox activation
   * fix: disk_size variable size
+  * fix: progress bar when cloning
 
  -- Adrian <adrian@mxlinux.org>  Sun, 11 Apr 2021 02:39:11 -0400
 
