@@ -21,7 +21,6 @@
  **********************************************************************/
 
 
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -97,7 +96,7 @@ private:
 
     bool advancedOptions;
     int height;
-    int size_check;
+    uint size_check;
 };
 
 

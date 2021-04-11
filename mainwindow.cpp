@@ -41,7 +41,7 @@ MainWindow::MainWindow(const QStringList& args) :
     QFileInfo settingsfile("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf");
     QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
     LUM = settings.value("LUM", "live-usb-maker").toString();
-    size_check = settings.value("SizeCheck", 128).toInt();
+    size_check = settings.value("SizeCheck", 128).toUInt(); // in GB
     qDebug() << "LUM is:" << LUM;
 
     setWindowFlags(Qt::Window); // for the close, min and max buttons
@@ -66,7 +66,7 @@ MainWindow::~MainWindow()
 
 bool MainWindow::checkDestSize()
 {
-    int disk_size = cmd.getCmdOut("echo $(( $(sudo blockdev --getsize64 /dev/"+ device + ") / 1024**3 ))").toInt();
+    quint64 disk_size = cmd.getCmdOut("blockdev --getsize64 /dev/" + device).toULongLong() / (1024 * 1024 * 1024);
 
     if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
         return (QMessageBox::Yes == QMessageBox::question(
@@ -80,7 +80,7 @@ bool MainWindow::checkDestSize()
 bool MainWindow::isRunningLive()
 {
     QString test = cmd.getCmdOut("df -T / |tail -n1 |awk '{print $2}'");
-    return ( test == "aufs" || test == "overlay" );
+    return (test == "aufs" || test == "overlay");
 }
 
 // determine if it's running in "toram" mode
@@ -113,7 +113,6 @@ void MainWindow::makeUsb(const QString &options)
     } else if (ui->cb_clone_live->isChecked()) {
         source = "clone";
         source_size = cmd.getCmdOut("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1", true);
-
     }
 
     if (!checkDestSize()) {
@@ -127,7 +126,7 @@ void MainWindow::makeUsb(const QString &options)
     int start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
     ui->progressBar->setMinimum(start_io);
     qDebug() << "start io is " << start_io;
-    int iso_sectors = source_size.toInt() * 2048; // size * 1024 / 512 * 1024
+    int iso_sectors = source_size.toInt() * 2048; // source_size * 1024 / 512 * 1024
     ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
@@ -236,7 +235,7 @@ void MainWindow::cleanup()
 {
     QFileInfo lum(LUM);
     QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
-    if ( logfile.exists() ) {
+    if (logfile.exists()) {
         QString removecmd = "rm -f " + logfile.absoluteFilePath();
         system(removecmd.toUtf8());
     }
