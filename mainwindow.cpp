@@ -355,10 +355,6 @@ void MainWindow::on_buttonNext_clicked()
         ui->buttonNext->setEnabled(false);
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         makeUsb(buildOptionList());
-    } else if (ui->stackedWidget->currentWidget() == ui->outputPage) {
-
-    } else {
-        qApp->quit();
     }
 }
 
