@@ -1,3 +1,10 @@
+CUSTOMPROGRAMNAME (21.7) mx; urgency=medium
+
+  * Disable "make separate data partition" when percent of USB used < 100 and vice versa
+  * Disable error check for pretend mode
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 02 Jul 2021 13:40:16 -0400
+
 CUSTOMPROGRAMNAME (21.4) mx; urgency=medium
 
   * fix: clone checkbox activation

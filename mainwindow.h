@@ -60,6 +60,7 @@ public:
 public slots:
 
 private slots:
+    bool isantiX_mx_family(QString arg1);
     void cleanup();
     void cmdStart();
     void cmdDone();
@@ -67,24 +68,25 @@ private slots:
     void setDefaultMode(const QString &iso_name);
     void updateBar();
     void updateOutput();
-    void on_buttonNext_clicked();
+
     void on_buttonAbout_clicked();
-    void on_buttonHelp_clicked();
     void on_buttonBack_clicked();
-    void on_buttonSelectSource_clicked();
-    void on_buttonRefresh_clicked();
+    void on_buttonHelp_clicked();
+    void on_buttonNext_clicked();
     void on_buttonOptions_clicked();
-    void on_edit_label_textChanged(QString arg1);
-//    void on_buttonEnter_clicked();
-//    void on_lineEdit_returnPressed();
-    void on_cb_update_clicked(bool checked);
-    void on_cb_clone_mode_clicked(bool checked);
+    void on_buttonRefresh_clicked();
+    void on_buttonSelectSource_clicked();
     void on_cb_clone_live_clicked(bool checked);
+    void on_cb_clone_mode_clicked(bool checked);
+    void on_cb_data_first_clicked(bool checked);
+    void on_cb_update_clicked(bool checked);
+    void on_edit_label_textChanged(QString arg1);
+    void on_pushButtonLumLogFile_clicked();
     void on_rb_dd_clicked();
     void on_rb_normal_clicked();
-    bool isantiX_mx_family(QString arg1);
-
-    void on_pushButtonLumLogFile_clicked();
+    void on_spinBoxSize_valueChanged(int arg1);
+//    void on_buttonEnter_clicked();
+//    void on_lineEdit_returnPressed();
 
 private:
     Ui::MainWindow *ui;

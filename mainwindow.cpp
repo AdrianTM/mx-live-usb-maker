@@ -67,9 +67,9 @@ bool MainWindow::checkDestSize()
     quint64 disk_size = cmd.getCmdOut("blockdev --getsize64 /dev/" + device).toULongLong() / (1024 * 1024 * 1024);
 
     if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
-        return (QMessageBox::Yes == QMessageBox::question(
-                    this, tr("Confirmation"), tr("Target device %1 is larger than %2 GB. Do you wish to proceed?").arg(device).arg(size_check),
-                    QMessageBox::No|QMessageBox::Yes, QMessageBox::No));
+        return (QMessageBox::Yes == QMessageBox::question(this, tr("Confirmation"),
+                    tr("Target device %1 is larger than %2 GB. Do you wish to proceed?").arg(device).arg(size_check),
+                    QMessageBox::No | QMessageBox::Yes, QMessageBox::No));
     } else {
         return true;
     }
@@ -174,7 +174,7 @@ void MainWindow::setup()
     ui->cb_clone_live->setEnabled(isRunningLive());
 
     // check if datafirst option is available
-    if (!cmd.run(LUM + " --help | grep -q data-first", true)) {
+    if (!cmd.run(LUM + " --help |grep -q data-first", true)) {
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();
         ui->spinBoxDataSize->hide();
@@ -220,13 +220,10 @@ QString MainWindow::buildOptionList()
     if (ui->cb_data_first->isChecked())
         options += "--data-first=" + ui->spinBoxDataSize->cleanText() + "," + ui->comboBoxDataFormat->currentText() + " ";
 
-    switch(ui->sliderVerbosity->value())
-    {
-    case 1 : options += "-V ";
-        break;
-    case 2 : options += "-VV ";
-        break;
-    }
+    if (ui->sliderVerbosity->value() == 1)
+        options += "-V ";
+    else if (ui->sliderVerbosity->value() == 2)
+        options += "-VV ";
     qDebug() << "Options: " << options;
     return options;
 }
@@ -257,11 +254,8 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     QString name;
     for (const QString &line : devices) {
         name = line.split(" ").at(0);
-        if (ui->cb_force_usb->isChecked()) {
-            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name)
-                list << line;
-        } else if (system(cli_utils.toUtf8() + "is_usb_or_removable " + name.toUtf8()) == 0)
-            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ") != name)
+        if (ui->cb_force_usb->isChecked() || cmd.run(cli_utils + "is_usb_or_removable " + name.toUtf8(), true))
+            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ", true) != name)
                 list << line;
     }
     return list;
@@ -280,7 +274,7 @@ void MainWindow::cmdDone()
     ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
     ui->buttonBack->show();
-    if (cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit)
+    if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->cb_pretend->isChecked())
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
     else
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
@@ -341,11 +335,13 @@ void MainWindow::on_buttonNext_clicked()
 {
     // on first page
     if (ui->stackedWidget->currentIndex() == 0) {
-        if (ui->combo_Usb->currentText() == "") {
+        if (ui->combo_Usb->currentText().isEmpty()) {
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        if (!(QFileInfo::exists(ui->buttonSelectSource->property("filename").toString()) || ui->buttonSelectSource->property("filename").toString() == tr("clone"))) { // pop the selection box if no valid selection (or clone)
+        // pop the selection box if no valid selection (or clone)
+        if (!(QFileInfo::exists(ui->buttonSelectSource->property("filename").toString()) ||
+              ui->buttonSelectSource->property("filename").toString() == tr("clone"))) {
             ui->buttonSelectSource->clicked();
             return;
         }
@@ -596,4 +592,16 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     else
         cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
     system(cmd.toUtf8());
+}
+
+void MainWindow::on_spinBoxSize_valueChanged(int arg1)
+{
+    ui->cb_data_first->setEnabled(arg1 == 100);
+    ui->spinBoxDataSize->setEnabled(arg1 == 100);
+    ui->comboBoxDataFormat->setEnabled(arg1 == 100);
+}
+
+void MainWindow::on_cb_data_first_clicked(bool checked)
+{
+    ui->spinBoxSize->setDisabled(checked);
 }
