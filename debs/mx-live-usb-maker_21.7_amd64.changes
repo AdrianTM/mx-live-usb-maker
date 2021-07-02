@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 02 Jul 2021 13:40:16 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 21.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (21.7) mx; urgency=medium
+ .
+   * Disable "make separate data partition" when percent of USB used < 100 and vice versa
+   * Disable error check for pretend mode
+Checksums-Sha1:
+ 02a07e3c078c9e6ece46f45281087376520facb6 1153 mx-live-usb-maker_21.7.dsc
+ 0dbcbcfb36608aea12e5bc4c64122b3ed0286e00 111396 mx-live-usb-maker_21.7.tar.xz
+ 7c1cffbc112ea4bb296277377b7f3f470f71a4c0 10474 mx-live-usb-maker_21.7_amd64.buildinfo
+ 651a29cec78756b7acb7aec227a332b45d1afdcb 130288 mx-live-usb-maker_21.7_amd64.deb
+Checksums-Sha256:
+ e77997fe10d0a280b394f07963cba24d8eb9c02dfea718050290e9b1e3c28074 1153 mx-live-usb-maker_21.7.dsc
+ 88468b36e11844d1e81dbfb87bf729be324831079e45b7bc6beaef8581d11ce6 111396 mx-live-usb-maker_21.7.tar.xz
+ ab97613b2511a0bdb56be21dbba1f9963fc598896728f1608875b8d25bef66ff 10474 mx-live-usb-maker_21.7_amd64.buildinfo
+ 1adfed2010bce76b1a6a7fa06c1783ee2ee845fbde5c57bbfcda4b7be655e63b 130288 mx-live-usb-maker_21.7_amd64.deb
+Files:
+ 9bd531daa0a1c7d9f67934579f3f7e8d 1153 admin optional mx-live-usb-maker_21.7.dsc
+ 7bd2c3667a1d6a00195daeaef59936b3 111396 admin optional mx-live-usb-maker_21.7.tar.xz
+ 90f3277f453995c72c1c358f8bd55e40 10474 admin optional mx-live-usb-maker_21.7_amd64.buildinfo
+ 1bb1b9853de9a2e18d4dc42c0b95557d 130288 admin optional mx-live-usb-maker_21.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDfhf4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJilCACZJpETq9Xa4zN2t5LbJ1z/AA6HgOG6
+snqn3inzvP1f6RJdNdoeJVOBEKeqIO14DGLttC592EgVZm9eA7f697a9fMSi85Wl
+uKO899hCuZQ3h0btsZA/koJ/CJfPfjsk8rn08lqzOGp/4KQ69xS60F0MWTsS4krw
+E2cFCJLDdcrTAWUu2GeUWnh+bd2r+OqIVlDJ0UpNcb2tOOX02pXbI1WYZCzrjKWK
+FjGhBivPW62opTJjGpuzOiXm09SS59Cwdy0GX22M7FkXT9hAqsdwVjjjghLhisd+
+v+nLS0c7UvInNDgRnimZz00OuckDedePaQyvD3bYfeoe1/XO1/hoF5qI
+=/mAU
+-----END PGP SIGNATURE-----

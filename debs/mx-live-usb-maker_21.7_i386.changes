@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 02 Jul 2021 13:40:16 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: i386
+Version: 21.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (21.7) mx; urgency=medium
+ .
+   * Disable "make separate data partition" when percent of USB used < 100 and vice versa
+   * Disable error check for pretend mode
+Checksums-Sha1:
+ 188a7ce22571ab5f0a9d5a4243c623a19ef042e8 10162 mx-live-usb-maker_21.7_i386.buildinfo
+ b38b20554b766ab5c2915257d5ab3ca7745bf84e 133310 mx-live-usb-maker_21.7_i386.deb
+Checksums-Sha256:
+ a58f3c46aaa378b0ad97cdcc27fc533d4184bb2cb1c0fbb518508508ba5a64ff 10162 mx-live-usb-maker_21.7_i386.buildinfo
+ c48e87ba6997f106e7226bd102463f2fe8a8ac130530abc78c468750a53d4307 133310 mx-live-usb-maker_21.7_i386.deb
+Files:
+ c02d6e9a81560f02cf92648e05978693 10162 admin optional mx-live-usb-maker_21.7_i386.buildinfo
+ d13141d1b998655dc242de0dfc99ae74 133310 admin optional mx-live-usb-maker_21.7_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDfhf8THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF13CADWTZKEeaKClWJ8tuVY8BvFsOCOI7J8
+DOGQkFsSzhbJ79X/7gaYf+ziOa5qP+Y/Nf/iaN+dFkjGSppuHtwUKYKe0qHqmHZj
+aXvhrilEgvagALdY8NUFQVU1U1F3fDg9sajFY3dhYqJbCjVkBvEOfbLBDLbgKxm1
+UOhmGKBicLCUkBNXjdccnTlwyactNeKcSK7yq9SgtBMgiJmvNMwfMfX3qNqw+skY
+udcts3c7NFKA8pXZ3AyhbuNAjBNxtubChX2cOc+iIh5KtYPV+YlrUM2QgBy968Qs
+8NHdnK+yR3OCv39sACko0wcRUMQwgUICVOpbkBlTpYilNbIbGdxhYvjY
+=pN/P
+-----END PGP SIGNATURE-----
