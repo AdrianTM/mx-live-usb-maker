@@ -515,7 +515,7 @@
            </widget>
           </item>
           <item row="16" column="0" alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="labelFormat">
             <property name="text">
              <string>Format</string>
             </property>

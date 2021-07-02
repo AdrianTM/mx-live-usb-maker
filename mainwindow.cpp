@@ -178,7 +178,7 @@ void MainWindow::setup()
         ui->comboBoxDataFormat->hide();
         ui->cb_data_first->hide();
         ui->spinBoxDataSize->hide();
-        ui->label->hide();
+        ui->labelFormat->hide();
     }
 }
 
@@ -599,6 +599,7 @@ void MainWindow::on_spinBoxSize_valueChanged(int arg1)
     ui->cb_data_first->setEnabled(arg1 == 100);
     ui->spinBoxDataSize->setEnabled(arg1 == 100);
     ui->comboBoxDataFormat->setEnabled(arg1 == 100);
+    ui->labelFormat->setEnabled(arg1 == 100);
 }
 
 void MainWindow::on_cb_data_first_clicked(bool checked)
