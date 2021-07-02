@@ -19,23 +19,23 @@ Changes:
    * Disable "make separate data partition" when percent of USB used < 100 and vice versa
    * Disable error check for pretend mode
 Checksums-Sha1:
- 188a7ce22571ab5f0a9d5a4243c623a19ef042e8 10162 mx-live-usb-maker_21.7_i386.buildinfo
- b38b20554b766ab5c2915257d5ab3ca7745bf84e 133310 mx-live-usb-maker_21.7_i386.deb
+ 2117e646447cba8c2b4143892301fa961cc23469 10162 mx-live-usb-maker_21.7_i386.buildinfo
+ 3b415bc71c05802a5b0b3c2556ce02076fb74c04 133258 mx-live-usb-maker_21.7_i386.deb
 Checksums-Sha256:
- a58f3c46aaa378b0ad97cdcc27fc533d4184bb2cb1c0fbb518508508ba5a64ff 10162 mx-live-usb-maker_21.7_i386.buildinfo
- c48e87ba6997f106e7226bd102463f2fe8a8ac130530abc78c468750a53d4307 133310 mx-live-usb-maker_21.7_i386.deb
+ 25339e0235de2f52cf4c54064ba57acea2d5547b2889f65730b0cbfb6484a9af 10162 mx-live-usb-maker_21.7_i386.buildinfo
+ 1bafedac7ff87e47b01f9fcd1dbf7862b0bec88f8830af0385298962d696ec0d 133258 mx-live-usb-maker_21.7_i386.deb
 Files:
- c02d6e9a81560f02cf92648e05978693 10162 admin optional mx-live-usb-maker_21.7_i386.buildinfo
- d13141d1b998655dc242de0dfc99ae74 133310 admin optional mx-live-usb-maker_21.7_i386.deb
+ bd2b14cbd44f1969c5e2198965323032 10162 admin optional mx-live-usb-maker_21.7_i386.buildinfo
+ b56b58c682ab694400a98e601d502edd 133258 admin optional mx-live-usb-maker_21.7_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDfhf8THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF13CADWTZKEeaKClWJ8tuVY8BvFsOCOI7J8
-DOGQkFsSzhbJ79X/7gaYf+ziOa5qP+Y/Nf/iaN+dFkjGSppuHtwUKYKe0qHqmHZj
-aXvhrilEgvagALdY8NUFQVU1U1F3fDg9sajFY3dhYqJbCjVkBvEOfbLBDLbgKxm1
-UOhmGKBicLCUkBNXjdccnTlwyactNeKcSK7yq9SgtBMgiJmvNMwfMfX3qNqw+skY
-udcts3c7NFKA8pXZ3AyhbuNAjBNxtubChX2cOc+iIh5KtYPV+YlrUM2QgBy968Qs
-8NHdnK+yR3OCv39sACko0wcRUMQwgUICVOpbkBlTpYilNbIbGdxhYvjY
-=pN/P
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDfiocTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAp2CADJtABIx8eyRATDjl6skahNp7fDBlpC
+OhSmU2whMAYYtYPGbeGT0D/Kcs1SWAWAbljzBvuzUA0Hjeq9EjEfxtMONhnEzhNQ
+fOgy6Je+LtnUBgBIKwfAzDORJFA+Yc+ksaAih1M9q7uRoiYAG9Ry+2XJ+gEL66v/
+c/pp8iapk+TAK1rEY3Ov3IJNMygtNsqcaBVTKwKUfiFf9H7q0+ZqXIJKF8tEhiaW
+hlZQp7+go7SLX1F/wczOP5u/onAEYU32b7z4jAuco37pSnZwvoGFO/tM/IAzLIDQ
+WSMAQcFSa/Zg6w5wcE5rBpGkpj6HKrhaYizTvISfq3wH/5Q24sMNMQzg
+=yoqg
 -----END PGP SIGNATURE-----
