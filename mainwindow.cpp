@@ -542,9 +542,6 @@ void MainWindow::on_rb_normal_clicked()
 
 bool MainWindow::isantiX_mx_family(QString selected)
 {
-    QString cmdstr;
-
-    // make temp folder
     QTemporaryDir tmpdir;
     if (!tmpdir.isValid()) {
         qDebug() << "Could not create temp folder";
@@ -552,7 +549,7 @@ bool MainWindow::isantiX_mx_family(QString selected)
     }
 
     // mount the iso file
-    cmdstr = "mount -o loop " + selected + " " + tmpdir.path();
+    QString cmdstr = "mount -o loop " + selected + " " + tmpdir.path();
     if (system(cmdstr.toUtf8()) != 0) {
         qDebug() << "Could not mount iso file to temp folder";
         return false;
