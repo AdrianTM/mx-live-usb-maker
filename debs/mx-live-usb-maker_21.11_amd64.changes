@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 25 Nov 2021 00:39:23 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 21.11
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (21.11) mx; urgency=medium
+ .
+   * Display log in correct order
+Checksums-Sha1:
+ d5103e4c30d3034f17e1cb6672eabccb9d3aeafe 1157 mx-live-usb-maker_21.11.dsc
+ f5c5825b3a8f5d2b1f50c9342330ee2013db5163 111412 mx-live-usb-maker_21.11.tar.xz
+ fb3cb76f3d0d3ee67c9fbb730dfe43897e217e8a 10687 mx-live-usb-maker_21.11_amd64.buildinfo
+ 144fbe4382da69655bed73151cec35879d3e9227 131352 mx-live-usb-maker_21.11_amd64.deb
+Checksums-Sha256:
+ b16d9ea1a39d8178aa9d8ce4ec08c5192860043c180f104817bcce90255f4a39 1157 mx-live-usb-maker_21.11.dsc
+ 6330aea0801af710891d4843c174e2087ad6a4f7927f87af4b7b6dcd4c720814 111412 mx-live-usb-maker_21.11.tar.xz
+ 9158d1d5e836c9c40f07afc0463d25a3c00fe1f7af8783edab3c44906db83c9c 10687 mx-live-usb-maker_21.11_amd64.buildinfo
+ b4dfeedca9f5b3996b916b4b388d5d44536839ef71c75087447e0dccb050c945 131352 mx-live-usb-maker_21.11_amd64.deb
+Files:
+ 6fa90dde5168580107f4937108d39112 1157 admin optional mx-live-usb-maker_21.11.dsc
+ 10d72ce411445136224a70504bb0ef79 111412 admin optional mx-live-usb-maker_21.11.tar.xz
+ d702a69abae566d1f20d58de7c81663c 10687 admin optional mx-live-usb-maker_21.11_amd64.buildinfo
+ bedabf5f3feb836e83b0695ef070adee 131352 admin optional mx-live-usb-maker_21.11_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmGfIfITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGRgCACavSJBwJOhgXCyHJQ8daFN155ECB/1
+Er5axQgOboZibI83zI51qdZle33+QDczpaHhDX8WOD8R4p4Zs5wRsmCM3W71W1FB
+/AEUZob9dgHTgW9AXQHj8jirNWF9jIXP/fyHF/WXzhKhN8XCKqVj1XTcgBQkfpLR
+33K2+yGsqyn9Nns1rUsg4/x+Ho7iwWTYFQyOpsYjdq8EPJ7RYGgagAKdiA9oDEjw
++2cDhIDmpaklvUHCNXFJzT8YvtwmRRZT9agomHepHhWuQNiUjokUI8i3BxC6Vwrb
+PYagclvh9HqwQCgsL4VqR3UlyIXckxcC/kzvQ5h9aaYCNho3o58JtpPx
+=80uv
+-----END PGP SIGNATURE-----

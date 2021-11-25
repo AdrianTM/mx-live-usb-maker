@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (21.11) mx; urgency=medium
+
+  * Display log in correct order
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 25 Nov 2021 00:39:23 -0500
+
 CUSTOMPROGRAMNAME (21.7) mx; urgency=medium
 
   * Disable "make separate data partition" when percent of USB used < 100 and vice versa
