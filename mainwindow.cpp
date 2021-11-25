@@ -576,7 +576,7 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     QString cmd;
 
     // generate temporary log file
-    cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" > /tmp/" + lum.baseName() + ".log";
+    cmd = "tac /var/log/" + lum.baseName() + ".log | sed \"/^=\\{60\\}=*$/q\" |tac > /tmp/" + lum.baseName() + ".log ";
     system(cmd.toUtf8());
 
     if (getuid() == 0)
