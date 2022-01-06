@@ -34,7 +34,6 @@ MainWindow::MainWindow(const QStringList& args) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     // setup options
     LUM.clear();
     QSettings settings("/etc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.conf", QSettings::NativeFormat);
@@ -288,7 +287,7 @@ void MainWindow::setConnections()
     connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
     connect(&cmd, &QProcess::started, this, &MainWindow::cmdStart);
     connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar);
-    connect(&cmd, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
+    connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 // set proper default mode based on iso contents
@@ -394,7 +393,8 @@ void MainWindow::on_buttonSelectSource_clicked()
     QString home = "/home/" + user;
 
     if (!ui->cb_clone_live->isChecked() && !ui->cb_clone_mode->isChecked()) {
-        selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home, tr("ISO Files (*.iso);;All Files (*.*)"));
+        selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home,
+                                                tr("ISO Files (*.iso);;All Files (*.*)"));
         if (!selected.isEmpty()) {
             ui->buttonSelectSource->setText(selected);
             ui->buttonSelectSource->setProperty("filename", selected);
