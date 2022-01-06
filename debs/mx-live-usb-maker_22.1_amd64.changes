@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 06 Jan 2022 17:18:07 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.1) mx; urgency=medium
+ .
+   * Disable 'clone running live system' when booted encrypted
+Checksums-Sha1:
+ 11ab025275a99e240662fdf1f1f74c55a061a435 1153 mx-live-usb-maker_22.1.dsc
+ 17d97d8eab87f50c51c0b9cc9ce80a85e015b9a8 111508 mx-live-usb-maker_22.1.tar.xz
+ 876155301e8f069e288a1403f976ea1825a6ac10 10785 mx-live-usb-maker_22.1_amd64.buildinfo
+ fd6249ecc48592eb08134d63348f25fdddd9748f 131712 mx-live-usb-maker_22.1_amd64.deb
+Checksums-Sha256:
+ 7e53df9d0db5ab3764ddc383356d67bae6dea68981faab8e1501461f3a419d82 1153 mx-live-usb-maker_22.1.dsc
+ 4dde09f8af061b58ecf092daba68747bd9d044e2f7df91d9b2bd95306a413bb1 111508 mx-live-usb-maker_22.1.tar.xz
+ 3270f90372d238f5109158d0c2ca739e3e46acac9a6ebedef1961d77896467c1 10785 mx-live-usb-maker_22.1_amd64.buildinfo
+ 7081f530c5c6577d46a24ebb5d62f0baa8e8741968e22cb207545303872b60a9 131712 mx-live-usb-maker_22.1_amd64.deb
+Files:
+ 97ca6f87be1656378448775f2d499a63 1153 admin optional mx-live-usb-maker_22.1.dsc
+ 2996ff147e0920cd7a85e8a1705dde54 111508 admin optional mx-live-usb-maker_22.1.tar.xz
+ 76fd2067e5b2fedcfb96cd093823b4e3 10785 admin optional mx-live-usb-maker_22.1_amd64.buildinfo
+ dc26d0b89022c07cacbf5e2644ea619c 131712 admin optional mx-live-usb-maker_22.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHXavgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumK5QB/40Esmvh8cGq2Zfn4orVnp2SfLtGxdO
+1/LlN1NITZroZZHY7WhAeng8dWcTxEcEsD1zx4IvQG/eQoZ088Ww3lUvQPucxyHL
+/l5zGb6NfLKWR+jrhbMbLOo45cTQ0M6Rwa+9iRkc/CaYC0CH9fliRItXZbtemdSA
+wom0nYwINMqWwU7bUoOrySXUq2lVFdHLPdZuRnKx4u+RD85KAeSV6VMBWot+qYd3
+J9w6w1WSap8kSI3JCBzpFf5Za3kBrLIFb3xXwZEQlZoF7UIndleyIOWQa2/9Yb35
+U8bOZmyl4jrfTRhLI3FUlchtLBDf84F0+MmHWd2ilfpYhYLTsW0zSYZE
+=BQfX
+-----END PGP SIGNATURE-----
