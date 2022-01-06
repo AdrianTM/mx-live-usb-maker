@@ -31,6 +31,8 @@
 
 #include <cmd.h>
 
+class QFile;
+
 const QString cli_utils = ". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;";
 
 namespace Ui {
@@ -91,10 +93,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
-    Cmd cmd2;
+    QFile *stat_file;
     QString device;
     QTimer timer;
-
     bool advancedOptions;
     int height;
     uint size_check;

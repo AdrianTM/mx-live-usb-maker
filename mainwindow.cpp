@@ -123,10 +123,10 @@ void MainWindow::makeUsb(const QString &options)
     }
 
     // check amount of io on device before copy, this is in sectors
-    int start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toInt();
+    quint64 start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toULongLong();
     ui->progressBar->setMinimum(start_io);
     qDebug() << "start io is " << start_io;
-    int iso_sectors = source_size.toInt() * 2048; // source_size * 1024 / 512 * 1024
+    quint64 iso_sectors = source_size.toULongLong() * 2048; // source_size * 1024 / 512 * 1024
     ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
@@ -140,6 +140,7 @@ void MainWindow::makeUsb(const QString &options)
                                           "Please wait until the the process is completed").arg(source).arg(device));
     }
     setConnections();
+    stat_file = new QFile("/sys/block/" + device + "/stat");
     qDebug() << cmd.getCmdOut(cmdstr);
 }
 
@@ -308,15 +309,18 @@ void MainWindow::setDefaultMode(const QString &iso_name)
 
 void MainWindow::updateBar()
 {
-    int current_io = cmd2.getCmdOut("cat /sys/block/" + device + "/stat | awk '{print $7}'", true).toInt();
+    stat_file->open(QIODevice::ReadOnly);
+    QString out = stat_file->readAll();
+    quint64 current_io = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
     ui->progressBar->setValue(current_io);
+    stat_file->close();
 }
 
 void MainWindow::updateOutput()
 {
     // remove escape sequences that are not handled by code
     QString out = cmd.readAll();
-    out.remove("[0m").remove("]0;").remove("").remove("").remove("[1000D").remove("[74C|").remove("[?25l").remove("[?25h").remove("[0;36m").remove("[1;37m");
+    out.remove(QRegularExpression("\\[0m|\\]0;|\\|\\|\\[1000D|\\[74C||\\[\\?25l|\\[\\?25h|\\[0;36m|\\[1;37m"));
 //    if (out.contains("[10D[K")) { // escape sequence used to display the progress percentage
 //        out.remove("[10D[K");
 //        ui->outputBox->moveCursor(QTextCursor::StartOfLine);
