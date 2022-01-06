@@ -172,6 +172,10 @@ void MainWindow::setup()
     // check if running live
     ui->cb_clone_live->setEnabled(isRunningLive());
 
+    // disable clone running live system when booted encrypted
+    if (QFile::exists("/live/config/encrypted"))
+        ui->cb_clone_live->setEnabled(false);
+
     // check if datafirst option is available
     if (!cmd.run(LUM + " --help |grep -q data-first", true)) {
         ui->comboBoxDataFormat->hide();
