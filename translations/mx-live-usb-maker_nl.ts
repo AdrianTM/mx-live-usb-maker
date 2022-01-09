@@ -340,12 +340,14 @@ Wacht aub tot het proces beëindigd is</translation>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Deze acties zullen alle data vernietigen op 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilt u doorgaan?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

@@ -330,7 +330,9 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Tato akce zničí všechna data na 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>

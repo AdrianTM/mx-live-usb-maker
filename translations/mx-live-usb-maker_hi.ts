@@ -330,12 +330,14 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>इन कार्यों से इस पर मौजूद सारा डेटा नष्ट हो जाएगा
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+         <translation>क्या आप जारी रखना चाहते हैं?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>
