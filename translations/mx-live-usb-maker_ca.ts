@@ -346,7 +346,7 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

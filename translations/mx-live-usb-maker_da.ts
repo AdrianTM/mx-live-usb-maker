@@ -347,7 +347,7 @@ Vent venligst indtil processen er fuldført</translation>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil du fortsætte?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>
