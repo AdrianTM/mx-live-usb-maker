@@ -340,12 +340,14 @@ Poczekaj, aż proces się zakończy.</translation>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Te działania zniszczą wszystkie dane na
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Czy chcesz kontynuować?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

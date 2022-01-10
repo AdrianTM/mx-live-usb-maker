@@ -337,15 +337,16 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
-        <source>These actions will destroy all data on 
+         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Aquestes accions destruiran totes les dades a
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

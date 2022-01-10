@@ -340,12 +340,14 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Οι ενέργειες αυτές θα καταστρέψουν όλα τα δεδομένα 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

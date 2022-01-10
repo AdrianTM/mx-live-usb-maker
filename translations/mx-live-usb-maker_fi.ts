@@ -340,12 +340,14 @@ Odota kunnes toimitus on suoritettu päätökseen</translation>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nämä toimet tuhoavat kaikki tiedot kohteessa 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko jatkaa?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

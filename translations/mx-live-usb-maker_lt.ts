@@ -330,12 +330,14 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Šie veiksmai ištrins visus duomenis, esančius 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar norite tęsti?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

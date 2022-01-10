@@ -338,12 +338,14 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>一連のアクションは全てのデータを破壊します
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>続行しますか？</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>

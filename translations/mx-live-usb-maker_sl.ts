@@ -341,12 +341,14 @@ Prosimo počakajte, da se proces konča</translation>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ta dejanje bodo uničila vse podatke na 
+
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="351"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ali želite nadaljevati?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="359"/>
