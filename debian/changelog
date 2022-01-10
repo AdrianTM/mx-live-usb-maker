@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (22.1.01) mx; urgency=medium
+
+  * Added a confirmation dialog
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 09 Jan 2022 20:13:11 -0500
+
 CUSTOMPROGRAMNAME (22.1) mx; urgency=medium
 
   * Disable 'clone running live system' when booted encrypted
