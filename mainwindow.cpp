@@ -596,7 +596,7 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
     system(cmd.toUtf8());
 
     if (getuid() == 0)
-        rootrunoption = "runuser -l $(logname) -c ";
+        rootrunoption = "runuser $(logname) -c ";
 
     if (viewer.exists())
         cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(lum.baseName());
