@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (22.4) mx; urgency=medium
+
+  * Make sure text is added at end of output box (clicking inside the output box should not move cursor around)
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 18 Apr 2022 14:27:02 -0400
+
 CUSTOMPROGRAMNAME (22.1.01) mx; urgency=medium
 
   * Added a confirmation dialog

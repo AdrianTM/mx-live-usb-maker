@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 18 Apr 2022 14:27:02 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.4) mx; urgency=medium
+ .
+   * Make sure text is added at end of output box (clicking inside the output box should not move cursor around)
+Checksums-Sha1:
+ be97ca84c881c688ff3eb3ec35a1db825f2399f6 1153 mx-live-usb-maker_22.4.dsc
+ 8c75d7c935f658fa65e8e8ca1f9720db304144c0 112436 mx-live-usb-maker_22.4.tar.xz
+ 560b06634928e68b099b1314b68611dcf5f3bf27 10865 mx-live-usb-maker_22.4_amd64.buildinfo
+ 426c4713cd9a53dc9be8ea333af43b28bf586e6e 132588 mx-live-usb-maker_22.4_amd64.deb
+Checksums-Sha256:
+ 1f07e1dd3f7247f44ef7435689800ccd844d229e41c539c17ec88c324e26ef49 1153 mx-live-usb-maker_22.4.dsc
+ fb2df3d1b1fe509690fcb56a7f19cc77c7145c032dcb533f7059e57a1abd75fd 112436 mx-live-usb-maker_22.4.tar.xz
+ 4dd0def89c23a0ca12a107e54f1d0c85baf83204b4127e9d8d0441ae9a337208 10865 mx-live-usb-maker_22.4_amd64.buildinfo
+ 0d63bef6d47b1a60da0acccd5e32bd55a5665f05035320d882914af45e8123db 132588 mx-live-usb-maker_22.4_amd64.deb
+Files:
+ f37759f50675e62205364a9368fb17b2 1153 admin optional mx-live-usb-maker_22.4.dsc
+ 919220a838633d3e988a148889d1e10c 112436 admin optional mx-live-usb-maker_22.4.tar.xz
+ 85a2dfc3f121c6cc952112e5eb33be44 10865 admin optional mx-live-usb-maker_22.4_amd64.buildinfo
+ 370e40ef67dd319531ec0d5a79e8bab9 132588 admin optional mx-live-usb-maker_22.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmJdsQkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAaNCACR/U5vrRLjf6+KVqqfzsf8G9hNCl0E
+ZfCv2BtYIGwqI0xusTrsxBNBUvBvby1kfhaJMUG+HvBcx4XVnpT4wyIMcUlermcJ
+Mb+XJx7arT02cK0QatmNy9hzzIjOBGf9KpMosTP69JN3LsxsNu+avT3/IUVV6P61
+spLnAxT7DkiM9U1923H1nxWbZjM/KQV2tKoFcyLbXk+p8Es/M5Als1Hrvf99TrN+
+8or0Ns7NDfB3tJTG+N91em1h7+hCL+Ter0KL9fUr16jIwXgM7+rV8d306gqh7HI0
+eEdhZpRnJa6ewjFJyUAMFGgFoV8Dr9hHlTH/HdbHkFRrC/0MmdE6rM84
+=gQzm
+-----END PGP SIGNATURE-----

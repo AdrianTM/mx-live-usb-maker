@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 18 Apr 2022 14:27:02 -0400
+Source: mx-live-usb-maker
+Architecture: source
+Version: 22.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-live-usb-maker (22.4) mx; urgency=medium
+ .
+   * Make sure text is added at end of output box (clicking inside the output box should not move cursor around)
+Checksums-Sha1:
+ ea4744e7ecde98a4750d023a63a64ae51d464513 591 mx-live-usb-maker_22.4.dsc
+ ae318e1ef099b701c09567fef53d29d7238a4ff5 112524 mx-live-usb-maker_22.4.tar.xz
+ 502d9301b79953208605776f881b47d40ebab07c 10005 mx-live-usb-maker_22.4_i386.buildinfo
+Checksums-Sha256:
+ b3a7ff5304d4691c3e6b2be9025d4cc00df782784e3239a26451cbceed18b81a 591 mx-live-usb-maker_22.4.dsc
+ 5e793525e0177dc9217aa7acce478d93c4c063f5b2e01bb87eec96fc6ed71140 112524 mx-live-usb-maker_22.4.tar.xz
+ 91ea656d38119791cb39e0bb674d1d057959d683b7d4c6ff88a2d7b96a4d02e4 10005 mx-live-usb-maker_22.4_i386.buildinfo
+Files:
+ 696d268cdef0e7620c22529837e31cd5 591 admin optional mx-live-usb-maker_22.4.dsc
+ 2432b32734d0aec08fb03d7949fff074 112524 admin optional mx-live-usb-maker_22.4.tar.xz
+ 9662f7bd1baab8b0935f941556e03272 10005 admin optional mx-live-usb-maker_22.4_i386.buildinfo
