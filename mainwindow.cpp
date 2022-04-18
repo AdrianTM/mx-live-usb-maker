@@ -329,7 +329,11 @@ void MainWindow::updateOutput()
 //        QString out_prog = out;
 //        ui->progressBar->setValue(out_prog.remove(" ").remove("%").toInt());
 //    }
-
+    ui->outputBox->moveCursor(QTextCursor::End);
+    if (out.contains("\r")) {
+        ui->outputBox->moveCursor(QTextCursor::Up, QTextCursor::KeepAnchor);
+        ui->outputBox->moveCursor(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+    }
     ui->outputBox->insertPlainText(out);
 
     QScrollBar *sb = ui->outputBox->verticalScrollBar();
