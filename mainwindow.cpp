@@ -65,13 +65,12 @@ bool MainWindow::checkDestSize()
 {
     quint64 disk_size = cmd.getCmdOut("blockdev --getsize64 /dev/" + device).toULongLong() / (1024 * 1024 * 1024);
 
-    if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
+    if (disk_size > size_check) // question when writing on large drives (potentially unintended)
         return (QMessageBox::Yes == QMessageBox::question(this, tr("Confirmation"),
                     tr("Target device %1 is larger than %2 GB. Do you wish to proceed?").arg(device).arg(size_check),
                     QMessageBox::No | QMessageBox::Yes, QMessageBox::No));
-    } else {
+    else
         return true;
-    }
 }
 
 bool MainWindow::isRunningLive()
@@ -267,8 +266,6 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 
 void MainWindow::cmdStart()
 {
-    //setCursor(QCursor(Qt::BusyCursor));
-    //ui->lineEdit->setFocus();
 }
 
 
@@ -321,14 +318,6 @@ void MainWindow::updateOutput()
     // remove escape sequences that are not handled by code
     QString out = cmd.readAll();
     out.remove(QRegularExpression("\\[0m|\\]0;|\\|\\|\\[1000D|\\[74C||\\[\\?25l|\\[\\?25h|\\[0;36m|\\[1;37m"));
-//    if (out.contains("[10D[K")) { // escape sequence used to display the progress percentage
-//        out.remove("[10D[K");
-//        ui->outputBox->moveCursor(QTextCursor::StartOfLine);
-//        QKeyEvent *event = new QKeyEvent(QEvent::KeyPress, Qt::Key_K, Qt::ControlModifier);
-//        QCoreApplication::postEvent(ui->outputBox, event);
-//        QString out_prog = out;
-//        ui->progressBar->setValue(out_prog.remove(" ").remove("%").toInt());
-//    }
     ui->outputBox->moveCursor(QTextCursor::End);
     if (out.contains("\r")) {
         ui->outputBox->moveCursor(QTextCursor::Up, QTextCursor::KeepAnchor);
