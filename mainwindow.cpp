@@ -339,14 +339,9 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Please select a USB device to write to"));
             return;
         }
-        //confirm action
-        int ans;
         QString msg = tr("These actions will destroy all data on \n\n") + ui->combo_Usb->currentText().simplified() + "\n\n " + tr("Do you wish to continue?");
-        ans = QMessageBox::warning(this, windowTitle(), msg,
-                                   QMessageBox::Yes, QMessageBox::No);
-        if (ans != QMessageBox::Yes) {
+        if (QMessageBox::Yes != QMessageBox::warning(this, windowTitle(), msg, QMessageBox::Yes, QMessageBox::No))
             return;
-        }
         // pop the selection box if no valid selection (or clone)
         if (!(QFileInfo::exists(ui->buttonSelectSource->property("filename").toString()) ||
               ui->buttonSelectSource->property("filename").toString() == tr("clone"))) {
@@ -430,7 +425,6 @@ void MainWindow::on_buttonRefresh_clicked()
     ui->combo_Usb->addItems(buildUsbList());
 }
 
-
 void MainWindow::on_buttonOptions_clicked()
 {
     if (advancedOptions) {
@@ -447,26 +441,11 @@ void MainWindow::on_buttonOptions_clicked()
     }
 }
 
-//void MainWindow::on_buttonEnter_clicked()
-//{
-//    on_lineEdit_returnPressed();
-//}
-
 void MainWindow::on_edit_label_textChanged(QString arg1)
 {
     ui->edit_label->setText(arg1.remove(" "));
     ui->edit_label->setCursorPosition(arg1.length());
 }
-
-//void MainWindow::on_lineEdit_returnPressed()
-//{
-//    cmd->writeToProc(ui->lineEdit->text());
-//    if (!(ui->lineEdit->text().size() == 1 && (ui->lineEdit->text() == "q" || ui->lineEdit->text() == "h"))) {
-//        cmd->writeToProc("\n"); // don't send new line for q and h interactive options
-//    }
-//    ui->lineEdit->clear();
-//    ui->lineEdit->setFocus();
-//}
 
 void MainWindow::on_cb_update_clicked(bool checked)
 {
