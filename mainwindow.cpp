@@ -129,14 +129,14 @@ void MainWindow::makeUsb(const QString &options)
     ui->progressBar->setMaximum(iso_sectors + start_io);
     qDebug() << "max progress bar is " << ui->progressBar->maximum();
 
-    QString cmdstr = QString(LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source).arg(device);
+    QString cmdstr = QString(LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->rb_dd->isChecked()) {
         cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
         qDebug() << cmd.getCmdOut(cmdstr);
         cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
         ui->outputBox->appendPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
-                                          "Please wait until the the process is completed").arg(source).arg(device));
+                                          "Please wait until the the process is completed").arg(source, device));
     }
     setConnections();
     stat_file = new QFile("/sys/block/" + device + "/stat");
@@ -345,7 +345,7 @@ void MainWindow::on_buttonNext_clicked()
         // pop the selection box if no valid selection (or clone)
         if (!(QFileInfo::exists(ui->buttonSelectSource->property("filename").toString()) ||
               ui->buttonSelectSource->property("filename").toString() == tr("clone"))) {
-            ui->buttonSelectSource->clicked();
+            emit ui->buttonSelectSource->clicked();
             return;
         }
         if (cmd.state() != QProcess::NotRunning) {
@@ -571,9 +571,9 @@ void MainWindow::on_pushButtonLumLogFile_clicked()
         rootrunoption = "runuser $(logname) -c ";
 
     if (viewer.exists())
-        cmd = QString("mx-viewer %1 '%2' &").arg(url).arg(lum.baseName());
+        cmd = QString("mx-viewer %1 '%2' &").arg(url, lum.baseName());
     else if (viewer2.exists())
-        cmd = QString("antix-viewer %1 '%2' &").arg(url).arg(lum.baseName());
+        cmd = QString("antix-viewer %1 '%2' &").arg(url, lum.baseName());
     else
         cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
     system(cmd.toUtf8());
