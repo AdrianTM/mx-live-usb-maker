@@ -35,7 +35,7 @@
       <number>5</number>
      </property>
      <item row="1" column="11">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -77,7 +77,7 @@
       </spacer>
      </item>
      <item row="1" column="1">
-      <widget class="QPushButton" name="buttonHelp">
+      <widget class="QPushButton" name="pushHelp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -103,7 +103,7 @@
       </widget>
      </item>
      <item row="1" column="8">
-      <widget class="QPushButton" name="buttonBack">
+      <widget class="QPushButton" name="pushBack">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -161,7 +161,7 @@
       </widget>
      </item>
      <item row="1" column="9">
-      <widget class="QPushButton" name="buttonNext">
+      <widget class="QPushButton" name="pushNext">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -187,7 +187,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="buttonAbout">
+      <widget class="QPushButton" name="pushAbout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -213,7 +213,7 @@
       </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QPushButton" name="pushButtonLumLogFile">
+      <widget class="QPushButton" name="pushLumLogFile">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -248,7 +248,7 @@
      <widget class="QWidget" name="selectionPage">
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="1">
-        <widget class="QPushButton" name="buttonSelectSource">
+        <widget class="QPushButton" name="pushSelectSource">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -322,21 +322,21 @@
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="1" column="1">
-              <widget class="QCheckBox" name="cb_force_makefs">
+              <widget class="QCheckBox" name="checkForceMakefs">
                <property name="text">
                 <string>Make the ext4 filesystem even if one exists</string>
                </property>
               </widget>
              </item>
              <item row="2" column="0">
-              <widget class="QCheckBox" name="cb_save_boot">
+              <widget class="QCheckBox" name="checkSaveBoot">
                <property name="text">
                 <string>Save the original boot directory when updating a live-usb</string>
                </property>
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QCheckBox" name="cb_gpt">
+              <widget class="QCheckBox" name="checkGpt">
                <property name="toolTip">
                 <string>Use gpt partitioning instead of msdos</string>
                </property>
@@ -346,14 +346,14 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QCheckBox" name="cb_update">
+              <widget class="QCheckBox" name="checkUpdate">
                <property name="text">
                 <string>Update (only update an existing live-usb)</string>
                </property>
               </widget>
              </item>
              <item row="3" column="0">
-              <widget class="QCheckBox" name="cb_keep">
+              <widget class="QCheckBox" name="checkKeep">
                <property name="toolTip">
                 <string>Don't replace syslinux files</string>
                </property>
@@ -363,21 +363,21 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QCheckBox" name="cb_force_usb">
+              <widget class="QCheckBox" name="checkForceUsb">
                <property name="text">
                 <string>Ignore USB/removable check</string>
                </property>
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QCheckBox" name="cb_force_automount">
+              <widget class="QCheckBox" name="checkForceAutomount">
                <property name="text">
                 <string>Temporarily disable automounting</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QCheckBox" name="cb_set_pmbr_boot">
+              <widget class="QCheckBox" name="checkSetPmbrBoot">
                <property name="toolTip">
                 <string/>
                </property>
@@ -387,7 +387,7 @@
               </widget>
              </item>
              <item row="4" column="0">
-              <widget class="QCheckBox" name="cb_force_nofuse">
+              <widget class="QCheckBox" name="checkForceNofuse">
                <property name="text">
                 <string>Don't use fuseiso to mount iso files</string>
                </property>
@@ -508,7 +508,7 @@
            </widget>
           </item>
           <item row="15" column="0">
-           <widget class="QCheckBox" name="cb_data_first">
+           <widget class="QCheckBox" name="checkDataFirst">
             <property name="text">
              <string>Make separate data partition (percent)</string>
             </property>
@@ -525,7 +525,7 @@
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QPushButton" name="buttonRefresh">
+        <widget class="QPushButton" name="pushRefresh">
          <property name="text">
           <string>Refresh drive list</string>
          </property>
@@ -539,7 +539,7 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QPushButton" name="buttonOptions">
+        <widget class="QPushButton" name="pushOptions">
          <property name="text">
           <string>Show advanced options</string>
          </property>
@@ -574,7 +574,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QRadioButton" name="rb_normal">
+              <widget class="QRadioButton" name="radioNormal">
                <property name="text">
                 <string>Full-featured mode - writable Li&amp;veUSB</string>
                </property>
@@ -584,7 +584,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QRadioButton" name="rb_dd">
+              <widget class="QRadioButton" name="radioDd">
                <property name="toolTip">
                 <string>Read-only, cannot be used with persistency</string>
                </property>
@@ -633,7 +633,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="combo_Usb">
+        <widget class="QComboBox" name="comboUsb">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -711,7 +711,7 @@
            </spacer>
           </item>
           <item row="2" column="1" colspan="2">
-           <widget class="QLineEdit" name="edit_label">
+           <widget class="QLineEdit" name="textLabel">
             <property name="inputMask">
              <string notr="true"/>
             </property>
@@ -739,7 +739,7 @@
             </property>
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="0">
-              <widget class="QCheckBox" name="cb_pretend">
+              <widget class="QCheckBox" name="checkPretend">
                <property name="toolTip">
                 <string>Don't run commands that affect the usb device</string>
                </property>
@@ -749,7 +749,7 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QCheckBox" name="cb_clone_mode">
+              <widget class="QCheckBox" name="checkCloneMode">
                <property name="toolTip">
                 <string>clone from a mounted live-usb or iso-file.</string>
                </property>
@@ -759,7 +759,7 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QCheckBox" name="cb_encrypt">
+              <widget class="QCheckBox" name="checkEncrypt">
                <property name="toolTip">
                 <string>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</string>
                </property>
@@ -769,7 +769,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QCheckBox" name="cb_clone_live">
+              <widget class="QCheckBox" name="checkCloneLive">
                <property name="text">
                 <string>Clone running live system</string>
                </property>
@@ -786,7 +786,7 @@
      <widget class="QWidget" name="outputPage">
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="2" column="0" colspan="2">
-        <widget class="QProgressBar" name="progressBar">
+        <widget class="QProgressBar" name="progBar">
          <property name="value">
           <number>0</number>
          </property>
@@ -805,27 +805,27 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>combo_Usb</tabstop>
-  <tabstop>buttonSelectSource</tabstop>
-  <tabstop>cb_pretend</tabstop>
-  <tabstop>cb_encrypt</tabstop>
-  <tabstop>cb_clone_mode</tabstop>
-  <tabstop>cb_clone_live</tabstop>
+  <tabstop>comboUsb</tabstop>
+  <tabstop>pushSelectSource</tabstop>
+  <tabstop>checkPretend</tabstop>
+  <tabstop>checkEncrypt</tabstop>
+  <tabstop>checkCloneMode</tabstop>
+  <tabstop>checkCloneLive</tabstop>
   <tabstop>spinBoxSize</tabstop>
-  <tabstop>edit_label</tabstop>
-  <tabstop>cb_gpt</tabstop>
-  <tabstop>cb_update</tabstop>
-  <tabstop>cb_save_boot</tabstop>
-  <tabstop>cb_keep</tabstop>
-  <tabstop>cb_set_pmbr_boot</tabstop>
-  <tabstop>cb_force_makefs</tabstop>
-  <tabstop>cb_force_usb</tabstop>
-  <tabstop>cb_force_automount</tabstop>
-  <tabstop>buttonAbout</tabstop>
-  <tabstop>buttonHelp</tabstop>
-  <tabstop>buttonBack</tabstop>
-  <tabstop>buttonNext</tabstop>
-  <tabstop>buttonCancel</tabstop>
+  <tabstop>textLabel</tabstop>
+  <tabstop>checkGpt</tabstop>
+  <tabstop>checkUpdate</tabstop>
+  <tabstop>checkSaveBoot</tabstop>
+  <tabstop>checkKeep</tabstop>
+  <tabstop>checkSetPmbrBoot</tabstop>
+  <tabstop>checkForceMakefs</tabstop>
+  <tabstop>checkForceUsb</tabstop>
+  <tabstop>checkForceAutomount</tabstop>
+  <tabstop>pushAbout</tabstop>
+  <tabstop>pushHelp</tabstop>
+  <tabstop>pushBack</tabstop>
+  <tabstop>pushNext</tabstop>
+  <tabstop>pushCancel</tabstop>
   <tabstop>outputBox</tabstop>
  </tabstops>
  <resources>
@@ -833,7 +833,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>buttonCancel</sender>
+   <sender>pushCancel</sender>
    <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>

@@ -33,8 +33,6 @@
 
 class QFile;
 
-const QString cli_utils = ". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;";
-
 namespace Ui {
 class MainWindow;
 }
@@ -47,16 +45,18 @@ public:
     MainWindow(const QStringList &args);
     ~MainWindow();
 
+    const QString cli_utils = ". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;";
+    QString LUM;
+    QString buildOptionList();
+    QStringList buildUsbList();
+    QStringList removeUnsuitable(const QStringList &devices); // remove unsuitable disks from the list (live and unremovable)
     bool checkDestSize();
     bool isRunningLive();
     bool isToRam();
     void makeUsb(const QString &options);
     void progress();
+    void setGeneralConnections();
     void setup();
-    QString buildOptionList();
-    QStringList buildUsbList();
-    QStringList removeUnsuitable(const QStringList &devices); // remove unsuitable disks from the list (live and unremovable)
-    QString LUM;
 
 
 public slots:
@@ -71,24 +71,22 @@ private slots:
     void updateBar();
     void updateOutput();
 
-    void on_buttonAbout_clicked();
-    void on_buttonBack_clicked();
-    void on_buttonHelp_clicked();
-    void on_buttonNext_clicked();
-    void on_buttonOptions_clicked();
-    void on_buttonRefresh_clicked();
-    void on_buttonSelectSource_clicked();
-    void on_cb_clone_live_clicked(bool checked);
-    void on_cb_clone_mode_clicked(bool checked);
-    void on_cb_data_first_clicked(bool checked);
-    void on_cb_update_clicked(bool checked);
-    void on_edit_label_textChanged(QString arg1);
-    void on_pushButtonLumLogFile_clicked();
-    void on_rb_dd_clicked();
-    void on_rb_normal_clicked();
-    void on_spinBoxSize_valueChanged(int arg1);
-//    void on_buttonEnter_clicked();
-//    void on_lineEdit_returnPressed();
+    void pushAbout_clicked();
+    void pushBack_clicked();
+    void pushHelp_clicked();
+    void pushNext_clicked();
+    void pushOptions_clicked();
+    void pushRefresh_clicked();
+    void pushSelectSource_clicked();
+    void checkCloneLive_clicked(bool checked);
+    void checkCloneMode_clicked(bool checked);
+    void checkDataFirst_clicked(bool checked);
+    void checkUpdate_clicked(bool checked);
+    void textLabel_textChanged(QString arg1);
+    void pushLumLogFile_clicked();
+    void radioDd_clicked();
+    void radioNormal_clicked();
+    void spinBoxSize_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

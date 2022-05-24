@@ -24,9 +24,9 @@ void displayDoc(QString url, QString title, bool runned_as_root)
 void displayAboutMsgBox(QString title, QString message, QString licence_url, QString license_title, bool runned_as_root)
 {
     QMessageBox msgBox(QMessageBox::NoIcon, title, message);
-    QPushButton *btnLicense = msgBox.addButton(QObject::tr("License"), QMessageBox::HelpRole);
-    QPushButton *btnChangelog = msgBox.addButton(QObject::tr("Changelog"), QMessageBox::HelpRole);
-    QPushButton *btnCancel = msgBox.addButton(QObject::tr("Cancel"), QMessageBox::NoRole);
+    auto btnLicense = msgBox.addButton(QObject::tr("License"), QMessageBox::HelpRole);
+    auto btnChangelog = msgBox.addButton(QObject::tr("Changelog"), QMessageBox::HelpRole);
+    auto btnCancel = msgBox.addButton(QObject::tr("Cancel"), QMessageBox::NoRole);
     btnCancel->setIcon(QIcon::fromTheme("window-close"));
 
     msgBox.exec();
@@ -34,20 +34,20 @@ void displayAboutMsgBox(QString title, QString message, QString licence_url, QSt
     if (msgBox.clickedButton() == btnLicense) {
         displayDoc(licence_url, license_title, runned_as_root);
     } else if (msgBox.clickedButton() == btnChangelog) {
-        QDialog *changelog = new QDialog();
+        auto changelog = new QDialog();
         changelog->setWindowTitle(QObject::tr("Changelog"));
         changelog->resize(600, 500);
 
-        QTextEdit *text = new QTextEdit;
+        auto text = new QTextEdit;
         text->setReadOnly(true);
         Cmd cmd;
         text->setText(cmd.getCmdOut("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
 
-        QPushButton *btnClose = new QPushButton(QObject::tr("&Close"));
+        auto btnClose = new QPushButton(QObject::tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
         QObject::connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
 
-        QVBoxLayout *layout = new QVBoxLayout;
+        auto layout = new QVBoxLayout;
         layout->addWidget(text);
         layout->addWidget(btnClose);
         changelog->setLayout(layout);
