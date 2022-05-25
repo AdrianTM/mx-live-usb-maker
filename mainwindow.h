@@ -71,22 +71,22 @@ private slots:
     void updateBar();
     void updateOutput();
 
-    void pushAbout_clicked();
-    void pushBack_clicked();
-    void pushHelp_clicked();
-    void pushNext_clicked();
-    void pushOptions_clicked();
-    void pushRefresh_clicked();
-    void pushSelectSource_clicked();
     void checkCloneLive_clicked(bool checked);
     void checkCloneMode_clicked(bool checked);
     void checkDataFirst_clicked(bool checked);
     void checkUpdate_clicked(bool checked);
-    void textLabel_textChanged(QString arg1);
+    void pushAbout_clicked();
+    void pushBack_clicked();
+    void pushHelp_clicked();
     void pushLumLogFile_clicked();
+    void pushNext_clicked();
+    void pushOptions_clicked();
+    void pushRefresh_clicked();
+    void pushSelectSource_clicked();
     void radioDd_clicked();
     void radioNormal_clicked();
     void spinBoxSize_valueChanged(int arg1);
+    void textLabel_textChanged(QString arg1);
 
 private:
     Ui::MainWindow *ui;

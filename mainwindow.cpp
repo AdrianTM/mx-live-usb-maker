@@ -30,7 +30,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(const QStringList& args) :
+MainWindow::MainWindow(const QStringList &args) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
