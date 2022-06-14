@@ -37,11 +37,14 @@
 
 
 static QFile logFile;
+QString starting_home = qEnvironmentVariable("HOME");
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 int main(int argc, char *argv[])
 {
+    qputenv("XDG_RUNTIME_DIR", "/run/user/0");
     QApplication app(argc, argv);
+    qputenv("HOME", "/root");
     app.setApplicationVersion(VERSION);
 
     QCommandLineParser parser;

@@ -30,6 +30,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+extern const QString starting_home;
+
 MainWindow::MainWindow(const QStringList &args) :
     ui(new Ui::MainWindow)
 {
@@ -261,7 +263,7 @@ void MainWindow::cleanup()
         QString removecmd = "rm -f " + logfile.absoluteFilePath();
         system(removecmd.toUtf8());
     }
-    cmd.halt();
+    cmd.close();
 }
 
 // build the USB list
@@ -589,12 +591,15 @@ void MainWindow::pushLumLogFile_clicked()
     if (getuid() == 0)
         rootrunoption = "runuser $(logname) -c ";
 
-    if (viewer.exists())
+    if (viewer.exists()) {
+        qputenv("HOME", starting_home.toUtf8());
         cmd = QString("mx-viewer %1 '%2' &").arg(url, lum.baseName());
-    else if (viewer2.exists())
+        qputenv("HOME", "/root");
+    } else if (viewer2.exists()) {
         cmd = QString("antix-viewer %1 '%2' &").arg(url, lum.baseName());
-    else
+    } else {
         cmd = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
+    }
     system(cmd.toUtf8());
 }
 
