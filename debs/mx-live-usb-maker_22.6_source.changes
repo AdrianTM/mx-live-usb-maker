@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 15 Jun 2022 01:18:30 -0400
+Source: mx-live-usb-maker
+Architecture: source
+Version: 22.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-live-usb-maker (22.6) mx; urgency=medium
+ .
+   * Preserve user theme when launching program as root
+   * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+   * Improve cleaning up: make sure the ISO file is unmounted at failure
+Checksums-Sha1:
+ 0974a29e68f6797c75d61ec592bbddf570c6e1a1 591 mx-live-usb-maker_22.6.dsc
+ 7d5231928be2edc76d2891d12f35dbd3cc381a67 114504 mx-live-usb-maker_22.6.tar.xz
+ f5545b70fa465a1b6aee84e04363b36559c583cf 10069 mx-live-usb-maker_22.6_i386.buildinfo
+Checksums-Sha256:
+ fe6daadac28b4411a03717c86a3480dc864e7d80206dd0589357a4e5165f1275 591 mx-live-usb-maker_22.6.dsc
+ 6767be7ee1f33a2a528312cce808d5756d7f13f5f12f0fcc60f593a8a245b243 114504 mx-live-usb-maker_22.6.tar.xz
+ c97c3a9791dd80a009d95f01d22dbe0a34d646300b889ec44b5e6d63f7ef68e8 10069 mx-live-usb-maker_22.6_i386.buildinfo
+Files:
+ 9e29f106814af9ecf447e20e8ee3fff5 591 admin optional mx-live-usb-maker_22.6.dsc
+ 96126fe4516e3c5d780c11dc14577748 114504 admin optional mx-live-usb-maker_22.6.tar.xz
+ b6c9203d86c7f2c7053874c4ceece652 10069 admin optional mx-live-usb-maker_22.6_i386.buildinfo

@@ -1,3 +1,11 @@
+CUSTOMPROGRAMNAME (22.6) mx; urgency=medium
+
+  * Preserve user theme when launching program as root
+  * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+  * Improve cleaning up: make sure the ISO file is unmounted at failure
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 15 Jun 2022 01:18:30 -0400
+
 CUSTOMPROGRAMNAME (22.4) mx; urgency=medium
 
   * Make sure text is added at end of output box (clicking inside the output box should not move cursor around)

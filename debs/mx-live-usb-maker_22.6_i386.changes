@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Wed, 15 Jun 2022 01:18:30 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: i386
+Version: 22.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.6) mx; urgency=medium
+ .
+   * Preserve user theme when launching program as root
+   * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+   * Improve cleaning up: make sure the ISO file is unmounted at failure
+Checksums-Sha1:
+ f5545b70fa465a1b6aee84e04363b36559c583cf 10069 mx-live-usb-maker_22.6_i386.buildinfo
+ bc77e2217e1ae0d6533c8214bcbbaa6f397595df 139872 mx-live-usb-maker_22.6_i386.deb
+Checksums-Sha256:
+ c97c3a9791dd80a009d95f01d22dbe0a34d646300b889ec44b5e6d63f7ef68e8 10069 mx-live-usb-maker_22.6_i386.buildinfo
+ 270828863f9b6f8772da0f020e5ad4f01c43895e7528922a1e080a69a1ce5e4d 139872 mx-live-usb-maker_22.6_i386.deb
+Files:
+ b6c9203d86c7f2c7053874c4ceece652 10069 admin optional mx-live-usb-maker_22.6_i386.buildinfo
+ f85272d2ff3dee818394b775dfab28f3 139872 admin optional mx-live-usb-maker_22.6_i386.deb
