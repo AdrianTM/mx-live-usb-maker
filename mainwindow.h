@@ -62,7 +62,7 @@ public:
 public slots:
 
 private slots:
-    bool isantiX_mx_family(const QString &bselected);
+    static bool isantiX_mx_family(const QString &bselected);
     void cleanup();
     void cmdDone();
     void cmdStart();

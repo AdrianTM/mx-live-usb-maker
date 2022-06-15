@@ -26,9 +26,9 @@
 #include <QTemporaryDir>
 
 #include "about.h"
-#include "unistd.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "unistd.h"
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -300,10 +300,14 @@ void MainWindow::cmdDone()
     ui->progBar->setValue(ui->progBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
     ui->pushBack->show();
-    if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked())
+    if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked()) {
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
-    else
+    } else {
+        const QString mount_path = QStringLiteral("/run/live-usb-maker");
+        if (QFile::exists(mount_path))
+            QProcess::startDetached(QStringLiteral("umount"), {"-l", mount_path});
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
+    }
     cmd.disconnect();
 }
 
@@ -560,15 +564,14 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
     }
 
     // mount the iso file
-    QString cmdstr = "mount -o loop " + selected + " " + tmpdir.path();
-    if (!cmd.run(cmdstr)) {
+    if (QProcess::execute(QStringLiteral("mount"), {"-o", "loop", selected, tmpdir.path()}) != 0) {
         qDebug() << "Could not mount iso file to temp folder";
         return false;
     }
 
     // check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX folder
     bool test = QFileInfo::exists(tmpdir.path() + "/antiX");
-    cmd.run("umount " + tmpdir.path());
+    QProcess::startDetached(QStringLiteral("umount"), {"-l", tmpdir.path()});
     return test;
 }
 
