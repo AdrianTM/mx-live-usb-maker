@@ -9,7 +9,6 @@ Package: CUSTOMPROGRAMNAME
 Architecture: any
 Depends: cli-shell-utils,
          live-usb-maker,
-         menu,
          xdg-utils | mx-viewer,
          ${misc:Depends},
          ${shlibs:Depends}
