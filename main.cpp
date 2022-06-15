@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
         w.show();
         return app.exec();
     } else {
-        QProcess::startDetached(QStringLiteral("/usr/bin/mx-cleanup-launcher"), {});
+        QProcess::startDetached(QStringLiteral("/usr/bin/mxlum-launcher"), {});
     }
 }
 
