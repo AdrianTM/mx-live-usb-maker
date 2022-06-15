@@ -342,7 +342,7 @@ void MainWindow::updateOutput()
 {
     // remove escape sequences that are not handled by code
     QString out = cmd.readAll();
-    out.remove(QRegularExpression(QStringLiteral(R"lit("\[0m|\]0;|\|\|\[1000D|\[74C||\[\?25l|\[\?25h|\[0;36m|\[1;37m")lit")));
+    out.remove(QRegularExpression(u8R"(\[0m|\]0;|\|\|\[1000D|\[74C||\[\?25l|\[\?25h|\[0;36m|\[1;37m)"));
     ui->outputBox->moveCursor(QTextCursor::End);
     if (out.contains(QLatin1String("\r"))) {
         ui->outputBox->moveCursor(QTextCursor::Up, QTextCursor::KeepAnchor);
