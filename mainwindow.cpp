@@ -353,7 +353,7 @@ void MainWindow::updateOutput()
 
     QScrollBar *sb = ui->outputBox->verticalScrollBar();
     sb->setValue(sb->maximum());
-    qApp->processEvents();
+    QApplication::processEvents();
 }
 
 void MainWindow::pushNext_clicked()
@@ -397,7 +397,7 @@ void MainWindow::pushAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + QApplication::applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.") +
                        R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",
@@ -573,7 +573,7 @@ void MainWindow::pushLumLogFile_clicked()
     QString url = "file:///tmp/" + lum.baseName() + ".log";
     qDebug() << "lumlog" << url;
     if (!QFileInfo::exists("/var/log/" + lum.baseName() + ".log")) {
-        QMessageBox::information(this, qApp->applicationName(), tr("Could not find a log file at: ") + "/var/log/" + lum.baseName() + ".log");
+        QMessageBox::information(this, QApplication::applicationName(), tr("Could not find a log file at: ") + "/var/log/" + lum.baseName() + ".log");
         return;
     }
     QFileInfo viewer(QStringLiteral("/usr/bin/mx-viewer"));

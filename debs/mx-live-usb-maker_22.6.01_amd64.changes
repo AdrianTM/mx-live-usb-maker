@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 17 Jun 2022 18:11:34 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.6.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.6.01) mx; urgency=medium
+ .
+   * Make it possible to open the log while the ISO is being burned
+   * Added % to two combo boxes to clarify those are percentages
+Checksums-Sha1:
+ 8a708d266ddb535376a380891a4c63f39e12e559 1165 mx-live-usb-maker_22.6.01.dsc
+ 6c7187289f22485a2aa9882338887c85bc20e08e 114452 mx-live-usb-maker_22.6.01.tar.xz
+ 8495b4a1626233b8a6e9b6abe96fd2f9095b1149 10809 mx-live-usb-maker_22.6.01_amd64.buildinfo
+ 581b006c0ab168a6b8f927490b2dfa6945532874 137252 mx-live-usb-maker_22.6.01_amd64.deb
+Checksums-Sha256:
+ 090e1ceec89427484f9b829c69979dc02db7ef655f8a25970a41e82edc23bccb 1165 mx-live-usb-maker_22.6.01.dsc
+ ac71761143f04fa622f13488d9d8729bea0bd198e5ff99ca44d136a44772660e 114452 mx-live-usb-maker_22.6.01.tar.xz
+ 2a12b03b24b87a4fe043e72363313488ff89b8d50fed22bbcc067243fc180fc6 10809 mx-live-usb-maker_22.6.01_amd64.buildinfo
+ 061356d3c842fb481802cbf5a05441d7cb5a2b159d370d28bd4280095b0a9b07 137252 mx-live-usb-maker_22.6.01_amd64.deb
+Files:
+ e557b8b23293b0f8fbd5fc1263d9fe0a 1165 admin optional mx-live-usb-maker_22.6.01.dsc
+ 4f10b200fd2d63ea155a921f3aa57a2c 114452 admin optional mx-live-usb-maker_22.6.01.tar.xz
+ 036dd77dd6fccb055d4861f27367e988 10809 admin optional mx-live-usb-maker_22.6.01_amd64.buildinfo
+ 80b71f4c6ccec42748b1676b7e42ea2e 137252 admin optional mx-live-usb-maker_22.6.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmKtEqATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNcUCACndIC/wTgFLUMYX1Gpix661+MfQhr1
+AFR6MgiNrEHR/UrZX4GzKN+df4ivqs7Tum3bscTdphYuN3ywJXM4tQN03mD00jG0
+4L4UzmHU8rhOehayV9ys0cZUKRbQxfTgh4MAIGX87bIPZvAm2Wk69m6LOwSYm9nM
+sSo4bStrf+nwpegliIuAnlmlDGkkSVC5gerPt9dN8HUzU2789RnDdGnI6VDbFiIN
+BieFVsFxs/O8gRqFOUXEUiiSnxnMU1WgejJ0wTrWwi4bBTXQQ8pfKkYhbverOr62
+lxoQ4OcFjXKOfc7MOdlIi/HPCHld976tBz5zr1CPdhy8IITGk3Gf+Ghz
+=G6aG
+-----END PGP SIGNATURE-----

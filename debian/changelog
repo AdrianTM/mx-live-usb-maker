@@ -1,3 +1,10 @@
+CUSTOMPROGRAMNAME (22.6.01) mx; urgency=medium
+
+  * Make it possible to open the log while the ISO is being burned
+  * Added % to two combo boxes to clarify those are percentages
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 17 Jun 2022 18:11:34 -0400
+
 CUSTOMPROGRAMNAME (22.6) mx; urgency=medium
 
   * Preserve user theme when launching program as root

@@ -38,7 +38,7 @@
 
 
 static QFile logFile;
-QString starting_home = qEnvironmentVariable("HOME");
+extern const QString starting_home = qEnvironmentVariable("HOME");
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 int main(int argc, char *argv[])
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     qputenv("XDG_RUNTIME_DIR", "/run/user/0");
     QApplication app(argc, argv);
     qputenv("HOME", "/root");
-    app.setApplicationVersion(VERSION);
+    QApplication::setApplicationVersion(VERSION);
 
     QCommandLineParser parser;
     parser.setApplicationDescription(QObject::tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system."));
@@ -55,19 +55,19 @@ int main(int argc, char *argv[])
     parser.addPositionalArgument(QObject::tr("filename"), QObject::tr("Name of .iso file to open"), QObject::tr("[filename]"));
     parser.process(app);
 
-    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
+    QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
 
     QTranslator qtTran;
     if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtTran);
+        QApplication::installTranslator(&qtTran);
 
     QTranslator qtBaseTran;
     if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtBaseTran);
+        QApplication::installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
-        app.installTranslator(&appTran);
+    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(), "/usr/share/" + QApplication::applicationName() + "/locale"))
+        QApplication::installTranslator(&appTran);
 
     // root guard
     if (QProcess::execute(QStringLiteral("/bin/bash"), {"-c", "logname |grep -q ^root$"}) == 0) {
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     }
 
     if (getuid() == 0) {
-        QString log_name = "/var/log/" + qApp->applicationName() + ".log";
+        QString log_name = "/var/log/" + QApplication::applicationName() + ".log";
         if (QFileInfo::exists(log_name)) {
             QFile::remove(log_name + ".old");
             QFile::rename(log_name, log_name + ".old");
@@ -85,10 +85,10 @@ int main(int argc, char *argv[])
         logFile.setFileName(log_name);
         logFile.open(QFile::Append | QFile::Text);
         qInstallMessageHandler(messageHandler);
-        qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
-        MainWindow w(app.arguments());
+        qDebug().noquote() << QApplication::applicationName() << QObject::tr("version:") << QApplication::applicationVersion();
+        MainWindow w(QApplication::arguments());
         w.show();
-        return app.exec();
+        return QApplication::exec();
     } else {
         QProcess::startDetached(QStringLiteral("/usr/bin/mxlum-launcher"), {});
     }
