@@ -582,6 +582,7 @@ void MainWindow::pushLumLogFile_clicked()
 
     // generate temporary log file
     QString cmd_str = "tac /var/log/" + lum.baseName() + R"(.log | sed "/^=\{60\}=*$/q" |tac > /tmp/)" + lum.baseName() + ".log ";
+    Cmd cmd; // new Cmd so it allows user opening the log while the ISO is being burned
     cmd.run(cmd_str);
 
     if (getuid() == 0)
