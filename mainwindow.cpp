@@ -86,7 +86,6 @@ bool MainWindow::isRunningLive()
     return (test == QLatin1String("aufs") || test == QLatin1String("overlay"));
 }
 
-// determine if it's running in "toram" mode
 bool MainWindow::isToRam()
 {
     return QFileInfo::exists(QStringLiteral("/live/config/did-toram"));
@@ -150,7 +149,6 @@ void MainWindow::makeUsb(const QString &options)
     qDebug() << cmd.getCmdOut(cmdstr);
 }
 
-// setup versious items first time program runs
 void MainWindow::setup()
 {
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
@@ -258,7 +256,6 @@ QString MainWindow::buildOptionList()
     return options;
 }
 
-// cleanup environment when window is closed
 void MainWindow::cleanup()
 {
     QFileInfo lum(LUM);
@@ -359,7 +356,6 @@ void MainWindow::updateOutput()
     qApp->processEvents();
 }
 
-// Next button clicked
 void MainWindow::pushNext_clicked()
 {
     // on first page
@@ -397,8 +393,6 @@ void MainWindow::pushBack_clicked()
     ui->progBar->setValue(0);
 }
 
-
-// About button clicked
 void MainWindow::pushAbout_clicked()
 {
     this->hide();
@@ -411,13 +405,11 @@ void MainWindow::pushAbout_clicked()
     this->show();
 }
 
-// Help button clicked
 void MainWindow::pushHelp_clicked()
 {
     QString url = QStringLiteral("/usr/share/doc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.html");
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
 }
-
 
 void MainWindow::pushSelectSource_clicked()
 {
