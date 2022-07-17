@@ -308,7 +308,7 @@
 Please wait until the the process is completed</source>
         <translation>%1 wird mittels &apos;dd&apos; Befehl auf /dev/%2 geschrieben,
 
-biite auf Abschluß des Vorgangs warten</translation>
+bitte auf Abschluss des Vorgangs warten</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
