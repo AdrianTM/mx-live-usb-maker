@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sl">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -98,7 +96,7 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation>Shrani originalni zagonski direktorij, ko posodabljaš živi-usb</translation>
+        <translation>Med posodabljanjem živega usb nosilca shrani originalni zagonski imenik</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
@@ -204,16 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="595"/>
-        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="vanished">Polna funkcionalnost - zapisljiv živi-USB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -221,13 +210,14 @@
         <translation>Samo branje. Ne deluje s persistenco</translation>
     </message>
     <message>
-        <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="vanished">Slika diska - samo branje za živi-usb (dd)</translation>
+        <location filename="../mainwindow.ui" line="595"/>
+        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Za distribucije, ki niso antiX/MX, uporabite način Slika diska (dd).</translation>
+        <translation>Za distribucije, ki niso antiX/MX, uporabite način posnetek diska (dd).</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="657"/>
@@ -304,10 +294,10 @@ Ali želite nadaljevati?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Zapisujem %1 z uproabo &apos;dd&apos; ukaza na /dev/%2,
+        <translation>Zapisujem %1 z uporabo &apos;dd&apos; ukaza na /dev/%2,
 
 Prosimo počakajte, da se proces konča</translation>
     </message>
@@ -400,7 +390,7 @@ Prosimo počakajte, da se proces konča</translation>
         <location filename="../mainwindow.cpp" line="430"/>
         <location filename="../mainwindow.cpp" line="486"/>
         <source>Select Source Directory</source>
-        <translation>Izberite direktorij z virom</translation>
+        <translation>Izberite imenik z virom</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
@@ -427,93 +417,66 @@ Prosimo počakajte, da se proces konča</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QApplication</name>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Licenca</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">Dnevnik sprememb</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Prekliči</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Zapri</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Napaka</translation>
-    </message>
-    <message>
-        <source>You must run this program as root.</source>
-        <translation type="vanished">Ta program morate zagnati kot root</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="55"/>
-        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished">Program, ki ustvari živi-usb iz iso datoteke, drugega živega usb pogona, živega cd/dvd ploščka ali iz sistema, ki je zagnan v živo.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>filename</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>[filename]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="77"/>
-        <source>Error</source>
-        <translation type="unfinished">Napaka</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="78"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="91"/>
-        <source>version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation type="unfinished">Licenca</translation>
+        <translation>Licenca</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation type="unfinished">Dnevnik sprememb</translation>
+        <translation>Dnevnik sprememb</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Prekliči</translation>
+        <translation>Prekliči</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Zapri</translation>
+        <translation>&amp;Zapri</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="55"/>
+        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
+        <translation>Program, ki ustvari živi-usb iz iso datoteke, drugega živega usb pogona, živega cd/dvd ploščka ali iz sistema, ki je zagnan v živo.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>filename</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>Name of .iso file to open</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>[filename]</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="77"/>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="78"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Prijevljeni ste kot korenski uporabnik. Izpišite se in se ponovno prijavite kot običajen uporabnik, če želite uporabljati ta program.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>version:</source>
+        <translation>različica:</translation>
     </message>
 </context>
 </TS>

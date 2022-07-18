@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="el">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="el">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -204,16 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="595"/>
-        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="vanished">Πλήρης λειτουργία - εγγράψιμο LiveUSB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -221,8 +210,9 @@
         <translation>Μόνο για ανάγνωση, δεν μπορεί να χρησιμοποιηθεί με το persistency</translation>
     </message>
     <message>
-        <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="vanished">Λειτουργία εικόνας - μόνο για ανάγνωση LiveUSB (dd)</translation>
+        <location filename="../mainwindow.ui" line="595"/>
+        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -287,7 +277,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Η συσκευή προορισμού %1 είναι μεγαλύτερη από %2 GB. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -303,7 +293,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Εγγραφή %1 με την εντολή &apos;dd&apos; στο /dev/%2,
@@ -340,7 +330,7 @@ Please wait until the the process is completed</source>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation>Οι ενέργειες αυτές θα καταστρέψουν όλα τα δεδομένα 
+        <translation>Αυτές οι ενέργειες θα καταστρέψουν όλα τα δεδομένα στο 
 
 </translation>
     </message>
@@ -393,7 +383,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία ISO (*.iso);;Όλα τα αρχεία (*.*)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="430"/>
@@ -426,93 +416,66 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QApplication</name>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Άδεια</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">Αρχείο αλλαγών</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Ακύρωση</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Κλείσιμο</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Σφάλμα</translation>
-    </message>
-    <message>
-        <source>You must run this program as root.</source>
-        <translation type="vanished">Πρέπει να τρέξετε αυτή την εφαρμογή ως Root.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="55"/>
-        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished">Πρόγραμμα δημιουργίας live-usb από αρχείο iso, από άλλο live-usb, από cd/dvd ή από το τρέχον live σύστημα.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>filename</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>[filename]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="77"/>
-        <source>Error</source>
-        <translation type="unfinished">Σφάλμα</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="78"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="91"/>
-        <source>version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation type="unfinished">Άδεια</translation>
+        <translation>Άδεια</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation type="unfinished">Αρχείο αλλαγών</translation>
+        <translation>Αρχείο αλλαγών</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Ακύρωση</translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Κλείσιμο</translation>
+        <translation>&amp;Κλείσιμο</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="55"/>
+        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
+        <translation>Πρόγραμμα δημιουργίας live-usb από αρχείο iso, από άλλο live-usb, από cd/dvd ή από το τρέχον live σύστημα.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>filename</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>Name of .iso file to open</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>[filename]</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="77"/>
+        <source>Error</source>
+        <translation>Σφάλμα</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="78"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Φαίνεται ότι έχετε συνδεθεί ως root, αποσυνδεθείτε και συνδεθείτε ως κανονικός χρήστης για να χρησιμοποιήσετε αυτό το πρόγραμμα.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>version:</source>
+        <translation>Έκδοση:</translation>
     </message>
 </context>
 </TS>

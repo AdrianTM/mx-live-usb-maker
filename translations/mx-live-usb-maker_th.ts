@@ -1,20 +1,20 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="th">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"/>
+        <translation>Program_Name</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Закрити програму</translation>
+        <translation>ออกจากแอปพลิเคชัน</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Закрити</translation>
+        <translation>ปิด</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="56"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Показати довідку</translation>
+        <translation>แสดงหน้าช่วยเหลือ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Довідка</translation>
+        <translation>ช่วยเหลือ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="98"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation>ย้อนกลับ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Наступний</translation>
+        <translation>ต่อไป</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Про цю програму</translation>
+        <translation>เกี่ยวกับแอปพลิเคชันนี้</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Про...</translation>
+        <translation>เกี่ยวกับ...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
@@ -71,27 +71,27 @@
         <location filename="../mainwindow.cpp" line="490"/>
         <location filename="../mainwindow.cpp" line="511"/>
         <source>Select ISO</source>
-        <translation type="unfinished"/>
+        <translation>เลือก ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;เลือกอุปกรณ์ USB เป้าหมาย&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="280"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;เลือกไฟล์ ISO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="309"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"/>
+        <translation>ตัวเลือกขั้นสูง</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"/>
+        <translation>สร้างระบบไฟล์ ext4 ใหม่ถึงแม้ว่ามีอยู่แล้ว</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="334"/>
@@ -101,17 +101,17 @@
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"/>
+        <translation>ใช้พาร์ติชัน GPT แทน msdos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="344"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"/>
+        <translation>ใช้พาร์ติชัน GPT</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="351"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"/>
+        <translation>อัปเดต (ใช้อัปเดต Live-usb ที่มีอยู่)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="358"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../mainwindow.ui" line="361"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"/>
+        <translation>รักษาไฟล์ syslinux ไว้</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="368"/>
@@ -131,22 +131,22 @@
     <message>
         <location filename="../mainwindow.ui" line="375"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"/>
+        <translation>ปิดการใช้งาน automounting ชั่วคราว</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"/>
+        <translation>ตั้ง pmbr_boot disk flag (จะไม่บูตด้วย UEFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"/>
+        <translation>ไม่ใช้ fuseiso ในการ mount ไฟล์ ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"/>
+        <translation>ขนาดของพาร์ติชัน ESP (UEFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="438"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../mainwindow.ui" line="477"/>
         <source>vfat</source>
-        <translation type="unfinished"/>
+        <translation>vfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="482"/>
         <source>exfat</source>
-        <translation type="unfinished"/>
+        <translation>exfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="487"/>
@@ -171,33 +171,33 @@
     <message>
         <location filename="../mainwindow.ui" line="492"/>
         <source>ntfs</source>
-        <translation type="unfinished"/>
+        <translation>ntfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"/>
+        <translation>สรา้งพาร์ติชันแยกสำหรับเก็บข้อมูล (ในหน่วยเปอร์เซนต์)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="523"/>
         <source>Format</source>
-        <translation type="unfinished"/>
+        <translation>ฟอร์แมต</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="533"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"/>
+        <translation>รีเฟรชรายชื่อไดรฟ์</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="547"/>
         <location filename="../mainwindow.cpp" line="450"/>
         <source>Show advanced options</source>
-        <translation type="unfinished"/>
+        <translation>แสดงตัวเลือกขั้นสูง</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="567"/>
         <source>Mode</source>
-        <translation type="unfinished"/>
+        <translation>โหมด</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="582"/>
@@ -222,7 +222,7 @@
     <message>
         <location filename="../mainwindow.ui" line="657"/>
         <source>Options</source>
-        <translation>Параметри</translation>
+        <translation>ตัวเลือก</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="695"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../mainwindow.ui" line="763"/>
         <source>Clone an existing live system</source>
-        <translation type="unfinished"/>
+        <translation>โคลน Live system ที่มีอยู่</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="770"/>
@@ -262,17 +262,17 @@
     <message>
         <location filename="../mainwindow.ui" line="773"/>
         <source>Encrypt</source>
-        <translation type="unfinished"/>
+        <translation>เข้ารหัส</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="780"/>
         <source>Clone running live system</source>
-        <translation type="unfinished"/>
+        <translation>โคลน Live system ที่กำลังทำงานอยู่</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
         <source>Confirmation</source>
-        <translation type="unfinished"/>
+        <translation>การยืนยัน</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
@@ -284,7 +284,7 @@
         <location filename="../mainwindow.cpp" line="306"/>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Failure</source>
-        <translation type="unfinished"/>
+        <translation>ล้มเหลว</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -301,65 +301,66 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation type="unfinished"/>
+        <translation>สำเร็จ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation type="unfinished"/>
+        <translation>การสร้าง LiveUSB สำเร็จ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"/>
+        <translation>เกิดข้อผิดพลาดในการสร้าง LiveUSB</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"/>
+        <translation>กรุณาเลือกอุปกรณ์ USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"/>
+        <translation>การกระทำนี้จะทำลายข้อมูลทั้งหมดใน
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"/>
+        <translation>คุณต้องการดำเนินการต่อหรือไม่</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="372"/>
         <location filename="../mainwindow.cpp" line="504"/>
         <source>clone</source>
-        <translation type="unfinished"/>
+        <translation>โคลน</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="399"/>
         <source>About %1</source>
-        <translation type="unfinished"/>
+        <translation>เกี่ยวกับ %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
         <source>Version: </source>
-        <translation>Версія:</translation>
+        <translation>เวอร์ชัน:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"/>
+        <translation>โปรแกรมสำหรับสร้าง Live-usb จากไฟล์ ISO, Live-usb อื่น, Live-CD หรือ DVD, หรือ Live system ที่กำลังทำงานอยู่ </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>สงวนลิขสิทธิ์ (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
@@ -374,12 +375,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="419"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation type="unfinished"/>
+        <translation>เลือกไฟล์ ISO ที่ต้องการเขียนลงไดรฟ์ USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"/>
+        <translation>ไฟล์ ISO (*.iso);;ไฟล์ทั้งหมด (*.*)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="430"/>
@@ -395,19 +396,19 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="456"/>
         <source>Hide advanced options</source>
-        <translation type="unfinished"/>
+        <translation>ซ่อนตัวเลือกขั้นสูง</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="485"/>
         <location filename="../mainwindow.cpp" line="502"/>
         <source>Select Source</source>
-        <translation type="unfinished"/>
+        <translation>เลือกต้นทาง</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="489"/>
         <location filename="../mainwindow.cpp" line="509"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"/>
+        <translation>เลือกไฟล์ ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
@@ -420,28 +421,28 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation>Ліцензія</translation>
+        <translation>สัญญาอนุญาต</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation>Список змін</translation>
+        <translation>Changelog</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation>Скасувати</translation>
+        <translation>ยกเลิก</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation>&amp;Закрити</translation>
+        <translation>&amp;ปิด</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"/>
+        <translation>โปรแกรมสำหรับสร้าง Live-usb จากไฟล์ ISO, Live-usb อื่น, Live-CD หรือ DVD, หรือ Live system ที่กำลังทำงานอยู่ </translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
@@ -461,7 +462,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>

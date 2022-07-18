@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt_BR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pt_BR">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,24 +64,24 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
         <location filename="../mainwindow.cpp" line="490"/>
         <location filename="../mainwindow.cpp" line="511"/>
         <source>Select ISO</source>
-        <translation>Selecionar arquivo ISO</translation>
+        <translation>Selecionar o arquivo ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selecionar Dispositivo USB de destino&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selecionar o Dispositivo USB de Destino&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="280"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selecionar arquivo ISO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Selecionar o arquivo ISO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="309"/>
@@ -93,7 +91,7 @@
     <message>
         <location filename="../mainwindow.ui" line="327"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation>Formatar em ext4 mesmo que já esteja formatado nesse sistema</translation>
+        <translation>Formatar em ext4 mesmo que já esteja formatado neste sistema de arquivos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="334"/>
@@ -103,7 +101,7 @@
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>Usar particionamento gpt em vez de msdos</translation>
+        <translation>Usar o particionamento gpt em vez de msdos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="344"/>
@@ -113,7 +111,7 @@
     <message>
         <location filename="../mainwindow.ui" line="351"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation>Atualizar (atualizar apenas um USB Executável existente)</translation>
+        <translation>Atualizar (apenas atualiza o USB Executável existente)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="358"/>
@@ -138,7 +136,8 @@
     <message>
         <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation>Atribuir o marcador (flag) de disco &apos;pmbr_boot&apos; (não iniciará via UEFI)</translation>
+        <translation>Definir o marcador (flag) de disco &apos;pmbr_boot&apos; (não inicializa via UEFI)
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="392"/>
@@ -178,7 +177,7 @@
     <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Make separate data partition (percent)</source>
-        <translation>Criar partição de dados separada (porcentagem)</translation>
+        <translation>Criar a partição de dados separada (em porcentagem)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="523"/>
@@ -194,7 +193,7 @@
         <location filename="../mainwindow.ui" line="547"/>
         <location filename="../mainwindow.cpp" line="450"/>
         <source>Show advanced options</source>
-        <translation>Mostrar opções avançadas</translation>
+        <translation>Exibir as opções avançadas</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="567"/>
@@ -204,30 +203,22 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="595"/>
-        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Full-featured mode - writable LiveUSB</source>
-        <translation type="vanished">Modo completo - USB Executável (LiveUSB) gravável</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation>Somente leitura, não pode ser usado com &apos;persistência&apos;</translation>
+        <translation>Somente leitura, não pode ser utilizado com &apos;persistência&apos;</translation>
     </message>
     <message>
-        <source>Image mode - read-only LiveUSB (dd)</source>
-        <translation type="vanished">Modo de imagem - somente leitura USB Executável (LiveUSB) (dd)</translation>
+        <location filename="../mainwindow.ui" line="595"/>
+        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Para distros que não sejam o antiX / MX Linux use o modo de imagem (dd).</translation>
+        <translation>Para distribuições (distros) que não sejam o antiX ou o MX Linux, use o modo de imagem (dd).</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="657"/>
@@ -237,7 +228,7 @@
     <message>
         <location filename="../mainwindow.ui" line="695"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Porcentagem de dispositivo USB a ser usado:</translation>
+        <translation>Porcentagem do dispositivo USB a ser utilizado:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="702"/>
@@ -257,7 +248,7 @@
     <message>
         <location filename="../mainwindow.ui" line="760"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>Clonar a partir de USB Executável (LiveUSB) ou arquivo ISO montado.</translation>
+        <translation>clonar a partir do USB Executável (LiveUSB) ou do arquivo ISO montado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="763"/>
@@ -267,7 +258,7 @@
     <message>
         <location filename="../mainwindow.ui" line="770"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation>Configurar para inicializar a partir de uma partição criptografada, solicitará a senha na primeira inicialização</translation>
+        <translation>Configurar para inicializar a partir de uma partição criptografada/encriptada, solicitará a frase-senha (senha) na primeira inicialização</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="773"/>
@@ -287,7 +278,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation>O dispositivo de destino %1 é maior que %2 GB. Você deseja continuar?</translation>
+        <translation>O dispositivo de destino %1 é maior que %2 GB. Você quer continuar?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -303,12 +294,12 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Gravando %1 em /dev/%2, usando o comando &apos;dd&apos;.
+        <translation>Gravando %1, utilizando o comando &apos;dd&apos; em /dev/%2.
 
-Aguarde até que o processo seja concluído</translation>
+Por favor, espere até que o processo seja concluído</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -318,7 +309,7 @@ Aguarde até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation>USB Executável (Instalação externa USB ou LiveUSB) criado com sucesso!</translation>
+        <translation>A instalação externa do USB Executável foi criada com sucesso!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
@@ -333,7 +324,7 @@ Aguarde até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Please select a USB device to write to</source>
-        <translation>Selecione um dispositivo USB a ser usado</translation>
+        <translation>Por favor, selecione um dispositivo USB para ser utilizado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
@@ -368,7 +359,7 @@ Aguarde até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Programa para criar instalações externas USB executável (LiveUSB) a partir de arquivos ISO, de outra instalação externa USB executável, de CD/DVD executável ou de um sistema externo em execução.</translation>
+        <translation>Programa para criar instalações externas USB Executável (Live USB) a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
@@ -388,7 +379,7 @@ Aguarde até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="419"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation>Selecione um arquivo ISO para instalar no dispositivo USB</translation>
+        <translation>Selecionar um arquivo ISO para instalar no dispositivo USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
@@ -409,110 +400,83 @@ Aguarde até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="456"/>
         <source>Hide advanced options</source>
-        <translation>Ocultar opções avançadas</translation>
+        <translation>Ocultar as opções avançadas</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="485"/>
         <location filename="../mainwindow.cpp" line="502"/>
         <source>Select Source</source>
-        <translation>Selecionar Origem</translation>
+        <translation>Selecionar a Origem</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="489"/>
         <location filename="../mainwindow.cpp" line="509"/>
         <source>Select ISO file</source>
-        <translation>Selecionar arquivo ISO</translation>
+        <translation>Selecionar o arquivo ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QApplication</name>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Licença</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">Relatório de alterações</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Cancelar</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Fechar</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Erro</translation>
-    </message>
-    <message>
-        <source>You must run this program as root.</source>
-        <translation type="vanished">Você tem que executar este programa como root (administrador).</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="55"/>
-        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished">Programa para criar instalações externas USB executável (LiveUSB) a partir de arquivos ISO, de outra instalação externa USB executável, de CD/DVD executável ou de um sistema externo em execução.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>filename</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>[filename]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="77"/>
-        <source>Error</source>
-        <translation type="unfinished">Erro</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="78"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="91"/>
-        <source>version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation type="unfinished">Licença</translation>
+        <translation>Licença</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation type="unfinished">Relatório de alterações</translation>
+        <translation>Relatório de alterações</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Fechar</translation>
+        <translation>&amp;Fechar</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="55"/>
+        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
+        <translation>Programa para criar instalações externas USB Executável (Live USB) a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>filename</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>Name of .iso file to open</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>[filename]</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="77"/>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="78"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Ao que parece, você está acessando a sessão com o usuário root. Por favor, saia da sessão atual e entre novamente com o usuário normal para utilizar este programa.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>version:</source>
+        <translation>versão:</translation>
     </message>
 </context>
 </TS>

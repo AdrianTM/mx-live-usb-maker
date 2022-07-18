@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="gu">
 <context>
     <name>MainWindow</name>
     <message>
@@ -9,12 +9,12 @@
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Закрити програму</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>Закрити</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="56"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Показати довідку</translation>
+        <translation>ડિસ્પ્લે અંગે સહાય</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation>Довідка</translation>
+        <translation>મદદ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="98"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Наступний</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation>Про цю програму</translation>
+        <translation>આ એપ્લિકેશન વિષે</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation>Про...</translation>
+        <translation>વિષે...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
@@ -166,7 +166,7 @@
     <message>
         <location filename="../mainwindow.ui" line="487"/>
         <source>ext4</source>
-        <translation>ext4</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="492"/>
@@ -222,7 +222,7 @@
     <message>
         <location filename="../mainwindow.ui" line="657"/>
         <source>Options</source>
-        <translation>Параметри</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="695"/>
@@ -316,7 +316,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>ભૂલ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
@@ -349,7 +349,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
         <source>Version: </source>
-        <translation>Версія:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
@@ -359,7 +359,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
@@ -420,23 +420,23 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation>Ліцензія</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation>Список змін</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation>Скасувати</translation>
+        <translation>રદ કરો</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation>&amp;Закрити</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>
@@ -461,7 +461,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation>ભૂલ</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>

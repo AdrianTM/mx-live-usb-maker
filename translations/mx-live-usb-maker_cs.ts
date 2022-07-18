@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Program_Name</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
@@ -41,7 +39,7 @@
     <message>
         <location filename="../mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation>Předchozí</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="172"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -93,12 +91,12 @@
     <message>
         <location filename="../mainwindow.ui" line="327"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořit ext4 souborový systém i když už existuje</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation type="unfinished"></translation>
+        <translation>Při aktuallizaci live-usb ponechat původní bootovací složku </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
@@ -113,7 +111,7 @@
     <message>
         <location filename="../mainwindow.ui" line="351"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"></translation>
+        <translation>Update (pouze aktualizace live-usb)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="358"/>
@@ -128,7 +126,7 @@
     <message>
         <location filename="../mainwindow.ui" line="368"/>
         <source>Ignore USB/removable check</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorovat kontrolu USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="375"/>
@@ -138,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit pmbr_boot disk flag (nenabootuje pod UEFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="392"/>
@@ -153,7 +151,7 @@
     <message>
         <location filename="../mainwindow.ui" line="438"/>
         <source>Verbosity (less to more):</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbosita (méně nebo více):</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="477"/>
@@ -178,7 +176,7 @@
     <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořit separátní oddíl pro data (percent)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="523"/>
@@ -199,27 +197,27 @@
     <message>
         <location filename="../mainwindow.ui" line="567"/>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Módy USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="595"/>
-        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation type="unfinished"></translation>
+        <translation>Read-only, nemůže být použito s persitencí</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="595"/>
+        <source>Image &amp;mode - read-only LiveUSB (dd)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro ostatní distra, ne antiX/MX použijte Mód Image (dd).</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="657"/>
@@ -229,37 +227,37 @@
     <message>
         <location filename="../mainwindow.ui" line="695"/>
         <source>Percent of USB-device to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Procent USB disku k použití:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="702"/>
         <source>Label ext partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jméno ext oddílu:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="750"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezpustí příkazy, které by ovlivnili usb disk.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="753"/>
         <source>Dry run (no change to system)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkouška (beze změn v systému)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="760"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klonování připojeného live-usb disku nebo iso-souboru</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="763"/>
         <source>Clone an existing live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Naklonovat již existující live systém</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="770"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví bootování ze šifrovaného oddílu, při prvním startu bude vyžadováno heslo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="773"/>
@@ -269,7 +267,7 @@
     <message>
         <location filename="../mainwindow.ui" line="780"/>
         <source>Clone running live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Naklonovat běžící live systém</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
@@ -279,7 +277,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cílová jednotka %1 je větší než %2 GB. Chcete pokračovat?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -291,14 +289,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>Zdroj a cíl jsou na stejné jednotce, prosím vyberte znovu.</translation>
+        <translation>Zdroj a cíl jsou na stejné jednotce, prosím proveďte vyběr znovu.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zápis %1 s použitím příkazu &apos;dd&apos; na /dev/%2,
+
+Čekejte až bude proces dokončen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -313,7 +313,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"></translation>
+        <translation>Při procesu tvorby Live-USB došlo k chybě</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
@@ -348,7 +348,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="399"/>
         <source>About %1</source>
-        <translation>O %1</translation>
+        <translation>O programu %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
@@ -358,7 +358,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"></translation>
+        <translation>Program pro tvorbu Live-USB z ISO, jiného Live-USB, Live-CD/DVD, nebo spuštěného live systému.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
@@ -383,7 +383,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO Soubor (*.iso);;Všechny soubory (*.*)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="430"/>
@@ -394,7 +394,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation> %1/antiX/linuxfs soubor nenalezen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="456"/>
@@ -416,93 +416,66 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QApplication</name>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Licence</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">Protokol změn</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Zrušit</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Zavřít</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Chyba</translation>
-    </message>
-    <message>
-        <source>You must run this program as root.</source>
-        <translation type="vanished">Tuto aplikaci musíte spustit jako root.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="55"/>
-        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>filename</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="58"/>
-        <source>[filename]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="77"/>
-        <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="78"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="91"/>
-        <source>version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation type="unfinished">Licence</translation>
+        <translation>Licence</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation type="unfinished">Protokol změn</translation>
+        <translation>Protokol změn</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušit</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Zavřít</translation>
+        <translation>&amp;Zavřít</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="55"/>
+        <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
+        <translation>Program pro tvorbu Live-USB z ISO, jiného Live-USB, Live-CD/DVD, nebo spuštěného live systému.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>filename</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>Name of .iso file to open</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>[filename]</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="77"/>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="78"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Spuštěno pod účtem root-a, odhlašte se a přihlašte jako bězný uživatel.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>version:</source>
+        <translation>verze:</translation>
     </message>
 </context>
 </TS>
