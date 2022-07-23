@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 23 Jul 2022 11:27:43 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.7.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.7.01) mx; urgency=medium
+ .
+   * translation refresh
+Checksums-Sha1:
+ 1413a002199098c2c461a10fe7755495926ff925 603 mx-live-usb-maker_22.7.01.dsc
+ 5002c2e97a0fd79e9e8244805d34665c0c4c0a27 126392 mx-live-usb-maker_22.7.01.tar.xz
+ fdae6f9c38f56d3095ec22e4150bcb51640b9096 10536 mx-live-usb-maker_22.7.01_amd64.buildinfo
+ 0d53723b5f477a56a40d10b17001ee8135765d40 145636 mx-live-usb-maker_22.7.01_amd64.deb
+Checksums-Sha256:
+ 7a48a61d2002e806c4ffa49d1db163e0f918bab1e396be872a68f81bebd0a46c 603 mx-live-usb-maker_22.7.01.dsc
+ 3da79b57b76c173329747c5e6f2f77a38a899f102447662ccf48df1b12965f0b 126392 mx-live-usb-maker_22.7.01.tar.xz
+ f0f671e99e876fb96827e482446ca800d4459bd2378e18d0f4688cb1430f8306 10536 mx-live-usb-maker_22.7.01_amd64.buildinfo
+ 72e2dbb37fc4c2413a27c586cbd7852aef950cb753f3379a699304de3f02147f 145636 mx-live-usb-maker_22.7.01_amd64.deb
+Files:
+ f5640084a29b27056ae439db73c6eeb0 603 admin optional mx-live-usb-maker_22.7.01.dsc
+ 6b51bced5e6614589a7a9af6aea7e3d5 126392 admin optional mx-live-usb-maker_22.7.01.tar.xz
+ 3467c80cb23c44605eb84cb440396008 10536 admin optional mx-live-usb-maker_22.7.01_amd64.buildinfo
+ 26f0e93e8e02204f6f262711992a7cce 145636 admin optional mx-live-usb-maker_22.7.01_amd64.deb
