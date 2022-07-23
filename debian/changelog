@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (22.7.01) mx; urgency=medium
+
+  * translation refresh 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 23 Jul 2022 11:27:43 -0400
+
 CUSTOMPROGRAMNAME (22.6.01) mx; urgency=medium
 
   * Make it possible to open the log while the ISO is being burned
