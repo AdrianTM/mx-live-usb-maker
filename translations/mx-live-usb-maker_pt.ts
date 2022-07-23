@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>Ver registo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>

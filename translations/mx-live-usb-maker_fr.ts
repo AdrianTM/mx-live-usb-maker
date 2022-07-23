@@ -24,7 +24,7 @@
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Afficher l&apos;aide</translation>
+        <translation>Afficher l&apos;aide </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>Afficher le journal</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>Utilise le partitionnement gpt à la place de msdos</translation>
+        <translation>Utiliser le partitionnement gpt à la place de msdos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="344"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="385"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation>Activer le marqueur pmbr_boot sur le disque (pas de démarrage via UEFI)</translation>
+        <translation>Activer le marqueur pmbr_boot sur le disque (ne démarre pas via UEFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="392"/>
@@ -146,12 +146,12 @@
     <message>
         <location filename="../mainwindow.ui" line="418"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation>Taille de la partition ESP (uefi):</translation>
+        <translation>Taille de la partition ESP (uefi) :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="438"/>
         <source>Verbosity (less to more):</source>
-        <translation>Verbosité (du moins au plus):</translation>
+        <translation>Verbosité (du moins au plus) :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="477"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>Mode complet - Li&amp;veUSB accessible en écriture</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Mode image - LiveUSB (dd) en lecture seule</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -227,12 +227,12 @@
     <message>
         <location filename="../mainwindow.ui" line="695"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Part du périphérique USB utiisé (%):</translation>
+        <translation>Pourcentage du périphérique USB à utiliser :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="702"/>
         <source>Label ext partition:</source>
-        <translation>Etiquette de la partition</translation>
+        <translation>Etiquette de la partition :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="750"/>
@@ -247,7 +247,7 @@
     <message>
         <location filename="../mainwindow.ui" line="760"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>Cloner à partir d&apos;un usb-live monté ou d&apos;un fichier iso</translation>
+        <translation>Cloner à partir d&apos;un usb-live monté ou d&apos;un fichier iso.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="763"/>
@@ -289,7 +289,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>La source est la destination sont sur le même périphérique, veuillez recommencer la sélection.</translation>
+        <translation>La source et la destination sont sur le même périphérique, veuillez recommencer la sélection.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
@@ -303,12 +303,12 @@ Veuillez attendre la fin du processus</translation>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation>Réussite de l&apos;installation</translation>
+        <translation>Installation réussie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation>Création du Live USB accomplie!</translation>
+        <translation>Création du Live USB accomplie !</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
@@ -337,7 +337,7 @@ Veuillez attendre la fin du processus</translation>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
         <source>Do you wish to continue?</source>
-        <translation>Souhaitez-vous continuer?</translation>
+        <translation>Souhaitez-vous continuer ?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="372"/>
@@ -353,7 +353,7 @@ Veuillez attendre la fin du processus</translation>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>Version : </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
@@ -416,7 +416,7 @@ Veuillez attendre la fin du processus</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>Impossible de trouver un fichier journal dans : </translation>
     </message>
 </context>
 <context>
@@ -450,17 +450,17 @@ Veuillez attendre la fin du processus</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>nom de fichier</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>Nom du fichier .iso à ouvrir</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[nom de fichier]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

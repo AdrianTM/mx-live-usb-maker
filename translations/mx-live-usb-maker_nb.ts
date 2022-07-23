@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>Vis logg</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>Full funksjonalitet – skri&amp;vbar live-USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>Avbildnings&amp;modus – ikke-skrivbar live-USB (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -416,7 +416,7 @@ Vennligst vent til prosessen fullføres</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>Fant ikke loggen på:</translation>
     </message>
 </context>
 <context>
@@ -450,17 +450,17 @@ Vennligst vent til prosessen fullføres</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>filnavn</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>Navnet til .iso-fila som skal åpnes</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[filnavn]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>Ver registro</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>Modo completo: Li&amp;veUSB grabable</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Modo imagen - sólo lectura LiveUSB (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -416,7 +416,7 @@ Por favor espere hasta que se complete el proceso</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>No se encontró un archivo de registro en: </translation>
     </message>
 </context>
 <context>
@@ -450,17 +450,17 @@ Por favor espere hasta que se complete el proceso</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>nombre de archivo</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>Nombre del archivo .iso para abrir</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[nombre de archivo]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

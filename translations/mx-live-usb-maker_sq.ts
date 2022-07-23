@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>Shihni Regjistër</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>Mënyra me tërë veçoritë - Li&amp;veUSB i shkrueshëm</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Mënyra pamje- LiveUSB vetëm për lexim (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -416,7 +416,7 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet dot një kartelë regjistër te: </translation>
     </message>
 </context>
 <context>
@@ -450,17 +450,17 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>emër kartele</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>Emër i kartelës .iso për hapje</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[emër kartele]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation>ログを表示</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>フル機能モード - 書き込み可能なLi&amp;veUSB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>イメージ &amp;モード - 読み取り専用の LiveUSB (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../mainwindow.ui" line="763"/>
         <source>Clone an existing live system</source>
-        <translation>既存ライブシステムをクローン</translation>
+        <translation>すでに作成済みのライブシステムをクローン</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="770"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../mainwindow.ui" line="780"/>
         <source>Clone running live system</source>
-        <translation>実行中のライブシステムをクローン</translation>
+        <translation>現在起動中のライブシステムをクローン</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
@@ -306,7 +306,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>LiveUSB creation successful!</source>
-        <translation>LiveUSB の生成が完了しました！</translation>
+        <translation>LiveUSB の作成が完了しました！</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
@@ -414,7 +414,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>次の場所にはログが見つかりませんでした:</translation>
     </message>
 </context>
 <context>
@@ -448,17 +448,17 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>ファイルの名前</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>これから開く .iso ファイル名</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[ファイル名]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
