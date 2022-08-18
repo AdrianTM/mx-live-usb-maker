@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 17 Aug 2022 21:52:54 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.8.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.8.02) mx; urgency=medium
+ .
+   * Fix: launching Firefox from Help
+Checksums-Sha1:
+ 699abb06a81a407b191428e35a91e2c6af180bdb 1165 mx-live-usb-maker_22.8.02.dsc
+ eb9041fd712dc04c3c9210478fad0006534f6e6a 123156 mx-live-usb-maker_22.8.02.tar.xz
+ 02ab98d15774f9ed4a3f234c8ebaedd82cc29682 10809 mx-live-usb-maker_22.8.02_amd64.buildinfo
+ fc2021164158f87fc41cec461413627541443e91 146036 mx-live-usb-maker_22.8.02_amd64.deb
+Checksums-Sha256:
+ 85bde00ba7ace42b76dd95aa3f6fb827a5d7eb7ccec314fc69cfd2262f705c37 1165 mx-live-usb-maker_22.8.02.dsc
+ 1f628d15ddbcb22d1371fbb802948b66ca3281daccf12ebb1210cf9fb8c8f3ac 123156 mx-live-usb-maker_22.8.02.tar.xz
+ 600f9791b62e5aa91d9ddf199b397945edd012331f9348a2ae78b9c722c637e1 10809 mx-live-usb-maker_22.8.02_amd64.buildinfo
+ b00b81a7c92441195f59be95846043dda957c1bb71390ee2f3d5af6a360851eb 146036 mx-live-usb-maker_22.8.02_amd64.deb
+Files:
+ ed6bb0a9ddd1636bcd9e44b522a40d36 1165 admin optional mx-live-usb-maker_22.8.02.dsc
+ 7528da47e1c23d9fc569ff515e55b33e 123156 admin optional mx-live-usb-maker_22.8.02.tar.xz
+ 44f4b683e26568519c7651d8bde7a197 10809 admin optional mx-live-usb-maker_22.8.02_amd64.buildinfo
+ 37d917b72b92976cda3ed00143976944 146036 admin optional mx-live-usb-maker_22.8.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmL9m68THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumIJkCAC9QwQ8B95UVo77iIcfRCP1aVYdarRT
+tON139itgOzx1JpwVQ6r7oGb1GwWYAA9JMdsOche6XHBZ1vpVcrRYQl46AxW8K27
+g23g5LuB/lhSZMb7TBrMG3nTQ8oAShHJEUnC9imoaUedoGsX15EfK77k2lblrS1Y
+CLqnFF8Tpn6pDO2LKxHZRSdOW3WTUsBm1iNaZXPtTDGuj7AmsPSExpqP4duDhyPw
+qIrn8bfr6pltgYC0YGG0IxsK0Apmh07lDnmwjgCrppqTCEk9ROmfkXXuXsjtTSET
+fGGNSnu/IknKzkem5/elnztfiOu/H1DBQjqjc3actlaNfBS422yBvO/5
+=39T8
+-----END PGP SIGNATURE-----
