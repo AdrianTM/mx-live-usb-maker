@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 22 Aug 2022 19:06:50 -0400
+Source: mx-live-usb-maker
+Architecture: source
+Version: 22.8.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-live-usb-maker (22.8.03) mx; urgency=medium
+ .
+   * Fix: launching documents from Help (fixes a problem in Plasma)
+Checksums-Sha1:
+ d4fe8e0de9b197fbed22ee8536e1fffdecbc9bf1 1165 mx-live-usb-maker_22.8.03.dsc
+ ac0f7bf521ac76cb45d8d3c6be0d45709ed5b90c 123192 mx-live-usb-maker_22.8.03.tar.xz
+ ae096ea2f2023baeac5704375c392c866406bf34 10809 mx-live-usb-maker_22.8.03_amd64.buildinfo
+Checksums-Sha256:
+ 74d1894bcbf15346974409b62dedda45be1c664f7211bd45b5b1e5308a9e7c3e 1165 mx-live-usb-maker_22.8.03.dsc
+ 259bf325c3d10140613fca96ce4eac70ac3b1e503cd90047830fdb6791d69d3f 123192 mx-live-usb-maker_22.8.03.tar.xz
+ 2b4ed420b3a64b9e29956f33e3bfb8fad587d93f05b06f75056f291c1f03a4f1 10809 mx-live-usb-maker_22.8.03_amd64.buildinfo
+Files:
+ 8df581dc330d5c33f0975dbff4abd6fd 1165 admin optional mx-live-usb-maker_22.8.03.dsc
+ a8e2b3ffdd3d2f9e494a7ca642fbb44e 123192 admin optional mx-live-usb-maker_22.8.03.tar.xz
+ 4fb5dc44c7d49bd08f0e0660e8bdec27 10809 admin optional mx-live-usb-maker_22.8.03_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmMEDOUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGFRCAC63/1fxx8Zv6/1C4RBFk30Igvhg1QN
+XsWcV7f3ovPAzNkziUuu5CNyINgbl6cGgjXs7lwAjNud3lQIwAO2nL8vWk+qaK22
+hVkYQnThIyRXwDBmOolzFzn+S07ARKUqnObtADBjEAJ7efCWAk0Pf3iebIoxeaY/
+reDdAlsB8IUUC+pDqICVB8WsWTagSEFK3LdokDmZPhZX8wASHNoSmd1vT4hn2IMU
+/4LXHP/qM/qRzS3JltpirBQuI7nPMogOYeSXPyhX8bWvOAN/q1l01nTkEndJJg3p
+WGAe4g7/7aSIpIC7NWj3cKwhLqmP3Z2IGvTMhcxEGIpkgbptnbZkEFo2
+=5ERw
+-----END PGP SIGNATURE-----

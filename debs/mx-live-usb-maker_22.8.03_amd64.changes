@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 22 Aug 2022 19:06:50 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.8.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.8.03) mx; urgency=medium
+ .
+   * Fix: launching documents from Help (fixes a problem in Plasma)
+Checksums-Sha1:
+ d4fe8e0de9b197fbed22ee8536e1fffdecbc9bf1 1165 mx-live-usb-maker_22.8.03.dsc
+ ac0f7bf521ac76cb45d8d3c6be0d45709ed5b90c 123192 mx-live-usb-maker_22.8.03.tar.xz
+ ae096ea2f2023baeac5704375c392c866406bf34 10809 mx-live-usb-maker_22.8.03_amd64.buildinfo
+ 2ec016e39bd0221e1d004c6a0881699224775755 146628 mx-live-usb-maker_22.8.03_amd64.deb
+Checksums-Sha256:
+ 74d1894bcbf15346974409b62dedda45be1c664f7211bd45b5b1e5308a9e7c3e 1165 mx-live-usb-maker_22.8.03.dsc
+ 259bf325c3d10140613fca96ce4eac70ac3b1e503cd90047830fdb6791d69d3f 123192 mx-live-usb-maker_22.8.03.tar.xz
+ 2b4ed420b3a64b9e29956f33e3bfb8fad587d93f05b06f75056f291c1f03a4f1 10809 mx-live-usb-maker_22.8.03_amd64.buildinfo
+ cb9210067f9d566590f0a0e79515fa1bec89a35a21c06cb4bded3616fe57387f 146628 mx-live-usb-maker_22.8.03_amd64.deb
+Files:
+ 8df581dc330d5c33f0975dbff4abd6fd 1165 admin optional mx-live-usb-maker_22.8.03.dsc
+ a8e2b3ffdd3d2f9e494a7ca642fbb44e 123192 admin optional mx-live-usb-maker_22.8.03.tar.xz
+ 4fb5dc44c7d49bd08f0e0660e8bdec27 10809 admin optional mx-live-usb-maker_22.8.03_amd64.buildinfo
+ 5a53997a087e8f122ab551de09cc05c3 146628 admin optional mx-live-usb-maker_22.8.03_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmMEDOUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBT3CAC3JXvHny9qPJk58dc/2AIDdQ5riKxj
+OijaTfRhE9HNQdg+1VeZtBtA5zsOaiC0uJ6HVDoxlbJbLHm+54gM/TYjiMlCIO4t
+p+Kn66e40x9XF7McZie9/inSLjIXYh6FKIpfkP9SMRGasYlxMvGO2V2hq9hkI9p3
+8z/rKifvBguHP5mdBBUNFlyyQ49MvLKIik1HREQocJxCLD7d1KfAlfEpCeCptUZ2
+d46kZNYKxANKUkxQ8BSGKtkt2SwplWsciYgiKeZoKMCfoIo7Q41hvkNxmGvJ62LJ
+knVwWH1ZnfE1uxuT2KjW+beSvXC2ezMTgYCIbJhBC7hm2Kostae/WiI4
+=RQeI
+-----END PGP SIGNATURE-----
