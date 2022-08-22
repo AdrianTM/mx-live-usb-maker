@@ -401,14 +401,14 @@ void MainWindow::pushAbout_clicked()
                        tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.") +
                        R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",
-                       QStringLiteral("/usr/share/doc/CUSTOMPROGRAMNAME/license.html"), tr("%1 License").arg(this->windowTitle()), true);
+                       QStringLiteral("/usr/share/doc/CUSTOMPROGRAMNAME/license.html"), tr("%1 License").arg(this->windowTitle()));
     this->show();
 }
 
 void MainWindow::pushHelp_clicked()
 {
     QString url = QStringLiteral("/usr/share/doc/CUSTOMPROGRAMNAME/CUSTOMPROGRAMNAME.html");
-    displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
+    displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
 void MainWindow::pushSelectSource_clicked()
