@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="en">
 <context>
     <name>MainWindow</name>
     <message>
@@ -293,7 +295,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using 'dd' command to /dev/%2,
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Writing %1 using &apos;dd&apos; command to /dev/%2,
@@ -422,23 +424,23 @@ Please wait until the the process is completed</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="41"/>
+        <location filename="../about.cpp" line="50"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
+        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Changelog</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="../about.cpp" line="52"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="63"/>
+        <location filename="../about.cpp" line="70"/>
         <source>&amp;Close</source>
         <translation>&amp;Close</translation>
     </message>

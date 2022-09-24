@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="da">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="da">
 <context>
     <name>MainWindow</name>
     <message>
@@ -64,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -202,7 +204,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -212,7 +214,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -277,7 +279,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -293,7 +295,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using 'dd' command to /dev/%2,
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Skriver %1 med &apos;dd&apos;-kommando til /dev/%2,
@@ -383,7 +385,7 @@ Vent venligst indtil processen er fuldført</translation>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="430"/>
@@ -416,29 +418,29 @@ Vent venligst indtil processen er fuldført</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="41"/>
+        <location filename="../about.cpp" line="50"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
+        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Ændringslog</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="../about.cpp" line="52"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="63"/>
+        <location filename="../about.cpp" line="70"/>
         <source>&amp;Close</source>
         <translation>&amp;Luk</translation>
     </message>
@@ -450,17 +452,17 @@ Vent venligst indtil processen er fuldført</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -470,12 +472,12 @@ Vent venligst indtil processen er fuldført</translation>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="91"/>
         <source>version:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
