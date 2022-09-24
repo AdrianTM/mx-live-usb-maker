@@ -9,22 +9,22 @@
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation type="unfinished"/>
+        <translation>Verlaat de applicatie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation type="unfinished"/>
+        <translation>Sluiten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="56"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>Toon help</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
@@ -34,32 +34,32 @@
     <message>
         <location filename="../mainwindow.ui" line="98"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="114"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Terug</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation>Volgende</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>Over deze applicatie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>Over...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="224"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../mainwindow.ui" line="523"/>
         <source>Format</source>
-        <translation type="unfinished"/>
+        <translation>Formaat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="533"/>
@@ -301,7 +301,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation type="unfinished"/>
+        <translation>Gelukt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -316,7 +316,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
@@ -344,12 +344,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="399"/>
         <source>About %1</source>
-        <translation type="unfinished"/>
+        <translation>Over %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versie:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
@@ -359,17 +359,17 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"/>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>%1 License</source>
-        <translation type="unfinished"/>
+        <translation>%1 Licentie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
-        <translation type="unfinished"/>
+        <translation>%1 Help</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="419"/>
@@ -420,13 +420,13 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="41"/>
         <source>License</source>
-        <translation type="unfinished"/>
+        <translation>Licentie</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Changelog</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
@@ -436,7 +436,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Sluiten</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>
@@ -461,12 +461,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"/>
+        <translation>U lijkt ingelogd te zijn als root, gelieve uit te loggen en in te loggen als normale gebruiker om dit programma te gebruiken.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="91"/>
