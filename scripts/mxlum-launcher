@@ -7,6 +7,9 @@
 
 ##launch mx-live-usb-maker
 
+# validate iso file provided on command line
+# only send forward if file exists and is a iso file
+
 FILE="$1"
 
 if [ -e "$FILE" ]; then
