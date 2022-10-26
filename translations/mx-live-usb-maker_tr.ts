@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="tr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="tr">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Günlüğü Görüntüle</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -99,7 +97,7 @@
         <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
         <translation>Çalışan-USB&apos;yi güncellerken orijinal önyükleme dizinini kaydedin
-&#xa0;</translation>
+ </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
@@ -205,7 +203,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>Tam özellikli mod - yazılabilir &amp;CanlıUSB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -215,7 +213,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>İmaj modu - &amp;Salt okunur CanlıUSB (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -296,7 +294,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>%1 &apos;dd&apos; komutuyla /dev/%2&apos;ye yazılıyor,
@@ -419,29 +417,29 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
+        <translation>Şurada günlük dosyası bulunamadı:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="50"/>
+        <location filename="../about.cpp" line="41"/>
         <source>License</source>
         <translation>Ruhsat</translation>
     </message>
     <message>
+        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
-        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Değişim günlüğü</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="52"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="70"/>
+        <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Kapat</translation>
     </message>
@@ -453,17 +451,17 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>dosya adı</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Açılacak .iso dosyasının adı</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"></translation>
+        <translation>[dosya adı]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

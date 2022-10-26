@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sk">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -143,7 +141,7 @@
     <message>
         <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
@@ -158,12 +156,12 @@
     <message>
         <location filename="../mainwindow.ui" line="477"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="482"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="487"/>
@@ -173,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="492"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="523"/>
@@ -204,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -214,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -279,7 +277,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="77"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -295,7 +293,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Zapisujem %1 na /dev/%2 s použitím príkazu &apos;dd&apos;
@@ -331,12 +329,12 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
         <source>Do you wish to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="372"/>
@@ -382,7 +380,7 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
     <message>
         <location filename="../mainwindow.cpp" line="420"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="430"/>
@@ -415,29 +413,29 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="50"/>
+        <location filename="../about.cpp" line="41"/>
         <source>License</source>
         <translation>Licencia</translation>
     </message>
     <message>
+        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
-        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>História zmien</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="52"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="70"/>
+        <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Zatvoriť</translation>
     </message>
@@ -449,17 +447,17 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
@@ -469,12 +467,12 @@ Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="91"/>
         <source>version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

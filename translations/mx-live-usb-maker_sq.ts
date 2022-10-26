@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sq">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sq">
 <context>
     <name>MainWindow</name>
     <message>
@@ -295,7 +293,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Po shkruhet %1 duke përdorur urdhrin “dd” te /dev/%2,
@@ -424,23 +422,23 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="50"/>
+        <location filename="../about.cpp" line="41"/>
         <source>License</source>
         <translation>Licencë</translation>
     </message>
     <message>
+        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
-        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Regjistër ndryshimesh</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="52"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Anuloje</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="70"/>
+        <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Mbylle</translation>
     </message>

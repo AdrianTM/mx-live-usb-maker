@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sl">
 <context>
     <name>MainWindow</name>
     <message>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži dnevnik</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -204,7 +202,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>Polna funkcionalnost - zapisljiv živi-USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -214,7 +212,7 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>Posnetek diska - samo branje za živi-usb (dd)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
@@ -296,7 +294,7 @@ Ali želite nadaljevati?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Zapisujem %1 z uporabo &apos;dd&apos; ukaza na /dev/%2,
@@ -419,29 +417,29 @@ Prosimo počakajte, da se proces konča</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
+        <translation>Nisem našel dnevnika v:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="50"/>
+        <location filename="../about.cpp" line="41"/>
         <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
+        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
-        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Dnevnik sprememb</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="52"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Prekliči</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="70"/>
+        <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Zapri</translation>
     </message>
@@ -453,17 +451,17 @@ Prosimo počakajte, da se proces konča</translation>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>ime datoteke</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime .iso datoteke za odpiranje</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"></translation>
+        <translation>[ime datoteke]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>

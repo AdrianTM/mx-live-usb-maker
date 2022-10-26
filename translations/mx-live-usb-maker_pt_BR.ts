@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt_BR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pt_BR">
 <context>
     <name>MainWindow</name>
     <message>
@@ -26,7 +24,7 @@
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation>Exibir a ajuda</translation>
+        <translation>Exibir ajuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Exibir o Registro</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
@@ -103,7 +101,7 @@
     <message>
         <location filename="../mainwindow.ui" line="341"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>Usar o particionamento gpt em vez de msdos</translation>
+        <translation>Utilizar o particionamento GPT em vez de MSDOS</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="344"/>
@@ -144,7 +142,7 @@
     <message>
         <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation>Não usar fuseiso para montar arquivos ISO</translation>
+        <translation>Não utilizar fuseiso para montar os arquivos ISO</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
@@ -205,7 +203,7 @@
     <message>
         <location filename="../mainwindow.ui" line="582"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo completo, com o USB Executável gravável</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="592"/>
@@ -215,12 +213,13 @@
     <message>
         <location filename="../mainwindow.ui" line="595"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de imagem, com o USB Executável somente leitura (dd)
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="609"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Para distribuições (distros) que não sejam o antiX ou o MX Linux, use o modo de imagem (dd).</translation>
+        <translation>Para distribuições (distros) que não sejam o antiX ou o MX Linux, utilizar o modo de imagem (dd).</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="657"/>
@@ -250,7 +249,7 @@
     <message>
         <location filename="../mainwindow.ui" line="760"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>clonar a partir do USB Executável (LiveUSB) ou do arquivo ISO montado.</translation>
+        <translation>Clonar a partir do USB Executável (LiveUSB) ou do arquivo ISO montado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="763"/>
@@ -260,7 +259,7 @@
     <message>
         <location filename="../mainwindow.ui" line="770"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation>Configurar para inicializar a partir de uma partição criptografada/encriptada, solicitará a frase-senha (senha) na primeira inicialização</translation>
+        <translation>Configurar para inicializar a partir de uma partição criptografada/encriptada, solicitará a frase-senha na primeira inicialização</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="773"/>
@@ -296,7 +295,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="144"/>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+        <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the the process is completed</source>
         <translation>Gravando %1, utilizando o comando &apos;dd&apos; em /dev/%2.
@@ -306,7 +305,7 @@ Por favor, espere até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Success</source>
-        <translation>Sucesso</translation>
+        <translation>O processo foi concluído com sucesso.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -321,7 +320,7 @@ Por favor, espere até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation>Ocorreu um erro</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
@@ -361,7 +360,7 @@ Por favor, espere até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Programa para criar instalações externas USB Executável (Live USB) a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
+        <translation>Programa para criar instalações externas em Dispositivo USB Executável (Live USB), a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
@@ -419,56 +418,56 @@ Por favor, espere até que o processo seja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível encontrar um arquivo de registro em:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="50"/>
+        <location filename="../about.cpp" line="41"/>
         <source>License</source>
         <translation>Licença</translation>
     </message>
     <message>
+        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
-        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
         <translation>Relatório de alterações</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="52"/>
+        <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="70"/>
+        <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Fechar</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Programa para criar instalações externas USB Executável (Live USB) a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
+        <translation>Programa para criar instalações externas em Dispositivo USB Executável (Live USB), a partir de arquivos ISO, de outra instalação externa USB Executável, de CD/DVD Executável (Live CD/DVD) ou de um sistema externo em execução (Live).</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>nome do arquivo</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do arquivo .iso ou .ISO a ser aberto</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>[filename]</source>
-        <translation type="unfinished"></translation>
+        <translation>[nome do arquivo]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation>Ocorreu um erro</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>
