@@ -4,7 +4,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation>プログラムの名前</translation>
+        <translation>プログラムの名前(&amp;N)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
@@ -433,12 +433,12 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../about.cpp" line="43"/>
         <source>Cancel</source>
-        <translation>取り消し</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="63"/>
         <source>&amp;Close</source>
-        <translation>&amp;閉じる</translation>
+        <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>

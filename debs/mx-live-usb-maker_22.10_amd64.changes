@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 27 Oct 2022 13:16:10 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 22.10
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (22.10) mx; urgency=medium
+ .
+   * Update translations
+Checksums-Sha1:
+ 1be9426ec468bfd5c5e02402d44d543274338056 1157 mx-live-usb-maker_22.10.dsc
+ 246c8e1df63861ea673920f5a045255a5bee54ce 124516 mx-live-usb-maker_22.10.tar.xz
+ 53d69e077bc5212465539d65d3ceb9925d85abc5 10873 mx-live-usb-maker_22.10_amd64.buildinfo
+ ab04711c5baf19fb8f1cc39d2b9d4f00aba45378 147748 mx-live-usb-maker_22.10_amd64.deb
+Checksums-Sha256:
+ eb2d0be350ac0f7eea97a598dfa1bcb94dc0c39341e1dab0f09f90485098c136 1157 mx-live-usb-maker_22.10.dsc
+ 533db99e3621836b45c77885e635e4bbbe3683dd9ae3ed3eb732af1a969cf0e8 124516 mx-live-usb-maker_22.10.tar.xz
+ d69dbe0cd0419125e089417669e0eb6fcbdddd1ea7501cacb0ae120c98974809 10873 mx-live-usb-maker_22.10_amd64.buildinfo
+ 8f309242f0c479ce624a4d53b6c5b5f9a2cbb850ae02c71d3b38339fc94bf3d7 147748 mx-live-usb-maker_22.10_amd64.deb
+Files:
+ df555c1adcacf24abc3fcb16c1dfae85 1157 admin optional mx-live-usb-maker_22.10.dsc
+ 022d4549905a541f21e58f59f3a8e5c4 124516 admin optional mx-live-usb-maker_22.10.tar.xz
+ a667198a1281c8bc575b131e6ac1f93f 10873 admin optional mx-live-usb-maker_22.10_amd64.buildinfo
+ e8c498c91d68afe8acec2263cd394eba 147748 admin optional mx-live-usb-maker_22.10_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmNawMkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEKrB/0ak3kSVtqUvH+zwSYqC68Fr4wg38As
+7AQP0c85hzioNZsLOVpLUI7+Ly0RJ+5ibhLnj407CMs1KVyuWq0Y7tWi6MED1PaH
+zVRs8hIEVEW7wQQk+gPFI30hpFb/0Hc+PFKdiwGgGFd2vRTSwyp6sNTFJa1Oyceo
+PKCKm4igOqGJKv95ASjFsDkAd+MT3KUehkVy4RD8P1kfiTfIYAoLjQ0dUAirRfsz
+atWCAeeTBCgrwTxah9FHroZ7v6vEfII6se91aD9OEcGlRutsZ70HEhElmAD8bj4D
+srQ0DVOdvdAfD1YAFnvPUXJMYtcbCdsBOuyPem+xFaqWy03YqQGxCfr6
+=2p9A
+-----END PGP SIGNATURE-----
