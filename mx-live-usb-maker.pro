@@ -18,8 +18,8 @@
 # * along with this package. If not, see <http://www.gnu.org/licenses/>.
 # **********************************************************************/
 
-QT       += core gui widgets
-CONFIG   += c++1z
+QT       += widgets
+CONFIG   += release warn_on c++1z
 
 TARGET = CUSTOMPROGRAMNAME
 TEMPLATE = app
