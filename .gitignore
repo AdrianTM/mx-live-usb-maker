@@ -37,3 +37,7 @@ Makefile*
 
 # exclude test binary
 CUSTOMPROGRAMNAME
+
+# Transifex ignore
+.tx/
+
