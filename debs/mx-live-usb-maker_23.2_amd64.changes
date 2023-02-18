@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 18 Feb 2023 13:39:00 -0500
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 23.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (23.2) mx; urgency=medium
+ .
+   * Add DISPLAY env variable to lum-launcher
+   * Update translations
+Checksums-Sha1:
+ f7a3e44e1766ddf52fd83a50997316ea21bde09f 1153 mx-live-usb-maker_23.2.dsc
+ 3a77591c9c8b7f64f1acc869c288931ae6ebf746 128620 mx-live-usb-maker_23.2.tar.xz
+ c78d02d93d1465ec9d639fbe147fe92d0eef1341 10785 mx-live-usb-maker_23.2_amd64.buildinfo
+ 2da1cd5dd95735561ec8971d97ecb89c91a92047 147852 mx-live-usb-maker_23.2_amd64.deb
+Checksums-Sha256:
+ a238c29cf368972cf3bbe69625924d090f55acc6bac36abe3971fc723418d0c3 1153 mx-live-usb-maker_23.2.dsc
+ fdad357086dc2dc9e3dc59c2a7a1baecd14f0c279bb7104084495c9ce956ae01 128620 mx-live-usb-maker_23.2.tar.xz
+ 2787c42a56beccd9a4f9f468a028f69c40f23b6523acc56c85b8f035b52627f6 10785 mx-live-usb-maker_23.2_amd64.buildinfo
+ 765af46c95ed5e428bb6f79c924165358f36ffd0143af4763addbc74f3a3f797 147852 mx-live-usb-maker_23.2_amd64.deb
+Files:
+ 2aed7b2f11a492e6a5d86c4753ff9718 1153 admin optional mx-live-usb-maker_23.2.dsc
+ c482f01ea3785d759a03ce0925c37373 128620 admin optional mx-live-usb-maker_23.2.tar.xz
+ 33ebb245b602c462360064d5c3314171 10785 admin optional mx-live-usb-maker_23.2_amd64.buildinfo
+ 9efeacfca683e9ed801816398d904814 147852 admin optional mx-live-usb-maker_23.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPxG5kTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGsdB/9BIogn6oRtExKUCcivRXTE65GUr+o7
++uGruhXDDqN32KhAa+Xdpme2hzLpzZdcnWRaDDl4JBHBCEXsYULPgCeJmyAhBK3g
+tw/2uwkdgjyHa0GntNsFkoKGX4uGMw9dT+hbDHhOzrfQpNMap9ceiRpkt6QvHtSA
+45nYrH7aaFzxBWM5psWC+7sjrLXRUP5X/2kokLmrs5qfM2j67cgpkNHgYhQge1tn
+IK5a+GywLXF7PNyfW7mvHfydS2/8cKF0CNt03VgblASOT1dbEsHDVMSfv+vqndTe
+qeI3ug5+7b2YAf+BT+x3K3l3xGQazDKVQtCuSVjV2rLgm4FSw2Og9dHn
+=bQp3
+-----END PGP SIGNATURE-----

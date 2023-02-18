@@ -1,3 +1,10 @@
+CUSTOMPROGRAMNAME (23.2) mx; urgency=medium
+
+  * Add DISPLAY env variable to lum-launcher
+  * Update translations 
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 18 Feb 2023 13:39:00 -0500
+
 CUSTOMPROGRAMNAME (22.10) mx; urgency=medium
 
   * Update translations
