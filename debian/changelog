@@ -1,3 +1,11 @@
+CUSTOMPROGRAMNAME (23.2.01) mx; urgency=medium
+
+  * Make sure the temp folder used to detect type of ISO is removed
+  * Removed a bit of terminal spam
+  * Update translations
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 19 Feb 2023 11:52:15 -0500
+
 CUSTOMPROGRAMNAME (23.2) mx; urgency=medium
 
   * Add DISPLAY env variable to lum-launcher
