@@ -82,7 +82,7 @@ bool MainWindow::checkDestSize()
 
 bool MainWindow::isRunningLive()
 {
-    const QString test = cmd.getCmdOut(QStringLiteral("df -T / |tail -n1 |awk '{print $2}'"));
+    const QString test = cmd.getCmdOut(QStringLiteral("df -T / |tail -n1 |awk '{print $2}'"), true);
     return (test == QLatin1String("aufs") || test == QLatin1String("overlay"));
 }
 
@@ -273,7 +273,8 @@ void MainWindow::cleanup()
 // build the USB list
 QStringList MainWindow::buildUsbList()
 {
-    QString drives = cmd.getCmdOut(QStringLiteral("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259"));
+    QString drives
+        = cmd.getCmdOut(QStringLiteral("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259"), true);
     return removeUnsuitable(drives.split(QStringLiteral("\n")));
 }
 
