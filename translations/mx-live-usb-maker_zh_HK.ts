@@ -19,22 +19,22 @@
     <message>
         <location filename="../mainwindow.ui" line="56"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="88"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>顯示說明</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>說明</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="98"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="114"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../mainwindow.ui" line="198"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>關於本程式</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="201"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>關於……</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="224"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../mainwindow.ui" line="309"/>
         <source>Advanced Options</source>
-        <translation type="unfinished"/>
+        <translation>進階選項</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -316,7 +316,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="364"/>
@@ -349,7 +349,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="400"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>版本：</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="401"/>
@@ -359,7 +359,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"/>
+        <translation>MX Linux 版權所有 (c)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
@@ -418,25 +418,25 @@ Please wait until the the process is completed</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../about.cpp" line="41"/>
+        <location filename="../about.cpp" line="50"/>
         <source>License</source>
-        <translation type="unfinished"/>
+        <translation>授權條款</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="42"/>
         <location filename="../about.cpp" line="51"/>
+        <location filename="../about.cpp" line="60"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>變更紀錄</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="../about.cpp" line="52"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>取消</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="63"/>
+        <location filename="../about.cpp" line="70"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>關閉（&amp;C）</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="55"/>
@@ -461,7 +461,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="77"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>
