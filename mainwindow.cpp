@@ -559,23 +559,11 @@ void MainWindow::radioNormal_clicked()
 
 bool MainWindow::isantiX_mx_family(const QString &selected)
 {
-    QTemporaryDir tmpdir;
-    if (!tmpdir.isValid()) {
-        qDebug() << "Could not create temp folder";
-        return false;
-    }
-
-    // mount the iso file
-    if (QProcess::execute(QStringLiteral("mount"), {"-o", "loop", selected, tmpdir.path()}) != 0) {
-        qDebug() << "Could not mount iso file to temp folder";
-        return false;
-    }
-
-    // check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX
-    // folder
-    bool test = QFileInfo::exists(tmpdir.path() + "/antiX");
-    QProcess::execute(QStringLiteral("umount"), {"-l", tmpdir.path()});
-    return test;
+    Cmd cmd;
+    return cmd.run(
+        QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
+            .arg(selected),
+        true);
 }
 
 void MainWindow::pushLumLogFile_clicked()
