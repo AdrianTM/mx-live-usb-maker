@@ -574,7 +574,7 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
     // check for antiX folder - this is a BS check but works for now since no antiX family iso doens't have an antiX
     // folder
     bool test = QFileInfo::exists(tmpdir.path() + "/antiX");
-    QProcess::startDetached(QStringLiteral("umount"), {"-l", tmpdir.path()});
+    QProcess::execute(QStringLiteral("umount"), {"-l", tmpdir.path()});
     return test;
 }
 
