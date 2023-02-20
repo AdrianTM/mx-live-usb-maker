@@ -22,14 +22,11 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QDateTime>
 #include <QDebug>
-#include <QFile>
 #include <QFileInfo>
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
-#include <QProcess>
 #include <QTranslator>
 
 #include "mainwindow.h"

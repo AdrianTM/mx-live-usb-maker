@@ -3,9 +3,6 @@
 
 #include <QProcess>
 
-class QString;
-class QTextStream;
-
 class Cmd : public QProcess
 {
     Q_OBJECT

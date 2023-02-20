@@ -26,7 +26,6 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QScrollBar>
-#include <QTemporaryDir>
 
 #include "about.h"
 #include "unistd.h"
@@ -196,22 +195,23 @@ void MainWindow::setup()
 
 void MainWindow::setGeneralConnections()
 {
-    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
-    connect(ui->pushBack, &QPushButton::clicked, this, &MainWindow::pushBack_clicked);
-    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
-    connect(ui->pushNext, &QPushButton::clicked, this, &MainWindow::pushNext_clicked);
-    connect(ui->pushOptions, &QPushButton::clicked, this, &MainWindow::pushOptions_clicked);
-    connect(ui->pushRefresh, &QPushButton::clicked, this, &MainWindow::pushRefresh_clicked);
-    connect(ui->pushSelectSource, &QPushButton::clicked, this, &MainWindow::pushSelectSource_clicked);
-    connect(ui->pushLumLogFile, &QPushButton::clicked, this, &MainWindow::pushLumLogFile_clicked);
     connect(ui->checkCloneLive, &QCheckBox::clicked, this, &MainWindow::checkCloneLive_clicked);
     connect(ui->checkCloneMode, &QCheckBox::clicked, this, &MainWindow::checkCloneMode_clicked);
     connect(ui->checkDataFirst, &QCheckBox::clicked, this, &MainWindow::checkDataFirst_clicked);
     connect(ui->checkUpdate, &QCheckBox::clicked, this, &MainWindow::checkUpdate_clicked);
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
+    connect(ui->pushBack, &QPushButton::clicked, this, &MainWindow::pushBack_clicked);
+    connect(ui->pushCancel, &QPushButton::clicked, this, &MainWindow::close);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
+    connect(ui->pushLumLogFile, &QPushButton::clicked, this, &MainWindow::pushLumLogFile_clicked);
+    connect(ui->pushNext, &QPushButton::clicked, this, &MainWindow::pushNext_clicked);
+    connect(ui->pushOptions, &QPushButton::clicked, this, &MainWindow::pushOptions_clicked);
+    connect(ui->pushRefresh, &QPushButton::clicked, this, &MainWindow::pushRefresh_clicked);
+    connect(ui->pushSelectSource, &QPushButton::clicked, this, &MainWindow::pushSelectSource_clicked);
     connect(ui->radioDd, &QRadioButton::clicked, this, &MainWindow::radioDd_clicked);
     connect(ui->radioNormal, &QRadioButton::clicked, this, &MainWindow::radioNormal_clicked);
-    connect(ui->textLabel, &QLineEdit::textChanged, this, &MainWindow::textLabel_textChanged);
     connect(ui->spinBoxSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::spinBoxSize_valueChanged);
+    connect(ui->textLabel, &QLineEdit::textChanged, this, &MainWindow::textLabel_textChanged);
 }
 
 // Build the option list to be passed to live-usb-maker
