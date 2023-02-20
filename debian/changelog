@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (23.2.02) mx; urgency=medium
+
+  * Better antiX/MX ISO detection without mounting
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 20 Feb 2023 14:10:26 -0500
+
 CUSTOMPROGRAMNAME (23.2.01) mx; urgency=medium
 
   * Make sure the temp folder used to detect type of ISO is removed

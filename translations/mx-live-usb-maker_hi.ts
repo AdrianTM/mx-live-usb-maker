@@ -272,29 +272,29 @@
         <translation>कार्यरत लाइव सिस्टम प्रतिरूपित करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="75"/>
         <source>Confirmation</source>
         <translation>पुष्टिकरण</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>लक्षित उपकरण %1 का आकार %2 जीबी से अधिक है। क्या आप जारी रखना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <location filename="../mainwindow.cpp" line="309"/>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>Failure</source>
         <translation>विफल</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="112"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>स्रोत व लक्ष्य समान उपकरण पर हैं, कृपया पुनः चयन करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -416,7 +416,7 @@ Please wait until the the process is completed</source>
         <translation>आईएसओ फाइल चयन</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -445,37 +445,37 @@ Please wait until the the process is completed</source>
         <translation>बंद करें (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="52"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>आईएसओ फाइल, अन्य लाइव यूएसबी, लाइव सीडी/डीवीडी या कार्यरत लाइव सिस्टम से लाइव यूएसबी बनाने हेतु प्रोग्राम।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>Name of .iso file to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="57"/>
         <source>[filename]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="79"/>
         <source>Error</source>
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
+        <location filename="../main.cpp" line="80"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>प्रतीत होता है कि आप रुट के रूप में लॉगिन हैं, प्रोग्राम उपयोग करने हेतु लॉगआउट कर सामान्य उपयोक्ता के रूप में लॉगिन करें।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="97"/>
+        <location filename="../main.cpp" line="94"/>
         <source>version:</source>
         <translation>संस्करण :</translation>
     </message>

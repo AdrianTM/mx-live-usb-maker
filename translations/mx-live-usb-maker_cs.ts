@@ -272,29 +272,29 @@
         <translation>Naklonovat běžící live systém</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="75"/>
         <source>Confirmation</source>
         <translation>Potvrzení</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>Cílová jednotka %1 je větší než %2 GB. Chcete pokračovat?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <location filename="../mainwindow.cpp" line="309"/>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>Failure</source>
         <translation>Selhání</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="112"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Zdroj a cíl jsou na stejné jednotce, prosím proveďte vyběr znovu.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -416,7 +416,7 @@ Please wait until the the process is completed</source>
         <translation>Vyberte ISO soubor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation>Log se nepodařilo najít:</translation>
     </message>
@@ -445,37 +445,37 @@ Please wait until the the process is completed</source>
         <translation>&amp;Zavřít</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="52"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Program pro tvorbu Live-USB z ISO, jiného Live-USB, Live-CD/DVD, nebo spuštěného live systému.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>filename</source>
         <translation>název souboru</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>Name of .iso file to open</source>
         <translation>Název .iso souboru k otevření</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="57"/>
         <source>[filename]</source>
         <translation>[filename]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="79"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
+        <location filename="../main.cpp" line="80"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Spuštěno pod účtem root-a, odhlašte se a přihlašte jako bězný uživatel.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="97"/>
+        <location filename="../main.cpp" line="94"/>
         <source>version:</source>
         <translation>verze:</translation>
     </message>

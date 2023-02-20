@@ -272,29 +272,29 @@
         <translation>Clonar o sistema externo em execução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="75"/>
         <source>Confirmation</source>
         <translation>Confirmação</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>O dispositivo de destino %1 tem mais do que %2 GB. Proceder?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <location filename="../mainwindow.cpp" line="309"/>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>Failure</source>
         <translation>Falhou</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="112"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Origem e destino no mesmo dispositivo; seleccionar de novo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -416,7 +416,7 @@ Aguardar até o processo terminar</translation>
         <translation>Seleccionar ficheiro ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation>Não encontrado um ficheiro de registo (log) em:</translation>
     </message>
@@ -445,37 +445,37 @@ Aguardar até o processo terminar</translation>
         <translation>&amp;Fechar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="52"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Programa para criar instalações externas USB-executável a partir de ficheiros ISO, de outra instalação externa USB-executável, de CD/DVD-executável ou de um sistema externo em execução.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>filename</source>
         <translation>ficheiro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>Name of .iso file to open</source>
         <translation>Nome do ficheiro .iso a abrir</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="57"/>
         <source>[filename]</source>
         <translation>[ficheiro]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="79"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
+        <location filename="../main.cpp" line="80"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>O utilizador parece ser o root; para usar este programa, sair e voltar a entrar como utilizador normal.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="97"/>
+        <location filename="../main.cpp" line="94"/>
         <source>version:</source>
         <translation>versão: </translation>
     </message>

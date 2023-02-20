@@ -272,29 +272,29 @@
         <translation>Klononi sistemin “live” që po xhiron</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="75"/>
         <source>Confirmation</source>
         <translation>Ripohim</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>Pajisja %1 e synuar është më e madhe se %2 GB. Doni të vazhdohet?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <location filename="../mainwindow.cpp" line="309"/>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>Failure</source>
         <translation>Dështim</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="112"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Burimi dhe vendmbërritja gjenden në të njëjtën pajisje, ju lutemi, ripërzgjidhni.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
@@ -416,7 +416,7 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>Përzgjidhni kartelë ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation>S’u gjet dot një kartelë regjistër te: </translation>
     </message>
@@ -445,37 +445,37 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>&amp;Mbylle</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="52"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Program për krjimin e një “live-usb” prej një kartele ISO, një tjetri “live-usb”, pre një live-cd/dvd, ose një sistem “live” që është duke xhiruar.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>filename</source>
         <translation>emër kartele</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="56"/>
         <source>Name of .iso file to open</source>
         <translation>Emër i kartelës .iso për hapje</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="57"/>
         <source>[filename]</source>
         <translation>[emër kartele]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="79"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
+        <location filename="../main.cpp" line="80"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Duket të jeni futur si rrënjë, ju lutemi, që të përdorni këtë program, dilni nga llogaria dhe hyni si përdorues i zakonshëm.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="97"/>
+        <location filename="../main.cpp" line="94"/>
         <source>version:</source>
         <translation>version:</translation>
     </message>
