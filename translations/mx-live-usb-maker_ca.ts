@@ -341,7 +341,6 @@ Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
         <translation>Voleu continuar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>clona</translation>

@@ -342,7 +342,6 @@ Please wait until the the process is completed</source>
         <translation>你想继续吗？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>克隆</translation>

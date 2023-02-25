@@ -342,7 +342,6 @@ Wacht aub tot het proces beëindigd is</translation>
         <translation>Wilt u doorgaan?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>klonen</translation>

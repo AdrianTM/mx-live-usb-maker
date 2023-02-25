@@ -342,7 +342,6 @@ Veuillez attendre la fin du processus</translation>
         <translation>Souhaitez-vous continuer?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>clone</translation>

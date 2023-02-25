@@ -1,3 +1,9 @@
+CUSTOMPROGRAMNAME (23.2.03) mx; urgency=medium
+
+  * Fix clone selection -- check against "clone" not against tr("clone")
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 25 Feb 2023 14:20:31 -0500
+
 CUSTOMPROGRAMNAME (23.2.02) mx; urgency=medium
 
   * Better antiX/MX ISO detection without mounting

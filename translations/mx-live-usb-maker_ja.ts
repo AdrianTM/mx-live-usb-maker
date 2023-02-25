@@ -340,7 +340,6 @@ Please wait until the the process is completed</source>
         <translation>続行しますか？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>クローン</translation>

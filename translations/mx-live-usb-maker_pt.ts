@@ -342,7 +342,6 @@ Aguardar até o processo terminar</translation>
         <translation>Continuar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>clonar</translation>

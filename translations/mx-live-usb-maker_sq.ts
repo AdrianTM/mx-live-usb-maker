@@ -342,7 +342,6 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>Doni të vazhdohet?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>klonoje</translation>

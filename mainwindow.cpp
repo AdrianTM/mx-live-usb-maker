@@ -373,7 +373,7 @@ void MainWindow::pushNext_clicked()
             return;
         // pop the selection box if no valid selection (or clone)
         if (!(QFileInfo::exists(ui->pushSelectSource->property("filename").toString())
-              || ui->pushSelectSource->property("filename").toString() == tr("clone"))) {
+              || ui->pushSelectSource->property("filename").toString() == "clone")) {
             emit ui->pushSelectSource->clicked();
             return;
         }

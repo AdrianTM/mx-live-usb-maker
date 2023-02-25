@@ -342,7 +342,6 @@ Var vänlig vänta tills processen är färdig</translation>
         <translation>Vill du fortsätta?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>klona</translation>

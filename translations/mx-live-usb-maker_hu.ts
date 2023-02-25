@@ -342,7 +342,6 @@ Kérjük várjon, amíg a folyamat befejeződik</translation>
         <translation>Szeretné folytatni?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
         <location filename="../mainwindow.cpp" line="514"/>
         <source>clone</source>
         <translation>klónozás</translation>
