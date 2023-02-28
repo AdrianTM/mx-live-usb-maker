@@ -342,11 +342,6 @@ Wacht aub tot het proces beëindigd is</translation>
         <translation>Wilt u doorgaan?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>klonen</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>Over %1</translation>
@@ -415,6 +410,11 @@ Wacht aub tot het proces beëindigd is</translation>
         <translation>Selecteer ISO bestand</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>klonen</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation type="unfinished"></translation>
@@ -444,37 +444,37 @@ Wacht aub tot het proces beëindigd is</translation>
         <translation>&amp;Sluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="57"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Programma voor het creëeren van een live-usb van een iso-bestand, een andere live-usb, een live-cd/dvd, of een lopend live systeem.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>Name of .iso file to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="62"/>
         <source>[filename]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="79"/>
+        <location filename="../main.cpp" line="84"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="80"/>
+        <location filename="../main.cpp" line="85"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>U lijkt ingelogd te zijn als root, gelieve uit te loggen en in te loggen als normale gebruiker om dit programma te gebruiken.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="94"/>
+        <location filename="../main.cpp" line="99"/>
         <source>version:</source>
         <translation>versie:</translation>
     </message>

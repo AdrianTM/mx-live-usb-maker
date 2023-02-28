@@ -340,12 +340,6 @@ Agardar ata que o proceso rematar.</translation>
         <translation>Continuar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>clonar</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>Sobre %1</translation>
@@ -412,6 +406,11 @@ Agardar ata que o proceso rematar.</translation>
         <location filename="../mainwindow.cpp" line="519"/>
         <source>Select ISO file</source>
         <translation>Seleccionar imaxe ISO</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>clonar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>

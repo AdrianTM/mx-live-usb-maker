@@ -340,12 +340,6 @@ Por favor espere hasta que se complete el proceso</translation>
         <translation>¿Desea continuar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>clonar</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>Acerca de %1</translation>
@@ -412,6 +406,11 @@ Por favor espere hasta que se complete el proceso</translation>
         <location filename="../mainwindow.cpp" line="519"/>
         <source>Select ISO file</source>
         <translation>Seleccionar archivo ISO</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>clonar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>

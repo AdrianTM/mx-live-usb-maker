@@ -342,11 +342,6 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>Doni të vazhdohet?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>klonoje</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>Mbi %1</translation>
@@ -415,6 +410,11 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>Përzgjidhni kartelë ISO</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>klonoje</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation>S’u gjet dot një kartelë regjistër te: </translation>
@@ -444,37 +444,37 @@ Ju lutemi, pritni deri sa të plotësohet procesi</translation>
         <translation>&amp;Mbylle</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="57"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Program për krjimin e një “live-usb” prej një kartele ISO, një tjetri “live-usb”, pre një live-cd/dvd, ose një sistem “live” që është duke xhiruar.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>filename</source>
         <translation>emër kartele</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>Name of .iso file to open</source>
         <translation>Emër i kartelës .iso për hapje</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="62"/>
         <source>[filename]</source>
         <translation>[emër kartele]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="79"/>
+        <location filename="../main.cpp" line="84"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="80"/>
+        <location filename="../main.cpp" line="85"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Duket të jeni futur si rrënjë, ju lutemi, që të përdorni këtë program, dilni nga llogaria dhe hyni si përdorues i zakonshëm.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="94"/>
+        <location filename="../main.cpp" line="99"/>
         <source>version:</source>
         <translation>version:</translation>
     </message>

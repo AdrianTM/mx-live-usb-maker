@@ -342,11 +342,6 @@ Veuillez attendre la fin du processus</translation>
         <translation>Souhaitez-vous continuer?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>clone</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>À propos %1</translation>
@@ -415,6 +410,11 @@ Veuillez attendre la fin du processus</translation>
         <translation>Choisir le fichier ISO</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>clone</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="576"/>
         <source>Could not find a log file at: </source>
         <translation>Impossible de trouver un fichier journal dans: </translation>
@@ -444,37 +444,37 @@ Veuillez attendre la fin du processus</translation>
         <translation>&amp;Fermer</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="52"/>
+        <location filename="../main.cpp" line="57"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Programme de création d&apos;un live-usb à partir d&apos;un fichier ISO, d&apos;un autre live-usb, d&apos;un live-cd/dvd ou d&apos;un système live en fonctionnement.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>filename</source>
         <translation>nom de fichier</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="56"/>
+        <location filename="../main.cpp" line="61"/>
         <source>Name of .iso file to open</source>
         <translation>Nom du fichier .iso à ouvrir</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="62"/>
         <source>[filename]</source>
         <translation>[nom de fichier]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="79"/>
+        <location filename="../main.cpp" line="84"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="80"/>
+        <location filename="../main.cpp" line="85"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Vous semblez être connecté en tant que root, veuillez vous déconnecter et vous connecter en tant qu&apos;utilisateur normal pour utiliser ce programme.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="94"/>
+        <location filename="../main.cpp" line="99"/>
         <source>version:</source>
         <translation>version:</translation>
     </message>

@@ -337,12 +337,6 @@ Please wait until the the process is completed</source>
         <translation>คุณต้องการดำเนินการต่อหรือไม่</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="376"/>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <source>clone</source>
-        <translation>โคลน</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <source>About %1</source>
         <translation>เกี่ยวกับ %1</translation>
@@ -409,6 +403,11 @@ Please wait until the the process is completed</source>
         <location filename="../mainwindow.cpp" line="519"/>
         <source>Select ISO file</source>
         <translation>เลือกไฟล์ ISO</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="514"/>
+        <source>clone</source>
+        <translation>โคลน</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="576"/>
