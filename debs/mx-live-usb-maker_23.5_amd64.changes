@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 14 May 2023 22:13:32 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 23.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (23.5) mx; urgency=medium
+ .
+   * Update icon
+   * Refresh translations
+Checksums-Sha1:
+ 7ab2e8b362cd7e197a7d1c6a9be35779faef0d37 1153 mx-live-usb-maker_23.5.dsc
+ 532dbd2fe974682f0f820f750ac6de07b739dd9d 135840 mx-live-usb-maker_23.5.tar.xz
+ 326dd0e53f16788a9dc58a01097b5e72628f63df 10785 mx-live-usb-maker_23.5_amd64.buildinfo
+ b65c28016ac6e9e534167a39ff455573942479b3 154228 mx-live-usb-maker_23.5_amd64.deb
+Checksums-Sha256:
+ a902156aa0291b718c9619baa9f40e9db5a7c4094f9d7e0d74dc786473a68563 1153 mx-live-usb-maker_23.5.dsc
+ 5875b26f804474a90a16e8e6efa39481795f4ca2f85f590212f286bb1e5c40ab 135840 mx-live-usb-maker_23.5.tar.xz
+ f3d46da843a45a63d76bdaa1bd298ff1379bbdcfe2c23cffcc495f39ec0c3c4f 10785 mx-live-usb-maker_23.5_amd64.buildinfo
+ 5c40ba375016a329187b01ff4df541cfc7817982c9d173f56e4bc538085ce2a2 154228 mx-live-usb-maker_23.5_amd64.deb
+Files:
+ 667e7854ba57175c3557b958e3c1791e 1153 admin optional mx-live-usb-maker_23.5.dsc
+ 453b2594107a1d08c8a66907617e5003 135840 admin optional mx-live-usb-maker_23.5.tar.xz
+ a1cbfb0b7d3d84dcd74561289f4ed135 10785 admin optional mx-live-usb-maker_23.5_amd64.buildinfo
+ 4e8a5da8a3632aaa44c193276287365a 154228 admin optional mx-live-usb-maker_23.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmRhlkoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMr2B/9V0DVNvZkHOTzUpBWKdmeBxiSAOOAe
++6g6PRhGitc01YyJC8/CCDzIWlaYo7NeaHtkjvNuRb5Za8tnxnKseQmlHRyBJ8Yj
+fMiKmnaEcTABWZ32qnfI/Jz1YManWOPwBUI9aAWkqJk6Ku4a/mv5Cdpune7b4IgH
+zNIL/vp8Ywvk3es1Z23hHaBNfj21st7JapUQSAZfMV+iQPMtqQ8l10R3LeIL69s5
+0Xq0yvOL6sXiV2RdUmabzSUevLaWLi2P0NDPlGlJfS78RpleQrTJyUti4fyr69Cv
+jAX2CigkmYgBuLRnPnUpejG9+bdHaVA4RmViIfMssG9Ud9rnmXriCiXY
+=JIvM
+-----END PGP SIGNATURE-----

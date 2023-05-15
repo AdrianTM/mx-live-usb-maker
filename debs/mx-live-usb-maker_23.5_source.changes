@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 14 May 2023 22:13:32 -0400
+Source: mx-live-usb-maker
+Architecture: source
+Version: 23.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-live-usb-maker (23.5) mx; urgency=medium
+ .
+   * Update icon
+   * Refresh translations
+Checksums-Sha1:
+ 7ab2e8b362cd7e197a7d1c6a9be35779faef0d37 1153 mx-live-usb-maker_23.5.dsc
+ 532dbd2fe974682f0f820f750ac6de07b739dd9d 135840 mx-live-usb-maker_23.5.tar.xz
+ 326dd0e53f16788a9dc58a01097b5e72628f63df 10785 mx-live-usb-maker_23.5_amd64.buildinfo
+Checksums-Sha256:
+ a902156aa0291b718c9619baa9f40e9db5a7c4094f9d7e0d74dc786473a68563 1153 mx-live-usb-maker_23.5.dsc
+ 5875b26f804474a90a16e8e6efa39481795f4ca2f85f590212f286bb1e5c40ab 135840 mx-live-usb-maker_23.5.tar.xz
+ f3d46da843a45a63d76bdaa1bd298ff1379bbdcfe2c23cffcc495f39ec0c3c4f 10785 mx-live-usb-maker_23.5_amd64.buildinfo
+Files:
+ 667e7854ba57175c3557b958e3c1791e 1153 admin optional mx-live-usb-maker_23.5.dsc
+ 453b2594107a1d08c8a66907617e5003 135840 admin optional mx-live-usb-maker_23.5.tar.xz
+ a1cbfb0b7d3d84dcd74561289f4ed135 10785 admin optional mx-live-usb-maker_23.5_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmRhlkoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAbnB/4r7DVARuK7b5cFxL6UKxNJ7TE2qA0G
+4GeGBHc8fSRN2sGyJXAv5Ie+G3eMi/2+JLcrZzcEQg0eV/yXFaelxVvfbPCdmcOz
+A1uwUUaYJN/THtcoFbGB02I6j5Tzz9/q3OpJMzy1CHipsg6G23gOdkK98UG1KY66
+uqXFrabRaZtK6UvBqS2/iivSmobLZztIyPDjc3NOWG1rcsQvy4wm4BmjmOYs99Mj
+qPLiATu43x1fuZoBn2RXhMJ/QNoOOZlIn9pcr7n63Gw2rHs5MtA1z2Ldw/Mwe4Lz
+Yrz540VHQLBSUhd8YO9wgBOOrQp6gNsL6Bves/vpLA2oE4HWd1lm+9Fz
+=pA2q
+-----END PGP SIGNATURE-----
