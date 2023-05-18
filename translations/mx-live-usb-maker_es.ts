@@ -46,7 +46,7 @@
     <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Next</source>
-        <translation>Proximo</translation>
+        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="198"/>
