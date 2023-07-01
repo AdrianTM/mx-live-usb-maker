@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 01 Jul 2023 19:21:06 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: i386
+Version: 23.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (23.7) mx; urgency=medium
+ .
+   * Refresh translations
+   * Update policy file
+Checksums-Sha1:
+ bf75f603a5b99c15cfb672b28fd5e08a1ddd04f0 10101 mx-live-usb-maker_23.7_i386.buildinfo
+ af16785ecb256f02abc5a2b51819a45979ebb9f4 158380 mx-live-usb-maker_23.7_i386.deb
+Checksums-Sha256:
+ bf691d991e8f1627f6424d8b96019eb683662e8b55f8eccce7dc7636b8bac363 10101 mx-live-usb-maker_23.7_i386.buildinfo
+ 35bcffee29ccfabede5fdce2c4b25e00fec51d74449de34789493c96d0d0a4be 158380 mx-live-usb-maker_23.7_i386.deb
+Files:
+ c48f7a0a88fdf0c623ec7b303d2c5704 10101 admin optional mx-live-usb-maker_23.7_i386.buildinfo
+ cd606caab0c97468e65279afe8f7b245 158380 admin optional mx-live-usb-maker_23.7_i386.deb

@@ -98,7 +98,7 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation>Guarda la carpeta original de inicio cuando actualice un live-usb</translation>
+        <translation>Guardar el directorio de arranque original al actualizar un live-usb</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="341"/>
