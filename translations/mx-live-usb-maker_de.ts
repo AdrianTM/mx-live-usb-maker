@@ -294,13 +294,19 @@
         <translation>Quelle und Ziel befinden sich auf demselben Gerät; bitte Auswahl wiederholen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>%1 wird mittels &apos;dd&apos; Befehl auf /dev/%2 geschrieben,
+        <translation type="vanished">%1 wird mittels &apos;dd&apos; Befehl auf /dev/%2 geschrieben,
 
 bitte auf Abschluss des Vorgangs warten</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
@@ -471,7 +477,7 @@ bitte auf Abschluss des Vorgangs warten</translation>
     <message>
         <location filename="../main.cpp" line="89"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Sie sind als Benutzer “root” am System angemeldet. Bitte melden sie sich ab und dann als normaler Benutzer wieder an, um dieses Programm zu verwenden.</translation>
+        <translation>Sie sind als Administrator am System angemeldet. Bitte melden sie sich ab und dann als normaler Benutzer wieder an, um dieses Programm zu verwenden.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="103"/>

@@ -296,13 +296,19 @@
         <translation>A origem e o destino estão no mesmo dispositivo, selecione novamente.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Gravando %1, utilizando o comando ‘dd’ em /dev/%2.
+        <translation type="vanished">Gravando %1, utilizando o comando ‘dd’ em /dev/%2.
 
 Por favor, espere até que o processo seja concluído</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

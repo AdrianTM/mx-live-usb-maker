@@ -294,13 +294,19 @@
         <translation>La font i destinació estan al mateix dispositiu, si us plau torneu a triar.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Enregistrant %1 amb l&apos;ordre &apos;dd&apos; a /dev/%2,
+        <translation type="vanished">Enregistrant %1 amb l&apos;ordre &apos;dd&apos; a /dev/%2,
 
 Si us plau, espereu fins que s&apos;hagi acabat el procés</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

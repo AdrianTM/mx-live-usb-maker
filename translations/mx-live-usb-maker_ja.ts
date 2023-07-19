@@ -294,11 +294,17 @@
         <translation>送信元と送信先が同じデバイスにあるので、再度選択してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>dd コマンドを使用して %1 を /dev/%2 に書き込んでるので、処理完了までお待ちください</translation>
+        <translation type="vanished">dd コマンドを使用して %1 を /dev/%2 に書き込んでるので、処理完了までお待ちください</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

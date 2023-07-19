@@ -294,13 +294,19 @@
         <translation>源和目标在同一台设备上，请重新选择。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>使用“dd”命令将 %1 写入 /dev/%2，
+        <translation type="vanished">使用“dd”命令将 %1 写入 /dev/%2，
 
 请等待过程完成</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

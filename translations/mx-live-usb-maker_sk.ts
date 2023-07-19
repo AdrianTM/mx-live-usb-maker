@@ -294,12 +294,18 @@
         <translation>Zdroj a cieľové umiestnenie sú na rovnakej jednotke, prosím zmeňte zadanie. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Zapisujem %1 na /dev/%2 s použitím príkazu &apos;dd&apos;
+        <translation type="vanished">Zapisujem %1 na /dev/%2 s použitím príkazu &apos;dd&apos;
 Prosím vydržte pokiaľ proces zápisu nebude dokončený</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

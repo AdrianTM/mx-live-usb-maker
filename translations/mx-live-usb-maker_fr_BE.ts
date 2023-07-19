@@ -294,13 +294,19 @@
         <translation>La source et la destination sont sur le même périphérique, veuillez recommencer la sélection.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Ecriture de %1 à l’aide de la commande « dd » vers /dev/%2,
+        <translation type="vanished">Écriture de %1 à l’aide de la commande « dd » vers /dev/%2,
 
-Veuillez attendre la fin du processus</translation>
+Veuillez attendre la fin du processus.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

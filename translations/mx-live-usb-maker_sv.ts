@@ -294,13 +294,19 @@
         <translation>Källa och mål är på samma enhet, var vänlig välj igen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Skriver %1 med&apos;dd&apos; kommandot till /dev/%2,
+        <translation type="vanished">Skriver %1 med&apos;dd&apos; kommandot till /dev/%2,
 
 Var vänlig vänta tills processen är färdig</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

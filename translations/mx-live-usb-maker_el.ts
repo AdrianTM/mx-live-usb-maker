@@ -143,7 +143,7 @@
     <message>
         <location filename="../mainwindow.ui" line="392"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation>Χωρίς τη χρήση fuseiso για την προσάρτηση αρχείων iso</translation>
+        <translation>Χωρίς χρήση fuseiso για την προσάρτηση αρχείων iso</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
@@ -291,16 +291,22 @@
     <message>
         <location filename="../mainwindow.cpp" line="117"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>Η πηγή και ο προορισμός βρίσκονται στην ίδια συσκευή, παρακαλώ επιλέξτε πάλι.</translation>
+        <translation>Η προέλευση και ο προορισμός βρίσκονται στην ίδια συσκευή, παρακαλώ επιλέξτε πάλι.</translation>
+    </message>
+    <message>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the the process is completed</source>
+        <translation type="vanished">Εγγραφή %1 με την εντολή &apos;dd&apos; στο /dev/%2,
+
+Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η διαδικασία</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
-Please wait until the the process is completed</source>
-        <translation>Εγγραφή %1 με την εντολή &apos;dd&apos; στο /dev/%2,
-
-Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η διαδικασία</translation>
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
@@ -374,7 +380,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="434"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation>Επιλογή αρχείου ISO για εγγραφή του στη μονάδα USB</translation>
+        <translation>Επιλογή αρχείου ISO για εγγραφή στη μονάδα USB</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="435"/>
@@ -401,7 +407,7 @@ Please wait until the the process is completed</source>
         <location filename="../mainwindow.cpp" line="500"/>
         <location filename="../mainwindow.cpp" line="517"/>
         <source>Select Source</source>
-        <translation>Επιλογή πηγής</translation>
+        <translation>Επιλογή πρoέλευσης</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="504"/>
@@ -446,7 +452,7 @@ Please wait until the the process is completed</source>
     <message>
         <location filename="../main.cpp" line="57"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Πρόγραμμα δημιουργίας live-usb από αρχείο iso, από άλλο live-usb, από cd/dvd ή από το τρέχον live σύστημα.</translation>
+        <translation>Πρόγραμμα δημιουργίας live-usb από αρχείο iso, από άλλο live-usb, από cd/dvd ή από το τρέχον σύστημα live.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="61"/>

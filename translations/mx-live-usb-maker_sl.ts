@@ -295,13 +295,19 @@ Ali želite nadaljevati?</translation>
         <translation>Vir in cilj se nahajata na isti napravi. Prosimo, ponovite izbor.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Zapisujem %1 z uporabo &apos;dd&apos; ukaza na /dev/%2,
+        <translation type="vanished">Zapisujem %1 z uporabo &apos;dd&apos; ukaza na /dev/%2,
 
 Prosimo počakajte, da se proces konča</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

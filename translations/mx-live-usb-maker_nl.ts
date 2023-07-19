@@ -294,13 +294,19 @@
         <translation>Bron en bestemming bevinden zich op hetzelfde apparaat, selecteer aub opnieuw.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the the process is completed</source>
-        <translation>Schrijven van %1 met &apos;dd&apos; commando naar /dev/%2,
+        <translation type="vanished">Schrijven van %1 met &apos;dd&apos; commando naar /dev/%2,
 
 Wacht aub tot het proces beëindigd is</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
