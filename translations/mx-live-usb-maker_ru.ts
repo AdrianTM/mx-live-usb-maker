@@ -294,14 +294,6 @@
         <translation>Источник и место назначения на одном устройстве, выберите еще раз.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Записывается %1 с помощью «dd» на /dev/%2,
-
-Пожалуйста, дождитесь завершения операции</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

@@ -294,14 +294,6 @@
         <translation>Lähde ja kohde osoittavat samaan laitteeseen, tee valinnat uudestaan.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Kirjoitetaan %1 käyttäen &apos;dd&apos; komentoa kohteeseen /dev/%2
-
-Odota kunnes toimitus on suoritettu päätökseen</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

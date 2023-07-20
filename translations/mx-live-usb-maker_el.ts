@@ -294,14 +294,6 @@
         <translation>Η προέλευση και ο προορισμός βρίσκονται στην ίδια συσκευή, παρακαλώ επιλέξτε πάλι.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Εγγραφή %1 με την εντολή &apos;dd&apos; στο /dev/%2,
-
-Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η διαδικασία</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

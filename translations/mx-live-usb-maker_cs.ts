@@ -294,14 +294,6 @@
         <translation>Zdroj a cíl jsou na stejné jednotce, prosím proveďte vyběr znovu.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Zápis %1 s použitím příkazu &apos;dd&apos; na /dev/%2,
-
-Čekejte až bude proces dokončen</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

@@ -148,12 +148,12 @@
     <message>
         <location filename="../mainwindow.ui" line="418"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation>Taille de la partition ESP (uefi) :</translation>
+        <translation>Taille de la partition ESP (uefi)&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="438"/>
         <source>Verbosity (less to more):</source>
-        <translation>Verbosité (du moins au plus) :</translation>
+        <translation>Verbosité (du moins au plus)&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="477"/>
@@ -229,12 +229,12 @@
     <message>
         <location filename="../mainwindow.ui" line="695"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Pourcentage du périphérique USB à utiliser :</translation>
+        <translation>Pourcentage du périphérique USB à utiliser&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="702"/>
         <source>Label ext partition:</source>
-        <translation>Etiquette de la partition :</translation>
+        <translation>Étiquette de la partition&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="750"/>
@@ -279,7 +279,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
-        <translation>Le périphérique cible %1 fait plus de %2 Go. Voulez-vous continuer ?</translation>
+        <translation>Le périphérique cible %1 fait plus de %2 Go. Voulez-vous continuer&#xa0;?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
@@ -294,19 +294,13 @@
         <translation>La source et la destination sont sur le même périphérique, veuillez recommencer la sélection.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Écriture de %1 à l’aide de la commande « dd » vers /dev/%2,
-
-Veuillez attendre la fin du processus.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Écriture de %1 à l’aide de la commande « dd » sur /dev/%2.
+
+Veuillez patienter jusqu’à la fin de la procédure.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
@@ -316,7 +310,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
         <source>LiveUSB creation successful!</source>
-        <translation>Création du Live USB accomplie !</translation>
+        <translation>Création du Live USB accomplie&#xa0;!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="317"/>
@@ -345,7 +339,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Do you wish to continue?</source>
-        <translation>Souhaitez-vous continuer ?</translation>
+        <translation>Souhaitez-vous continuer&#xa0;?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="412"/>
@@ -355,7 +349,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="413"/>
         <source>Version: </source>
-        <translation>Version : </translation>
+        <translation>Version&#xa0;: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="415"/>
@@ -423,7 +417,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Could not find a log file at: </source>
-        <translation>Impossible de trouver un fichier journal dans : </translation>
+        <translation>Impossible de trouver un fichier journal dans&#xa0;: </translation>
     </message>
 </context>
 <context>
@@ -482,7 +476,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../main.cpp" line="103"/>
         <source>version:</source>
-        <translation>version :</translation>
+        <translation>version&#xa0;:</translation>
     </message>
 </context>
 </TS>

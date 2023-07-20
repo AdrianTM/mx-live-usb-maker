@@ -294,19 +294,13 @@
         <translation>La fuente y el destino están en el mismo dispositivo; seleccionar de nuevo.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Escribiendo %1 con el comando &apos;dd&apos; hacia /dev/%2,
-
-Favor espere hasta que el proceso termine.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribiendo %1 con el comando &apos;dd&apos; hacia /dev/%2,
+
+Por favor espere hasta que se complete el proceso</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

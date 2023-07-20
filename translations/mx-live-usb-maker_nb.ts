@@ -294,19 +294,13 @@
         <translation>Kilde og mål er på samme enhet – velg om igjen.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Skriver %1 med «dd»-kommandoen til /dev/%2,
-
-Vennligst vent til prosessen fullføres</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriver %1 med «dd»-kommandoen til /dev/%2,
+
+Vennligst vent til prosessen fullføres</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>

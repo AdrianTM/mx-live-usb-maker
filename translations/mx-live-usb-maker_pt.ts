@@ -294,14 +294,6 @@
         <translation>Origem e destino no mesmo dispositivo; seleccionar de novo.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">A gravar %1 em /dev/%2, usando o comando &apos;dd&apos;.
-
-Aguardar até o processo terminar</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

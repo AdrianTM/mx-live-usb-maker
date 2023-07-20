@@ -294,14 +294,6 @@
         <translation>Burimi dhe vendmbërritja gjenden në të njëjtën pajisje, ju lutemi, ripërzgjidhni.</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Po shkruhet %1 duke përdorur urdhrin “dd” te /dev/%2,
-
-Ju lutemi, pritni deri sa të plotësohet procesi</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 

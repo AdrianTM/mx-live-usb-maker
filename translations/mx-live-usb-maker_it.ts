@@ -294,19 +294,13 @@
         <translation>Sorgente e destinazione sono sullo stesso dispositivo, seleziona di nuovo</translation>
     </message>
     <message>
-        <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
-
-Please wait until the the process is completed</source>
-        <translation type="vanished">Scrittura di %1 su /dev/%2, utilizzando il comando &apos;dd&apos;,
-
-Attendi fino al completamento del processo</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrittura di %1 su /dev/%2, utilizzando il comando &apos;dd&apos;,
+
+Attendi fino al completamento del processo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="312"/>
