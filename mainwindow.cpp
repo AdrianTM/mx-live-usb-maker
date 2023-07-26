@@ -143,7 +143,7 @@ void MainWindow::makeUsb(const QString &options)
     ui->progBar->setMaximum(static_cast<int>(iso_sectors + start_io));
     qDebug() << "max progress bar is " << ui->progBar->maximum();
 
-    QString cmdstr = QString(LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
+    QString cmdstr = (LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->radioDd->isChecked()) {
         cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &QProcess::readyRead, this, &MainWindow::updateOutput);
@@ -442,7 +442,7 @@ void MainWindow::pushSelectSource_clicked()
             setDefaultMode(selected); // set proper default mode based on iso contents
         }
     } else if (ui->checkCloneMode->isChecked()) {
-        selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QString(QDir::rootPath()),
+        selected = QFileDialog::getExistingDirectory(this, tr("Select Source Directory"), QDir::rootPath(),
                                                      QFileDialog::ShowDirsOnly);
         if (QFileInfo::exists(selected + "/antiX/linuxfs") || QFileInfo::exists(selected + "/linuxfs")) {
             ui->pushSelectSource->setText(selected);
@@ -601,7 +601,7 @@ void MainWindow::pushLumLogFile_clicked()
     } else if (viewer2.exists()) {
         cmd_str = QStringLiteral("antix-viewer %1 '%2' &").arg(url, lum.baseName());
     } else {
-        cmd_str = QString(rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
+        cmd_str = (rootrunoption + "\"DISPLAY=$DISPLAY xdg-open %1\" &").arg(url);
     }
     cmd.run(cmd_str);
 }
