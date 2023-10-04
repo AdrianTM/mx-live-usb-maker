@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 04 Oct 2023 13:15:08 -0400
+Source: mx-live-usb-maker
+Binary: mx-live-usb-maker
+Architecture: source amd64
+Version: 23.10
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-live-usb-maker - mx-live-usb-maker
+Changes:
+ mx-live-usb-maker (23.10) mx; urgency=medium
+ .
+   * Fix: open live-usb-maker log file
+Checksums-Sha1:
+ 33fb32b5f45e2aba812c72c3d25352e388295020 1157 mx-live-usb-maker_23.10.dsc
+ f81e19a445649f626834b7b29b25a7f747813fd0 138024 mx-live-usb-maker_23.10.tar.xz
+ dc28e042a35b8bbb88abfbbcdb4053cddc9d7c9d 10969 mx-live-usb-maker_23.10_amd64.buildinfo
+ 6d31a94d784187fcd5e201ba4fe4db375b77fff1 154940 mx-live-usb-maker_23.10_amd64.deb
+Checksums-Sha256:
+ 7b2286fd63fe4082c902b1852374276f53711c2ab411500ab9644aef1a0d5779 1157 mx-live-usb-maker_23.10.dsc
+ 638d8d5c8e159efc867d749b3d76f0b2c573dae2defd71a8a399524f9d927375 138024 mx-live-usb-maker_23.10.tar.xz
+ e2be2d1cae0a2102e8aa88c210f89d85eefb68a5ca4d0645913a380dc4dd35af 10969 mx-live-usb-maker_23.10_amd64.buildinfo
+ 9dfd4fd8c41566c18843d5493831b2067e9ef3111b46c56f0ffe982ca3f864ad 154940 mx-live-usb-maker_23.10_amd64.deb
+Files:
+ 027b41c7d455c0ffa6b4bb5fc29fc478 1157 admin optional mx-live-usb-maker_23.10.dsc
+ 3ac5fda31271dd57880284ec86769686 138024 admin optional mx-live-usb-maker_23.10.tar.xz
+ 6cc745d3daefa622164b568ac17e59ab 10969 admin optional mx-live-usb-maker_23.10_amd64.buildinfo
+ 29637a45709f711d91fa715618d375fa 154940 admin optional mx-live-usb-maker_23.10_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmUdneMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumE+eCACMMUxN1nwo+8hEmR+z4qDZ9oP+3XqW
+mH1jlcwJMC1o/Iwzr+lyhse+L3gl9oeJqy760/eV07iUpb228V2kqyysu0EL1TNs
+Z9Q2BRHj7oL7VBN/vfwrGAs3yx0c4RND60B5CVX363pGyNqsofVuaUUeSaApV91J
+1EgOUJa0zj3GbiOePP6Ng8YYao0NHFCmH89aM0yjao3TFYU0HBt4ERmV32EPgQxm
+In0TxAqQ+j9lnoQgfLGw5SauJr9JciHDhA6vfvVvm/K4wIJBpCDTLgdyj9pD44fO
+JmkF1N3s6EPCd21HUYBeMs3nJOHdfbU8ZD7M1b2t0qpxxlitSo+4OfaA
+=5Zu/
+-----END PGP SIGNATURE-----
