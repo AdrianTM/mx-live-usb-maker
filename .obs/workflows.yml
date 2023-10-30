@@ -2,9 +2,10 @@ workflow:
   steps:
     - rebuild_package:
         project: home:mx-packaging
-        package: exit-options  
+        package: %{SCM_REPOSITORY_NAME} 
   filters:
     event: push
-    branches:
-      only:
-        - main
+    branches: 
+        only:
+            - main
+            - master
