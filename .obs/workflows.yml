@@ -1,0 +1,10 @@
+workflow:
+  steps:
+    - rebuild_package:
+        project: home:mx-packaging
+        package: exit-options  
+  filters:
+    event: push
+    branches:
+      only:
+        - main
