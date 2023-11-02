@@ -65,7 +65,7 @@ private slots:
     void setConnections();
     void setDefaultMode(const QString &iso_name);
     void updateBar();
-    void updateOutput();
+    void updateOutput(QString output);
 
     void checkCloneLive_clicked(bool checked);
     void checkCloneMode_clicked(bool checked);
@@ -90,6 +90,7 @@ private:
     QFile *stat_file {};
     QString LUM;
     QString device;
+    QString elevate;
     QTimer timer;
     bool advancedOptions {};
     const QString cli_utils {". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;"};
