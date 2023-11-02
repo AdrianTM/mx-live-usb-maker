@@ -4,6 +4,4 @@ CUSTOMPROGRAMNAME.png		usr/share/icons/hicolor/256x256/apps
 CUSTOMPROGRAMNAME.svg       usr/share/icons/hicolor/scalable/apps
 authors.txt			        usr/share/doc/CUSTOMPROGRAMNAME
 help/*				        usr/share/doc/CUSTOMPROGRAMNAME
-scripts/mxlum-launcher		usr/bin
-scripts/org.mxlinux.pkexec.mxlum-launcher.policy	usr/share/polkit-1/actions
 translations/*.qm		    usr/share/CUSTOMPROGRAMNAME/locale
