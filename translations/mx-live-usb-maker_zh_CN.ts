@@ -70,8 +70,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
-        <location filename="../mainwindow.cpp" line="533"/>
-        <location filename="../mainwindow.cpp" line="554"/>
+        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="552"/>
         <source>Select ISO</source>
         <translation>选择ISO文件</translation>
     </message>
@@ -192,7 +192,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="547"/>
-        <location filename="../mainwindow.cpp" line="495"/>
+        <location filename="../mainwindow.cpp" line="493"/>
         <source>Show advanced options</source>
         <translation>显示高级选项</translation>
     </message>
@@ -272,61 +272,61 @@
         <translation>克隆运行中的 live 系统</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="79"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="80"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>目标设备 %1 大于 %2 GB。你想继续吗？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="124"/>
-        <location filename="../mainwindow.cpp" line="346"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="126"/>
+        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>源和目标在同一台设备上，请重新选择。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="165"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="337"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="337"/>
         <source>LiveUSB creation successful!</source>
         <translation>LiveUSB 创建成功！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="344"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>LiveUSB创建过程中遇到的错误</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="399"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="399"/>
         <source>Please select a USB device to write to</source>
         <translation>请选择要写入的 USB 设备</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="402"/>
         <source>These actions will destroy all data on 
 
 </source>
@@ -335,85 +335,85 @@ Please wait until the process is completed</source>
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="405"/>
+        <location filename="../mainwindow.cpp" line="403"/>
         <source>Do you wish to continue?</source>
         <translation>你想继续吗？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
+        <location filename="../mainwindow.cpp" line="437"/>
         <source>About %1</source>
         <translation>关于 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="440"/>
+        <location filename="../mainwindow.cpp" line="438"/>
         <source>Version: </source>
         <translation>版本:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>用于从 iso 文件、另一个 live-usb、live-cd/dvd 或正在运行的 live 系统创建 live-usb 的程序。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="445"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Copyright (c) MX Linux</source>
         <translation>版权所有(c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>%1 License</source>
         <translation>%1 许可证</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="453"/>
+        <location filename="../mainwindow.cpp" line="451"/>
         <source>%1 Help</source>
         <translation>%1 帮助</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="459"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>选择要写入 USB 设备的 ISO 文件</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="462"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
         <translation>ISO 文件 (*.iso);;所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="472"/>
-        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="470"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Select Source Directory</source>
         <translation>选择源目录</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="480"/>
+        <location filename="../mainwindow.cpp" line="478"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>找不到 %1/antiX/linuxfs 文件</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="501"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Hide advanced options</source>
         <translation>隐藏高级选项</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="528"/>
-        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="543"/>
         <source>Select Source</source>
         <translation>选择源</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
-        <location filename="../mainwindow.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="550"/>
         <source>Select ISO file</source>
         <translation>选择 ISO 文件</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="545"/>
         <source>clone</source>
         <translation>克隆</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="610"/>
+        <location filename="../mainwindow.cpp" line="608"/>
         <source>Could not find a log file at: </source>
         <translation>无法在以下位置找到日志文件：</translation>
     </message>

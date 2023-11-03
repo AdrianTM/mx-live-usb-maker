@@ -70,8 +70,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="259"/>
-        <location filename="../mainwindow.cpp" line="533"/>
-        <location filename="../mainwindow.cpp" line="554"/>
+        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="552"/>
         <source>Select ISO</source>
         <translation>Выбор ISO</translation>
     </message>
@@ -192,7 +192,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="547"/>
-        <location filename="../mainwindow.cpp" line="495"/>
+        <location filename="../mainwindow.cpp" line="493"/>
         <source>Show advanced options</source>
         <translation>Показать расширенные опции</translation>
     </message>
@@ -272,61 +272,61 @@
         <translation>Клонировать работающую live систему</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="79"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="80"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>Target device %1 is larger than %2 GB. Do you wish to proceed?</source>
         <translation>Целевое устройство %1 превышает %2 GB. Вы хотите продолжить?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="124"/>
-        <location filename="../mainwindow.cpp" line="346"/>
-        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="126"/>
+        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>Сбой</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Source and destination are on the same device, please select again.</source>
         <translation>Источник и место назначения на одном устройстве, выберите еще раз.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="165"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="337"/>
         <source>Success</source>
         <translation>Успешно</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="337"/>
         <source>LiveUSB creation successful!</source>
         <translation>Создание LiveUSB завершено успешно!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="344"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Произошла ошибка при создании LiveUSB</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="399"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="399"/>
         <source>Please select a USB device to write to</source>
         <translation>Выберите USB накопитель для записи</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="402"/>
         <source>These actions will destroy all data on 
 
 </source>
@@ -334,85 +334,85 @@ Please wait until the process is completed</source>
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="405"/>
+        <location filename="../mainwindow.cpp" line="403"/>
         <source>Do you wish to continue?</source>
         <translation>Вы хотите продолжить?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
+        <location filename="../mainwindow.cpp" line="437"/>
         <source>About %1</source>
         <translation>О %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="440"/>
+        <location filename="../mainwindow.cpp" line="438"/>
         <source>Version: </source>
         <translation>Версия: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Приложение для создания live-usb из файла ISO, другого live-usb, live-cd/dvd или запущенной live системы.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="445"/>
+        <location filename="../mainwindow.cpp" line="443"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Авторское право (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>%1 License</source>
         <translation>%1 Лицензия</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="453"/>
+        <location filename="../mainwindow.cpp" line="451"/>
         <source>%1 Help</source>
         <translation>%1 Справка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="459"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Выберите файл ISO для записи на USB накопитель</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="462"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
         <translation>Файлы вида ISO (*.iso);;Файлы всех типов (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="472"/>
-        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="470"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Select Source Directory</source>
         <translation>Выберите директорию источника</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="480"/>
+        <location filename="../mainwindow.cpp" line="478"/>
         <source>Could not find %1/antiX/linuxfs file</source>
         <translation>Не найден файл %1/antiX/linuxfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="501"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Hide advanced options</source>
         <translation>Скрыть расширенные опции</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="528"/>
-        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="543"/>
         <source>Select Source</source>
         <translation>Выберите источник</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
-        <location filename="../mainwindow.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="550"/>
         <source>Select ISO file</source>
         <translation>Выберите файл ISO</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="545"/>
         <source>clone</source>
         <translation>клонировать</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="610"/>
+        <location filename="../mainwindow.cpp" line="608"/>
         <source>Could not find a log file at: </source>
         <translation>Не удалось найти файл журнала в:</translation>
     </message>
