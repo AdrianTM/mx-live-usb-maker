@@ -154,23 +154,19 @@ void MainWindow::makeUsb(const QString &options)
     ui->progBar->setMaximum(static_cast<int>(iso_sectors + start_io));
     qDebug() << "max progress bar is " << ui->progBar->maximum();
 
-    elevate = "pkexec";
-    if (!QFile::exists("/usr/bin/pkexec")) {
-        elevate = "su-to-root -X -c";
-    }
-    QString cmdstr = (elevate + " " + LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
+    QString cmdstr = (LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->radioDd->isChecked()) {
-        cmdstr = elevate + " " + LUM + " gui partition-clear -NC off --target " + device;
+        cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
-        qDebug() << cmd.getCmdOut(cmdstr);
-        cmdstr = elevate + " dd bs=1M if=" + source + " of=/dev/" + device;
+        qDebug() << cmd.getCmdOutAsRoot(cmdstr, true);
+        cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
         ui->outputBox->insertPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the process is completed")
                                            .arg(source, device));
     }
     setConnections();
     stat_file = new QFile("/sys/block/" + device + "/stat");
-    qDebug() << cmd.getCmdOut(cmdstr);
+    qDebug() << cmd.getCmdOutAsRoot(cmdstr);
 }
 
 void MainWindow::setup()
@@ -300,10 +296,10 @@ void MainWindow::cleanup()
     }
     if (cmd.state() != QProcess::NotRunning) {
         Cmd cmd2;
-        cmd2.run(elevate + " kill " + QString::number(cmd.processId()));
+        cmd2.runAsRoot("kill " + QString::number(cmd.processId()));
         cmd2.run("sleep 10", true);
         if (cmd.state() != QProcess::NotRunning) {
-            cmd2.run(elevate + " kill -9 " + QString::number(cmd.processId()));
+            cmd2.runAsRoot("kill -9 " + QString::number(cmd.processId()));
         }
     }
     QApplication::quit();
@@ -343,7 +339,7 @@ void MainWindow::cmdDone()
         const QString mount_path = QStringLiteral("/run/live-usb-maker");
         if (QFile::exists(mount_path)) {
             Cmd cmd2;
-            cmd2.run(elevate + " umount -l " + mount_path);
+            cmd2.runAsRoot("umount -Rl " + mount_path);
         }
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
     }
@@ -595,8 +591,8 @@ void MainWindow::radioNormal_clicked()
 
 bool MainWindow::isantiX_mx_family(const QString &selected)
 {
-    Cmd cmd;
-    return cmd.run(
+    Cmd cmd2;
+    return cmd2.run(
         QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
             .arg(selected),
         true);
