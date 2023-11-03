@@ -51,14 +51,16 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     setup();
     ui->comboUsb->addItems(buildUsbList());
     if (args.size() > 1 && args.at(1) != QLatin1String("%f")) {
-        ui->pushSelectSource->setText(args.at(1));
-        ui->pushSelectSource->setProperty("filename", args.at(1));
-        ui->pushSelectSource->setToolTip(args.at(1));
-        ui->pushSelectSource->setIcon(QIcon::fromTheme(QStringLiteral("media-cdrom")));
-        ui->pushSelectSource->setStyleSheet(QStringLiteral("text-align: left;"));
-        setDefaultMode(args.at(1));
+        QString fileName = QFileInfo(args.at(1)).absoluteFilePath();
+        if (QFileInfo(fileName).isFile()) {
+            ui->pushSelectSource->setText(fileName);
+            ui->pushSelectSource->setProperty("filename", fileName);
+            ui->pushSelectSource->setToolTip(fileName);
+            ui->pushSelectSource->setIcon(QIcon::fromTheme(QStringLiteral("media-cdrom")));
+            ui->pushSelectSource->setStyleSheet(QStringLiteral("text-align: left;"));
+            setDefaultMode(fileName);
+        }
     }
-
     this->adjustSize();
 }
 
