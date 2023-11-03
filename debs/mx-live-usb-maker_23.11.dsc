@@ -12,20 +12,20 @@ Build-Depends: debhelper (>= 10), qtbase5-dev, qttools5-dev-tools
 Package-List:
  mx-live-usb-maker deb admin optional arch=any
 Checksums-Sha1:
- fe06725a56e8bf5e7fd7d35365eabe13d92ce94c 1527608 mx-live-usb-maker_23.11.tar.xz
+ 20b6145192ce778f58b5d6361c480d6856c15e34 1529808 mx-live-usb-maker_23.11.tar.xz
 Checksums-Sha256:
- 0933c6d1328fd18050fb63501f89cb578160dce22db56a2b91a52f6cf1348b28 1527608 mx-live-usb-maker_23.11.tar.xz
+ 46d9ca30d5c20a9905e72024e15d20f07f70e7d4e7c0ffb6140633379f26907c 1529808 mx-live-usb-maker_23.11.tar.xz
 Files:
- a3d4ccb38ea7667f7c60f6d0adec55e8 1527608 mx-live-usb-maker_23.11.tar.xz
+ fdcd0c1a4cefe5419e70debc939e19d9 1529808 mx-live-usb-maker_23.11.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmVEVBATHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGfgB/9KLuJzPicKJUzJqvenYZTzlmYq7v5m
-cV3W93VPGj8h3X1KLASjfBMcv75q0GMFuxLwytoRmxyTKAqXC10bM1WyLo1ehd8V
-DKN9XZjjm3QEFEk3mBxJQYxWvBUH9oDYCFQVdsjacDRU07sOTRaBHpPaCnW9IrRD
-FwIQRGXGU2YibyIdVswwjrJgKCeB4WakFnMseESx2hoyKHdECZbddsrc7gE8hr/t
-jhB1H20StmnEBTcFUF+2IBExaKowP6TfSIY0z3KLo/JIaVyNdpz5hSy+M2BCNz0H
-Uhvo3L3g7/DEAscYZmJMS7NsGnOSie7TsfDW5dqDxc0qhld7nX5Z+MfW
-=ftCn
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmVFATcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMISB/9YqGb5TRipuLftqRxX0MpYrvv7SaJp
+/WnwCrIRUldjElBX83sT5lqE9JS01pyhTdSIi1+9ifW4vKFNhi6he+cMnidr5WXb
+BXaOKyRyBKwHMftXc0WQV7FF68ophJgCkW1LvIiL7ozOEytfoi8mHoGOk0510UB/
+6r4CF3l/dpJHtxO34VIFUOeaYVT1GhB2VIxLdhraXHeex2Zg+fJOtwEy403JVstc
+rG7cT2sy1lwLgcs1fXMaEkQY+1ZysxfAVNfmnmoWm13fBJi8FNvG0HkH/rL9tk4G
+TH/i9q5LtCqG/5BiVAL+jvFqH3kdWYOoavBjlI/Xb3CeNPSDbpfPNcp9
+=3vcj
 -----END PGP SIGNATURE-----
