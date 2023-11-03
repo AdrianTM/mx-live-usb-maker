@@ -5,5 +5,5 @@ CUSTOMPROGRAMNAME.svg		usr/share/icons/hicolor/scalable/apps
 authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
 help/*				usr/share/doc/CUSTOMPROGRAMNAME
 translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale
-lib/helper			usr/lib/CUSTOMPROGRAMNAME
-lib/org.mxlinux.pkexec.mxlum-helper.policy usr/share/polkit-1/actions
+scripts/helper			usr/lib/CUSTOMPROGRAMNAME
+scripts/org.mxlinux.pkexec.mxlum-helper.policy usr/share/polkit-1/actions
