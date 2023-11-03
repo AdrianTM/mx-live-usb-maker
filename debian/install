@@ -1,7 +1,9 @@
-CUSTOMPROGRAMNAME		    usr/bin
+CUSTOMPROGRAMNAME		usr/bin
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
 CUSTOMPROGRAMNAME.png		usr/share/icons/hicolor/256x256/apps
-CUSTOMPROGRAMNAME.svg       usr/share/icons/hicolor/scalable/apps
-authors.txt			        usr/share/doc/CUSTOMPROGRAMNAME
-help/*				        usr/share/doc/CUSTOMPROGRAMNAME
-translations/*.qm		    usr/share/CUSTOMPROGRAMNAME/locale
+CUSTOMPROGRAMNAME.svg		usr/share/icons/hicolor/scalable/apps
+authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
+help/*				usr/share/doc/CUSTOMPROGRAMNAME
+translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale
+lib/helper			usr/lib/CUSTOMPROGRAMNAME
+lib/org.mxlinux.pkexec.mxlum-helper.policy usr/share/polkit-1/actions
