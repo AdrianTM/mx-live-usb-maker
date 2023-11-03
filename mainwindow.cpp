@@ -41,9 +41,9 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     ui->setupUi(this);
     setGeneralConnections();
     // Setup options
-    LUM.clear();
+    LUM = "/usr/local/bin/";
     QSettings settings(QStringLiteral("/etc/mx-live-usb-maker/mx-live-usb-maker.conf"), QSettings::NativeFormat);
-    LUM = settings.value(QStringLiteral("LUM"), "live-usb-maker").toString();
+    LUM += settings.value(QStringLiteral("LUM"), "live-usb-maker").toString();
     size_check = settings.value(QStringLiteral("SizeCheck"), 128).toUInt(); // in GB
     qDebug() << "LUM is:" << LUM;
 
