@@ -166,7 +166,7 @@ void MainWindow::makeUsb(const QString &options)
     }
     setConnections();
     stat_file = new QFile("/sys/block/" + device + "/stat");
-    qDebug() << cmd.getCmdOutAsRoot(cmdstr);
+    qDebug() << cmd.getCmdOutAsRoot(cmdstr, true);
 }
 
 void MainWindow::setup()
