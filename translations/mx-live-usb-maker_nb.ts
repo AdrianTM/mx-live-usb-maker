@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>Mislykket</translation>
@@ -303,17 +303,17 @@ Please wait until the process is completed</source>
 Vennligst vent til prosessen fullføres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>Success</source>
         <translation>Vellykket</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>LiveUSB creation successful!</source>
         <translation>LiveUSB er nå opprettet.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Det oppstod en feil under oppretting av live-USB</translation>
     </message>

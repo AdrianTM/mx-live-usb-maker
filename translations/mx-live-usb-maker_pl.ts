@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>Niepowodzenie</translation>
@@ -303,17 +303,17 @@ Please wait until the process is completed</source>
 Proszę czekać na zakończenie procesu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>Success</source>
         <translation>Sukces </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>LiveUSB creation successful!</source>
         <translation>Tworzenie LiveUSB zakończyło się sukcesem!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Wystąpił błąd podczas tworzenia LiveUSB.</translation>
     </message>

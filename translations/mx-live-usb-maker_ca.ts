@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>Fallada</translation>
@@ -303,17 +303,17 @@ Please wait until the process is completed</source>
 Si us plau, espereu fins que el procés s&apos;hagi acabat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>Success</source>
         <translation>Èxit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>LiveUSB creation successful!</source>
         <translation>Creat amb èxit l&apos;USB autònom!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Hi ha hagut un error mentre es creava l&apos;USB autònom</translation>
     </message>

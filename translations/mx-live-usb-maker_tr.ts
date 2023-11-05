@@ -284,7 +284,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <location filename="../mainwindow.cpp" line="477"/>
         <source>Failure</source>
         <translation>Başarısız</translation>
@@ -304,17 +304,17 @@ Please wait until the process is completed</source>
  Lütfen işlem tamamlanana kadar bekleyin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>Success</source>
         <translation>Başarılı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="337"/>
+        <location filename="../mainwindow.cpp" line="336"/>
         <source>LiveUSB creation successful!</source>
         <translation>LiveUSB oluşturma başarılı!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>CanlıUSB oluşturma işleminde hatayla karşılaşıldı</translation>
     </message>

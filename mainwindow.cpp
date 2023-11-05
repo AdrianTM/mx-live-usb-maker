@@ -72,7 +72,7 @@ MainWindow::~MainWindow()
 bool MainWindow::checkDestSize()
 {
 
-    const quint64 disk_size = cmd.getCmdOut("lsblk --output SIZE -n --bytes /dev" + device).toULongLong()
+    const quint64 disk_size = cmd.getOut("lsblk --output SIZE -n --bytes /dev" + device).toULongLong()
                               / static_cast<quint64>(1024 * 1024 * 1024);
 
     if (disk_size > size_check) { // question when writing on large drives (potentially unintended)
@@ -111,18 +111,18 @@ void MainWindow::makeUsb(const QString &options)
     QString source_size;
     if (!ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
         source = "\"" + ui->pushSelectSource->property("filename").toString() + "\"";
-        source_size = cmd.getCmdOut(
+        source_size = cmd.getOut(
             "du -m \"" + ui->pushSelectSource->property("filename").toString() + "\" 2>/dev/null |cut -f1", true);
     } else if (ui->checkCloneMode->isChecked()) {
-        source_size = cmd.getCmdOut("du -m --summarize \"" + ui->pushSelectSource->property("filename").toString()
-                                        + "\" 2>/dev/null |cut -f1",
-                                    true);
+        source_size = cmd.getOut("du -m --summarize \"" + ui->pushSelectSource->property("filename").toString()
+                                     + "\" 2>/dev/null |cut -f1",
+                                 true);
         source = "clone=\"" + ui->pushSelectSource->property("filename").toString() + "\"";
         // check if source and destination are on the same drive
         QString root_partition
-            = cmd.getCmdOut("df --output=source \"" + ui->pushSelectSource->property("filename").toString()
-                            + "\" |awk 'END{print $1}'");
-        if ("/dev/" + device == cmd.getCmdOut(cli_utils + "get_drive " + root_partition)) {
+            = cmd.getOut("df --output=source \"" + ui->pushSelectSource->property("filename").toString()
+                         + "\" |awk 'END{print $1}'");
+        if ("/dev/" + device == cmd.getOut(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"),
                                   tr("Source and destination are on the same device, please select again."));
             ui->stackedWidget->setCurrentWidget(ui->selectionPage);
@@ -133,9 +133,9 @@ void MainWindow::makeUsb(const QString &options)
     } else if (ui->checkCloneLive->isChecked()) {
         source = QStringLiteral("clone");
         if (isToRam()) {
-            source_size = cmd.getCmdOut(QStringLiteral("du -m --summarize /live/to-ram 2>/dev/null |cut -f1"), true);
+            source_size = cmd.getOut(QStringLiteral("du -m --summarize /live/to-ram 2>/dev/null |cut -f1"), true);
         } else {
-            source_size = cmd.getCmdOut(QStringLiteral("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1"), true);
+            source_size = cmd.getOut(QStringLiteral("du -m --summarize /live/boot-dev 2>/dev/null |cut -f1"), true);
         }
     }
 
@@ -147,7 +147,7 @@ void MainWindow::makeUsb(const QString &options)
     }
 
     // Check amount of io on device before copy, this is in sectors
-    const quint64 start_io = cmd.getCmdOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toULongLong();
+    const quint64 start_io = cmd.getOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toULongLong();
     ui->progBar->setMinimum(static_cast<int>(start_io));
     qDebug() << "start io is " << start_io;
     const quint64 iso_sectors = source_size.toULongLong() * 2048; // source_size * 1024 / 512 * 1024
@@ -157,8 +157,8 @@ void MainWindow::makeUsb(const QString &options)
     QString cmdstr = (LUM + " gui " + options + "-C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->radioDd->isChecked()) {
         cmdstr = LUM + " gui partition-clear -NC off --target " + device;
-        connect(&cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
-        qDebug() << cmd.getCmdOutAsRoot(cmdstr, true);
+        connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
+        qDebug() << cmd.getOutAsRoot(cmdstr, true);
         cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
         ui->outputBox->insertPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the process is completed")
@@ -166,7 +166,7 @@ void MainWindow::makeUsb(const QString &options)
     }
     setConnections();
     stat_file = new QFile("/sys/block/" + device + "/stat");
-    qDebug() << cmd.getCmdOutAsRoot(cmdstr, true);
+    qDebug() << cmd.getOutAsRoot(cmdstr, true);
 }
 
 void MainWindow::setup()
@@ -307,8 +307,7 @@ void MainWindow::cleanup()
 
 QStringList MainWindow::buildUsbList()
 {
-    QString drives
-        = cmd.getCmdOut(QStringLiteral("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259"), true);
+    QString drives = cmd.getOut(QStringLiteral("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259"), true);
     return removeUnsuitable(drives.split(QStringLiteral("\n")));
 }
 
@@ -319,7 +318,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     for (const QString &line : devices) {
         QString name = line.split(QStringLiteral(" ")).at(0);
         if (ui->checkForceUsb->isChecked() || cmd.run(cli_utils + "is_usb_or_removable " + name.toUtf8(), true)) {
-            if (cmd.getCmdOut(cli_utils + "get_drive $(get_live_dev) ", true) != name) {
+            if (cmd.getOut(cli_utils + "get_drive $(get_live_dev) ", true) != name) {
                 list << line;
             }
         }
@@ -349,7 +348,7 @@ void MainWindow::cmdDone()
 void MainWindow::setConnections()
 {
     timer.start(1s);
-    connect(&cmd, &Cmd::outputAvailable, this, &MainWindow::updateOutput);
+    connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
     connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar);
     connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
@@ -375,8 +374,9 @@ void MainWindow::updateBar()
     stat_file->close();
 }
 
-void MainWindow::updateOutput(QString output)
+void MainWindow::updateOutput()
 {
+    QString output = cmd.readAllStandardOutput();
     // Remove escape sequences that are not handled by code
     const QRegularExpression re(u8R"(\[0m|\]0;|\|\|\[1000D|\[74C||\[\?25l|\[\?25h|\[0;36m|\[1;37m)");
     output.remove(re);
@@ -453,7 +453,7 @@ void MainWindow::pushHelp_clicked()
 
 void MainWindow::pushSelectSource_clicked()
 {
-    const QString user = cmd.getCmdOut(QStringLiteral("logname"), true);
+    const QString user = cmd.getOut(QStringLiteral("logname"), true);
     const QString home = "/home/" + user;
     if (QString selected; !ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
         selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home,

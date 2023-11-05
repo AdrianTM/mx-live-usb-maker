@@ -65,7 +65,7 @@ private slots:
     void setConnections();
     void setDefaultMode(const QString &iso_name);
     void updateBar();
-    void updateOutput(QString output);
+    void updateOutput();
 
     void checkCloneLive_clicked(bool checked);
     void checkCloneMode_clicked(bool checked);
