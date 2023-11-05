@@ -27,6 +27,7 @@
 #include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
+#include <QStandardPaths>
 #include <QTranslator>
 
 #include "mainwindow.h"
@@ -90,6 +91,13 @@ int main(int argc, char *argv[])
             exit(EXIT_FAILURE);
         }
     }
+
+    QString executablePath = QStandardPaths::findExecutable("pkexec");
+    if (!executablePath.isEmpty() && getuid() != 0) {
+        QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as root."));
+        exit(EXIT_FAILURE);
+    }
+
     auto const log_file_name = "/tmp/" + QApplication::applicationName() + ".log";
     logFile.setFileName(log_file_name);
     if (logFile.exists() && QFileInfo(logFile).isWritable()) {

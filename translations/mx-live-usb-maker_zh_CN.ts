@@ -442,37 +442,43 @@ Please wait until the process is completed</source>
         <translation>关闭(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="53"/>
+        <location filename="../main.cpp" line="54"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>用于从 iso 文件、另一个 live-usb、live-cd/dvd 或正在运行的 live 系统创建 live-usb 的程序。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="58"/>
         <source>filename</source>
         <translation>文件名</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="58"/>
         <source>Name of .iso file to open</source>
         <translation>要打开的 .iso 文件的名称</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="58"/>
+        <location filename="../main.cpp" line="59"/>
         <source>[filename]</source>
         <translation>[文件名]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="97"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="89"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>您似乎是以 root 身份登录的，请注销并以普通用户身份登录以使用该程序。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="104"/>
+        <location filename="../main.cpp" line="97"/>
+        <source>You must run this program as root.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="112"/>
         <source>version:</source>
         <translation>版本：</translation>
     </message>
