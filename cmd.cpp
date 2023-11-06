@@ -8,7 +8,9 @@
 #include <unistd.h>
 
 Cmd::Cmd(QObject *parent)
-    : QProcess(parent)
+    : QProcess(parent),
+      elevate {QFile::exists("/usr/bin/pkexec") ? "/usr/bin/pkexec" : "/usr/bin/gksu"},
+      helper {"/usr/lib/" + QApplication::applicationName() + "/helper"}
 {
 }
 
@@ -35,8 +37,7 @@ bool Cmd::run(const QString &cmd, bool quiet, bool asRoot)
     QEventLoop loop;
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     if (asRoot && getuid() != 0) {
-        QString helper {"/usr/lib/" + QApplication::applicationName() + "/helper"};
-        start("pkexec", {helper, cmd});
+        start(elevate, {helper, cmd});
     } else {
         start("/bin/bash", {"-c", cmd});
     }

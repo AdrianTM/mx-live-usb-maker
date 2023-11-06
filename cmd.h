@@ -19,6 +19,10 @@ public:
 
 signals:
     void done();
+
+private:
+    QString elevate;
+    QString helper;
 };
 
 #endif // CMD_H
