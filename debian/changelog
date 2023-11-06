@@ -1,4 +1,4 @@
-CUSTOMPROGRAMNAME (23.11) mx; urgency=medium
+CUSTOMPROGRAMNAME (23.11.01) mx; urgency=medium
 
   * Run program as normal user and elevate only when needed
 
