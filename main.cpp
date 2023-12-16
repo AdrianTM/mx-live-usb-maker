@@ -30,12 +30,12 @@
 #include <QStandardPaths>
 #include <QTranslator>
 
+#include "common.h"
 #include "mainwindow.h"
 #include <unistd.h>
 #include <version.h>
 
 static QFile logFile;
-extern const QString starting_home = qEnvironmentVariable("HOME");
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 int main(int argc, char *argv[])

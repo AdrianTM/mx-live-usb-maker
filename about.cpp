@@ -8,12 +8,11 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
+#include "common.h"
 #include "version.h"
 #include <unistd.h>
 
-extern const QString starting_home;
-
-// display doc as nomal user when run as root
+// Display doc as nomal user when run as root
 void displayDoc(const QString &url, const QString &title)
 {
     qputenv("HOME", starting_home.toUtf8());

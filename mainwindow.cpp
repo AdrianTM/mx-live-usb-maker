@@ -32,8 +32,6 @@
 
 using namespace std::chrono_literals;
 
-extern const QString starting_home;
-
 MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     : QDialog(parent),
       ui(new Ui::MainWindow)
@@ -61,7 +59,7 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
             setDefaultMode(fileName);
         }
     }
-    this->adjustSize();
+    adjustSize();
 }
 
 MainWindow::~MainWindow()
@@ -172,7 +170,7 @@ void MainWindow::makeUsb(const QString &options)
 void MainWindow::setup()
 {
     connect(QApplication::instance(), &QApplication::aboutToQuit, this, &MainWindow::cleanup);
-    this->setWindowTitle(QStringLiteral("MX Live Usb Maker"));
+    setWindowTitle(QStringLiteral("MX Live Usb Maker"));
 
     QFont font(QStringLiteral("monospace"));
     font.setStyleHint(QFont::Monospace);
@@ -185,7 +183,7 @@ void MainWindow::setup()
     ui->pushCancel->setEnabled(true);
     ui->pushNext->setEnabled(true);
     ui->outputBox->setCursorWidth(0);
-    height = this->heightMM();
+    height = heightMM();
 
     QRegularExpression rx(QStringLiteral("\\w*"));
     QValidator *validator = new QRegularExpressionValidator(rx, this);
@@ -422,7 +420,7 @@ void MainWindow::pushNext_clicked()
 
 void MainWindow::pushBack_clicked()
 {
-    this->setWindowTitle(QStringLiteral("MX Live Usb Maker"));
+    setWindowTitle(QStringLiteral("MX Live Usb Maker"));
     ui->stackedWidget->setCurrentIndex(0);
     ui->pushNext->setEnabled(true);
     ui->pushBack->hide();
@@ -432,23 +430,23 @@ void MainWindow::pushBack_clicked()
 
 void MainWindow::pushAbout_clicked()
 {
-    this->hide();
+    hide();
     displayAboutMsgBox(
-        tr("About %1").arg(this->windowTitle()),
-        "<p align=\"center\"><b><h2>" + this->windowTitle() + "</h2></b></p><p align=\"center\">" + tr("Version: ")
+        tr("About %1").arg(windowTitle()),
+        "<p align=\"center\"><b><h2>" + windowTitle() + "</h2></b></p><p align=\"center\">" + tr("Version: ")
             + QApplication::applicationVersion() + "</p><p align=\"center\"><h3>"
             + tr("Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live "
                  "system.")
             + R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)"
             + tr("Copyright (c) MX Linux") + "<br /><br /></p>",
-        QStringLiteral("/usr/share/doc/mx-live-usb-maker/license.html"), tr("%1 License").arg(this->windowTitle()));
-    this->show();
+        QStringLiteral("/usr/share/doc/mx-live-usb-maker/license.html"), tr("%1 License").arg(windowTitle()));
+    show();
 }
 
 void MainWindow::pushHelp_clicked()
 {
     QString url = QStringLiteral("/usr/share/doc/mx-live-usb-maker/mx-live-usb-maker.html");
-    displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
+    displayDoc(url, tr("%1 Help").arg(windowTitle()));
 }
 
 void MainWindow::pushSelectSource_clicked()
@@ -494,7 +492,7 @@ void MainWindow::pushOptions_clicked()
         ui->groupAdvOptions->hide();
         advancedOptions = false;
         ui->pushOptions->setIcon(QIcon::fromTheme(QStringLiteral("go-down")));
-        this->setMaximumHeight(height);
+        setMaximumHeight(height);
     } else {
         ui->pushOptions->setText(tr("Hide advanced options"));
         ui->groupAdvOptions->show();
