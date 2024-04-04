@@ -145,7 +145,7 @@ void MainWindow::makeUsb(const QString &options)
     }
 
     // Check amount of io on device before copy, this is in sectors
-    const quint64 start_io = cmd.getOut("cat /sys/block/" + device + "/stat |awk '{print $7}'", true).toULongLong();
+    const quint64 start_io = cmd.getOut("awk '{print $7}' /sys/block/" + device + "/stat", true).toULongLong();
     ui->progBar->setMinimum(static_cast<int>(start_io));
     qDebug() << "start io is " << start_io;
     const quint64 iso_sectors = source_size.toULongLong() * 2048; // source_size * 1024 / 512 * 1024
