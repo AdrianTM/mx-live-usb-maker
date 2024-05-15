@@ -307,8 +307,11 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 {
     QStringList suitableDevices;
     suitableDevices.reserve(devices.size());
-    QString liveDrive = cmd.getOut(cli_utils + "get_drive $(get_live_dev)", true).trimmed().remove("/dev/");
-    QString rootDrive = cmd.getOut("findmnt -no SOURCE /", true).trimmed().remove("/dev/");
+    QString liveDrive
+        = cmd.getOut(cli_utils + "get_drive $(get_live_dev)", true).trimmed().remove(QRegularExpression("^/dev/"));
+    QString rootDrive
+        = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE) | grep 'disk' | awk '{print $1}'", true)
+              .trimmed();
     for (const QString &deviceInfo : devices) {
         QString deviceName = deviceInfo.split(' ').first();
         bool isUsbOrRemovable
