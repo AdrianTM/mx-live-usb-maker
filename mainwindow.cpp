@@ -138,10 +138,8 @@ void MainWindow::makeUsb(const QString &options)
     // Check amount of io on device before copy, this is in sectors
     const quint64 start_io = cmd.getOut("awk '{print $7}' /sys/block/" + device + "/stat", true).toULongLong();
     ui->progBar->setMinimum(static_cast<int>(start_io));
-    qDebug() << "start io is " << start_io;
     const quint64 iso_sectors = source_size.toULongLong() * 2048; // source_size * 1024 / 512 * 1024
     ui->progBar->setMaximum(static_cast<int>(iso_sectors + start_io));
-    qDebug() << "max progress bar is " << ui->progBar->maximum();
 
     QString cmdstr = (LUM + " gui " + options + " -C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->radioDd->isChecked()) {
@@ -155,7 +153,7 @@ void MainWindow::makeUsb(const QString &options)
     }
     setConnections();
     stat_file = new QFile("/sys/block/" + device + "/stat");
-    qDebug() << cmd.getOutAsRoot(cmdstr, true);
+    cmd.runAsRoot(cmdstr);
 }
 
 void MainWindow::setup()
@@ -222,7 +220,7 @@ QString MainWindow::buildOptionList()
     QStringList optionsList {"-N"};
 
     // Map the checkboxes to the corresponding options
-    QMap<QCheckBox *, QString> checkboxOptions {
+    std::map<QCheckBox *, QString> checkboxOptions {
         {ui->checkEncrypt, "-E"},
         {ui->checkGpt, "-g"},
         {ui->checkKeep, "-k"},
@@ -237,7 +235,7 @@ QString MainWindow::buildOptionList()
     };
 
     // Add options for the checked checkboxes
-    for (auto [checkBox, option] : checkboxOptions.toStdMap()) {
+    for (auto [checkBox, option] : checkboxOptions) {
         if (checkBox->isChecked()) {
             optionsList.append(option);
         }
