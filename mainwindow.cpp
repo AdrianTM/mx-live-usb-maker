@@ -106,14 +106,14 @@ void MainWindow::makeUsb(const QString &options)
 {
     device = ui->comboUsb->currentText().split(' ').first();
 
-    QString source = "\"" + ui->pushSelectSource->property("filename").toString() + "\"";
+    QString source = '"' + ui->pushSelectSource->property("filename").toString() + '"';
     QString source_size;
     if (!ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
         source_size = cmd.getOut("du -m " + source + " 2>/dev/null | cut -f1", true);
     } else if (ui->checkCloneMode->isChecked()) {
         source_size = cmd.getOut("du -m --summarize " + source + " 2>/dev/null | cut -f1", true);
         QString root_partition = cmd.getOut("df --output=source " + source + " | awk 'END{print $1}'");
-        source = "clone=" + source;
+        source = "clone=" + source.remove('"');
         if ("/dev/" + device == cmd.getOut(cli_utils + "get_drive " + root_partition)) {
             QMessageBox::critical(this, tr("Failure"),
                                   tr("Source and destination are on the same device, please select again."));
@@ -124,8 +124,8 @@ void MainWindow::makeUsb(const QString &options)
         }
     } else if (ui->checkCloneLive->isChecked()) {
         source = "clone";
-        source_size = isToRam() ? cmd.getOut("du -m --summarize /live/to-ram 2>/dev/null | cut -f1", true)
-                                : cmd.getOut("du -m --summarize /live/boot-dev 2>/dev/null | cut -f1", true);
+        QString path = isToRam() ? "/live/to-ram" : "/live/boot-dev";
+        source_size = cmd.getOut("du -m --summarize " + path + " 2>/dev/null | cut -f1", true);
     }
 
     if (!checkDestSize()) {
