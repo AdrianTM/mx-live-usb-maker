@@ -298,7 +298,7 @@ void MainWindow::cleanup()
 
 QStringList MainWindow::buildUsbList()
 {
-    QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", true);
+    QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", true).trimmed();
     return removeUnsuitable(drives.split('\n'));
 }
 
@@ -306,12 +306,14 @@ QStringList MainWindow::buildUsbList()
 QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 {
     QStringList suitableDevices;
-    QString liveDrive = cmd.getOut(cli_utils + "get_drive $(get_live_dev)", true).trimmed();
+    suitableDevices.reserve(devices.size());
+    QString liveDrive = cmd.getOut(cli_utils + "get_drive $(get_live_dev)", true).trimmed().remove("/dev/");
+    QString rootDrive = cmd.getOut("findmnt -no SOURCE /", true).trimmed().remove("/dev/");
     for (const QString &deviceInfo : devices) {
         QString deviceName = deviceInfo.split(' ').first();
         bool isUsbOrRemovable
             = ui->checkForceUsb->isChecked() || cmd.run(cli_utils + "is_usb_or_removable " + deviceName.toUtf8(), true);
-        if (isUsbOrRemovable && deviceName != liveDrive) {
+        if (isUsbOrRemovable && deviceName != liveDrive && deviceName != rootDrive) {
             suitableDevices.append(deviceInfo);
         }
     }
