@@ -276,14 +276,24 @@ void MainWindow::cleanup()
         QFile::remove(logfile.absoluteFilePath());
     }
     if (cmd.state() != QProcess::NotRunning) {
-        Cmd cmd2;
-        cmd2.runAsRoot("kill " + QString::number(cmd.processId()));
-        cmd2.run("sleep 10", true);
-        if (cmd.state() != QProcess::NotRunning) {
-            cmd2.runAsRoot("kill -9 " + QString::number(cmd.processId()));
-        }
+        QTimer::singleShot(10s, this, [this] {
+            if (cmd.state() != QProcess::NotRunning) {
+                Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), true);
+            }
+        });
+        Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), true);
     }
-    QApplication::quit();
+    const QString mount_path = "/run/live-usb-maker";
+    if (Cmd().run("mountpoint -q " + mount_path, true)) {
+        Cmd().runAsRoot("umount -Rl " + mount_path, true);
+    }
+    if (Cmd().run("mountpoint -q " + mount_path + "/main", true)) {
+        Cmd().runAsRoot("umount -l " + mount_path + "/{main,uefi}", true);
+    }
+    QString pid = QString::number(QApplication::applicationPid());
+    if (!Cmd().run("ps --ppid " + pid, true)) {
+        Cmd().runAsRoot("kill -- -" + pid, true);
+    }
 }
 
 QStringList MainWindow::buildUsbList()
@@ -317,11 +327,7 @@ void MainWindow::cmdDone()
     if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked()) {
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
     } else {
-        const QString mount_path = "/run/live-usb-maker";
-        if (QFile::exists(mount_path)) {
-            Cmd cmd2;
-            cmd2.runAsRoot("umount -Rl " + mount_path);
-        }
+        cleanup();
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
     }
     cmd.disconnect();
@@ -575,8 +581,7 @@ void MainWindow::radioNormal_clicked()
 
 bool MainWindow::isantiX_mx_family(const QString &selected)
 {
-    Cmd cmd2;
-    return cmd2.run(
+    return Cmd().run(
         QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
             .arg(selected),
         true);
