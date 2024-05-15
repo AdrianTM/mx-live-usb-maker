@@ -594,18 +594,21 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
 void MainWindow::pushLumLogFile_clicked()
 {
     QFileInfo lum(LUM);
-    QString url = "/tmp/" + lum.baseName() + ".log";
-    qDebug() << "lumlog" << url;
-    if (!QFileInfo::exists("/var/log/" + lum.baseName() + ".log")) {
+    QString logFileName = lum.baseName() + ".log";
+    QString logFilePath = "/var/log/" + logFileName;
+    QString tempLogFilePath = "/tmp/" + logFileName;
+    qDebug() << "lumlog" << tempLogFilePath;
+
+    if (!QFileInfo::exists(logFilePath)) {
         QMessageBox::information(this, QApplication::applicationName(),
-                                 tr("Could not find a log file at: ") + "/var/log/" + lum.baseName() + ".log");
+                                 tr("Could not find a log file at: ") + logFilePath);
         return;
     }
-    // Generate temporary log file
-    QString cmd_str = "tac /var/log/" + lum.baseName() + R"(.log | sed "/^=\{60\}=*$/q" |tac > )" + url;
-    Cmd cmd2;
-    cmd2.run(cmd_str);
-    displayDoc(url, lum.baseName());
+
+    // Generate temporary log file by reversing the log file until the delimiter, then reversing it back
+    QString cmd_str = QString("tac %1 | sed '/^={60}=$/q' | tac > %2").arg(logFilePath, tempLogFilePath);
+    Cmd().run(cmd_str);
+    displayDoc(tempLogFilePath, lum.baseName());
 }
 
 void MainWindow::spinBoxSize_valueChanged(int arg1)
