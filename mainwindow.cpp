@@ -70,8 +70,9 @@ MainWindow::~MainWindow()
 bool MainWindow::checkDestSize()
 {
 
-    const quint64 disk_size = cmd.getOut("lsblk --output SIZE -n --bytes /dev" + device).toULongLong()
-                              / static_cast<quint64>(1024 * 1024 * 1024);
+    const quint64 disk_size
+        = cmd.getOut("lsblk --output SIZE -n --bytes /dev/" + device + " | head -1", true).toULongLong()
+          / static_cast<quint64>(1024 * 1024 * 1024);
 
     if (disk_size > size_check) { // When writing on large drives (potentially unintended)
         return (QMessageBox::Yes
