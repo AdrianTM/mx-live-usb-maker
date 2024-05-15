@@ -516,11 +516,13 @@ void MainWindow::checkCloneMode_clicked(bool checked)
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->pushSelectSource->setText(tr("Select Source Directory"));
         ui->pushSelectSource->setIcon(QIcon::fromTheme("folder"));
+        ui->radioDd->setDisabled(true);
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->pushSelectSource->setText(tr("Select ISO"));
         ui->pushSelectSource->setIcon(QIcon::fromTheme("user-home"));
         ui->checkCloneLive->setEnabled(isRunningLive());
+        ui->radioDd->setEnabled(true);
     }
     ui->pushSelectSource->setProperty("filename", "");
 }
@@ -536,6 +538,7 @@ void MainWindow::checkCloneLive_clicked(bool checked)
         ui->pushSelectSource->setProperty("filename", "clone");
         ui->pushSelectSource->setIcon(QIcon::fromTheme("tools-media-optical-copy"));
         ui->pushSelectSource->blockSignals(true);
+        ui->radioDd->setDisabled(true);
     } else {
         ui->label_3->setText("<b>" + tr("Select ISO file") + "</b>");
         ui->pushSelectSource->setEnabled(true);
@@ -543,6 +546,7 @@ void MainWindow::checkCloneLive_clicked(bool checked)
         ui->pushSelectSource->setProperty("filename", "");
         ui->pushSelectSource->setIcon(QIcon::fromTheme("user-home"));
         ui->pushSelectSource->blockSignals(false);
+        ui->radioDd->setDisabled(false);
     }
 }
 
