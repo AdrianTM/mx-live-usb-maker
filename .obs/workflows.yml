@@ -5,7 +5,3 @@ workflow:
         package: %{SCM_REPOSITORY_NAME}
   filters:
     event: tag_push
-    branches:
-        only:
-            - main
-            - master
