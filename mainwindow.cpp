@@ -154,13 +154,15 @@ void MainWindow::setup()
     font.setStyleHint(QFont::Monospace);
     ui->outputBox->setFont(font);
 
+    defaultHeight = geometry().height();
     ui->groupAdvOptions->setVisible(false);
     ui->pushBack->setVisible(false);
     ui->stackedWidget->setCurrentIndex(0);
     ui->pushCancel->setEnabled(true);
     ui->pushNext->setEnabled(true);
     ui->outputBox->setCursorWidth(0);
-    height = heightMM();
+    adjustSize();
+    height = geometry().height();
 
     QRegularExpression rx("\\w*");
     QValidator *validator = new QRegularExpressionValidator(rx, this);
@@ -174,10 +176,15 @@ void MainWindow::setup()
 
     // Dynamically show or hide data format options based on availability
     bool dataFirstAvailable = cmd.run(LUM + " --help | grep -q -- --data-first", true);
-    ui->comboBoxDataFormat->setVisible(dataFirstAvailable);
     ui->checkDataFirst->setVisible(dataFirstAvailable);
-    ui->spinBoxDataSize->setVisible(dataFirstAvailable);
+    ui->comboBoxDataFormat->setVisible(dataFirstAvailable);
     ui->labelFormat->setVisible(dataFirstAvailable);
+    ui->spinBoxDataSize->setVisible(dataFirstAvailable);
+
+    // Disable by default and enable only when checking the box
+    ui->comboBoxDataFormat->setEnabled(false);
+    ui->labelFormat->setEnabled(false);
+    ui->spinBoxDataSize->setEnabled(false);
 }
 
 void MainWindow::setGeneralConnections()
@@ -464,18 +471,11 @@ void MainWindow::pushRefresh_clicked()
 
 void MainWindow::pushOptions_clicked()
 {
-    if (advancedOptions) {
-        ui->pushOptions->setText(tr("Show advanced options"));
-        ui->groupAdvOptions->hide();
-        advancedOptions = false;
-        ui->pushOptions->setIcon(QIcon::fromTheme("go-down"));
-        setMaximumHeight(height);
-    } else {
-        ui->pushOptions->setText(tr("Hide advanced options"));
-        ui->groupAdvOptions->show();
-        advancedOptions = true;
-        ui->pushOptions->setIcon(QIcon::fromTheme("go-up"));
-    }
+    advancedOptions = !advancedOptions;
+    ui->groupAdvOptions->setVisible(advancedOptions);
+    ui->pushOptions->setText(advancedOptions ? tr("Hide advanced options") : tr("Show advanced options"));
+    ui->pushOptions->setIcon(QIcon::fromTheme(advancedOptions ? "go-up" : "go-down"));
+    setFixedHeight(advancedOptions ? defaultHeight : height);
 }
 
 void MainWindow::textLabel_textChanged(QString arg1)
@@ -608,6 +608,9 @@ void MainWindow::spinBoxSize_valueChanged(int arg1)
 void MainWindow::checkDataFirst_clicked(bool checked)
 {
     ui->spinBoxSize->setDisabled(checked);
+    ui->comboBoxDataFormat->setEnabled(checked);
+    ui->labelFormat->setEnabled(checked);
+    ui->spinBoxDataSize->setEnabled(checked);
 }
 
 void MainWindow::setSourceFile(const QString &fileName)

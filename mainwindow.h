@@ -82,6 +82,7 @@ private:
     bool advancedOptions {};
     const QString cli_utils {". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;"};
     int height {};
+    int defaultHeight {};
     uint size_check;
 
     [[nodiscard]] QString buildOptionList();
