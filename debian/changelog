@@ -1,4 +1,4 @@
-CUSTOMPROGRAMNAME (24.10) mx; urgency=medium
+CUSTOMPROGRAMNAME (24.10.01) mx; urgency=medium
 
   * Fix window resizing when showing/hiding advanced options
   * Clarify that size of ESP is expressed in MB

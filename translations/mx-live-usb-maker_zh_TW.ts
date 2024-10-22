@@ -186,10 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">格式</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>更新磁碟清單</translation>
@@ -396,10 +392,6 @@ Please wait until the process is completed</source>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">找不到 %1/antiX/linuxfs 檔案</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

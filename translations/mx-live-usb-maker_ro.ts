@@ -186,10 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Formatare</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Actualizare listă dispozitive</translation>
@@ -396,10 +392,6 @@ Please wait until the process is completed</source>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Nu s-a putut găsi fișierul %1/antiX/linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

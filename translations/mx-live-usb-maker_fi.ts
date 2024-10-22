@@ -186,10 +186,6 @@
         <translation>Tee erillinen data-osio (prosentit)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Muoto</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Päivitä ajuriluettelo</translation>
@@ -400,10 +396,6 @@ Odota kunnes prosessi on valmis</translation>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Ei voitu löytää %1/antiX/linuxfs tiedostoa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

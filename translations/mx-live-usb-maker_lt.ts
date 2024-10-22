@@ -186,10 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Formatuoti</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Iš naujo įkelti diskų sąrašą</translation>
@@ -398,10 +394,6 @@ Please wait until the process is completed</source>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Nepavyko rasti %1/antiX/linuxfs failo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

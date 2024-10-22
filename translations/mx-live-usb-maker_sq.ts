@@ -186,10 +186,6 @@
         <translation>Krijo pjesë më vete për të dhënat (përqindje)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Formatoje</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Rifresko listë disqesh</translation>
@@ -400,10 +396,6 @@ Ju lutemi, prisni deri sa procesi të jetë plotësuar</translation>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">S’u gjet dot kartelë %1/antiX/linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

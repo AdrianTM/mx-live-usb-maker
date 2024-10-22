@@ -186,10 +186,6 @@
         <translation>Δημιουργία ξεχωριστού διαμερίσματος δεδομένων (επί τοις εκατό)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Διαμόρφωση</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Ανανέωση λίστας</translation>
@@ -399,11 +395,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Δεν ήταν δυνατή η εύρεση του αρχείου %1/antiX/linuxfs</translation>
+        <translation>Δεν ήταν δυνατή η εύρεση linuxfs αρχείο</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

@@ -186,10 +186,6 @@
         <translation>Creare una partizione dati separata (percentuale)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Formato</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Aggiorna l&apos;elenco delle unità</translation>
@@ -399,11 +395,7 @@ Attendi fino al completamento del processo</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Impossibile trovare il file %1/antiX/linuxfs</translation>
+        <translation>Non è stato possibile trovare il file linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

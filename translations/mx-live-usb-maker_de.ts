@@ -186,10 +186,6 @@
         <translation>Eigenständige Partition für Daten erzeugen (in Prozent)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Format</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Laufwerksliste erneuern</translation>
@@ -399,11 +395,7 @@ Bitte auf Abschluss des Vorgangs warten</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">%1/antiX/linuxfs Datei konnte nicht gefunden werden</translation>
+        <translation>Kann nicht finden linuxfs-Datei</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

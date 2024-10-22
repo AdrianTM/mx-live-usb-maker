@@ -186,10 +186,6 @@
         <translation>Skab separat datapartition (procent)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Format</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Genopfrisk drevliste</translation>
@@ -398,10 +394,6 @@ Please wait until the process is completed</source>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Kunne ikke finde %1-/antiX-/linuxfs-fil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

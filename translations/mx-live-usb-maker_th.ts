@@ -186,10 +186,6 @@
         <translation>สรา้งพาร์ติชันแยกสำหรับเก็บข้อมูล (ในหน่วยเปอร์เซนต์)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">ฟอร์แมต</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>รีเฟรชรายชื่อไดรฟ์</translation>

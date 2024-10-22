@@ -186,10 +186,6 @@
         <translation>Ustvari ločen razdelek (odstotki)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Format</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Osveži seznam pogonov</translation>
@@ -401,10 +397,6 @@ Počakajte, da se postopek zaključi</translation>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Nisem našel datoteke %1/antiX/linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

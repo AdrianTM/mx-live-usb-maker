@@ -186,10 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">አቀራረብ</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>የ አካል ዝርዝር ማነቃቂያ</translation>

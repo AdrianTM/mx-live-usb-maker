@@ -186,10 +186,6 @@
         <translation>Gör en separat data-partition (procent)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Format</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Förnya disk-listan</translation>
@@ -399,11 +395,7 @@ Var vänlig vänta tills processen är klar</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Kunde inte hitta %1/antiX/linuxfs filen</translation>
+        <translation>Kunde inte hitta linuxfs fil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

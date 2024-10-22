@@ -186,10 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">تهيئة</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>تحديث قائمة الأجهزة</translation>

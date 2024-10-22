@@ -186,10 +186,6 @@
         <translation>制作单独的数据分区（百分比）</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">格式化</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>刷新驱动器列表</translation>
@@ -398,10 +394,6 @@ Please wait until the process is completed</source>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">找不到 %1/antiX/linuxfs 文件</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

@@ -186,10 +186,6 @@
         <translation>Maak afzonderlijke data partitie (procent)</translation>
     </message>
     <message>
-        <source>Format</source>
-        <translation type="vanished">Formaat</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="516"/>
         <source>Refresh drive list</source>
         <translation>Refresh schijf list</translation>
@@ -399,11 +395,7 @@ Wacht aub tot het proces is voltooid</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not find %1/antiX/linuxfs file</source>
-        <translation type="vanished">Kon %1/antiX/linuxfs bestand niet vinden</translation>
+        <translation>Kon linuxfs-bestand niet vinden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
