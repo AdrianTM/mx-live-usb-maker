@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ formátu datového oddílu</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../mainwindow.ui" line="743"/>
         <source>Clone a mounted live system</source>
-        <translation type="unfinished"></translation>
+        <translation>Klonování připojeného systému</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="750"/>
@@ -298,7 +298,9 @@
         <source>Writing %1 using &apos;dd&apos; command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zápis %1 pomocí příkazu &apos;dd&apos; na /dev/%2,
+
+Vyčkejte prosím na dokončení procesu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="151"/>

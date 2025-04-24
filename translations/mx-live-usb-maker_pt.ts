@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo do formato da partição de dados</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Aguarde até que o processo esteja concluído</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>O ficheiro linuxfs não foi encontrado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

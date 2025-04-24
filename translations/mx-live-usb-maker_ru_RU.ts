@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип формата раздела данных</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось найти файл linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

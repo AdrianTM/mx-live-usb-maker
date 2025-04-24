@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Partisjonens filsystem</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Vennligst vent til prosessen fullføres</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fant ikke linuxfs-fil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

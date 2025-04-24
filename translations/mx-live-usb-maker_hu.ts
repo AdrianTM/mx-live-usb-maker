@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatpartíció formázás típusa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Várja meg a folyamat befejeződését</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem található a linuxfs fájl</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

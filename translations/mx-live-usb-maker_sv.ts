@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Datapartitionens formattyp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>

@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="219"/>
         <source>View Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti žurnalą</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="253"/>
@@ -103,12 +103,12 @@
     <message>
         <location filename="../mainwindow.ui" line="321"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"></translation>
+        <translation>Vietoj msdos, naudoti gpt skaidymą</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT skaidymas</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="331"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../mainwindow.ui" line="398"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"></translation>
+        <translation>ESP (uefi) skaidinio dydis:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
@@ -158,7 +158,7 @@
     <message>
         <location filename="../mainwindow.ui" line="465"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation>vfat</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="506"/>
@@ -382,7 +382,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="447"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO failai (*.iso);;Visi failai (*.*)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="452"/>
@@ -393,7 +393,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko rasti linuxfs failo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

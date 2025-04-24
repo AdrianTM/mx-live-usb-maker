@@ -11,7 +11,7 @@
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>Sair do aplicativo</translation>
+        <translation>Sair do programa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="49"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../mainwindow.ui" line="87"/>
         <source>Display help </source>
-        <translation>Exibir ajuda</translation>
+        <translation>Exibir a ajuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>About this application</source>
-        <translation>Sobre este aplicativo</translation>
+        <translation>Sobre este programa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo do formato da partição de dados</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Por favor, aguarde até que o processo seja finalizado</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível encontrar o arquivo ‘linuxfs’</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

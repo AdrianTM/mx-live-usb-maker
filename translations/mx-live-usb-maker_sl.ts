@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta formata podatkovnega razdelka</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -396,7 +396,7 @@ Počakajte, da se postopek zaključi</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni bilo mogoče najti linuxfs datoteke</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>

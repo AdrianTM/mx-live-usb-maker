@@ -113,7 +113,7 @@
     <message>
         <location filename="../mainwindow.ui" line="331"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation>更新（既存の Live USB 更新のみ）</translation>
+        <translation>更新（既存の Live USB の更新のみ）</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>データ保存用のパーティションのフォーマット形式</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -330,7 +330,7 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../mainwindow.cpp" line="388"/>
         <source>Please select a USB device to write to</source>
-        <translation>書き込む USB デバイスを選択してください</translation>
+        <translation>書き込み先の USB デバイスを選択してください</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="391"/>

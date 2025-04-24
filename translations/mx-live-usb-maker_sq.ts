@@ -163,7 +163,7 @@
     <message>
         <location filename="../mainwindow.ui" line="506"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"></translation>
+        <translation>Lloj formati pjese për të dhëna</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="460"/>
@@ -395,7 +395,7 @@ Ju lutemi, prisni deri sa procesi të jetë plotësuar</translation>
     <message>
         <location filename="../mainwindow.cpp" line="461"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"></translation>
+        <translation>S’u gjet dot kartelë linuxfs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
