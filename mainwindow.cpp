@@ -26,6 +26,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QScrollBar>
+#include <QStorageInfo>
 
 #include "about.h"
 #include <chrono>
@@ -83,13 +84,37 @@ bool MainWindow::checkDestSize()
 
 bool MainWindow::isRunningLive()
 {
-    QProcess process;
-    process.start("df", {"-T", "/"});
-    process.waitForFinished();
-    QString output = process.readAllStandardOutput();
-    QRegularExpression re(R"(.*\n\S+\s+(\S+)\s+)");
-    QRegularExpressionMatch match = re.match(output);
-    return (match.hasMatch() && (match.captured(1) == "aufs" || match.captured(1) == "overlay"));
+    static const QSet<QString> liveFsTypes = {"aufs", "overlay"};
+
+    // First, try to detect using QStorageInfo
+    QStorageInfo storageInfo("/");
+    QString fsType = QString::fromUtf8(storageInfo.fileSystemType());
+    if (liveFsTypes.contains(fsType)) {
+        return true;
+    }
+
+    // Fallback: parse /proc/mounts for the root filesystem
+    QFile mountsFile("/proc/mounts");
+    if (mountsFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&mountsFile);
+        while (!in.atEnd()) {
+            const QString line = in.readLine();
+            // /proc/mounts format: device mountpoint fstype ...
+            // We want the line where mountpoint is /
+            QStringList parts = line.split(' ', Qt::SkipEmptyParts);
+            if (parts.size() > 2 && parts.at(1) == "/") {
+                if (liveFsTypes.contains(parts.at(2))) {
+                    mountsFile.close();
+                    return true;
+                }
+                break; // found root, no need to continue
+            }
+        }
+        mountsFile.close();
+    }
+
+    // If both methods fail, return false
+    return false;
 }
 
 bool MainWindow::isToRam()
