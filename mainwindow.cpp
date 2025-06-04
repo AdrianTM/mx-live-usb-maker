@@ -42,11 +42,19 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     setGeneralConnections();
 
     // Setup options
-    LUM = "/usr/local/bin/";
+    const QString defaultLum = "live-usb-maker";
     QSettings settings("/etc/mx-live-usb-maker/mx-live-usb-maker.conf", QSettings::NativeFormat);
-    LUM += settings.value("LUM", "live-usb-maker").toString();
-    sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
+    QString lumName = settings.value("LUM", defaultLum).toString();
+
+    // Try /usr/local/bin first, then fall back to /usr/bin
+    LUM = "/usr/local/bin/" + lumName;
+    if (!QFile::exists(LUM)) {
+        LUM = "/usr/bin/" + lumName;
+    }
     qDebug() << "LUM is:" << LUM;
+
+    sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
+
 
     setWindowFlags(Qt::Window); // for the close, min, and max buttons
     setup();

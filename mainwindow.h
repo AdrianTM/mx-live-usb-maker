@@ -21,6 +21,7 @@
  **********************************************************************/
 #pragma once
 
+#include <QFile>
 #include <QMessageBox>
 #include <QProcess>
 #include <QSettings>
@@ -80,7 +81,9 @@ private:
     QString elevate;
     QTimer timer;
     bool advancedOptions {};
-    const QString cliUtils {". /usr/local/lib/cli-shell-utils/cli-shell-utils.bash;"};
+    const QString cliUtils = QString(". ") + (QFile::exists("/usr/local/lib/cli-shell-utils/cli-shell-utils.bash") ?
+        QString("/usr/local/lib/cli-shell-utils/cli-shell-utils.bash;") :
+        QString("/usr/lib/cli-shell-utils/cli-shell-utils.bash;"));
     int height {};
     int defaultHeight {};
     uint sizeCheck;
