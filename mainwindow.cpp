@@ -76,17 +76,93 @@ MainWindow::~MainWindow()
 
 bool MainWindow::checkDestSize()
 {
-    const quint64 diskSize
-        = cmd.getOut("lsblk --output SIZE -n --bytes /dev/" + device + " | head -1", true).toULongLong()
-          / (1024 * 1024 * 1024);
+    // Get target device size information
+    const quint64 diskSizeBytes = cmd.getOut("lsblk --output SIZE -n --bytes /dev/" + device + " | head -1", true).toULongLong();
+    const quint64 diskSize = diskSizeBytes / (1024 * 1024 * 1024); // Convert to GB
+    qDebug() << "Target device:" << device << "Raw size (bytes):" << diskSizeBytes << "Size (GB):" << diskSize;
 
-    if (diskSize > sizeCheck) { // When writing on large drives (potentially unintended)
-        return (QMessageBox::Yes
-                == QMessageBox::question(
-                    this, tr("Confirmation"),
-                    tr("Target device %1 is larger than %2 GB. Do you wish to proceed?").arg(device).arg(sizeCheck),
-                    QMessageBox::No | QMessageBox::Yes, QMessageBox::No));
+    // Determine the source size depending on the mode
+    quint64 sourceSizeBytes = 0;
+    const QString sourceFilename = ui->pushSelectSource->property("filename").toString();
+    qDebug() << "Source filename property:" << sourceFilename;
+
+    // Handle source size calculation based on operation mode
+    if (ui->checkCloneMode->isChecked() || ui->checkCloneLive->isChecked()) {
+        QString linuxfsPath;
+
+        // Determine the linuxfs path based on clone mode
+        if (ui->checkCloneMode->isChecked()) {
+            // Clone mode: check for linuxfs file in standard locations
+            linuxfsPath = sourceFilename + "/antiX/linuxfs";
+            if (!QFileInfo::exists(linuxfsPath)) {
+                linuxfsPath = sourceFilename + "/linuxfs";
+            }
+        } else {
+            // Clone live system mode: use current live system
+            linuxfsPath = "/live/linux";
+        }
+
+        // Calculate source size if linuxfs path exists
+        if (QFileInfo::exists(linuxfsPath)) {
+            QFileInfo info(linuxfsPath);
+            if (info.isDir()) {
+                // For directories, get used space via df command
+                const QString cmdStr = QString("df --output=used -B1 \"%1\" | tail -1").arg(linuxfsPath);
+                const QString usedStr = cmd.getOut(cmdStr, true).trimmed();
+                bool ok = false;
+                sourceSizeBytes = usedStr.toULongLong(&ok);
+                if (!ok) {
+                    sourceSizeBytes = 0;
+                }
+            } else {
+                // For files, get size directly
+                sourceSizeBytes = info.size();
+            }
+        } else {
+            sourceSizeBytes = 0;
+            // Show warning only in clone mode (not for live cloning)
+            if (ui->checkCloneMode->isChecked()) {
+                QMessageBox::warning(this, tr("Source Error"),
+                    tr("Could not find the source linuxfs file."));
+            }
+        }
+    } else {
+        // Standard ISO file mode
+        if (!sourceFilename.isEmpty() && QFileInfo::exists(sourceFilename)) {
+            sourceSizeBytes = QFileInfo(sourceFilename).size();
+            qDebug() << "ISO file size (bytes):" << sourceSizeBytes;
+        } else {
+            qDebug() << "ISO file does not exist or not specified:" << sourceFilename;
+            sourceSizeBytes = 0;
+        }
     }
+
+    // Check if source is larger than destination
+    if (sourceSizeBytes > 0 && diskSizeBytes < sourceSizeBytes) {
+        const QString msg = tr("Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?")
+                        .arg(device)
+                        .arg(ui->pushSelectSource->text());
+        if (QMessageBox::Yes != QMessageBox::warning(this, tr("Size Warning"), msg, QMessageBox::Yes, QMessageBox::No)) {
+            return false;
+        }
+    }
+
+    if (diskSize > sizeCheck) { // Warn user when writing to large drives (potentially unintended)
+        const QString msg = tr("The target device %1 is larger than %2 GB.\n\n"
+                         "This may indicate you have selected the wrong device.\n"
+                         "Are you sure you want to proceed?")
+                          .arg(device)
+                          .arg(sizeCheck);
+        const int ret = QMessageBox::warning(
+            this,
+            tr("Large Target Device Warning"),
+            msg,
+            QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::No
+        );
+        return (ret == QMessageBox::Yes);
+    }
+
     return true;
 }
 
