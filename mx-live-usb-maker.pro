@@ -19,7 +19,7 @@
 # **********************************************************************/
 
 QT       += widgets
-CONFIG   += release warn_on c++17
+CONFIG   += release warn_on c++20
 
 TARGET = CUSTOMPROGRAMNAME
 TEMPLATE = app
