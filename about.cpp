@@ -65,7 +65,7 @@ void displayDoc(const QString &url, const QString &title)
 }
 
 void displayAboutMsgBox(const QString &title, const QString &message, const QString &licenceUrl,
-                        const QString &licenseTitle)
+                        const QString &licenseTitle, QWidget *parent)
 {
     const int dialogWidth = 600;
     const int dialogHeight = 500;
@@ -81,11 +81,11 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
     if (msgBox.clickedButton() == btnLicense) {
         displayDoc(licenceUrl, licenseTitle);
     } else if (msgBox.clickedButton() == btnChangelog) {
-        auto *changelogDialog = new QDialog;
-        changelogDialog->setWindowTitle(QObject::tr("Changelog"));
-        changelogDialog->resize(dialogWidth, dialogHeight);
+        QDialog changelogDialog(parent);
+        changelogDialog.setWindowTitle(QObject::tr("Changelog"));
+        changelogDialog.resize(dialogWidth, dialogHeight);
 
-        auto *textEdit = new QTextEdit(changelogDialog);
+        auto *textEdit = new QTextEdit(&changelogDialog);
         textEdit->setReadOnly(true);
 
         QProcess changelogProc;
@@ -96,14 +96,14 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
         changelogProc.waitForFinished();
         textEdit->setText(changelogProc.readAllStandardOutput());
 
-        auto *btnClose = new QPushButton(QObject::tr("&Close"), changelogDialog);
+        auto *btnClose = new QPushButton(QObject::tr("&Close"), &changelogDialog);
         btnClose->setIcon(QIcon::fromTheme("window-close"));
-        QObject::connect(btnClose, &QPushButton::clicked, changelogDialog, &QDialog::close);
+        QObject::connect(btnClose, &QPushButton::clicked, &changelogDialog, &QDialog::close);
 
-        auto *layout = new QVBoxLayout(changelogDialog);
+        auto *layout = new QVBoxLayout(&changelogDialog);
         layout->addWidget(textEdit);
         layout->addWidget(btnClose);
-        changelogDialog->setLayout(layout);
-        changelogDialog->exec();
+        changelogDialog.setLayout(layout);
+        changelogDialog.exec();
     }
 }

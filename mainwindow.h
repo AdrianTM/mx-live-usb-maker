@@ -75,7 +75,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
-    QFile *statFile {};
     QString LUM;
     QString device;
     QString elevate;

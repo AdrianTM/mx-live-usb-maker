@@ -250,7 +250,6 @@ void MainWindow::makeUsb(const QString &options)
                                            .arg(source, device));
     }
     setConnections();
-    statFile = new QFile("/sys/block/" + device + "/stat");
     cmd.runAsRoot(cmdstr);
 }
 
@@ -463,11 +462,12 @@ void MainWindow::setDefaultMode(const QString &isoName)
 
 void MainWindow::updateBar()
 {
-    statFile->open(QIODevice::ReadOnly);
-    QString out = statFile->readAll();
+    QFile statFile("/sys/block/" + device + "/stat");
+    statFile.open(QIODevice::ReadOnly);
+    QString out = statFile.readAll();
     quint64 current_io = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
     ui->progBar->setValue(static_cast<int>(current_io));
-    statFile->close();
+    statFile.close();
 }
 
 void MainWindow::updateOutput()
@@ -537,7 +537,7 @@ void MainWindow::pushAbout_clicked()
                  "system.")
             + R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)"
             + tr("Copyright (c) MX Linux") + "<br /><br /></p>",
-        "/usr/share/doc/mx-live-usb-maker/license.html", tr("%1 License").arg(windowTitle()));
+        "/usr/share/doc/mx-live-usb-maker/license.html", tr("%1 License").arg(windowTitle()), this);
     show();
 }
 
