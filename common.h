@@ -22,3 +22,7 @@
 #pragma once
 
 inline const QString starting_home {qEnvironmentVariable("HOME")};
+
+// Size conversion constants
+inline const quint64 BYTES_PER_GB = 1024 * 1024 * 1024;
+inline const quint64 SECTORS_PER_MB = 2048; // 1024 KB/MB / 512 bytes/sector * 1024

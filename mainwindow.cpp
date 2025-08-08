@@ -29,6 +29,7 @@
 #include <QStorageInfo>
 
 #include "about.h"
+#include "common.h"
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -77,8 +78,13 @@ MainWindow::~MainWindow()
 bool MainWindow::checkDestSize()
 {
     // Get target device size information
-    const quint64 diskSizeBytes = cmd.getOut("lsblk --output SIZE -n --bytes /dev/" + device + " | head -1", true).toULongLong();
-    const quint64 diskSize = diskSizeBytes / (1024 * 1024 * 1024); // Convert to GB
+    bool ok = false;
+    const quint64 diskSizeBytes = cmd.getOut(QString("lsblk --output SIZE -n --bytes /dev/%1 | head -1").arg(device), true).toULongLong(&ok);
+    if (!ok) {
+        qDebug() << "Failed to parse disk size for device:" << device;
+        return false; // Cannot proceed without valid disk size
+    }
+    const quint64 diskSize = diskSizeBytes / BYTES_PER_GB; // Convert to GB
     qDebug() << "Target device:" << device << "Raw size (bytes):" << diskSizeBytes << "Size (GB):" << diskSize;
 
     // Determine the source size depending on the mode
@@ -213,10 +219,10 @@ void MainWindow::makeUsb(const QString &options)
     QString sourceSize;
 
     if (!ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
-        sourceSize = cmd.getOut("du -m " + source + " 2>/dev/null | cut -f1", true);
+        sourceSize = cmd.getOut(QString("du -m %1 2>/dev/null | cut -f1").arg(source), true);
     } else if (ui->checkCloneMode->isChecked()) {
-        sourceSize = cmd.getOut("du -m --summarize " + source + " 2>/dev/null | cut -f1", true);
-        QString rootPartition = cmd.getOut("df --output=source " + source + " | awk 'END{print $1}'");
+        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(source), true);
+        QString rootPartition = cmd.getOut(QString("df --output=source %1 | awk 'END{print $1}'").arg(source));
         source = "clone=" + source.remove('"');
         if ("/dev/" + device == cmd.getOut(cliUtils + "get_drive " + rootPartition)) {
             showErrorAndReset(tr("Source and destination are on the same device, please select again."));
@@ -225,7 +231,7 @@ void MainWindow::makeUsb(const QString &options)
     } else if (ui->checkCloneLive->isChecked()) {
         source = "clone";
         QString path = isToRam() ? "/live/to-ram" : "/live/boot-dev";
-        sourceSize = cmd.getOut("du -m --summarize " + path + " 2>/dev/null | cut -f1", true);
+        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(path), true);
     }
 
     if (!checkDestSize()) {
@@ -234,17 +240,30 @@ void MainWindow::makeUsb(const QString &options)
     }
 
     // Check amount of IO on device before copy, this is in sectors
-    const quint64 start_io = cmd.getOut("awk '{print $7}' /sys/block/" + device + "/stat", true).toULongLong();
-    ui->progBar->setMinimum(static_cast<int>(start_io));
-    const quint64 isoSectors = sourceSize.toULongLong() * 2048; // sourceSize * 1024 / 512 * 1024
-    ui->progBar->setMaximum(static_cast<int>(isoSectors + start_io));
+    bool ok = false;
+    const quint64 start_io = cmd.getOut(QString("awk '{print $7}' /sys/block/%1/stat").arg(device), true).toULongLong(&ok);
+    if (!ok) {
+        qDebug() << "Failed to parse initial IO stats for device:" << device;
+        ui->progBar->setMinimum(0); // Use default values
+    } else {
+        ui->progBar->setMinimum(static_cast<int>(start_io));
+    }
+
+    const quint64 sourceSizeMB = sourceSize.toULongLong(&ok);
+    if (!ok) {
+        qDebug() << "Failed to parse source size:" << sourceSize;
+        ui->progBar->setMaximum(100); // Use default progress range
+    } else {
+        const quint64 isoSectors = sourceSizeMB * SECTORS_PER_MB;
+        ui->progBar->setMaximum(static_cast<int>(isoSectors + start_io));
+    }
 
     QString cmdstr = (LUM + " gui " + options + " -C off --from=%1 -t /dev/%2").arg(source, device);
     if (ui->radioDd->isChecked()) {
         cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
         qDebug() << cmd.getOutAsRoot(cmdstr, true);
-        cmdstr = "dd bs=1M if=" + source + " of=/dev/" + device;
+        cmdstr = QString("dd bs=1M if=%1 of=/dev/%2").arg(source, device);
         ui->outputBox->insertPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the process is completed")
                                            .arg(source, device));
@@ -462,9 +481,16 @@ void MainWindow::setDefaultMode(const QString &isoName)
 
 void MainWindow::updateBar()
 {
-    QFile statFile("/sys/block/" + device + "/stat");
-    statFile.open(QIODevice::ReadOnly);
+    QFile statFile(QString("/sys/block/%1/stat").arg(device));
+    if (!statFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Failed to open stat file:" << statFile.errorString();
+        return; // Skip this update
+    }
     QString out = statFile.readAll();
+    if (out.isEmpty()) {
+        qDebug() << "Empty stat file content";
+        return;
+    }
     quint64 current_io = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
     ui->progBar->setValue(static_cast<int>(current_io));
     statFile.close();
