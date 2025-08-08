@@ -346,7 +346,7 @@ void MainWindow::cleanup()
 
 QStringList MainWindow::buildUsbList()
 {
-    QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", true).trimmed();
+    const QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", true).trimmed();
     return removeUnsuitable(drives.split('\n'));
 }
 
@@ -355,14 +355,14 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 {
     QStringList suitableDevices;
     suitableDevices.reserve(devices.size());
-    QString liveDrive
+    const QString liveDrive
         = cmd.getOut(cliUtils + "get_drive $(get_live_dev)", true).trimmed().remove(QRegularExpression("^/dev/"));
-    QString rootDrive
+    const QString rootDrive
         = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE) | grep 'disk' | awk '{print $1}'", true)
               .trimmed();
     for (const QString &deviceInfo : devices) {
-        QString deviceName = deviceInfo.split(' ').first();
-        bool isUsbOrRemovable
+        const QString deviceName = deviceInfo.split(' ').first();
+        const bool isUsbOrRemovable
             = ui->checkForceUsb->isChecked() || cmd.run(cliUtils + "is_usb_or_removable " + deviceName.toUtf8(), true);
         if (isUsbOrRemovable && deviceName != liveDrive && deviceName != rootDrive) {
             suitableDevices.append(deviceInfo);
@@ -718,13 +718,13 @@ quint64 MainWindow::calculateSourceSize()
 
         // Calculate source size if linuxfs path exists
         if (QFileInfo::exists(linuxfsPath)) {
-            QFileInfo info(linuxfsPath);
+            const QFileInfo info(linuxfsPath);
             if (info.isDir()) {
                 // For directories, get used space via df command
                 const QString cmdStr = QString("df --output=used -B1 \"%1\" | tail -1").arg(linuxfsPath);
                 const QString usedStr = cmd.getOut(cmdStr, true).trimmed();
                 bool ok = false;
-                quint64 sourceSizeBytes = usedStr.toULongLong(&ok);
+                const quint64 sourceSizeBytes = usedStr.toULongLong(&ok);
                 return ok ? sourceSizeBytes : 0;
             } else {
                 // For files, get size directly
@@ -741,7 +741,7 @@ quint64 MainWindow::calculateSourceSize()
     } else {
         // Standard ISO file mode
         if (!sourceFilename.isEmpty() && QFileInfo::exists(sourceFilename)) {
-            quint64 sourceSizeBytes = QFileInfo(sourceFilename).size();
+            const quint64 sourceSizeBytes = QFileInfo(sourceFilename).size();
             qDebug() << "ISO file size (bytes):" << sourceSizeBytes;
             return sourceSizeBytes;
         } else {
@@ -751,19 +751,19 @@ quint64 MainWindow::calculateSourceSize()
     }
 }
 
-bool MainWindow::validateSizeCompatibility(quint64 sourceSize, quint64 diskSize)
+bool MainWindow::validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize) const
 {
     // Check if source is larger than destination
     if (sourceSize > 0 && diskSize < sourceSize) {
         const QString msg = tr("Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?")
                         .arg(device)
                         .arg(ui->pushSelectSource->text());
-        return QMessageBox::Yes == QMessageBox::warning(this, tr("Size Warning"), msg, QMessageBox::Yes, QMessageBox::No);
+        return QMessageBox::Yes == QMessageBox::warning(const_cast<MainWindow*>(this), tr("Size Warning"), msg, QMessageBox::Yes, QMessageBox::No);
     }
     return true;
 }
 
-bool MainWindow::confirmLargeDeviceWarning(quint64 diskSizeGB)
+bool MainWindow::confirmLargeDeviceWarning(const quint64 diskSizeGB) const
 {
     if (diskSizeGB > sizeCheck) { // Warn user when writing to large drives (potentially unintended)
         const QString msg = tr("The target device %1 is larger than %2 GB.\n\n"
@@ -772,7 +772,7 @@ bool MainWindow::confirmLargeDeviceWarning(quint64 diskSizeGB)
                           .arg(device)
                           .arg(sizeCheck);
         const int ret = QMessageBox::warning(
-            this,
+            const_cast<MainWindow*>(this),
             tr("Large Target Device Warning"),
             msg,
             QMessageBox::Yes | QMessageBox::No,
