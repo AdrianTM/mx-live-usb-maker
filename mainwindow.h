@@ -91,6 +91,9 @@ private:
     [[nodiscard]] QStringList buildUsbList();
     [[nodiscard]] QStringList removeUnsuitable(const QStringList &devices); // remove live or unremovable
     [[nodiscard]] bool checkDestSize();
+    [[nodiscard]] quint64 calculateSourceSize();
+    [[nodiscard]] bool validateSizeCompatibility(quint64 sourceSize, quint64 diskSize);
+    [[nodiscard]] bool confirmLargeDeviceWarning(quint64 diskSize);
     [[nodiscard]] static bool isRunningLive();
     [[nodiscard]] static bool isToRam();
     void makeUsb(const QString &options);
