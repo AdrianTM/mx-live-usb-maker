@@ -33,7 +33,6 @@
 #include "common.h"
 #include "mainwindow.h"
 #include <unistd.h>
-#include <version.h>
 
 static QFile logFile;
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);

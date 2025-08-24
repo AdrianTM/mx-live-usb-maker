@@ -1,51 +1,130 @@
 #!/bin/bash
-# Building .debs with custom names
 
-# Name the package using the folder name, otherwise use the name provide as argument
-NAME="$(basename $(pwd))"
-[ "$1" ] && NAME="$1"
+# **********************************************************************
+# * Copyright (C) 2017-2025 MX Authors
+# *
+# * Authors: Adrian
+# *          MX Linux <http://mxlinux.org>
+# *
+# * This file is part of mx-live-usb-maker.
+# *
+# * mx-live-usb-maker is free software: you can redistribute it and/or modify
+# * it under the terms of the GNU General Public License as published by
+# * the Free Software Foundation, either version 3 of the License, or
+# * (at your option) any later version.
+# *
+# * mx-live-usb-maker is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with mx-live-usb-maker.  If not, see <http://www.gnu.org/licenses/>.
+# **********************************************************************/
 
-ORIG_DIR="$(pwd)"
-TMP_DIR=$(mktemp -d /tmp/XXXXXXXX) # Tried to use /run/shm but it's mounted with noexec
-BUILD_DIR="$TMP_DIR"/src # Build in a subdirectory because the produced files are placed in /..
-mkdir "$BUILD_DIR"
+set -e
 
-# Get title name (with spaces and capitalized)
-NAME_MX="${NAME/#mx-/MX" "}" # for MX programs replaces mx- with MX
-NAME_SPACES="${NAME_MX//-/" "}"
-ARRAY=($NAME_SPACES)
-TITLE_NAME="${ARRAY[@]^}"
+# Default values
+BUILD_DIR="build"
+BUILD_TYPE="Release"
+USE_CLANG=false
+CLEAN=false
+DEBIAN_BUILD=false
 
-lupdate *.pro
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -d|--debug)
+            BUILD_TYPE="Debug"
+            shift
+            ;;
+        -c|--clang)
+            USE_CLANG=true
+            shift
+            ;;
+        --clean)
+            CLEAN=true
+            shift
+            ;;
+        --debian)
+            DEBIAN_BUILD=true
+            shift
+            ;;
+        -h|--help)
+            echo "Usage: $0 [OPTIONS]"
+            echo "Options:"
+            echo "  -d, --debug     Build in Debug mode (default: Release)"
+            echo "  -c, --clang     Use clang compiler"
+            echo "  --clean         Clean build directory before building"
+            echo "  --debian        Build Debian package"
+            echo "  -h, --help      Show this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
 
-# Cleanup before copy
-make distclean
+# Build Debian package
+if [ "$DEBIAN_BUILD" = true ]; then
+    echo "Building Debian package..."
+    debuild -us -uc
 
-cd "$BUILD_DIR" || { echo "could not cd to $BUILD_DIR"; exit 1; }
-rsync -av "$ORIG_DIR"/ . --exclude='.git' --exclude='*.changes' --exclude='*.dsc' --exclude='*.deb' --exclude="build.sh" --exclude="$NAME*.tar.xz" --exclude="*.pro.user*"
+    echo "Creating debs directory and moving debian artifacts..."
+    mkdir -p debs
+    mv ../*.deb debs/ 2>/dev/null || true
+    mv ../*.changes debs/ 2>/dev/null || true
+    mv ../*.dsc debs/ 2>/dev/null || true
+    mv ../*.tar.* debs/ 2>/dev/null || true
+    mv ../*.buildinfo debs/ 2>/dev/null || true
+    mv ../*build* debs/ 2>/dev/null || true
 
-# Cleanup code
-make distclean
+    echo "Cleaning build directory and debian artifacts..."
+    rm -rf "$BUILD_DIR"
+    rm -f debian/*.debhelper.log debian/*.substvars debian/files
+    rm -rf debian/.debhelper/ debian/mx-live-usb-maker/ obj-*/
+    rm -f translations/*.qm
+    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
 
-# Rename files
-rename "s/CUSTOMPROGRAMNAME/$NAME/" *
-rename "s/CUSTOMPROGRAMNAME/$NAME/" translations/*
-rename "s/CUSTOMPROGRAMNAME/$NAME/" help/*
+    echo "Debian package build completed!"
+    echo "Debian artifacts moved to debs/ directory"
+    exit 0
+fi
 
+# Clean build directory if requested
+if [ "$CLEAN" = true ]; then
+    echo "Cleaning build directory and debian artifacts..."
+    rm -rf "$BUILD_DIR"
+    rm -f debian/*.debhelper.log debian/*.substvars debian/files
+    rm -rf debian/.debhelper/ debian/mx-live-usb-maker/ obj-*/
+    rm -f translations/*.qm
+    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
+fi
 
-# Rename strings
-find . -type f -exec sed -i "s/CUSTOMPROGRAMNAME/$NAME/g" {} +
-find . -type f -exec sed -i "s/Custom_Program_Name/$TITLE_NAME/g" {} +
+# Create build directory
+mkdir -p "$BUILD_DIR"
 
-# Build
-[ $(arch) == "x86_64" ] && debuild && cd ..
-[ $(arch) != "x86_64" ] && debuild -B && cd ..
+# Configure CMake with Ninja
+echo "Configuring CMake with Ninja generator..."
+CMAKE_ARGS=(
+    -G Ninja
+    -B "$BUILD_DIR"
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+)
 
-# Move files to original folder
-cd "$TMP_DIR" || { echo "could not cd to $TMP_DIR"; exit 1; }
-mv *.dsc *.deb *.changes *.tar.xz "$ORIG_DIR"
-cd "$ORIG_DIR" || { echo "could not cd to $ORIG_DIR"; exit 1; }
+if [ "$USE_CLANG" = true ]; then
+    CMAKE_ARGS+=(-DUSE_CLANG=ON)
+    echo "Using clang compiler"
+fi
 
-# Cleanup
-[[ $TMP_DIR == /tmp/* ]] && rm -r "$TMP_DIR"
+cmake "${CMAKE_ARGS[@]}"
 
+# Build the project
+echo "Building project with Ninja..."
+cmake --build "$BUILD_DIR" --parallel
+
+echo "Build completed successfully!"
+echo "Executable: $BUILD_DIR/mx-live-usb-maker"

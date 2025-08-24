@@ -1,9 +1,9 @@
-CUSTOMPROGRAMNAME		usr/bin
+obj-*/mx-live-usb-maker		usr/bin
 CUSTOMPROGRAMNAME.desktop	usr/share/applications
 CUSTOMPROGRAMNAME.png		usr/share/icons/hicolor/256x256/apps
 CUSTOMPROGRAMNAME.svg		usr/share/icons/hicolor/scalable/apps
-authors.txt			usr/share/doc/CUSTOMPROGRAMNAME
-help/*				usr/share/doc/CUSTOMPROGRAMNAME
-translations/*.qm		usr/share/CUSTOMPROGRAMNAME/locale
-scripts/helper			usr/lib/CUSTOMPROGRAMNAME
+authors.txt			usr/share/doc/mx-live-usb-maker
+help/*				usr/share/doc/mx-live-usb-maker
+obj-*/*.qm			usr/share/mx-live-usb-maker/locale
+scripts/helper			usr/lib/mx-live-usb-maker
 scripts/org.mxlinux.pkexec.mxlum-helper.policy usr/share/polkit-1/actions

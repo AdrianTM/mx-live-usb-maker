@@ -27,7 +27,7 @@
 #include <QSettings>
 #include <QTimer>
 
-#include <cmd.h>
+#include "cmd.h"
 
 class QFile;
 
