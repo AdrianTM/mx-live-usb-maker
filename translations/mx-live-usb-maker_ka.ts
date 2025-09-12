@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sk">
+<TS version="2.1" language="ka">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <location filename="../src/ui_mainwindow.h" line="569"/>
         <source>Program_Name</source>
-        <translation>Vytvoriť LiveUSB</translation>
+        <translation>პროგრამის_სახელი</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="46"/>
         <location filename="../src/ui_mainwindow.h" line="571"/>
         <source>Quit application</source>
-        <translation>Zatvoriť aplikáciu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="49"/>
         <location filename="../src/ui_mainwindow.h" line="573"/>
         <source>Close</source>
-        <translation>Zatvoriť</translation>
+        <translation>დახურვა</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="55"/>
@@ -31,13 +31,13 @@
         <location filename="../src/mainwindow.ui" line="87"/>
         <location filename="../src/ui_mainwindow.h" line="578"/>
         <source>Display help </source>
-        <translation>Zobraziť nápovedu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <location filename="../src/ui_mainwindow.h" line="580"/>
         <source>Help</source>
-        <translation>Pomocník</translation>
+        <translation>დახმარება</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="96"/>
@@ -49,25 +49,25 @@
         <location filename="../src/mainwindow.ui" line="112"/>
         <location filename="../src/ui_mainwindow.h" line="584"/>
         <source>Back</source>
-        <translation>Naspäť</translation>
+        <translation>უკან</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="169"/>
         <location filename="../src/ui_mainwindow.h" line="586"/>
         <source>Next</source>
-        <translation>Ďalej</translation>
+        <translation>შემდეგი</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="194"/>
         <location filename="../src/ui_mainwindow.h" line="591"/>
         <source>About this application</source>
-        <translation>O tejto aplikácii</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <location filename="../src/ui_mainwindow.h" line="593"/>
         <source>About...</source>
-        <translation>O Programe</translation>
+        <translation>შესახებ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="203"/>
@@ -87,85 +87,85 @@
         <location filename="../src/mainwindow.cpp" line="624"/>
         <location filename="../src/ui_mainwindow.h" line="598"/>
         <source>Select ISO</source>
-        <translation>Vyberte ISO súbor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <location filename="../src/ui_mainwindow.h" line="599"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vyberte cieľovú USB Jednotku&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="273"/>
         <location filename="../src/ui_mainwindow.h" line="600"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vyberte ISO súbor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="289"/>
         <location filename="../src/ui_mainwindow.h" line="601"/>
         <source>Advanced Options</source>
-        <translation>Pokročilé Nastavenia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="307"/>
         <location filename="../src/ui_mainwindow.h" line="602"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation>Vytvoriť súborový systém ext4 aj v prípade, že už existuje</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="314"/>
         <location filename="../src/ui_mainwindow.h" line="603"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation>Pri aktualizácii LiveUSB uložiť pôvodnú zložku pre bootovanie PC</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="321"/>
         <location filename="../src/ui_mainwindow.h" line="605"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation>Pre delenie disku použiť gpt namiesto metódy msdos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/ui_mainwindow.h" line="607"/>
         <source>GPT partitioning</source>
-        <translation>Delenie GPT</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="331"/>
         <location filename="../src/ui_mainwindow.h" line="608"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation>Aktualizovať (iba zaktualizuje existujúce LiveUSB)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="338"/>
         <location filename="../src/ui_mainwindow.h" line="610"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation>Nenahradzovať syslinux súbory</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <location filename="../src/ui_mainwindow.h" line="612"/>
         <source>Keep syslinux files</source>
-        <translation>Zachovať sysliux súbory</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
         <location filename="../src/ui_mainwindow.h" line="613"/>
         <source>Ignore USB/removable check</source>
-        <translation>Ignorovať kontrolu USB/odnímateľné</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <location filename="../src/ui_mainwindow.h" line="614"/>
         <source>Temporarily disable automounting</source>
-        <translation>Dočasne vypnúť automatické pripájanie diskov</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <location filename="../src/ui_mainwindow.h" line="618"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation>Nastaviť príznak pmbr_boot disk (pre bootovanie bez UEFI)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="372"/>
@@ -177,19 +177,19 @@
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/ui_mainwindow.h" line="620"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation>Veľkosť ESP (uefi) diskového oddielu:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="421"/>
         <location filename="../src/ui_mainwindow.h" line="621"/>
         <source>Verbosity (less to more):</source>
-        <translation>Rozvláčnosť (menej do viac):</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="465"/>
         <location filename="../src/ui_mainwindow.h" line="623"/>
         <source>vfat</source>
-        <translation type="unfinished"></translation>
+        <translation>vfat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="506"/>
@@ -201,7 +201,7 @@
         <location filename="../src/mainwindow.ui" line="460"/>
         <location filename="../src/ui_mainwindow.h" line="622"/>
         <source>exfat</source>
-        <translation type="unfinished"></translation>
+        <translation>exfat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="470"/>
@@ -213,7 +213,7 @@
         <location filename="../src/mainwindow.ui" line="475"/>
         <location filename="../src/ui_mainwindow.h" line="625"/>
         <source>ntfs</source>
-        <translation type="unfinished"></translation>
+        <translation>ntfs</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
@@ -225,20 +225,20 @@
         <location filename="../src/mainwindow.ui" line="516"/>
         <location filename="../src/ui_mainwindow.h" line="629"/>
         <source>Refresh drive list</source>
-        <translation>Obnoviť zoznam diskových jednotiek</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="529"/>
         <location filename="../src/mainwindow.cpp" line="570"/>
         <location filename="../src/ui_mainwindow.h" line="630"/>
         <source>Show advanced options</source>
-        <translation>Zobraziť Pokročilé Nastavenia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="548"/>
         <location filename="../src/ui_mainwindow.h" line="631"/>
         <source>Mode</source>
-        <translation>Typ LiveUSB </translation>
+        <translation>რეჟიმი</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="563"/>
@@ -250,7 +250,7 @@
         <location filename="../src/mainwindow.ui" line="573"/>
         <location filename="../src/ui_mainwindow.h" line="634"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation>Iba na čítanie, nebude fungovať persistencia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="576"/>
@@ -262,43 +262,43 @@
         <location filename="../src/mainwindow.ui" line="589"/>
         <location filename="../src/ui_mainwindow.h" line="637"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation>Pre distribúcie linuxu iné ako anitX/MX použite voľbu Image (dd).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="637"/>
         <location filename="../src/ui_mainwindow.h" line="638"/>
         <source>Options</source>
-        <translation>Nastavenia</translation>
+        <translation>მორგება</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="675"/>
         <location filename="../src/ui_mainwindow.h" line="639"/>
         <source>Percent of USB-device to use:</source>
-        <translation>Percentuálne využitie USB jednotky:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="682"/>
         <location filename="../src/ui_mainwindow.h" line="640"/>
         <source>Label ext partition:</source>
-        <translation>Názov diskového oddielu:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="730"/>
         <location filename="../src/ui_mainwindow.h" line="642"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation>Nespúšťať príkazy, ktoré ovplyvňujú USB jednotku</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="733"/>
         <location filename="../src/ui_mainwindow.h" line="644"/>
         <source>Dry run (no change to system)</source>
-        <translation>Na sucho (bez zmien v systéme)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="740"/>
         <location filename="../src/ui_mainwindow.h" line="646"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation>klon pripojeného LiveUSB do ISO súboru.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="743"/>
@@ -310,31 +310,31 @@
         <location filename="../src/mainwindow.ui" line="750"/>
         <location filename="../src/ui_mainwindow.h" line="650"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation>Pri nastavení šifrovania oddielu bude požadované zadanie hesla pri prvom štarte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="753"/>
         <location filename="../src/ui_mainwindow.h" line="652"/>
         <source>Encrypt</source>
-        <translation>Zašifrovať</translation>
+        <translation>დაშიფვრა</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="760"/>
         <location filename="../src/ui_mainwindow.h" line="653"/>
         <source>Clone running live system</source>
-        <translation>Klon bežiaceho Live systému</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="416"/>
         <location filename="../src/mainwindow.cpp" line="555"/>
         <location filename="../src/mainwindow.cpp" line="723"/>
         <source>Failure</source>
-        <translation>Neúspech</translation>
+        <translation>ჩავარდნა</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation>Zdroj a cieľové umiestnenie sú na rovnakej jednotke, prosím zmeňte zadanie. </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="768"/>
@@ -384,27 +384,27 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="413"/>
         <source>Success</source>
-        <translation>Úspech</translation>
+        <translation>წარმატება</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="413"/>
         <source>LiveUSB creation successful!</source>
-        <translation>Live-USB bolo úspešne vytvorené!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="416"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation>Počas tvorby LiveUSB sa vyskytla chyba</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="482"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>შეცდომა</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="482"/>
         <source>Please select a USB device to write to</source>
-        <translation>Prosím vyberte USB jednotku k zápisu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="485"/>
@@ -421,37 +421,37 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="518"/>
         <source>About %1</source>
-        <translation>Okolo %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="519"/>
         <source>Version: </source>
-        <translation>Verzia:</translation>
+        <translation>ვერსია:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="521"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Program pre vytvorenie LiveUSB z ISO súboru alebo ďalšieho LiveUSB, CD, DVD z bežiaceho Live systému.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="524"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="525"/>
         <source>%1 License</source>
-        <translation>%1 Licencia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="532"/>
         <source>%1 Help</source>
-        <translation>%1 Pomoc</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="540"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation>Vyberte ISO súbor pre zápis na USB </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="541"/>
@@ -462,7 +462,7 @@ Please wait until the process is completed</source>
         <location filename="../src/mainwindow.cpp" line="546"/>
         <location filename="../src/mainwindow.cpp" line="596"/>
         <source>Select Source Directory</source>
-        <translation>Vyberte zdrojovú zložku</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="555"/>
@@ -472,24 +472,24 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="570"/>
         <source>Hide advanced options</source>
-        <translation>Skryť Pokročilé Nastavenia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="595"/>
         <location filename="../src/mainwindow.cpp" line="614"/>
         <source>Select Source</source>
-        <translation>Vyberte zdroj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="600"/>
         <location filename="../src/mainwindow.cpp" line="622"/>
         <source>Select ISO file</source>
-        <translation>Vyberte ISO súbor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="616"/>
         <source>clone</source>
-        <translation>klonovať</translation>
+        <translation>კლონი</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="683"/>
@@ -502,33 +502,33 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/about.cpp" line="74"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation>ლიცენზია</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="75"/>
         <location filename="../src/about.cpp" line="85"/>
         <source>Changelog</source>
-        <translation>História zmien</translation>
+        <translation>ცვლილებების ჟურნალი</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="76"/>
         <source>Cancel</source>
-        <translation>Zrušiť</translation>
+        <translation>გაუქმება</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="99"/>
         <source>&amp;Close</source>
-        <translation>&amp;Zatvoriť</translation>
+        <translation>&amp;დახურვა</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="60"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation>Program pre vytvorenie LiveUSB z ISO súboru alebo ďalšieho LiveUSB, CD, DVD z bežiaceho Live systému.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="64"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>ფაილისსახელი</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="64"/>
@@ -538,13 +538,13 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/main.cpp" line="65"/>
         <source>[filename]</source>
-        <translation type="unfinished"></translation>
+        <translation>[ფაილისსახელი]</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="93"/>
         <location filename="../src/main.cpp" line="102"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>შეცდომა</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
@@ -554,12 +554,12 @@ Please wait until the process is completed</source>
     <message>
         <location filename="../src/main.cpp" line="102"/>
         <source>You must run this program as root.</source>
-        <translation>Tento program musíte spustiť ako užívateľ root.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="117"/>
         <source>version:</source>
-        <translation type="unfinished"></translation>
+        <translation>ვერსია:</translation>
     </message>
 </context>
 </TS>
