@@ -1,4 +1,4 @@
-CUSTOMPROGRAMNAME (25.09) mx; urgency=medium
+CUSTOMPROGRAMNAME (25.09.1) mx; urgency=medium
 
   * Perform cleanup that require elevation only when needed
   * Update translations

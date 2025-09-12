@@ -83,8 +83,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="253"/>
-        <location filename="../src/mainwindow.cpp" line="601"/>
-        <location filename="../src/mainwindow.cpp" line="624"/>
+        <location filename="../src/mainwindow.cpp" line="583"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
         <location filename="../src/ui_mainwindow.h" line="598"/>
         <source>Select ISO</source>
         <translation>Välj ISO</translation>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="529"/>
-        <location filename="../src/mainwindow.cpp" line="570"/>
+        <location filename="../src/mainwindow.cpp" line="552"/>
         <location filename="../src/ui_mainwindow.h" line="630"/>
         <source>Show advanced options</source>
         <translation>Visa avancerade alternativ</translation>
@@ -325,9 +325,9 @@
         <translation>Klona det live-system som körs</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="416"/>
-        <location filename="../src/mainwindow.cpp" line="555"/>
-        <location filename="../src/mainwindow.cpp" line="723"/>
+        <location filename="../src/mainwindow.cpp" line="398"/>
+        <location filename="../src/mainwindow.cpp" line="537"/>
+        <location filename="../src/mainwindow.cpp" line="705"/>
         <source>Failure</source>
         <translation>Misslyckande</translation>
     </message>
@@ -337,27 +337,27 @@
         <translation>Källa och mål är på samma enhet, var vänlig välj igen.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="768"/>
+        <location filename="../src/mainwindow.cpp" line="750"/>
         <source>Source Error</source>
         <translation>Källfel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="769"/>
+        <location filename="../src/mainwindow.cpp" line="751"/>
         <source>Could not find the source linuxfs file.</source>
         <translation>Kunde inte hitta linuxfs källfil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="790"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
         <source>Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?</source>
         <translation>Varning: Målenheten (%1) är mindre än källan (%2). Datan kanske inte ryms. Vill du fortsätta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="793"/>
+        <location filename="../src/mainwindow.cpp" line="775"/>
         <source>Size Warning</source>
         <translation>Storleksvarning</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="801"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
         <source>The target device %1 is larger than %2 GB.
 
 This may indicate you have selected the wrong device.
@@ -368,7 +368,7 @@ Detta kan indikera att du har valt fel enhet.
 Är det säkert att du vill fortsätta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="790"/>
         <source>Large Target Device Warning</source>
         <translation>Stor Målenhetsvarning</translation>
     </message>
@@ -387,32 +387,32 @@ Var vänlig vänta tills processen är klar</translation>
         <translation>MX Live Usb Maker</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="413"/>
+        <location filename="../src/mainwindow.cpp" line="395"/>
         <source>Success</source>
         <translation>Det lyckades</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="413"/>
+        <location filename="../src/mainwindow.cpp" line="395"/>
         <source>LiveUSB creation successful!</source>
         <translation>Skapandet av LiveUSB gick bra</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="416"/>
+        <location filename="../src/mainwindow.cpp" line="398"/>
         <source>Error encountered in the LiveUSB creation process</source>
         <translation>Fel uppträdde i processen att skapa LiveUSB</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="482"/>
+        <location filename="../src/mainwindow.cpp" line="464"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="482"/>
+        <location filename="../src/mainwindow.cpp" line="464"/>
         <source>Please select a USB device to write to</source>
         <translation>Var vänlig välj en USB enhet att skriva till</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="485"/>
+        <location filename="../src/mainwindow.cpp" line="467"/>
         <source>These actions will destroy all data on 
 
 </source>
@@ -421,85 +421,85 @@ Var vänlig vänta tills processen är klar</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="486"/>
+        <location filename="../src/mainwindow.cpp" line="468"/>
         <source>Do you wish to continue?</source>
         <translation>Vill du fortsätta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="518"/>
+        <location filename="../src/mainwindow.cpp" line="500"/>
         <source>About %1</source>
         <translation>Om %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="519"/>
+        <location filename="../src/mainwindow.cpp" line="501"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="521"/>
+        <location filename="../src/mainwindow.cpp" line="503"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
         <translation>Program för att skapa en live-usb från en iso-fil, en annan live-usb, en live-cd/dvd, eller ett live-system som körs.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="524"/>
+        <location filename="../src/mainwindow.cpp" line="506"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="525"/>
+        <location filename="../src/mainwindow.cpp" line="507"/>
         <source>%1 License</source>
         <translation>%1 Licens</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="514"/>
         <source>%1 Help</source>
         <translation>%1 Hjälp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="540"/>
+        <location filename="../src/mainwindow.cpp" line="522"/>
         <source>Select an ISO file to write to the USB drive</source>
         <translation>Välj en ISO-fil att skriva till USB-enheten</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="541"/>
+        <location filename="../src/mainwindow.cpp" line="523"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
         <translation>ISO Files (*.iso);;All Files (*.*)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
-        <location filename="../src/mainwindow.cpp" line="596"/>
+        <location filename="../src/mainwindow.cpp" line="528"/>
+        <location filename="../src/mainwindow.cpp" line="578"/>
         <source>Select Source Directory</source>
         <translation>Välj Käll Katalog</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="555"/>
+        <location filename="../src/mainwindow.cpp" line="537"/>
         <source>Could not find linuxfs file</source>
         <translation>Kunde inte hitta linuxfs fil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="570"/>
+        <location filename="../src/mainwindow.cpp" line="552"/>
         <source>Hide advanced options</source>
         <translation>Dölj avancerade val</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="595"/>
-        <location filename="../src/mainwindow.cpp" line="614"/>
+        <location filename="../src/mainwindow.cpp" line="577"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
         <source>Select Source</source>
         <translation>Välj Källa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="600"/>
-        <location filename="../src/mainwindow.cpp" line="622"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
+        <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Select ISO file</source>
         <translation>Välj ISO-fil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="616"/>
+        <location filename="../src/mainwindow.cpp" line="598"/>
         <source>clone</source>
         <translation>klona</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="683"/>
+        <location filename="../src/mainwindow.cpp" line="665"/>
         <source>Could not find a log file at: </source>
         <translation>Kunde inte hitta en loggfil  vid: </translation>
     </message>
