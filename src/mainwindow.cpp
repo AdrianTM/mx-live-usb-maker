@@ -320,27 +320,59 @@ void MainWindow::cleanup()
 {
     QFileInfo lum(LUM);
     QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
-    if (logfile.exists()) {
-        QFile::remove(logfile.absoluteFilePath());
-    }
-    if (cmd.state() != QProcess::NotRunning) {
-        QTimer::singleShot(10s, this, [this] {
-            if (cmd.state() != QProcess::NotRunning) {
-                Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), true);
-            }
-        });
-        Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), true);
-    }
+    bool hasLogFile = logfile.exists();
+
+    // Check if we actually did any work that needs privileged cleanup
+    bool needsPrivilegedCleanup = false;
+
+    // Check 1: Are there any mount points?
     const QString mountPath = "/run/live-usb-maker";
-    if (Cmd().run("mountpoint -q " + mountPath, true)) {
-        Cmd().runAsRoot("umount -Rl " + mountPath, true);
+    if (Cmd().run("mountpoint -q " + mountPath, true) ||
+        Cmd().run("mountpoint -q " + mountPath + "/main", true)) {
+        needsPrivilegedCleanup = true;
     }
-    if (Cmd().run("mountpoint -q " + mountPath + "/main", true)) {
-        Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", true);
+
+    // Check 2: Are there running processes?
+    if (cmd.state() != QProcess::NotRunning) {
+        needsPrivilegedCleanup = true;
     }
-    QString pid = QString::number(QApplication::applicationPid());
-    if (!Cmd().run("ps --ppid " + pid, true)) {
-        Cmd().runAsRoot("kill -- -" + pid, true);
+
+    // Check 3: Is there a substantial log file (>5 lines)?
+    if (hasLogFile) {
+        QString lineCountStr = Cmd().getOut("wc -l < " + logfile.absoluteFilePath(), true);
+        int lineCount = lineCountStr.trimmed().toInt();
+        if (lineCount > 5) {
+            needsPrivilegedCleanup = true;
+        }
+    }
+
+    // Only do privileged operations if we actually need them
+    if (needsPrivilegedCleanup) {
+        if (cmd.state() != QProcess::NotRunning) {
+            QTimer::singleShot(10s, this, [this] {
+                if (cmd.state() != QProcess::NotRunning) {
+                    Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), true);
+                }
+            });
+            Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), true);
+        }
+
+        if (Cmd().run("mountpoint -q " + mountPath, true)) {
+            Cmd().runAsRoot("umount -Rl " + mountPath, true);
+        }
+        if (Cmd().run("mountpoint -q " + mountPath + "/main", true)) {
+            Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", true);
+        }
+
+        QString pid = QString::number(QApplication::applicationPid());
+        if (!Cmd().run("ps --ppid " + pid, true)) {
+            Cmd().runAsRoot("kill -- -" + pid, true);
+        }
+    }
+
+    // Always clean up log file (non-privileged)
+    if (hasLogFile) {
+        QFile::remove(logfile.absoluteFilePath());
     }
 }
 
