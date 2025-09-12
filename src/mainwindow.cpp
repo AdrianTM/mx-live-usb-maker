@@ -21,6 +21,7 @@
  **********************************************************************/
 
 #include "mainwindow.h"
+#include "common.h"
 #include "ui_mainwindow.h"
 
 #include <QDebug>
@@ -29,7 +30,6 @@
 #include <QStorageInfo>
 
 #include "about.h"
-#include "common.h"
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -318,10 +318,6 @@ QString MainWindow::buildOptionList()
 
 void MainWindow::cleanup()
 {
-    QFileInfo lum(LUM);
-    QFileInfo logfile("/tmp/" + lum.baseName() + ".log");
-    bool hasLogFile = logfile.exists();
-
     // Check if we actually did any work that needs privileged cleanup
     bool needsPrivilegedCleanup = false;
 
@@ -335,15 +331,6 @@ void MainWindow::cleanup()
     // Check 2: Are there running processes?
     if (cmd.state() != QProcess::NotRunning) {
         needsPrivilegedCleanup = true;
-    }
-
-    // Check 3: Is there a substantial log file (>5 lines)?
-    if (hasLogFile) {
-        QString lineCountStr = Cmd().getOut("wc -l < " + logfile.absoluteFilePath(), Cmd::QuietMode::Yes);
-        int lineCount = lineCountStr.trimmed().toInt();
-        if (lineCount > 5) {
-            needsPrivilegedCleanup = true;
-        }
     }
 
     // Only do privileged operations if we actually need them
@@ -368,11 +355,6 @@ void MainWindow::cleanup()
         if (!Cmd().run("ps --ppid " + pid, Cmd::QuietMode::Yes)) {
             Cmd().runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
         }
-    }
-
-    // Always clean up log file (non-privileged)
-    if (hasLogFile) {
-        QFile::remove(logfile.absoluteFilePath());
     }
 }
 
