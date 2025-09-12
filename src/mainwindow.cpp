@@ -79,7 +79,7 @@ bool MainWindow::checkDestSize()
 {
     // Get target device size information
     bool ok = false;
-    const quint64 diskSizeBytes = cmd.getOut(QString("lsblk --output SIZE -n --bytes /dev/%1 | head -1").arg(device), true).toULongLong(&ok);
+    const quint64 diskSizeBytes = cmd.getOut(QString("lsblk --output SIZE -n --bytes /dev/%1 | head -1").arg(device), Cmd::QuietMode::Yes).toULongLong(&ok);
     if (!ok) {
         qDebug() << "Failed to parse disk size for device:" << device;
         return false; // Cannot proceed without valid disk size
@@ -146,9 +146,9 @@ void MainWindow::makeUsb(const QString &options)
     QString sourceSize;
 
     if (!ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
-        sourceSize = cmd.getOut(QString("du -m %1 2>/dev/null | cut -f1").arg(source), true);
+        sourceSize = cmd.getOut(QString("du -m %1 2>/dev/null | cut -f1").arg(source), Cmd::QuietMode::Yes);
     } else if (ui->checkCloneMode->isChecked()) {
-        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(source), true);
+        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(source), Cmd::QuietMode::Yes);
         QString rootPartition = cmd.getOut(QString("df --output=source %1 | awk 'END{print $1}'").arg(source));
         source = "clone=" + source.remove('"');
         if ("/dev/" + device == cmd.getOut(cliUtils + "get_drive " + rootPartition)) {
@@ -158,7 +158,7 @@ void MainWindow::makeUsb(const QString &options)
     } else if (ui->checkCloneLive->isChecked()) {
         source = "clone";
         QString path = isToRam() ? "/live/to-ram" : "/live/boot-dev";
-        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(path), true);
+        sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(path), Cmd::QuietMode::Yes);
     }
 
     if (!checkDestSize()) {
@@ -168,7 +168,7 @@ void MainWindow::makeUsb(const QString &options)
 
     // Check amount of IO on device before copy, this is in sectors
     bool ok = false;
-    const quint64 start_io = cmd.getOut(QString("awk '{print $7}' /sys/block/%1/stat").arg(device), true).toULongLong(&ok);
+    const quint64 start_io = cmd.getOut(QString("awk '{print $7}' /sys/block/%1/stat").arg(device), Cmd::QuietMode::Yes).toULongLong(&ok);
     if (!ok) {
         qDebug() << "Failed to parse initial IO stats for device:" << device;
         ui->progBar->setMinimum(0); // Use default values
@@ -189,7 +189,7 @@ void MainWindow::makeUsb(const QString &options)
     if (ui->radioDd->isChecked()) {
         cmdstr = LUM + " gui partition-clear -NC off --target " + device;
         connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
-        qDebug() << cmd.getOutAsRoot(cmdstr, true);
+        qDebug() << cmd.getOutAsRoot(cmdstr, Cmd::QuietMode::Yes);
         cmdstr = QString("dd bs=1M if=%1 of=/dev/%2").arg(source, device);
         ui->outputBox->insertPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
                                           "Please wait until the process is completed")
@@ -229,7 +229,7 @@ void MainWindow::setup()
     ui->checkCloneLive->setEnabled(isRunningLive() && !QFile::exists("/live/config/encrypted"));
 
     // Dynamically show or hide data format options based on availability
-    bool dataFirstAvailable = cmd.run(LUM + " --help | grep -q -- --data-first", true);
+    bool dataFirstAvailable = cmd.run(LUM + " --help | grep -q -- --data-first", Cmd::QuietMode::Yes);
     ui->checkDataFirst->setVisible(dataFirstAvailable);
     ui->comboBoxDataFormat->setVisible(dataFirstAvailable);
     ui->labelFormat->setVisible(dataFirstAvailable);
@@ -327,8 +327,8 @@ void MainWindow::cleanup()
 
     // Check 1: Are there any mount points?
     const QString mountPath = "/run/live-usb-maker";
-    if (Cmd().run("mountpoint -q " + mountPath, true) ||
-        Cmd().run("mountpoint -q " + mountPath + "/main", true)) {
+    if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes) ||
+        Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
         needsPrivilegedCleanup = true;
     }
 
@@ -339,7 +339,7 @@ void MainWindow::cleanup()
 
     // Check 3: Is there a substantial log file (>5 lines)?
     if (hasLogFile) {
-        QString lineCountStr = Cmd().getOut("wc -l < " + logfile.absoluteFilePath(), true);
+        QString lineCountStr = Cmd().getOut("wc -l < " + logfile.absoluteFilePath(), Cmd::QuietMode::Yes);
         int lineCount = lineCountStr.trimmed().toInt();
         if (lineCount > 5) {
             needsPrivilegedCleanup = true;
@@ -351,22 +351,22 @@ void MainWindow::cleanup()
         if (cmd.state() != QProcess::NotRunning) {
             QTimer::singleShot(10s, this, [this] {
                 if (cmd.state() != QProcess::NotRunning) {
-                    Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), true);
+                    Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
                 }
             });
-            Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), true);
+            Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
         }
 
-        if (Cmd().run("mountpoint -q " + mountPath, true)) {
-            Cmd().runAsRoot("umount -Rl " + mountPath, true);
+        if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
+            Cmd().runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes);
         }
-        if (Cmd().run("mountpoint -q " + mountPath + "/main", true)) {
-            Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", true);
+        if (Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
+            Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes);
         }
 
         QString pid = QString::number(QApplication::applicationPid());
-        if (!Cmd().run("ps --ppid " + pid, true)) {
-            Cmd().runAsRoot("kill -- -" + pid, true);
+        if (!Cmd().run("ps --ppid " + pid, Cmd::QuietMode::Yes)) {
+            Cmd().runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
         }
     }
 
@@ -378,7 +378,7 @@ void MainWindow::cleanup()
 
 QStringList MainWindow::buildUsbList()
 {
-    const QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", true).trimmed();
+    const QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", Cmd::QuietMode::Yes).trimmed();
     return removeUnsuitable(drives.split('\n'));
 }
 
@@ -388,14 +388,14 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     QStringList suitableDevices;
     suitableDevices.reserve(devices.size());
     const QString liveDrive
-        = cmd.getOut(cliUtils + "get_drive $(get_live_dev)", true).trimmed().remove(QRegularExpression("^/dev/"));
+        = cmd.getOut(cliUtils + "get_drive $(get_live_dev)", Cmd::QuietMode::Yes).trimmed().remove(QRegularExpression("^/dev/"));
     const QString rootDrive
-        = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE) | grep 'disk' | awk '{print $1}'", true)
+        = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE) | grep 'disk' | awk '{print $1}'", Cmd::QuietMode::Yes)
               .trimmed();
     for (const QString &deviceInfo : devices) {
         const QString deviceName = deviceInfo.split(' ').first();
         const bool isUsbOrRemovable
-            = ui->checkForceUsb->isChecked() || cmd.run(cliUtils + "is_usb_or_removable " + deviceName.toUtf8(), true);
+            = ui->checkForceUsb->isChecked() || cmd.run(cliUtils + "is_usb_or_removable " + deviceName.toUtf8(), Cmd::QuietMode::Yes);
         if (isUsbOrRemovable && deviceName != liveDrive && deviceName != rootDrive) {
             suitableDevices.append(deviceInfo);
         }
@@ -534,7 +534,7 @@ void MainWindow::pushHelp_clicked()
 
 void MainWindow::pushSelectSource_clicked()
 {
-    const QString user = cmd.getOut("logname", true);
+    const QString user = cmd.getOut("logname", Cmd::QuietMode::Yes);
     const QString home = "/home/" + user;
     if (QString selected; !ui->checkCloneLive->isChecked() && !ui->checkCloneMode->isChecked()) {
         selected = QFileDialog::getOpenFileName(this, tr("Select an ISO file to write to the USB drive"), home,
@@ -667,7 +667,7 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
     return Cmd().run(
         QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
             .arg(selected),
-        true);
+        Cmd::QuietMode::Yes);
 }
 
 void MainWindow::pushLumLogFile_clicked()
@@ -754,7 +754,7 @@ quint64 MainWindow::calculateSourceSize()
             if (info.isDir()) {
                 // For directories, get used space via df command
                 const QString cmdStr = QString("df --output=used -B1 \"%1\" | tail -1").arg(linuxfsPath);
-                const QString usedStr = cmd.getOut(cmdStr, true).trimmed();
+                const QString usedStr = cmd.getOut(cmdStr, Cmd::QuietMode::Yes).trimmed();
                 bool ok = false;
                 const quint64 sourceSizeBytes = usedStr.toULongLong(&ok);
                 return ok ? sourceSizeBytes : 0;

@@ -10,10 +10,15 @@ class Cmd : public QProcess
 public:
     explicit Cmd(QObject *parent = nullptr);
 
-    [[nodiscard]] QString getOut(const QString &cmd, bool quiet = false, bool asRoot = false);
-    [[nodiscard]] QString getOutAsRoot(const QString &cmd, bool quiet = false);
-    bool run(const QString &cmd, bool quiet = false, bool asRoot = false);
-    bool runAsRoot(const QString &cmd, bool quiet = false);
+    enum class QuietMode { No, Yes };
+    enum class Elevation { No, Yes };
+
+    static QString elevationTool();
+
+    [[nodiscard]] QString getOut(const QString &cmd, QuietMode quiet = QuietMode::No, Elevation elevation = Elevation::No);
+    [[nodiscard]] QString getOutAsRoot(const QString &cmd, QuietMode quiet = QuietMode::No);
+    bool run(const QString &cmd, QuietMode quiet = QuietMode::No, Elevation elevation = Elevation::No);
+    bool runAsRoot(const QString &cmd, QuietMode quiet = QuietMode::No);
 
 signals:
     void done();
