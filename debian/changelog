@@ -1,3 +1,10 @@
+CUSTOMPROGRAMNAME (25.09.2) mx; urgency=medium
+
+  * Change layout to make the windows fit for screens with smaller
+    resolutions
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 25 Sep 2025 00:25:08 -0400
+
 CUSTOMPROGRAMNAME (25.09.1) mx; urgency=medium
 
   * Perform cleanup that require elevation only when needed
