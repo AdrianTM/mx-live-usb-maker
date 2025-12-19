@@ -4,10 +4,10 @@ Encoding=UTF-8
 Name=MX Live USB Maker
 # # The desktop entry comment will be shown within the menu.
 Comment=Create a full-featured live-usb
-Exec=CUSTOMPROGRAMNAME
+Exec=mx-live-usb-maker
 Terminal=false
 Type=Application
-Icon=CUSTOMPROGRAMNAME
+Icon=mx-live-usb-maker
 Categories=System;MX-Live;
 NoDisplay=false
 MimeType=application/x-cd-image;

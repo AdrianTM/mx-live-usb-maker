@@ -36,7 +36,7 @@ Makefile*
 *.qmlproject.user.*
 
 # exclude test binary
-CUSTOMPROGRAMNAME
+mx-live-usb-maker
 
 # Transifex ignore
 .tx/
