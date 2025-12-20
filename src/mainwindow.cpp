@@ -225,8 +225,9 @@ void MainWindow::setup()
     adjustSize();
     height = geometry().height();
 
-    QRegularExpression rx("\\w*");
-    QValidator *validator = new QRegularExpressionValidator(rx, this);
+    // Volume label validator: alphanumeric and underscore, 1-11 characters (FAT32 limit)
+    QRegularExpression rx("^[A-Za-z0-9_]{1,11}$");
+    auto *validator = new QRegularExpressionValidator(rx, this);
     ui->textLabel->setValidator(validator);
 
     // Set save boot directory option to disable unless update mode is checked
