@@ -406,13 +406,16 @@ QString MainWindow::shellQuote(const QString &value)
 
 void MainWindow::cleanup()
 {
+    // Use a utility Cmd object for cleanup operations (separate from main cmd member)
+    Cmd utilCmd(this);
+
     // Check if we actually did any work that needs privileged cleanup
     bool needsPrivilegedCleanup = false;
 
     // Check 1: Are there any mount points?
     const QString mountPath = AppPaths::WORK_DIR;
-    if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes) ||
-        Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
+    if (utilCmd.run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes) ||
+        utilCmd.run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
         needsPrivilegedCleanup = true;
     }
 
@@ -426,22 +429,23 @@ void MainWindow::cleanup()
         if (cmd.state() != QProcess::NotRunning) {
             QTimer::singleShot(10s, this, [this] {
                 if (cmd.state() != QProcess::NotRunning) {
-                    Cmd().runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
+                    Cmd utilCmd2(this);
+                    utilCmd2.runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
                 }
             });
-            Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
+            utilCmd.runAsRoot("kill -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
         }
 
         // Attempt to unmount filesystems and check for failures
         bool unmountFailed = false;
-        if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
-            if (!Cmd().runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes)) {
+        if (utilCmd.run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
+            if (!utilCmd.runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath;
                 unmountFailed = true;
             }
         }
-        if (Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
-            if (!Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes)) {
+        if (utilCmd.run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
+            if (!utilCmd.runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath + "/{main,uefi}";
                 unmountFailed = true;
             }
@@ -454,8 +458,8 @@ void MainWindow::cleanup()
         }
 
         QString pid = QString::number(QApplication::applicationPid());
-        if (!Cmd().run("ps --ppid " + pid, Cmd::QuietMode::Yes)) {
-            Cmd().runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
+        if (!utilCmd.run("ps --ppid " + pid, Cmd::QuietMode::Yes)) {
+            utilCmd.runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
         }
     }
 }
@@ -892,7 +896,8 @@ void MainWindow::radioNormal_clicked()
 
 bool MainWindow::isantiX_mx_family(const QString &selected)
 {
-    return Cmd().run(
+    Cmd utilCmd(nullptr);
+    return utilCmd.run(
         QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
             .arg(selected),
         Cmd::QuietMode::Yes);
@@ -913,7 +918,8 @@ void MainWindow::pushLumLogFile_clicked()
 
     // Generate temporary log file by reversing the log file until the delimiter, then reversing it back
     const QString cmdStr = QString("tac %1 | sed '/^={60}=$/q' | tac > %2").arg(logFilePath, tempLogFilePath);
-    Cmd().run(cmdStr);
+    Cmd utilCmd(this);
+    utilCmd.run(cmdStr);
     displayDoc(tempLogFilePath, QStringLiteral("live-usb-maker"));
 }
 
