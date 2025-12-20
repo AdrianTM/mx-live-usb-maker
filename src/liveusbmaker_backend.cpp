@@ -503,7 +503,9 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
 
         if (config.gpt) {
             const QString mark = QStringLiteral("msftdata");
-            runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(mark), error);
+            if (!runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(mark), error)) {
+                return false;
+            }
         } else {
             QString mark;
             const QString fs = config.dataFs.toLower();
@@ -525,7 +527,10 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
             return false;
         }
         const QString bootFlag = config.gpt ? QStringLiteral("legacy_boot") : QStringLiteral("boot");
-        runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(bootFlag), error, true);
+        // Boot flag is optional - log but don't fail if it can't be set
+        if (!runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(bootFlag), error, true)) {
+            logLine(QStringLiteral("Warning: Could not set boot flag on bios partition"));
+        }
     }
 
     if (!addPartition(layout.mainSizeMiB, config.encrypt ? QString() : QStringLiteral("ext4"), QStringLiteral("main"))) {
@@ -533,16 +538,25 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
     }
     if (!config.encrypt) {
         const QString bootFlag = config.gpt ? QStringLiteral("legacy_boot") : QStringLiteral("boot");
-        runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(bootFlag), error, true);
+        // Boot flag is optional - log but don't fail if it can't be set
+        if (!runCommandShell(QStringLiteral("%1 set %2 %3 on").arg(preamble).arg(partNum).arg(bootFlag), error, true)) {
+            logLine(QStringLiteral("Warning: Could not set boot flag on main partition"));
+        }
     }
 
     if (!addPartition(layout.uefiSizeMiB, QStringLiteral("fat32"), QStringLiteral("uefi"))) {
         return false;
     }
-    runCommandShell(QStringLiteral("%1 set %2 esp on").arg(preamble).arg(partNum), error, true);
+    // ESP flag is optional - log but don't fail if it can't be set
+    if (!runCommandShell(QStringLiteral("%1 set %2 esp on").arg(preamble).arg(partNum), error, true)) {
+        logLine(QStringLiteral("Warning: Could not set ESP flag on UEFI partition"));
+    }
 
     if (config.gpt && config.pmbr) {
-        runCommandShell(QStringLiteral("%1 disk_set pmbr_boot on").arg(preamble), error, true);
+        // PMBR boot flag is optional - log but don't fail if it can't be set
+        if (!runCommandShell(QStringLiteral("%1 disk_set pmbr_boot on").arg(preamble), error, true)) {
+            logLine(QStringLiteral("Warning: Could not set pmbr_boot flag"));
+        }
     }
 
     return runCommand(QStringLiteral("partprobe"), {layout.drive}, error, true);
