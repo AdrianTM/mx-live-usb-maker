@@ -46,7 +46,6 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     ui->setupUi(this);
     setGeneralConnections();
 
-    QSettings settings(AppPaths::CONFIG_FILE, QSettings::NativeFormat);
     backendPath = LiveUsbMakerConfig::backendExecutablePath();
     if (backendPath.isEmpty()) {
         QMessageBox::critical(this, tr("Failure"),
@@ -54,7 +53,15 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     }
     qDebug() << "LUM backend is:" << backendPath;
 
-    sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
+    // Load configuration settings (with defaults if file doesn't exist)
+    if (QFileInfo::exists(AppPaths::CONFIG_FILE)) {
+        qDebug() << "Loading configuration from:" << AppPaths::CONFIG_FILE;
+        QSettings settings(AppPaths::CONFIG_FILE, QSettings::NativeFormat);
+        sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
+    } else {
+        qDebug() << "Configuration file not found, using defaults:" << AppPaths::CONFIG_FILE;
+        sizeCheck = 128; // Default size check in GB
+    }
 
 
     setWindowFlags(Qt::Window); // for the close, min, and max buttons
