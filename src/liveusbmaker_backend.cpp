@@ -30,6 +30,7 @@
 #include <QTextStream>
 #include <QSet>
 
+#include "common.h"
 #include "liveusbmaker_backend.h"
 
 namespace
@@ -68,7 +69,7 @@ const QString kSyslinuxRemove = QStringLiteral("*.c32 ldlinux.sys syslinux.bin i
 LiveUsbMakerBackend::LiveUsbMakerBackend(const LiveUsbMakerConfig &config)
     : config(config)
 {
-    paths.workDir = QStringLiteral("/run/live-usb-maker");
+    paths.workDir = AppPaths::WORK_DIR;
     paths.isoDir = QDir(paths.workDir).filePath(QStringLiteral("iso"));
     paths.mainDir = QDir(paths.workDir).filePath(QStringLiteral("main"));
     paths.biosDir = QDir(paths.workDir).filePath(QStringLiteral("bios"));
@@ -268,9 +269,9 @@ bool LiveUsbMakerBackend::prepareSource(QString *error)
                           error);
     }
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Clone) {
-        const QString livePath = QFileInfo::exists(QStringLiteral("/live/config/did-toram"))
-                                     ? QStringLiteral("/live/to-ram")
-                                     : QStringLiteral("/live/boot-dev");
+        const QString livePath = QFileInfo::exists(LivePaths::DID_TORAM)
+                                     ? LivePaths::TO_RAM
+                                     : LivePaths::BOOT_DEV;
         paths.isoDir = livePath;
         return true;
     }
@@ -333,7 +334,7 @@ bool LiveUsbMakerBackend::isUsbOrRemovable(const QString &device) const
             driveName.chop(1);
         }
     }
-    const QString sysBlock = QStringLiteral("/sys/block/") + driveName;
+    const QString sysBlock = SystemPaths::SYS_BLOCK + QStringLiteral("/") + driveName;
     if (!QFileInfo::exists(sysBlock)) {
         return false;
     }
@@ -679,7 +680,7 @@ bool LiveUsbMakerBackend::copyMain(QString *error)
             const QString rootfs = QDir(bootRoot).filePath(QStringLiteral("rootfs"));
             if (QFileInfo::exists(rootfs)) {
                 const bool skipRoot = (config.sourceMode == LiveUsbMakerConfig::SourceMode::Clone
-                                       && QFileInfo::exists(QStringLiteral("/live/config/static-root")));
+                                       && QFileInfo::exists(LivePaths::STATIC_ROOT));
                 if (!skipRoot) {
                     runCommand(QStringLiteral("cp"), {QStringLiteral("-a"), rootfs, bootDest}, error, true);
                 }
@@ -1072,7 +1073,7 @@ bool LiveUsbMakerBackend::encryptMainPartition(QString *error)
                     error)) {
         return false;
     }
-    const QString luksDev = QStringLiteral("/dev/mapper/") + kLuksName;
+    const QString luksDev = SystemPaths::DEV_MAPPER + QStringLiteral("/") + kLuksName;
     if (!runCommand(QStringLiteral("mkfs.ext4"),
                     {QStringLiteral("-m0"), QStringLiteral("-i16384"), QStringLiteral("-J"), QStringLiteral("size=32"),
                      luksDev},
@@ -1096,7 +1097,7 @@ bool LiveUsbMakerBackend::encryptMainPartition(QString *error)
 
 QString LiveUsbMakerBackend::logPath() const
 {
-    return QStringLiteral("/var/log/live-usb-maker.log");
+    return AppPaths::LOG_FILE;
 }
 
 bool LiveUsbMakerBackend::runCommand(const QString &program, const QStringList &args, QString *error, bool allowFail) const
@@ -1249,7 +1250,7 @@ int LiveUsbMakerBackend::extOverheadMiB(int sizeMiB) const
 
 QString LiveUsbMakerBackend::findSyslinuxMbr(const QString &name, QString *error) const
 {
-    const QStringList dirs {QStringLiteral("/usr/share/syslinux"), QStringLiteral("/usr/lib/syslinux/mbr")};
+    const QStringList dirs {SyslinuxPaths::SHARE, SyslinuxPaths::MBR};
     for (const QString &dir : dirs) {
         const QString candidate = QDir(dir).filePath(name);
         if (QFileInfo::exists(candidate)) {
@@ -1264,8 +1265,8 @@ QString LiveUsbMakerBackend::findSyslinuxMbr(const QString &name, QString *error
 
 QString LiveUsbMakerBackend::findSyslinuxModuleDir(QString *error) const
 {
-    const QStringList dirs {QStringLiteral("/usr/share/syslinux"), QStringLiteral("/usr/lib/syslinux"),
-                            QStringLiteral("/usr/lib/syslinux/modules/bios")};
+    const QStringList dirs {SyslinuxPaths::SHARE, SyslinuxPaths::LIB,
+                            SyslinuxPaths::MODULES_BIOS};
     for (const QString &dir : dirs) {
         if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral("gfxboot.c32")))) {
             return dir;
@@ -1570,9 +1571,9 @@ bool LiveUsbMakerBackend::copyInitrdModules(const QString &linuxDir, const QStri
 
 bool LiveUsbMakerBackend::writePassphraseFile(const QString &path, QString *error) const
 {
-    QFile dict(QStringLiteral("/usr/share/dict/american-english"));
+    QFile dict(DictPaths::AMERICAN_ENGLISH);
     if (!dict.exists()) {
-        dict.setFileName(QStringLiteral("/usr/share/dict/words"));
+        dict.setFileName(DictPaths::WORDS);
     }
     if (!dict.open(QIODevice::ReadOnly | QIODevice::Text)) {
         if (error) {

@@ -47,7 +47,7 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     ui->setupUi(this);
     setGeneralConnections();
 
-    QSettings settings("/etc/mx-live-usb-maker/mx-live-usb-maker.conf", QSettings::NativeFormat);
+    QSettings settings(AppPaths::CONFIG_FILE, QSettings::NativeFormat);
     backendPath = LiveUsbMakerConfig::backendExecutablePath();
     if (backendPath.isEmpty()) {
         QMessageBox::critical(this, tr("Failure"),
@@ -116,7 +116,7 @@ bool MainWindow::isRunningLive()
     }
 
     // Fallback: parse /proc/mounts for the root filesystem
-    QFile mountsFile("/proc/mounts");
+    QFile mountsFile(SystemPaths::PROC_MOUNTS);
     if (mountsFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&mountsFile);
         while (!in.atEnd()) {
@@ -141,7 +141,7 @@ bool MainWindow::isRunningLive()
 
 bool MainWindow::isToRam()
 {
-    return QFileInfo::exists("/live/config/did-toram");
+    return QFileInfo::exists(LivePaths::DID_TORAM);
 }
 
 void MainWindow::makeUsb(const QString &options)
@@ -167,7 +167,7 @@ void MainWindow::makeUsb(const QString &options)
         }
     } else if (ui->checkCloneLive->isChecked()) {
         source = "clone";
-        QString path = isToRam() ? "/live/to-ram" : "/live/boot-dev";
+        QString path = isToRam() ? LivePaths::TO_RAM : LivePaths::BOOT_DEV;
         sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(path), Cmd::QuietMode::Yes);
     }
 
@@ -234,7 +234,7 @@ void MainWindow::setup()
     ui->checkSaveBoot->setEnabled(false);
 
     // Enable clone live option only if running live and not encrypted
-    ui->checkCloneLive->setEnabled(isRunningLive() && !QFile::exists("/live/config/encrypted"));
+    ui->checkCloneLive->setEnabled(isRunningLive() && !QFile::exists(LivePaths::ENCRYPTED));
 
     // Dynamically show or hide data format options based on availability
     bool dataFirstAvailable = true;
@@ -391,7 +391,7 @@ void MainWindow::cleanup()
     bool needsPrivilegedCleanup = false;
 
     // Check 1: Are there any mount points?
-    const QString mountPath = "/run/live-usb-maker";
+    const QString mountPath = AppPaths::WORK_DIR;
     if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes) ||
         Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
         needsPrivilegedCleanup = true;
@@ -567,7 +567,7 @@ QString MainWindow::getLiveDeviceName()
     QString liveDevPath;
 
     if (!cryptUuid.isEmpty()) {
-        QDir uuidDir("/dev/disk/by-uuid");
+        QDir uuidDir(SystemPaths::DEV_DISK_BY_UUID);
         if (uuidDir.exists()) {
             const QFileInfoList entries = uuidDir.entryInfoList(QDir::NoDotAndDotDot | QDir::System);
             for (const QFileInfo &entry : entries) {
@@ -580,7 +580,7 @@ QString MainWindow::getLiveDeviceName()
     }
 
     if (liveDevPath.isEmpty()) {
-        QFile mounts("/proc/mounts");
+        QFile mounts(SystemPaths::PROC_MOUNTS);
         if (mounts.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream in(&mounts);
             while (!in.atEnd()) {
@@ -912,8 +912,8 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
 void MainWindow::pushLumLogFile_clicked()
 {
     const QString logFileName = QStringLiteral("live-usb-maker.log");
-    const QString logFilePath = QStringLiteral("/var/log/live-usb-maker.log");
-    const QString tempLogFilePath = QStringLiteral("/tmp/live-usb-maker.log");
+    const QString logFilePath = AppPaths::LOG_FILE;
+    const QString tempLogFilePath = SystemPaths::TMP_DIR + QStringLiteral("/live-usb-maker.log");
     qDebug() << "lumlog" << tempLogFilePath;
 
     if (!QFileInfo::exists(logFilePath)) {
@@ -983,7 +983,7 @@ quint64 MainWindow::calculateSourceSize()
             }
         } else {
             // Clone live system mode: use current live system
-            linuxfsPath = "/live/linux";
+            linuxfsPath = LivePaths::LINUX;
         }
 
         // Calculate source size if linuxfs path exists

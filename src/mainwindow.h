@@ -28,6 +28,7 @@
 #include <QTimer>
 
 #include "cmd.h"
+#include "common.h"
 #include "liveusbmaker_config.h"
 
 class QFile;
@@ -97,7 +98,7 @@ private:
     [[nodiscard]] static QString getDrivePath(const QString &device);
     [[nodiscard]] static QString getLiveDeviceName();
     [[nodiscard]] static QString readInitrdParam(const QString &name,
-                                                 const QString &filePath = "/live/config/initrd.out");
+                                                 const QString &filePath = LivePaths::INITRD_OUT);
     [[nodiscard]] static bool isRunningLive();
     [[nodiscard]] static bool isToRam();
     [[nodiscard]] static bool isUsbOrRemovable(const QString &device);

@@ -60,7 +60,7 @@ void displayDoc(const QString &url, const QString &title)
     }
 
     if (isRunningAsRoot) {
-        qputenv("HOME", "/root");
+        qputenv("HOME", SystemPaths::ROOT_HOME.toUtf8());
     }
 }
 
@@ -91,7 +91,7 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
         QProcess changelogProc;
         changelogProc.start(
             "zless",
-            {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/changelog.gz"},
+            {DocPaths::SHARE_DOC + QStringLiteral("/") + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + QStringLiteral("/changelog.gz")},
             QIODevice::ReadOnly);
         changelogProc.waitForFinished();
         textEdit->setText(changelogProc.readAllStandardOutput());

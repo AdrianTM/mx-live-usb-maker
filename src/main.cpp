@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     if (getuid() == 0) {
-        qputenv("HOME", "/root");
+        qputenv("HOME", SystemPaths::ROOT_HOME.toUtf8());
     }
     QApplication::setApplicationVersion(VERSION);
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     }
 
     // Root guard
-    QFile loginUidFile {"/proc/self/loginuid"};
+    QFile loginUidFile {SystemPaths::PROC_SELF_LOGINUID};
     if (loginUidFile.open(QIODevice::ReadOnly)) {
         QString loginUid = QString(loginUidFile.readAll()).trimmed();
         loginUidFile.close();
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    auto const logFileName = "/tmp/" + QApplication::applicationName() + ".log";
+    auto const logFileName = SystemPaths::TMP_DIR + QStringLiteral("/") + QApplication::applicationName() + QStringLiteral(".log");
     logFile.setFileName(logFileName);
     if (logFile.exists() && QFileInfo(logFile).isWritable()) {
         QFile::remove(logFileName + ".old");
