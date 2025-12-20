@@ -34,7 +34,13 @@
 #include "mainwindow.h"
 #include <unistd.h>
 
-static QFile logFile;
+// Function-local static to avoid initialization order issues
+static QFile &logFile()
+{
+    static QFile file;
+    return file;
+}
+
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 int main(int argc, char *argv[])
@@ -104,15 +110,15 @@ int main(int argc, char *argv[])
     }
 
     auto const logFileName = SystemPaths::TMP_DIR + QStringLiteral("/") + QApplication::applicationName() + QStringLiteral(".log");
-    logFile.setFileName(logFileName);
-    if (logFile.exists() && QFileInfo(logFile).isWritable()) {
+    logFile().setFileName(logFileName);
+    if (logFile().exists() && QFileInfo(logFile()).isWritable()) {
         QFile::remove(logFileName + ".old");
         QFile::rename(logFileName, logFileName + ".old");
     }
-    if (logFile.exists() && !QFileInfo(logFile).isWritable()) {
-        logFile.setFileName(logFileName + "_new");
+    if (logFile().exists() && !QFileInfo(logFile()).isWritable()) {
+        logFile().setFileName(logFileName + "_new");
     }
-    logFile.open(QIODevice::ReadWrite);
+    logFile().open(QIODevice::ReadWrite);
     qInstallMessageHandler(messageHandler);
     qDebug().noquote() << QApplication::applicationName() << QObject::tr("version:")
                        << QApplication::applicationVersion();
@@ -126,7 +132,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     QTextStream termOut(stdout);
     termOut << msg << '\n';
 
-    QTextStream out(&logFile);
+    QTextStream out(&logFile());
     out << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz ");
     switch (type) {
     case QtInfoMsg:
