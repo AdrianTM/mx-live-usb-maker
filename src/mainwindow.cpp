@@ -661,7 +661,6 @@ void MainWindow::updateOutput()
 
     QScrollBar *sb = ui->outputBox->verticalScrollBar();
     sb->setValue(sb->maximum());
-    QApplication::processEvents();
 }
 
 void MainWindow::pushNext_clicked()
