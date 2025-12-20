@@ -324,16 +324,7 @@ bool LiveUsbMakerBackend::isUsbOrRemovable(const QString &device) const
     if (devPath.isEmpty()) {
         return false;
     }
-    QString driveName = QFileInfo(devPath).fileName();
-    if (driveName.contains(QLatin1String("mmcblk")) || driveName.contains(QLatin1String("nvme"))) {
-        if (driveName.endsWith(QLatin1Char('p'))) {
-            driveName.chop(1);
-        }
-    } else {
-        while (!driveName.isEmpty() && driveName.at(driveName.size() - 1).isDigit()) {
-            driveName.chop(1);
-        }
-    }
+    const QString driveName = DeviceUtils::baseDriveName(devPath);
     const QString sysBlock = SystemPaths::SYS_BLOCK + QStringLiteral("/") + driveName;
     if (!QFileInfo::exists(sysBlock)) {
         return false;
@@ -1183,10 +1174,7 @@ void LiveUsbMakerBackend::logError(const QString &line) const
 
 QString LiveUsbMakerBackend::devicePath(const QString &device) const
 {
-    if (device.startsWith(QStringLiteral("/dev/"))) {
-        return device;
-    }
-    return QStringLiteral("/dev/") + device;
+    return DeviceUtils::normalizePath(device);
 }
 
 QString LiveUsbMakerBackend::partitionPath(const QString &drive, int index) const

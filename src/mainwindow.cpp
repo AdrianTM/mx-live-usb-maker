@@ -32,7 +32,6 @@
 #include <QScrollBar>
 #include <QStorageInfo>
 #include <QTextStream>
-#include <sys/stat.h>
 
 #include "about.h"
 #include <chrono>
@@ -435,66 +434,21 @@ QStringList MainWindow::buildUsbList()
 
 QString MainWindow::expandDevicePath(const QString &device)
 {
-    QString dev = device.trimmed();
-    QString candidate;
-
-    if (dev.startsWith("/dev/")) {
-        candidate = dev;
-    } else if (dev.startsWith("dev/")) {
-        candidate = "/" + dev;
-    } else if (dev.startsWith('/')) {
-        candidate = "/dev" + dev;
-    } else {
-        candidate = "/dev/" + dev;
-    }
-
-    struct stat st {};
-    const QByteArray pathBytes = candidate.toLocal8Bit();
-    if (::stat(pathBytes.constData(), &st) != 0) {
+    const QString normalized = DeviceUtils::normalizePath(device);
+    if (!DeviceUtils::isBlockDevice(normalized)) {
         return {};
     }
-    if (!S_ISBLK(st.st_mode)) {
-        return {};
-    }
-    return candidate;
+    return normalized;
 }
 
 QString MainWindow::getDriveName(const QString &device)
 {
-    QString name = device.trimmed();
-    if (name.startsWith("/dev/")) {
-        name = name.mid(5);
-    } else if (name.startsWith("dev/")) {
-        name = name.mid(4);
-    } else if (name.startsWith('/')) {
-        name = name.mid(1);
-    }
-
-    if (name.contains("mmcblk") || name.contains("nvme")) {
-        const QRegularExpression pDigitRe("p\\d$");
-        if (pDigitRe.match(name).hasMatch()) {
-            name.chop(2);
-        }
-        return name;
-    }
-
-    const QRegularExpression digitRe("\\d$");
-    if (digitRe.match(name).hasMatch()) {
-        name.chop(1);
-    }
-    if (digitRe.match(name).hasMatch()) {
-        name.chop(1);
-    }
-    return name;
+    return DeviceUtils::baseDriveName(device);
 }
 
 QString MainWindow::getDrivePath(const QString &device)
 {
-    const QString name = getDriveName(device);
-    if (name.isEmpty()) {
-        return {};
-    }
-    return "/dev/" + name;
+    return DeviceUtils::baseDrivePath(device);
 }
 
 bool MainWindow::isUsbOrRemovable(const QString &device)

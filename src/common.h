@@ -21,6 +21,9 @@
  **********************************************************************/
 #pragma once
 
+#include <QRegularExpression>
+#include <sys/stat.h>
+
 inline const QString startingHome {qEnvironmentVariable("HOME")};
 
 // Size conversion constants
@@ -81,3 +84,79 @@ namespace DocPaths
 {
 inline const QString SHARE_DOC = QStringLiteral("/usr/share/doc");
 } // namespace DocPaths
+
+// Device utility functions
+namespace DeviceUtils
+{
+// Normalize a device path to /dev/xxx format
+// Examples: "sda" -> "/dev/sda", "dev/sdb" -> "/dev/sdb", "/dev/sdc" -> "/dev/sdc"
+[[nodiscard]] inline QString normalizePath(const QString &device)
+{
+    QString dev = device.trimmed();
+
+    if (dev.startsWith(QStringLiteral("/dev/"))) {
+        return dev;
+    }
+    if (dev.startsWith(QStringLiteral("dev/"))) {
+        return QStringLiteral("/") + dev;
+    }
+    if (dev.startsWith(QLatin1Char('/'))) {
+        return QStringLiteral("/dev") + dev;
+    }
+    return QStringLiteral("/dev/") + dev;
+}
+
+// Extract base drive name from device path (strips partition numbers)
+// Examples: "sda1" -> "sda", "/dev/mmcblk0p1" -> "mmcblk0", "nvme0n1p2" -> "nvme0n1"
+[[nodiscard]] inline QString baseDriveName(const QString &device)
+{
+    QString name = device.trimmed();
+
+    // Strip /dev/ prefix if present
+    if (name.startsWith(QStringLiteral("/dev/"))) {
+        name = name.mid(5);
+    } else if (name.startsWith(QStringLiteral("dev/"))) {
+        name = name.mid(4);
+    } else if (name.startsWith(QLatin1Char('/'))) {
+        name = name.mid(1);
+    }
+
+    // Handle mmcblk and nvme devices (partition format: mmcblk0p1, nvme0n1p1)
+    // For these devices, partitions are named with 'p' followed by number
+    if (name.contains(QStringLiteral("mmcblk")) || name.contains(QStringLiteral("nvme"))) {
+        // Remove trailing 'pN' where N is one or more digits
+        const QRegularExpression pDigitRe(QStringLiteral("p\\d+$"));
+        name.remove(pDigitRe);
+        return name;
+    }
+
+    // Handle regular devices (partition format: sda1, hda2)
+    // Remove all trailing digits
+    while (!name.isEmpty() && name.at(name.size() - 1).isDigit()) {
+        name.chop(1);
+    }
+
+    return name;
+}
+
+// Get full drive path from device (e.g., "/dev/sda1" -> "/dev/sda", "mmcblk0p2" -> "/dev/mmcblk0")
+[[nodiscard]] inline QString baseDrivePath(const QString &device)
+{
+    const QString name = baseDriveName(device);
+    if (name.isEmpty()) {
+        return {};
+    }
+    return QStringLiteral("/dev/") + name;
+}
+
+// Validate that a path is a block device
+[[nodiscard]] inline bool isBlockDevice(const QString &path)
+{
+    struct stat st {};
+    const QByteArray pathBytes = path.toLocal8Bit();
+    if (::stat(pathBytes.constData(), &st) != 0) {
+        return false;
+    }
+    return S_ISBLK(st.st_mode);
+}
+} // namespace DeviceUtils
