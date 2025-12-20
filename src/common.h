@@ -94,11 +94,44 @@ inline const QString SHARE_DOC = QStringLiteral("/usr/share/doc");
 // Device utility functions
 namespace DeviceUtils
 {
+// Validate that a device name is well-formed and safe to use
+// Returns true if the device name contains only valid characters and patterns
+[[nodiscard]] inline bool isValidDeviceName(const QString &device)
+{
+    if (device.isEmpty()) {
+        return false;
+    }
+
+    // Check for path traversal attempts
+    if (device.contains(QStringLiteral("..")) || device.contains(QStringLiteral("//"))) {
+        return false;
+    }
+
+    // Extract just the device name part (without /dev/ prefix)
+    QString name = device.trimmed();
+    if (name.startsWith(QStringLiteral("/dev/"))) {
+        name = name.mid(5);
+    } else if (name.startsWith(QStringLiteral("dev/"))) {
+        name = name.mid(4);
+    }
+
+    // Device names should only contain alphanumeric characters, dashes, and underscores
+    // Valid patterns: sda, sda1, nvme0n1, nvme0n1p1, mmcblk0, mmcblk0p1, etc.
+    static const QRegularExpression validDeviceRe(QStringLiteral("^[a-zA-Z0-9_-]+$"));
+    return validDeviceRe.match(name).hasMatch();
+}
+
 // Normalize a device path to /dev/xxx format
 // Examples: "sda" -> "/dev/sda", "dev/sdb" -> "/dev/sdb", "/dev/sdc" -> "/dev/sdc"
+// Returns empty string if device name is invalid
 [[nodiscard]] inline QString normalizePath(const QString &device)
 {
     QString dev = device.trimmed();
+
+    // Validate device name before normalizing
+    if (!isValidDeviceName(dev)) {
+        return {};
+    }
 
     if (dev.startsWith(QStringLiteral("/dev/"))) {
         return dev;
