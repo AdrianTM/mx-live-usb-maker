@@ -1019,23 +1019,27 @@ bool LiveUsbMakerBackend::prepareInitrdEncryption(QString *error)
                     error)) {
         return false;
     }
+
+    // Ensure unmount happens even on error paths
+    bool success = true;
     if (!unpackInitrd(initrdPath, paths.initrdDir, error)) {
-        return false;
+        success = false;
+    } else if (!copyInitrdPrograms(paths.linuxDir, paths.initrdDir, error)) {
+        success = false;
+    } else if (!copyInitrdModules(paths.linuxDir, paths.initrdDir, error)) {
+        success = false;
+    } else {
+        const QString encryptFile = QDir(paths.initrdDir).filePath(QStringLiteral("etc/encrypt"));
+        QDir().mkpath(QFileInfo(encryptFile).path());
+        QFile f(encryptFile);
+        if (f.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+            f.write(kEncryptEnable.toUtf8());
+        }
     }
-    if (!copyInitrdPrograms(paths.linuxDir, paths.initrdDir, error)) {
-        return false;
-    }
-    if (!copyInitrdModules(paths.linuxDir, paths.initrdDir, error)) {
-        return false;
-    }
-    const QString encryptFile = QDir(paths.initrdDir).filePath(QStringLiteral("etc/encrypt"));
-    QDir().mkpath(QFileInfo(encryptFile).path());
-    QFile f(encryptFile);
-    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
-        f.write(kEncryptEnable.toUtf8());
-    }
+
+    // Always unmount before returning
     unmountPath(paths.linuxDir, nullptr);
-    return true;
+    return success;
 }
 
 bool LiveUsbMakerBackend::finalizeInitrdEncryption(QString *error)
