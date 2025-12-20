@@ -355,16 +355,17 @@ LiveUsbMakerConfig MainWindow::buildConfig() const
     config.forceNofuse = ui->checkForceNofuse->isChecked();
 
     config.espSizeMiB = ui->spinBoxEsp->value();
-    if (config.dataFirst) {
-        config.mainPercent = 100 - config.dataPercent;
-    } else {
-        config.mainPercent = ui->spinBoxSize->value();
-    }
     config.label = ui->textLabel->text();
 
     config.dataFirst = ui->checkDataFirst->isChecked();
     config.dataPercent = ui->spinBoxDataSize->value();
     config.dataFs = ui->comboBoxDataFormat->currentText();
+
+    if (config.dataFirst) {
+        config.mainPercent = 100 - config.dataPercent;
+    } else {
+        config.mainPercent = ui->spinBoxSize->value();
+    }
 
     config.verbosity = ui->sliderVerbosity->value();
     config.clonePersist = true;
