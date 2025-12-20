@@ -160,3 +160,33 @@ namespace DeviceUtils
     return S_ISBLK(st.st_mode);
 }
 } // namespace DeviceUtils
+
+// Shell utility functions
+namespace ShellUtils
+{
+// Properly escape a string for use in shell commands using single quotes
+// This prevents shell injection by escaping all special characters
+// Example: "foo'bar" -> 'foo'\''bar'
+[[nodiscard]] inline QString quote(const QString &value)
+{
+    if (value.isEmpty()) {
+        return QStringLiteral("''");
+    }
+
+    // Use single quotes and escape any existing single quotes
+    QString escaped = value;
+    escaped.replace(QLatin1Char('\''), QStringLiteral("'\\''"));
+    return QStringLiteral("'") + escaped + QStringLiteral("'");
+}
+
+// Escape multiple arguments and join them with spaces
+[[nodiscard]] inline QString quoteArgs(const QStringList &args)
+{
+    QStringList quoted;
+    quoted.reserve(args.size());
+    for (const QString &arg : args) {
+        quoted.append(quote(arg));
+    }
+    return quoted.join(QLatin1Char(' '));
+}
+} // namespace ShellUtils

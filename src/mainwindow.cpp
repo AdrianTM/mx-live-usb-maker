@@ -380,9 +380,7 @@ QString MainWindow::writeBackendConfig(QString *error) const
 
 QString MainWindow::shellQuote(const QString &value)
 {
-    QString escaped = value;
-    escaped.replace(QLatin1Char('\''), QStringLiteral("'\\''"));
-    return QStringLiteral("'") + escaped + QStringLiteral("'");
+    return ShellUtils::quote(value);
 }
 
 void MainWindow::cleanup()

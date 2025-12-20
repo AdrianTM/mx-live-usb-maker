@@ -789,8 +789,8 @@ bool LiveUsbMakerBackend::installBootloader(QString *error)
         return false;
     }
     if (mbrFileName == QLatin1String("altmbr.bin")) {
-        const QString cmd = QStringLiteral("printf '\\2' | cat \"%1\" - | dd bs=440 count=1 iflag=fullblock conv=notrunc of=%2")
-                                .arg(mbrFile, layout.drive);
+        const QString cmd = QStringLiteral("printf '\\2' | cat %1 - | dd bs=440 count=1 iflag=fullblock conv=notrunc of=%2")
+                                .arg(ShellUtils::quote(mbrFile), ShellUtils::quote(layout.drive));
         if (!runCommandShell(cmd, error)) {
             return false;
         }
@@ -1304,13 +1304,15 @@ QString LiveUsbMakerBackend::randomString(int bytes) const
 
 bool LiveUsbMakerBackend::copyFileTree(const QString &source, const QString &destination, QString *error) const
 {
-    const QString cmd = QStringLiteral("cp -a \"%1\"/. \"%2\"/").arg(source, destination);
+    const QString cmd = QStringLiteral("cp -a %1/. %2/")
+                            .arg(ShellUtils::quote(source), ShellUtils::quote(destination));
     return runCommandShell(cmd, error);
 }
 
 bool LiveUsbMakerBackend::copyFilesSpec(const QString &source, const QString &spec, const QString &destination, QString *error) const
 {
-    const QString cmd = QStringLiteral("cd \"%1\" && ls -d %2 2>/dev/null || true").arg(source, spec);
+    const QString cmd = QStringLiteral("cd %1 && ls -d %2 2>/dev/null || true")
+                            .arg(ShellUtils::quote(source), spec);  // Note: spec is a glob pattern, not user input
     QString output;
     if (!runCommandOutput(QStringLiteral("/bin/bash"), {QStringLiteral("-c"), cmd}, &output, error)) {
         return false;
@@ -1426,19 +1428,20 @@ bool LiveUsbMakerBackend::unpackInitrd(const QString &initrdPath, const QString 
 {
     QDir().mkpath(destDir);
     const QString cmd = QStringLiteral("cd %1 && gzip -dc %2 | cpio -id --no-absolute-filenames")
-                            .arg(destDir, initrdPath);
+                            .arg(ShellUtils::quote(destDir), ShellUtils::quote(initrdPath));
     return runCommandShell(cmd, error);
 }
 
 bool LiveUsbMakerBackend::repackInitrd(const QString &initrdPath, const QString &srcDir, QString *error) const
 {
     const QString cmd = QStringLiteral("cd %1 && find . -print0 | cpio --null -ov --format=newc | gzip -c > %2")
-                            .arg(srcDir, initrdPath);
+                            .arg(ShellUtils::quote(srcDir), ShellUtils::quote(initrdPath));
     if (!runCommandShell(cmd, error)) {
         return false;
     }
-    const QString md5Cmd = QStringLiteral("cd %1 && md5sum %2 > %2.md5")
-                               .arg(QFileInfo(initrdPath).path(), QFileInfo(initrdPath).fileName());
+    const QString initrdDir = ShellUtils::quote(QFileInfo(initrdPath).path());
+    const QString initrdFile = ShellUtils::quote(QFileInfo(initrdPath).fileName());
+    const QString md5Cmd = QStringLiteral("cd %1 && md5sum %2 > %2.md5").arg(initrdDir, initrdFile);
     return runCommandShell(md5Cmd, error);
 }
 
