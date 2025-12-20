@@ -125,7 +125,7 @@ namespace DeviceUtils
     // For these devices, partitions are named with 'p' followed by number
     if (name.contains(QStringLiteral("mmcblk")) || name.contains(QStringLiteral("nvme"))) {
         // Remove trailing 'pN' where N is one or more digits
-        const QRegularExpression pDigitRe(QStringLiteral("p\\d+$"));
+        static const QRegularExpression pDigitRe(QStringLiteral("p\\d+$"));
         name.remove(pDigitRe);
         return name;
     }

@@ -349,7 +349,7 @@ bool LiveUsbMakerBackend::clearPartitionTable(QString *error)
                           &output, error)) {
         return false;
     }
-    QRegularExpression re(QStringLiteral("^Disk.*: ([0-9]+)B$"));
+    static const QRegularExpression re(QStringLiteral("^Disk.*: ([0-9]+)B$"));
     qint64 bytes = 0;
     const QStringList lines = output.split(QLatin1Char('\n'));
     for (const QString &line : lines) {
@@ -938,15 +938,17 @@ bool LiveUsbMakerBackend::updateUuids(QString *error)
     grubContent = QString::fromUtf8(grubFile.readAll());
     grubFile.close();
 
-    QRegularExpression searchRe(QStringLiteral("search.*--set=root.*"));
+    static const QRegularExpression searchRe(QStringLiteral("search.*--set=root.*"));
     if (searchRe.match(grubContent).hasMatch()) {
         grubContent.replace(searchRe, searchLine);
     } else {
-        QRegularExpression menuEntryRe(QStringLiteral("(^\\s*menuentry)"), QRegularExpression::MultilineOption);
+        static const QRegularExpression menuEntryRe(QStringLiteral("(^\\s*menuentry)"), QRegularExpression::MultilineOption);
         grubContent.replace(menuEntryRe, searchLine + QStringLiteral("\n\n\\1"));
     }
-    grubContent.replace(QRegularExpression(QStringLiteral("^#-+esp\\s*"), QRegularExpression::MultilineOption), QString());
-    grubContent.replace(QRegularExpression(QStringLiteral("(root=\\(hd0,)[0-9]\\)")), QStringLiteral("\\1%1)").arg(layout.uefiPart));
+    static const QRegularExpression espCommentRe(QStringLiteral("^#-+esp\\s*"), QRegularExpression::MultilineOption);
+    static const QRegularExpression rootPartRe(QStringLiteral("(root=\\(hd0,)[0-9]\\)"));
+    grubContent.replace(espCommentRe, QString());
+    grubContent.replace(rootPartRe, QStringLiteral("\\1%1)").arg(layout.uefiPart));
 
     if (grubFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
         grubFile.write(grubContent.toUtf8());
@@ -1218,7 +1220,7 @@ int LiveUsbMakerBackend::totalSizeMiB(QString *error) const
                           &output, error)) {
         return 0;
     }
-    QRegularExpression re(QStringLiteral("^Disk.*: ([0-9]+)B$"));
+    static const QRegularExpression re(QStringLiteral("^Disk.*: ([0-9]+)B$"));
     const QStringList lines = output.split(QLatin1Char('\n'));
     for (const QString &line : lines) {
         const QRegularExpressionMatch match = re.match(line.trimmed());
@@ -1505,10 +1507,10 @@ bool LiveUsbMakerBackend::copyInitrdPrograms(const QString &linuxDir, const QStr
                          {linuxDir, QStringLiteral("/usr/bin/ldd"), relPath},
                          &lddOutput, error);
         const QStringList lines = lddOutput.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+        static const QRegularExpression libPathRe(QStringLiteral("=>\\s*([^ ]+)"));
         for (const QString &line : lines) {
             QString libPath;
-            QRegularExpression re(QStringLiteral("=>\\s*([^ ]+)"));
-            const QRegularExpressionMatch match = re.match(line);
+            const QRegularExpressionMatch match = libPathRe.match(line);
             if (match.hasMatch()) {
                 libPath = match.captured(1);
             } else if (line.startsWith(QLatin1String("/"))) {

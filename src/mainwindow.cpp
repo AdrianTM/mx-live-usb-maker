@@ -634,7 +634,8 @@ void MainWindow::updateBar()
         qDebug() << "Empty stat file content";
         return;
     }
-    quint64 currentIo = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
+    static const QRegularExpression whitespaceRe(QStringLiteral("\\s+"));
+    quint64 currentIo = out.section(whitespaceRe, 7, 7).toULongLong();
     ui->progBar->setValue(static_cast<int>(currentIo));
     statFile.close();
 }
