@@ -934,6 +934,54 @@ void MainWindow::showErrorAndReset(const QString &message)
     setCursor(Qt::ArrowCursor);
 }
 
+QString MainWindow::getLinuxfsPath(const QString &sourceFilename)
+{
+    if (ui->checkCloneLive->isChecked()) {
+        // Clone live system mode: use current live system
+        return LivePaths::LINUX;
+    }
+
+    // Clone mode: check for linuxfs file in standard locations
+    QString linuxfsPath = sourceFilename + "/antiX/linuxfs";
+    if (QFileInfo::exists(linuxfsPath)) {
+        return linuxfsPath;
+    }
+
+    linuxfsPath = sourceFilename + "/linuxfs";
+    if (QFileInfo::exists(linuxfsPath)) {
+        return linuxfsPath;
+    }
+
+    return QString();  // Not found
+}
+
+quint64 MainWindow::calculateLinuxfsSize(const QString &linuxfsPath)
+{
+    const QFileInfo info(linuxfsPath);
+    if (info.isDir()) {
+        // For directories, get used space via df command
+        const QString cmdStr = QString("df --output=used -B1 \"%1\" | tail -1").arg(linuxfsPath);
+        const QString usedStr = cmd.getOut(cmdStr, Cmd::QuietMode::Yes).trimmed();
+        bool ok = false;
+        const quint64 sourceSizeBytes = usedStr.toULongLong(&ok);
+        return ok ? sourceSizeBytes : 0;
+    }
+    // For files, get size directly
+    return info.size();
+}
+
+quint64 MainWindow::calculateIsoSize(const QString &isoFilename)
+{
+    if (isoFilename.isEmpty() || !QFileInfo::exists(isoFilename)) {
+        qDebug() << "ISO file does not exist or not specified:" << isoFilename;
+        return 0;
+    }
+
+    const quint64 sourceSizeBytes = QFileInfo(isoFilename).size();
+    qDebug() << "ISO file size (bytes):" << sourceSizeBytes;
+    return sourceSizeBytes;
+}
+
 quint64 MainWindow::calculateSourceSize()
 {
     const QString sourceFilename = ui->pushSelectSource->property("filename").toString();
@@ -941,35 +989,9 @@ quint64 MainWindow::calculateSourceSize()
 
     // Handle source size calculation based on operation mode
     if (ui->checkCloneMode->isChecked() || ui->checkCloneLive->isChecked()) {
-        QString linuxfsPath;
+        const QString linuxfsPath = getLinuxfsPath(sourceFilename);
 
-        // Determine the linuxfs path based on clone mode
-        if (ui->checkCloneMode->isChecked()) {
-            // Clone mode: check for linuxfs file in standard locations
-            linuxfsPath = sourceFilename + "/antiX/linuxfs";
-            if (!QFileInfo::exists(linuxfsPath)) {
-                linuxfsPath = sourceFilename + "/linuxfs";
-            }
-        } else {
-            // Clone live system mode: use current live system
-            linuxfsPath = LivePaths::LINUX;
-        }
-
-        // Calculate source size if linuxfs path exists
-        if (QFileInfo::exists(linuxfsPath)) {
-            const QFileInfo info(linuxfsPath);
-            if (info.isDir()) {
-                // For directories, get used space via df command
-                const QString cmdStr = QString("df --output=used -B1 \"%1\" | tail -1").arg(linuxfsPath);
-                const QString usedStr = cmd.getOut(cmdStr, Cmd::QuietMode::Yes).trimmed();
-                bool ok = false;
-                const quint64 sourceSizeBytes = usedStr.toULongLong(&ok);
-                return ok ? sourceSizeBytes : 0;
-            } else {
-                // For files, get size directly
-                return info.size();
-            }
-        } else {
+        if (linuxfsPath.isEmpty()) {
             // Show warning only in clone mode (not for live cloning)
             if (ui->checkCloneMode->isChecked()) {
                 QMessageBox::warning(this, tr("Source Error"),
@@ -977,17 +999,12 @@ quint64 MainWindow::calculateSourceSize()
             }
             return 0;
         }
-    } else {
-        // Standard ISO file mode
-        if (!sourceFilename.isEmpty() && QFileInfo::exists(sourceFilename)) {
-            const quint64 sourceSizeBytes = QFileInfo(sourceFilename).size();
-            qDebug() << "ISO file size (bytes):" << sourceSizeBytes;
-            return sourceSizeBytes;
-        } else {
-            qDebug() << "ISO file does not exist or not specified:" << sourceFilename;
-            return 0;
-        }
+
+        return calculateLinuxfsSize(linuxfsPath);
     }
+
+    // Standard ISO file mode
+    return calculateIsoSize(sourceFilename);
 }
 
 bool MainWindow::validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize)

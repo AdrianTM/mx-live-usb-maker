@@ -93,6 +93,9 @@ private:
     [[nodiscard]] bool confirmLargeDeviceWarning(const quint64 diskSize);
     [[nodiscard]] bool validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize);
     [[nodiscard]] quint64 calculateSourceSize();
+    [[nodiscard]] QString getLinuxfsPath(const QString &sourceFilename);
+    [[nodiscard]] quint64 calculateLinuxfsSize(const QString &linuxfsPath);
+    [[nodiscard]] quint64 calculateIsoSize(const QString &isoFilename);
     [[nodiscard]] static QString expandDevicePath(const QString &device);
     [[nodiscard]] static QString getDriveName(const QString &device);
     [[nodiscard]] static QString getDrivePath(const QString &device);
