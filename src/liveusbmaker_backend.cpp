@@ -491,7 +491,7 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
             logError(QStringLiteral("Partitioning failed at %1 partition.").arg(name));
             return false;
         }
-        start = end;
+        start = end + 1;  // Next partition starts after this one ends
         partNum += 1;
         return true;
     };
