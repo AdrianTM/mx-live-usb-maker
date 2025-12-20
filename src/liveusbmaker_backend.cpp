@@ -1628,6 +1628,15 @@ bool LiveUsbMakerBackend::writePassphraseFile(const QString &path, QString *erro
     }
     const int firstIndex = QRandomGenerator::global()->bounded(words.size());
     const int secondIndex = QRandomGenerator::global()->bounded(words.size());
+
+    // Validate indices are within bounds (defensive check)
+    if (firstIndex < 0 || firstIndex >= words.size() || secondIndex < 0 || secondIndex >= words.size()) {
+        if (error) {
+            *error = QStringLiteral("Generated invalid word indices.");
+        }
+        return false;
+    }
+
     const QString phrase = words.at(firstIndex) + QStringLiteral(" ") + words.at(secondIndex);
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
