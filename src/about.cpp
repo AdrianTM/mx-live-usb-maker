@@ -36,7 +36,7 @@
 // Display document as normal user when run as root
 void displayDoc(const QString &url, const QString &title)
 {
-    const bool isRunningAsRoot = (qEnvironmentVariable("HOME") == "root");
+    const bool isRunningAsRoot = (getuid() == 0);
     const QString originalHome = isRunningAsRoot ? startingHome : QString();
 
     if (isRunningAsRoot) {
