@@ -453,9 +453,33 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
         return false;
     }
 
-    layout.biosPart = config.encrypt ? (config.dataFirst ? 2 : 1) : 0;
-    layout.mainPart = config.encrypt ? (config.dataFirst ? 3 : 2) : (config.dataFirst ? 2 : 1);
-    layout.uefiPart = config.encrypt ? (config.dataFirst ? 4 : 3) : (config.dataFirst ? 3 : 2);
+    // Calculate partition numbers based on layout configuration
+    // Partition order varies based on encryption and data-first settings:
+    //   dataFirst + encrypt:   [1: data] [2: bios] [3: main] [4: uefi]
+    //   dataFirst + no encrypt: [1: data] [2: main] [3: uefi]
+    //   no dataFirst + encrypt: [1: bios] [2: main] [3: uefi]
+    //   no dataFirst + no encrypt: [1: main] [2: uefi]
+
+    if (config.encrypt) {
+        if (config.dataFirst) {
+            layout.biosPart = 2;
+            layout.mainPart = 3;
+            layout.uefiPart = 4;
+        } else {
+            layout.biosPart = 1;
+            layout.mainPart = 2;
+            layout.uefiPart = 3;
+        }
+    } else {
+        layout.biosPart = 0;  // No bios partition when not encrypted
+        if (config.dataFirst) {
+            layout.mainPart = 2;
+            layout.uefiPart = 3;
+        } else {
+            layout.mainPart = 1;
+            layout.uefiPart = 2;
+        }
+    }
 
     layout.biosDev = config.encrypt ? partitionPath(layout.drive, layout.biosPart) : QString();
     layout.mainDev = partitionPath(layout.drive, layout.mainPart);
