@@ -72,7 +72,7 @@ private slots:
     void radioDd_clicked();
     void radioNormal_clicked();
     void spinBoxSize_valueChanged(int arg1);
-    void textLabel_textChanged(QString arg1);
+    void textLabel_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

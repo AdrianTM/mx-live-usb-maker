@@ -780,10 +780,11 @@ void MainWindow::pushOptions_clicked()
     }
 }
 
-void MainWindow::textLabel_textChanged(QString arg1)
+void MainWindow::textLabel_textChanged(const QString &arg1)
 {
-    ui->textLabel->setText(arg1.remove(' '));
-    ui->textLabel->setCursorPosition(arg1.length());
+    QString cleaned = arg1;
+    ui->textLabel->setText(cleaned.remove(' '));
+    ui->textLabel->setCursorPosition(cleaned.length());
 }
 
 void MainWindow::checkUpdate_clicked(bool checked)
