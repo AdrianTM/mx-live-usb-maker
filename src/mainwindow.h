@@ -50,6 +50,7 @@ public slots:
 
 private slots:
     static bool isantiX_mx_family(const QString &selected);
+    static bool isArchIsoFamily(const QString &selected);
     void cleanup();
     void cmdDone();
     void setConnections();

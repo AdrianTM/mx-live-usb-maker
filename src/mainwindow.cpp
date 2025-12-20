@@ -663,7 +663,9 @@ void MainWindow::setConnections()
 // Set proper default mode based on iso contents
 void MainWindow::setDefaultMode(const QString &isoName)
 {
-    if (!isantiX_mx_family(isoName)) {
+    const bool isMxFamily = isantiX_mx_family(isoName);
+    const bool isArchFamily = isArchIsoFamily(isoName);
+    if (!isMxFamily && !isArchFamily) {
         ui->radioDd->click();
         ui->radioNormal->setChecked(false);
     } else {
@@ -936,6 +938,21 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
     Cmd utilCmd(nullptr);
     return utilCmd.run(
         QStringLiteral("xorriso -indev '%1' -find /antiX -name linuxfs -prune  2>/dev/null | grep -q /antiX/linuxfs")
+            .arg(selected),
+        Cmd::QuietMode::Yes);
+}
+
+bool MainWindow::isArchIsoFamily(const QString &selected)
+{
+    Cmd utilCmd(nullptr);
+    if (utilCmd.run(
+            QStringLiteral("xorriso -indev '%1' -find /arch -name airootfs.sfs -prune  2>/dev/null | grep -q /arch/.*/airootfs.sfs")
+                .arg(selected),
+            Cmd::QuietMode::Yes)) {
+        return true;
+    }
+    return utilCmd.run(
+        QStringLiteral("xorriso -indev '%1' -find /arch -name airootfs.erofs -prune  2>/dev/null | grep -q /arch/.*/airootfs.erofs")
             .arg(selected),
         Cmd::QuietMode::Yes);
 }

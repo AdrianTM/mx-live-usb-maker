@@ -62,6 +62,8 @@ private:
     const LiveUsbMakerConfig config;
     Paths paths;
     DeviceLayout layout;
+    bool archIso {};
+    QString archIsoArch;
 
     bool suspendAutomount();
     void resumeAutomount();
@@ -88,7 +90,9 @@ private:
     bool checkUsbMd5(QString *error);
 
     bool installBootloader(QString *error);
+    bool installArchIsoBootloader(QString *error) const;
     bool updateUuids(QString *error);
+    bool updateArchIsoBootConfig(QString *error) const;
     bool writeDataUuid(QString *error);
     bool fixUefiMemtest(QString *error);
 
@@ -109,6 +113,7 @@ private:
     [[nodiscard]] int totalSizeMiB(QString *error) const;
     [[nodiscard]] int duApparentSizeMiB(const QString &dir, const QString &spec, QString *error) const;
     [[nodiscard]] int extOverheadMiB(int sizeMiB) const;
+    bool detectArchIsoLayout();
 
     [[nodiscard]] QString findSyslinuxMbr(const QString &name, QString *error) const;
     [[nodiscard]] QString findSyslinuxModuleDir(QString *error) const;

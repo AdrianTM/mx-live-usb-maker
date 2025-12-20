@@ -837,7 +837,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>For distros other than antiX/MX use image mode (dd).</string>
+                <string>For distros other than antiX/MX/Arch use image mode (dd).</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>

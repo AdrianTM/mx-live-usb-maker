@@ -53,9 +53,14 @@ const QString kLuksName = QStringLiteral("live-usb-maker");
 const QString kEncryptEnable = QStringLiteral("enable");
 const QString kDefaultBootDir = QStringLiteral("antiX");
 const QString kLinuxfsName = QStringLiteral("linuxfs");
+const QString kArchIsoDir = QStringLiteral("arch");
+const QString kArchIsoSfsName = QStringLiteral("airootfs.sfs");
+const QString kArchIsoErofsName = QStringLiteral("airootfs.erofs");
+const QString kArchIsoGrubCfg = QStringLiteral("boot/grub/grub.cfg");
 
 const QString kUefiFilesSpec = QStringLiteral("[Ee][Ff][Ii] boot/{grub,uefi-mt} version");
 const QString kUefiFilesSpec2 = QStringLiteral("[Ee][Ff][Ii] version");
+const QString kUefiFilesSpecArch = QStringLiteral("efi/boot");
 const QString kBiosFilesSpec = QStringLiteral("[Ee][Ff][Ii] boot/{syslinux,grub,memtest} antiX/{vmlinuz,initrd}* version");
 const QString kCloneDirsSpec = QStringLiteral("boot EFI efi");
 const QString kCloneFilesSpec = QStringLiteral("cdrom.ico version");
@@ -128,6 +133,10 @@ bool LiveUsbMakerBackend::runNormal(QString *error)
 {
     if (!checkTargetDevice(error)) {
         return false;
+    }
+    detectArchIsoLayout();
+    if (archIso) {
+        logLine(QStringLiteral("Detected archiso layout for full-featured mode."));
     }
     if (!computeLayout(error)) {
         return false;
@@ -202,17 +211,29 @@ bool LiveUsbMakerBackend::runNormal(QString *error)
         resumeAutomount();
         return false;
     }
-    if (!updateUuids(error)) {
-        resumeAutomount();
-        return false;
-    }
-    if (!writeDataUuid(error)) {
-        resumeAutomount();
-        return false;
-    }
-    if (!installBootloader(error)) {
-        resumeAutomount();
-        return false;
+
+    if (archIso) {
+        if (!updateArchIsoBootConfig(error)) {
+            resumeAutomount();
+            return false;
+        }
+        if (!installArchIsoBootloader(error)) {
+            resumeAutomount();
+            return false;
+        }
+    } else {
+        if (!updateUuids(error)) {
+            resumeAutomount();
+            return false;
+        }
+        if (!writeDataUuid(error)) {
+            resumeAutomount();
+            return false;
+        }
+        if (!installBootloader(error)) {
+            resumeAutomount();
+            return false;
+        }
     }
 
     resumeAutomount();
@@ -283,6 +304,30 @@ bool LiveUsbMakerBackend::prepareSource(QString *error)
     }
     paths.isoDir = config.sourcePath;
     return true;
+}
+
+bool LiveUsbMakerBackend::detectArchIsoLayout()
+{
+    archIso = false;
+    archIsoArch.clear();
+
+    const QDir archDir(QDir(paths.isoDir).filePath(kArchIsoDir));
+    if (!archDir.exists()) {
+        return false;
+    }
+
+    const QStringList archCandidates = archDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+    for (const QString &arch : archCandidates) {
+        const QString sfsPath = archDir.filePath(arch + QStringLiteral("/") + kArchIsoSfsName);
+        const QString erofsPath = archDir.filePath(arch + QStringLiteral("/") + kArchIsoErofsName);
+        if (QFileInfo::exists(sfsPath) || QFileInfo::exists(erofsPath)) {
+            archIso = true;
+            archIsoArch = arch;
+            return true;
+        }
+    }
+
+    return false;
 }
 
 bool LiveUsbMakerBackend::cleanup()
@@ -406,7 +451,13 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
     const int uefiSizeMiB = config.espSizeMiB > 0 ? config.espSizeMiB : kDefaultUefiSizeMiB;
     const int biosSizeMiB = config.encrypt ? kDefaultBiosSizeMiB : 0;
 
-    const int uefiNeeded = duApparentSizeMiB(paths.isoDir, kUefiFilesSpec, error);
+    int uefiNeeded = duApparentSizeMiB(paths.isoDir, kUefiFilesSpec, error);
+    if (archIso) {
+        const int archUefiNeeded = duApparentSizeMiB(paths.isoDir, kUefiFilesSpecArch, error);
+        if (archUefiNeeded > uefiNeeded) {
+            uefiNeeded = archUefiNeeded;
+        }
+    }
     const int biosNeeded = duApparentSizeMiB(paths.isoDir, kBiosFilesSpec, error);
 
     int finalUefiSize = uefiSizeMiB;
@@ -769,6 +820,11 @@ bool LiveUsbMakerBackend::copyUefi(QString *error)
         if (!copyFilesSpec(paths.isoDir, kUefiFilesSpec2, paths.uefiDir, error)) {
             return false;
         }
+        if (archIso) {
+            if (!copyFilesSpec(paths.isoDir, kUefiFilesSpecArch, paths.uefiDir, error)) {
+                return false;
+            }
+        }
     } else {
         if (!copyFilesSpec(paths.isoDir, QStringLiteral("[Ee][Ff][Ii] version"), paths.uefiDir, error)) {
             return false;
@@ -812,6 +868,108 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
         }
     }
     return true;
+}
+
+bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
+{
+    const QString grubPath = QDir(paths.mainDir).filePath(kArchIsoGrubCfg);
+    if (!QFileInfo::exists(grubPath)) {
+        if (error) {
+            *error = QStringLiteral("Missing archiso grub configuration at %1.").arg(grubPath);
+        }
+        return false;
+    }
+
+    QString mainUuid;
+    if (!runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.mainDev}, &mainUuid, error)) {
+        return false;
+    }
+    mainUuid = mainUuid.trimmed();
+    if (mainUuid.isEmpty() || !ValidationUtils::isValidUuid(mainUuid)) {
+        if (error) {
+            *error = QStringLiteral("Invalid UUID for main partition: %1").arg(mainUuid);
+        }
+        return false;
+    }
+
+    QString dataUuid;
+    if (config.dataFirst && !layout.dataDev.isEmpty()) {
+        if (!runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.dataDev}, &dataUuid, error)) {
+            return false;
+        }
+        dataUuid = dataUuid.trimmed();
+        if (dataUuid.isEmpty() || !ValidationUtils::isValidUuid(dataUuid)) {
+            if (error) {
+                *error = QStringLiteral("Invalid UUID for persistence partition: %1").arg(dataUuid);
+            }
+            return false;
+        }
+    }
+
+    QFile grubFile(grubPath);
+    if (!grubFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        if (error) {
+            *error = QStringLiteral("Could not read grub configuration.");
+        }
+        return false;
+    }
+    QString grubContent = QString::fromUtf8(grubFile.readAll());
+    grubFile.close();
+
+    const QStringList lines = grubContent.split(QLatin1Char('\n'));
+    QStringList updated;
+    updated.reserve(lines.size());
+    bool changed = false;
+    const QString archisodeviceArg = QStringLiteral("archisodevice=UUID=%1").arg(mainUuid);
+    const QString cowDeviceArg = dataUuid.isEmpty() ? QString() : QStringLiteral("cow_device=UUID=%1").arg(dataUuid);
+
+    for (const QString &line : lines) {
+        QString updatedLine = line;
+        const QString trimmed = line.trimmed();
+        if (trimmed.startsWith(QStringLiteral("linux ")) || trimmed.startsWith(QStringLiteral("linuxefi "))) {
+            if (!updatedLine.contains(QStringLiteral("archisodevice="))) {
+                updatedLine += QLatin1Char(' ') + archisodeviceArg;
+                changed = true;
+            }
+            if (!cowDeviceArg.isEmpty() && !updatedLine.contains(QStringLiteral("cow_device="))) {
+                updatedLine += QLatin1Char(' ') + cowDeviceArg;
+                changed = true;
+            }
+        }
+        updated.append(updatedLine);
+    }
+
+    if (!changed) {
+        return true;
+    }
+
+    if (!grubFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+        if (error) {
+            *error = QStringLiteral("Could not update grub configuration.");
+        }
+        return false;
+    }
+    grubFile.write(updated.join(QLatin1Char('\n')).toUtf8());
+    grubFile.close();
+    return true;
+}
+
+bool LiveUsbMakerBackend::installArchIsoBootloader(QString *error) const
+{
+    logLine(QStringLiteral("Installing archiso bootloader."));
+    const QString bootDir = QDir(paths.biosDir).filePath(QStringLiteral("boot"));
+    if (!QDir(bootDir).exists()) {
+        if (error) {
+            *error = QStringLiteral("Missing /boot directory for grub install.");
+        }
+        return false;
+    }
+    return runCommand(QStringLiteral("grub-install"),
+                      {QStringLiteral("--target=i386-pc"),
+                       QStringLiteral("--recheck"),
+                       QStringLiteral("--boot-directory=%1").arg(bootDir),
+                       layout.drive},
+                      error);
 }
 
 bool LiveUsbMakerBackend::installBootloader(QString *error)
