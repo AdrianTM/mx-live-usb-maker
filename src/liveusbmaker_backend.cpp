@@ -359,10 +359,10 @@ bool LiveUsbMakerBackend::clearPartitionTable(QString *error)
             break;
         }
     }
-    const int blockSize = 512;
-    const int ptSize = 17 * 1024;
+    const int blockSize = SECTOR_SIZE_BYTES;
+    const int ptSize = PARTITION_TABLE_SIZE_BYTES;
     const int ptCount = ptSize / blockSize;
-    const int sneakyOffset = (32 * 1024) / blockSize;
+    const int sneakyOffset = SNEAKY_OFFSET_BYTES / blockSize;
     const qint64 totalBlocks = bytes / blockSize;
 
     if (!runCommand(QStringLiteral("dd"),
@@ -827,14 +827,15 @@ bool LiveUsbMakerBackend::installBootloader(QString *error)
         return false;
     }
     if (mbrFileName == QLatin1String("altmbr.bin")) {
-        const QString cmd = QStringLiteral("printf '\\2' | cat %1 - | dd bs=440 count=1 iflag=fullblock conv=notrunc of=%2")
-                                .arg(ShellUtils::quote(mbrFile), ShellUtils::quote(layout.drive));
+        const QString cmd = QStringLiteral("printf '\\2' | cat %1 - | dd bs=%3 count=1 iflag=fullblock conv=notrunc of=%2")
+                                .arg(ShellUtils::quote(mbrFile), ShellUtils::quote(layout.drive))
+                                .arg(MBR_BOOT_CODE_SIZE_BYTES);
         if (!runCommandShell(cmd, error)) {
             return false;
         }
     } else {
         if (!runCommand(QStringLiteral("dd"),
-                        {QStringLiteral("bs=440"), QStringLiteral("conv=notrunc"), QStringLiteral("count=1"),
+                        {QStringLiteral("bs=%1").arg(MBR_BOOT_CODE_SIZE_BYTES), QStringLiteral("conv=notrunc"), QStringLiteral("count=1"),
                          QStringLiteral("if=%1").arg(mbrFile), QStringLiteral("of=%1").arg(layout.drive)},
                         error)) {
             return false;

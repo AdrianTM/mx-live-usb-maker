@@ -30,6 +30,12 @@ inline const QString startingHome {qEnvironmentVariable("HOME")};
 inline const quint64 BYTES_PER_GB = 1024 * 1024 * 1024;
 inline const quint64 SECTORS_PER_MB = 2048; // 1024 KB/MB / 512 bytes/sector * 1024
 
+// Disk and partition constants
+inline const int SECTOR_SIZE_BYTES = 512;  // Standard sector size
+inline const int PARTITION_TABLE_SIZE_BYTES = 17 * 1024;  // Partition table size
+inline const int MBR_BOOT_CODE_SIZE_BYTES = 440;  // MBR boot code size (first 440 bytes of 512-byte MBR)
+inline const int SNEAKY_OFFSET_BYTES = 32 * 1024;  // Offset for partition alignment
+
 // Live system paths
 namespace LivePaths
 {
