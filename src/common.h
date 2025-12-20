@@ -21,7 +21,7 @@
  **********************************************************************/
 #pragma once
 
-inline const QString starting_home {qEnvironmentVariable("HOME")};
+inline const QString startingHome {qEnvironmentVariable("HOME")};
 
 // Size conversion constants
 inline const quint64 BYTES_PER_GB = 1024 * 1024 * 1024;

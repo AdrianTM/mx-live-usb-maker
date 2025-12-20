@@ -103,14 +103,14 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    auto const log_file_name = "/tmp/" + QApplication::applicationName() + ".log";
-    logFile.setFileName(log_file_name);
+    auto const logFileName = "/tmp/" + QApplication::applicationName() + ".log";
+    logFile.setFileName(logFileName);
     if (logFile.exists() && QFileInfo(logFile).isWritable()) {
-        QFile::remove(log_file_name + ".old");
-        QFile::rename(log_file_name, log_file_name + ".old");
+        QFile::remove(logFileName + ".old");
+        QFile::rename(logFileName, logFileName + ".old");
     }
     if (logFile.exists() && !QFileInfo(logFile).isWritable()) {
-        logFile.setFileName(log_file_name + "_new");
+        logFile.setFileName(logFileName + "_new");
     }
     logFile.open(QIODevice::ReadWrite);
     qInstallMessageHandler(messageHandler);
@@ -123,8 +123,8 @@ int main(int argc, char *argv[])
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
-    QTextStream term_out(stdout);
-    term_out << msg << '\n';
+    QTextStream termOut(stdout);
+    termOut << msg << '\n';
 
     QTextStream out(&logFile);
     out << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz ");

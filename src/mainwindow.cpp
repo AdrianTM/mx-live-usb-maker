@@ -178,12 +178,12 @@ void MainWindow::makeUsb(const QString &options)
 
     // Check amount of IO on device before copy, this is in sectors
     bool ok = false;
-    const quint64 start_io = cmd.getOut(QString("awk '{print $7}' /sys/block/%1/stat").arg(device), Cmd::QuietMode::Yes).toULongLong(&ok);
+    const quint64 startIo = cmd.getOut(QString("awk '{print $7}' /sys/block/%1/stat").arg(device), Cmd::QuietMode::Yes).toULongLong(&ok);
     if (!ok) {
         qDebug() << "Failed to parse initial IO stats for device:" << device;
         ui->progBar->setMinimum(0); // Use default values
     } else {
-        ui->progBar->setMinimum(static_cast<int>(start_io));
+        ui->progBar->setMinimum(static_cast<int>(startIo));
     }
 
     const quint64 sourceSizeMB = sourceSize.toULongLong(&ok);
@@ -192,7 +192,7 @@ void MainWindow::makeUsb(const QString &options)
         ui->progBar->setMaximum(100); // Use default progress range
     } else {
         const quint64 isoSectors = sourceSizeMB * SECTORS_PER_MB;
-        ui->progBar->setMaximum(static_cast<int>(isoSectors + start_io));
+        ui->progBar->setMaximum(static_cast<int>(isoSectors + startIo));
     }
 
     QString error;
@@ -666,8 +666,8 @@ void MainWindow::updateBar()
         qDebug() << "Empty stat file content";
         return;
     }
-    quint64 current_io = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
-    ui->progBar->setValue(static_cast<int>(current_io));
+    quint64 currentIo = out.section(QRegularExpression("\\s+"), 7, 7).toULongLong();
+    ui->progBar->setValue(static_cast<int>(currentIo));
     statFile.close();
 }
 

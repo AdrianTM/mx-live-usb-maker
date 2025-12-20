@@ -37,7 +37,7 @@
 void displayDoc(const QString &url, const QString &title)
 {
     bool isRunningAsRoot = (qEnvironmentVariable("HOME") == "root");
-    QString originalHome = isRunningAsRoot ? starting_home : QString();
+    QString originalHome = isRunningAsRoot ? startingHome : QString();
 
     if (isRunningAsRoot) {
         qputenv("HOME", originalHome.toUtf8()); // Use original home for theming purposes
