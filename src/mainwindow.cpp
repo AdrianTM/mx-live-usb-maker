@@ -41,6 +41,8 @@ using namespace std::chrono_literals;
 MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     : QDialog(parent),
       ui(new Ui::MainWindow),
+      cmd(this),
+      timer(this),
       advancedOptions(false)
 {
     ui->setupUi(this);
