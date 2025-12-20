@@ -896,17 +896,35 @@ bool LiveUsbMakerBackend::updateUuids(QString *error)
             return false;
         }
         biosUuid = biosUuid.trimmed();
+        if (!biosUuid.isEmpty() && !ValidationUtils::isValidUuid(biosUuid)) {
+            if (error) {
+                *error = QStringLiteral("Invalid UUID format from lsblk for %1: %2").arg(layout.mainDev, biosUuid);
+            }
+            return false;
+        }
     } else {
         if (!runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.biosDev}, &biosUuid, error)) {
             return false;
         }
         biosUuid = biosUuid.trimmed();
+        if (!biosUuid.isEmpty() && !ValidationUtils::isValidUuid(biosUuid)) {
+            if (error) {
+                *error = QStringLiteral("Invalid UUID format from lsblk for %1: %2").arg(layout.biosDev, biosUuid);
+            }
+            return false;
+        }
     }
     QString uefiUuid;
     if (!runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.uefiDev}, &uefiUuid, error)) {
         return false;
     }
     uefiUuid = uefiUuid.trimmed();
+    if (!uefiUuid.isEmpty() && !ValidationUtils::isValidUuid(uefiUuid)) {
+        if (error) {
+            *error = QStringLiteral("Invalid UUID format from lsblk for %1: %2").arg(layout.uefiDev, uefiUuid);
+        }
+        return false;
+    }
 
     if (biosUuid.isEmpty()) {
         return true;
@@ -1008,6 +1026,12 @@ bool LiveUsbMakerBackend::writeDataUuid(QString *error)
     uuid = uuid.trimmed();
     if (uuid.isEmpty()) {
         return true;
+    }
+    if (!ValidationUtils::isValidUuid(uuid)) {
+        if (error) {
+            *error = QStringLiteral("Invalid UUID format from lsblk for %1: %2").arg(layout.dataDev, uuid);
+        }
+        return false;
     }
     const QStringList dirs {paths.biosDir, paths.mainDir};
     for (const QString &dir : dirs) {
@@ -1122,6 +1146,12 @@ bool LiveUsbMakerBackend::encryptMainPartition(QString *error)
     QString mainUuid;
     runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.mainDev}, &mainUuid, error);
     mainUuid = mainUuid.trimmed();
+    if (!mainUuid.isEmpty() && !ValidationUtils::isValidUuid(mainUuid)) {
+        if (error) {
+            *error = QStringLiteral("Invalid UUID format from lsblk for %1: %2").arg(layout.mainDev, mainUuid);
+        }
+        return false;
+    }
     QFile ef(encryptFile);
     if (ef.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
         ef.write(mainUuid.toUtf8());

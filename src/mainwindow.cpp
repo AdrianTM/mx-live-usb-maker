@@ -92,9 +92,14 @@ bool MainWindow::checkDestSize()
 {
     // Get target device size information
     bool ok = false;
-    const quint64 diskSizeBytes = cmd.getOut(QString("lsblk --output SIZE -n --bytes /dev/%1 | head -1").arg(device), Cmd::QuietMode::Yes).toULongLong(&ok);
+    const QString sizeOutput = cmd.getOut(QString("lsblk --output SIZE -n --bytes /dev/%1 | head -1").arg(device), Cmd::QuietMode::Yes).trimmed();
+    if (sizeOutput.isEmpty()) {
+        qDebug() << "Empty lsblk output for device:" << device;
+        return false;
+    }
+    const quint64 diskSizeBytes = sizeOutput.toULongLong(&ok);
     if (!ok) {
-        qDebug() << "Failed to parse disk size for device:" << device;
+        qDebug() << "Failed to parse disk size for device:" << device << "Output:" << sizeOutput;
         return false; // Cannot proceed without valid disk size
     }
     const quint64 diskSizeGB = diskSizeBytes / BYTES_PER_GB; // Convert to GB
@@ -470,6 +475,11 @@ void MainWindow::cleanup()
 QStringList MainWindow::buildUsbList()
 {
     const QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", Cmd::QuietMode::Yes).trimmed();
+    // Validate that lsblk output has expected format (4 columns: NAME, SIZE, MODEL, VENDOR)
+    if (!ValidationUtils::validateLsblkColumns(drives, 4)) {
+        qDebug() << "Invalid lsblk output format - expected at least 4 columns";
+        return {};
+    }
     return removeUnsuitable(drives.split('\n'));
 }
 
@@ -601,9 +611,17 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
     QStringList suitableDevices;
     suitableDevices.reserve(devices.size());
     const QString liveDrive = getDriveName(getLiveDeviceName());
-    const QString rootDrive
-        = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE) | grep 'disk' | awk '{print $1}'", Cmd::QuietMode::Yes)
-              .trimmed();
+    const QString lsblkOutput
+        = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE)", Cmd::QuietMode::Yes).trimmed();
+    // Validate lsblk output format (3 columns: NAME, PKNAME, TYPE)
+    if (!ValidationUtils::validateLsblkColumns(lsblkOutput, 3)) {
+        qDebug() << "Invalid lsblk output format for root device - expected at least 3 columns";
+    }
+    // Extract root drive name from validated output
+    const QString rootDrive = lsblkOutput.split('\n')
+                                  .filter(QStringLiteral("disk"))
+                                  .value(0)
+                                  .section(QRegularExpression(QStringLiteral("\\s+")), 0, 0);
     for (const QString &deviceInfo : devices) {
         const QString deviceName = deviceInfo.split(' ').first();
         const bool deviceIsUsbOrRemovable = ui->checkForceUsb->isChecked() || isUsbOrRemovable(deviceName);

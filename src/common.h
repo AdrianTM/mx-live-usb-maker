@@ -229,3 +229,44 @@ namespace ShellUtils
     return quoted.join(QLatin1Char(' '));
 }
 } // namespace ShellUtils
+
+// Validation utilities
+namespace ValidationUtils
+{
+// Validate that a string matches UUID format (8-4-4-4-12 hex digits)
+// Example: "550e8400-e29b-41d4-a716-446655440000"
+[[nodiscard]] inline bool isValidUuid(const QString &uuid)
+{
+    if (uuid.isEmpty()) {
+        return false;
+    }
+
+    // UUID format: 8-4-4-4-12 hexadecimal digits separated by hyphens
+    static const QRegularExpression uuidRe(
+        QStringLiteral("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"));
+    return uuidRe.match(uuid).hasMatch();
+}
+
+// Validate that lsblk tabular output has the expected number of columns
+// Returns true if each non-empty line has at least minColumns fields
+[[nodiscard]] inline bool validateLsblkColumns(const QString &output, int minColumns)
+{
+    if (output.isEmpty()) {
+        return true; // Empty output is acceptable (no devices/partitions)
+    }
+
+    const QStringList lines = output.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+    for (const QString &line : lines) {
+        const QString trimmed = line.trimmed();
+        if (trimmed.isEmpty()) {
+            continue;
+        }
+        // Count fields separated by whitespace
+        const QStringList fields = trimmed.split(QRegularExpression(QStringLiteral("\\s+")), Qt::SkipEmptyParts);
+        if (fields.size() < minColumns) {
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace ValidationUtils
