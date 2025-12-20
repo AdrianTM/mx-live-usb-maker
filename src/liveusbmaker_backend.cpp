@@ -898,9 +898,12 @@ bool LiveUsbMakerBackend::updateUuids(QString *error)
                    {QStringLiteral("-i"), QStringLiteral("/^\\s*#/! s/%UUID%/%1/").arg(biosUuid), uefiGrubPath},
                    error, true);
         if (runCommand(QStringLiteral("grep"), {QStringLiteral("-q"), QStringLiteral("^[^#]*%ID_FILE%"), uefiGrubPath}, error, true)) {
-            runCommand(QStringLiteral("rm"), {QStringLiteral("-f"),
-                                              QDir(paths.biosDir).filePath(QStringLiteral("boot/grub/config/*.id"))},
-                       error, true);
+            // Remove old .id files using QDir (safer than shell wildcards)
+            const QDir configDir(QDir(paths.biosDir).filePath(QStringLiteral("boot/grub/config")));
+            const QFileInfoList idFiles = configDir.entryInfoList(QStringList() << QStringLiteral("*.id"), QDir::Files);
+            for (const QFileInfo &idFile : idFiles) {
+                QFile::remove(idFile.absoluteFilePath());
+            }
             const QString idFile = QStringLiteral("/boot/grub/config/%1.id").arg(randomString(8));
             runCommand(QStringLiteral("touch"), {QDir(paths.biosDir).filePath(idFile)}, error, true);
             runCommand(QStringLiteral("sed"),
