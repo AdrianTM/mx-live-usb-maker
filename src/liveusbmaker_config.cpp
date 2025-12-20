@@ -243,8 +243,9 @@ bool LiveUsbMakerConfig::readFromFile(const QString &path, LiveUsbMakerConfig *c
         return false;
     }
     *config = LiveUsbMakerConfig::fromJson(doc.object(), error);
-    if (!error || error->isEmpty()) {
-        return true;
+    // Return false only if error is non-null and contains an error message
+    if (error && !error->isEmpty()) {
+        return false;
     }
-    return false;
+    return true;
 }
