@@ -630,10 +630,14 @@ void MainWindow::cmdDone()
 
 void MainWindow::setConnections()
 {
+    // Make all signal/slot connections before starting the timer to avoid race conditions
+    // Use Qt::UniqueConnection to prevent duplicate connections if called multiple times
+    connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput, Qt::UniqueConnection);
+    connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar, Qt::UniqueConnection);
+    connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone, Qt::UniqueConnection);
+
+    // Start timer after connections are established
     timer.start(1s);
-    connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
-    connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar);
-    connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 // Set proper default mode based on iso contents
