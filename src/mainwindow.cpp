@@ -223,6 +223,7 @@ void MainWindow::makeUsb(const QString &options)
         return;
     }
     const QString cmdstr = QString("%1 --config %2").arg(shellQuote(backendPath), shellQuote(configPath));
+    operationInProgress = true;
     setConnections();
     cmd.runAsRoot(cmdstr);
 }
@@ -616,6 +617,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
 void MainWindow::cmdDone()
 {
     timer.stop();
+    operationInProgress = false;
     ui->progBar->setValue(ui->progBar->maximum());
     setCursor(Qt::ArrowCursor);
     ui->pushBack->show();
@@ -654,6 +656,17 @@ void MainWindow::setDefaultMode(const QString &isoName)
 
 void MainWindow::updateBar()
 {
+    // Guard against updates when no operation is in progress
+    if (!operationInProgress) {
+        return;
+    }
+
+    // Validate device name before using it
+    if (device.isEmpty() || !DeviceUtils::isValidDeviceName(device)) {
+        qDebug() << "Invalid or empty device name in updateBar";
+        return;
+    }
+
     QFile statFile(QString("/sys/block/%1/stat").arg(device));
     if (!statFile.open(QIODevice::ReadOnly)) {
         qDebug() << "Failed to open stat file:" << statFile.errorString();

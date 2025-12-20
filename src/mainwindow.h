@@ -82,6 +82,7 @@ private:
     QString elevate;
     QTimer timer;
     bool advancedOptions {};
+    bool operationInProgress {};
     int defaultHeight {};
     int height {};
     uint sizeCheck;
