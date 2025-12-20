@@ -28,6 +28,7 @@
 #include <QTimer>
 
 #include "cmd.h"
+#include "liveusbmaker_config.h"
 
 class QFile;
 
@@ -75,7 +76,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
-    QString LUM;
+    QString backendPath;
     QString device;
     QString elevate;
     QTimer timer;
@@ -100,6 +101,9 @@ private:
     [[nodiscard]] static bool isRunningLive();
     [[nodiscard]] static bool isToRam();
     [[nodiscard]] static bool isUsbOrRemovable(const QString &device);
+    [[nodiscard]] LiveUsbMakerConfig buildConfig() const;
+    [[nodiscard]] QString writeBackendConfig(QString *error) const;
+    [[nodiscard]] static QString shellQuote(const QString &value);
     void makeUsb(const QString &options);
     void progress();
     void setGeneralConnections();

@@ -47,23 +47,23 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
     ui->setupUi(this);
     setGeneralConnections();
 
-    // Setup options
-    const QString defaultLum = "live-usb-maker";
     QSettings settings("/etc/mx-live-usb-maker/mx-live-usb-maker.conf", QSettings::NativeFormat);
-    QString lumName = settings.value("LUM", defaultLum).toString();
-
-    // Try /usr/local/bin first, then fall back to /usr/bin
-    LUM = "/usr/local/bin/" + lumName;
-    if (!QFile::exists(LUM)) {
-        LUM = "/usr/bin/" + lumName;
+    backendPath = LiveUsbMakerConfig::backendExecutablePath();
+    if (backendPath.isEmpty()) {
+        QMessageBox::critical(this, tr("Failure"),
+                              tr("Could not find the live-usb backend helper."));
     }
-    qDebug() << "LUM is:" << LUM;
+    qDebug() << "LUM backend is:" << backendPath;
 
     sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
 
 
     setWindowFlags(Qt::Window); // for the close, min, and max buttons
     setup();
+    if (backendPath.isEmpty()) {
+        ui->pushNext->setEnabled(false);
+        ui->pushOptions->setEnabled(false);
+    }
     ui->comboUsb->addItems(buildUsbList());
 
     if (args.size() > 1 && args.at(1) != "%f") {
@@ -146,6 +146,11 @@ bool MainWindow::isToRam()
 
 void MainWindow::makeUsb(const QString &options)
 {
+    Q_UNUSED(options);
+    if (backendPath.isEmpty()) {
+        showErrorAndReset(tr("Could not find the live-usb backend helper."));
+        return;
+    }
     device = ui->comboUsb->currentText().split(' ').first();
     QString source = '"' + ui->pushSelectSource->property("filename").toString() + '"';
     QString sourceSize;
@@ -190,16 +195,13 @@ void MainWindow::makeUsb(const QString &options)
         ui->progBar->setMaximum(static_cast<int>(isoSectors + start_io));
     }
 
-    QString cmdstr = (LUM + " gui " + options + " -C off --from=%1 -t /dev/%2").arg(source, device);
-    if (ui->radioDd->isChecked()) {
-        cmdstr = LUM + " gui partition-clear -NC off --target " + device;
-        connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput);
-        qDebug() << cmd.getOutAsRoot(cmdstr, Cmd::QuietMode::Yes);
-        cmdstr = QString("dd bs=1M if=%1 of=/dev/%2").arg(source, device);
-        ui->outputBox->insertPlainText(tr("Writing %1 using 'dd' command to /dev/%2,\n\n"
-                                          "Please wait until the process is completed")
-                                           .arg(source, device));
+    QString error;
+    const QString configPath = writeBackendConfig(&error);
+    if (configPath.isEmpty()) {
+        showErrorAndReset(tr("Failed to prepare the backend config. %1").arg(error));
+        return;
     }
+    const QString cmdstr = QString("%1 --config %2").arg(shellQuote(backendPath), shellQuote(configPath));
     setConnections();
     cmd.runAsRoot(cmdstr);
 }
@@ -220,6 +222,7 @@ void MainWindow::setup()
     ui->pushCancel->setEnabled(true);
     ui->pushNext->setEnabled(true);
     ui->outputBox->setCursorWidth(0);
+    ui->outputBox->setReadOnly(true);
     adjustSize();
     height = geometry().height();
 
@@ -234,7 +237,7 @@ void MainWindow::setup()
     ui->checkCloneLive->setEnabled(isRunningLive() && !QFile::exists("/live/config/encrypted"));
 
     // Dynamically show or hide data format options based on availability
-    bool dataFirstAvailable = cmd.run(LUM + " --help | grep -q -- --data-first", Cmd::QuietMode::Yes);
+    bool dataFirstAvailable = true;
     ui->checkDataFirst->setVisible(dataFirstAvailable);
     ui->comboBoxDataFormat->setVisible(dataFirstAvailable);
     ui->labelFormat->setVisible(dataFirstAvailable);
@@ -319,6 +322,67 @@ QString MainWindow::buildOptionList()
     QString options = optionsList.join(' ');
     qDebug() << "Options: " << options;
     return options;
+}
+
+LiveUsbMakerConfig MainWindow::buildConfig() const
+{
+    LiveUsbMakerConfig config;
+    config.mode = ui->radioDd->isChecked() ? LiveUsbMakerConfig::Mode::Dd : LiveUsbMakerConfig::Mode::Normal;
+
+    if (ui->checkCloneLive->isChecked()) {
+        config.sourceMode = LiveUsbMakerConfig::SourceMode::Clone;
+        config.sourcePath = QStringLiteral("clone");
+    } else if (ui->checkCloneMode->isChecked()) {
+        config.sourceMode = LiveUsbMakerConfig::SourceMode::CloneDir;
+        config.sourcePath = ui->pushSelectSource->property("filename").toString();
+    } else {
+        config.sourceMode = LiveUsbMakerConfig::SourceMode::Iso;
+        config.sourcePath = ui->pushSelectSource->property("filename").toString();
+    }
+
+    const QString target = ui->comboUsb->currentText().split(' ').first();
+    config.targetDevice = expandDevicePath(target);
+
+    config.pretend = ui->checkPretend->isChecked();
+    config.update = ui->checkUpdate->isChecked();
+    config.keepSyslinux = ui->checkKeep->isChecked();
+    config.saveBoot = ui->checkSaveBoot->isChecked();
+    config.encrypt = ui->checkEncrypt->isChecked();
+    config.gpt = ui->checkGpt->isChecked();
+    config.pmbr = ui->checkSetPmbrBoot->isChecked();
+    config.forceUsb = ui->checkForceUsb->isChecked();
+    config.forceAutomount = ui->checkForceAutomount->isChecked();
+    config.forceMakefs = ui->checkForceMakefs->isChecked();
+    config.forceNofuse = ui->checkForceNofuse->isChecked();
+
+    config.espSizeMiB = ui->spinBoxEsp->value();
+    if (config.dataFirst) {
+        config.mainPercent = 100 - config.dataPercent;
+    } else {
+        config.mainPercent = ui->spinBoxSize->value();
+    }
+    config.label = ui->textLabel->text();
+
+    config.dataFirst = ui->checkDataFirst->isChecked();
+    config.dataPercent = ui->spinBoxDataSize->value();
+    config.dataFs = ui->comboBoxDataFormat->currentText();
+
+    config.verbosity = ui->sliderVerbosity->value();
+    config.clonePersist = true;
+    return config;
+}
+
+QString MainWindow::writeBackendConfig(QString *error) const
+{
+    const LiveUsbMakerConfig config = buildConfig();
+    return LiveUsbMakerConfig::writeToTempFile(config, error);
+}
+
+QString MainWindow::shellQuote(const QString &value)
+{
+    QString escaped = value;
+    escaped.replace(QLatin1Char('\''), QStringLiteral("'\\''"));
+    return QStringLiteral("'") + escaped + QStringLiteral("'");
 }
 
 void MainWindow::cleanup()
@@ -610,11 +674,17 @@ void MainWindow::updateBar()
 void MainWindow::updateOutput()
 {
     QString output = cmd.readAllStandardOutput();
-    // Remove escape sequences that are not handled by code
-    const QRegularExpression re(u8R"(\[0m|\]0;|\|\|\[1000D|\[74C||\[\?25l|\[\?25h|\[0;36m|\[1;37m)");
-    output.remove(re);
+    // Strip ANSI sequences and control chars that can show up in command output.
+    static const QRegularExpression kAnsiCsiRegex(QStringLiteral("\\x1b\\[[0-9;?]*[ -/]*[@-~]"));
+    static const QRegularExpression kAnsiOscRegex(QStringLiteral("\\x1b\\][^\\x07\\x1b]*(?:\\x07|\\x1b\\\\)"));
+    static const QRegularExpression kControlCharsRegex(QStringLiteral("[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]"));
+    output.remove(kAnsiOscRegex);
+    output.remove(kAnsiCsiRegex);
+    const bool hasCarriageReturn = output.contains('\r');
+    output.remove('\r');
+    output.remove(kControlCharsRegex);
     ui->outputBox->moveCursor(QTextCursor::End);
-    if (output.contains('\r')) {
+    if (hasCarriageReturn) {
         ui->outputBox->moveCursor(QTextCursor::Up, QTextCursor::KeepAnchor);
         ui->outputBox->moveCursor(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
     }
@@ -841,10 +911,9 @@ bool MainWindow::isantiX_mx_family(const QString &selected)
 
 void MainWindow::pushLumLogFile_clicked()
 {
-    QFileInfo lum(LUM);
-    QString logFileName = lum.baseName() + ".log";
-    QString logFilePath = "/var/log/" + logFileName;
-    QString tempLogFilePath = "/tmp/" + logFileName;
+    const QString logFileName = QStringLiteral("live-usb-maker.log");
+    const QString logFilePath = QStringLiteral("/var/log/live-usb-maker.log");
+    const QString tempLogFilePath = QStringLiteral("/tmp/live-usb-maker.log");
     qDebug() << "lumlog" << tempLogFilePath;
 
     if (!QFileInfo::exists(logFilePath)) {
@@ -856,7 +925,7 @@ void MainWindow::pushLumLogFile_clicked()
     // Generate temporary log file by reversing the log file until the delimiter, then reversing it back
     QString cmdStr = QString("tac %1 | sed '/^={60}=$/q' | tac > %2").arg(logFilePath, tempLogFilePath);
     Cmd().run(cmdStr);
-    displayDoc(tempLogFilePath, lum.baseName());
+    displayDoc(tempLogFilePath, QStringLiteral("live-usb-maker"));
 }
 
 void MainWindow::spinBoxSize_valueChanged(int arg1)

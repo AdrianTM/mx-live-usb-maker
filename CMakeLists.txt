@@ -86,6 +86,7 @@ set(SOURCES
     src/mainwindow.cpp
     src/cmd.cpp
     src/about.cpp
+    src/liveusbmaker_config.cpp
 )
 
 set(HEADERS
@@ -94,6 +95,8 @@ set(HEADERS
     src/about.h
     src/common.h
     src/version.h
+    src/liveusbmaker_config.h
+    src/liveusbmaker_backend.h
 )
 
 set(UI_FILES
@@ -116,11 +119,23 @@ add_executable(mx-live-usb-maker
     ./images.qrc
 )
 
+add_executable(mx-live-usb-maker-backend
+    src/liveusbmaker_backend_main.cpp
+    src/liveusbmaker_backend.cpp
+    src/liveusbmaker_config.cpp
+    src/liveusbmaker_backend.h
+    src/liveusbmaker_config.h
+)
+
 # Link Qt6 libraries
 target_link_libraries(mx-live-usb-maker
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
+)
+
+target_link_libraries(mx-live-usb-maker-backend
+    Qt6::Core
 )
 
 # Set compiler flags
@@ -179,4 +194,8 @@ set_target_properties(mx-live-usb-maker PROPERTIES
 # Other files are handled by debian/install
 install(TARGETS mx-live-usb-maker
     RUNTIME DESTINATION bin
+)
+
+install(TARGETS mx-live-usb-maker-backend
+    RUNTIME DESTINATION lib/mx-live-usb-maker
 )
