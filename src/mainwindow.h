@@ -90,8 +90,8 @@ private:
     [[nodiscard]] QStringList buildUsbList();
     [[nodiscard]] QStringList removeUnsuitable(const QStringList &devices); // remove live or unremovable
     [[nodiscard]] bool checkDestSize();
-    [[nodiscard]] bool confirmLargeDeviceWarning(const quint64 diskSize) const;
-    [[nodiscard]] bool validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize) const;
+    [[nodiscard]] bool confirmLargeDeviceWarning(const quint64 diskSize);
+    [[nodiscard]] bool validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize);
     [[nodiscard]] quint64 calculateSourceSize();
     [[nodiscard]] static QString expandDevicePath(const QString &device);
     [[nodiscard]] static QString getDriveName(const QString &device);

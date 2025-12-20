@@ -989,19 +989,19 @@ quint64 MainWindow::calculateSourceSize()
     }
 }
 
-bool MainWindow::validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize) const
+bool MainWindow::validateSizeCompatibility(const quint64 sourceSize, const quint64 diskSize)
 {
     // Check if source is larger than destination
     if (sourceSize > 0 && diskSize < sourceSize) {
         const QString msg = tr("Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?")
                         .arg(device)
                         .arg(ui->pushSelectSource->text());
-        return QMessageBox::Yes == QMessageBox::warning(const_cast<MainWindow*>(this), tr("Size Warning"), msg, QMessageBox::Yes, QMessageBox::No);
+        return QMessageBox::Yes == QMessageBox::warning(this, tr("Size Warning"), msg, QMessageBox::Yes, QMessageBox::No);
     }
     return true;
 }
 
-bool MainWindow::confirmLargeDeviceWarning(const quint64 diskSizeGB) const
+bool MainWindow::confirmLargeDeviceWarning(const quint64 diskSizeGB)
 {
     if (diskSizeGB > sizeCheck) { // Warn user when writing to large drives (potentially unintended)
         const QString msg = tr("The target device %1 is larger than %2 GB.\n\n"
@@ -1010,7 +1010,7 @@ bool MainWindow::confirmLargeDeviceWarning(const quint64 diskSizeGB) const
                           .arg(device)
                           .arg(sizeCheck);
         const int ret = QMessageBox::warning(
-            const_cast<MainWindow*>(this),
+            this,
             tr("Large Target Device Warning"),
             msg,
             QMessageBox::Yes | QMessageBox::No,
