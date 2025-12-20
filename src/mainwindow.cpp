@@ -411,11 +411,25 @@ void MainWindow::cleanup()
             Cmd().runAsRoot("kill -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
         }
 
+        // Attempt to unmount filesystems and check for failures
+        bool unmountFailed = false;
         if (Cmd().run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
-            Cmd().runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes);
+            if (!Cmd().runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes)) {
+                qWarning() << "Failed to unmount" << mountPath;
+                unmountFailed = true;
+            }
         }
         if (Cmd().run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
-            Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes);
+            if (!Cmd().runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes)) {
+                qWarning() << "Failed to unmount" << mountPath + "/{main,uefi}";
+                unmountFailed = true;
+            }
+        }
+
+        // Warn user if unmount operations failed
+        if (unmountFailed) {
+            qWarning() << "Cleanup incomplete: some filesystems could not be unmounted";
+            qWarning() << "You may need to manually unmount" << mountPath;
         }
 
         QString pid = QString::number(QApplication::applicationPid());
