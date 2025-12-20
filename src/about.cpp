@@ -36,15 +36,15 @@
 // Display document as normal user when run as root
 void displayDoc(const QString &url, const QString &title)
 {
-    bool isRunningAsRoot = (qEnvironmentVariable("HOME") == "root");
-    QString originalHome = isRunningAsRoot ? startingHome : QString();
+    const bool isRunningAsRoot = (qEnvironmentVariable("HOME") == "root");
+    const QString originalHome = isRunningAsRoot ? startingHome : QString();
 
     if (isRunningAsRoot) {
         qputenv("HOME", originalHome.toUtf8()); // Use original home for theming purposes
     }
 
     // Prefer mx-viewer, otherwise use xdg-open (use runuser to run that as logname user)
-    QString viewerExecutable = QStandardPaths::findExecutable("mx-viewer");
+    const auto viewerExecutable = QStandardPaths::findExecutable("mx-viewer");
     if (!viewerExecutable.isEmpty()) {
         QProcess::startDetached(viewerExecutable, {url, title});
     } else {
@@ -54,7 +54,7 @@ void displayDoc(const QString &url, const QString &title)
             QProcess proc;
             proc.start("logname", {}, QIODevice::ReadOnly);
             proc.waitForFinished();
-            QString user = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
+            const QString user = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
             QProcess::startDetached("runuser", {"-u", user, "--", "xdg-open", url});
         }
     }

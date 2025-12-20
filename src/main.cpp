@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     // Root guard
     QFile loginUidFile {SystemPaths::PROC_SELF_LOGINUID};
     if (loginUidFile.open(QIODevice::ReadOnly)) {
-        QString loginUid = QString(loginUidFile.readAll()).trimmed();
+        const QString loginUid = QString(loginUidFile.readAll()).trimmed();
         loginUidFile.close();
         if (loginUid == "0") {
             QMessageBox::critical(
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    QString executablePath = QStandardPaths::findExecutable("pkexec");
+    const auto executablePath = QStandardPaths::findExecutable("pkexec");
     if (executablePath.isEmpty() && getuid() != 0) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as root."));
         exit(EXIT_FAILURE);

@@ -109,8 +109,8 @@ bool MainWindow::isRunningLive()
     static const QSet<QString> liveFsTypes = {"aufs", "overlay"};
 
     // First, try to detect using QStorageInfo
-    QStorageInfo storageInfo("/");
-    QString fsType = QString::fromUtf8(storageInfo.fileSystemType());
+    const QStorageInfo storageInfo("/");
+    const QString fsType = QString::fromUtf8(storageInfo.fileSystemType());
     if (liveFsTypes.contains(fsType)) {
         return true;
     }
@@ -123,7 +123,7 @@ bool MainWindow::isRunningLive()
             const QString line = in.readLine();
             // /proc/mounts format: device mountpoint fstype ...
             // We want the line where mountpoint is /
-            QStringList parts = line.split(' ', Qt::SkipEmptyParts);
+            const auto parts = line.split(' ', Qt::SkipEmptyParts);
             if (parts.size() > 2 && parts.at(1) == "/") {
                 if (liveFsTypes.contains(parts.at(2))) {
                     mountsFile.close();
@@ -276,7 +276,7 @@ QString MainWindow::buildOptionList()
     QStringList optionsList {"-N"};
 
     // Map the checkboxes to the corresponding options
-    std::map<QCheckBox *, QString> checkboxOptions {
+    const std::map<QCheckBox *, QString> checkboxOptions {
         {ui->checkEncrypt, "-E"},
         {ui->checkGpt, "-g"},
         {ui->checkKeep, "-k"},
@@ -319,7 +319,7 @@ QString MainWindow::buildOptionList()
         optionsList.append("-VV");
     }
 
-    QString options = optionsList.join(' ');
+    const auto options = optionsList.join(' ');
     qDebug() << "Options: " << options;
     return options;
 }
@@ -585,7 +585,7 @@ QString MainWindow::getLiveDeviceName()
             QTextStream in(&mounts);
             while (!in.atEnd()) {
                 const QString line = in.readLine();
-                const QStringList parts = line.split(' ', Qt::SkipEmptyParts);
+                const auto parts = line.split(' ', Qt::SkipEmptyParts);
                 if (parts.size() > 1 && parts.at(1) == "/live/boot-dev") {
                     liveDevPath = parts.at(0);
                     break;
@@ -923,7 +923,7 @@ void MainWindow::pushLumLogFile_clicked()
     }
 
     // Generate temporary log file by reversing the log file until the delimiter, then reversing it back
-    QString cmdStr = QString("tac %1 | sed '/^={60}=$/q' | tac > %2").arg(logFilePath, tempLogFilePath);
+    const QString cmdStr = QString("tac %1 | sed '/^={60}=$/q' | tac > %2").arg(logFilePath, tempLogFilePath);
     Cmd().run(cmdStr);
     displayDoc(tempLogFilePath, QStringLiteral("live-usb-maker"));
 }
