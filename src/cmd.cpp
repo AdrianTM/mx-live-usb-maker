@@ -51,8 +51,13 @@ bool Cmd::run(const QString &cmd, QuietMode quiet, Elevation elevation)
     } else {
         start("/bin/bash", {"-c", cmd});
     }
-    loop.exec();
+    const int loopResult = loop.exec();
     emit done();
+    // Check if event loop exited abnormally (should be 0 from quit())
+    if (loopResult != 0) {
+        qWarning() << "Event loop exited with code:" << loopResult;
+        return false;
+    }
     return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
 }
 
