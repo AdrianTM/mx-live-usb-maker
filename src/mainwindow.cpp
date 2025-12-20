@@ -157,7 +157,19 @@ void MainWindow::makeUsb(const QString &options)
         showErrorAndReset(tr("Could not find the live-usb backend helper."));
         return;
     }
-    device = ui->comboUsb->currentText().split(' ').first();
+
+    // Extract device name and validate it's not empty
+    const QString currentText = ui->comboUsb->currentText();
+    if (currentText.isEmpty()) {
+        showErrorAndReset(tr("No USB device selected."));
+        return;
+    }
+    device = currentText.split(' ').first();
+    if (device.isEmpty()) {
+        showErrorAndReset(tr("Invalid USB device selection."));
+        return;
+    }
+
     QString source = '"' + ui->pushSelectSource->property("filename").toString() + '"';
     QString sourceSize;
 
@@ -165,9 +177,10 @@ void MainWindow::makeUsb(const QString &options)
         sourceSize = cmd.getOut(QString("du -m %1 2>/dev/null | cut -f1").arg(source), Cmd::QuietMode::Yes);
     } else if (ui->checkCloneMode->isChecked()) {
         sourceSize = cmd.getOut(QString("du -m --summarize %1 2>/dev/null | cut -f1").arg(source), Cmd::QuietMode::Yes);
-        QString rootPartition = cmd.getOut(QString("df --output=source %1 | awk 'END{print $1}'").arg(source));
+        const QString rootPartition = cmd.getOut(QString("df --output=source %1 | awk 'END{print $1}'").arg(source)).trimmed();
         source = "clone=" + source.remove('"');
-        if ("/dev/" + device == getDrivePath(rootPartition)) {
+        // Check if source and destination are on the same device (only if rootPartition is valid)
+        if (!rootPartition.isEmpty() && "/dev/" + device == getDrivePath(rootPartition)) {
             showErrorAndReset(tr("Source and destination are on the same device, please select again."));
             return;
         }
