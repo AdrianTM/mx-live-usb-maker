@@ -62,6 +62,7 @@ package() {
 
     install -dm755 "${pkgdir}/usr/share/doc/mx-live-usb-maker"
     install -Dm644 authors.txt "${pkgdir}/usr/share/doc/mx-live-usb-maker/authors.txt"
+    gzip -c debian/changelog > "${pkgdir}/usr/share/doc/mx-live-usb-maker/changelog.gz"
     if [ -d help ]; then
         cp -r help/* "${pkgdir}/usr/share/doc/mx-live-usb-maker/" 2>/dev/null || true
     fi
