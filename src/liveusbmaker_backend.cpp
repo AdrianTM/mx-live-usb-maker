@@ -890,7 +890,7 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
 
 bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
 {
-    const QString grubPath = QDir(paths.mainDir).filePath(kArchIsoGrubCfg);
+    const QString grubPath = QDir(paths.biosDir).filePath(kArchIsoGrubCfg);
     if (!QFileInfo::exists(grubPath)) {
         if (error) {
             *error = QStringLiteral("Missing archiso grub configuration at %1.").arg(grubPath);
@@ -959,6 +959,15 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
             // Update initrd path to remove /arch prefix
             updatedLine.replace(QRegularExpression(QStringLiteral("/arch/boot/")), QStringLiteral("/boot/"));
             changed = true;
+        } else if (trimmed.startsWith(QStringLiteral("search "))) {
+            // Update search to use UUID instead of label
+            if (!trimmed.contains(QStringLiteral("--fs-uuid"))) {
+                updatedLine.replace(QRegularExpression(QStringLiteral("--label\\s+\"[^\"]*\"|--label\\s+[^\\s]+")),
+                                    QStringLiteral("--fs-uuid ") + mainUuid);
+                if (updatedLine != line) {
+                    changed = true;
+                }
+            }
         }
         updated.append(updatedLine);
     }
