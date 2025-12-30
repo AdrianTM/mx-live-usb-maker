@@ -789,8 +789,11 @@ bool LiveUsbMakerBackend::copyBios(QString *error)
 {
     logLine(QStringLiteral("Copying BIOS files."));
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Iso) {
-        if (config.encrypt) {
-            if (!copyFilesSpec(paths.isoDir, kBiosFilesSpec, paths.biosDir, error)) {
+        if (config.encrypt || archIso) {
+            const QString biosSpec = archIso ?
+                QStringLiteral("[Ee][Ff][Ii] boot/{syslinux,grub,memtest} arch/boot/x86_64/{vmlinuz,initrd}* version") :
+                kBiosFilesSpec;
+            if (!copyFilesSpec(paths.isoDir, biosSpec, paths.biosDir, error)) {
                 return false;
             }
         }
