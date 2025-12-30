@@ -796,6 +796,21 @@ bool LiveUsbMakerBackend::copyBios(QString *error)
             if (!copyFilesSpec(paths.isoDir, biosSpec, paths.biosDir, error)) {
                 return false;
             }
+            if (archIso) {
+                const QString archBootX8664 = QDir(paths.biosDir).filePath(QStringLiteral("arch/boot/x86_64"));
+                const QString bootX8664 = QDir(paths.biosDir).filePath(QStringLiteral("boot/x86_64"));
+                QDir().mkpath(bootX8664);
+                const QDir archBootX8664Dir(archBootX8664);
+                if (archBootX8664Dir.exists() && !archBootX8664Dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot).isEmpty()) {
+                    runCommandShell(QStringLiteral("mv -- \"%1\"/* \"%2\"").arg(archBootX8664, bootX8664), error, true);
+                    runCommand(QStringLiteral("rmdir"), {archBootX8664}, error, true);
+                }
+                const QString archBoot = QDir(paths.biosDir).filePath(QStringLiteral("arch/boot"));
+                const QDir archBootDir(archBoot);
+                if (archBootDir.exists() && archBootDir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot).isEmpty()) {
+                    runCommand(QStringLiteral("rmdir"), {archBoot}, error, true);
+                }
+            }
         }
     } else {
         if (!copyFilesSpec(paths.isoDir, kCloneDirsSpec, paths.biosDir, error)) {
