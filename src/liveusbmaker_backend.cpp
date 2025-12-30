@@ -651,7 +651,7 @@ bool LiveUsbMakerBackend::makeFileSystems(QString *error)
         if (config.forceMakefs) {
             args << QStringLiteral("-F");
         }
-        args << QStringLiteral("-m0") << QStringLiteral("-i16384") << QStringLiteral("-J")
+        args << QStringLiteral("-m0") << QStringLiteral("-i65536") << QStringLiteral("-J")
              << QStringLiteral("size=32") << layout.biosDev;
         if (!runCommand(QStringLiteral("mkfs.ext4"), args, error)) {
             return false;
@@ -669,7 +669,7 @@ bool LiveUsbMakerBackend::makeFileSystems(QString *error)
     }
 
     if (!config.encrypt && !layout.mainDev.isEmpty()) {
-        QStringList args {QStringLiteral("-m0"), QStringLiteral("-i16384"), QStringLiteral("-J"), QStringLiteral("size=32")};
+        QStringList args {QStringLiteral("-m0"), QStringLiteral("-i65536"), QStringLiteral("-J"), QStringLiteral("size=32")};
         if (config.forceMakefs) {
             args.prepend(QStringLiteral("-F"));
         }
@@ -927,6 +927,8 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
         QString updatedLine = line;
         const QString trimmed = line.trimmed();
         if (trimmed.startsWith(QStringLiteral("linux ")) || trimmed.startsWith(QStringLiteral("linuxefi "))) {
+            // Update kernel path to remove /arch prefix
+            updatedLine.replace(QRegularExpression(QStringLiteral("/arch/boot/")), QStringLiteral("/boot/"));
             if (!updatedLine.contains(QStringLiteral("archisodevice="))) {
                 updatedLine += QLatin1Char(' ') + archisodeviceArg;
                 changed = true;
@@ -935,6 +937,10 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
                 updatedLine += QLatin1Char(' ') + cowDeviceArg;
                 changed = true;
             }
+        } else if (trimmed.startsWith(QStringLiteral("initrd ")) || trimmed.startsWith(QStringLiteral("initrdefi "))) {
+            // Update initrd path to remove /arch prefix
+            updatedLine.replace(QRegularExpression(QStringLiteral("/arch/boot/")), QStringLiteral("/boot/"));
+            changed = true;
         }
         updated.append(updatedLine);
     }
