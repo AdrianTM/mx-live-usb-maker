@@ -791,35 +791,10 @@ bool LiveUsbMakerBackend::copyBios(QString *error)
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Iso) {
         if (config.encrypt || archIso) {
             const QString biosSpec = archIso ?
-                QStringLiteral("[Ee][Ff][Ii] boot/{syslinux,grub,memtest} arch/boot/x86_64/{vmlinuz,initrd}* version") :
+                QStringLiteral("[Ee][Ff][Ii] boot/{syslinux,grub,memtest} version") :
                 kBiosFilesSpec;
             if (!copyFilesSpec(paths.isoDir, biosSpec, paths.biosDir, error)) {
                 return false;
-            }
-            if (archIso) {
-                const QString archBootX8664 = QDir(paths.biosDir).filePath(QStringLiteral("arch/boot/x86_64"));
-                const QString bootX8664 = QDir(paths.biosDir).filePath(QStringLiteral("boot/x86_64"));
-                QDir().mkpath(bootX8664);
-                const QDir archBootX8664Dir(archBootX8664);
-                if (archBootX8664Dir.exists()) {
-                    const QStringList entries = archBootX8664Dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System);
-                    if (entries.isEmpty()) {
-                        logLine(QStringLiteral("No Arch BIOS boot files found under arch/boot/x86_64."));
-                    }
-                    for (const QString &entry : entries) {
-                        runCommand(QStringLiteral("mv"), {archBootX8664Dir.filePath(entry), bootX8664}, error, true);
-                    }
-                    if (QDir(archBootX8664).entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System).isEmpty()) {
-                        runCommand(QStringLiteral("rmdir"), {archBootX8664}, error, true);
-                    }
-                } else {
-                    logLine(QStringLiteral("Missing arch/boot/x86_64 in BIOS files; skipping Arch boot move."));
-                }
-                const QString archBoot = QDir(paths.biosDir).filePath(QStringLiteral("arch/boot"));
-                const QDir archBootDir(archBoot);
-                if (archBootDir.exists() && archBootDir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System).isEmpty()) {
-                    runCommand(QStringLiteral("rmdir"), {archBoot}, error, true);
-                }
             }
         }
     } else {
@@ -920,6 +895,13 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
         return false;
     }
 
+    QString mainLabel;
+    if (runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("LABEL"), layout.mainDev}, &mainLabel, nullptr)) {
+        mainLabel = mainLabel.trimmed();
+    } else {
+        mainLabel.clear();
+    }
+
     QString dataUuid;
     if (config.dataFirst && !layout.dataDev.isEmpty()) {
         if (!runCommandOutput(QStringLiteral("lsblk"), {QStringLiteral("-no"), QStringLiteral("UUID"), layout.dataDev}, &dataUuid, error)) {
@@ -950,15 +932,48 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
     bool changed = false;
     const QString archisodeviceArg = QStringLiteral("archisodevice=UUID=%1").arg(mainUuid);
     const QString cowDeviceArg = dataUuid.isEmpty() ? QString() : QStringLiteral("cow_device=UUID=%1").arg(dataUuid);
+    const QString archisolabelArg = mainLabel.isEmpty() ? QString() : QStringLiteral("archisolabel=%1").arg(mainLabel);
+    const QRegularExpression archisoLabelRe(QStringLiteral("\\barchisolabel=[^\\s]+"));
+    const QDir archBootX8664Dir(QDir(paths.mainDir).filePath(QStringLiteral("arch/boot/x86_64")));
+    const QDir bootX8664Dir(QDir(paths.mainDir).filePath(QStringLiteral("boot/x86_64")));
+    const QStringList bootCandidates {QStringLiteral("vmlinuz*"), QStringLiteral("initrd*"), QStringLiteral("archiso.img")};
+    QString bootPrefix;
+    if (archBootX8664Dir.exists() && !archBootX8664Dir.entryList(bootCandidates, QDir::Files).isEmpty()) {
+        bootPrefix = QStringLiteral("/arch/boot/");
+    } else if (bootX8664Dir.exists() && !bootX8664Dir.entryList(bootCandidates, QDir::Files).isEmpty()) {
+        bootPrefix = QStringLiteral("/boot/");
+    }
+    const QRegularExpression archBootPathRe(QStringLiteral("/arch/boot/"));
+    const QRegularExpression bootPathRe(QStringLiteral("/boot/"));
 
     for (const QString &line : lines) {
         QString updatedLine = line;
         const QString trimmed = line.trimmed();
         if (trimmed.startsWith(QStringLiteral("linux ")) || trimmed.startsWith(QStringLiteral("linuxefi "))) {
-            // Update kernel path to remove /arch prefix
-            updatedLine.replace(QRegularExpression(QStringLiteral("/arch/boot/")), QStringLiteral("/boot/"));
+            // Update kernel path to match the detected boot files location.
+            if (!bootPrefix.isEmpty()) {
+                if (bootPrefix == QLatin1String("/arch/boot/")) {
+                    updatedLine.replace(bootPathRe, bootPrefix);
+                } else {
+                    updatedLine.replace(archBootPathRe, bootPrefix);
+                }
+            }
             if (!updatedLine.contains(QStringLiteral("archisodevice="))) {
                 updatedLine += QLatin1Char(' ') + archisodeviceArg;
+                changed = true;
+            }
+            if (mainLabel.isEmpty()) {
+                if (updatedLine.contains(archisoLabelRe)) {
+                    updatedLine.remove(archisoLabelRe);
+                    changed = true;
+                }
+            } else if (updatedLine.contains(archisoLabelRe)) {
+                updatedLine.replace(archisoLabelRe, archisolabelArg);
+                if (updatedLine != line) {
+                    changed = true;
+                }
+            } else if (!updatedLine.contains(QStringLiteral("archisolabel="))) {
+                updatedLine += QLatin1Char(' ') + archisolabelArg;
                 changed = true;
             }
             if (!cowDeviceArg.isEmpty() && !updatedLine.contains(QStringLiteral("cow_device="))) {
@@ -966,9 +981,17 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
                 changed = true;
             }
         } else if (trimmed.startsWith(QStringLiteral("initrd ")) || trimmed.startsWith(QStringLiteral("initrdefi "))) {
-            // Update initrd path to remove /arch prefix
-            updatedLine.replace(QRegularExpression(QStringLiteral("/arch/boot/")), QStringLiteral("/boot/"));
-            changed = true;
+            // Update initrd path to match the detected boot files location.
+            if (!bootPrefix.isEmpty()) {
+                if (bootPrefix == QLatin1String("/arch/boot/")) {
+                    updatedLine.replace(bootPathRe, bootPrefix);
+                } else {
+                    updatedLine.replace(archBootPathRe, bootPrefix);
+                }
+                if (updatedLine != line) {
+                    changed = true;
+                }
+            }
         } else if (trimmed.startsWith(QStringLiteral("search "))) {
             // Update search to use UUID instead of label
             if (!trimmed.contains(QStringLiteral("--fs-uuid"))) {
