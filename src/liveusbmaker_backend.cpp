@@ -801,13 +801,23 @@ bool LiveUsbMakerBackend::copyBios(QString *error)
                 const QString bootX8664 = QDir(paths.biosDir).filePath(QStringLiteral("boot/x86_64"));
                 QDir().mkpath(bootX8664);
                 const QDir archBootX8664Dir(archBootX8664);
-                if (archBootX8664Dir.exists() && !archBootX8664Dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot).isEmpty()) {
-                    runCommandShell(QStringLiteral("mv -- \"%1\"/* \"%2\"").arg(archBootX8664, bootX8664), error, true);
-                    runCommand(QStringLiteral("rmdir"), {archBootX8664}, error, true);
+                if (archBootX8664Dir.exists()) {
+                    const QStringList entries = archBootX8664Dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System);
+                    if (entries.isEmpty()) {
+                        logLine(QStringLiteral("No Arch BIOS boot files found under arch/boot/x86_64."));
+                    }
+                    for (const QString &entry : entries) {
+                        runCommand(QStringLiteral("mv"), {archBootX8664Dir.filePath(entry), bootX8664}, error, true);
+                    }
+                    if (QDir(archBootX8664).entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System).isEmpty()) {
+                        runCommand(QStringLiteral("rmdir"), {archBootX8664}, error, true);
+                    }
+                } else {
+                    logLine(QStringLiteral("Missing arch/boot/x86_64 in BIOS files; skipping Arch boot move."));
                 }
                 const QString archBoot = QDir(paths.biosDir).filePath(QStringLiteral("arch/boot"));
                 const QDir archBootDir(archBoot);
-                if (archBootDir.exists() && archBootDir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot).isEmpty()) {
+                if (archBootDir.exists() && archBootDir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden | QDir::System).isEmpty()) {
                     runCommand(QStringLiteral("rmdir"), {archBoot}, error, true);
                 }
             }
