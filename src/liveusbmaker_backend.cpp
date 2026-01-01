@@ -791,7 +791,7 @@ bool LiveUsbMakerBackend::copyBios(QString *error)
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Iso) {
         if (config.encrypt || archIso) {
             const QString biosSpec = archIso ?
-                QStringLiteral("[Ee][Ff][Ii] boot/{syslinux,grub,memtest} version") :
+                QStringLiteral("[Ee][Ff][Ii] boot/syslinux boot/grub boot/memtest version") :
                 kBiosFilesSpec;
             if (!copyFilesSpec(paths.isoDir, biosSpec, paths.biosDir, error)) {
                 return false;
@@ -875,6 +875,7 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
 
 bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
 {
+    logLine(QStringLiteral("Updating Arch ISO boot config"));
     const QString grubPath = QDir(paths.biosDir).filePath(kArchIsoGrubCfg);
     if (!QFileInfo::exists(grubPath)) {
         if (error) {
@@ -900,6 +901,28 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
         mainLabel = mainLabel.trimmed();
     } else {
         mainLabel.clear();
+    }
+
+    // For Arch ISOs, if no label, extract from ISO's GRUB config
+    if (mainLabel.isEmpty()) {
+        const QString isoGrubPath = QDir(paths.isoDir).filePath(kArchIsoGrubCfg);
+        if (QFileInfo::exists(isoGrubPath)) {
+            QFile isoGrubFile(isoGrubPath);
+            if (isoGrubFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                const QString isoGrubContent = QString::fromUtf8(isoGrubFile.readAll());
+                isoGrubFile.close();
+                const QRegularExpression archisoLabelRe(QStringLiteral("\\barchisolabel=([^\\s]+)"));
+                const QRegularExpressionMatch match = archisoLabelRe.match(isoGrubContent);
+                if (match.hasMatch()) {
+                    const QString isoLabel = match.captured(1);
+                    if (!isoLabel.isEmpty()) {
+                        // Set the label on the main partition
+                        runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), isoLabel.left(16), layout.mainDev}, nullptr, true);
+                        mainLabel = isoLabel;
+                    }
+                }
+            }
+        }
     }
 
     QString dataUuid;
@@ -952,9 +975,9 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
         if (trimmed.startsWith(QStringLiteral("linux ")) || trimmed.startsWith(QStringLiteral("linuxefi "))) {
             // Update kernel path to match the detected boot files location.
             if (!bootPrefix.isEmpty()) {
-                if (bootPrefix == QLatin1String("/arch/boot/")) {
+                if (bootPrefix == QLatin1String("/arch/boot/") && !updatedLine.contains(QLatin1String("/arch/boot/"))) {
                     updatedLine.replace(bootPathRe, bootPrefix);
-                } else {
+                } else if (bootPrefix == QLatin1String("/boot/") && !updatedLine.contains(QLatin1String("/boot/"))) {
                     updatedLine.replace(archBootPathRe, bootPrefix);
                 }
             }
@@ -983,9 +1006,9 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
         } else if (trimmed.startsWith(QStringLiteral("initrd ")) || trimmed.startsWith(QStringLiteral("initrdefi "))) {
             // Update initrd path to match the detected boot files location.
             if (!bootPrefix.isEmpty()) {
-                if (bootPrefix == QLatin1String("/arch/boot/")) {
+                if (bootPrefix == QLatin1String("/arch/boot/") && !updatedLine.contains(QLatin1String("/arch/boot/"))) {
                     updatedLine.replace(bootPathRe, bootPrefix);
-                } else {
+                } else if (bootPrefix == QLatin1String("/boot/") && !updatedLine.contains(QLatin1String("/boot/"))) {
                     updatedLine.replace(archBootPathRe, bootPrefix);
                 }
                 if (updatedLine != line) {
