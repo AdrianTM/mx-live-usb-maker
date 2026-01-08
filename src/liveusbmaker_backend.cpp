@@ -560,8 +560,10 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
     auto addPartition = [&](int sizeMiB, const QString &fsType, const QString &name) -> bool {
         const int end = start + sizeMiB - 1;
         const QString partType = fsType.isEmpty() ? QString() : fsType;
-        const QString cmd = QStringLiteral("%1 mkpart primary %2 %3 %4")
-                                .arg(preamble, partType, QString::number(start), QString::number(end));
+        // For GPT use partition name, for MBR use "primary"
+        const QString partLabel = config.gpt ? name : QStringLiteral("primary");
+        const QString cmd = QStringLiteral("%1 mkpart %2 %3 %4 %5")
+                                .arg(preamble, partLabel, partType, QString::number(start), QString::number(end));
         if (!runCommandShell(cmd, error)) {
             logError(QStringLiteral("Partitioning failed at %1 partition.").arg(name));
             return false;
@@ -911,14 +913,31 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
             if (isoGrubFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
                 const QString isoGrubContent = QString::fromUtf8(isoGrubFile.readAll());
                 isoGrubFile.close();
+
+                // Try to extract label from archisolabel= kernel parameter
                 const QRegularExpression archisoLabelRe(QStringLiteral("\\barchisolabel=([^\\s]+)"));
-                const QRegularExpressionMatch match = archisoLabelRe.match(isoGrubContent);
+                QRegularExpressionMatch match = archisoLabelRe.match(isoGrubContent);
                 if (match.hasMatch()) {
                     const QString isoLabel = match.captured(1);
                     if (!isoLabel.isEmpty()) {
                         // Set the label on the main partition
                         runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), isoLabel.left(16), layout.mainDev}, nullptr, true);
                         mainLabel = isoLabel;
+                    }
+                }
+
+                // If not found, try to extract from search --label command
+                if (mainLabel.isEmpty()) {
+                    const QRegularExpression searchLabelRe(QStringLiteral("search\\s+[^\\n]*--label\\s+[\"']?([^\"'\\s]+)[\"']?"));
+                    match = searchLabelRe.match(isoGrubContent);
+                    if (match.hasMatch()) {
+                        const QString isoLabel = match.captured(1);
+                        if (!isoLabel.isEmpty()) {
+                            // Set the label on the main partition
+                            runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), isoLabel.left(16), layout.mainDev}, nullptr, true);
+                            mainLabel = isoLabel;
+                            logLine(QStringLiteral("Set partition label to: %1").arg(mainLabel));
+                        }
                     }
                 }
             }
