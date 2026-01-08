@@ -37,6 +37,7 @@ namespace
 {
 constexpr int kDefaultBiosSizeMiB = 150;
 constexpr int kDefaultUefiSizeMiB = 50;
+constexpr int kGptBiosBootSizeMiB = 2;
 constexpr int kBiosMarginMiB = 20;
 constexpr int kMainMarginMiB = 20;
 constexpr int kUefiMarginMiB = 5;
@@ -450,6 +451,7 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
 
     const int uefiSizeMiB = config.espSizeMiB > 0 ? config.espSizeMiB : kDefaultUefiSizeMiB;
     const int biosSizeMiB = config.encrypt ? kDefaultBiosSizeMiB : 0;
+    const int gptBiosBootSizeMiB = config.gpt ? kGptBiosBootSizeMiB : 0;
 
     int uefiNeeded = duApparentSizeMiB(paths.isoDir, kUefiFilesSpec, error);
     if (archIso) {
@@ -482,7 +484,7 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
     }
 
     int dataMiB = 0;
-    int mainMiB = allocMiB - finalUefiSize - finalBiosSize;
+    int mainMiB = allocMiB - finalUefiSize - finalBiosSize - gptBiosBootSizeMiB;
     if (config.dataFirst) {
         dataMiB = totalMiB - allocMiB;
         if (dataMiB <= 0) {
@@ -491,7 +493,7 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
             }
             return false;
         }
-        mainMiB = allocMiB - finalUefiSize - finalBiosSize;
+        mainMiB = allocMiB - finalUefiSize - finalBiosSize - gptBiosBootSizeMiB;
     }
 
     const int mainNeeded = duApparentSizeMiB(paths.isoDir, QStringLiteral("*"), error);
@@ -505,37 +507,46 @@ bool LiveUsbMakerBackend::computeLayout(QString *error)
     }
 
     // Calculate partition numbers based on layout configuration
-    // Partition order varies based on encryption and data-first settings:
-    //   dataFirst + encrypt:   [1: data] [2: bios] [3: main] [4: uefi]
+    // For GPT, partition 1 is always the BIOS Boot partition (bios_grub)
+    // Partition order varies based on GPT/MBR, encryption and data-first settings:
+    // GPT:
+    //   dataFirst + encrypt:    [1: bios_boot] [2: data] [3: bios] [4: main] [5: uefi]
+    //   dataFirst + no encrypt: [1: bios_boot] [2: data] [3: main] [4: uefi]
+    //   no dataFirst + encrypt: [1: bios_boot] [2: bios] [3: main] [4: uefi]
+    //   no dataFirst + no encrypt: [1: bios_boot] [2: main] [3: uefi]
+    // MBR:
+    //   dataFirst + encrypt:    [1: data] [2: bios] [3: main] [4: uefi]
     //   dataFirst + no encrypt: [1: data] [2: main] [3: uefi]
     //   no dataFirst + encrypt: [1: bios] [2: main] [3: uefi]
     //   no dataFirst + no encrypt: [1: main] [2: uefi]
 
+    const int gptOffset = config.gpt ? 1 : 0;  // GPT has BIOS Boot partition at position 1
+
     if (config.encrypt) {
         if (config.dataFirst) {
-            layout.biosPart = 2;
-            layout.mainPart = 3;
-            layout.uefiPart = 4;
+            layout.biosPart = 2 + gptOffset;
+            layout.mainPart = 3 + gptOffset;
+            layout.uefiPart = 4 + gptOffset;
         } else {
-            layout.biosPart = 1;
-            layout.mainPart = 2;
-            layout.uefiPart = 3;
+            layout.biosPart = 1 + gptOffset;
+            layout.mainPart = 2 + gptOffset;
+            layout.uefiPart = 3 + gptOffset;
         }
     } else {
         layout.biosPart = 0;  // No bios partition when not encrypted
         if (config.dataFirst) {
-            layout.mainPart = 2;
-            layout.uefiPart = 3;
+            layout.mainPart = 2 + gptOffset;
+            layout.uefiPart = 3 + gptOffset;
         } else {
-            layout.mainPart = 1;
-            layout.uefiPart = 2;
+            layout.mainPart = 1 + gptOffset;
+            layout.uefiPart = 2 + gptOffset;
         }
     }
 
     layout.biosDev = config.encrypt ? partitionPath(layout.drive, layout.biosPart) : QString();
     layout.mainDev = partitionPath(layout.drive, layout.mainPart);
     layout.uefiDev = partitionPath(layout.drive, layout.uefiPart);
-    layout.dataDev = config.dataFirst ? partitionPath(layout.drive, 1) : QString();
+    layout.dataDev = config.dataFirst ? partitionPath(layout.drive, 1 + gptOffset) : QString();
     layout.biosSizeMiB = finalBiosSize;
     layout.mainSizeMiB = mainMiB;
     layout.uefiSizeMiB = finalUefiSize;
@@ -572,6 +583,18 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
         partNum += 1;
         return true;
     };
+
+    // For GPT, create a BIOS Boot partition first for BIOS/Legacy boot support
+    if (config.gpt) {
+        if (!addPartition(kGptBiosBootSizeMiB, QString(), QStringLiteral("bios_boot"))) {
+            return false;
+        }
+        // Set bios_grub flag on the BIOS Boot partition
+        if (!runCommandShell(QStringLiteral("%1 set %2 bios_grub on").arg(preamble).arg(partNum), error)) {
+            logError(QStringLiteral("Failed to set bios_grub flag on BIOS Boot partition"));
+            return false;
+        }
+    }
 
     if (config.dataFirst) {
         if (!addPartition(layout.dataSizeMiB, config.dataFs.isEmpty() ? QStringLiteral("fat32") : config.dataFs, QStringLiteral("data"))) {
