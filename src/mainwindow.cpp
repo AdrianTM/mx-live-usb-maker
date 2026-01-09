@@ -447,13 +447,13 @@ void MainWindow::cleanup()
         // Attempt to unmount filesystems and check for failures
         bool unmountFailed = false;
         if (utilCmd.run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
-            if (!utilCmd.runAsRoot("umount -Rl " + mountPath, Cmd::QuietMode::Yes)) {
+            if (!utilCmd.runAsRoot("umount -Rl " + mountPath + " 2>/dev/null", Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath;
                 unmountFailed = true;
             }
         }
         if (utilCmd.run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
-            if (!utilCmd.runAsRoot("umount -l " + mountPath + "/{main,uefi}", Cmd::QuietMode::Yes)) {
+            if (!utilCmd.runAsRoot("umount -l " + mountPath + "/{main,uefi} 2>/dev/null", Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath + "/{main,uefi}";
                 unmountFailed = true;
             }

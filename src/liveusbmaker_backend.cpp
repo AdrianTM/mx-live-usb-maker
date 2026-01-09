@@ -335,7 +335,7 @@ bool LiveUsbMakerBackend::cleanup()
 {
     unmountTargets();
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Iso) {
-        runCommand(QStringLiteral("umount"), {QStringLiteral("-l"), paths.isoDir}, nullptr, true);
+        runCommandShell(QStringLiteral("umount -l ") + paths.isoDir + QStringLiteral(" 2>/dev/null"), nullptr, true);
     }
     return true;
 }
@@ -1778,7 +1778,7 @@ bool LiveUsbMakerBackend::unmountPath(const QString &mountPoint, QString *error)
     if (!QFileInfo::exists(mountPoint)) {
         return true;
     }
-    return runCommand(QStringLiteral("umount"), {QStringLiteral("-l"), mountPoint}, error, true);
+    return runCommandShell(QStringLiteral("umount -l ") + mountPoint + QStringLiteral(" 2>/dev/null"), error, true);
 }
 
 bool LiveUsbMakerBackend::isMountpoint(const QString &path) const
