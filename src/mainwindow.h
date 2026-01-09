@@ -21,6 +21,7 @@
  **********************************************************************/
 #pragma once
 
+#include <QElapsedTimer>
 #include <QFile>
 #include <QMessageBox>
 #include <QProcess>
@@ -82,6 +83,7 @@ private:
     QString device;
     QString elevate;
     QTimer timer;
+    QElapsedTimer elapsedTimer;
     bool advancedOptions {};
     bool operationInProgress {};
     int defaultHeight {};

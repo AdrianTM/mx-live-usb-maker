@@ -230,6 +230,7 @@ void MainWindow::makeUsb(const QString &options)
     const QString cmdstr = QString("%1 --config %2").arg(shellQuote(backendPath), shellQuote(configPath));
     operationInProgress = true;
     setConnections();
+    elapsedTimer.start();
     cmd.runAsRoot(cmdstr);
 }
 
@@ -640,7 +641,13 @@ void MainWindow::cmdDone()
     setCursor(Qt::ArrowCursor);
     ui->pushBack->show();
     if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked()) {
+        qint64 elapsedMs = elapsedTimer.elapsed();
+        int totalSeconds = elapsedMs / 1000;
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        QString timeStr = QString("%1:%2").arg(minutes, 2, 10, QChar('0')).arg(seconds, 2, 10, QChar('0'));
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
+        ui->outputBox->appendPlainText("\n" + tr("Elapsed time: %1").arg(timeStr));
     } else {
         cleanup();
         QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
