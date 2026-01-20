@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
     if (logFile().exists() && !QFileInfo(logFile()).isWritable()) {
         logFile().setFileName(logFileName + "_new");
     }
-    logFile().open(QIODevice::ReadWrite);
+    (void)logFile().open(QIODevice::ReadWrite);
     qInstallMessageHandler(messageHandler);
     qDebug().noquote() << QApplication::applicationName() << QObject::tr("version:")
                        << QApplication::applicationVersion();

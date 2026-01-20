@@ -61,7 +61,7 @@ MainWindow::MainWindow(const QStringList &args, QDialog *parent)
         QSettings settings(AppPaths::CONFIG_FILE, QSettings::NativeFormat);
         sizeCheck = settings.value("SizeCheck", 128).toUInt(); // in GB
     } else {
-        qDebug() << "Configuration file not found, using defaults:" << AppPaths::CONFIG_FILE;
+        // Configuration file not found, using defaults
         sizeCheck = 128; // Default size check in GB
     }
 
@@ -227,7 +227,10 @@ void MainWindow::makeUsb(const QString &options)
         showErrorAndReset(tr("Failed to prepare the backend config. %1").arg(error));
         return;
     }
+    lastConfigPath = configPath;
     const QString cmdstr = QString("%1 --config %2").arg(shellQuote(backendPath), shellQuote(configPath));
+    qDebug().noquote() << "Running backend command:" << cmdstr;
+    qDebug() << "Backend config path:" << configPath;
     operationInProgress = true;
     setConnections();
     elapsedTimer.start();
@@ -623,7 +626,7 @@ QStringList MainWindow::removeUnsuitable(const QStringList &devices)
         = cmd.getOut("lsblk -nlso NAME,PKNAME,TYPE $(findmnt / -no SOURCE)", Cmd::QuietMode::Yes).trimmed();
     // Validate lsblk output format (3 columns: NAME, PKNAME, TYPE)
     if (!ValidationUtils::validateLsblkColumns(lsblkOutput, 3)) {
-        qDebug() << "Invalid lsblk output format for root device - expected at least 3 columns";
+        // Invalid lsblk output format for root device - expected at least 3 columns
     }
     // Extract root drive name from validated output
     const QString rootDrive = lsblkOutput.split('\n')
@@ -648,6 +651,9 @@ void MainWindow::cmdDone()
     setCursor(Qt::ArrowCursor);
     ui->pushBack->show();
     qDebug() << "Backend finished with exit code:" << cmd.exitCode() << "exit status:" << cmd.exitStatus();
+    if (cmd.exitCode() != 0 || cmd.exitStatus() != QProcess::NormalExit) {
+        qDebug() << "Backend QProcess error:" << cmd.error() << cmd.errorString();
+    }
     if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked()) {
         qint64 elapsedMs = elapsedTimer.elapsed();
         int totalSeconds = elapsedMs / 1000;
@@ -659,6 +665,16 @@ void MainWindow::cmdDone()
         qDebug() << "LiveUSB creation successful";
     } else {
         cleanup();
+        if (!lastConfigPath.isEmpty()) {
+            QFileInfo configInfo(lastConfigPath);
+            qDebug() << "Backend config exists:" << configInfo.exists() << "size:" << configInfo.size();
+            if (configInfo.exists() && configInfo.size() <= 4096) {
+                QFile configFile(lastConfigPath);
+                if (configFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                    qDebug().noquote() << "Backend config content:" << QString::fromUtf8(configFile.readAll());
+                }
+            }
+        }
         QString errorMsg = tr("Error encountered in the LiveUSB creation process");
         errorMsg += QString("\n\nExit code: %1\nExit status: %2").arg(cmd.exitCode()).arg(cmd.exitStatus());
         QMessageBox::critical(this, tr("Failure"), errorMsg);
@@ -672,6 +688,7 @@ void MainWindow::setConnections()
     // Make all signal/slot connections before starting the timer to avoid race conditions
     // Use Qt::UniqueConnection to prevent duplicate connections if called multiple times
     connect(&cmd, &Cmd::readyReadStandardOutput, this, &MainWindow::updateOutput, Qt::UniqueConnection);
+    connect(&cmd, &Cmd::readyReadStandardError, this, &MainWindow::updateOutput, Qt::UniqueConnection);
     connect(&timer, &QTimer::timeout, this, &MainWindow::updateBar, Qt::UniqueConnection);
     connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone, Qt::UniqueConnection);
 
@@ -725,6 +742,11 @@ void MainWindow::updateBar()
 void MainWindow::updateOutput()
 {
     QString output = cmd.readAllStandardOutput();
+    const QString errorOutput = cmd.readAllStandardError();
+    if (!errorOutput.isEmpty()) {
+        qDebug().noquote() << "Backend stderr:" << errorOutput.trimmed();
+        output.append(errorOutput);
+    }
     // Strip ANSI sequences and control chars that can show up in command output.
     static const QRegularExpression kAnsiCsiRegex(QStringLiteral("\\x1b\\[[0-9;?]*[ -/]*[@-~]"));
     static const QRegularExpression kAnsiOscRegex(QStringLiteral("\\x1b\\][^\\x07\\x1b]*(?:\\x07|\\x1b\\\\)"));

@@ -82,6 +82,7 @@ private:
     QString backendPath;
     QString device;
     QString elevate;
+    QString lastConfigPath;
     QTimer timer;
     QElapsedTimer elapsedTimer;
     bool advancedOptions {};

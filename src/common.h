@@ -74,8 +74,9 @@ namespace SyslinuxPaths
 {
 inline const QString SHARE = QStringLiteral("/usr/share/syslinux");
 inline const QString LIB = QStringLiteral("/usr/lib/syslinux");
-inline const QString MBR = QStringLiteral("/usr/lib/syslinux/mbr");
-inline const QString MODULES_BIOS = QStringLiteral("/usr/lib/syslinux/modules/bios");
+inline const QString BIOS = QStringLiteral("/usr/lib/syslinux/bios");
+inline const QString MBR = QStringLiteral("/usr/lib/syslinux/bios");
+inline const QString MODULES_BIOS = QStringLiteral("/usr/lib/syslinux/bios");
 } // namespace SyslinuxPaths
 
 // Dictionary paths
