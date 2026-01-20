@@ -38,6 +38,8 @@ Makefile*
 # exclude test binary
 mx-live-usb-maker
 
+# Arch package artifacts
+mx-live-usb-maker-*.pkg.tar.zst
+
 # Transifex ignore
 .tx/
-
