@@ -647,6 +647,7 @@ void MainWindow::cmdDone()
     ui->progBar->setValue(ui->progBar->maximum());
     setCursor(Qt::ArrowCursor);
     ui->pushBack->show();
+    qDebug() << "Backend finished with exit code:" << cmd.exitCode() << "exit status:" << cmd.exitStatus();
     if ((cmd.exitCode() == 0 && cmd.exitStatus() == QProcess::NormalExit) || ui->checkPretend->isChecked()) {
         qint64 elapsedMs = elapsedTimer.elapsed();
         int totalSeconds = elapsedMs / 1000;
@@ -655,9 +656,13 @@ void MainWindow::cmdDone()
         QString timeStr = QString("%1:%2").arg(minutes, 2, 10, QChar('0')).arg(seconds, 2, 10, QChar('0'));
         QMessageBox::information(this, tr("Success"), tr("LiveUSB creation successful!"));
         ui->outputBox->appendPlainText("\n" + tr("Elapsed time: %1").arg(timeStr));
+        qDebug() << "LiveUSB creation successful";
     } else {
         cleanup();
-        QMessageBox::critical(this, tr("Failure"), tr("Error encountered in the LiveUSB creation process"));
+        QString errorMsg = tr("Error encountered in the LiveUSB creation process");
+        errorMsg += QString("\n\nExit code: %1\nExit status: %2").arg(cmd.exitCode()).arg(cmd.exitStatus());
+        QMessageBox::critical(this, tr("Failure"), errorMsg);
+        qDebug() << "LiveUSB creation failed with exit code:" << cmd.exitCode() << "status:" << cmd.exitStatus();
     }
     cmd.disconnect();
 }
