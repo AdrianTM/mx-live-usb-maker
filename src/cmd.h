@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QProcess>
+#include <QStringList>
 
 class QTextStream;
 
@@ -19,6 +20,8 @@ public:
     [[nodiscard]] QString getOutAsRoot(const QString &cmd, QuietMode quiet = QuietMode::No);
     bool run(const QString &cmd, QuietMode quiet = QuietMode::No, Elevation elevation = Elevation::No);
     bool runAsRoot(const QString &cmd, QuietMode quiet = QuietMode::No);
+    bool runWithPolkitAction(const QString &actionId, const QString &program, const QStringList &arguments,
+                             QuietMode quiet = QuietMode::No);
 
 signals:
     void done();

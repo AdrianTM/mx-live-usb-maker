@@ -65,3 +65,33 @@ bool Cmd::runAsRoot(const QString &cmd, QuietMode quiet)
 {
     return run(cmd, quiet, Elevation::Yes);
 }
+
+bool Cmd::runWithPolkitAction(const QString &actionId, const QString &execPath, const QStringList &execArgs,
+                              QuietMode quiet)
+{
+    cmdStr = execPath + " " + execArgs.join(' ');
+    if (state() != QProcess::NotRunning) {
+        qDebug() << "Process already running:" << QProcess::program() << QProcess::arguments();
+        return false;
+    }
+    if (quiet == QuietMode::No) {
+        qDebug().noquote() << cmdStr;
+    }
+    QEventLoop loop;
+    connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
+    if (getuid() != 0) {
+        QStringList pkArgs {"--action-id", actionId, execPath};
+        pkArgs.append(execArgs);
+        start(elevate, pkArgs);
+    } else {
+        start(execPath, execArgs);
+    }
+    const int loopResult = loop.exec();
+    emit done();
+    // Check if event loop exited abnormally (should be 0 from quit())
+    if (loopResult != 0) {
+        qWarning() << "Event loop exited with code:" << loopResult;
+        return false;
+    }
+    return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
+}

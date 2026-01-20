@@ -471,6 +471,13 @@ void MainWindow::cleanup()
             utilCmd.runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
         }
     }
+
+    // Move the application log to /var/log/ at cleanup stage
+    const QString tempLog = SystemPaths::TMP_DIR + "/" + QApplication::applicationName() + ".log";
+    if (QFileInfo::exists(tempLog)) {
+        const QString helperPath = "/usr/lib/" + QApplication::applicationName() + "/live-usb-maker-lib";
+        utilCmd.runWithPolkitAction("org.mxlinux.pkexec.live-usb-maker-lib", helperPath, {"copy_log"}, Cmd::QuietMode::Yes);
+    }
 }
 
 QStringList MainWindow::buildUsbList()

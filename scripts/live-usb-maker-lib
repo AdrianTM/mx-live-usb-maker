@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Root level functions requiring password for mx-live-usb-maker
+
+copy_log() {
+    local app_name="mx-live-usb-maker"
+    local temp_log="/tmp/${app_name}.log"
+    local log_file="/var/log/${app_name}.log"
+
+    if [[ -f "$temp_log" ]]; then
+        [[ -f "$log_file" ]] && mv "$log_file" "${log_file}.old"
+        cat "$temp_log" >> "$log_file"
+        rm "$temp_log"
+    fi
+}
+
+main() {
+    case "$1" in
+        copy_log)
+            copy_log;;
+        *)
+            echo "Unknown command: $1"
+            exit 1
+            ;;
+    esac
+}
+
+main "$@"
