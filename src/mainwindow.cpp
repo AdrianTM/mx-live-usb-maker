@@ -306,21 +306,27 @@ void MainWindow::setGeneralConnections()
 QString MainWindow::buildOptionList()
 {
     QStringList optionsList {"-N"};
+    const bool updateMode = ui->checkUpdate->isChecked();
 
     // Map the checkboxes to the corresponding options
-    const std::map<QCheckBox *, QString> checkboxOptions {
-        {ui->checkEncrypt, "-E"},
-        {ui->checkGpt, "-g"},
+    // Note: partition/format options are skipped in update mode as a safeguard
+    std::map<QCheckBox *, QString> checkboxOptions {
         {ui->checkKeep, "-k"},
         {ui->checkPretend, "-p"},
         {ui->checkSaveBoot, "-S"},
         {ui->checkUpdate, "-u"},
-        {ui->checkSetPmbrBoot, "--gpt-pmbr"},
         {ui->checkForceUsb, "--force=usb"},
         {ui->checkForceAutomount, "--force=automount"},
-        {ui->checkForceMakefs, "--force=makefs"},
         {ui->checkForceNofuse, "--force=nofuse"},
     };
+
+    // Partition/format options - only add if not in update mode
+    if (!updateMode) {
+        checkboxOptions[ui->checkEncrypt] = "-E";
+        checkboxOptions[ui->checkGpt] = "-g";
+        checkboxOptions[ui->checkSetPmbrBoot] = "--gpt-pmbr";
+        checkboxOptions[ui->checkForceMakefs] = "--force=makefs";
+    }
 
     // Add options for the checked checkboxes
     for (const auto &[checkBox, option] : checkboxOptions) {
@@ -329,19 +335,21 @@ QString MainWindow::buildOptionList()
         }
     }
 
-    // Add additional options
-    if (ui->spinBoxEsp->value() != 50) {
-        optionsList.append("--esp-size=" + ui->spinBoxEsp->cleanText());
-    }
-    if (ui->spinBoxSize->value() < ui->spinBoxSize->maximum()) {
-        optionsList.append("--size=" + ui->spinBoxSize->cleanText());
-    }
-    if (!ui->textLabel->text().isEmpty()) {
-        optionsList.append("--label=" + ui->textLabel->text());
-    }
-    if (ui->checkDataFirst->isChecked()) {
-        optionsList.append("--data-first=" + ui->spinBoxDataSize->cleanText() + ","
-                           + ui->comboBoxDataFormat->currentText());
+    // Add additional options (skip partition/format options in update mode)
+    if (!updateMode) {
+        if (ui->spinBoxEsp->value() != 50) {
+            optionsList.append("--esp-size=" + ui->spinBoxEsp->cleanText());
+        }
+        if (ui->spinBoxSize->value() < ui->spinBoxSize->maximum()) {
+            optionsList.append("--size=" + ui->spinBoxSize->cleanText());
+        }
+        if (!ui->textLabel->text().isEmpty()) {
+            optionsList.append("--label=" + ui->textLabel->text());
+        }
+        if (ui->checkDataFirst->isChecked()) {
+            optionsList.append("--data-first=" + ui->spinBoxDataSize->cleanText() + ","
+                               + ui->comboBoxDataFormat->currentText());
+        }
     }
 
     // Add the verbosity option
@@ -896,6 +904,50 @@ void MainWindow::checkUpdate_clicked(bool checked)
     if (!checked) {
         ui->checkSaveBoot->setChecked(false);
     }
+
+    // Disable options that conflict with update mode (would force reformat)
+    const bool enabled = !checked;
+
+    // Size options
+    ui->spinBoxSize->setEnabled(enabled);
+    ui->label_percent->setEnabled(enabled);
+
+    // Label option
+    ui->textLabel->setEnabled(enabled);
+    ui->label_part_label->setEnabled(enabled);
+
+    // ESP size option
+    ui->spinBoxEsp->setEnabled(enabled);
+    ui->labelSizeEsp->setEnabled(enabled);
+
+    // Data partition option
+    ui->checkDataFirst->setEnabled(enabled);
+    ui->spinBoxDataSize->setEnabled(enabled);
+    ui->comboBoxDataFormat->setEnabled(enabled);
+    ui->labelFormat->setEnabled(enabled);
+
+    // Partition/format options
+    ui->checkEncrypt->setEnabled(enabled);
+    ui->checkGpt->setEnabled(enabled);
+    ui->checkSetPmbrBoot->setEnabled(enabled);
+    ui->checkForceMakefs->setEnabled(enabled);
+
+    // Reset to defaults when update mode is enabled
+    if (checked) {
+        // Block signals to prevent valueChanged from re-enabling controls
+        ui->spinBoxSize->blockSignals(true);
+        ui->spinBoxSize->setValue(ui->spinBoxSize->maximum());
+        ui->spinBoxSize->blockSignals(false);
+
+        ui->spinBoxEsp->setValue(50);
+        ui->textLabel->clear();
+        ui->checkDataFirst->setChecked(false);
+        ui->spinBoxDataSize->setValue(ui->spinBoxDataSize->minimum());
+        ui->checkEncrypt->setChecked(false);
+        ui->checkGpt->setChecked(false);
+        ui->checkSetPmbrBoot->setChecked(false);
+        ui->checkForceMakefs->setChecked(false);
+    }
 }
 
 void MainWindow::checkCloneMode_clicked(bool checked)
@@ -965,13 +1017,16 @@ void MainWindow::radioNormal_clicked()
 {
     ui->checkCloneLive->setEnabled(isRunningLive());
     ui->checkCloneMode->setEnabled(true);
-    ui->checkEncrypt->setEnabled(true);
     ui->checkPretend->setEnabled(true);
     ui->pushOptions->setEnabled(true);
-    ui->label_percent->setEnabled(true);
-    ui->label_part_label->setEnabled(true);
-    ui->spinBoxSize->setEnabled(true);
-    ui->textLabel->setEnabled(true);
+
+    // Only re-enable these if update mode is not checked
+    const bool updateMode = ui->checkUpdate->isChecked();
+    ui->checkEncrypt->setEnabled(!updateMode);
+    ui->label_percent->setEnabled(!updateMode);
+    ui->label_part_label->setEnabled(!updateMode);
+    ui->spinBoxSize->setEnabled(!updateMode);
+    ui->textLabel->setEnabled(!updateMode);
 }
 
 bool MainWindow::isantiX_mx_family(const QString &selected)
@@ -1020,6 +1075,10 @@ void MainWindow::pushLumLogFile_clicked()
 
 void MainWindow::spinBoxSize_valueChanged(int arg1)
 {
+    // Don't re-enable controls if update mode is checked
+    if (ui->checkUpdate->isChecked()) {
+        return;
+    }
     const int max = ui->spinBoxSize->maximum();
     ui->checkDataFirst->setEnabled(arg1 == max);
     ui->spinBoxDataSize->setEnabled(arg1 == max);
