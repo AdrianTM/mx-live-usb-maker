@@ -1,6 +1,6 @@
 mx-live-usb-maker (26.01) mx; urgency=medium
 
-  * Harden update mode options (disable actions that trigger reformating)
+  * Harden update mode options (disable actions that trigger reformatting)
 
  -- Adrian <adrian@mxlinux.org>  Sat, 24 Jan 2026 08:58:20 -0500
 
