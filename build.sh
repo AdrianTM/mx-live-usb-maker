@@ -108,17 +108,12 @@ if [ "$ARCH_BUILD" = true ]; then
         exit 1
     fi
 
-    if [ ! -f debian/changelog ]; then
-        echo "Error: debian/changelog not found; cannot determine version for Arch build."
-        exit 1
-    fi
-
-    ARCH_VERSION=$(sed -n '1{s/^[^(]*(\([^)]*\)).*/\1/p}' debian/changelog)
+    ARCH_VERSION=$(git describe --tags --abbrev=0 2>/dev/null)
     if [ -z "$ARCH_VERSION" ]; then
-        echo "Error: could not parse version from debian/changelog."
+        echo "Error: could not determine version from git tags."
         exit 1
     fi
-    echo "Using version ${ARCH_VERSION} from debian/changelog"
+    echo "Using version ${ARCH_VERSION} from git tag"
 
     ARCH_BUILDDIR=$(mktemp -d -p "$PWD" archpkgbuild.XXXXXX)
     trap 'rm -rf "$ARCH_BUILDDIR"' EXIT

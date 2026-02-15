@@ -40,21 +40,40 @@ else()
 
     if(DPKG_RESULT EQUAL 0 AND NOT "${PROJECT_VERSION_FROM_CHANGELOG}" STREQUAL "")
         message(STATUS "Using version from debian/changelog: ${PROJECT_VERSION_FROM_CHANGELOG}")
-    elseif(EXISTS ${CMAKE_SOURCE_DIR}/debian/changelog)
-        file(READ ${CMAKE_SOURCE_DIR}/debian/changelog PROJECT_CHANGELOG_CONTENT)
-        string(REGEX MATCH "^[^\\(]*\\(([^)]+)\\)" _match "${PROJECT_CHANGELOG_CONTENT}")
-        if(NOT _match)
-            message(FATAL_ERROR "Could not parse version from debian/changelog")
-        endif()
-        set(PROJECT_VERSION_FROM_CHANGELOG "${CMAKE_MATCH_1}")
-        message(STATUS "Using version parsed from debian/changelog: ${PROJECT_VERSION_FROM_CHANGELOG}")
     else()
-        message(FATAL_ERROR "Could not determine version: dpkg-parsechangelog not available and debian/changelog missing")
+        # No dpkg available (e.g. Arch) — try git tag, then fall back to parsing debian/changelog
+        execute_process(
+            COMMAND git describe --tags --abbrev=0
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            OUTPUT_VARIABLE PROJECT_VERSION_FROM_CHANGELOG
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            RESULT_VARIABLE GIT_TAG_RESULT
+            ERROR_QUIET
+        )
+        if(GIT_TAG_RESULT EQUAL 0 AND NOT "${PROJECT_VERSION_FROM_CHANGELOG}" STREQUAL "")
+            message(STATUS "Using version from git tag: ${PROJECT_VERSION_FROM_CHANGELOG}")
+        elseif(EXISTS ${CMAKE_SOURCE_DIR}/debian/changelog)
+            file(READ ${CMAKE_SOURCE_DIR}/debian/changelog PROJECT_CHANGELOG_CONTENT)
+            string(REGEX MATCH "^[^\\(]*\\(([^)]+)\\)" _match "${PROJECT_CHANGELOG_CONTENT}")
+            if(NOT _match)
+                message(FATAL_ERROR "Could not parse version from debian/changelog")
+            endif()
+            set(PROJECT_VERSION_FROM_CHANGELOG "${CMAKE_MATCH_1}")
+            message(STATUS "Using version parsed from debian/changelog: ${PROJECT_VERSION_FROM_CHANGELOG}")
+        else()
+            message(FATAL_ERROR "Could not determine version: no dpkg-parsechangelog, debian/changelog, or git tag found")
+        endif()
     endif()
 endif()
 
+# Full version string for display (may contain non-numeric suffix like "arch")
+set(PROJECT_VERSION_DISPLAY "${PROJECT_VERSION_FROM_CHANGELOG}")
+
+# CMake project(VERSION) requires numeric-only format
+string(REGEX MATCH "^[0-9]+(\\.[0-9]+)*" PROJECT_VERSION_NUMERIC "${PROJECT_VERSION_FROM_CHANGELOG}")
+
 project(mx-live-usb-maker
-    VERSION ${PROJECT_VERSION_FROM_CHANGELOG}
+    VERSION ${PROJECT_VERSION_NUMERIC}
     DESCRIPTION "MX Live USB Maker - Graphical utility for creating bootable USB drives"
     LANGUAGES CXX
 )
@@ -177,7 +196,7 @@ endif()
 target_compile_definitions(mx-live-usb-maker PRIVATE
     QT_DEPRECATED_WARNINGS
     QT_DISABLE_DEPRECATED_BEFORE=0x060000
-    VERSION="${PROJECT_VERSION}"
+    VERSION="${PROJECT_VERSION_DISPLAY}"
 )
 
 # Release-specific optimizations
