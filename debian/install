@@ -8,5 +8,7 @@ help/*				usr/share/doc/mx-live-usb-maker
 obj-*/*.qm			usr/share/mx-live-usb-maker/locale
 scripts/helper			usr/lib/mx-live-usb-maker
 scripts/live-usb-maker-lib	usr/lib/mx-live-usb-maker
+scripts/arch-live-usb-storage	usr/lib/mx-live-usb-maker
+docs/mx-live-usb-maker.1	usr/share/man/man1
 scripts/org.mxlinux.pkexec.mxlum-helper.policy usr/share/polkit-1/actions
 scripts/org.mxlinux.pkexec.mx-live-usb-maker-lib.policy usr/share/polkit-1/actions

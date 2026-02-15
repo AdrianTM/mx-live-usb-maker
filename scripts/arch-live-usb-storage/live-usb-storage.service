@@ -1,0 +1,14 @@
+[Unit]
+Description=Live USB persistent storage
+After=local-fs.target network-pre.target
+ConditionVirtualization=!vm
+ConditionPathExists=/run/archiso
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/live-usb-storage start
+ExecStop=/usr/bin/live-usb-storage stop
+
+[Install]
+WantedBy=multi-user.target

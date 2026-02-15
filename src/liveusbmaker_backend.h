@@ -93,6 +93,7 @@ private:
     bool installArchIsoBootloader(QString *error) const;
     bool updateUuids(QString *error);
     bool updateArchIsoBootConfig(QString *error) const;
+    bool setupArchLiveUsbStorage();
     bool writeDataUuid(QString *error);
     bool fixUefiMemtest(QString *error);
 

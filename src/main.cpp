@@ -61,15 +61,31 @@ int main(int argc, char *argv[])
         qputenv("HOME", SystemPaths::ROOT_HOME.toUtf8());
     }
     QApplication::setApplicationVersion(VERSION);
+    QApplication::setDesktopFileName("mx-live-usb-maker");
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QObject::tr("Program for creating a live-usb from an iso-file, another live-usb, "
-                                                 "a live-cd/dvd, or a running live system."));
+    parser.setApplicationDescription(
+        QObject::tr("Program for creating a live-usb from an iso-file, another live-usb, "
+                    "a live-cd/dvd, or a running live system."));
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument(QObject::tr("filename"), QObject::tr("Name of .iso file to open"),
                                  QObject::tr("[filename]"));
-    parser.process(app);
+    parser.parse(app.arguments());
+    if (parser.isSet("help")) {
+        QTextStream out(stdout);
+        out << parser.helpText()
+            << "\nKernel Boot Options (Live-usb-storage):\n"
+            << "  nostore        Persistently disable storage (creates a flag on the device).\n"
+            << "                 Storage stays disabled until dostore is used.\n"
+            << "  dostore        Re-enable storage by removing the persistent nostore flag.\n"
+            << "  disablestore   Disable storage for the current boot session only.\n";
+        return 0;
+    }
+    if (parser.isSet("version")) {
+        QTextStream(stdout) << QApplication::applicationName() << ' ' << QApplication::applicationVersion() << '\n';
+        return 0;
+    }
 
     QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
 

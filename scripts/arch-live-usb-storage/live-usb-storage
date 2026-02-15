@@ -1,0 +1,244 @@
+#!/bin/bash
+
+# Live USB persistent storage for Arch live USBs
+# Remounts boot device RW and creates ~/Live-usb-storage symlinks
+#
+# Kernel command line options:
+#   nostore      - Persistently disable storage (creates state/nostore flag on boot device)
+#   dostore      - Re-enable storage (removes the state/nostore flag)
+#   disablestore - Disable storage for this boot session only
+#
+# Also works with copytoram: if the boot device was unmounted, re-mounts it by UUID.
+
+STORAGE_DIR=Live-usb-storage
+STATE_DIR=arch/state
+BOOT_MP=/run/archiso/bootmnt
+
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
+
+main() {
+    case ${1:-} in
+        start) do_start ;;
+         stop) do_stop  ;;
+            *) echo "Usage: $0 {start|stop}" >&2; exit 1 ;;
+    esac
+}
+
+# --------------------------------------------------------------------------
+# Read kernel command line options
+# --------------------------------------------------------------------------
+cmdline_has() {
+    grep -qw "$1" /proc/cmdline
+}
+
+# --------------------------------------------------------------------------
+# Start
+# --------------------------------------------------------------------------
+do_start() {
+    # disablestore: skip entirely for this session
+    if cmdline_has disablestore; then
+        echo "disablestore: storage disabled for this session" >&2
+        return
+    fi
+
+    # Ensure boot device is mounted (handles copytoram case)
+    if ! ensure_boot_mounted; then
+        echo "Boot device not available, skipping storage" >&2
+        return
+    fi
+
+    # Remount boot device read-write
+    if ! remount_rw; then
+        echo "Could not remount $BOOT_MP read-write, skipping" >&2
+        return
+    fi
+
+    # Check filesystem is suitable (not ISO9660/UDF)
+    local fstype
+    fstype=$(findmnt -no FSTYPE "$BOOT_MP" 2>/dev/null)
+    case $fstype in
+        iso9660|udf)
+            echo "Boot device is $fstype (read-only media), skipping storage" >&2
+            return
+            ;;
+    esac
+
+    # Handle nostore/dostore persistent flags
+    mkdir -p "$BOOT_MP/$STATE_DIR"
+    if cmdline_has dostore; then
+        rm -f "$BOOT_MP/$STATE_DIR/nostore"
+        echo "dostore: removed persistent nostore flag"
+    fi
+    if cmdline_has nostore; then
+        touch "$BOOT_MP/$STATE_DIR/nostore"
+        echo "nostore: storage persistently disabled"
+        return
+    fi
+    if [ -f "$BOOT_MP/$STATE_DIR/nostore" ]; then
+        echo "Storage persistently disabled (use 'dostore' boot option to re-enable)" >&2
+        return
+    fi
+
+    # Create the storage directory on the boot partition
+    mkdir -p "$BOOT_MP/$STORAGE_DIR"
+
+    # Fix ownership on POSIX filesystems
+    case $fstype in
+        vfat|ntfs*|exfat) ;; # permissions handled by mount options
+        *) chmod 1777 "$BOOT_MP/$STORAGE_DIR" ;; # sticky bit like /tmp
+    esac
+
+    # Create symlinks for each user
+    local user
+    for user in $(get_home_users); do
+        create_user_symlink "$user" "$fstype"
+    done
+}
+
+# --------------------------------------------------------------------------
+# Stop
+# --------------------------------------------------------------------------
+do_stop() {
+    local dir
+    for dir in /root $(get_home_dirs); do
+        local link="$dir/$STORAGE_DIR"
+        [ -L "$link" ] && rm -f "$link"
+    done
+}
+
+# --------------------------------------------------------------------------
+# Ensure boot device is mounted (re-mount if copytoram unmounted it)
+# --------------------------------------------------------------------------
+ensure_boot_mounted() {
+    if mountpoint -q "$BOOT_MP"; then
+        return 0
+    fi
+
+    # Boot device was unmounted (likely copytoram). Try to re-mount by UUID.
+    # The archiso boot device info is in /run/archiso/bootdevice or cmdline.
+    local boot_dev=""
+
+    # Method 1: check if archiso left a hint
+    if [ -f /run/archiso/bootdevice ]; then
+        boot_dev=$(cat /run/archiso/bootdevice)
+    fi
+
+    # Method 2: parse archisodevice= or archisolabel= from cmdline
+    if [ -z "$boot_dev" ]; then
+        local label
+        label=$(sed -n 's/.*archisolabel=\([^ ]*\).*/\1/p' /proc/cmdline)
+        if [ -n "$label" ]; then
+            boot_dev="/dev/disk/by-label/$label"
+        fi
+    fi
+    if [ -z "$boot_dev" ]; then
+        local uuid
+        uuid=$(sed -n 's/.*archisouuid=\([^ ]*\).*/\1/p' /proc/cmdline)
+        if [ -n "$uuid" ]; then
+            boot_dev="/dev/disk/by-uuid/$uuid"
+        fi
+    fi
+    if [ -z "$boot_dev" ]; then
+        local dev
+        dev=$(sed -n 's/.*archisodevice=\([^ ]*\).*/\1/p' /proc/cmdline)
+        if [ -n "$dev" ]; then
+            boot_dev="$dev"
+        fi
+    fi
+
+    if [ -z "$boot_dev" ] || [ ! -e "$boot_dev" ]; then
+        return 1
+    fi
+
+    echo "Re-mounting boot device $boot_dev at $BOOT_MP (was unmounted by copytoram)"
+    mkdir -p "$BOOT_MP"
+    mount "$boot_dev" "$BOOT_MP" && return 0
+    return 1
+}
+
+# --------------------------------------------------------------------------
+# Remount boot device read-write
+# --------------------------------------------------------------------------
+remount_rw() {
+    # Already writable?
+    if touch "$BOOT_MP/.rw-test-$$" 2>/dev/null; then
+        rm -f "$BOOT_MP/.rw-test-$$"
+        return 0
+    fi
+
+    local fstype
+    fstype=$(findmnt -no FSTYPE "$BOOT_MP" 2>/dev/null)
+
+    case $fstype in
+        vfat)
+            # Remount with user-friendly ownership: live user (UID 1000) owns files
+            mount -o "remount,rw,uid=1000,gid=1000,umask=0022" "$BOOT_MP"
+            ;;
+        *)
+            mount -o remount,rw "$BOOT_MP"
+            ;;
+    esac
+}
+
+# --------------------------------------------------------------------------
+# Create symlink for a user
+# --------------------------------------------------------------------------
+create_user_symlink() {
+    local user=$1
+    local fstype=$2
+    local ent
+    ent=$(getent passwd "$user") || return
+    local home uid gid
+    home=$(echo "$ent" | cut -d: -f6)
+    uid=$(echo "$ent" | cut -d: -f3)
+    gid=$(echo "$ent" | cut -d: -f4)
+
+    [ -d "$home" ] || return
+
+    local link="$home/$STORAGE_DIR"
+
+    # Per-user subdirectory on the storage
+    local user_store="$BOOT_MP/$STORAGE_DIR/$user"
+    mkdir -p "$user_store"
+
+    case $fstype in
+        vfat|ntfs*|exfat) ;; # can't chown
+        *) chown "$uid:$gid" "$user_store" ;;
+    esac
+
+    # Don't clobber existing file/directory/symlink
+    if [ -e "$link" ] || [ -L "$link" ]; then
+        if [ -L "$link" ] && [ "$(readlink "$link")" = "$user_store" ]; then
+            return # already set up
+        fi
+        echo "Skipping $link: already exists" >&2
+        return
+    fi
+
+    ln -s "$user_store" "$link"
+    chown -h "$uid:$gid" "$link"
+    echo "Created $link -> $user_store"
+}
+
+# --------------------------------------------------------------------------
+# User enumeration helpers
+# --------------------------------------------------------------------------
+get_home_users() {
+    while IFS=: read -r name _ uid _ _ home shell; do
+        [ "$uid" -ge 1000 ] 2>/dev/null || continue
+        case "$home" in /home/*) ;; *) continue ;; esac
+        case "$shell" in */bin/*sh) ;; *) continue ;; esac
+        echo "$name"
+    done < /etc/passwd
+}
+
+get_home_dirs() {
+    while IFS=: read -r _ _ uid _ _ home shell; do
+        [ "$uid" -ge 1000 ] 2>/dev/null || continue
+        case "$home" in /home/*) ;; *) continue ;; esac
+        case "$shell" in */bin/*sh) ;; *) continue ;; esac
+        echo "$home"
+    done < /etc/passwd
+}
+
+main "$@"

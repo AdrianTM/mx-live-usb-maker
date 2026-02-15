@@ -20,6 +20,7 @@ depends=(
     'grub'
     'cryptsetup'
     'util-linux'
+    'libarchive'
 )
 makedepends=('cmake' 'ninja' 'qt6-tools')
 source=()
@@ -51,6 +52,14 @@ package() {
     install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker"
     install -Dm755 scripts/helper "${pkgdir}/usr/lib/mx-live-usb-maker/helper"
 
+    install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage"
+    install -Dm755 scripts/arch-live-usb-storage/inject-live-usb-storage.sh \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/inject-live-usb-storage.sh"
+    install -Dm755 scripts/arch-live-usb-storage/live-usb-storage \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/live-usb-storage"
+    install -Dm644 scripts/arch-live-usb-storage/live-usb-storage.service \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/live-usb-storage.service"
+
     install -Dm644 scripts/org.mxlinux.pkexec.mxlum-helper.policy \
         "${pkgdir}/usr/share/polkit-1/actions/org.mxlinux.pkexec.mxlum-helper.policy"
 
@@ -59,6 +68,8 @@ package() {
     install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/mx-live-usb-maker.png"
     install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/pixmaps/mx-live-usb-maker.png"
     install -Dm644 mx-live-usb-maker.svg "${pkgdir}/usr/share/icons/hicolor/scalable/apps/mx-live-usb-maker.svg"
+
+    install -Dm644 docs/mx-live-usb-maker.1 "${pkgdir}/usr/share/man/man1/mx-live-usb-maker.1"
 
     install -dm755 "${pkgdir}/usr/share/doc/mx-live-usb-maker"
     install -Dm644 authors.txt "${pkgdir}/usr/share/doc/mx-live-usb-maker/authors.txt"

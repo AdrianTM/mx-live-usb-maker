@@ -1,0 +1,109 @@
+.TH MX-LIVE-USB-MAKER 1 "2026-02-15" "mx-live-usb-maker" "User Commands"
+.SH NAME
+mx-live-usb-maker \- create bootable live USB drives from ISO files
+.SH SYNOPSIS
+.B mx-live-usb-maker
+.RI [ filename ]
+.SH DESCRIPTION
+.B mx-live-usb-maker
+is a graphical utility for creating bootable live USB drives from ISO files,
+another live USB, a live CD/DVD, or a running live system.
+It supports MX Linux, Arch Linux, and other Linux distributions.
+.PP
+For Arch-based ISOs, the tool automatically sets up
+.B Live\-usb\-storage
+\(em a persistent storage area on the USB drive that survives reboots.
+A
+.I ~/Live\-usb\-storage
+symlink is created for each user, pointing to a per-user directory on the
+boot partition.
+.SH OPTIONS
+.TP
+.I filename
+Path to an .iso file to open on startup.
+.TP
+.B \-h\fR, \fB\-\-help
+Display help text and exit.
+.TP
+.B \-v\fR, \fB\-\-version
+Display version information and exit.
+.SH LIVE-USB-STORAGE
+When an Arch-based ISO is written to a USB drive, persistent storage is
+configured automatically.
+At boot time a systemd service remounts the boot partition read\-write
+and creates a
+.I Live\-usb\-storage
+directory on it.
+Each user with UID >= 1000 gets a symlink at
+.IR ~/Live\-usb\-storage .
+.PP
+On FAT32 partitions the boot device is remounted with
+.BR uid=1000,gid=1000
+so the live user can write to it directly.
+On POSIX filesystems (ext4, etc.) per-user directories are created with
+proper ownership.
+.SS Kernel Boot Options
+The following options can be added to the kernel command line (e.g.\& via
+the bootloader menu) to control Live\-usb\-storage behaviour:
+.TP
+.B nostore
+Persistently disable storage.
+Creates an
+.I arch/state/nostore
+flag file on the boot device.
+Storage will remain disabled on subsequent boots until
+.B dostore
+is used.
+.TP
+.B dostore
+Re-enable storage by removing the persistent
+.I nostore
+flag file.
+.TP
+.B disablestore
+Disable storage for the current boot session only.
+No persistent state is changed; storage will be active again on the next
+boot.
+.SS copytoram Support
+When
+.B copytoram
+is used, Arch\(cqs initramfs loads the squashfs image into RAM and unmounts
+the boot device.
+The Live\-usb\-storage service detects this and re-mounts the boot device
+by its label or UUID (parsed from
+.BR archisolabel= / archisouuid= / archisodevice=
+kernel parameters), so persistent storage continues to work even when
+running from RAM.
+.SH FILES
+.TP
+.I /run/archiso/bootmnt
+Mount point for the Arch live USB boot partition.
+.TP
+.I /run/archiso/bootmnt/Live\-usb\-storage/
+Persistent storage directory on the boot partition.
+.TP
+.I /run/archiso/bootmnt/arch/state/nostore
+Flag file that persistently disables storage.
+Created by the
+.B nostore
+boot option, removed by
+.B dostore.
+.TP
+.I /usr/local/bin/live\-usb\-storage
+The storage setup script, injected into the live system at boot.
+.TP
+.I /etc/systemd/system/live\-usb\-storage.service
+Systemd service unit that runs the storage setup script.
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+Error (missing dependencies, permission denied, etc.).
+.SH AUTHORS
+Adrian and the MX Linux team <http://mxlinux.org>.
+.SH SEE ALSO
+.BR archiso (1),
+.BR syslinux (1),
+.BR grub-install (1)

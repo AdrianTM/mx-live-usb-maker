@@ -214,6 +214,9 @@ bool LiveUsbMakerBackend::runNormal(QString *error)
     }
 
     if (archIso) {
+        if (!setupArchLiveUsbStorage()) {
+            logWarn(QStringLiteral("Could not set up live-usb-storage for Arch ISO."));
+        }
         if (!updateArchIsoBootConfig(error)) {
             resumeAutomount();
             return false;
@@ -1104,6 +1107,20 @@ bool LiveUsbMakerBackend::installArchIsoBootloader(QString *error) const
                        QStringLiteral("--boot-directory=%1").arg(bootDir),
                        layout.drive},
                       error);
+}
+
+bool LiveUsbMakerBackend::setupArchLiveUsbStorage()
+{
+    logLine(QStringLiteral("Setting up live-usb-storage for Arch ISO."));
+    const QString scriptDir = QStringLiteral("/usr/lib/mx-live-usb-maker/arch-live-usb-storage");
+    const QString script = QDir(scriptDir).filePath(QStringLiteral("inject-live-usb-storage.sh"));
+    if (!QFileInfo::exists(script)) {
+        logWarn(QStringLiteral("inject-live-usb-storage.sh not found at %1").arg(script));
+        return false;
+    }
+    return runCommandShell(QStringLiteral("%1 %2")
+                               .arg(ShellUtils::quote(script), ShellUtils::quote(paths.mainDir)),
+                           nullptr);
 }
 
 bool LiveUsbMakerBackend::installBootloader(QString *error)
