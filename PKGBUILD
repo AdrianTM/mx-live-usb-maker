@@ -31,11 +31,16 @@ build() {
 
     rm -rf build
 
+    # Use latest git tag for version instead of debian/changelog
+    local _ver
+    _ver=$(git -C "${startdir}" describe --tags --abbrev=0 2>/dev/null || echo "${pkgver}")
+
     cmake -G Ninja \
         -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DPROJECT_VERSION_OVERRIDE="${_ver}"
 
     cmake --build build --parallel
 }
