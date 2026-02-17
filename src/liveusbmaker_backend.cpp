@@ -866,11 +866,14 @@ bool LiveUsbMakerBackend::copyUefi(QString *error)
 
 bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
 {
-    const QString md5Root = paths.mainDir;
-    logLine(QStringLiteral("Checking md5 files if present."));
+    const QString checksumRoot = paths.mainDir;
+    logLine(QStringLiteral("Checking checksum files if present."));
     QString output;
     if (!runCommandOutput(QStringLiteral("find"),
-                          {md5Root, QStringLiteral("-maxdepth"), QStringLiteral("4"), QStringLiteral("-name"), QStringLiteral("*.md5")},
+                          {checksumRoot, QStringLiteral("-maxdepth"), QStringLiteral("4"),
+                           QStringLiteral("("), QStringLiteral("-name"), QStringLiteral("*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("*.sha512"),
+                           QStringLiteral(")")},
                           &output, error)) {
         return false;
     }
@@ -882,23 +885,23 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
     for (const QString &file : files) {
         const QString dir = QFileInfo(file).path();
         const QString name = QFileInfo(file).fileName();
-        const QString base = name;
+        const bool isSha512 = name.endsWith(QStringLiteral(".sha512"));
+        const QString sumCmd = isSha512 ? QStringLiteral("sha512sum") : QStringLiteral("md5sum");
+        const QString label = isSha512 ? QStringLiteral("SHA512") : QStringLiteral("MD5");
         QString result;
         if (!runCommandOutput(QStringLiteral("bash"),
                               {QStringLiteral("-c"),
-                               QStringLiteral("cd %1 && md5sum -c %2").arg(dir, name)},
+                               QStringLiteral("cd %1 && %2 -c %3").arg(dir, sumCmd, name)},
                               &result, error)) {
-            logLine(QStringLiteral("MD5 check failed for %1 in %2").arg(name, dir));
-            const QString bare = name;
-            if (bare.startsWith(QStringLiteral("linuxfs")) || bare.startsWith(QStringLiteral("initrd")) ||
-                bare.startsWith(QStringLiteral("vmlinuz"))) {
-                logLine(QStringLiteral("Critical MD5 failure for %1, continuing anyway").arg(bare));
-                // For now, don't fail on critical MD5 checks as they may not be applicable after copy
+            logLine(QStringLiteral("%1 check failed for %2 in %3").arg(label, name, dir));
+            if (name.startsWith(QStringLiteral("linuxfs")) || name.startsWith(QStringLiteral("initrd")) ||
+                name.startsWith(QStringLiteral("vmlinuz")) || name.startsWith(QStringLiteral("airootfs"))) {
+                logLine(QStringLiteral("Critical %1 failure for %2, continuing anyway").arg(label, name));
             } else {
-                logLine(QStringLiteral("Non-critical MD5 failure for %1").arg(bare));
+                logLine(QStringLiteral("Non-critical %1 failure for %2").arg(label, name));
             }
         } else {
-            logLine(QStringLiteral("MD5 check passed for %1").arg(name));
+            logLine(QStringLiteral("%1 check passed for %2").arg(label, name));
         }
     }
     return true;
