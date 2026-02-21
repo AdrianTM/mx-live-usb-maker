@@ -869,10 +869,22 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
     const QString checksumRoot = paths.mainDir;
     logLine(QStringLiteral("Checking checksum files if present."));
     QString output;
+    // Only check checksums for critical boot/system files
     if (!runCommandOutput(QStringLiteral("find"),
                           {checksumRoot, QStringLiteral("-maxdepth"), QStringLiteral("4"),
-                           QStringLiteral("("), QStringLiteral("-name"), QStringLiteral("*.md5"),
-                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("*.sha512"),
+                           QStringLiteral("("),
+                           QStringLiteral("-name"), QStringLiteral("vmlinuz*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("vmlinuz*.sha512"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("initrd*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("initrd*.sha512"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("initramfs*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("initramfs*.sha512"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("airootfs*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("airootfs*.sha512"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("linuxfs*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("linuxfs*.sha512"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("squashfs*.md5"),
+                           QStringLiteral("-o"), QStringLiteral("-name"), QStringLiteral("squashfs*.sha512"),
                            QStringLiteral(")")},
                           &output, error)) {
         return false;
@@ -894,12 +906,7 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
                                QStringLiteral("cd %1 && %2 -c %3").arg(dir, sumCmd, name)},
                               &result, error)) {
             logLine(QStringLiteral("%1 check failed for %2 in %3").arg(label, name, dir));
-            if (name.startsWith(QStringLiteral("linuxfs")) || name.startsWith(QStringLiteral("initrd")) ||
-                name.startsWith(QStringLiteral("vmlinuz")) || name.startsWith(QStringLiteral("airootfs"))) {
-                logLine(QStringLiteral("Critical %1 failure for %2, continuing anyway").arg(label, name));
-            } else {
-                logLine(QStringLiteral("Non-critical %1 failure for %2").arg(label, name));
-            }
+            logLine(QStringLiteral("Critical %1 failure for %2, continuing anyway").arg(label, name));
         } else {
             logLine(QStringLiteral("%1 check passed for %2").arg(label, name));
         }
