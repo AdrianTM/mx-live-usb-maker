@@ -494,9 +494,9 @@ void MainWindow::cleanup()
 QStringList MainWindow::buildUsbList()
 {
     const QString drives = cmd.getOut("lsblk --nodeps -nlo NAME,SIZE,MODEL,VENDOR -I 3,8,22,179,259", Cmd::QuietMode::Yes).trimmed();
-    // Validate that lsblk output has expected format (4 columns: NAME, SIZE, MODEL, VENDOR)
-    if (!ValidationUtils::validateLsblkColumns(drives, 4)) {
-        qDebug() << "Invalid lsblk output format - expected at least 4 columns";
+    // Validate that lsblk output has at least NAME and SIZE columns (MODEL/VENDOR can be empty)
+    if (!ValidationUtils::validateLsblkColumns(drives, 2)) {
+        qDebug() << "Invalid lsblk output format - expected at least 2 columns";
         return {};
     }
     return removeUnsuitable(drives.split('\n'));
