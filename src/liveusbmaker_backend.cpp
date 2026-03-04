@@ -960,8 +960,8 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
                     const QString isoLabel = match.captured(1);
                     if (!isoLabel.isEmpty()) {
                         // Set the label on the main partition
-                        runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), isoLabel.left(16), layout.mainDev}, nullptr, true);
-                        mainLabel = isoLabel;
+                        mainLabel = isoLabel.left(16);
+                        runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), mainLabel, layout.mainDev}, nullptr, true);
                     }
                 }
 
@@ -973,8 +973,8 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
                         const QString isoLabel = match.captured(1);
                         if (!isoLabel.isEmpty()) {
                             // Set the label on the main partition
-                            runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), isoLabel.left(16), layout.mainDev}, nullptr, true);
-                            mainLabel = isoLabel;
+                            mainLabel = isoLabel.left(16);
+                            runCommand(QStringLiteral("tune2fs"), {QStringLiteral("-L"), mainLabel, layout.mainDev}, nullptr, true);
                             logLine(QStringLiteral("Set partition label to: %1").arg(mainLabel));
                         }
                     }
