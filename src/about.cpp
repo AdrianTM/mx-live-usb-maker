@@ -136,7 +136,7 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
 
         QProcess changelogProc;
         changelogProc.start(
-            "zless",
+            "zcat",
             {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/changelog.gz"},
             QIODevice::ReadOnly);
         changelogProc.waitForFinished();
