@@ -20,48 +20,95 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 #include <QApplication>
+#include <QDialog>
+#include <QFile>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QProcess>
 #include <QPushButton>
-#include <QStandardPaths>
+#include <QTextBrowser>
 #include <QTextEdit>
+#include <QUrl>
 #include <QVBoxLayout>
-
-#include <unistd.h>
 
 #include "about.h"
 #include "common.h"
 
-// Display document as normal user when run as root
-void displayDoc(const QString &url, const QString &title)
+namespace
 {
-    const bool isRunningAsRoot = (getuid() == 0);
-    const QString originalHome = isRunningAsRoot ? startingHome : QString();
-
-    if (isRunningAsRoot) {
-        qputenv("HOME", originalHome.toUtf8()); // Use original home for theming purposes
-    }
-
-    // Prefer mx-viewer, otherwise use xdg-open (use runuser to run that as logname user)
-    const auto viewerExecutable = QStandardPaths::findExecutable("mx-viewer");
-    if (!viewerExecutable.isEmpty()) {
-        QProcess::startDetached(viewerExecutable, {url, title});
+void setupDocDialog(QDialog &dialog, QWidget *content, const QString &title, bool largeWindow)
+{
+    dialog.setWindowTitle(title);
+    if (largeWindow) {
+        dialog.setWindowFlags(Qt::Window);
+        dialog.resize(1000, 800);
     } else {
-        if (getuid() != 0) {
-            QProcess::startDetached("xdg-open", {url});
-        } else {
-            QProcess proc;
-            proc.start("logname", {}, QIODevice::ReadOnly);
-            proc.waitForFinished();
-            const QString user = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
-            QProcess::startDetached("runuser", {"-u", user, "--", "xdg-open", url});
-        }
+        dialog.resize(700, 600);
     }
 
-    if (isRunningAsRoot) {
-        qputenv("HOME", SystemPaths::ROOT_HOME.toUtf8());
+    auto *btnClose = new QPushButton(QObject::tr("&Close"), &dialog);
+    btnClose->setIcon(QIcon::fromTheme("window-close"));
+    QObject::connect(btnClose, &QPushButton::clicked, &dialog, &QDialog::close);
+
+    auto *layout = new QVBoxLayout(&dialog);
+    layout->addWidget(content);
+    layout->addWidget(btnClose);
+}
+
+[[nodiscard]] bool isHtmlDoc(const QString &path)
+{
+    const QString suffix = QFileInfo(path).suffix().toLower();
+    return suffix == "html" || suffix == "htm" || suffix == "xhtml";
+}
+
+void showHtmlDoc(const QString &path, const QString &title, bool largeWindow)
+{
+    QDialog dialog;
+    auto *browser = new QTextBrowser(&dialog);
+    browser->setOpenExternalLinks(true);
+    setupDocDialog(dialog, browser, title, largeWindow);
+
+    const QUrl sourceUrl = QUrl::fromLocalFile(path);
+    if (QFileInfo::exists(path)) {
+        browser->setSource(sourceUrl);
+    } else {
+        browser->setText(QObject::tr("Could not load %1").arg(path));
     }
+
+    dialog.exec();
+}
+
+void showPlainTextDoc(const QString &path, const QString &title, bool largeWindow)
+{
+    QDialog dialog;
+    auto *text = new QTextEdit(&dialog);
+    text->setReadOnly(true);
+    setupDocDialog(dialog, text, title, largeWindow);
+
+    QFile file(path);
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        text->setPlainText(QString::fromUtf8(file.readAll()));
+    } else {
+        text->setPlainText(QObject::tr("Could not load %1").arg(path));
+    }
+
+    dialog.exec();
+}
+} // namespace
+
+void displayDoc(const QString &path, const QString &title, bool largeWindow)
+{
+    if (isHtmlDoc(path)) {
+        showHtmlDoc(path, title, largeWindow);
+        return;
+    }
+
+    showPlainTextDoc(path, title, largeWindow);
+}
+
+void displayHelpDoc(const QString &path, const QString &title)
+{
+    displayDoc(path, title, true);
 }
 
 void displayAboutMsgBox(const QString &title, const QString &message, const QString &licenseUrl,
@@ -91,7 +138,8 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
         QProcess changelogProc;
         changelogProc.start(
             "zless",
-            {DocPaths::SHARE_DOC + QStringLiteral("/") + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + QStringLiteral("/changelog.gz")},
+            {DocPaths::SHARE_DOC + QStringLiteral("/") + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
+                 + QStringLiteral("/changelog.gz")},
             QIODevice::ReadOnly);
         changelogProc.waitForFinished();
         textEdit->setText(changelogProc.readAllStandardOutput());

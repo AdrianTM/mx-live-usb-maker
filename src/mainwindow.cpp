@@ -839,7 +839,7 @@ void MainWindow::pushAboutClicked()
 void MainWindow::pushHelpClicked()
 {
     QString url = "/usr/share/doc/mx-live-usb-maker/mx-live-usb-maker.html";
-    displayDoc(url, tr("%1 Help").arg(windowTitle()));
+    displayHelpDoc(url, tr("%1 Help").arg(windowTitle()));
 }
 
 void MainWindow::pushSelectSourceClicked()
