@@ -696,8 +696,8 @@ void MainWindow::pushAbout_clicked()
 
 void MainWindow::pushHelp_clicked()
 {
-    QString url = "/usr/share/doc/mx-live-usb-maker/mx-live-usb-maker.html";
-    displayHelpDoc(url, tr("%1 Help").arg(windowTitle()));
+    const QString helpPath = "/usr/share/doc/mx-live-usb-maker/mx-live-usb-maker.html";
+    displayHelpDoc(helpPath, tr("%1 Help").arg(windowTitle()));
 }
 
 void MainWindow::pushSelectSource_clicked()

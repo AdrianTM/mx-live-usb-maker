@@ -19,8 +19,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
-#include "about.h"
-
 #include <QApplication>
 #include <QDialog>
 #include <QFile>
@@ -32,6 +30,8 @@
 #include <QTextEdit>
 #include <QUrl>
 #include <QVBoxLayout>
+
+#include "about.h"
 
 namespace
 {
@@ -110,7 +110,7 @@ void displayHelpDoc(const QString &path, const QString &title)
     displayDoc(path, title, true);
 }
 
-void displayAboutMsgBox(const QString &title, const QString &message, const QString &licenceUrl,
+void displayAboutMsgBox(const QString &title, const QString &message, const QString &licensePath,
                         const QString &licenseTitle, QWidget *parent)
 {
     const int dialogWidth = 600;
@@ -125,7 +125,7 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        displayDoc(licenceUrl, licenseTitle);
+        displayDoc(licensePath, licenseTitle);
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog changelogDialog(parent);
         changelogDialog.setWindowTitle(QObject::tr("Changelog"));
