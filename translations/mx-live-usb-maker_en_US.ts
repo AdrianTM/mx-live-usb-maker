@@ -1,20 +1,20 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="he_IL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en_US">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>Program_Name</source>
-        <translation type="unfinished"/>
+        <translation>Program_Name</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="46"/>
         <source>Quit application</source>
-        <translation>יציאה מהתוכנה</translation>
+        <translation>Quit application</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="49"/>
         <source>Close</source>
-        <translation>סגירה</translation>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="55"/>
@@ -24,12 +24,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="87"/>
         <source>Display help </source>
-        <translation>הצגת עזרה</translation>
+        <translation>Display help </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <source>Help</source>
-        <translation>עזרה</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="96"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../src/mainwindow.ui" line="112"/>
         <source>Back</source>
-        <translation>אחורה</translation>
+        <translation>Back</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="169"/>
         <source>Next</source>
-        <translation>קדימה</translation>
+        <translation>Next</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="194"/>
         <source>About this application</source>
-        <translation>על אודות יישום זה</translation>
+        <translation>About this application</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <source>About...</source>
-        <translation>על אודות...</translation>
+        <translation>About...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="203"/>
@@ -64,94 +64,94 @@
     <message>
         <location filename="../src/mainwindow.ui" line="219"/>
         <source>View Log</source>
-        <translation>הצגת היומן</translation>
+        <translation>View Log</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="745"/>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <location filename="../src/mainwindow.cpp" line="845"/>
         <source>Select ISO</source>
-        <translation>בחירת קובץ ISO</translation>
+        <translation>Select ISO</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select Target USB Device&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="247"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select ISO file&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Advanced Options</source>
-        <translation>אפשרויות מתקדמות</translation>
+        <translation>Advanced Options</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <source>Make the ext4 filesystem even if one exists</source>
-        <translation type="unfinished"/>
+        <translation>Make the ext4 filesystem even if one exists</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="382"/>
         <source>Save the original boot directory when updating a live-usb</source>
-        <translation type="unfinished"/>
+        <translation>Save the original boot directory when updating a live-usb</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="389"/>
         <source>Use gpt partitioning instead of msdos</source>
-        <translation type="unfinished"/>
+        <translation>Use gpt partitioning instead of msdos</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="392"/>
         <source>GPT partitioning</source>
-        <translation type="unfinished"/>
+        <translation>GPT partitioning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="399"/>
         <source>Update (only update an existing live-usb)</source>
-        <translation type="unfinished"/>
+        <translation>Update (only update an existing live-usb)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <source>Don&apos;t replace syslinux files</source>
-        <translation type="unfinished"/>
+        <translation>Don&apos;t replace syslinux files</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="409"/>
         <source>Keep syslinux files</source>
-        <translation type="unfinished"/>
+        <translation>Keep syslinux files</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="416"/>
         <source>Ignore USB/removable check</source>
-        <translation type="unfinished"/>
+        <translation>Ignore USB/removable check</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <source>Temporarily disable automounting</source>
-        <translation type="unfinished"/>
+        <translation>Temporarily disable automounting</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
         <source>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</source>
-        <translation type="unfinished"/>
+        <translation>Set pmbr_boot disk flag (won&apos;t boot via UEFI)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="440"/>
         <source>Don&apos;t use fuseiso to mount iso files</source>
-        <translation type="unfinished"/>
+        <translation>Don&apos;t use fuseiso to mount iso files</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="288"/>
         <source>Size of ESP (uefi) partition:</source>
-        <translation type="unfinished"/>
+        <translation>Size of ESP (uefi) partition:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="353"/>
         <source>Verbosity (less to more):</source>
-        <translation type="unfinished"/>
+        <translation>Verbosity (less to more):</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="329"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="478"/>
         <source>Data partition format type</source>
-        <translation type="unfinished"/>
+        <translation>Data partition format type</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -181,125 +181,125 @@
     <message>
         <location filename="../src/mainwindow.ui" line="281"/>
         <source>Make separate data partition (percent)</source>
-        <translation type="unfinished"/>
+        <translation>Make separate data partition (percent)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="768"/>
         <source>Refresh drive list</source>
-        <translation type="unfinished"/>
+        <translation>Refresh drive list</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="755"/>
         <location filename="../src/mainwindow.cpp" line="738"/>
         <source>Show advanced options</source>
-        <translation>הצגת אפשרויות מתקדמות</translation>
+        <translation>Show advanced options</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="787"/>
         <source>Mode</source>
-        <translation>מצב</translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="808"/>
         <source>Full-featured mode - writable Li&amp;veUSB</source>
-        <translation type="unfinished"/>
+        <translation>Full-featured mode - writable Li&amp;veUSB</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="818"/>
         <source>Read-only, cannot be used with persistency</source>
-        <translation type="unfinished"/>
+        <translation>Read-only, cannot be used with persistency</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="821"/>
         <source>Image &amp;mode - read-only LiveUSB (dd)</source>
-        <translation type="unfinished"/>
+        <translation>Image &amp;mode - read-only LiveUSB (dd)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="840"/>
         <source>For distros other than antiX/MX use image mode (dd).</source>
-        <translation type="unfinished"/>
+        <translation>For distros other than antiX/MX use image mode (dd).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
         <source>Options</source>
-        <translation>אפשרויות</translation>
+        <translation>Options</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="607"/>
         <source>Percent of USB-device to use:</source>
-        <translation type="unfinished"/>
+        <translation>Percent of USB-device to use:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="620"/>
         <source>Label ext partition:</source>
-        <translation type="unfinished"/>
+        <translation>Label ext partition:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="642"/>
         <source>Don&apos;t run commands that affect the usb device</source>
-        <translation type="unfinished"/>
+        <translation>Don&apos;t run commands that affect the usb device</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="645"/>
         <source>Dry run (no change to system)</source>
-        <translation type="unfinished"/>
+        <translation>Dry run (no change to system)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="652"/>
         <source>clone from a mounted live-usb or iso-file.</source>
-        <translation type="unfinished"/>
+        <translation>clone from a mounted live-usb or iso-file.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="655"/>
         <source>Clone a mounted live system</source>
-        <translation type="unfinished"/>
+        <translation>Clone a mounted live system</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="662"/>
         <source>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</source>
-        <translation type="unfinished"/>
+        <translation>Set up to boot from an encrypted partition, will prompt for pass phrase on first boot</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="665"/>
         <source>Encrypt</source>
-        <translation>הצפנה</translation>
+        <translation>Encrypt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="672"/>
         <source>Clone running live system</source>
-        <translation type="unfinished"/>
+        <translation>Clone running live system</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="576"/>
         <location filename="../src/mainwindow.cpp" line="723"/>
         <location filename="../src/mainwindow.cpp" line="951"/>
         <source>Failure</source>
-        <translation>כשל</translation>
+        <translation>Failure</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="160"/>
         <source>Source and destination are on the same device, please select again.</source>
-        <translation type="unfinished"/>
+        <translation>Source and destination are on the same device, please select again.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Source Error</source>
-        <translation type="unfinished"/>
+        <translation>Source Error</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Could not find the source linuxfs file.</source>
-        <translation type="unfinished"/>
+        <translation>Could not find the source linuxfs file.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?</source>
-        <translation type="unfinished"/>
+        <translation>Warning: The target device (%1) is smaller than the source (%2). The data might not fit. Do you want to continue?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Size Warning</source>
-        <translation type="unfinished"/>
+        <translation>Size Warning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1029"/>
@@ -307,49 +307,54 @@
 
 This may indicate you have selected the wrong device.
 Are you sure you want to proceed?</source>
-        <translation type="unfinished"/>
+        <translation>The target device %1 is larger than %2 GB.
+
+This may indicate you have selected the wrong device.
+Are you sure you want to proceed?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Large Target Device Warning</source>
-        <translation type="unfinished"/>
+        <translation>Large Target Device Warning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Writing %1 using 'dd' command to /dev/%2,
 
 Please wait until the process is completed</source>
-        <translation type="unfinished"/>
+        <translation>Writing %1 using &apos;dd&apos; command to /dev/%2,
+
+Please wait until the process is completed</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="210"/>
         <source>MX Live Usb Maker</source>
-        <translation type="unfinished"/>
+        <translation>MX Live Usb Maker</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="573"/>
         <source>Success</source>
-        <translation>הצלחה</translation>
+        <translation>Success</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="573"/>
         <source>LiveUSB creation successful!</source>
-        <translation>יצירת ה־USB להמחשה הצליחה!</translation>
+        <translation>LiveUSB creation successful!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="576"/>
         <source>Error encountered in the LiveUSB creation process</source>
-        <translation type="unfinished"/>
+        <translation>Error encountered in the LiveUSB creation process</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="642"/>
         <source>Error</source>
-        <translation>שגיאה</translation>
+        <translation>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="642"/>
         <source>Please select a USB device to write to</source>
-        <translation type="unfinished"/>
+        <translation>Please select a USB device to write to</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="648"/>
@@ -358,97 +363,103 @@ Please wait until the process is completed</source>
 Existing data and persistence should remain, but please back up anything important.
 
 Do you wish to continue?</source>
-        <translation type="unfinished"/>
+        <translation>Update mode is selected. The live system on %1 will be updated with the new ISO without reformatting the device.
+
+Existing data and persistence should remain, but please back up anything important.
+
+Do you wish to continue?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>These actions will destroy all data on 
 
 </source>
-        <translation type="unfinished"/>
+        <translation>These actions will destroy all data on 
+
+</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Do you wish to continue?</source>
-        <translation>האם ברצונך להמשיך?</translation>
+        <translation>Do you wish to continue?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="686"/>
         <source>About %1</source>
-        <translation>על אודות %1</translation>
+        <translation>About %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="687"/>
         <source>Version: </source>
-        <translation>גירסה:</translation>
+        <translation>Version: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="689"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"/>
+        <translation>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="692"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>זכויות היוצרים (c) שמורות ל־MX Linux</translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="693"/>
         <source>%1 License</source>
-        <translation>רישיון %1</translation>
+        <translation>%1 License</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <source>%1 Help</source>
-        <translation>עזרה עבור %1</translation>
+        <translation>%1 Help</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="708"/>
         <source>Select an ISO file to write to the USB drive</source>
-        <translation type="unfinished"/>
+        <translation>Select an ISO file to write to the USB drive</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="709"/>
         <source>ISO Files (*.iso);;All Files (*.*)</source>
-        <translation type="unfinished"/>
+        <translation>ISO Files (*.iso);;All Files (*.*)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="714"/>
         <location filename="../src/mainwindow.cpp" line="817"/>
         <source>Select Source Directory</source>
-        <translation type="unfinished"/>
+        <translation>Select Source Directory</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="723"/>
         <source>Could not find linuxfs file</source>
-        <translation type="unfinished"/>
+        <translation>Could not find linuxfs file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="738"/>
         <source>Hide advanced options</source>
-        <translation>הסתרת אפשרויות מתקדמות</translation>
+        <translation>Hide advanced options</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="816"/>
         <location filename="../src/mainwindow.cpp" line="835"/>
         <source>Select Source</source>
-        <translation type="unfinished"/>
+        <translation>Select Source</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="821"/>
         <location filename="../src/mainwindow.cpp" line="843"/>
         <source>Select ISO file</source>
-        <translation type="unfinished"/>
+        <translation>Select ISO file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="837"/>
         <source>clone</source>
-        <translation type="unfinished"/>
+        <translation>clone</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="907"/>
         <source>Could not find a log file at: </source>
-        <translation type="unfinished"/>
+        <translation>Could not find a log file at: </translation>
     </message>
 </context>
 <context>
@@ -456,64 +467,64 @@ Do you wish to continue?</source>
     <message>
         <location filename="../src/about.cpp" line="74"/>
         <source>License</source>
-        <translation>רישיון</translation>
+        <translation>License</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="75"/>
         <location filename="../src/about.cpp" line="85"/>
         <source>Changelog</source>
-        <translation>יומן שינויים</translation>
+        <translation>Changelog</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="76"/>
         <source>Cancel</source>
-        <translation>ביטול</translation>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="99"/>
         <source>&amp;Close</source>
-        <translation>&amp;סגירה</translation>
+        <translation>&amp;Close</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="60"/>
         <source>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</source>
-        <translation type="unfinished"/>
+        <translation>Program for creating a live-usb from an iso-file, another live-usb, a live-cd/dvd, or a running live system.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="64"/>
         <source>filename</source>
-        <translation type="unfinished"/>
+        <translation>filename</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="64"/>
         <source>Name of .iso file to open</source>
-        <translation type="unfinished"/>
+        <translation>Name of .iso file to open</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="65"/>
         <source>[filename]</source>
-        <translation type="unfinished"/>
+        <translation>[filename]</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="93"/>
         <location filename="../src/main.cpp" line="102"/>
         <source>Error</source>
-        <translation>שגיאה</translation>
+        <translation>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="94"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>כנראה שנכנסת למערכת בתור משתמש על (root), נא לצאת ולהיכנס כמשתמש רגיל כדי להשתמש בתוכנית הזאת.</translation>
+        <translation>You seem to be logged in as root, please log out and log in as normal user to use this program.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="102"/>
         <source>You must run this program as root.</source>
-        <translation>חובה להריץ את התכנית הזו כמשתמש שורש (root).</translation>
+        <translation>You must run this program as root.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="117"/>
         <source>version:</source>
-        <translation>גרסה:</translation>
+        <translation>version:</translation>
     </message>
 </context>
 </TS>
