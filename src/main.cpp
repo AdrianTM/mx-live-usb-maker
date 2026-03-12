@@ -30,9 +30,10 @@
 #include <QStandardPaths>
 #include <QTranslator>
 
+#include <unistd.h>
+
 #include "common.h"
 #include "mainwindow.h"
-#include <unistd.h>
 
 // Function-local static to avoid initialization order issues
 static QFile &logFile()
@@ -89,24 +90,24 @@ int main(int argc, char *argv[])
 
     QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
 
-    QTranslator qtTran;
-    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
-        QApplication::installTranslator(&qtTran);
+    QTranslator qtTranslator;
+    if (qtTranslator.load(QLocale::system(), "qt", "_", QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
+        QApplication::installTranslator(&qtTranslator);
     }
 
-    QTranslator qtBaseTran;
-    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
-        QApplication::installTranslator(&qtBaseTran);
+    QTranslator qtBaseTranslator;
+    if (qtBaseTranslator.load("qtbase_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
+        QApplication::installTranslator(&qtBaseTranslator);
     }
 
-    QTranslator appTran;
-    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
-                     "/usr/share/" + QApplication::applicationName() + "/locale")) {
-        QApplication::installTranslator(&appTran);
+    QTranslator appTranslator;
+    if (appTranslator.load(QApplication::applicationName() + "_" + QLocale::system().name(),
+                           "/usr/share/" + QApplication::applicationName() + "/locale")) {
+        QApplication::installTranslator(&appTranslator);
     }
 
     // Root guard
-    QFile loginUidFile {SystemPaths::PROC_SELF_LOGINUID};
+    QFile loginUidFile{SystemPaths::PROC_SELF_LOGINUID};
     if (loginUidFile.open(QIODevice::ReadOnly)) {
         const QString loginUid = QString(loginUidFile.readAll()).trimmed();
         loginUidFile.close();
@@ -125,7 +126,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    auto const logFileName = SystemPaths::TMP_DIR + QStringLiteral("/") + QApplication::applicationName() + QStringLiteral(".log");
+    const auto logFileName = SystemPaths::TMP_DIR + QStringLiteral("/") + QApplication::applicationName() + QStringLiteral(".log");
     logFile().setFileName(logFileName);
     if (logFile().exists() && QFileInfo(logFile()).isWritable()) {
         QFile::remove(logFileName + ".old");

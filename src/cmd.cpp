@@ -1,5 +1,3 @@
-#include "cmd.h"
-
 #include <QApplication>
 #include <QDebug>
 #include <QEventLoop>
@@ -8,18 +6,26 @@
 
 #include <unistd.h>
 
+#include "cmd.h"
+
 Cmd::Cmd(QObject *parent)
     : QProcess(parent),
-      elevate {elevationTool()},
-      helper {"/usr/lib/" + QApplication::applicationName() + "/helper"}
+      elevate{elevationTool()},
+      helper{"/usr/lib/" + QApplication::applicationName() + "/helper"}
 {
 }
 
 QString Cmd::elevationTool()
 {
-    if (QFile::exists("/usr/bin/pkexec")) return QStringLiteral("/usr/bin/pkexec");
-    if (QFile::exists("/usr/bin/gksu")) return QStringLiteral("/usr/bin/gksu");
-    if (QFile::exists("/usr/bin/sudo")) return QStringLiteral("/usr/bin/sudo");
+    if (QFile::exists("/usr/bin/pkexec")) {
+        return QStringLiteral("/usr/bin/pkexec");
+    }
+    if (QFile::exists("/usr/bin/gksu")) {
+        return QStringLiteral("/usr/bin/gksu");
+    }
+    if (QFile::exists("/usr/bin/sudo")) {
+        return QStringLiteral("/usr/bin/sudo");
+    }
     return QStringLiteral("/usr/bin/sudo"); // fallback
 }
 
@@ -80,7 +86,7 @@ bool Cmd::runWithPolkitAction(const QString &actionId, const QString &execPath, 
     QEventLoop loop;
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     if (getuid() != 0) {
-        QStringList pkArgs {"--action-id", actionId, execPath};
+        QStringList pkArgs{"--action-id", actionId, execPath};
         pkArgs.append(execArgs);
         start(elevate, pkArgs);
     } else {

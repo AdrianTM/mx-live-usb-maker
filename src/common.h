@@ -24,7 +24,7 @@
 #include <QRegularExpression>
 #include <sys/stat.h>
 
-inline const QString startingHome {qEnvironmentVariable("HOME")};
+inline const QString startingHome{qEnvironmentVariable("HOME")};
 
 // Size conversion constants
 inline const quint64 BYTES_PER_GB = 1024 * 1024 * 1024;
@@ -192,7 +192,7 @@ namespace DeviceUtils
 // Validate that a path is a block device
 [[nodiscard]] inline bool isBlockDevice(const QString &path)
 {
-    struct stat st {};
+    struct stat st{};
     const QByteArray pathBytes = path.toLocal8Bit();
     if (::stat(pathBytes.constData(), &st) != 0) {
         return false;

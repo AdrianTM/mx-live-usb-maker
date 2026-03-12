@@ -50,19 +50,19 @@ private:
         QString biosDev;
         QString uefiDev;
         QString dataDev;
-        int biosPart {0};
-        int mainPart {0};
-        int uefiPart {0};
-        int biosSizeMiB {0};
-        int mainSizeMiB {0};
-        int uefiSizeMiB {0};
-        int dataSizeMiB {0};
+        int biosPart{0};
+        int mainPart{0};
+        int uefiPart{0};
+        int biosSizeMiB{0};
+        int mainSizeMiB{0};
+        int uefiSizeMiB{0};
+        int dataSizeMiB{0};
     };
 
     const LiveUsbMakerConfig config;
     Paths paths;
     DeviceLayout layout;
-    bool archIso {};
+    bool archIso{};
     QString archIsoArch;
 
     bool suspendAutomount();

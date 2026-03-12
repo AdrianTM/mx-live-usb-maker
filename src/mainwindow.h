@@ -50,7 +50,7 @@ public:
 public slots:
 
 private slots:
-    static bool isantiX_mx_family(const QString &selected);
+    static bool isAntiXMxFamily(const QString &selected);
     static bool isArchIsoFamily(const QString &selected);
     void cleanup();
     void cmdDone();
@@ -59,36 +59,35 @@ private slots:
     void updateBar();
     void updateOutput();
 
-    void checkCloneLive_clicked(bool checked);
-    void checkCloneMode_clicked(bool checked);
-    void checkDataFirst_clicked(bool checked);
-    void checkUpdate_clicked(bool checked);
-    void pushAbout_clicked();
-    void pushBack_clicked();
-    void pushHelp_clicked();
-    void pushLumLogFile_clicked();
-    void pushNext_clicked();
-    void pushOptions_clicked();
-    void pushRefresh_clicked();
-    void pushSelectSource_clicked();
-    void radioDd_clicked();
-    void radioNormal_clicked();
-    void spinBoxSize_valueChanged(int arg1);
-    void textLabel_textChanged(const QString &arg1);
+    void checkCloneLiveClicked(bool checked);
+    void checkCloneModeClicked(bool checked);
+    void checkDataFirstClicked(bool checked);
+    void checkUpdateClicked(bool checked);
+    void pushAboutClicked();
+    void pushBackClicked();
+    void pushHelpClicked();
+    void pushLumLogFileClicked();
+    void pushNextClicked();
+    void pushOptionsClicked();
+    void pushRefreshClicked();
+    void pushSelectSourceClicked();
+    void radioDdClicked();
+    void radioNormalClicked();
+    void spinBoxSizeValueChanged(int value);
+    void textLabelTextChanged(const QString &text);
 
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
     QString backendPath;
     QString device;
-    QString elevate;
     QString lastConfigPath;
     QTimer timer;
     QElapsedTimer elapsedTimer;
-    bool advancedOptions {};
-    bool operationInProgress {};
-    int defaultHeight {};
-    int height {};
+    bool advancedOptions{};
+    bool operationInProgress{};
+    int defaultHeight{};
+    int height{};
     uint sizeCheck;
 
     [[nodiscard]] QString buildOptionList();

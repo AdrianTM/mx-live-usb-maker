@@ -20,10 +20,6 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#include "mainwindow.h"
-#include "common.h"
-#include "ui_mainwindow.h"
-
 #include <QDebug>
 #include <QDir>
 #include <QFileDialog>
@@ -33,8 +29,12 @@
 #include <QStorageInfo>
 #include <QTextStream>
 
-#include "about.h"
 #include <chrono>
+
+#include "about.h"
+#include "common.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 using namespace std::chrono_literals;
 
@@ -283,34 +283,34 @@ void MainWindow::setup()
 
 void MainWindow::setGeneralConnections()
 {
-    connect(ui->checkCloneLive, &QCheckBox::clicked, this, &MainWindow::checkCloneLive_clicked);
-    connect(ui->checkCloneMode, &QCheckBox::clicked, this, &MainWindow::checkCloneMode_clicked);
-    connect(ui->checkDataFirst, &QCheckBox::clicked, this, &MainWindow::checkDataFirst_clicked);
-    connect(ui->checkUpdate, &QCheckBox::clicked, this, &MainWindow::checkUpdate_clicked);
-    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
-    connect(ui->pushBack, &QPushButton::clicked, this, &MainWindow::pushBack_clicked);
+    connect(ui->checkCloneLive, &QCheckBox::clicked, this, &MainWindow::checkCloneLiveClicked);
+    connect(ui->checkCloneMode, &QCheckBox::clicked, this, &MainWindow::checkCloneModeClicked);
+    connect(ui->checkDataFirst, &QCheckBox::clicked, this, &MainWindow::checkDataFirstClicked);
+    connect(ui->checkUpdate, &QCheckBox::clicked, this, &MainWindow::checkUpdateClicked);
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAboutClicked);
+    connect(ui->pushBack, &QPushButton::clicked, this, &MainWindow::pushBackClicked);
     connect(ui->pushCancel, &QPushButton::clicked, this, &MainWindow::close);
-    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
-    connect(ui->pushLumLogFile, &QPushButton::clicked, this, &MainWindow::pushLumLogFile_clicked);
-    connect(ui->pushNext, &QPushButton::clicked, this, &MainWindow::pushNext_clicked);
-    connect(ui->pushOptions, &QPushButton::clicked, this, &MainWindow::pushOptions_clicked);
-    connect(ui->pushRefresh, &QPushButton::clicked, this, &MainWindow::pushRefresh_clicked);
-    connect(ui->pushSelectSource, &QPushButton::clicked, this, &MainWindow::pushSelectSource_clicked);
-    connect(ui->radioDd, &QRadioButton::clicked, this, &MainWindow::radioDd_clicked);
-    connect(ui->radioNormal, &QRadioButton::clicked, this, &MainWindow::radioNormal_clicked);
-    connect(ui->spinBoxSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::spinBoxSize_valueChanged);
-    connect(ui->textLabel, &QLineEdit::textChanged, this, &MainWindow::textLabel_textChanged);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelpClicked);
+    connect(ui->pushLumLogFile, &QPushButton::clicked, this, &MainWindow::pushLumLogFileClicked);
+    connect(ui->pushNext, &QPushButton::clicked, this, &MainWindow::pushNextClicked);
+    connect(ui->pushOptions, &QPushButton::clicked, this, &MainWindow::pushOptionsClicked);
+    connect(ui->pushRefresh, &QPushButton::clicked, this, &MainWindow::pushRefreshClicked);
+    connect(ui->pushSelectSource, &QPushButton::clicked, this, &MainWindow::pushSelectSourceClicked);
+    connect(ui->radioDd, &QRadioButton::clicked, this, &MainWindow::radioDdClicked);
+    connect(ui->radioNormal, &QRadioButton::clicked, this, &MainWindow::radioNormalClicked);
+    connect(ui->spinBoxSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::spinBoxSizeValueChanged);
+    connect(ui->textLabel, &QLineEdit::textChanged, this, &MainWindow::textLabelTextChanged);
 }
 
 // Build the option list to be passed to live-usb-maker
 QString MainWindow::buildOptionList()
 {
-    QStringList optionsList {"-N"};
+    QStringList optionsList{"-N"};
     const bool updateMode = ui->checkUpdate->isChecked();
 
     // Map the checkboxes to the corresponding options
     // Note: partition/format options are skipped in update mode as a safeguard
-    std::map<QCheckBox *, QString> checkboxOptions {
+    std::map<QCheckBox *, QString> checkboxOptions{
         {ui->checkKeep, "-k"},
         {ui->checkPretend, "-p"},
         {ui->checkSaveBoot, "-S"},
@@ -707,7 +707,7 @@ void MainWindow::setConnections()
 // Set proper default mode based on iso contents
 void MainWindow::setDefaultMode(const QString &isoName)
 {
-    const bool isMxFamily = isantiX_mx_family(isoName);
+    const bool isMxFamily = isAntiXMxFamily(isoName);
     const bool isArchFamily = isArchIsoFamily(isoName);
     if (!isMxFamily && !isArchFamily) {
         ui->radioDd->click();
@@ -775,7 +775,7 @@ void MainWindow::updateOutput()
     sb->setValue(sb->maximum());
 }
 
-void MainWindow::pushNext_clicked()
+void MainWindow::pushNextClicked()
 {
     if (ui->stackedWidget->currentIndex() != 0) {
         return;
@@ -811,7 +811,7 @@ void MainWindow::pushNext_clicked()
     makeUsb(buildOptionList());
 }
 
-void MainWindow::pushBack_clicked()
+void MainWindow::pushBackClicked()
 {
     setWindowTitle("MX Live Usb Maker");
     ui->stackedWidget->setCurrentIndex(0);
@@ -821,7 +821,7 @@ void MainWindow::pushBack_clicked()
     ui->progBar->setValue(0);
 }
 
-void MainWindow::pushAbout_clicked()
+void MainWindow::pushAboutClicked()
 {
     hide();
     displayAboutMsgBox(
@@ -836,13 +836,13 @@ void MainWindow::pushAbout_clicked()
     show();
 }
 
-void MainWindow::pushHelp_clicked()
+void MainWindow::pushHelpClicked()
 {
     QString url = "/usr/share/doc/mx-live-usb-maker/mx-live-usb-maker.html";
     displayDoc(url, tr("%1 Help").arg(windowTitle()));
 }
 
-void MainWindow::pushSelectSource_clicked()
+void MainWindow::pushSelectSourceClicked()
 {
     const QString user = cmd.getOut("logname", Cmd::QuietMode::Yes);
     const QString home = "/home/" + user;
@@ -867,13 +867,13 @@ void MainWindow::pushSelectSource_clicked()
     }
 }
 
-void MainWindow::pushRefresh_clicked()
+void MainWindow::pushRefreshClicked()
 {
     ui->comboUsb->clear();
     ui->comboUsb->addItems(buildUsbList());
 }
 
-void MainWindow::pushOptions_clicked()
+void MainWindow::pushOptionsClicked()
 {
     advancedOptions = !advancedOptions;
     ui->groupAdvOptions->setVisible(advancedOptions);
@@ -891,14 +891,14 @@ void MainWindow::pushOptions_clicked()
     }
 }
 
-void MainWindow::textLabel_textChanged(const QString &arg1)
+void MainWindow::textLabelTextChanged(const QString &text)
 {
-    QString cleaned = arg1;
+    QString cleaned = text;
     ui->textLabel->setText(cleaned.remove(' '));
     ui->textLabel->setCursorPosition(cleaned.length());
 }
 
-void MainWindow::checkUpdate_clicked(bool checked)
+void MainWindow::checkUpdateClicked(bool checked)
 {
     ui->checkSaveBoot->setEnabled(checked);
     if (!checked) {
@@ -950,12 +950,12 @@ void MainWindow::checkUpdate_clicked(bool checked)
     }
 }
 
-void MainWindow::checkCloneMode_clicked(bool checked)
+void MainWindow::checkCloneModeClicked(bool checked)
 {
     if (checked) {
         ui->pushSelectSource->setStyleSheet("text-align: center;");
         ui->checkCloneLive->setChecked(false);
-        checkCloneLive_clicked(false);
+        checkCloneLiveClicked(false);
         ui->label_3->setText("<b>" + tr("Select Source") + "</b>");
         ui->pushSelectSource->setText(tr("Select Source Directory"));
         ui->pushSelectSource->setIcon(QIcon::fromTheme("folder"));
@@ -970,7 +970,7 @@ void MainWindow::checkCloneMode_clicked(bool checked)
     ui->pushSelectSource->setProperty("filename", "");
 }
 
-void MainWindow::checkCloneLive_clicked(bool checked)
+void MainWindow::checkCloneLiveClicked(bool checked)
 {
     if (checked) {
         ui->pushSelectSource->setStyleSheet("text-align: center;");
@@ -993,7 +993,7 @@ void MainWindow::checkCloneLive_clicked(bool checked)
     }
 }
 
-void MainWindow::radioDd_clicked()
+void MainWindow::radioDdClicked()
 {
     ui->radioNormal->setChecked(false);
     ui->checkCloneLive->setChecked(false);
@@ -1004,7 +1004,7 @@ void MainWindow::radioDd_clicked()
     ui->checkEncrypt->setEnabled(false);
     ui->checkPretend->setEnabled(false);
     if (ui->groupAdvOptions->isVisible()) {
-        pushOptions_clicked();
+        pushOptionsClicked();
     }
     ui->pushOptions->setEnabled(false);
     ui->label_percent->setEnabled(false);
@@ -1013,7 +1013,7 @@ void MainWindow::radioDd_clicked()
     ui->textLabel->setEnabled(false);
 }
 
-void MainWindow::radioNormal_clicked()
+void MainWindow::radioNormalClicked()
 {
     ui->checkCloneLive->setEnabled(isRunningLive());
     ui->checkCloneMode->setEnabled(true);
@@ -1029,7 +1029,7 @@ void MainWindow::radioNormal_clicked()
     ui->textLabel->setEnabled(!updateMode);
 }
 
-bool MainWindow::isantiX_mx_family(const QString &selected)
+bool MainWindow::isAntiXMxFamily(const QString &selected)
 {
     Cmd utilCmd(nullptr);
     return utilCmd.run(
@@ -1053,7 +1053,7 @@ bool MainWindow::isArchIsoFamily(const QString &selected)
         Cmd::QuietMode::Yes);
 }
 
-void MainWindow::pushLumLogFile_clicked()
+void MainWindow::pushLumLogFileClicked()
 {
     const QString logFileName = QStringLiteral("live-usb-maker.log");
     const QString logFilePath = AppPaths::LOG_FILE;
@@ -1073,20 +1073,20 @@ void MainWindow::pushLumLogFile_clicked()
     displayDoc(tempLogFilePath, QStringLiteral("live-usb-maker"));
 }
 
-void MainWindow::spinBoxSize_valueChanged(int arg1)
+void MainWindow::spinBoxSizeValueChanged(int value)
 {
     // Don't re-enable controls if update mode is checked
     if (ui->checkUpdate->isChecked()) {
         return;
     }
     const int max = ui->spinBoxSize->maximum();
-    ui->checkDataFirst->setEnabled(arg1 == max);
-    ui->spinBoxDataSize->setEnabled(arg1 == max);
-    ui->comboBoxDataFormat->setEnabled(arg1 == max);
-    ui->labelFormat->setEnabled(arg1 == max);
+    ui->checkDataFirst->setEnabled(value == max);
+    ui->spinBoxDataSize->setEnabled(value == max);
+    ui->comboBoxDataFormat->setEnabled(value == max);
+    ui->labelFormat->setEnabled(value == max);
 }
 
-void MainWindow::checkDataFirst_clicked(bool checked)
+void MainWindow::checkDataFirstClicked(bool checked)
 {
     ui->spinBoxSize->setDisabled(checked);
     ui->comboBoxDataFormat->setEnabled(checked);

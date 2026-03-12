@@ -262,8 +262,8 @@ void LiveUsbMakerBackend::resumeAutomount()
 
 bool LiveUsbMakerBackend::prepareWorkDirs(QString *error)
 {
-    const QStringList dirs {paths.workDir, paths.isoDir, paths.mainDir, paths.biosDir,
-                            paths.uefiDir, paths.dataDir, paths.initrdDir, paths.linuxDir};
+    const QStringList dirs{paths.workDir, paths.isoDir, paths.mainDir, paths.biosDir,
+                           paths.uefiDir, paths.dataDir, paths.initrdDir, paths.linuxDir};
     for (const QString &dirPath : dirs) {
         QDir dir(dirPath);
         if (!dir.exists() && !dir.mkpath(QStringLiteral("."))) {
@@ -697,7 +697,7 @@ bool LiveUsbMakerBackend::makeFileSystems(QString *error)
     }
 
     if (!config.encrypt && !layout.mainDev.isEmpty()) {
-        QStringList args {QStringLiteral("-m0"), QStringLiteral("-i65536"), QStringLiteral("-J"), QStringLiteral("size=32")};
+        QStringList args{QStringLiteral("-m0"), QStringLiteral("-i65536"), QStringLiteral("-J"), QStringLiteral("size=32")};
         if (config.forceMakefs) {
             args.prepend(QStringLiteral("-F"));
         }
@@ -1017,7 +1017,7 @@ bool LiveUsbMakerBackend::updateArchIsoBootConfig(QString *error) const
     const QRegularExpression archisoLabelRe(QStringLiteral("\\barchisolabel=[^\\s]+"));
     const QDir archBootX8664Dir(QDir(paths.mainDir).filePath(QStringLiteral("arch/boot/x86_64")));
     const QDir bootX8664Dir(QDir(paths.mainDir).filePath(QStringLiteral("boot/x86_64")));
-    const QStringList bootCandidates {QStringLiteral("vmlinuz*"), QStringLiteral("initrd*"), QStringLiteral("archiso.img")};
+    const QStringList bootCandidates{QStringLiteral("vmlinuz*"), QStringLiteral("initrd*"), QStringLiteral("archiso.img")};
     QString bootPrefix;
     if (archBootX8664Dir.exists() && !archBootX8664Dir.entryList(bootCandidates, QDir::Files).isEmpty()) {
         bootPrefix = QStringLiteral("/arch/boot/");
@@ -1313,7 +1313,7 @@ bool LiveUsbMakerBackend::updateUuids(QString *error)
     }
 
     if (!uefiUuid.isEmpty()) {
-        const QStringList dirs {paths.biosDir, paths.mainDir};
+        const QStringList dirs{paths.biosDir, paths.mainDir};
         for (const QString &dir : dirs) {
             if (dir.isEmpty()) {
                 continue;
@@ -1347,7 +1347,7 @@ bool LiveUsbMakerBackend::writeDataUuid(QString *error)
         }
         return false;
     }
-    const QStringList dirs {paths.biosDir, paths.mainDir};
+    const QStringList dirs{paths.biosDir, paths.mainDir};
     for (const QString &dir : dirs) {
         if (dir.isEmpty()) {
             continue;
@@ -1630,7 +1630,7 @@ int LiveUsbMakerBackend::extOverheadMiB(int sizeMiB) const
 
 QString LiveUsbMakerBackend::findSyslinuxMbr(const QString &name, QString *error) const
 {
-    const QStringList dirs {SyslinuxPaths::SHARE, SyslinuxPaths::MBR, SyslinuxPaths::BIOS};
+    const QStringList dirs{SyslinuxPaths::SHARE, SyslinuxPaths::MBR, SyslinuxPaths::BIOS};
     for (const QString &dir : dirs) {
         const QString candidate = QDir(dir).filePath(name);
         if (QFileInfo::exists(candidate)) {
@@ -1645,8 +1645,8 @@ QString LiveUsbMakerBackend::findSyslinuxMbr(const QString &name, QString *error
 
 QString LiveUsbMakerBackend::findSyslinuxModuleDir(QString *error) const
 {
-    const QStringList dirs {SyslinuxPaths::SHARE, SyslinuxPaths::LIB,
-                            SyslinuxPaths::MODULES_BIOS, SyslinuxPaths::BIOS};
+    const QStringList dirs{SyslinuxPaths::SHARE, SyslinuxPaths::LIB,
+                           SyslinuxPaths::MODULES_BIOS, SyslinuxPaths::BIOS};
     for (const QString &dir : dirs) {
         if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral("gfxboot.c32")))) {
             return dir;
@@ -1660,14 +1660,14 @@ QString LiveUsbMakerBackend::findSyslinuxModuleDir(QString *error) const
 
 QString LiveUsbMakerBackend::findSyslinuxDir(const QString &biosDir) const
 {
-    const QStringList candidates {QStringLiteral("boot/syslinux"), QStringLiteral("syslinux")};
+    const QStringList candidates{QStringLiteral("boot/syslinux"), QStringLiteral("syslinux")};
     for (const QString &candidate : candidates) {
         const QString dir = QDir(biosDir).filePath(candidate);
         if (QFileInfo::exists(dir)) {
             return dir;
         }
     }
-    const QStringList isoCandidates {QStringLiteral("boot/isolinux"), QStringLiteral("isolinux")};
+    const QStringList isoCandidates{QStringLiteral("boot/isolinux"), QStringLiteral("isolinux")};
     for (const QString &candidate : isoCandidates) {
         const QString dir = QDir(biosDir).filePath(candidate);
         if (QFileInfo::exists(dir)) {
@@ -1839,12 +1839,12 @@ bool LiveUsbMakerBackend::repackInitrd(const QString &initrdPath, const QString 
 
 bool LiveUsbMakerBackend::copyInitrdPrograms(const QString &linuxDir, const QString &initrdDir, QString *error) const
 {
-    const QStringList programs {QStringLiteral("ntfs-3g"), QStringLiteral("eject"), QStringLiteral("kmod"),
-                                QStringLiteral("cryptsetup"), QStringLiteral("dmsetup"),
-                                QStringLiteral("depmod"), QStringLiteral("insmod"), QStringLiteral("lsmod"),
-                                QStringLiteral("modinfo"), QStringLiteral("modprobe")};
-    const QStringList searchPaths {QStringLiteral("/usr/local/bin"), QStringLiteral("/usr/sbin"),
-                                   QStringLiteral("/usr/bin"), QStringLiteral("/sbin"), QStringLiteral("/bin")};
+    const QStringList programs{QStringLiteral("ntfs-3g"), QStringLiteral("eject"), QStringLiteral("kmod"),
+                               QStringLiteral("cryptsetup"), QStringLiteral("dmsetup"),
+                               QStringLiteral("depmod"), QStringLiteral("insmod"), QStringLiteral("lsmod"),
+                               QStringLiteral("modinfo"), QStringLiteral("modprobe")};
+    const QStringList searchPaths{QStringLiteral("/usr/local/bin"), QStringLiteral("/usr/sbin"),
+                                  QStringLiteral("/usr/bin"), QStringLiteral("/sbin"), QStringLiteral("/bin")};
 
     const QString binDir = QDir(initrdDir).filePath(QStringLiteral("bin"));
     QDir().mkpath(binDir);
@@ -1899,10 +1899,10 @@ bool LiveUsbMakerBackend::copyInitrdPrograms(const QString &linuxDir, const QStr
 
 bool LiveUsbMakerBackend::copyInitrdModules(const QString &linuxDir, const QString &initrdDir, QString *error) const
 {
-    const QStringList modules {QStringLiteral("aes"), QStringLiteral("async_memcpy"), QStringLiteral("async_pq"),
-                               QStringLiteral("async_raid6_recov"), QStringLiteral("async_tx"), QStringLiteral("async_xor"),
-                               QStringLiteral("blowfish"), QStringLiteral("dm-crypt"), QStringLiteral("dm-mod"),
-                               QStringLiteral("serpent"), QStringLiteral("sha256"), QStringLiteral("xts")};
+    const QStringList modules{QStringLiteral("aes"), QStringLiteral("async_memcpy"), QStringLiteral("async_pq"),
+                              QStringLiteral("async_raid6_recov"), QStringLiteral("async_tx"), QStringLiteral("async_xor"),
+                              QStringLiteral("blowfish"), QStringLiteral("dm-crypt"), QStringLiteral("dm-mod"),
+                              QStringLiteral("serpent"), QStringLiteral("sha256"), QStringLiteral("xts")};
 
     const QString modulesDir = QDir(linuxDir).filePath(QStringLiteral("lib/modules"));
     QDir dir(modulesDir);

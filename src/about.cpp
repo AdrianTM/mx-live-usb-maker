@@ -19,8 +19,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
-#include "about.h"
-
 #include <QApplication>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -30,8 +28,10 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
-#include "common.h"
 #include <unistd.h>
+
+#include "about.h"
+#include "common.h"
 
 // Display document as normal user when run as root
 void displayDoc(const QString &url, const QString &title)
@@ -64,7 +64,7 @@ void displayDoc(const QString &url, const QString &title)
     }
 }
 
-void displayAboutMsgBox(const QString &title, const QString &message, const QString &licenceUrl,
+void displayAboutMsgBox(const QString &title, const QString &message, const QString &licenseUrl,
                         const QString &licenseTitle, QWidget *parent)
 {
     const int dialogWidth = 600;
@@ -79,7 +79,7 @@ void displayAboutMsgBox(const QString &title, const QString &message, const QStr
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        displayDoc(licenceUrl, licenseTitle);
+        displayDoc(licenseUrl, licenseTitle);
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog changelogDialog(parent);
         changelogDialog.setWindowTitle(QObject::tr("Changelog"));
