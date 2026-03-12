@@ -1,12 +1,12 @@
 obj-*/mx-live-usb-maker		usr/bin
 obj-*/mx-live-usb-maker-backend	usr/lib/mx-live-usb-maker
+obj-*/helper			usr/lib/mx-live-usb-maker
 mx-live-usb-maker.desktop	usr/share/applications
 mx-live-usb-maker.png		usr/share/icons/hicolor/256x256/apps
 mx-live-usb-maker.svg		usr/share/icons/hicolor/scalable/apps
 authors.txt			usr/share/doc/mx-live-usb-maker
 help/*				usr/share/doc/mx-live-usb-maker
 obj-*/*.qm			usr/share/mx-live-usb-maker/locale
-scripts/helper			usr/lib/mx-live-usb-maker
 scripts/live-usb-maker-lib	usr/lib/mx-live-usb-maker
 scripts/arch-live-usb-storage	usr/lib/mx-live-usb-maker
 docs/mx-live-usb-maker.1	usr/share/man/man1

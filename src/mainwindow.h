@@ -111,7 +111,6 @@ private:
     [[nodiscard]] static bool isUsbOrRemovable(const QString &device);
     [[nodiscard]] LiveUsbMakerConfig buildConfig() const;
     [[nodiscard]] QString writeBackendConfig(QString *error) const;
-    [[nodiscard]] static QString shellQuote(const QString &value);
     void makeUsb(const QString &options);
     void progress();
     void setGeneralConnections();

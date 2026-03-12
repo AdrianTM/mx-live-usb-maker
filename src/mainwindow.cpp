@@ -228,13 +228,13 @@ void MainWindow::makeUsb(const QString &options)
         return;
     }
     lastConfigPath = configPath;
-    const QString cmdstr = QString("%1 --config %2").arg(shellQuote(backendPath), shellQuote(configPath));
-    qDebug().noquote() << "Running backend command:" << cmdstr;
+    const QStringList backendArgs{"--config", configPath};
+    qDebug() << "Running backend command:" << backendPath << backendArgs;
     qDebug() << "Backend config path:" << configPath;
     operationInProgress = true;
     setConnections();
     elapsedTimer.start();
-    cmd.runAsRoot(cmdstr);
+    cmd.procAsRoot(backendPath, backendArgs, nullptr, nullptr, Cmd::QuietMode::No);
 }
 
 void MainWindow::setup()
@@ -419,11 +419,6 @@ QString MainWindow::writeBackendConfig(QString *error) const
     return LiveUsbMakerConfig::writeToTempFile(config, error);
 }
 
-QString MainWindow::shellQuote(const QString &value)
-{
-    return ShellUtils::quote(value);
-}
-
 void MainWindow::cleanup()
 {
     // Use a utility Cmd object for cleanup operations (separate from main cmd member)
@@ -450,22 +445,26 @@ void MainWindow::cleanup()
             QTimer::singleShot(10s, this, [this] {
                 if (cmd.state() != QProcess::NotRunning) {
                     Cmd utilCmd2(this);
-                    utilCmd2.runAsRoot("kill -9 -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
+                    utilCmd2.procAsRoot(QStringLiteral("kill"), {"-9", "--", "-" + QString::number(cmd.processId())},
+                                        nullptr, nullptr, Cmd::QuietMode::Yes);
                 }
             });
-            utilCmd.runAsRoot("kill -- -" + QString::number(cmd.processId()), Cmd::QuietMode::Yes);
+            utilCmd.procAsRoot(QStringLiteral("kill"), {"--", "-" + QString::number(cmd.processId())}, nullptr,
+                               nullptr, Cmd::QuietMode::Yes);
         }
 
         // Attempt to unmount filesystems and check for failures
         bool unmountFailed = false;
         if (utilCmd.run("mountpoint -q " + mountPath, Cmd::QuietMode::Yes)) {
-            if (!utilCmd.runAsRoot("umount -Rl " + mountPath + " 2>/dev/null", Cmd::QuietMode::Yes)) {
+            if (!utilCmd.procAsRoot(QStringLiteral("umount"), {"-R", "-l", mountPath}, nullptr, nullptr,
+                                    Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath;
                 unmountFailed = true;
             }
         }
         if (utilCmd.run("mountpoint -q " + mountPath + "/main", Cmd::QuietMode::Yes)) {
-            if (!utilCmd.runAsRoot("umount -l " + mountPath + "/{main,uefi} 2>/dev/null", Cmd::QuietMode::Yes)) {
+            if (!utilCmd.procAsRoot(QStringLiteral("umount"), {"-l", mountPath + "/main", mountPath + "/uefi"},
+                                    nullptr, nullptr, Cmd::QuietMode::Yes)) {
                 qWarning() << "Failed to unmount" << mountPath + "/{main,uefi}";
                 unmountFailed = true;
             }
@@ -477,9 +476,9 @@ void MainWindow::cleanup()
             qWarning() << "You may need to manually unmount" << mountPath;
         }
 
-        QString pid = QString::number(QApplication::applicationPid());
+        const QString pid = QString::number(QApplication::applicationPid());
         if (!utilCmd.run("ps --ppid " + pid, Cmd::QuietMode::Yes)) {
-            utilCmd.runAsRoot("kill -- -" + pid, Cmd::QuietMode::Yes);
+            utilCmd.procAsRoot(QStringLiteral("kill"), {"--", "-" + pid}, nullptr, nullptr, Cmd::QuietMode::Yes);
         }
     }
 

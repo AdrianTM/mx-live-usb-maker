@@ -46,12 +46,12 @@ package() {
 
     install -Dm755 build/mx-live-usb-maker "${pkgdir}/usr/bin/mx-live-usb-maker"
     install -Dm755 build/mx-live-usb-maker-backend "${pkgdir}/usr/lib/mx-live-usb-maker/mx-live-usb-maker-backend"
+    install -Dm755 build/helper "${pkgdir}/usr/lib/mx-live-usb-maker/helper"
 
     install -dm755 "${pkgdir}/usr/share/mx-live-usb-maker/locale"
     install -Dm644 build/*.qm "${pkgdir}/usr/share/mx-live-usb-maker/locale/" 2>/dev/null || true
 
     install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker"
-    install -Dm755 scripts/helper "${pkgdir}/usr/lib/mx-live-usb-maker/helper"
 
     install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage"
     install -Dm755 scripts/arch-live-usb-storage/inject-live-usb-storage.sh \
