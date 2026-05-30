@@ -338,7 +338,7 @@ bool LiveUsbMakerBackend::cleanup()
 {
     unmountTargets();
     if (config.sourceMode == LiveUsbMakerConfig::SourceMode::Iso) {
-        runCommandShell(QStringLiteral("umount -l ") + paths.isoDir + QStringLiteral(" 2>/dev/null"), nullptr, true);
+        runCommandShell(QStringLiteral("umount -l ") + ShellUtils::quote(paths.isoDir) + QStringLiteral(" 2>/dev/null"), nullptr, true);
     }
     return true;
 }
@@ -563,7 +563,7 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
     const QString type = config.gpt ? QStringLiteral("gpt") : QStringLiteral("msdos");
     logLine(QStringLiteral("Partitioning device."));
 
-    const QString preamble = QStringLiteral("parted --script --align optimal %1 unit MiB").arg(layout.drive);
+    const QString preamble = QStringLiteral("parted --script --align optimal %1 unit MiB").arg(ShellUtils::quote(layout.drive));
     if (!runCommandShell(QStringLiteral("%1 mklabel %2").arg(preamble, type), error)) {
         return false;
     }
@@ -573,11 +573,12 @@ bool LiveUsbMakerBackend::partitionDevice(QString *error)
 
     auto addPartition = [&](int sizeMiB, const QString &fsType, const QString &name) -> bool {
         const int end = start + sizeMiB - 1;
-        const QString partType = fsType.isEmpty() ? QString() : fsType;
+        const QString partType = fsType.isEmpty() ? QString() : ShellUtils::quote(fsType);
         // For GPT use partition name, for MBR use "primary"
         const QString partLabel = config.gpt ? name : QStringLiteral("primary");
         const QString cmd = QStringLiteral("%1 mkpart %2 %3 %4 %5")
-                                .arg(preamble, partLabel, partType, QString::number(start), QString::number(end));
+                                .arg(preamble, ShellUtils::quote(partLabel), partType, QString::number(start),
+                                     QString::number(end));
         if (!runCommandShell(cmd, error)) {
             logError(QStringLiteral("Partitioning failed at %1 partition.").arg(name));
             return false;
@@ -903,7 +904,8 @@ bool LiveUsbMakerBackend::checkUsbMd5(QString *error)
         QString result;
         if (!runCommandOutput(QStringLiteral("bash"),
                               {QStringLiteral("-c"),
-                               QStringLiteral("cd %1 && %2 -c %3").arg(dir, sumCmd, name)},
+                               QStringLiteral("cd %1 && %2 -c %3")
+                                   .arg(ShellUtils::quote(dir), sumCmd, ShellUtils::quote(name))},
                               &result, error)) {
             logLine(QStringLiteral("%1 check failed for %2 in %3").arg(label, name, dir));
             logLine(QStringLiteral("Critical %1 failure for %2, continuing anyway").arg(label, name));
@@ -1613,7 +1615,7 @@ int LiveUsbMakerBackend::duApparentSizeMiB(const QString &dir, const QString &sp
 {
     QString output;
     const QString cmd = QStringLiteral("cd %1 && du --apparent-size -scm %2 2>/dev/null | tail -n 1 | cut -f1 || true")
-                            .arg(dir, spec);
+                            .arg(ShellUtils::quote(dir), spec);  // Note: spec is a glob pattern, not user input
     if (!runCommandOutput(QStringLiteral("/bin/bash"), {QStringLiteral("-c"), cmd}, &output, error)) {
         return 0;
     }

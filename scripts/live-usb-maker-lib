@@ -4,14 +4,39 @@
 
 copy_log() {
     local app_name="mx-live-usb-maker"
-    local temp_log="/tmp/${app_name}.log"
     local log_file="/var/log/${app_name}.log"
-
-    if [[ -f "$temp_log" ]]; then
-        [[ -f "$log_file" ]] && mv "$log_file" "${log_file}.old"
-        cat "$temp_log" >> "$log_file"
-        rm "$temp_log"
+    local uid dir temp_log
+    # Where the app wrote its log (see SystemPaths::sessionLogPath): a user
+    # session logs to its private runtime dir (/run/user/<uid>); a root run
+    # logs to /run. Both are non-world-writable, unlike the legacy /tmp
+    # fallback. The caller's uid may come from pkexec, sudo, or the login session.
+    if [[ "$PKEXEC_UID" =~ ^[0-9]+$ ]]; then
+        uid="$PKEXEC_UID"
+    elif [[ "$SUDO_UID" =~ ^[0-9]+$ ]]; then
+        uid="$SUDO_UID"
+    else
+        uid=$(id -u "$(logname)" 2>/dev/null)
     fi
+    local -a logdirs=()
+    [[ "$uid" =~ ^[0-9]+$ && "$uid" -ne 0 ]] && logdirs+=("/run/user/${uid}")
+    logdirs+=("/run" "/tmp")
+    for dir in "${logdirs[@]}"; do
+        [[ -d "$dir" ]] || continue
+        temp_log="${dir}/${app_name}.log"
+        # Only act on a real regular file, never a symlink, so the source
+        # cannot be redirected at a root-owned file.
+        [[ -f "$temp_log" && ! -L "$temp_log" ]] || continue
+        # Rotate the destination, never following a symlink that an earlier
+        # run might have left there.
+        if [[ -L "$log_file" ]]; then
+            rm -f -- "$log_file"
+        elif [[ -f "$log_file" ]]; then
+            mv -- "$log_file" "${log_file}.old"
+        fi
+        cat -- "$temp_log" >> "$log_file"
+        rm -f -- "$temp_log"
+        return 0
+    done
 }
 
 main() {

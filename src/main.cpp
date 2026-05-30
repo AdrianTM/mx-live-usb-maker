@@ -30,6 +30,7 @@
 #include <QStandardPaths>
 #include <QTranslator>
 
+#include <fcntl.h>
 #include <unistd.h>
 
 #include "common.h"
@@ -126,7 +127,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    const auto logFileName = SystemPaths::TMP_DIR + QStringLiteral("/") + QApplication::applicationName() + QStringLiteral(".log");
+    const auto logFileName = SystemPaths::sessionLogPath();
     logFile().setFileName(logFileName);
     if (logFile().exists() && QFileInfo(logFile()).isWritable()) {
         QFile::remove(logFileName + ".old");
@@ -135,7 +136,15 @@ int main(int argc, char *argv[])
     if (logFile().exists() && !QFileInfo(logFile()).isWritable()) {
         logFile().setFileName(logFileName + "_new");
     }
-    (void)logFile().open(QIODevice::ReadWrite);
+    // Open without following a symlink at the final component, so the
+    // world-writable /tmp fallback cannot be redirected at another file.
+    const int logFd = ::open(logFile().fileName().toLocal8Bit().constData(),
+                             O_RDWR | O_CREAT | O_NOFOLLOW | O_CLOEXEC, 0600);
+    if (logFd < 0 || !logFile().open(logFd, QIODevice::ReadWrite, QFileDevice::AutoCloseHandle)) {
+        if (logFd >= 0) {
+            ::close(logFd);
+        }
+    }
     qInstallMessageHandler(messageHandler);
     qDebug().noquote() << QApplication::applicationName() << QObject::tr("version:")
                        << QApplication::applicationVersion();

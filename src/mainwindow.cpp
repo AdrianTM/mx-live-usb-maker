@@ -491,7 +491,7 @@ void MainWindow::cleanup()
     }
 
     // Move the application log to /var/log/ at cleanup stage
-    const QString tempLog = SystemPaths::TMP_DIR + "/" + QApplication::applicationName() + ".log";
+    const QString tempLog = SystemPaths::sessionLogPath();
     if (QFileInfo::exists(tempLog)) {
         const QString helperPath = "/usr/lib/" + QApplication::applicationName() + "/live-usb-maker-lib";
         utilCmd.runWithPolkitAction("org.mxlinux.pkexec.live-usb-maker-lib", helperPath, {"copy_log"}, Cmd::QuietMode::Yes);

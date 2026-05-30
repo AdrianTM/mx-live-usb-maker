@@ -21,8 +21,10 @@
  **********************************************************************/
 #pragma once
 
+#include <QFileInfo>
 #include <QRegularExpression>
 #include <sys/stat.h>
+#include <unistd.h>
 
 inline const QString startingHome{qEnvironmentVariable("HOME")};
 
@@ -59,6 +61,23 @@ inline const QString DEV_DISK_BY_UUID = QStringLiteral("/dev/disk/by-uuid");
 inline const QString DEV_MAPPER = QStringLiteral("/dev/mapper");
 inline const QString ROOT_HOME = QStringLiteral("/root");
 inline const QString TMP_DIR = QStringLiteral("/tmp");
+
+// Per-session log path kept out of world-writable /tmp:
+//   running as root -> /run (root-only)
+//   running as the user -> private per-user runtime dir ($XDG_RUNTIME_DIR)
+//   fallback -> /tmp (opened with O_NOFOLLOW by the caller)
+[[nodiscard]] inline QString sessionLogPath()
+{
+    const QString name = QStringLiteral("mx-live-usb-maker.log");
+    if (::geteuid() == 0) {
+        return QStringLiteral("/run/") + name;
+    }
+    const QString runtimeDir = qEnvironmentVariable("XDG_RUNTIME_DIR");
+    if (!runtimeDir.isEmpty() && QFileInfo(runtimeDir).isDir()) {
+        return runtimeDir + QLatin1Char('/') + name;
+    }
+    return TMP_DIR + QLatin1Char('/') + name;
+}
 } // namespace SystemPaths
 
 // Application paths
