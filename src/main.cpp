@@ -32,10 +32,29 @@
 
 #include "common.h"
 #include "mainwindow.h"
+
+#include <fcntl.h>
 #include <unistd.h>
 
 static QFile logFile;
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+
+// Per-session log path kept out of world-writable /tmp:
+//   running as root -> /run (root-only)
+//   running as the user -> private per-user runtime dir ($XDG_RUNTIME_DIR)
+//   fallback -> /tmp (opened with O_NOFOLLOW below)
+static QString sessionLogPath()
+{
+    const QString name = QApplication::applicationName() + QStringLiteral(".log");
+    if (::geteuid() == 0) {
+        return QStringLiteral("/run/") + name;
+    }
+    const QString runtimeDir = qEnvironmentVariable("XDG_RUNTIME_DIR");
+    if (!runtimeDir.isEmpty() && QFileInfo(runtimeDir).isDir()) {
+        return runtimeDir + QLatin1Char('/') + name;
+    }
+    return QStringLiteral("/tmp/") + name;
+}
 
 int main(int argc, char *argv[])
 {
@@ -103,7 +122,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    auto const log_file_name = "/tmp/" + QApplication::applicationName() + ".log";
+    auto const log_file_name = sessionLogPath();
     logFile.setFileName(log_file_name);
     if (logFile.exists() && QFileInfo(logFile).isWritable()) {
         QFile::remove(log_file_name + ".old");
@@ -112,7 +131,15 @@ int main(int argc, char *argv[])
     if (logFile.exists() && !QFileInfo(logFile).isWritable()) {
         logFile.setFileName(log_file_name + "_new");
     }
-    logFile.open(QIODevice::ReadWrite);
+    // Open without following a symlink at the final component, so the
+    // world-writable /tmp fallback cannot be redirected at another file.
+    const int logFd = ::open(logFile.fileName().toLocal8Bit().constData(),
+                             O_RDWR | O_CREAT | O_NOFOLLOW | O_CLOEXEC, 0600);
+    if (logFd < 0 || !logFile.open(logFd, QIODevice::ReadWrite, QFileDevice::AutoCloseHandle)) {
+        if (logFd >= 0) {
+            ::close(logFd);
+        }
+    }
     qInstallMessageHandler(messageHandler);
     qDebug().noquote() << QApplication::applicationName() << QObject::tr("version:")
                        << QApplication::applicationVersion();
