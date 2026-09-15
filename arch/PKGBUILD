@@ -15,7 +15,7 @@
 # debian/changelog, which this branch does not keep current (25.12).
 pkgname=mx-live-usb-maker
 pkgver=26.04arch
-pkgrel=2
+pkgrel=3
 pkgdesc="Graphical utility for creating bootable live USB drives"
 arch=('x86_64' 'i686')
 url="https://mxlinux.org"
