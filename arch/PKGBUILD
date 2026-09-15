@@ -1,0 +1,95 @@
+# Maintainer: Adrian <adrian@mxlinux.org>
+
+# PKGBUILD for building on the Open Build Service.
+#
+# This lives on the "arch" branch, which is where the Arch packaging is
+# maintained - master carries the Debian one and the two have genuinely
+# diverged. The OBS package mx-live-usb-maker-arch pulls this branch; the
+# regular mx-live-usb-maker package keeps building Debian from master.
+#
+# OBS build VMs have no network, so source= names the tarball that the tar_scm
+# service packs out of this branch rather than fetching one from GitHub. The
+# service names it after the most recent tag (versionformat=@PARENT_TAG@), so
+# pkgver must match that tag - here 26.04arch, the same version AUR publishes.
+# The debs/ tarball on this branch is NOT usable: it is named from
+# debian/changelog, which this branch does not keep current (25.12).
+pkgname=mx-live-usb-maker
+pkgver=26.04arch
+pkgrel=2
+pkgdesc="Graphical utility for creating bootable live USB drives"
+arch=('x86_64' 'i686')
+url="https://mxlinux.org"
+license=('GPL3')
+depends=(
+    'qt6-base'
+    'polkit'
+    'parted'
+    'dosfstools'
+    'e2fsprogs'
+    'exfatprogs'
+    'ntfs-3g'
+    'xorriso'
+    'rsync'
+    'syslinux'
+    'grub'
+    'cryptsetup'
+    'util-linux'
+    'libarchive'
+)
+makedepends=('cmake' 'ninja' 'qt6-tools')
+source=("${pkgname}-${pkgver}.tar")
+sha256sums=('SKIP')
+
+build() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    rm -rf build
+
+    cmake -G Ninja \
+        -B build \
+        -DCMAKE_BUILD_TYPE=None \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DPROJECT_VERSION_OVERRIDE="${pkgver}"
+
+    cmake --build build --parallel
+}
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    install -Dm755 build/mx-live-usb-maker "${pkgdir}/usr/bin/mx-live-usb-maker"
+    install -Dm755 build/mx-live-usb-maker-backend "${pkgdir}/usr/lib/mx-live-usb-maker/mx-live-usb-maker-backend"
+    install -Dm755 build/helper "${pkgdir}/usr/lib/mx-live-usb-maker/helper"
+
+    install -dm755 "${pkgdir}/usr/share/mx-live-usb-maker/locale"
+    install -Dm644 build/*.qm "${pkgdir}/usr/share/mx-live-usb-maker/locale/" 2>/dev/null || true
+
+    install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker"
+
+    install -dm755 "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage"
+    install -Dm755 scripts/arch-live-usb-storage/inject-live-usb-storage.sh \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/inject-live-usb-storage.sh"
+    install -Dm755 scripts/arch-live-usb-storage/live-usb-storage \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/live-usb-storage"
+    install -Dm644 scripts/arch-live-usb-storage/live-usb-storage.service \
+        "${pkgdir}/usr/lib/mx-live-usb-maker/arch-live-usb-storage/live-usb-storage.service"
+
+    install -Dm644 scripts/org.mxlinux.pkexec.mxlum-helper.policy \
+        "${pkgdir}/usr/share/polkit-1/actions/org.mxlinux.pkexec.mxlum-helper.policy"
+
+    install -Dm644 mx-live-usb-maker.desktop "${pkgdir}/usr/share/applications/mx-live-usb-maker.desktop"
+
+    install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/mx-live-usb-maker.png"
+    install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/pixmaps/mx-live-usb-maker.png"
+    install -Dm644 mx-live-usb-maker.svg "${pkgdir}/usr/share/icons/hicolor/scalable/apps/mx-live-usb-maker.svg"
+
+    install -Dm644 docs/mx-live-usb-maker.1 "${pkgdir}/usr/share/man/man1/mx-live-usb-maker.1"
+
+    install -dm755 "${pkgdir}/usr/share/doc/mx-live-usb-maker"
+    install -Dm644 authors.txt "${pkgdir}/usr/share/doc/mx-live-usb-maker/authors.txt"
+    gzip -c debian/changelog > "${pkgdir}/usr/share/doc/mx-live-usb-maker/changelog.gz"
+    if [ -d help ]; then
+        cp -r help/* "${pkgdir}/usr/share/doc/mx-live-usb-maker/" 2>/dev/null || true
+    fi
+}
