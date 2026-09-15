@@ -83,7 +83,7 @@ package() {
 
     install -Dm644 mx-live-usb-maker.desktop "${pkgdir}/usr/share/applications/mx-live-usb-maker.desktop"
 
-    install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/mx-live-usb-maker.png"
+    install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/icons/hicolor/64x64/apps/mx-live-usb-maker.png"
     install -Dm644 mx-live-usb-maker.png "${pkgdir}/usr/share/pixmaps/mx-live-usb-maker.png"
     install -Dm644 mx-live-usb-maker.svg "${pkgdir}/usr/share/icons/hicolor/scalable/apps/mx-live-usb-maker.svg"
 
